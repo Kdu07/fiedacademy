@@ -9,23 +9,23 @@
 ## Nome do grupo
 
 ## :student: Integrantes: 
-- <a href="https://www.linkedin.com/">Nome do integrante 1</a>
-- <a href="https://www.linkedin.com/">Nome do integrante 2</a>
-- <a href="https://www.linkedin.com/">Nome do integrante 3</a> 
-- <a href="https://www.linkedin.com/">Nome do integrante 4</a> 
-- <a href="https://www.linkedin.com/">Nome do integrante 5</a>
-- <a href="https://www.linkedin.com/">Nome do integrante 6</a> 
-- <a href="https://www.linkedin.com/">Nome do integrante 7</a>
+- <a href="https://www.linkedin.com/">Antonio Di Cillo</a>
+- <a href="https://www.linkedin.com/">Carlos Quaglia</a>
+- <a href="https://www.linkedin.com/">Emanuelly Dias</a> 
+- <a href="https://www.linkedin.com/">Joao Agmont</a> 
+- <a href="https://www.linkedin.com/">Luiz Hinuy</a>
+- <a href="https://www.linkedin.com/">Maria Arielly</a> 
+- <a href="https://www.linkedin.com/">Rafael Cabral</a>
 
 ## :teacher: Professores:
 ### Orientador(a) 
-- <a href="https://www.linkedin.com/">Nome do professor 1</a>
+- <a href="https://www.linkedin.com/">Marcelo Luiz do Amaral Gonçalves</a>
 ### Instrutores
-- <a href="https://www.linkedin.com/">Nome do professor 2</a>
-- <a href="https://www.linkedin.com/">Nome do professor 3</a> 
-- <a href="https://www.linkedin.com/">Nome do professor 4</a> 
-- <a href="https://www.linkedin.com/">Nome do professor 5</a>
-- <a href="https://www.linkedin.com/">Nome do professor 6</a>
+- <a href="https://www.linkedin.com/">Cristiano Benites</a>
+- <a href="https://www.linkedin.com/">Filipe Gonçalves</a> 
+- <a href="https://www.linkedin.com/">Francisco Escobar</a> 
+- <a href="https://www.linkedin.com/">Geraldo Vasconcelos</a>
+- <a href="https://www.linkedin.com/">Pedro Teberga</a>
 
 ## 📝 Descrição
 
