@@ -1,4 +1,4 @@
-<img src="../assets/logointeli.png">
+<img src="../assets/assets_gdd/logointeli.png">
 
 
 # WAD - Web Application Document - Módulo 2 - Inteli
