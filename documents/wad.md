@@ -19,7 +19,7 @@
 
 &nbsp;&nbsp;&nbsp;&nbsp; A empresa investe fortemente em pesquisa e desenvolvimento, posicionando-se na vanguarda da agricultura 4.0. No entanto, existem problemáticas que comprometem sua eficácia, o primeiro problema que a equipe de PTDs enfrenta é o turnover acima de 30% ao ano. O **Turnover**, é a alta rotatividade de funcionários, acarreta em diversos impactos negativos, como aumento de custos com recrutamento e seleção, além da perda de conhecimento e experiência acumulada. A segunda problemática é a falta de treinamento estruturado que possa guiar o processo de desenvolvimento de habilidades e conhecimentos, dos novos contratados. Gerando resultados ineficazes, falta de progresso, contratempos no desempenho e segurança. <br>
 
-&nbsp;&nbsp;&nbsp;&nbsp; Para solucionar esse desafio, foi desenvolvida uma plataforma web de capacitação técnica, que oferece trilhas de conhecimento em diferentes formatos os PTDs antes de sua atuação em campo acompanhar o progresso individual dos colaboradores, além de incorporar elementos de gamificação para engajamento.  Os principais aspectos de criação de valor da solução estão na melhoria da experiência do produtor rural, na redução de custos operacionais com suporte, na padronização do atendimento e na possibilidade de monitorar e aprimorar continuamente a qualificação dos PTDs, alinhando o produto às expectativas e necessidades reais do parceiro de negócios. A solução proposta pelo nosso projeto visa não apenas corrigir gaps de conhecimento, como criar um ciclo virtuoso de engajamento, certificação e acompanhamento contínuo, alinhando a operação de campo às ambições de inovação da Bayer. <br>
+&nbsp;&nbsp;&nbsp;&nbsp; Para solucionar esse desafio, foi desenvolvida uma plataforma web de capacitação técnica, que oferece trilhas de conhecimento em diferentes formatos aos PTDs antes de sua atuação em campo, acompanhando o progresso individual dos colaboradores, além de incorporar elementos de gamificação para engajamento.  Os principais aspectos de criação de valor da solução estão na melhoria da experiência do produtor rural, na redução de custos operacionais com suporte, na padronização do atendimento e na possibilidade de monitorar e aprimorar continuamente a qualificação dos PTDs, alinhando o produto às expectativas e necessidades reais do parceiro de negócios. A solução proposta pelo nosso projeto visa não apenas corrigir gaps de conhecimento, como criar um ciclo virtuoso de engajamento, certificação e acompanhamento contínuo, alinhando a operação de campo às ambições de inovação da Bayer. <br>
 
 
 
@@ -85,9 +85,37 @@
 
 ### 2.1.5. Matriz de Riscos do Projeto (sprint 1)
 
-*Sem limite de palavras – usar template do curso*
+<div align = "center">
 
-*Registre na matriz os riscos identificados no projeto.*
+<sup>Figura 1: Matriz de Riscos do projeto.</sup><br>
+
+<img src="../assets/assets_gdd/matrizDeRiscos.png"><br>
+
+<sub>Fonte: Material produzido pelos autores (2025). </sub><br>
+
+<sup>Quadro 1: Riscos e planos de ação.</sup><br>
+
+\# | Risco | Plano de Ação |
+---|---|---|
+1| Uma única construção Web não ser suficiente para atender às multiplicidades do problema | Delimitar bem o escopo com o parceiro do projeto
+2| Dificuldades no entendimento da plataforma FieldView | Estudar os materiais disponibilizados pela Bayer
+3| Dispersões durante os horários de desenvolvimento | Estabelecer a participação de todos os membros durante a daily e fechamento
+4| Não conseguir atender todas dores dos PTDs em uma única solução | Se aprofundar nas dores dos PTDs
+5| Ferramentas digitais permitidas serem insuficientes para construção Web | Propor bibliotecas e frameworks complementares
+6| Solução não ser eficaz para o PTD | Estudar à fundo as diversas dificuldades desses profissionais
+7| Caráter técnico do problema dificultar a construção da solução | Destrinchar o problema em pequenos blocos a serem estudados
+8| Problemas de conexão de internet na faculdade e na moradia estudantil | Caso possível, buscar meios alternativos à falta de conexão |
+
+<sub>Fonte: Material produzido pelos autores (2025). </sub><br>
+
+<sup>Quadro 2: Oportunidades.</sup><br>
+\# | Oportunidades |
+---| ----|
+1| Desenvolver habilidades em outros eixos do conhecimento
+2| Expandir nosso entendimento a respeito de conhecimentos agrários através da plataforma FieldView
+3| Desenvolver e aprofundar habilidades em tecnologias de construção Web
+
+</div>
 
 ## 2.2. Personas (sprint 1)
 
