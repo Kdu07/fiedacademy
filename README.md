@@ -9,23 +9,23 @@
 ## Nome do grupo
 
 ## :student: Integrantes: 
-- <a href="https://www.linkedin.com/">Antonio Di Cillo</a>
+- <a href="https://www.linkedin.com/in/antoniodicillo/">Antonio Di Cillo</a>
 - <a href="https://www.linkedin.com/">Carlos Quaglia</a>
 - <a href="https://www.linkedin.com/">Emanuelly Dias</a> 
-- <a href="https://www.linkedin.com/">Joao Agmont</a> 
-- <a href="https://www.linkedin.com/">Luiz Hinuy</a>
-- <a href="https://www.linkedin.com/">Maria Arielly</a> 
-- <a href="https://www.linkedin.com/">Rafael Cabral</a>
+- <a href="https://www.linkedin.com/in/joao-agmont-b82228359/">Joao Agmont</a> 
+- <a href="https://www.linkedin.com/in/luiz-hinuy-0995252b1/">Luiz Hinuy</a>
+- <a href="https://www.linkedin.com/in/maria-arielly/">Maria Arielly</a> 
+- <a href="https://www.linkedin.com/in/-rafael-cabral/">Rafael Cabral</a>
 
 ## :teacher: Professores:
 ### Orientador(a) 
-- <a href="https://www.linkedin.com/">Marcelo Luiz do Amaral Gonçalves</a>
+- <a href="https://www.linkedin.com/in/marcelo-gon%C3%A7alves-phd-a550652/">Marcelo Luiz do Amaral Gonçalves</a>
 ### Instrutores
-- <a href="https://www.linkedin.com/">Cristiano Benites</a>
-- <a href="https://www.linkedin.com/">Filipe Gonçalves</a> 
-- <a href="https://www.linkedin.com/">Francisco Escobar</a> 
-- <a href="https://www.linkedin.com/">Geraldo Vasconcelos</a>
-- <a href="https://www.linkedin.com/">Pedro Teberga</a>
+- <a href="https://www.linkedin.com/in/cristiano-benites-ph-d-687647a8/">Cristiano Benites</a>
+- <a href="https://www.linkedin.com/in/filipe-gon%C3%A7alves-08a55015b/">Filipe Gonçalves</a> 
+- <a href="https://www.linkedin.com/in/francisco-escobar/">Francisco Escobar</a> 
+- <a href="https://www.linkedin.com/in/geraldo-magela-severino-vasconcelos-22b1b220/">Geraldo Vasconcelos</a>
+- <a href="https://www.linkedin.com/in/pedroteberga/">Pedro Teberga</a>
 
 ## 📝 Descrição
 
