@@ -113,6 +113,10 @@
 2| Expandir nosso entendimento a respeito de conhecimentos agrários através da plataforma FieldView
 3| Desenvolver e aprofundar habilidades em tecnologias de construção Web
 
+<sub>
+Fonte: Material produzido pelos autores (2025)
+</sub>
+
 </div>
 
 ## 2.2. Personas (sprint 1)
