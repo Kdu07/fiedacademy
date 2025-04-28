@@ -1,3 +1,4 @@
+
 <img src="../assets/assets_gdd/logointeli.png">
 
 
@@ -82,6 +83,10 @@
 *Elaborar o Value Proposition Canvas com base na proposta de solução definida.*
 
 ### 2.1.5. Matriz de Riscos do Projeto (sprint 1)
+
+&nbsp;&nbsp;&nbsp;&nbsp; A matriz de riscos é uma ferramenta visual e analítica fundamental para a gestão de projetos, permitindo a identificação, análise e avaliação dos riscos que podem impactar objetivos organizacionais. Segundo Marshall [4], a matriz de riscos consiste em uma representação gráfica que cruza dois eixos principais: a probabilidade de ocorrência de um risco e o impacto que esse risco pode causar. Essa abordagem possibilita classificar os riscos em diferentes níveis de criticidade, facilitando a priorização das ações de mitigação e o direcionamento eficiente de recursos para os riscos mais relevantes. <br>
+
+&nbsp;&nbsp;&nbsp;&nbsp; A utilização da matriz de riscos favorece a antecipação de ameaças, a melhoria contínua dos processos e o gerenciamento sistemático, já que permite definir e avaliar impactos de forma estruturada. Ao parametrizar níveis de frequência e severidade, a matriz pode ser adaptada à realidade de cada organização ou projeto, tornando-se aplicável em diversos contextos empresariais, desde o setor financeiro até a segurança do trabalho. Dessa forma, a matriz de riscos contribui para decisões mais informadas, alinhadas à estratégia e à tolerância ao risco de cada gestor. <br>
 
 <div align = "center">
 
@@ -297,6 +302,8 @@ SOBRENOME, Nome. Título do livro: subtítulo do livro. Edição. Cidade de publ
 
 INTELI. Adalove. Disponível em: https://adalove.inteli.edu.br/feed. Acesso em: 1 out. 2023 <br>
 SOBRENOME, Nome. Título do site. Disponível em: link do site. Acesso em: Dia Mês Ano
+
+[4] MARSHALL, A. Industry and Trade. 3ª edição, Londres, 1920.
 
 # <a name="c9"></a>Anexos
 
