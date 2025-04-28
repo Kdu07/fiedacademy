@@ -103,14 +103,14 @@
 3| Dispersões durante os horários de desenvolvimento | Estabelecer a participação de todos os membros durante a daily e fechamento
 4| Não conseguir atender todas dores dos PTDs em uma única solução | Se aprofundar nas dores dos PTDs
 5| Ferramentas digitais permitidas serem insuficientes para construção Web | Propor bibliotecas e frameworks complementares
-6| Solução não ser eficaz para o PTD | Estudar à fundo as diversas dificuldades desses profissionais
+6| Não conseguir construir um projeto eficaz para o PTD | Estudar à fundo as diversas dificuldades desses profissionais
 7| Caráter técnico do problema dificultar a construção da solução | Destrinchar o problema em pequenos blocos a serem estudados
 8| Problemas de conexão de internet na faculdade e na moradia estudantil | Caso possível, buscar meios alternativos à falta de conexão |
 
 <sub>Fonte: Material produzido pelos autores (2025). </sub><br>
 </div>
 
-&nbsp;&nbsp;&nbsp;&nbsp; Além disso, também foi feito o levantamento de potenciais oportunidades através da construção do projeto.<br>
+&nbsp;&nbsp;&nbsp;&nbsp; Além disso, também foi feito o levantamento de potenciais oportunidades a serem conquistadas através da construção do projeto.<br>
 
 <div align = "center">
 
