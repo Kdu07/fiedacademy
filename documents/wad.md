@@ -96,9 +96,62 @@ A Bayer se destaca pela forte inovação tecnológica, marca global consolidada 
 6. Critério de sucesso e como será avaliado
 
 ### 2.1.4. Value Proposition Canvas (sprint 1): 
-*Sem limite de palavras – usar template do curso*
 
-*Elaborar o Value Proposition Canvas com base na proposta de solução definida.*
+<img src="../assets/assets_wad/PropostaDeValor.png">
+
+### Perfil do cliente
+### Tarefas do cliente
+#### Atendimento aos produtores: 
+PTDs comparecem presencialmente nas fazendas para solucionar problemas sobre o sistema fieldview
+#### Utilizar site de ajuda rápida: 
+Para responder dúvidas específicas os promotores utilizam o site já existente de ajuda rápida
+#### Ligar para o suporte para atender dúvidas técnicas: 
+Caso as informações que precisa não se encontrem no site de ajuda rápida o promotor recorre ao suporte técnico
+### Ganhos
+#### (1) Nivelamento de conhecimento dos profissionais: 
+Ferramenta para direcionar os conteúdos organizadamente
+#### (2) Possibilidade de buscar respostas rapidamente: 
+O PTD necessita de uma solução onde consiga pesquisar os conteúdos usando palavras chave
+#### (3) Facilidade no uso da plataforma: 
+O promotor deve acessar a página que deseja de forma intuitiva e com poucos cliques
+#### (4) Acesso a informações sem conexão à internet: 
+No cotidiano o PTD se move para lugares onde a conexão à internet é lenta ou inexistente, portanto necessita de opções offline
+### Dores
+#### (1) Informações sobre o fieldview distribuídas por vários locais: 
+Atualmente os guias e conhecimento sobre o fieldview estão distribuídos em pelo menos três plataformas diferentes e de forma desorganizada além de ser frequentemente passados por chat entre os PTDs
+#### (2) Onboarding não entrega o nível adequado de conhecimento: 
+O onboarding é possui apenas uma semana, o que é curto demais para que o novo profissional aprenda suficientemente sobre o sistema 
+#### (3) Falta de direcionamento e validação sobre os conhecimentos que devem ser adquiridos: 
+Não existe planejamento sobre o que deve ser aprendido em relação ao fieldview nem sistema para conferir o nível conhecimento dos PTDs
+#### (4) Dificuldade de adquirir conhecimento sobre novidades: 
+O fieldview é um sistema que constantemente recebe atualizações que incluem novas ferramentas e funcionalidades, porém não há forma eficiente para distribuir essas informações aos PTDs
+
+### Proposta de valor
+### Produtos e serviços
+#### Aplicação web para facilitar onboarding e aprendizagem sobre o sistema fieldview: 
+A solução digital consiste em um site onde o PTD acessa com seu login e pode seguir uma trilha de conhecimento
+#### Acesso às informações por pesquisa de palavras-chave:
+Com a barra de pesquisa o PDT pode com agilidade utilizar palavras-chave para encontrar conteúdos sobre o assunto desejado
+#### Possibilidade de consulta offline: 
+A solução contém partes baixáveis de forma que o promotor pode acessá-las mesmo sem conexão com a internet
+### Criadores de ganhos
+#### (1) Conteúdos organizados em módulos de conhecimento: 
+O conteúdo é entregue seguindo um planejamento e categorização
+#### (2) Barra de pesquisa: 
+Ferramenta para pesquisa de conteúdo por digitação de palavra-chave
+#### (3) Design para poucos cliques:
+O design do site é feito de forma que o usuário consegue acessar o que deseja com o mínimo número de cliques
+#### (4) Possibilidade de downloads de alguns conteúdos:
+Alguns conteúdos da plataforma são disponíveis para baixar no dispositivo, para que o acesso sem conexão a internet ocorra
+### Aliviam as dores
+#### (1) Unificação de todas as informações:
+A solução conta com todos os conteúdos e informações necessárias para a utilização do sistema Fieldview em um só lugar
+#### (2) Módulo de estudos para onboarding e nivelamento:
+Para direcionar o PTD, existem módulos de conhecimento que são entregues de forma planejada a fim de realizar o onboarding de um novo promotor e assim nivelar o conhecimento dos profissionais em campo
+#### (3) Trilha de aprendizagem e avaliações de domínio:
+Os módulos de conteúdo são categorizados e disponíveis de forma plenejada assim como personalizada de acordo com os resultados das avaliações
+#### (4) Gestor da plataforma pode adicionar conteúdos:
+Os funcionários com acesso especial para gerenciar a plataforma conseguem adicionar e remover conteúdos a qualquer momento
 
 ### 2.1.5. Matriz de Riscos do Projeto (sprint 1)
 
