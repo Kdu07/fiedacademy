@@ -66,8 +66,9 @@ Poder de barganha dos clientes: Médio. Produtores rurais e grandes cooperativas
 
 Ameaça de produtos substitutos: Média. Pequenos produtores e mercados de nicho estão buscando alternativas sustentáveis, como biopesticidas e métodos orgânicos de cultivo. Embora essas opções estejam crescendo, os produtos da Bayer ainda oferecem maior escala, eficácia e previsibilidade, fatores decisivos para grandes produtores.
 
+Rivalidade entre concorrentes: Alta. A disputa no setor é intensa, envolvendo grandes empresas como Syngenta, Corteva e BASF. A competição se baseia principalmente em inovação tecnológica, desenvolvimento de patentes e capacidade de oferecer soluções digitais avançadas. Estratégias como fusões e aquisições são comuns para fortalecer posições de mercado e expandir a base tecnológica.
 
-*Posicione aqui o modelo de 5 Forças de Porter para sustentar o contexto da indústria.*
+
 
 ### 2.1.2. Análise SWOT da Instituição Parceira (sprint 1)
 
