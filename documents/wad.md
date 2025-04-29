@@ -56,7 +56,9 @@
 ## 2.1. Escopo do Projeto (sprints 1 e 4)
 
 ### 2.1.1. Modelo de 5 Forças de Porter (sprint 1)
-As forças de Porter analisam o nível de competitividade e atratividade de um setor por meio de cinco fatores: ameaça de novos entrantes, poder de barganha de fornecedores, poder de barganha de clientes, ameaça de produtos substitutos e rivalidade entre concorrentes.
+As forças de Porter analisam o nível de competitividade e atratividade de um setor por meio de cinco fatores: ameaça de novos entrantes, poder de barganha de fornecedores, poder de barganha de clientes, ameaça de produtos substitutos e rivalidade entre concorrentes. <br>
+
+Ameaça de novos entrantes: Média a baixa. O setor exige grandes investimentos em P&D, infraestrutura e cumprimento de regulações rigorosas, o que cria barreiras significativas. A Bayer ainda possui forte credibilidade entre os produtores, dificultando a entrada de novas marcas. Apesar disso, startups AgTech estão conseguindo espaço com soluções tecnológicas específicas, como agricultura de precisão e monitoramento por IA.
 
 
 *Posicione aqui o modelo de 5 Forças de Porter para sustentar o contexto da indústria.*
