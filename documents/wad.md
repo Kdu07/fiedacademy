@@ -60,7 +60,9 @@ As forças de Porter analisam o nível de competitividade e atratividade de um s
 
 Ameaça de novos entrantes: Média a baixa. O setor exige grandes investimentos em P&D, infraestrutura e cumprimento de regulações rigorosas, o que cria barreiras significativas. A Bayer ainda possui forte credibilidade entre os produtores, dificultando a entrada de novas marcas. Apesar disso, startups AgTech estão conseguindo espaço com soluções tecnológicas específicas, como agricultura de precisão e monitoramento por IA. <br>
 
-Poder de barganha dos fornecedores: Baixo. A Bayer, sendo uma multinacional de grande porte, possui escala global que lhe confere vantagem nas negociações com fornecedores. Além disso, sua estratégia de diversificação de fornecedores em vários países e seu investimento em verticalização (produção própria de insumos) reduzem sua dependência externa.
+Poder de barganha dos fornecedores: Baixo. A Bayer, sendo uma multinacional de grande porte, possui escala global que lhe confere vantagem nas negociações com fornecedores. Além disso, sua estratégia de diversificação de fornecedores em vários países e seu investimento em verticalização (produção própria de insumos) reduzem sua dependência externa. <br>
+
+Poder de barganha dos clientes: Médio. Produtores rurais e grandes cooperativas têm algum poder de negociação, principalmente em mercados onde a concorrência é intensa. Ainda assim, muitos clientes tradicionais mostram resistência inicial a novas tecnologias. A Bayer busca mitigar isso oferecendo pacotes integrados e tecnologias patenteadas, dificultando a substituição por concorrentes.
 
 
 *Posicione aqui o modelo de 5 Forças de Porter para sustentar o contexto da indústria.*
