@@ -1,5 +1,5 @@
 
-<img src="../assets/assets_gdd/logointeli.png">
+<img src="../assets/assets_wad/logointeli.png">
 
 
 # WAD - Web Application Document - Módulo 2 - Inteli
@@ -58,7 +58,7 @@
 ### 2.1.1. Modelo de 5 Forças de Porter (sprint 1)
 As forças de Porter analisam o nível de competitividade e atratividade de um setor por meio de cinco fatores: ameaça de novos entrantes, poder de barganha de fornecedores, poder de barganha de clientes, ameaça de produtos substitutos e rivalidade entre concorrentes. Desse modo a posição da Bayer no setor se dá da seguinte maneira:  <br>
 
-<img src="../assets/assets_gdd/5forcasDePorter.png">
+<img src="../assets/assets_wad/5forcasDePorter.png">
 
 #### Ameaça de novos entrantes: Média a baixa. <br>
 O setor exige grandes investimentos em P&D, infraestrutura e cumprimento de regulações rigorosas, o que cria barreiras significativas. A Bayer ainda possui forte credibilidade entre os produtores, dificultando a entrada de novas marcas. Baseado em dados da revista Exame, startups AgTech estão conseguindo espaço com soluções tecnológicas específicas, como agricultura de precisão e monitoramento por IA. <br>
@@ -83,7 +83,7 @@ Ferramenta que analisa forças, fraquezas, oportunidades, ameaças.
 
 A Bayer se destaca pela forte inovação tecnológica, marca global consolidada e capacidade financeira, o que a posiciona entre os líderes do agronegócio mundial. Seu portfólio integrado reforça a competitividade frente a rivais como Syngenta, Corteva e BASF. No entanto, enfrenta desafios de altos custos e maior pressão regulatória, que podem ser explorados por concorrentes. O crescimento da agricultura digital e da demanda por sustentabilidade abre oportunidades para reforçar sua liderança. A empresa busca equilibrar produtividade e responsabilidade ambiental para se diferenciar num mercado cada vez mais competitivo e sensível às questões sociais. <br>
 
-<img src="../assets/assets_gdd/MatrizSWOT.png">
+<img src="../assets/assets_wad/MatrizSWOT.png">
 
 ### 2.1.3. Solução (sprints 1 a 5)
 
@@ -108,22 +108,22 @@ A Bayer se destaca pela forte inovação tecnológica, marca global consolidada 
 
 <sup>Figura 1: Matriz de Riscos do projeto.</sup><br>
 
-<img src="../assets/assets_gdd/matrizDeRiscos.png"><br>
+<img src="../assets/assets_wad/matrizDeRiscos.png"><br>
 
 <sub>Fonte: Material produzido pelos autores (2025). </sub><br>
 
 <sup>Quadro 1: Riscos e planos de ação.</sup><br>
 
-\# | Risco | Plano de Ação |
----|---|---|
-1| Uma única construção Web não ser suficiente para atender às multiplicidades do problema | Delimitar bem o escopo com o parceiro do projeto
-2| Dificuldades no entendimento da plataforma FieldView | Estudar os materiais disponibilizados pela Bayer
-3| Dispersões durante os horários de desenvolvimento | Estabelecer a participação de todos os membros durante a daily e fechamento
-4| Não conseguir atender todas dores dos PTDs em uma única solução | Se aprofundar nas dores dos PTDs
-5| Ferramentas digitais permitidas serem insuficientes para construção Web | Propor bibliotecas e frameworks complementares
-6| Não conseguir construir um projeto eficaz para o PTD | Estudar à fundo as diversas dificuldades desses profissionais
-7| Caráter técnico do problema dificultar a construção da solução | Destrinchar o problema em pequenos blocos a serem estudados
-8| Problemas de conexão de internet na faculdade e na moradia estudantil | Caso possível, buscar meios alternativos à falta de conexão |
+| \# | **Ameaça** | **Plano de Ação** |
+|----|------------|-------------------|
+| 1 | A construção de uma única plataforma Web pode não abranger todas as necessidades do projeto | Definir um escopo claro com o parceiro (Bayer) e considerar arquitetura modular para expansões futuras |
+| 2 | Dificuldade em compreender todas as funcionalidades do FieldView | Realizar imersão guiada com especialistas da Bayer e consultar documentação oficial |
+| 3 | Falta de foco e engajamento da equipe nos horários de trabalho | Implementar rotinas ágeis com dailies curtas, metas claras e check-ins semanais |
+| 4 | Não conseguir contemplar todas as dores dos PTDs na solução inicial | Conduzir entrevistas com PTDs e priorizar as principais dores em MVPs iterativos |
+| 5 | Limitações nas ferramentas digitais disponíveis para a construção web | Avaliar previamente os recursos disponíveis e negociar o uso de frameworks externos com o parceiro |
+| 6 | Dificuldade em criar uma solução realmente útil para o PTD | Co-desenvolver a solução com feedback contínuo dos PTDs e validar protótipos com usuários reais |
+| 7 | Complexidade técnica do problema dificultar o avanço da solução | Dividir o desafio em tarefas menores, com estudo dirigido e apoio de mentores/tutores técnicos |
+| 8 | Instabilidade de conexão com internet durante o desenvolvimento | Garantir planos alternativos como locais com Wi-Fi estável, dados móveis extras ou trabalho offline sempre que possível |
 
 <sub>Fonte: Material produzido pelos autores (2025). </sub><br>
 </div>
@@ -133,11 +133,11 @@ A Bayer se destaca pela forte inovação tecnológica, marca global consolidada 
 <div align = "center">
 
 <sup>Quadro 2: Oportunidades.</sup><br>
-\# | Oportunidades |
----| ----|
-1| Desenvolver habilidades em outros eixos do conhecimento
-2| Expandir nosso entendimento a respeito de conhecimentos agrários através da plataforma FieldView
-3| Desenvolver e aprofundar habilidades em tecnologias de construção Web
+| \# | **Oportunidade** | **Plano de Ação** |
+|----|------------------|-------------------|
+| 1 | Desenvolver habilidades em outros eixos do conhecimento | Identificar e distribuir funções multidisciplinares entre os membros (gestão de produto, UX/UI, comunicação, dados) para estimular o aprendizado prático e colaborativo |
+| 2 | Expandir nosso entendimento sobre conhecimentos agrários com o FieldView | Agendar sessões com especialistas da Bayer, explorar simulações da plataforma e documentar aprendizados em um repositório compartilhado |
+| 3 | Desenvolver e aprofundar habilidades em tecnologias de construção Web | Dividir a equipe em squads com foco técnico, definir sprints para estudo prático de ferramentas web (frameworks, backend, autenticação) e aplicar diretamente na plataforma
 
 <sub>
 Fonte: Material produzido pelos autores (2025)
