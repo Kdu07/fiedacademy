@@ -55,7 +55,7 @@
 ## 2.1. Escopo do Projeto (sprints 1 e 4)
 
 ### 2.1.1. Modelo de 5 Forças de Porter (sprint 1)
-As forças de Porter analisam o nível de competitividade e atratividade de um setor por meio de cinco fatores: ameaça de novos entrantes, poder de barganha de fornecedores, poder de barganha de clientes, ameaça de produtos substitutos e rivalidade entre concorrentes. Desse modo a posição da Bayer no setor se dá da seguinte maneira:  <br>
+As forças de Porter analisam o nível de competitividade e atratividade de um setor por meio de cinco fatores: ameaça de novos entrantes, poder de barganha de fornecedores, poder de barganha de clientes, ameaça de produtos substitutos e rivalidade entre concorrentes. Desse modo a posição da Bayer no setor se dá da seguinte maneira: <br>
 
 <img src="../assets/assets_wad/5forcasDePorter.png">
 
@@ -84,23 +84,23 @@ A Bayer se destaca pela forte inovação tecnológica, marca global consolidada 
 
 ### 2.1.3. Solução (sprints 1 a 5)
 
+#### 1. Problema a ser resolvido:
+A empresa Bayer oferece uma plataforma digital, Climate FieldView, que monitora a saúde dos campos e coleta informações de produções agrícolas. Atualmente há uma equipe de atendimento aos produtores, PTDs (Promotores Técnicos Digitais). Entretanto esses profissionais apresentam lacunas no conhecimento necessário para auxiliar os agricultores, ocasionando a alta rotatividade de promotores e a sobrecarga na equipe de suporte.
 
+#### 2. Dados disponíveis: 
+Com base nos dados disponibilizados pela empresa, análises internas da Bayer indicam alta rotatividade de PTDs, sobrecarga no suporte e dificuldades dos promotores em campo ao utilizar a plataforma digital Climate FieldView.
 
-   1. A empresa Bayer oferece uma plataforma digital, Climate FieldView, que monitora a saúde dos campos e coleta informações de produções agrícolas. Atualmente há uma equipe de atendimento aos produtores, PTDs (Promotores Técnicos Digitais).  Entretanto estes profissionais apresentam lacunas no conhecimento necessário para auxiliar os agricultores, ocasionando a alta rotatividade de promotores e a sobrecarga na equipe de suporte.
+#### 3. Solução proposta:
+Propomos uma aplicação web com trilhas de capacitação personalizadas. A aplicação web conta com trilhas de aprendizado que são atualizadas e personalizadas pelo gestor, além de fácil resposta a qualquer dúvida durante o atendimento no campo. <br>    
 
+#### 4. Forma de utilização da solução:
+A solução poderá ser utilizada tanto no formato mobile, quanto em um navegador web, além da possibilidade de acesso offline, garantindo acesso mesmo em locais com pouca conectividade, como áreas rurais.<br>
 
-2. TAPI
+#### 5. Benefícios esperados
+Espera-se que os PTDs atuem com maior autonomia e eficiência, reduzindo o número de chamados ao suporte e aumentando a satisfação dos produtores. Com isso, esses profissionais poderão otimizar seu tempo e focar o trabalho em objetivos mais específicos. <br>
 
-
-3.  A nossa solução é uma aplicação web com trilhas de capacitação, além  de ajudar e treinar os PTDs, nosso objetivo é ajudá-los a conciliar todos os empecilhos criados pelos agricultores. A aplicação web conta com trilhas de aprendizado que são atualizadas e personalizadas pelo gestor, além de fácil resposta a qualquer dúvida durante o atendimento no campo.       
-
-4. Nossa solução poderá ser utilizada tanto no formato mobile, quanto em um navegador web, além da plataforma poder ser acessada offline, garantindo acesso mesmo em locais com pouca conectividade, como áreas rurais. 
-
-5. Espera-se que os PTDs atuem com maior autonomia e eficiência, reduzindo o número de chamados ao suporte e aumentando a satisfação dos produtores. Com isso eles poderiam otimizar seu tempo e tarefas e focar o trabalho em objetivos mais redundantes.  
-
-
-6. Avaliaremos nosso sucesso a partir de feedback dos próprios PTDs, e também a partir de feedbacks dos agricultores. Além é claro de testar os promotores com um teste para ver se o conhecimento foi realmente adquirido no processo. Outro fator seria a redução de requisições para o time de suporte, que atualmente está saturado de tantos chamados.	
-
+#### 6. Critério de sucesso e como será avaliado
+Avaliaremos nosso sucesso a partir de feedbacks dos próprios PTDs, e também dos agricultores. Além de avaliar os promotores através de testes ao final de cada trilha do conhecimento, avaliando a retenção de conteúdo.<br>
 
 ### 2.1.4. Value Proposition Canvas (sprint 1): 
 O canva de proposta de valor é uma ferramenta para organizar os pontos principais de necessidades e expectativas do cliente e relacioná-los com a solução entregue, garantindo que todos os pontos foram atendidos.
