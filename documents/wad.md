@@ -212,19 +212,115 @@ Fonte: Material produzido pelos autores (2025)
 
 ## 2.3. User Stories (sprints 1 a 5)
 
-*Posicione aqui a lista de User Stories levantadas para o projeto. Siga o template de User Stories e utilize a mesma referência USXX no roadmap de seu quadro Kanban. Indique todas as User Stories mapeadas, mesmo aquelas que não forem implementadas ao longo do projeto. Não se esqueça de explicar o INVEST das 5 User Stories prioritárias*
-
-*ATUALIZE ESTA SEÇÃO SEMPRE QUE ALGUMA DEMANDA MUDAR EM SEU PROJETO*
-
-*Template de User Story*
-Identificação | USXX (troque XX por numeração ordenada das User Stories)
+Identificação | US01 (Prioritária)
 --- | ---
-Persona | nome da Persona
-User Story | "como (papel/perfil), posso (ação/meta), para (benefício/razão)"
-Critério de aceite 1 | CR1: descrever cenário + testes de aceite
-Critério de aceite 2 | CR2: descrever cenário + testes de aceite
-Critério de aceite ... | CR...
-Critérios INVEST | *(Por que é Independente? Por que é Negociável? Por que é Valorosa? Por que é Estimável? Por que é Pequena? Por que é Testável?)*
+Persona | Mariana Lima (PTD) 
+User Story | “Como PTD, quero buscar rapidamente conteúdos técnicos (vídeos, manuais, infográficos), para resolver dúvidas no campo sem depender do suporte.”
+Critério de aceite 1 | CR1: Mariana pode buscar por palavras-chave (ex: “sensor”, “drive”) e obter resultados relevantes em até 2 cliques.
+Critério de aceite 2 | CR2: Os conteúdos são apresentados em formatos curtos (até 10 minutos) e com linguagem acessível.
+Critério de aceite 3 | CR3: Mariana pode favoritar conteúdos para acesso posterior. (outra US) | 
+Critérios INVEST | **Independente**: Não depende de outras funcionalidades como quizzes ou ranking. <br> **Negociável**: Os formatos de conteúdo e filtros podem ser ajustados conforme feedback.<br> **Valorosa**: Reduz o tempo de resolução de dúvidas e evita erros em campo.<br> **Estimável**: Esforço claro (busca, favoritos, sugestão).  <br> **Small**: Foco apenas em busca e exibição de conteúdo. <br> **Testável:** Simulação de buscas e acesso offline.
+
+
+Identificação| US02 (Prioritária)
+--- | ---
+Persona |Mariana Lima (PTD)
+User Story | “Como PTD, quero receber recomendações de trilhas de aprendizagem baseadas nas minhas deficiências técnicas, para evoluir de forma direcionada.” 
+Critério de aceite 1| CR1: Conteúdos são recomendados de acordo com lacunas identificadas no onboarding e desempenho em atividades anteriores na plataforma.
+Critério de aceite 2 |CR2: O progresso e o desempenho em cada trilha são exibidos em porcentagem.
+Critério de aceite 3 | CR3: Mariana recebe feedback imediato ao completar os módulos.
+Critérios INVEST |  **Independente:** Não depende de gamificação ou certificação. <br> **Negociável:** Critérios do diagnóstico podem ser ajustados. <br> **Valorosa:** Foco no aprendizado eficiente. <br> **Estimável:** Diagnóstico e lógica de recomendação são claros.<br> **Small:** Apenas trilhas e feedback. <br> **Testável:** Teste com perfis simulados. 
+
+
+Identificação |US03 (Prioritária)
+--- | --- 
+Persona | Mariana Lima (PTD)
+User Story | “Como PTD, quero receber um certificado ao concluir uma trilha e ser aprovada em uma avaliação, para comprovar minha capacitação.” 
+Critério de aceite 1 | CR1: Certificado é gerado automaticamente após 80% de acerto em um quiz.
+Critério de aceite 2 | CR2: Certificado inclui nome, trilha, data e habilidades validadas.
+Critério de aceite 3 | CR3: Mariana pode baixar e compartilhar o certificado.
+Critérios INVEST | **Independente:** Não depende de ranking ou notificações.<br> **Negociável:** Critérios de aprovação podem variar. <br> **Valorosa:** Comprova capacitação e valoriza o PTD. <br> **Estimável:** Quiz, emissão e histórico são claros. <br> **Small:** Foco em uma trilha por vez. <br> **Testável:** Simulação de aprovação/reprovação.
+
+
+Identificação|US04 
+--- | ---
+Persona | Mariana Lima (PTD)
+User Story | “Como PTD, quero avaliar e comentar os conteúdos consumidos, para contribuir com a melhoria da plataforma.” 
+Critério de aceite 1 | CR1: Mariana pode dar nota e comentar após cada conteúdo.
+Critério de aceite 2 | CR2: Feedback é enviado automaticamente aos gestores.
+Critério de aceite 3 | CR3: Mariana pode visualizar o histórico de avaliações feitas.
+Critério de aceite 4 | CR4: Mariana pode reportar conteúdos desatualizados.
+
+
+US05 (Prioritária) | Identificação
+--- | ---
+Persona| Mariana Lima (PTD)
+User Story | “Como PTD, quero baixar módulos e vídeos para acessar offline, para não ficar sem suporte em áreas sem internet.” 
+Critério de aceite 1 | CR1: Mariana pode selecionar e baixar conteúdos.
+Critério de aceite 2 | CR2: Conteúdo baixado é acessível sem conexão.
+Critério de aceite 3 | CR3: O sistema indica conteúdos disponíveis offline.
+Critério de aceite 4| CR4: Mariana pode remover conteúdos baixados.
+Critérios INVEST| <br> **Independente:** Não depende de notificações ou ranking. | <br> **Negociável:** Pode ser implementado para tipos de conteúdo específicos. | <br> **Valorosa:** Garante acesso à capacitação no campo.| <br> **Estimável:** Download, cache e notificação são claros.| <br> **Small:** Foco em download e acesso offline.| <br> **Testável:** Simulação de acesso offline.
+
+
+
+Identificação| US06 (Prioritária)
+--- | ---
+Persona | Jorge Almeida (Coordenador)
+User Story | “Como gestor, quero visualizar o progresso de cada PTD nas trilhas de capacitação, para identificar quem precisa de reciclagem.” 
+Critério de aceite 1 | CR1: Jorge acessa relatórios individuais e coletivos de progresso.
+Critério de aceite 2 | CR2: O sistema envia alertas sobre PTDs com baixo desempenho.
+Critério de aceite 3 | CR3: Jorge pode visualizar o histórico de capacitação de cada PTD.
+Critério de aceite 4 | CR4: Histórico de trilhas atribuídas fica registrado.
+Critérios INVEST |  **Independente:** Não depende de gamificação ou notificações. <br> **Negociável:** Filtros e formatos de exportação podem ser ajustados. <br> **Valorosa:** Permite gestão proativa. <br> **Estimável:** Relatórios, filtros e exportação são claros. <br> **Small:** Relatórios apenas de progresso. <br> **Testável:** Geração e exportação de relatórios simulados.
+
+
+Identificação | US07
+--- | ---
+Persona | Jorge Almeida (Coordenador)
+User Story | “Como gestor, quero atribuir trilhas de conhecimento a PTDs específicos, para personalizar a capacitação conforme a necessidade.” 
+Critério de aceite 1 | CR1: Jorge seleciona trilhas e designa para PTDs.
+Critério de aceite 2 | CR2:  PTDs recebem notificação da trilha atribuída.
+Critério de aceite 3 | CR3: Histórico de trilhas atribuídas fica registrado.
+Critério de aceite 4 | CR4: Jorge pode remover ou alterar trilhas atribuídas.
+
+
+
+Identificação | US08
+--- | ---
+Persona | Jorge Almeida (Coordenador)
+User Story | “Como gestor, quero visualizar feedbacks e avaliações dos PTDs sobre os conteúdos, para aprimorar o material de capacitação.” 
+Critério de aceite 1 | CR1: Jorge acessa painel com avaliações e comentários dos PTDs.
+Critério de aceite 2 | CR2: Pode filtrar feedbacks por conteúdo, data ou nota.
+Critério de aceite 3 | CR3: O sistema sugere conteúdos com mais reclamações para revisão.
+Critério de aceite 4 | CR4: Jorge pode marcar feedbacks como resolvidos.
+Critério de aceite 5 | CR5: Histórico de melhorias realizadas fica disponível.
+
+
+
+Identificação | US09
+--- | ---
+Persona | Jorge Almeida (Coordenador)
+User Story | “Como gestor, quero receber alertas automáticos sobre PTDs com baixo desempenho em quizzes, para agir rapidamente.” 
+Critério de aceite 1 | CR1: Jorge recebe notificação por e-mail/app quando um PTD falha 3 vezes.
+Critério de aceite 2 | CR2: O sistema sugere módulos de reforço.
+Critério de aceite 3 | CR3: O histórico de alertas fica disponível.
+Critério de aceite 4 | CR4: Jorge pode enviar mensagens de orientação ao PTD.
+Critério de aceite 5 | CR5: Alertas podem ser configurados conforme critério.
+
+
+
+Identificação | US10
+--- | ---
+Persona | Jorge Almeida (Coordenador)
+User Story | “Como gestor, quero exportar relatórios de progresso e desempenho dos PTDs em formatos PDF e Excel, para compartilhar em reuniões.” 
+Critério de aceite 1 | CR1: Jorge pode selecionar período e tipo de relatório.
+Critério de aceite 2 | CR2: Relatórios são gerados em PDF ou Excel.
+Critério de aceite 3 | CR3: Dados exportados incluem filtros aplicados.
+Critério de aceite 4 | CR4: Relatórios podem ser enviados por e-mail.
+Critério de aceite 5 | CR5: Histórico de relatórios exportados fica disponível.
+
+
 
 # <a name="c3"></a>3. Projeto da Aplicação Web (sprints 1 a 4)
 
