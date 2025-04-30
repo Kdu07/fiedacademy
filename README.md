@@ -1,7 +1,7 @@
 # Inteli - Instituto de Tecnologia e Liderança 
 
 <p align="center">
-<a href= "https://www.inteli.edu.br/"><img src="/assets/assets_gdd/inteli.png" alt="Inteli - Instituto de Tecnologia e Liderança" border="0"></a>
+<a href= "https://www.inteli.edu.br/"><img src="/assets/assets_wad/inteli.png" alt="Inteli - Instituto de Tecnologia e Liderança" border="0"></a>
 </p>
 
 # Nome do projeto
@@ -10,8 +10,8 @@
 
 ## :student: Integrantes: 
 - <a href="https://www.linkedin.com/in/antoniodicillo/">Antonio Di Cillo</a>
-- <a href="https://www.linkedin.com/">Carlos Quaglia</a>
-- <a href="https://www.linkedin.com/">Emanuelly Dias</a> 
+- <a href="https://github.com/CaduQuaglia">Carlos Quaglia</a>
+- <a href="https://www.linkedin.com/in/emanuelly-cantarelli-2a0480305/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app">Emanuelly Dias</a> 
 - <a href="https://www.linkedin.com/in/joao-agmont-b82228359/">Joao Agmont</a> 
 - <a href="https://www.linkedin.com/in/luiz-hinuy-0995252b1/">Luiz Hinuy</a>
 - <a href="https://www.linkedin.com/in/maria-arielly/">Maria Arielly</a> 
