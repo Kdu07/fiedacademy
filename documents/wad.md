@@ -96,6 +96,7 @@ A Bayer se destaca pela forte inovação tecnológica, marca global consolidada 
 6. Critério de sucesso e como será avaliado
 
 ### 2.1.4. Value Proposition Canvas (sprint 1): 
+O canva de proposta de valor é uma ferramenta para organizar os pontos principais de necessidades e expectativas do cliente e relacioná-los com a solução entregue, garantindo que todos os pontos foram atendidos.
 
 <img src="../assets/assets_wad/PropostaDeValor.png">
 
