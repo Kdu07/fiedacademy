@@ -87,13 +87,23 @@ A Bayer se destaca pela forte inovação tecnológica, marca global consolidada 
 
 ### 2.1.3. Solução (sprints 1 a 5)
 
-*Explique detalhadamente os seguintes aspectos (até 60 palavras por item):*
-1. Problema a ser resolvido
-2. Dados disponíveis (mencionar fonte e conteúdo; se não houver, indicar “não se aplica”)
-3. Solução proposta
-4. Forma de utilização da solução
-5. Benefícios esperados
-6. Critério de sucesso e como será avaliado
+
+
+   1. A empresa Bayer oferece uma plataforma digital, Climate FieldView, que monitora a saúde dos campos e coleta informações de produções agrícolas. Atualmente há uma equipe de atendimento aos produtores, PTDs (Promotores Técnicos Digitais).  Entretanto estes profissionais apresentam lacunas no conhecimento necessário para auxiliar os agricultores, ocasionando a alta rotatividade de promotores e a sobrecarga na equipe de suporte.
+
+
+2. TAPI
+
+
+3.  A nossa solução é uma aplicação web com trilhas de capacitação, além  de ajudar e treinar os PTDs, nosso objetivo é ajudá-los a conciliar todos os empecilhos criados pelos agricultores. A aplicação web conta com trilhas de aprendizado que são atualizadas e personalizadas pelo gestor, além de fácil resposta a qualquer dúvida durante o atendimento no campo.       
+
+4. Nossa solução poderá ser utilizada tanto no formato mobile, quanto em um navegador web, além da plataforma poder ser acessada offline, garantindo acesso mesmo em locais com pouca conectividade, como áreas rurais. 
+
+5. Espera-se que os PTDs atuem com maior autonomia e eficiência, reduzindo o número de chamados ao suporte e aumentando a satisfação dos produtores. Com isso eles poderiam otimizar seu tempo e tarefas e focar o trabalho em objetivos mais redundantes.  
+
+
+6. Avaliaremos nosso sucesso a partir de feedback dos próprios PTDs, e também a partir de feedbacks dos agricultores. Além é claro de testar os promotores com um teste para ver se o conhecimento foi realmente adquirido no processo. Outro fator seria a redução de requisições para o time de suporte, que atualmente está saturado de tantos chamados.	
+
 
 ### 2.1.4. Value Proposition Canvas (sprint 1): 
 O canva de proposta de valor é uma ferramenta para organizar os pontos principais de necessidades e expectativas do cliente e relacioná-los com a solução entregue, garantindo que todos os pontos foram atendidos.
