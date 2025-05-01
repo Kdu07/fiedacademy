@@ -208,7 +208,19 @@ Fonte: Material produzido pelos autores (2025)
 
 ## 2.2. Personas (sprint 1)
 
-*Posicione aqui suas Personas em forma de texto markdown com imagens, ou como imagem de template preenchido. Atualize esta seção ao longo do módulo se necessário.*
+<div align = "center">
+
+<sup>Figura 2: Persona "Mariana Lima" (PTD).</sup><br>
+
+<img src="../assets/assets_wad/Mariana Lima Persona.png"><br>
+
+<sub>Fonte: Material produzido pelos autores (2025). </sub><br>
+
+<sup>Figura 2: Persona "Jorge Almeida" (Coordenador).</sup><br>
+
+<img src="../assets/assets_wad/Jorge Persona.png"><br>
+
+<sub>Fonte: Material produzido pelos autores (2025). </sub><br>
 
 ## 2.3. User Stories (sprints 1 a 5)
 
