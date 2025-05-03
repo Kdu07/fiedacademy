@@ -29,7 +29,13 @@
 
 ## 📝 Descrição
 
-_Descreva seu projeto (até 600 palavras)_
+O projeto tem como propósito desenvolver uma plataforma web de capacitação técnica voltada aos PTDs (Profissionais Técnicos de Desenvolvimento) da divisão agrícola da Bayer AG — empresa referência global em inovação no agronegócio e pioneira em soluções digitais como o Climate FieldView.
+
+Apesar dos avanços tecnológicos da empresa e dos investimentos constantes em pesquisa e desenvolvimento, desafios internos como o alto turnover (acima de 30% ao ano) e a ausência de um treinamento estruturado ainda comprometem a eficiência e a padronização da atuação desses profissionais no campo.
+
+Foi a partir dessa lacuna que surgiu a ideia do projeto: oferecer uma solução digital que prepara os novos colaboradores antes mesmo de entrarem em campo, promovendo uma jornada de aprendizado clara, engajadora e eficaz. A plataforma oferece trilhas de conhecimento em diversos formatos, monitoramento individual de progresso e recursos de gamificação que aumentam a motivação e a retenção do conteúdo.
+
+Mais do que um ambiente de treinamento, o projeto busca transformar o processo de onboarding técnico em uma experiência interativa, inteligente e alinhada às reais demandas da operação de campo. Assim, FieldAcademy tem o objetivo de garantir que os PTDs se sintam preparados, confiantes e capacitados para o atendimento ao campo.
 
 ## 📝 Link de demonstração
 
@@ -81,8 +87,8 @@ npm start
     * 
 * 0.2.0 - XX/XX/2024
     * 
-* 0.1.0 - XX/XX/2024
-    *
+* 0.1.0 - 30/04/2024 - Idealização inicial da plataforma, a partir do entendimento do negócio e do problema.*
+    
 
 ## 📋 Licença/License
 ```

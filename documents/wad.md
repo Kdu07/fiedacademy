@@ -17,8 +17,6 @@
 - <a href="https://www.linkedin.com/in/maria-arielly/">Maria Arielly</a> 
 - <a href="https://www.linkedin.com/in/-rafael-cabral/">Rafael Cabral</a>
 
-
-
 ## Sumário
 
 [1. Introdução](#c1)
@@ -44,35 +42,42 @@
 
 # <a name="c1"></a>1. Introdução (sprints 1 a 5)
 
-&nbsp;&nbsp;&nbsp;&nbsp; A divisão agrícola da Bayer AG <sup>[1](c#10)</sup>, consolida-se como líder global em soluções integradas para o agronegócio, com foco em sementes geneticamente modificadas, defensivos agrícolas e tecnologias digitais. Seu portfólio inclui o Climate FieldView <sup>[2](c#11)</sup>,  plataforma digital que ajuda a priorizar o monitoramento, identificar problemas de forma rápida e tomar medidas para proteger sua produtividade por meio de imagens de satélite de fácil utilização e de alta qualidade. <br>
+&nbsp;&nbsp;&nbsp;&nbsp; A divisão agrícola da Bayer AG <sup>[1](#c10)</sup>, consolida-se como líder global em soluções integradas para o agronegócio, com foco em sementes geneticamente modificadas, defensivos agrícolas e tecnologias digitais. Seu portfólio inclui o Climate FieldView <sup>[2](#c11)</sup>,  plataforma digital que ajuda a priorizar o monitoramento, identificar problemas de forma rápida e tomar medidas para proteger sua produtividade por meio de imagens de satélite de fácil utilização e de alta qualidade. <br>
 
 &nbsp;&nbsp;&nbsp;&nbsp; A empresa investe fortemente em pesquisa e desenvolvimento, posicionando-se na vanguarda da agricultura 4.0. No entanto, existem problemáticas que comprometem sua eficácia, o primeiro problema que a equipe de PTDs enfrenta é o turnover acima de 30% ao ano. O **Turnover**, é a alta rotatividade de funcionários, acarreta em diversos impactos negativos, como aumento de custos com recrutamento e seleção, além da perda de conhecimento e experiência acumulada. A segunda problemática é a falta de treinamento estruturado que possa guiar o processo de desenvolvimento de habilidades e conhecimentos, dos novos contratados. Gerando resultados ineficazes, falta de progresso, contratempos no desempenho e segurança. <br>
 
-&nbsp;&nbsp;&nbsp;&nbsp; Para solucionar esse desafio, foi desenvolvida uma plataforma web de capacitação técnica, que oferece trilhas de conhecimento em diferentes formatos aos PTDs antes de sua atuação em campo, acompanhando o progresso individual dos colaboradores, além de incorporar elementos de gamificação para engajamento.  Os principais aspectos de criação de valor da solução estão na melhoria da experiência do produtor rural, na redução de custos operacionais com suporte, na padronização do atendimento e na possibilidade de monitorar e aprimorar continuamente a qualificação dos PTDs, alinhando o produto às expectativas e necessidades reais do parceiro de negócios. A solução proposta pelo nosso projeto visa não apenas corrigir gaps de conhecimento, como criar um ciclo virtuoso de engajamento, certificação e acompanhamento contínuo, alinhando a operação de campo às ambições de inovação da Bayer. <br>
+&nbsp;&nbsp;&nbsp;&nbsp; Para solucionar esse desafio, foi desenvolvida uma plataforma web de capacitação técnica, que oferece trilhas de conhecimento em diferentes formatos aos PTDs antes de sua atuação em campo, acompanhando o progresso individual dos colaboradores, além de incorporar elementos de gamificação para engajamento.  Os principais aspectos de criação de valor da solução estão na melhoria da experiência do produtor rural, na redução de custos operacionais com suporte, na padronização do atendimento e na possibilidade de monitorar e aprimorar continuamente a qualificação dos PTDs, alinhando o produto às expectativas e necessidades reais do parceiro de negócios. A solução proposta pelo nosso projeto visa não apenas corrigir gaps de conhecimento, como criar um ciclo virtuoso de engajamento, certificação e acompanhamento contínuo, alinhando a operação de campo às ambições de inovação da Bayer.<sup>[3](#c17)</sum> <br>
 
 # <a name="c2"></a>2. Visão Geral da Aplicação Web (sprint 1)
 
 ## 2.1. Escopo do Projeto (sprints 1 e 4)
 
 ### 2.1.1. Modelo de 5 Forças de Porter (sprint 1)
-As forças de Porter analisam o nível de competitividade e atratividade de um setor por meio de cinco fatores: ameaça de novos entrantes, poder de barganha de fornecedores, poder de barganha de clientes, ameaça de produtos substitutos e rivalidade entre concorrentes. Desse modo a posição da Bayer no setor se dá da seguinte maneira:  <br>
+As forças de Porter analisam o nível de competitividade e atratividade de um setor por meio de cinco fatores: ameaça de novos entrantes, poder de barganha de fornecedores, poder de barganha de clientes, ameaça de produtos substitutos e rivalidade entre concorrentes. Desse modo a posição da Bayer no setor se dá da seguinte maneira: <br>
 
-<img src="../assets/assets_wad/5forcasDePorter.png">
+<div align = "center">
+
+<sup>Figura 1: Forças de Porter do mercado da empresa Bayer.</sup><br>
+
+<img src="../assets/assets_wad/5forcasDePorter.png"><br>
+
+<sub>Fonte: Material produzido pelos autores (2025).</sub><br>
+</div>
 
 #### Ameaça de novos entrantes: Média a baixa. <br>
-O setor exige grandes investimentos em P&D, infraestrutura e cumprimento de regulações rigorosas, o que cria barreiras significativas. A Bayer ainda possui forte credibilidade entre os produtores, dificultando a entrada de novas marcas. Baseado em dados da revista Exame <sup>[3](#c3)</sup>, startups AgTech estão conseguindo espaço com soluções tecnológicas específicas, como agricultura de precisão e monitoramento por IA. <br>
+O setor exige grandes investimentos em P&D, infraestrutura e cumprimento de regulações rigorosas, o que cria barreiras significativas. A Bayer ainda possui forte credibilidade entre os produtores, dificultando a entrada de novas marcas. Baseado em dados da revista Exame <sup>[4](#c12)</sup>, startups AgTech estão conseguindo espaço com soluções tecnológicas específicas, como agricultura de precisão e monitoramento por IA. <br>
 
 #### Poder de barganha dos fornecedores: Baixo.<br>
 A Bayer, sendo uma multinacional de grande porte, possui escala global que lhe confere vantagem nas negociações com fornecedores. Além disso, sua estratégia de diversificação de fornecedores em vários países e seu investimento em verticalização (produção própria de insumos) reduz sua dependência externa. <br>
 
 #### Poder de barganha dos clientes: Médio. <br>
-Produtores rurais e grandes cooperativas têm algum poder de negociação, principalmente em mercados onde a concorrência é intensa. Ainda assim, muitos clientes tradicionais mostram resistência inicial a novas tecnologias, como mostra a matéria da Distrito <sup>[4](#c13)</sup>. A Bayer busca mitigar isso oferecendo pacotes integrados e tecnologias patenteadas, dificultando a substituição por concorrentes. <br>
+Produtores rurais e grandes cooperativas têm algum poder de negociação, principalmente em mercados onde a concorrência é intensa. Ainda assim, muitos clientes tradicionais mostram resistência inicial a novas tecnologias, como mostra a matéria da Distrito <sup>[5](#c13)</sup>. A Bayer busca mitigar isso oferecendo pacotes integrados e tecnologias patenteadas, dificultando a substituição por concorrentes. <br>
 
 #### Ameaça de produtos substitutos: Média. <br>
-Pequenos produtores e mercados de nicho estão buscando alternativas sustentáveis, como biopesticidas e métodos orgânicos de cultivo evidenciado por Compre Rural <sup>[5](#c14)</sup>. Embora essas opções estejam crescendo, os produtos da Bayer ainda oferecem maior escala, eficácia e previsibilidade, fatores decisivos para grandes produtores.<br>
+Pequenos produtores e mercados de nicho estão buscando alternativas sustentáveis, como biopesticidas e métodos orgânicos de cultivo evidenciado por Compre Rural <sup>[6](#c14)</sup>. Embora essas opções estejam crescendo, os produtos da Bayer ainda oferecem maior escala, eficácia e previsibilidade, fatores decisivos para grandes produtores.<br>
 
 #### Rivalidade entre concorrentes: Alta. <br>
-A disputa no setor é intensa, envolvendo grandes empresas como Syngenta, Corteva e BASF. A competição se baseia principalmente em inovação tecnológica, desenvolvimento de patentes e capacidade de oferecer soluções digitais avançadas, fator esse evidenciado na Imagen Agropecuaria <sup>[6](#c15)</sup>. Estratégias como fusões e aquisições são comuns para fortalecer posições de mercado e expandir a base tecnológica.<br>
+A disputa no setor é intensa, envolvendo grandes empresas como Syngenta, Corteva e BASF. A competição se baseia principalmente em inovação tecnológica, desenvolvimento de patentes e capacidade de oferecer soluções digitais avançadas, fator esse evidenciado na Imagen Agropecuaria <sup>[7](#c15)</sup>. Estratégias como fusões e aquisições são comuns para fortalecer posições de mercado e expandir a base tecnológica.<br>
 
 ### 2.1.2. Análise SWOT da Instituição Parceira (sprint 1)
 
@@ -80,41 +85,56 @@ Ferramenta que analisa forças, fraquezas, oportunidades, ameaças.
 
 A Bayer se destaca pela forte inovação tecnológica, marca global consolidada e capacidade financeira, o que a posiciona entre os líderes do agronegócio mundial. Seu portfólio integrado reforça a competitividade frente a rivais como Syngenta, Corteva e BASF. No entanto, enfrenta desafios de altos custos e maior pressão regulatória, que podem ser explorados por concorrentes. O crescimento da agricultura digital e da demanda por sustentabilidade abre oportunidades para reforçar sua liderança. A empresa busca equilibrar produtividade e responsabilidade ambiental para se diferenciar num mercado cada vez mais competitivo e sensível às questões sociais. <br>
 
-<img src="../assets/assets_wad/MatrizSWOT.png">
+<div align = "center">
+
+<sup>Figura 2: Análise SWOT da Bayer.</sup><br>
+
+<img src="../assets/assets_wad/MatrizSWOT.png"><br>
+
+<sub>Fonte: Material produzido pelos autores (2025).</sub><br>
+</div>
 
 ### 2.1.3. Solução (sprints 1 a 5)
 
+#### 1. Problema a ser resolvido:
+A empresa Bayer oferece uma plataforma digital, Climate FieldView, que monitora a saúde dos campos e coleta informações de produções agrícolas. Atualmente há uma equipe de atendimento aos produtores, PTDs (Promotores Técnicos Digitais). Entretanto esses profissionais apresentam lacunas no conhecimento necessário para auxiliar os agricultores, ocasionando a alta rotatividade de promotores e a sobrecarga na equipe de suporte.
 
+#### 2. Dados disponíveis: 
+Com base nos dados disponibilizados pela empresa, análises internas da Bayer indicam alta rotatividade de PTDs, sobrecarga no suporte e dificuldades dos promotores em campo ao utilizar a plataforma digital Climate FieldView.
 
-   1. A empresa Bayer oferece uma plataforma digital, Climate FieldView, que monitora a saúde dos campos e coleta informações de produções agrícolas. Atualmente há uma equipe de atendimento aos produtores, PTDs (Promotores Técnicos Digitais).  Entretanto estes profissionais apresentam lacunas no conhecimento necessário para auxiliar os agricultores, ocasionando a alta rotatividade de promotores e a sobrecarga na equipe de suporte.
+#### 3. Solução proposta:
+A solução consiste em uma aplicação web com trilhas de capacitação personalizadas, iniciando com um módulo obrigatório de onboarding. Essas trilhas de aprendizado funcionarão como módulos, e poderão ser atualizadas e personalizadas pelo gestor. Além disso, um ponto principal da plataforma será a fácil busca a qualquer dúvida que possa surgir durante o atendimento no campo. <br>    
 
+#### 4. Forma de utilização da solução:
+A solução poderá ser utilizada tanto no formato mobile, quanto em um navegador web, além da possibilidade de acesso offline, garantindo acesso mesmo em locais com pouca conectividade, como áreas rurais.<br>
 
-2. TAPI
+#### 5. Benefícios esperados
+Espera-se que os PTDs atuem com maior autonomia e eficiência, reduzindo o número de chamados ao suporte e aumentando a satisfação dos produtores. Com isso, esses profissionais poderão otimizar seu tempo e focar o trabalho em objetivos mais específicos. <br>
 
-
-3.  A nossa solução é uma aplicação web com trilhas de capacitação, além  de ajudar e treinar os PTDs, nosso objetivo é ajudá-los a conciliar todos os empecilhos criados pelos agricultores. A aplicação web conta com trilhas de aprendizado que são atualizadas e personalizadas pelo gestor, além de fácil resposta a qualquer dúvida durante o atendimento no campo.       
-
-4. Nossa solução poderá ser utilizada tanto no formato mobile, quanto em um navegador web, além da plataforma poder ser acessada offline, garantindo acesso mesmo em locais com pouca conectividade, como áreas rurais. 
-
-5. Espera-se que os PTDs atuem com maior autonomia e eficiência, reduzindo o número de chamados ao suporte e aumentando a satisfação dos produtores. Com isso eles poderiam otimizar seu tempo e tarefas e focar o trabalho em objetivos mais redundantes.  
-
-
-6. Avaliaremos nosso sucesso a partir de feedback dos próprios PTDs, e também a partir de feedbacks dos agricultores. Além é claro de testar os promotores com um teste para ver se o conhecimento foi realmente adquirido no processo. Outro fator seria a redução de requisições para o time de suporte, que atualmente está saturado de tantos chamados.	
-
+#### 6. Critério de sucesso e como será avaliado
+O sucesso da solução será avaliado a partir de feedbacks dos próprios PTDs, e também dos agricultores. Além de avaliações ao final de cada trilha do conhecimento, através de testes com questões, como forma de analisar a retenção de conteúdo.<br>
 
 ### 2.1.4. Value Proposition Canvas (sprint 1): 
-O canva de proposta de valor é uma ferramenta para organizar os pontos principais de necessidades e expectativas do cliente e relacioná-los com a solução entregue, garantindo que todos os pontos foram atendidos.
+O canva de proposta de valor é uma ferramenta para organizar os pontos principais de necessidades e expectativas do cliente e relacioná-los com o projeto que será entregue, garantindo que todos os pontos foram atendidos.
 
-<img src="../assets/assets_wad/PropostaDeValor.png">
+<div align = "center">
+
+<sup>Figura 3: Canvas Proposta de Valor.</sup><br>
+
+<img src="../assets/assets_wad/PropostaDeValor.png"><br>
+
+<sub>Fonte: Material produzido pelos autores (2025).</sub><br>
+</div>
 
 ### Perfil do cliente
-### Tarefas do cliente
+#### Tarefas do cliente
 #### Atendimento aos produtores: 
 PTDs comparecem presencialmente nas fazendas para solucionar problemas sobre o sistema fieldview
 #### Utilizar site de ajuda rápida: 
 Para responder dúvidas específicas os promotores utilizam o site já existente de ajuda rápida
 #### Ligar para o suporte para atender dúvidas técnicas: 
-Caso as informações que precisa não se encontrem no site de ajuda rápida o promotor recorre ao suporte técnico
+Caso as informações que precisa não se encontrem no site de ajuda rápida o promotor recorre ao suporte técnico<br>
+
 ### Ganhos
 #### (1) Nivelamento de conhecimento dos profissionais: 
 Ferramenta para direcionar os conteúdos organizadamente
@@ -123,7 +143,8 @@ O PTD necessita de uma solução onde consiga pesquisar os conteúdos usando pal
 #### (3) Facilidade no uso da plataforma: 
 O promotor deve acessar a página que deseja de forma intuitiva e com poucos cliques
 #### (4) Acesso a informações sem conexão à internet: 
-No cotidiano o PTD se move para lugares onde a conexão à internet é lenta ou inexistente, portanto necessita de opções offline
+No cotidiano o PTD se move para lugares onde a conexão à internet é lenta ou inexistente, portanto necessita de opções offline<br>
+
 ### Dores
 #### (1) Informações sobre o fieldview distribuídas por vários locais: 
 Atualmente os guias e conhecimento sobre o fieldview estão distribuídos em pelo menos três plataformas diferentes e de forma desorganizada além de ser frequentemente passados por chat entre os PTDs
@@ -163,11 +184,11 @@ Os funcionários com acesso especial para gerenciar a plataforma conseguem adici
 
 ### 2.1.5. Matriz de Riscos do Projeto (sprint 1)
 
-&nbsp;&nbsp;&nbsp;&nbsp; A matriz de riscos é uma ferramenta visual e analítica fundamental para a gestão de projetos, permitindo a identificação, análise e avaliação dos riscos que podem impactar objetivos organizacionais e projetos. A matriz de riscos consiste em uma representação gráfica que cruza dois eixos principais: a probabilidade de ocorrência de um risco e o impacto que esse risco pode causar. Essa abordagem possibilita classificar os riscos em diferentes níveis de criticidade, facilitando a priorização das ações de mitigação e o direcionamento eficiente de recursos para os riscos mais relevantes <sup>[2](#c11)</sup>. Dessa forma, a matriz de riscos foi utilizada em nosso projeto para identificar potenciais situações adversas que podem vir a afetar o andamento do trabalho, como também ações que estão sendo utilizadas para diminuir essa probabilidade de ocorrência. <br>
+&nbsp;&nbsp;&nbsp;&nbsp; A matriz de riscos é uma ferramenta visual e analítica fundamental para a gestão de projetos, permitindo a identificação, análise e avaliação dos riscos que podem impactar objetivos organizacionais e projetos. A matriz de riscos consiste em uma representação gráfica que cruza dois eixos principais: a probabilidade de ocorrência de um risco e o impacto que esse risco pode causar. Essa abordagem possibilita classificar os riscos em diferentes níveis de criticidade, facilitando a priorização das ações de mitigação e o direcionamento eficiente de recursos para os riscos mais relevantes <sup>[8](#c16)</sup>. Dessa forma, a matriz de riscos foi utilizada em nosso projeto para identificar potenciais situações adversas que podem vir a afetar o andamento do trabalho, como também ações que estão sendo utilizadas para diminuir essa probabilidade de ocorrência. <br>
 
 <div align = "center">
 
-<sup>Figura 1: Matriz de Riscos do projeto.</sup><br>
+<sup>Figura 4: Matriz de Riscos do projeto.</sup><br>
 
 <img src="../assets/assets_wad/matrizDeRiscos.png"><br>
 
@@ -207,22 +228,29 @@ Fonte: Material produzido pelos autores (2025)
 </div>
 
 ## 2.2. Personas (sprint 1)
+Personas são representações fictícias de usuários ideais. Elas ajudam a entender melhor o público-alvo do projeto, guiando decisões de design e funcionalidades para atender às necessidades, expectativas e dores dos usuários de forma mais eficaz. Dessa forma, foram ocnstruidas as seguintes personas para o projeto:<br>
 
 <div align = "center">
 
-<sup>Figura 2: Persona "Mariana Lima" (PTD).</sup><br>
+<sup>Figura 5: Persona "Mariana Lima" (PTD).</sup><br>
 
 <img src="../assets/assets_wad/Mariana Lima Persona.png"><br>
 
 <sub>Fonte: Material produzido pelos autores (2025). </sub><br>
 
-<sup>Figura 2: Persona "Jorge Almeida" (Coordenador).</sup><br>
+<sup>Figura 6: Persona "Jorge Almeida" (Coordenador).</sup><br>
 
 <img src="../assets/assets_wad/Jorge Persona.png"><br>
 
 <sub>Fonte: Material produzido pelos autores (2025). </sub><br>
+</div>
 
 ## 2.3. User Stories (sprints 1 a 5)
+User Stories são descrições simples das funcionalidades do sistema escritas do ponto de vista do usuário final. Elas ajudam a definir o que o sistema deve fazer, focando nas necessidades e objetivos do usuário. Dessa forma, foram feitas as seguintes User Stories para o projeto:<br>
+
+<div align = "center">
+
+<sup>Quadro 3: US01.</sup><br>
 
 Identificação | US01 (Prioritária)
 --- | ---
@@ -234,6 +262,10 @@ Critério de aceite 3 | CR3: Mariana pode favoritar conteúdos para acesso poste
 Critérios INVEST | **Independente**: Não depende de outras funcionalidades como quizzes ou ranking. <br> **Negociável**: Os formatos de conteúdo e filtros podem ser ajustados conforme feedback.<br> **Valorosa**: Reduz o tempo de resolução de dúvidas e evita erros em campo.<br> **Estimável**: Esforço claro (busca, favoritos, sugestão).  <br> **Small**: Foco apenas em busca e exibição de conteúdo. <br> **Testável:** Simulação de buscas e acesso offline.
 
 
+<sub>Fonte: Material produzido pelos autores (2025).</sub><br>
+
+<sup>Quadro 4: US02.</sup><br>
+
 Identificação| US02 (Prioritária)
 --- | ---
 Persona |Mariana Lima (PTD)
@@ -243,6 +275,9 @@ Critério de aceite 2 |CR2: O progresso e o desempenho em cada trilha são exibi
 Critério de aceite 3 | CR3: Mariana recebe feedback imediato ao completar os módulos.
 Critérios INVEST |  **Independente:** Não depende de gamificação ou certificação. <br> **Negociável:** Critérios do diagnóstico podem ser ajustados. <br> **Valorosa:** Foco no aprendizado eficiente. <br> **Estimável:** Diagnóstico e lógica de recomendação são claros.<br> **Small:** Apenas trilhas e feedback. <br> **Testável:** Teste com perfis simulados. 
 
+<sub>Fonte: Material produzido pelos autores (2025).</sub><br>
+
+<sup>Quadro 5: US03.</sup><br>
 
 Identificação |US03 (Prioritária)
 --- | --- 
@@ -254,6 +289,10 @@ Critério de aceite 3 | CR3: Mariana pode baixar e compartilhar o certificado.
 Critérios INVEST | **Independente:** Não depende de ranking ou notificações.<br> **Negociável:** Critérios de aprovação podem variar. <br> **Valorosa:** Comprova capacitação e valoriza o PTD. <br> **Estimável:** Quiz, emissão e histórico são claros. <br> **Small:** Foco em uma trilha por vez. <br> **Testável:** Simulação de aprovação/reprovação.
 
 
+<sub>Fonte: Material produzido pelos autores (2025).</sub><br>
+
+<sup>Quadro 6: US04.</sup><br>
+
 Identificação|US04 
 --- | ---
 Persona | Mariana Lima (PTD)
@@ -263,6 +302,10 @@ Critério de aceite 2 | CR2: Feedback é enviado automaticamente aos gestores.
 Critério de aceite 3 | CR3: Mariana pode visualizar o histórico de avaliações feitas.
 Critério de aceite 4 | CR4: Mariana pode reportar conteúdos desatualizados.
 
+
+<sub>Fonte: Material produzido pelos autores (2025).</sub><br>
+
+<sup>Quadro 7: US05.</sup><br>
 
 US05 (Prioritária) | Identificação
 --- | ---
@@ -275,6 +318,9 @@ Critério de aceite 4| CR4: Mariana pode remover conteúdos baixados.
 Critérios INVEST| <br> **Independente:** Não depende de notificações ou ranking. | <br> **Negociável:** Pode ser implementado para tipos de conteúdo específicos. | <br> **Valorosa:** Garante acesso à capacitação no campo.| <br> **Estimável:** Download, cache e notificação são claros.| <br> **Small:** Foco em download e acesso offline.| <br> **Testável:** Simulação de acesso offline.
 
 
+<sub>Fonte: Material produzido pelos autores (2025).</sub><br>
+
+<sup>Quadro 8: US06.</sup><br>
 
 Identificação| US06 (Prioritária)
 --- | ---
@@ -287,6 +333,11 @@ Critério de aceite 4 | CR4: Histórico de trilhas atribuídas fica registrado.
 Critérios INVEST |  **Independente:** Não depende de gamificação ou notificações. <br> **Negociável:** Filtros e formatos de exportação podem ser ajustados. <br> **Valorosa:** Permite gestão proativa. <br> **Estimável:** Relatórios, filtros e exportação são claros. <br> **Small:** Relatórios apenas de progresso. <br> **Testável:** Geração e exportação de relatórios simulados.
 
 
+
+<sub>Fonte: Material produzido pelos autores (2025).</sub><br>
+
+<sup>Quadro 9: US07.</sup><br>
+
 Identificação | US07
 --- | ---
 Persona | Jorge Almeida (Coordenador)
@@ -297,6 +348,9 @@ Critério de aceite 3 | CR3: Histórico de trilhas atribuídas fica registrado.
 Critério de aceite 4 | CR4: Jorge pode remover ou alterar trilhas atribuídas.
 
 
+<sub>Fonte: Material produzido pelos autores (2025).</sub><br>
+
+<sup>Quadro 10: US08.</sup><br>
 
 Identificação | US08
 --- | ---
@@ -309,6 +363,9 @@ Critério de aceite 4 | CR4: Jorge pode marcar feedbacks como resolvidos.
 Critério de aceite 5 | CR5: Histórico de melhorias realizadas fica disponível.
 
 
+<sub>Fonte: Material produzido pelos autores (2025).</sub><br>
+
+<sup>Quadro 11: US09.</sup><br>
 
 Identificação | US09
 --- | ---
@@ -321,6 +378,9 @@ Critério de aceite 4 | CR4: Jorge pode enviar mensagens de orientação ao PTD.
 Critério de aceite 5 | CR5: Alertas podem ser configurados conforme critério.
 
 
+<sub>Fonte: Material produzido pelos autores (2025).</sub><br>
+
+<sup>Quadro 12: US10.</sup><br>
 
 Identificação | US10
 --- | ---
@@ -332,7 +392,8 @@ Critério de aceite 3 | CR3: Dados exportados incluem filtros aplicados.
 Critério de aceite 4 | CR4: Relatórios podem ser enviados por e-mail.
 Critério de aceite 5 | CR5: Histórico de relatórios exportados fica disponível.
 
-
+<sub>Fonte: Material produzido pelos autores (2025).</sub><br>
+</div>
 
 # <a name="c3"></a>3. Projeto da Aplicação Web (sprints 1 a 4)
 
@@ -485,22 +546,22 @@ Descreva os principais segmentos de mercado a serem atendidos pela aplicação. 
 
 # <a name="c8"></a>8. Referências (sprints 1 a 5)
 
-<a name="c10">[1]</a> CLIMATE FIELDVIEW. Plataforma de Agricultura Digital. Disponível em: https://climatefieldview.com.br/. Acesso: 20/04/2025.​
+<a name="c10">[1]</a> BAYER. Bayer Brasil. Disponível em: https://www.bayer.com.br/pt/​. Acesso: 25/04/2025.
 
 <a name="c11">[2]</a> CLIMATE FIELDVIEW. Plataforma de agricultura digital. Disponível em: https://climatefieldview.com.br/. Acesso: 20/04/2025.
 
-<a name="c12">[3]</a> LUCK, Heloisa. Liderança em gestão escolar. 4. ed. Petrópolis: Vozes, 2010. Acesso: 24/02/2025. <br>
+<a name="c17">[3]</a> LUCK, Heloisa. Liderança em gestão escolar. 4. ed. Petrópolis: Vozes, 2010. Acesso: 24/02/2025. <br>
 
-<a name="c13">[4]</a> PAES, Ashley. Agtechs: entenda o panorama das startups latino-americanas do agronegócio. Distrito, 19 dez. 2023. Disponível em: https://distrito.me/blog/panorama-agtech-brasil/​. Acesso em: 22/04/2025.​
+<a name="c12">[4]</a> ENGENHARIA 360. Explorando a evolução do FieldView: Agricultura Digital. Disponível em: https://engenharia360.com/agricultura-digital-com-climate-fieldview/. Acesso: 25/04/2025.
 
-<a name="c14">[5]</a> GUSMÃO, Ana. Agronegócio se rende à tecnologia e aposta em soluções criadas por startups. CompreRural, 2 out. 2023. Disponível em: https://www.comprerural.com/agronegocio-se-rende-a-tecnologia-e-aposta-em-solucoes-criadas-por-startups​. Acesso: 22/04/2025.
+<a name="c13">[5]</a> PAES, Ashley. Agtechs: entenda o panorama das startups latino-americanas do agronegócio. Distrito, 19 dez. 2023. Disponível em: https://distrito.me/blog/panorama-agtech-brasil/​. Acesso em: 22/04/2025.​
 
-<a name="c15">[6]</a> PEREA, Ernesto. 4 transnacionales concentran 50% del mercado global de plaguicidas. Imagen Agropecuaria, 11 jun. 2024. Disponível em: https://imagenagropecuaria.com/2024/4-transnacionales-concentran-50-del-mercado-global-de-plaguicidas/​. Acesso em: 22/04/2025.
+<a name="c14">[6]</a> GUSMÃO, Ana. Agronegócio se rende à tecnologia e aposta em soluções criadas por startups. CompreRural, 2 out. 2023. Disponível em: https://www.comprerural.com/agronegocio-se-rende-a-tecnologia-e-aposta-em-solucoes-criadas-por-startups​. Acesso: 22/04/2025.
 
+<a name="c15">[7]</a> PEREA, Ernesto. 4 transnacionales concentran 50% del mercado global de plaguicidas. Imagen Agropecuaria, 11 jun. 2024. Disponível em: https://imagenagropecuaria.com/2024/4-transnacionales-concentran-50-del-mercado-global-de-plaguicidas/​. Acesso em: 22/04/2025.
 
-<a name="c16">[7]</a> ANDRADE, Lívia. A alavanca para o agro nacional. Revista Exame, 10 nov. 2023. Disponível em: https://exame.com/revista-exame/a-alavanca-para-o-agro-nacional/​. Acesso: 22/04/2025.
+<a name="c16">[8]</a> FERRAMENTAS DA QUALIDADE. Matriz de Riscos – Matriz de Probabilidade e Impacto. Disponível em: https://ferramentasdaqualidade.org/matriz-de-riscos-matriz-de-probabilidade-e-impacto/. Acesso em: 20/04/25.
 
-<a name="c13">[X]</a> MARSHALL, A. Industry and Trade. 3ª edição, Londres, 1920.
 
 INTELI. Adalove. Disponível em: https://adalove.inteli.edu.br/feed. Acesso em: 15/04/2025. <br>
 
