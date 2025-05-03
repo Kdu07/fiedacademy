@@ -228,7 +228,7 @@ Fonte: Material produzido pelos autores (2025)
 </div>
 
 ## 2.2. Personas (sprint 1)
-Personas são representações fictícias de usuários ideais. Elas ajudam a entender melhor o público-alvo do projeto, guiando decisões de design e funcionalidades para atender às necessidades, expectativas e dores dos usuários de forma mais eficaz. Dessa forma, foram ocnstruidas as seguintes personas para o projeto:<br>
+Personas são representações fictícias de usuários ideais. Elas ajudam a entender melhor o público-alvo do projeto, guiando decisões de design e funcionalidades para atender às necessidades, expectativas e dores dos usuários de forma mais eficaz. Dessa forma, foram construídas as seguintes personas para o projeto:<br>
 
 <div align = "center">
 
