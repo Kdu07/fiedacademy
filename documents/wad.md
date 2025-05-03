@@ -42,7 +42,7 @@
 
 # <a name="c1"></a>1. Introdução (sprints 1 a 5)
 
-&nbsp;&nbsp;&nbsp;&nbsp; A divisão agrícola da Bayer AG <sup>[1](c#10)</sup>, consolida-se como líder global em soluções integradas para o agronegócio, com foco em sementes geneticamente modificadas, defensivos agrícolas e tecnologias digitais. Seu portfólio inclui o Climate FieldView <sup>[2](c#11)</sup>,  plataforma digital que ajuda a priorizar o monitoramento, identificar problemas de forma rápida e tomar medidas para proteger sua produtividade por meio de imagens de satélite de fácil utilização e de alta qualidade. <br>
+&nbsp;&nbsp;&nbsp;&nbsp; A divisão agrícola da Bayer AG <sup>[1](#c10)</sup>, consolida-se como líder global em soluções integradas para o agronegócio, com foco em sementes geneticamente modificadas, defensivos agrícolas e tecnologias digitais. Seu portfólio inclui o Climate FieldView <sup>[2](#c11)</sup>,  plataforma digital que ajuda a priorizar o monitoramento, identificar problemas de forma rápida e tomar medidas para proteger sua produtividade por meio de imagens de satélite de fácil utilização e de alta qualidade. <br>
 
 &nbsp;&nbsp;&nbsp;&nbsp; A empresa investe fortemente em pesquisa e desenvolvimento, posicionando-se na vanguarda da agricultura 4.0. No entanto, existem problemáticas que comprometem sua eficácia, o primeiro problema que a equipe de PTDs enfrenta é o turnover acima de 30% ao ano. O **Turnover**, é a alta rotatividade de funcionários, acarreta em diversos impactos negativos, como aumento de custos com recrutamento e seleção, além da perda de conhecimento e experiência acumulada. A segunda problemática é a falta de treinamento estruturado que possa guiar o processo de desenvolvimento de habilidades e conhecimentos, dos novos contratados. Gerando resultados ineficazes, falta de progresso, contratempos no desempenho e segurança. <br>
 
@@ -55,7 +55,14 @@
 ### 2.1.1. Modelo de 5 Forças de Porter (sprint 1)
 As forças de Porter analisam o nível de competitividade e atratividade de um setor por meio de cinco fatores: ameaça de novos entrantes, poder de barganha de fornecedores, poder de barganha de clientes, ameaça de produtos substitutos e rivalidade entre concorrentes. Desse modo a posição da Bayer no setor se dá da seguinte maneira: <br>
 
-<img src="../assets/assets_wad/5forcasDePorter.png">
+<div align = "center">
+
+<sup>Figura 1: Forças de Porter do mercado da empresa Bayer.</sup><br>
+
+<img src="../assets/assets_wad/5forcasDePorter.png"><br>
+
+<sub>Fonte: Material produzido pelos autores (2025).</sub><br>
+</div>
 
 #### Ameaça de novos entrantes: Média a baixa. <br>
 O setor exige grandes investimentos em P&D, infraestrutura e cumprimento de regulações rigorosas, o que cria barreiras significativas. A Bayer ainda possui forte credibilidade entre os produtores, dificultando a entrada de novas marcas. Baseado em dados da revista Exame <sup>[4](#c12)</sup>, startups AgTech estão conseguindo espaço com soluções tecnológicas específicas, como agricultura de precisão e monitoramento por IA. <br>
@@ -78,7 +85,14 @@ Ferramenta que analisa forças, fraquezas, oportunidades, ameaças.
 
 A Bayer se destaca pela forte inovação tecnológica, marca global consolidada e capacidade financeira, o que a posiciona entre os líderes do agronegócio mundial. Seu portfólio integrado reforça a competitividade frente a rivais como Syngenta, Corteva e BASF. No entanto, enfrenta desafios de altos custos e maior pressão regulatória, que podem ser explorados por concorrentes. O crescimento da agricultura digital e da demanda por sustentabilidade abre oportunidades para reforçar sua liderança. A empresa busca equilibrar produtividade e responsabilidade ambiental para se diferenciar num mercado cada vez mais competitivo e sensível às questões sociais. <br>
 
-<img src="../assets/assets_wad/MatrizSWOT.png">
+<div align = "center">
+
+<sup>Figura 2: Análise SWOT da Bayer.</sup><br>
+
+<img src="../assets/assets_wad/MatrizSWOT.png"><br>
+
+<sub>Fonte: Material produzido pelos autores (2025).</sub><br>
+</div>
 
 ### 2.1.3. Solução (sprints 1 a 5)
 
@@ -103,7 +117,14 @@ O sucesso da solução será avaliado a partir de feedbacks dos próprios PTDs, 
 ### 2.1.4. Value Proposition Canvas (sprint 1): 
 O canva de proposta de valor é uma ferramenta para organizar os pontos principais de necessidades e expectativas do cliente e relacioná-los com o projeto que será entregue, garantindo que todos os pontos foram atendidos.
 
+<div align = "center">
+
+<sup>Figura 3: Canvas Proposta de Valor.</sup><br>
+
 <img src="../assets/assets_wad/PropostaDeValor.png"><br>
+
+<sub>Fonte: Material produzido pelos autores (2025).</sub><br>
+</div>
 
 ### Perfil do cliente
 #### Tarefas do cliente
@@ -167,7 +188,7 @@ Os funcionários com acesso especial para gerenciar a plataforma conseguem adici
 
 <div align = "center">
 
-<sup>Figura 1: Matriz de Riscos do projeto.</sup><br>
+<sup>Figura 4: Matriz de Riscos do projeto.</sup><br>
 
 <img src="../assets/assets_wad/matrizDeRiscos.png"><br>
 
@@ -211,13 +232,13 @@ Personas são representações fictícias de usuários ideais. Elas ajudam a ent
 
 <div align = "center">
 
-<sup>Figura 2: Persona "Mariana Lima" (PTD).</sup><br>
+<sup>Figura 5: Persona "Mariana Lima" (PTD).</sup><br>
 
 <img src="../assets/assets_wad/Mariana Lima Persona.png"><br>
 
 <sub>Fonte: Material produzido pelos autores (2025). </sub><br>
 
-<sup>Figura 2: Persona "Jorge Almeida" (Coordenador).</sup><br>
+<sup>Figura 6: Persona "Jorge Almeida" (Coordenador).</sup><br>
 
 <img src="../assets/assets_wad/Jorge Persona.png"><br>
 
@@ -229,6 +250,8 @@ User Stories são descrições simples das funcionalidades do sistema escritas d
 
 <div align = "center">
 
+<sup>Quadro 3: US01.</sup><br>
+
 Identificação | US01 (Prioritária)
 --- | ---
 Persona | Mariana Lima (PTD) 
@@ -239,6 +262,10 @@ Critério de aceite 3 | CR3: Mariana pode favoritar conteúdos para acesso poste
 Critérios INVEST | **Independente**: Não depende de outras funcionalidades como quizzes ou ranking. <br> **Negociável**: Os formatos de conteúdo e filtros podem ser ajustados conforme feedback.<br> **Valorosa**: Reduz o tempo de resolução de dúvidas e evita erros em campo.<br> **Estimável**: Esforço claro (busca, favoritos, sugestão).  <br> **Small**: Foco apenas em busca e exibição de conteúdo. <br> **Testável:** Simulação de buscas e acesso offline.
 
 
+<sub>Fonte: Material produzido pelos autores (2025).</sub><br>
+
+<sup>Quadro 4: US02.</sup><br>
+
 Identificação| US02 (Prioritária)
 --- | ---
 Persona |Mariana Lima (PTD)
@@ -248,6 +275,9 @@ Critério de aceite 2 |CR2: O progresso e o desempenho em cada trilha são exibi
 Critério de aceite 3 | CR3: Mariana recebe feedback imediato ao completar os módulos.
 Critérios INVEST |  **Independente:** Não depende de gamificação ou certificação. <br> **Negociável:** Critérios do diagnóstico podem ser ajustados. <br> **Valorosa:** Foco no aprendizado eficiente. <br> **Estimável:** Diagnóstico e lógica de recomendação são claros.<br> **Small:** Apenas trilhas e feedback. <br> **Testável:** Teste com perfis simulados. 
 
+<sub>Fonte: Material produzido pelos autores (2025).</sub><br>
+
+<sup>Quadro 5: US03.</sup><br>
 
 Identificação |US03 (Prioritária)
 --- | --- 
@@ -259,6 +289,10 @@ Critério de aceite 3 | CR3: Mariana pode baixar e compartilhar o certificado.
 Critérios INVEST | **Independente:** Não depende de ranking ou notificações.<br> **Negociável:** Critérios de aprovação podem variar. <br> **Valorosa:** Comprova capacitação e valoriza o PTD. <br> **Estimável:** Quiz, emissão e histórico são claros. <br> **Small:** Foco em uma trilha por vez. <br> **Testável:** Simulação de aprovação/reprovação.
 
 
+<sub>Fonte: Material produzido pelos autores (2025).</sub><br>
+
+<sup>Quadro 6: US04.</sup><br>
+
 Identificação|US04 
 --- | ---
 Persona | Mariana Lima (PTD)
@@ -268,6 +302,10 @@ Critério de aceite 2 | CR2: Feedback é enviado automaticamente aos gestores.
 Critério de aceite 3 | CR3: Mariana pode visualizar o histórico de avaliações feitas.
 Critério de aceite 4 | CR4: Mariana pode reportar conteúdos desatualizados.
 
+
+<sub>Fonte: Material produzido pelos autores (2025).</sub><br>
+
+<sup>Quadro 7: US05.</sup><br>
 
 US05 (Prioritária) | Identificação
 --- | ---
@@ -280,6 +318,9 @@ Critério de aceite 4| CR4: Mariana pode remover conteúdos baixados.
 Critérios INVEST| <br> **Independente:** Não depende de notificações ou ranking. | <br> **Negociável:** Pode ser implementado para tipos de conteúdo específicos. | <br> **Valorosa:** Garante acesso à capacitação no campo.| <br> **Estimável:** Download, cache e notificação são claros.| <br> **Small:** Foco em download e acesso offline.| <br> **Testável:** Simulação de acesso offline.
 
 
+<sub>Fonte: Material produzido pelos autores (2025).</sub><br>
+
+<sup>Quadro 8: US06.</sup><br>
 
 Identificação| US06 (Prioritária)
 --- | ---
@@ -292,6 +333,11 @@ Critério de aceite 4 | CR4: Histórico de trilhas atribuídas fica registrado.
 Critérios INVEST |  **Independente:** Não depende de gamificação ou notificações. <br> **Negociável:** Filtros e formatos de exportação podem ser ajustados. <br> **Valorosa:** Permite gestão proativa. <br> **Estimável:** Relatórios, filtros e exportação são claros. <br> **Small:** Relatórios apenas de progresso. <br> **Testável:** Geração e exportação de relatórios simulados.
 
 
+
+<sub>Fonte: Material produzido pelos autores (2025).</sub><br>
+
+<sup>Quadro 9: US07.</sup><br>
+
 Identificação | US07
 --- | ---
 Persona | Jorge Almeida (Coordenador)
@@ -302,6 +348,9 @@ Critério de aceite 3 | CR3: Histórico de trilhas atribuídas fica registrado.
 Critério de aceite 4 | CR4: Jorge pode remover ou alterar trilhas atribuídas.
 
 
+<sub>Fonte: Material produzido pelos autores (2025).</sub><br>
+
+<sup>Quadro 10: US08.</sup><br>
 
 Identificação | US08
 --- | ---
@@ -314,6 +363,9 @@ Critério de aceite 4 | CR4: Jorge pode marcar feedbacks como resolvidos.
 Critério de aceite 5 | CR5: Histórico de melhorias realizadas fica disponível.
 
 
+<sub>Fonte: Material produzido pelos autores (2025).</sub><br>
+
+<sup>Quadro 11: US09.</sup><br>
 
 Identificação | US09
 --- | ---
@@ -326,6 +378,9 @@ Critério de aceite 4 | CR4: Jorge pode enviar mensagens de orientação ao PTD.
 Critério de aceite 5 | CR5: Alertas podem ser configurados conforme critério.
 
 
+<sub>Fonte: Material produzido pelos autores (2025).</sub><br>
+
+<sup>Quadro 12: US10.</sup><br>
 
 Identificação | US10
 --- | ---
@@ -336,6 +391,8 @@ Critério de aceite 2 | CR2: Relatórios são gerados em PDF ou Excel.
 Critério de aceite 3 | CR3: Dados exportados incluem filtros aplicados.
 Critério de aceite 4 | CR4: Relatórios podem ser enviados por e-mail.
 Critério de aceite 5 | CR5: Histórico de relatórios exportados fica disponível.
+
+<sub>Fonte: Material produzido pelos autores (2025).</sub><br>
 </div>
 
 # <a name="c3"></a>3. Projeto da Aplicação Web (sprints 1 a 4)
