@@ -403,7 +403,21 @@ Critério de aceite 5 | CR5: Histórico de relatórios exportados fica disponív
 
 ## 3.2. Wireframes (sprint 2)
 
-*Posicione aqui as imagens do wireframe construído para sua solução e, opcionalmente, o link para acesso (mantenha o link sempre público para visualização)*
+
+<div align = "center">
+
+<sup>Figura 7: Wireframes de baixa fidelidade do PTD</sup><br>
+<img src="../assets/assets_wad/wireframes/baixa_fidelidade/PTD.png">
+
+<hr>
+
+<sup>Figura 8: Wireframes de baixa fidelidade do Gestor</sup><br>
+<img src="../assets/assets_wad/wireframes/baixa_fidelidade/Gestor.png">
+<hr>
+
+</div>
+
+[Link dos wireframes](https://www.figma.com/design/bOsRfHBpYqRksHS4GiNW74/bayer-project?node-id=0-1&p=f&t=S55FkKepuUIl5D6k-11)
 
 ## 3.3. Guia de estilos (sprint 3)
 
