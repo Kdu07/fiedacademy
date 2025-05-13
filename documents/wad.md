@@ -422,6 +422,10 @@ Tela6:   | Help |- Perguntas recorrentes - Recomendação de trilhas - Material 
 ## Versão Gestor
 <img src="../assets/assets_wad/wireframes/baixa_fidelidade/WireframeGestor.png">
 
+Tela | Função | Recursos
+--- | --- | ---
+Tela1:   | Login | - Campo de Email - Campo para a senha - Botão de confirmação de login
+Tela2:| Home | MESMAS FUNCIONALIDADES DO PTD 
 
 
 
