@@ -408,7 +408,12 @@ Critério de aceite 5 | CR5: Histórico de relatórios exportados fica disponív
 
 <sup>Figura 7: Wireframes de baixa fidelidade do PTD</sup><br>
 ![WireframePTD](https://github.com/user-attachments/assets/dd312f31-bae0-4f3e-8787-ca43bac22b62)
-  
+
+Tela | Função | Recursos
+--- | --- | ---
+Tela1:   | Login | - Campo de Email - Campo para a senha - Botão de confirmação de login
+
+
 
 
 <hr>
