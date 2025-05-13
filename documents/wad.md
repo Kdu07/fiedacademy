@@ -407,6 +407,7 @@ Critério de aceite 5 | CR5: Histórico de relatórios exportados fica disponív
 <div align = "center">
 
 <sup>Figura 7: Wireframes de baixa fidelidade do PTD</sup><br>
+## Versão PTD
 <img src="../assets/assets_wad/wireframes/baixa_fidelidade/WireframePTD.png">
 
 Tela | Função | Recursos
@@ -418,6 +419,9 @@ Tela4:   | Dashboard | - Conteúdo sequêncial - Informações laterais - Materi
 Tela5:   | Help | - Cards de assuntos - Temas recorrentes - Base de arquivos de dúvidas
 Tela6:   | Help |- Perguntas recorrentes - Recomendação de trilhas - Material de apoio
 
+## Versão Gestor
+<img src="../assets/assets_wad/wireframes/baixa_fidelidade/WireframeGestor.png">
+
 
 
 
@@ -426,7 +430,7 @@ Tela6:   | Help |- Perguntas recorrentes - Recomendação de trilhas - Material 
 <hr>
 
 <sup>Figura 8: Wireframes de baixa fidelidade do Gestor</sup><br>
-<img src="../assets/assets_wad/wireframes/baixa_fidelidade/Gestor.png">
+
 <hr>
 
 </div>
