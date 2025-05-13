@@ -441,6 +441,8 @@ div align = "center">
 
 <sub>Fonte: Material produzido pelos autores (2025). </sub><br>
 
+</div>
+
 ____________________
 ```javascript
 CREATE TABLE `emphasis` (
@@ -453,7 +455,7 @@ CREATE TABLE `emphasis` (
 
 ```
 #### Emphasis
-*Finalidade:* Marca conteúdos ou módulos como "em destaque" para um usuário, ou para fins de priorização.
+*Finalidade:* Marca conteúdos ou módulos como "em destaque" para um usuário, ou para fins de priorização.<br>
 
 *Campos:*
 1. id: Identificador único (chave primária).
@@ -472,7 +474,7 @@ CREATE TABLE `module` (
 );
 ```
 #### Module
-*Finalidade:* Representa os módulos que compõem uma trilha de aprendizagem.
+*Finalidade:* Representa os módulos que compõem uma trilha de aprendizagem.<br>
 *Campos:*
 1. id: Identificador único (chave primária).
 2. id_path: Chave estrangeira para path.
@@ -497,7 +499,7 @@ CREATE TABLE `Users` (
 ```
 
 #### Users
-*Finalidade:* Armazena informações dos usuários cadastrados na plataforma.
+*Finalidade:* Armazena informações dos usuários cadastrados na plataforma.<br>
 *Campos:*
 
 1. id: Identificador único do usuário (chave primária).
@@ -524,7 +526,8 @@ CREATE TABLE `role_permissions` (
 ```
 
 #### Role_permissions
-*Finalidade:* Define os diferentes papéis (roles) do sistema, como PTD, gestor ou administrador, e as permissões associadas a cada um.
+*Finalidade:* Define os diferentes papéis (roles) do sistema, como PTD, gestor ou administrador, e as permissões associadas a cada um.  <br>
+
 *Campos:*
 1. id: Identificador único do papel (chave primária).
 2. nome_role: Nome do papel.
@@ -542,7 +545,7 @@ CREATE TABLE `certificate` (
 );
 ```
 #### Certificate
-*Finalidade:*  Registra os certificados emitidos para usuários que concluem trilhas.
+*Finalidade:*  Registra os certificados emitidos para usuários que concluem trilhas. <br>
 
 *Campos:*
 1. id: Identificador único do certificado (chave primária).
@@ -563,7 +566,7 @@ CREATE TABLE `score_test` (
 ```
 
 #### Score_test
-*Finalidade:* Registra o desempenho do usuário em testes.
+*Finalidade:* Registra o desempenho do usuário em testes.<br>
 
 *Campos:*
 1. id: Identificador único (chave primária).
@@ -587,7 +590,7 @@ CREATE TABLE `feedbacks_modulo` (
 ```
 
 #### Feedbacks_modulo
-*Finalidade:* Armazena feedbacks e avaliações que usuários deixam sobre os módulos.
+*Finalidade:* Armazena feedbacks e avaliações que usuários deixam sobre os módulos.<br>
 *Campos:*
 1. id: Identificador único (chave primária).
 2. id_content: Chave estrangeira para content.
@@ -610,7 +613,7 @@ CREATE TABLE `path` (
 ```
 
 #### Path
-*Finalidade:* Representa as trilhas disponíveis na plataforma.
+*Finalidade:* Representa as trilhas disponíveis na plataforma. <br>
 *Campos:*
 1. id: Identificador único (chave primária).
 2. id_certification: Chave estrangeira para certificate (caso a trilha gere certificado).
@@ -630,7 +633,7 @@ CREATE TABLE `User_content_progress` (
 
 ```
 #### User_content_progress
-*Finalidade:* Registra o progresso do usuário em cada conteúdo e módulo.
+*Finalidade:* Registra o progresso do usuário em cada conteúdo e módulo. <br>
 *Campos:*
 1. id: Identificador único do progresso (chave primária).
 2. user_id: Chave estrangeira para Users.
@@ -653,7 +656,7 @@ CREATE TABLE `content` (
 ```
 
 #### Content
-*Finalidade:* Armazena os conteúdos (aulas,pdfs, vídeos, textos) de cada módulo.
+*Finalidade:* Armazena os conteúdos (aulas,pdfs, vídeos, textos) de cada módulo. <br>
 *Campos:*
 1. id: Identificador único do conteúdo (chave primária).
 2. id_modulo: Chave estrangeira para module.
@@ -676,7 +679,8 @@ CREATE TABLE `bookmarks` (
 
 ```
 #### Bookmarks
-*Finalidade:* Permite que usuários salvem conteúdos ou módulos como favoritos e como atalhos para acesso rápido.
+*Finalidade:* Permite que usuários salvem conteúdos ou módulos como favoritos e como atalhos para acesso rápido. <br>
+
 *Campos:*
 1. id: Identificador único (chave primária).
 2. id_user: Chave estrangeira para Users.
@@ -694,7 +698,7 @@ CREATE TABLE `tests` (
 );
 ```
 #### Tests
-*Finalidade:* Armazena testes associados a conclusão dos módulos.
+*Finalidade:* Armazena testes associados a conclusão dos módulos. <br>
 *Campos:*
 1. id: Identificador único do teste (chave primária).
 2. id_modulo: Chave estrangeira para module.
