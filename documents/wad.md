@@ -433,6 +433,56 @@ Critério de aceite 5 | CR5: Histórico de relatórios exportados fica disponív
 
 *posicione aqui os diagramas de modelos relacionais do seu banco de dados, apresentando todos os esquemas de tabelas e suas relações. Utilize texto para complementar suas explicações, se necessário* 
 
+Segundo Heuser[1], a modelagem relacional é uma etapa fundamental no projeto de sistemas de banco de dados, sendo responsável pela representação lógica dos dados e de seus relacionamentos por meio de estruturas chamadas de tabelas. No contexto cada tabela é composta por linhas (tuplas) e colunas (atributos), e a integridade dos dados é garantida por restrições como a chave primária (identificador único de cada registro) e a chave estrangeira (responsável por estabelecer vínculos entre tabelas). Essa abordagem, proposta por Peter Chen em 1976, permite representar de forma clara e estruturada os elementos do mundo real, facilitando a implementação, manutenção e expansão dos sistemas de informação.
+
+div align = "center">
+
+<sup>Figura 5: Persona "Mariana Lima" (PTD).</sup><br>
+
+<img src="../assets/assets_wad/Mariana Lima Persona.png"><br>
+
+<sub>Fonte: Material produzido pelos autores (2025). </sub><br>
+
+____________________
+```javascript
+CREATE TABLE `emphasis` (
+  `id` integer,
+  `id_user` integer,
+  `id_modulo` integer,
+  `id_content` integer,
+  `due_date` timestamp default
+);
+
+```
+#### Emphasis
+*Finalidade:* Marca conteúdos ou módulos como "em destaque" para um usuário, ou para fins de priorização.
+
+*Campos:*
+1. id: Identificador único (chave primária).
+2. id_user: Chave estrangeira para Users.
+3. id_modulo: Chave estrangeira para module.
+4. id_content: Chave estrangeira para content.
+5. due_date: Data limite para o destaque.
+
+_________________
+```javascript
+CREATE TABLE `module` (
+  `id` integer,
+  `id_path` integer NN,
+  `title` varchar,
+  `order` integer
+);
+```
+#### Module
+*Finalidade:* Representa os módulos que compõem uma trilha de aprendizagem.
+*Campos:*
+1. id: Identificador único (chave primária).
+2. id_path: Chave estrangeira para path.
+3. title: Título do módulo.
+4. order: Ordem do módulo dentro da trilha.
+
+__________________
+
 ### 3.5.2. Consultas SQL e lógica proposicional (sprint 2)
 
 *posicione aqui uma lista de consultas SQL compostas, realizadas pelo back-end da aplicação web, com sua respectiva lógica proposicional, descrita conforme template abaixo. Lembre-se que para usar LaTeX em markdown, basta você colocar as expressões entre $ ou $$*
