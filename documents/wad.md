@@ -408,29 +408,7 @@ Critério de aceite 5 | CR5: Histórico de relatórios exportados fica disponív
 
 <sup>Figura 7: Wireframes de baixa fidelidade do PTD</sup><br>
 ![WireframePTD](https://github.com/user-attachments/assets/dd312f31-bae0-4f3e-8787-ca43bac22b62)
-#### Tela 1
-login: <br>
-- Campo de Email - Campo para a senha - Botão de confirmação de login
-
-#### Tela 2
-Home: <br>
-- Aba de buscas rápidas - Direcionamento para tela de trilhas - Direcionamento para tela de help - Artigos que podem ser fixados pelo PTD para acesso rápido. - Sino de notificações, como a criação de novas trilhas ou modificações em artigos.
-
-#### Tela 3
-Trilhas: <br>
-- Progesso atual - Histórico de trilhas - Recomendações de tilhas - Base de conteúdos gerais e opcionais
-
-#### Tela 4
-Dashboard: <br>
-- Conteúdo sequêncial - Informações laterais - Material espeífico - Avaliação dos assuntos
-
-#### Tela 5
-Help: <br>
-- Cards de assuntos - Temas recorrentes - Base de arquivos de dúvidas
-
-#### Tela 6
-Help: <br>
-- Perguntas recorrentes - Recomendação de trilhas - Material de apoio   
+  
 
 
 <hr>
