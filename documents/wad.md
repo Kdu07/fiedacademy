@@ -482,6 +482,100 @@ CREATE TABLE `module` (
 4. order: Ordem do módulo dentro da trilha.
 
 __________________
+```javascript
+CREATE TABLE `Users` (
+  `id` integer,
+  `id_role` integer,
+  `name` varchar,
+  `region` varchar,
+  `email` varchar,
+  `password` varchar,
+  `score` integer,
+  `last_login` timestamp,
+  `profile_photo` varchar(255),
+  `id_certificate` integer,
+  FOREIGN KEY (`id_role`) REFERENCES `role_permissions`(`id`)
+);
+```
+
+#### Users
+*Finalidade:* Armazena informações dos usuários cadastrados na plataforma.
+*Campos:*
+
+1. id: Identificador único do usuário (chave primária).
+2. id_role: Chave estrangeira para role_permissions, indicando o papel do usuário.
+3. Name: Nome do usuário.
+4.Region: Localidade do usuário.
+5. Email: E-mail do usuário (único).
+6. Password: Senha.
+7. Score: Pontuação do usuário.
+8. last_login: Data e hora do último acesso.
+9. Profile_photo: Caminho ou URL da foto de perfil.
+10. id_certificate: Chave estrangeira para certificate, vinculando o usuário ao seu certificado.
+_____________________
+
+```javascript
+CREATE TABLE `role_permissions` (
+  `id` integer,
+  `nome_role` varchar(50),
+  `can_create` Boolean,
+  `can_read` Boolean,
+  `can_update` Boolean,
+  `can_delete` Boolean
+);
+```
+
+#### Role_permissions
+*Finalidade:* Define os diferentes papéis (roles) do sistema, como PTD, gestor ou administrador, e as permissões associadas a cada um.
+*Campos:*
+1. id: Identificador único do papel (chave primária).
+2. nome_role: Nome do papel.
+3. can_create, can_read, can_update, can_delete: Permissões booleanas que determinam o que cada papel pode fazer no sistema.
+
+_____________________
+
+```javascript
+CREATE TABLE `certificate` (
+  `id` integer,
+  `id_path` integer,
+  `issue_date` date default,
+  `hash_code` varchar(100),
+  FOREIGN KEY (`id`) REFERENCES `Users`(`id_certificate`)
+);
+```
+#### Certificate
+*Finalidade:*  Registra os certificados emitidos para usuários que concluem trilhas.
+
+*Campos:*
+1. id: Identificador único do certificado (chave primária).
+2. id_path: Chave estrangeira para path, indicando a trilha concluída.
+3. issue_date: Data de emissão do certificado.
+4. hash_code: Código único para validação do certificado.
+
+___________________
+
+CREATE TABLE `score_test` (
+  `id` integer,
+  `id_test` integer,
+  `id_user` integer,
+  `score` integer,
+  `started_at` timestamp,
+  `ended_at` timestamp
+);
+
+#### Score_test
+*Finalidade:* Registra o desempenho do usuário em testes.
+
+*Campos:*
+1. id: Identificador único (chave primária).
+2. id_test: Chave estrangeira para tests.
+3. id_user: Chave estrangeira para Users.
+4. score: Pontuação obtida.
+5. started_at: Data/hora de início do teste.
+6. ended_at: Data/hora de término do teste.
+
+___________
+
 
 ### 3.5.2. Consultas SQL e lógica proposicional (sprint 2)
 
