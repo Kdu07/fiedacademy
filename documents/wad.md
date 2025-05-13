@@ -416,6 +416,7 @@ Tela2:   | Home | - Aba de buscas rápidas - Direcionamento para tela de trilhas
 Tela3:   | Trilhas | - Progesso atual - Histórico de trilhas - Recomendações de tilhas - Base de conteúdos gerais e opcionais.
 Tela4:   | Dashboard | - Conteúdo sequêncial - Informações laterais - Material espeífico - Avaliação dos assuntos
 Tela5:   | Help | - Cards de assuntos - Temas recorrentes - Base de arquivos de dúvidas
+Tela6:   | Help |- Perguntas recorrentes - Recomendação de trilhas - Material de apoio
 
 
 
