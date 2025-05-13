@@ -445,12 +445,12 @@ div align = "center">
 
 ____________________
 ```javascript
-CREATE TABLE `emphasis` (
-  `id` integer,
-  `id_user` integer,
-  `id_modulo` integer,
-  `id_content` integer,
-  `due_date` timestamp default
+CREATE TABLE emphasis (
+  id SERIAL PRIMARY KEY,
+  id_user INTEGER NOT NULL REFERENCES Users(id),
+  id_modulo INTEGER NOT NULL REFERENCES module(id),
+  id_content INTEGER NOT NULL REFERENCES content(id),
+  due_date TIMESTAMP
 );
 
 ```
@@ -466,11 +466,11 @@ CREATE TABLE `emphasis` (
 
 _________________
 ```javascript
-CREATE TABLE `module` (
-  `id` integer,
-  `id_path` integer NN,
-  `title` varchar,
-  `order` integer
+CREATE TABLE module (
+  id SERIAL PRIMARY KEY,
+  id_path INTEGER NOT NULL,
+  title VARCHAR(255),
+  "order" INTEGER NOT NULL
 );
 ```
 #### Module
@@ -483,18 +483,17 @@ CREATE TABLE `module` (
 
 __________________
 ```javascript
-CREATE TABLE `Users` (
-  `id` integer,
-  `id_role` integer,
-  `name` varchar,
-  `region` varchar,
-  `email` varchar,
-  `password` varchar,
-  `score` integer,
-  `last_login` timestamp,
-  `profile_photo` varchar(255),
-  `id_certificate` integer,
-  FOREIGN KEY (`id_role`) REFERENCES `role_permissions`(`id`)
+CREATE TABLE Users (
+  id SERIAL PRIMARY KEY,
+  id_role INTEGER NOT NULL REFERENCES role_permissions(id),
+  name VARCHAR(255),
+  region VARCHAR(255),
+  email VARCHAR(255),
+  password VARCHAR(255),
+  score INTEGER NOT NULL,
+  last_login TIMESTAMP,
+  profile_photo VARCHAR(255),
+  id_certificate INTEGER NOT NULL REFERENCES certificate(id)
 );
 ```
 
@@ -515,13 +514,13 @@ CREATE TABLE `Users` (
 _____________________
 
 ```javascript
-CREATE TABLE `role_permissions` (
-  `id` integer,
-  `nome_role` varchar(50),
-  `can_create` Boolean,
-  `can_read` Boolean,
-  `can_update` Boolean,
-  `can_delete` Boolean
+CREATE TABLE role_permissions (
+  id SERIAL PRIMARY KEY,
+  nome_role VARCHAR(50),
+  can_create BOOLEAN,
+  can_read BOOLEAN,
+  can_update BOOLEAN,
+  can_delete BOOLEAN
 );
 ```
 
@@ -536,12 +535,11 @@ CREATE TABLE `role_permissions` (
 _____________________
 
 ```javascript
-CREATE TABLE `certificate` (
-  `id` integer,
-  `id_path` integer,
-  `issue_date` date default,
-  `hash_code` varchar(100),
-  FOREIGN KEY (`id`) REFERENCES `Users`(`id_certificate`)
+CREATE TABLE certificate (
+  id SERIAL PRIMARY KEY,
+  id_path INTEGER NOT NULL,
+  issue_date DATE,
+  hash_code VARCHAR(100)
 );
 ```
 #### Certificate
@@ -555,13 +553,13 @@ CREATE TABLE `certificate` (
 
 ___________________
 ```javascript
-CREATE TABLE `score_test` (
-  `id` integer,
-  `id_test` integer,
-  `id_user` integer,
-  `score` integer,
-  `started_at` timestamp,
-  `ended_at` timestamp
+CREATE TABLE score_test (
+  id SERIAL PRIMARY KEY,
+  id_test INTEGER NOT NULL REFERENCES tests(id),
+  id_user INTEGER NOT NULL REFERENCES Users(id),
+  score INTEGER NOT NULL,
+  started_at TIMESTAMP,
+  ended_at TIMESTAMP
 );
 ```
 
@@ -578,14 +576,14 @@ CREATE TABLE `score_test` (
 
 __________________
 ```javascript
-CREATE TABLE `feedbacks_modulo` (
-  `id` integer,
-  `id_content` integer,
-  `id_modulo` integer,
-  `id_user` Integer,
-  `message` text,
-  `rating` smallint check,
-  `created_at` Timestamp default
+CREATE TABLE feedbacks_modulo (
+  id SERIAL PRIMARY KEY,
+  id_content INTEGER NOT NULL REFERENCES content(id),
+  id_modulo INTEGER NOT NULL REFERENCES module(id),
+  id_user INTEGER NOT NULL REFERENCES Users(id),
+  message TEXT,
+  rating SMALLINT,
+  created_at TIMESTAMP
 );
 ```
 
@@ -603,12 +601,12 @@ CREATE TABLE `feedbacks_modulo` (
 _________________________
 
 ```javascript
-CREATE TABLE `path` (
-  `id` integer,
-  `id_certification` integer,
-  `title` varchar,
-  `description` text,
-  `category` enum
+CREATE TABLE path (
+  id SERIAL PRIMARY KEY,
+  id_certification INTEGER NOT NULL,
+  title VARCHAR(255),
+  description TEXT,
+  category category_enum
 );
 ```
 
@@ -621,37 +619,19 @@ CREATE TABLE `path` (
 4. description: Descrição da trilha.
 5. category: Categoria da trilha (ex: programação, design, etc).
 
-_________________
-```javascript
-CREATE TABLE `User_content_progress` (
-  `id` integer,
-  `user_id ` integer NN,
-  `module_id` integer NN,
-  `content_id` integer NN,
-  `is_completed` boolean NN
-);
-
-```
-#### User_content_progress
-*Finalidade:* Registra o progresso do usuário em cada conteúdo e módulo. <br>
-*Campos:*
-1. id: Identificador único do progresso (chave primária).
-2. user_id: Chave estrangeira para Users.
-3. module_id: Chave estrangeira para module.
-4. content_id: Chave estrangeira para content.
-5. is_completed: Indica se o usuário concluiu o conteúdo (booleano).
 _______________________
 
 ```javascript
-CREATE TABLE `content` (
-  `id` integer,
-  `id_modulo` integer,
-  `id_emphasis` booleana,
-  `doc_path` varchar(255),
-  `video_path` varchar(255),
-  `img_path` varchar(255),
-  `order` integer,
-  `due_time` timestamp
+CREATE TABLE content (
+  id SERIAL PRIMARY KEY,
+  id_modulo INTEGER NOT NULL REFERENCES module(id),
+  id_emphasis BOOLEAN,
+  doc_path VARCHAR(255),
+  video_path VARCHAR(255),
+  img_path VARCHAR(255),
+  "order" INTEGER NOT NULL,
+  due_time TIMESTAMP,
+  title VARCHAR(255),
 );
 ```
 
@@ -669,12 +649,33 @@ CREATE TABLE `content` (
 _______________________
 
 ```javascript
-CREATE TABLE `bookmarks` (
-  `id` integer,
-  `id_user` integer,
-  `id_content` integer,
-  `id_module` integer,
-  `saved_at` timestamp default
+CREATE TABLE User_content_progress (
+  id SERIAL PRIMARY KEY,
+  user_id INTEGER NOT NULL REFERENCES Users(id),
+  module_id INTEGER NOT NULL REFERENCES module(id),
+  content_id INTEGER NOT NULL REFERENCES content(id),
+  is_completed BOOLEAN NOT NULL
+);
+
+```
+#### User_content_progress
+*Finalidade:* Registra o progresso do usuário em cada conteúdo e módulo. <br>
+*Campos:*
+1. id: Identificador único do progresso (chave primária).
+2. user_id: Chave estrangeira para Users.
+3. module_id: Chave estrangeira para module.
+4. content_id: Chave estrangeira para content.
+5. is_completed: Indica se o usuário concluiu o conteúdo (booleano).
+
+_________________
+
+```javascript
+CREATE TABLE bookmarks (
+  id SERIAL PRIMARY KEY,
+  id_user INTEGER NOT NULL REFERENCES Users(id),
+  id_content INTEGER NOT NULL REFERENCES content(id),
+  id_module INTEGER NOT NULL REFERENCES module(id),
+  saved_at TIMESTAMP
 );
 
 ```
@@ -690,11 +691,11 @@ CREATE TABLE `bookmarks` (
 ____________________
 
 ```javascript
-CREATE TABLE `tests` (
-  `id` integer,
-  `id_modulo` integer,
-  `questions` text,
-  `num_questions` integer
+CREATE TABLE tests (
+  id SERIAL PRIMARY KEY,
+  id_modulo INTEGER NOT NULL REFERENCES module(id),
+  questions TEXT,
+  num_questions INTEGER NOT NULL
 );
 ```
 #### Tests
