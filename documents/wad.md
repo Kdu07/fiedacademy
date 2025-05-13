@@ -431,9 +431,7 @@ Critério de aceite 5 | CR5: Histórico de relatórios exportados fica disponív
 
 ### 3.5.1. Modelo relacional (sprints 2 e 4)
 
-*posicione aqui os diagramas de modelos relacionais do seu banco de dados, apresentando todos os esquemas de tabelas e suas relações. Utilize texto para complementar suas explicações, se necessário* 
-
-Segundo Heuser[1], a modelagem relacional é uma etapa fundamental no projeto de sistemas de banco de dados, sendo responsável pela representação lógica dos dados e de seus relacionamentos por meio de estruturas chamadas de tabelas. No contexto cada tabela é composta por linhas (tuplas) e colunas (atributos), e a integridade dos dados é garantida por restrições como a chave primária (identificador único de cada registro) e a chave estrangeira (responsável por estabelecer vínculos entre tabelas). Essa abordagem, proposta por Peter Chen em 1976, permite representar de forma clara e estruturada os elementos do mundo real, facilitando a implementação, manutenção e expansão dos sistemas de informação.
+Segundo Heuser[9], a modelagem relacional é uma etapa fundamental no projeto de sistemas de banco de dados, sendo responsável pela representação lógica dos dados e de seus relacionamentos por meio de estruturas chamadas de tabelas. No contexto cada tabela é composta por linhas (tuplas) e colunas (atributos), e a integridade dos dados é garantida por restrições como a chave primária (identificador único de cada registro) e a chave estrangeira (responsável por estabelecer vínculos entre tabelas). Essa abordagem, proposta por Peter Chen em 1976, permite representar de forma clara e estruturada os elementos do mundo real, facilitando a implementação, manutenção e expansão dos sistemas de informação.
 
 div align = "center">
 
@@ -835,8 +833,11 @@ Descreva os principais segmentos de mercado a serem atendidos pela aplicação. 
 
 <a name="c16">[8]</a> FERRAMENTAS DA QUALIDADE. Matriz de Riscos – Matriz de Probabilidade e Impacto. Disponível em: https://ferramentasdaqualidade.org/matriz-de-riscos-matriz-de-probabilidade-e-impacto/. Acesso em: 20/04/25.
 
+<a name="c16">[9]</a>HEUSER, C. A. Projeto de Banco de Dados. 6. ed. Porto Alegre: Bookman, 2009.
 
 INTELI. Adalove. Disponível em: https://adalove.inteli.edu.br/feed. Acesso em: 15/04/2025. <br>
+
+
 
 # <a name="c9"></a>Anexos
 
