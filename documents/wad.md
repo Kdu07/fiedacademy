@@ -425,7 +425,8 @@ Tela6:   | Help |- Perguntas recorrentes - Recomendação de trilhas - Material 
 Tela | Função | Recursos
 --- | --- | ---
 Tela1:   | Login | - Campo de Email - Campo para a senha - Botão de confirmação de login
-Tela2:| Home | MESMAS FUNCIONALIDADES DO PTD 
+Tela2:| Home | - MESMAS FUNCIONALIDADES DO PTD 
+Tela3:   | Trilhas | - Cards de trilhas gerais e Botão de adicionar nova trilha  
 
 
 
