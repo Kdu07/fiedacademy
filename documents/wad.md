@@ -553,7 +553,7 @@ CREATE TABLE `certificate` (
 4. hash_code: Código único para validação do certificado.
 
 ___________________
-
+```javascript
 CREATE TABLE `score_test` (
   `id` integer,
   `id_test` integer,
@@ -562,6 +562,7 @@ CREATE TABLE `score_test` (
   `started_at` timestamp,
   `ended_at` timestamp
 );
+```
 
 #### Score_test
 *Finalidade:* Registra o desempenho do usuário em testes.
@@ -574,7 +575,83 @@ CREATE TABLE `score_test` (
 5. started_at: Data/hora de início do teste.
 6. ended_at: Data/hora de término do teste.
 
-___________
+__________________
+```javascript
+CREATE TABLE `feedbacks_modulo` (
+  `id` integer,
+  `id_content` integer,
+  `id_modulo` integer,
+  `id_user` Integer,
+  `message` text,
+  `rating` smallint check,
+  `created_at` Timestamp default
+);
+```
+
+#### Feedbacks_modulo
+*Finalidade:* Armazena feedbacks e avaliações que usuários deixam sobre os módulos.
+*Campos:*
+1. id: Identificador único (chave primária).
+2. id_content: Chave estrangeira para content.
+3. id_modulo: Chave estrangeira para module.
+4. id_user: Chave estrangeira para Users.
+5. message: Comentário do usuário.
+6. rating: Avaliação numérica (ex: 1 a 5).
+7. created_at: Data/hora do feedback.
+
+_________________________
+
+```javascript
+CREATE TABLE `path` (
+  `id` integer,
+  `id_certification` integer,
+  `title` varchar,
+  `description` text,
+  `category` enum
+);
+```
+
+#### Path
+*Finalidade:* Representa as trilhas disponíveis na plataforma.
+*Campos:*
+1. id: Identificador único (chave primária).
+2. id_certification: Chave estrangeira para certificate (caso a trilha gere certificado).
+3. title: Título da trilha.
+4. description: Descrição da trilha.
+5. category: Categoria da trilha (ex: programação, design, etc).
+
+_________________
+```javascript
+CREATE TABLE `User_content_progress` (
+  `id` integer,
+  `user_id ` integer NN,
+  `module_id` integer NN,
+  `content_id` integer NN,
+  `is_completed` boolean NN
+);
+
+```
+#### User_content_progress
+*Finalidade:* Registra o progresso do usuário em cada conteúdo e módulo.
+*Campos:*
+1. id: Identificador único do progresso (chave primária).
+2. user_id: Chave estrangeira para Users.
+3. module_id: Chave estrangeira para module.
+4. content_id: Chave estrangeira para content.
+5. is_completed: Indica se o usuário concluiu o conteúdo (booleano).
+_______________________
+
+
+CREATE TABLE `content` (
+  `id` integer,
+  `id_modulo` integer,
+  `id_emphasis` booleana,
+  `doc_path` varchar(255),
+  `video_path` varchar(255),
+  `img_path` varchar(255),
+  `order` integer,
+  `due_time` timestamp
+);
 
 
 ### 3.5.2. Consultas SQL e lógica proposicional (sprint 2)
