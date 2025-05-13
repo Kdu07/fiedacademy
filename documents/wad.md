@@ -437,9 +437,9 @@ Segundo Heuser[1], a modelagem relacional é uma etapa fundamental no projeto de
 
 div align = "center">
 
-<sup>Figura 5: Persona "Mariana Lima" (PTD).</sup><br>
+<sup>Figura 7: Diagrama Modelo Relacional.</sup><br>
 
-<img src="../assets/assets_wad/Mariana Lima Persona.png"><br>
+<img src="![alt text](../assets/assets_wad/Diagrama.png)"><br>
 
 <sub>Fonte: Material produzido pelos autores (2025). </sub><br>
 
