@@ -641,7 +641,7 @@ CREATE TABLE `User_content_progress` (
 5. is_completed: Indica se o usuário concluiu o conteúdo (booleano).
 _______________________
 
-
+```javascript
 CREATE TABLE `content` (
   `id` integer,
   `id_modulo` integer,
@@ -652,6 +652,58 @@ CREATE TABLE `content` (
   `order` integer,
   `due_time` timestamp
 );
+```
+
+#### Content
+*Finalidade:* Armazena os conteúdos (aulas,pdfs, vídeos, textos) de cada módulo.
+*Campos:*
+1. id: Identificador único do conteúdo (chave primária).
+2. id_modulo: Chave estrangeira para module.
+3. id_emphasis: Indica se o conteúdo é um destaque. (booleano).
+4. doc_path: Caminho para material textual.
+5. video_path: Caminho para vídeo.
+6. img_path: Caminho para imagem.
+7. order: Ordem do conteúdo dentro do módulo.
+8. due_time: Prazo ou data limite para acessar o conteúdo.
+_______________________
+
+```javascript
+CREATE TABLE `bookmarks` (
+  `id` integer,
+  `id_user` integer,
+  `id_content` integer,
+  `id_module` integer,
+  `saved_at` timestamp default
+);
+
+```
+#### Bookmarks
+*Finalidade:* Permite que usuários salvem conteúdos ou módulos como favoritos e como atalhos para acesso rápido.
+*Campos:*
+1. id: Identificador único (chave primária).
+2. id_user: Chave estrangeira para Users.
+3. id_content: Chave estrangeira para content.
+4. id_module: Chave estrangeira para module.
+5. saved_at: Data e hora em que o conteúdo foi salvo.
+____________________
+
+```javascript
+CREATE TABLE `tests` (
+  `id` integer,
+  `id_modulo` integer,
+  `questions` text,
+  `num_questions` integer
+);
+```
+#### Tests
+*Finalidade:* Armazena testes associados a conclusão dos módulos.
+*Campos:*
+1. id: Identificador único do teste (chave primária).
+2. id_modulo: Chave estrangeira para module.
+3. questions: Texto contendo as perguntas.
+4. num_questions: Número de questões do teste.
+_______________________
+
 
 
 ### 3.5.2. Consultas SQL e lógica proposicional (sprint 2)
