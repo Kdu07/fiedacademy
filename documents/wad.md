@@ -414,6 +414,7 @@ Tela | Função | Recursos
 Tela1:   | Login | - Campo de Email - Campo para a senha - Botão de confirmação de login
 Tela2:   | Home | - Aba de buscas rápidas - Direcionamento para tela de trilhas - Direcionamento para tela de help - Artigos que podem ser fixados pelo PTD para acesso rápido. - Sino de notificações. 
 Tela3:   | Trilhas | - Progesso atual - Histórico de trilhas - Recomendações de tilhas - Base de conteúdos gerais e opcionais.
+Tela4:   | Dashboard | - Conteúdo sequêncial - Informações laterais - Material espeífico - Avaliação dos assuntos
 
 
 
