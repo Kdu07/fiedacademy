@@ -1,8 +1,9 @@
 -- Criação do tipo ENUM para category
 CREATE TYPE category_enum AS ENUM ('categoria1', 'categoria2', 'categoria3');
 
+
 /* Criação da tabela de permições */
-CREATE TABLE role_permissions (
+CREATE TABLE  IF NOT EXISTS role_permissions (
   id SERIAL PRIMARY KEY,
   nome_role VARCHAR(50),
   can_create BOOLEAN,
@@ -12,7 +13,7 @@ CREATE TABLE role_permissions (
 );
 
 /* Criação da tabela de certificados */
-CREATE TABLE certificate (
+CREATE TABLE  IF NOT EXISTS certificate (
   id SERIAL PRIMARY KEY,
   id_path INTEGER NOT NULL,
   issue_date DATE,
@@ -20,7 +21,7 @@ CREATE TABLE certificate (
 );
 
 /* Criação da tabela para as trilhas */
-CREATE TABLE path (
+CREATE TABLE  IF NOT EXISTS path (
   id SERIAL PRIMARY KEY,
   id_certification INTEGER NOT NULL,
   title VARCHAR(255),
@@ -29,7 +30,7 @@ CREATE TABLE path (
 );
 
 /* Criação da tabela de módulos */
-CREATE TABLE module (
+CREATE TABLE  IF NOT EXISTS module (
   id SERIAL PRIMARY KEY,
   id_path INTEGER NOT NULL,
   title VARCHAR(255),
@@ -37,7 +38,7 @@ CREATE TABLE module (
 );
 
 /* Criação da tabela usuários */
-CREATE TABLE Users (
+CREATE TABLE  IF NOT EXISTS Users (
   id SERIAL PRIMARY KEY,
   id_role INTEGER NOT NULL REFERENCES role_permissions(id),
   name VARCHAR(255),
@@ -51,7 +52,7 @@ CREATE TABLE Users (
 );
 
 /* Criação da tabela de conteúdos */
-CREATE TABLE content (
+CREATE TABLE  IF NOT EXISTS content (
   id SERIAL PRIMARY KEY,
   id_modulo INTEGER NOT NULL REFERENCES module(id),
   id_emphasis BOOLEAN,
@@ -60,11 +61,11 @@ CREATE TABLE content (
   img_path VARCHAR(255),
   "order" INTEGER NOT NULL,
   due_time TIMESTAMP,
-  title VARCHAR(255),
+  title VARCHAR(255)
 );
 /* 
 Criação da tabela de progresso do usuário em relação ao conteúdo */
-CREATE TABLE User_content_progress (
+CREATE TABLE  IF NOT EXISTS User_content_progress (
   id SERIAL PRIMARY KEY,
   user_id INTEGER NOT NULL REFERENCES Users(id),
   module_id INTEGER NOT NULL REFERENCES module(id),
@@ -73,7 +74,7 @@ CREATE TABLE User_content_progress (
 );
 
 /* Criação da tabela de fixados */
-CREATE TABLE bookmarks (
+CREATE TABLE  IF NOT EXISTS bookmarks (
   id SERIAL PRIMARY KEY,
   id_user INTEGER NOT NULL REFERENCES Users(id),
   id_content INTEGER NOT NULL REFERENCES content(id),
@@ -82,7 +83,7 @@ CREATE TABLE bookmarks (
 );
 
 /* Criação da tabela de testes */
-CREATE TABLE tests (
+CREATE TABLE  IF NOT EXISTS tests (
   id SERIAL PRIMARY KEY,
   id_modulo INTEGER NOT NULL REFERENCES module(id),
   questions TEXT,
@@ -90,7 +91,7 @@ CREATE TABLE tests (
 );
 
 /* Criação da tabela para ênfase em conteúdos */
-CREATE TABLE emphasis (
+CREATE TABLE  IF NOT EXISTS emphasis (
   id SERIAL PRIMARY KEY,
   id_user INTEGER NOT NULL REFERENCES Users(id),
   id_modulo INTEGER NOT NULL REFERENCES module(id),
@@ -99,7 +100,7 @@ CREATE TABLE emphasis (
 );
 
 /* Criação da tabela de score */
-CREATE TABLE score_test (
+CREATE TABLE  IF NOT EXISTS score_test (
   id SERIAL PRIMARY KEY,
   id_test INTEGER NOT NULL REFERENCES tests(id),
   id_user INTEGER NOT NULL REFERENCES Users(id),
@@ -109,7 +110,7 @@ CREATE TABLE score_test (
 );
 
 /* Criação da tabela de feedbacks dos módulos */
-CREATE TABLE feedbacks_modulo (
+CREATE TABLE  IF NOT EXISTS feedbacks_modulo (
   id SERIAL PRIMARY KEY,
   id_content INTEGER NOT NULL REFERENCES content(id),
   id_modulo INTEGER NOT NULL REFERENCES module(id),
