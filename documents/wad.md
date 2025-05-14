@@ -709,6 +709,26 @@ CREATE TABLE tests (
 4. num_questions: Número de questões do teste.
 _______________________
 
+#### Cardinalidade entre Tabelas
+
+
+| Entidade A | Entidade B | Cardinalidade | Explicação |
+|------|------|-------|------|
+| role_permissions       | Users                   | 1:N           | Uma role pode estar associada a vários usuários                             |
+| certificate            | Users                   | 1:N           | Um certificado pode estar ligado a vários usuários                          |
+| certificate            | path                    | 1:N           | Um certificado pode estar ligado a várias trilhas                           |
+| path                   | module                  | 1:N           | Uma trilha contém vários módulos                                            |
+| module                 | content                 | 1:N           | Um módulo contém vários conteúdos                                           |
+| Users                  | User_content_progress   | 1:N           | Um usuário pode ter muitos registros de progresso                           |
+| content                | User_content_progress   | 1:N           | Um conteúdo pode estar em vários registros de progresso                     |
+| module                 | User_content_progress   | 1:N           | Um módulo pode estar em vários registros de progresso                       |
+| Users                  | bookmarks               | 1:N           | Um usuário pode ter vários conteúdos fixados                                |
+| content                | bookmarks               | 1:N           | Um conteúdo pode estar fixado por vários usuários                           |
+| module                 | bookmarks               | 1:N           | Um módulo pode estar em vários registros de fixação                         |
+| module                 | tests                   | 1:N           | Um módulo pode ter vários testes                                            |
+| tests                  | score_test              | 1:N           | Um teste pode gerar vários registros de pontuação                           |
+| Users, content, module | emphasis                | N:M           | Representa ênfase de usuários em conteúdos (tabela associativa)             |
+| Users, content, module | feedbacks_modulo        | N:M           | Representa feedbacks deixados por usuários em conteúdos (tabela associativa)|
 
 
 ### 3.5.2. Consultas SQL e lógica proposicional (sprint 2)
