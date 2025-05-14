@@ -410,23 +410,23 @@ Critério de aceite 5 | CR5: Histórico de relatórios exportados fica disponív
 ## Versão PTD
 <img src="../assets/assets_wad/wireframes/baixa_fidelidade/WireframePTD.png">
 
-Tela | Função | Recursos
---- | --- | ---
-Tela1:   | Login | - Campo de Email - Campo para a senha - Botão de confirmação de login
+Tela | Função | Recursos | User Story 
+--- | --- | --- | --
+Tela1:   | Login | Campo de Email - Campo para a senha - Botão de confirmação de login
 Tela2:   | Home | - Aba de buscas rápidas - Direcionamento para tela de trilhas - Direcionamento para tela de help - Artigos que podem ser fixados pelo PTD para acesso rápido. - Sino de notificações. 
 Tela3:   | Trilhas | - Progesso atual - Histórico de trilhas - Recomendações de tilhas - Base de conteúdos gerais e opcionais.
 Tela4:   | Dashboard | - Conteúdo sequêncial - Informações laterais - Material espeífico - Avaliação dos assuntos
-Tela5:   | Help | - Cards de assuntos - Temas recorrentes - Base de arquivos de dúvidas
-Tela6:   | Help |- Perguntas recorrentes - Recomendação de trilhas - Material de apoio
+Tela5:   | Help |- Cards de assuntos - Temas recorrentes - Base de arquivos de dúvidas
+Tela6:   | Help | - Perguntas recorrentes - Recomendação de trilhas - Material de apoio
 
 ## Versão Gestor
 <img src="../assets/assets_wad/wireframes/baixa_fidelidade/WireframeGestor.png">
 
-Tela | Função | Recursos
---- | --- | ---
-Tela1:   | Login | - Campo de Email - Campo para a senha - Botão de confirmação de login
-Tela2:| Home | - MESMAS FUNCIONALIDADES DO PTD 
-Tela3:   | Trilhas | - Cards de trilhas gerais e Botão de adicionar nova trilha  
+Tela | Função | Recursos | User Story
+--- | --- | --- | ---
+Tela1:   | Login | - Campo de Email - Campo para a senha - Botão de confirmação de login | 
+Tela2:| Home | - MESMAS FUNCIONALIDADES DO PTD |
+Tela3:   | Trilhas | - Cards de trilhas gerais e Botão de adicionar nova trilha |
 
 
 
