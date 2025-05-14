@@ -6,7 +6,6 @@ BEGIN
   END IF;
 END$$;
 
-
 /* Criação da tabela de permições */
 CREATE TABLE  IF NOT EXISTS role_permissions (
   id SERIAL PRIMARY KEY,
@@ -39,7 +38,7 @@ CREATE TABLE  IF NOT EXISTS module (
   id SERIAL PRIMARY KEY,
   id_path INTEGER NOT NULL,
   title VARCHAR(255),
-  "order" INTEGER NOT NULL
+  order INTEGER NOT NULL
 );
 
 /* Criação da tabela usuários */
@@ -64,7 +63,7 @@ CREATE TABLE  IF NOT EXISTS content (
   doc_path VARCHAR(255),
   video_path VARCHAR(255),
   img_path VARCHAR(255),
-  "order" INTEGER NOT NULL,
+  order INTEGER NOT NULL,
   due_time TIMESTAMP,
   title VARCHAR(255)
 );
