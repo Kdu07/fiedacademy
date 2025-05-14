@@ -711,13 +711,12 @@ _______________________
 
 #### Cardinalidade entre Tabelas
 
-
 | Entidade A | Entidade B | Cardinalidade | Explicação |
-|------|------|-------|------|
-| role_permissions       | Users                   | 1:N           | Uma role pode estar associada a vários usuários                             |
-| certificate            | Users                   | 1:N           | Um certificado pode estar ligado a vários usuários                          |
-| certificate            | path                    | 1:N           | Um certificado pode estar ligado a várias trilhas                           |
-| path                   | module                  | 1:N           | Uma trilha contém vários módulos                                            |
+|-----|-----|------|------|
+| role_permissions | Users | 1:N | Uma role pode estar associada a vários usuários |
+| certificate| Users| N:N| Um certificado pode estar ligado a vários usuários, e um usuário pode ter diferentes certificados|
+| certificate| path| 1:N| Um certificado pode estar ligado a várias trilhas|
+| path  | module | 1:N | Uma trilha contém vários módulos                                            |
 | module                 | content                 | 1:N           | Um módulo contém vários conteúdos                                           |
 | Users                  | User_content_progress   | 1:N           | Um usuário pode ter muitos registros de progresso                           |
 | content                | User_content_progress   | 1:N           | Um conteúdo pode estar em vários registros de progresso                     |
