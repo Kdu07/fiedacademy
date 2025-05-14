@@ -1,5 +1,10 @@
--- Criação do tipo ENUM para category
-CREATE TYPE category_enum AS ENUM ('categoria1', 'categoria2', 'categoria3');
+-- Criação do tipo ENUM para category, e condições para criação dessas categorias
+DO $$
+BEGIN
+  IF NOT EXISTS (SELECT 1 FROM pg_type WHERE typname = 'category_enum') THEN
+    CREATE TYPE category_enum AS ENUM ('categoria1', 'categoria2', 'categoria3');
+  END IF;
+END$$;
 
 
 /* Criação da tabela de permições */
