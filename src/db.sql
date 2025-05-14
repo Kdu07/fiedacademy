@@ -1,6 +1,7 @@
 -- Criação do tipo ENUM para category
 CREATE TYPE category_enum AS ENUM ('categoria1', 'categoria2', 'categoria3');
 
+/* Criação da tabela de permições */
 CREATE TABLE role_permissions (
   id SERIAL PRIMARY KEY,
   nome_role VARCHAR(50),
@@ -10,6 +11,7 @@ CREATE TABLE role_permissions (
   can_delete BOOLEAN
 );
 
+/* Criação da tabela de certificados */
 CREATE TABLE certificate (
   id SERIAL PRIMARY KEY,
   id_path INTEGER NOT NULL,
@@ -17,6 +19,7 @@ CREATE TABLE certificate (
   hash_code VARCHAR(100)
 );
 
+/* Criação da tabela para as trilhas */
 CREATE TABLE path (
   id SERIAL PRIMARY KEY,
   id_certification INTEGER NOT NULL,
@@ -25,6 +28,7 @@ CREATE TABLE path (
   category category_enum
 );
 
+/* Criação da tabela de módulos */
 CREATE TABLE module (
   id SERIAL PRIMARY KEY,
   id_path INTEGER NOT NULL,
@@ -32,6 +36,7 @@ CREATE TABLE module (
   "order" INTEGER NOT NULL
 );
 
+/* Criação da tabela usuários */
 CREATE TABLE Users (
   id SERIAL PRIMARY KEY,
   id_role INTEGER NOT NULL REFERENCES role_permissions(id),
@@ -45,6 +50,7 @@ CREATE TABLE Users (
   id_certificate INTEGER NOT NULL REFERENCES certificate(id)
 );
 
+/* Criação da tabela de conteúdos */
 CREATE TABLE content (
   id SERIAL PRIMARY KEY,
   id_modulo INTEGER NOT NULL REFERENCES module(id),
@@ -56,7 +62,8 @@ CREATE TABLE content (
   due_time TIMESTAMP,
   title VARCHAR(255),
 );
-
+/* 
+Criação da tabela de progresso do usuário em relação ao conteúdo */
 CREATE TABLE User_content_progress (
   id SERIAL PRIMARY KEY,
   user_id INTEGER NOT NULL REFERENCES Users(id),
@@ -65,6 +72,7 @@ CREATE TABLE User_content_progress (
   is_completed BOOLEAN NOT NULL
 );
 
+/* Criação da tabela de fixados */
 CREATE TABLE bookmarks (
   id SERIAL PRIMARY KEY,
   id_user INTEGER NOT NULL REFERENCES Users(id),
@@ -73,6 +81,7 @@ CREATE TABLE bookmarks (
   saved_at TIMESTAMP
 );
 
+/* Criação da tabela de testes */
 CREATE TABLE tests (
   id SERIAL PRIMARY KEY,
   id_modulo INTEGER NOT NULL REFERENCES module(id),
@@ -80,6 +89,7 @@ CREATE TABLE tests (
   num_questions INTEGER NOT NULL
 );
 
+/* Criação da tabela para ênfase em conteúdos */
 CREATE TABLE emphasis (
   id SERIAL PRIMARY KEY,
   id_user INTEGER NOT NULL REFERENCES Users(id),
@@ -88,6 +98,7 @@ CREATE TABLE emphasis (
   due_date TIMESTAMP
 );
 
+/* Criação da tabela de score */
 CREATE TABLE score_test (
   id SERIAL PRIMARY KEY,
   id_test INTEGER NOT NULL REFERENCES tests(id),
@@ -97,6 +108,7 @@ CREATE TABLE score_test (
   ended_at TIMESTAMP
 );
 
+/* Criação da tabela de feedbacks dos módulos */
 CREATE TABLE feedbacks_modulo (
   id SERIAL PRIMARY KEY,
   id_content INTEGER NOT NULL REFERENCES content(id),
