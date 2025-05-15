@@ -406,18 +406,18 @@ Critério de aceite 5 | CR5: Histórico de relatórios exportados fica disponív
 
 <div align = "center">
 
-<sup>Figura 7: Wireframes de baixa fidelidade do PTD</sup><br>
+<sup>Figura 7: Wireframes da plataforma para o PTD - Desktop</sup><br>
 ## Versão PTD
 <img src="../assets/assets_wad/wireframes/baixa_fidelidade/WireframePTD.png">
 
-Tela | Função | Recursos | User Story 
---- | --- | --- | --
-Tela1:   | Login | Campo de Email - Campo para a senha - Botão de confirmação de login
-Tela2:   | Home | - Aba de buscas rápidas - Direcionamento para tela de trilhas - Direcionamento para tela de help - Artigos que podem ser fixados pelo PTD para acesso rápido. - Sino de notificações. 
-Tela3:   | Trilhas | - Progesso atual - Histórico de trilhas - Recomendações de tilhas - Base de conteúdos gerais e opcionais.
-Tela4:   | Dashboard | - Conteúdo sequêncial - Informações laterais - Material espeífico - Avaliação dos assuntos
-Tela5:   | Help |- Cards de assuntos - Temas recorrentes - Base de arquivos de dúvidas
-Tela6:   | Help | - Perguntas recorrentes - Recomendação de trilhas - Material de apoio
+Tela | Recursos | User Story 
+--- | --- | ---
+<img src="../assets/assets_wad/wireframes/baixa_fidelidade/loginPTD.png"> | **Tela de Login:** Campo de Email - Campo para a senha - Botão de confirmação de login | <div align = "center"> 1<br>2<br>3 </div>
+Tela2:   | **Tela Home:** Aba de buscas rápidas - Direcionamento para tela de trilhas - Direcionamento para tela de help - Artigos que podem ser fixados pelo PTD para acesso rápido. - Sino de notificações. 
+Tela3:   | **Tela Trilhas:** Progesso atual - Histórico de trilhas - Recomendações de tilhas - Base de conteúdos gerais e opcionais.
+Tela4:   | **Tela Dashboard:** Conteúdo sequêncial - Informações laterais - Material espeífico - Avaliação dos assuntos
+Tela5:   | **Tela Help:** Cards de assuntos - Temas recorrentes - Base de arquivos de dúvidas
+Tela6:   | **Tela Help:** Perguntas recorrentes - Recomendação de trilhas - Material de apoio
 
 ## Versão Gestor
 <img src="../assets/assets_wad/wireframes/baixa_fidelidade/WireframeGestor.png">
