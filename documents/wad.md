@@ -411,9 +411,9 @@ Critério de aceite 5 | CR5: Histórico de relatórios exportados fica disponív
 
 Tela | Recursos | User Story 
 --- | --- | ---
-<img src="../assets/assets_wad/wireframes/loginPTD.png"> | **Tela de Login:** Campo de Email - Campo para a senha - Botão de confirmação de login | <div align = "center"> 1<br>2<br>3 </div>
-<img src="../assets/assets_wad/wireframes/homePTD.png">  | **Tela Home:** Aba de buscas rápidas - Direcionamento para tela de trilhas - Direcionamento para tela de help - Artigos que podem ser fixados pelo PTD para acesso rápido. - Sino de notificações. 
-<img src="../assets/assets_wad/wireframes/trilhasPTD.png"> <br> <img src="../assets/assets_wad/wireframes/trilhas2PTD.png">  | **Tela Trilhas:** Progesso atual - Histórico de trilhas - Recomendações de tilhas - Base de conteúdos gerais e opcionais. |  <div align = "center"> 1<br>2<br>
+<img src="../assets/assets_wad/wireframes/loginPTD.png"> | **Tela de Login:** Campo de Email - Campo para a senha - Botão de confirmação de login | <div align = "center"> 1<br></div>
+<img src="../assets/assets_wad/wireframes/homePTD.png">  | **Tela Home:** Aba de buscas rápidas - Direcionamento para tela de trilhas - Direcionamento para tela de help - Artigos que podem ser fixados pelo PTD para acesso rápido. - Sino de notificações. | <div align = "center"> 1<br>2<br>3 </div>
+<img src="../assets/assets_wad/wireframes/trilhasPTD.png"> <br> <img src="../assets/assets_wad/wireframes/trilhas2PTD.png">  | **Tela Trilhas:** Progesso atual - Histórico de trilhas - Recomendações de tilhas - Base de conteúdos gerais e opcionais. |  <div align = "center"> 1<br>2<br>3<br>
  <img src="../assets/assets_wad/wireframes/dashboardPTD.png"> | **Tela Dashboard:** Conteúdo sequêncial - Informações laterais - Material espeífico - Avaliação dos assuntos.
  <img src="../assets/assets_wad/wireframes/helpPTD.png"> | **Tela Help:** Aba de buscas rápidas - Cards de assuntos e temas recorrentes.
  <img src="../assets/assets_wad/wireframes/help2PTD.png"> | **Tela do artigo:** Aba de buscas rápidas - Lado direito: artigo - Lado esquerdo: lista de artigos da mesma categoria.
