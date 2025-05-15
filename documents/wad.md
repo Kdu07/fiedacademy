@@ -451,7 +451,7 @@ ____________________
 &nbsp;&nbsp;&nbsp;&nbsp; A tabela Users é crucial para a experiência do utilizador, uma vez que guarda todas as informações pessoais e de acesso de cada indivíduo registrado na plataforma. Ela gerencia informações como nome, e-mail, senha, perfil (função ou cargo), região, pontuação, imagem de perfil, data do último acesso e conexão com certificados obtidos. <br>
 Em termos práticos, essa tabela possibilita que cada usuário possua uma conta exclusiva, com um histórico individual de progresso, resultados e realizações. A atribuição do papel (id_role) estabelece as funções e permissões que o usuário terá no sistema (por exemplo: estudante, docente, gestor). Adicionalmente, a área de pontuação pode ser utilizada para a gamificação, incentivando o usuário a se envolver mais. O histórico do último acesso e a imagem do perfil enriquecem a experiência. Assim, a tabela Users garante o acesso individualizado, a segurança das informações e a personalização da navegação e dos recursos disponíveis para cada pessoa na plataforma. <br>
 
-```javascript
+```sql
 CREATE TABLE IF NOT EXISTS users (
   id SERIAL PRIMARY KEY,
   id_role INTEGER NOT NULL REFERENCES roles(id) ON DELETE CASCADE,
@@ -484,7 +484,7 @@ _____________________
 
 &nbsp;&nbsp;&nbsp;&nbsp;  Em termos práticos, essa tabela afeta diretamente o que cada usuário tem permissão ou não para realizar ao utilizar a plataforma. Por exemplo, um estudante só tem a capacidade de visualizar materiais, enquanto um administrador tem a capacidade de criar e modificar módulos, usuários e materiais. Isso assegura proteção, organização e customização do acesso, adequando a experiência do usuário ao seu perfil e prevenindo ações não autorizadas. <br>
 
-```javascript
+```sql
 CREATE TABLE IF NOT EXISTS roles (
   id SERIAL PRIMARY KEY,
   name_role VARCHAR(50),
@@ -506,7 +506,7 @@ _____________________
 
 &nbsp;&nbsp;&nbsp;&nbsp; A tabela User_content_progress é fundamental para a experiência do usuário em plataformas de e-learning, pois registra o progresso individual de cada pessoa em cada conteúdo e módulo do curso. Sempre que o usuário acessa ou conclui um conteúdo, essa tabela armazena se aquele material já foi finalizado (is_completed), vinculando sempre o usuário, o módulo e o conteúdo específico. Isso permite um acompanhamento personalizado, onde o usuário pode visualizar facilmente quais conteúdos já estudou e quais ainda faltam, permitindo um aprendizado no seu próprio ritmo e de acordo com suas necessidades. Além disso, caso precise interromper os estudos, ele pode retornar exatamente de onde parou, sem perder tempo procurando o que já foi feito.
 
-```javascript
+```sql
 CREATE TABLE IF NOT EXISTS user_content_progress (
   id SERIAL PRIMARY KEY,
   user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
@@ -531,7 +531,7 @@ _________________
 Em termos práticos, isso implica que o usuário pode facilmente localizar todos os recursos necessários para progredir em sua jornada de aprendizado, sabendo exatamente o que precisa ser estudado em cada fase. O acesso a diversos formatos (vídeo, texto, imagem) torna a aprendizagem mais interativa e ajustável a variados métodos de estudo.<br>
 
 
-```javascript
+```sql
 CREATE TABLE IF NOT EXISTS content (
   id SERIAL PRIMARY KEY,
   id_module INTEGER NOT NULL REFERENCES module(id) ON DELETE CASCADE,
@@ -557,7 +557,7 @@ ______________________
 
 &nbsp;&nbsp;&nbsp;&nbsp; A tabela emphasis influencia diretamente a experiência do usuário em uma plataforma de e-learning ou sistema educacional ao permitir que determinados conteúdos ou módulos sejam destacados ou priorizados para cada pessoa. Na prática, ela possibilita que o sistema marque quais materiais são mais importantes, urgentes ou recomendados para um usuário específico, geralmente com uma data limite para conclusão (due_date). Assim, o usuário pode visualizar facilmente o que deve focar primeiro em sua trilha de aprendizagem, facilitando o acompanhamento do progresso, a organização dos estudos e a priorização de tarefas. Esse tipo de funcionalidade é comum em sistemas de gestão de aprendizagem (LMS), pois ajuda a tornar o aprendizado mais personalizado, eficiente e alinhado às necessidades individuais de cada estudante. <br>
 
-```javascript
+```sql
 CREATE TABLE emphasis (
   id SERIAL PRIMARY KEY,
   id_user INTEGER NOT NULL REFERENCES Users(id),
@@ -580,7 +580,7 @@ _________________
 
 &nbsp;&nbsp;&nbsp;&nbsp; A tabela module afeta a experiência do usuário ao organizar e estruturar o conteúdo em módulos em uma plataforma de aprendizado ou sistema de ensino. Cada entrada nesta tabela simboliza um módulo, que consiste numa unidade temática ou fase de um percurso de aprendizado. O campo id_path indica a trilha (ou curso) à qual o módulo está associado, enquanto o campo title define o nome do módulo e "order" determina a ordem na qual os módulos serão exibidos ao utilizador.<br>
 
-```javascript
+```sql
 CREATE TABLE IF NOT EXISTS module (
   id SERIAL PRIMARY KEY,
   id_path INTEGER NOT NULL REFERENCES path(id),
@@ -601,7 +601,7 @@ _____________________
 
 &nbsp;&nbsp;&nbsp;&nbsp;  Em termos práticos, isso implica que o usuário tem a capacidade de acessar, baixar, compartilhar e validar seus certificados a qualquer instante, de maneira ágil e segura, sem a necessidade de procedimentos manuais ou impressos. Isso valoriza a experiência do estudante, simplifica a validação de habilidades em processos de seleção, avanços na carreira e expande as chances de reconhecimento acadêmico e profissional. <br>
 
-```javascript
+```sql
 CREATE TABLE IF NOT EXISTS certificate (
   id SERIAL PRIMARY KEY,
   id_path INTEGER NOT NULL REFERENCES path(id),
@@ -618,7 +618,7 @@ CREATE TABLE IF NOT EXISTS certificate (
 4. hash_code: Código único para validação do certificado.
 ___________________
 
-```javascript
+```sql
 CREATE TABLE IF NOT EXISTS user_certificate_progress (
   id SERIAL PRIMARY KEY,
   id_user INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
@@ -631,7 +631,7 @@ ___________________
 &nbsp;&nbsp;&nbsp;&nbsp; O usuário é impactado pela tabela feedbacks_content_modulo, que possibilita o registro de comentários e avaliações sobre conteúdos e módulos específicos na plataforma de aprendizado. Esta funcionalidade proporciona ao usuário um meio direto para expressar opiniões, propor melhorias e trocar experiências, tornando o processo de aprendizagem mais interativo e individualizado.
 O retorno imediato e estruturado auxilia o usuário a ponderar sobre seu avanço, reconhecer suas habilidades e áreas que necessitam de aprimoramento, além de incentivar a participação constante no curso. Ademais, ao perceber que seus pontos de vista são levados em conta, o usuário se sente apreciado e mais integrado à comunidade de aprendizado25. <br>
 
-```javascript
+```sql
 CREATE TABLE IF NOT EXISTS feedbacks_content_module (
   id SERIAL PRIMARY KEY,
   id_content INTEGER NOT NULL REFERENCES content(id) ON DELETE CASCADE,
@@ -659,7 +659,7 @@ _________________________
 
 &nbsp;&nbsp;&nbsp;&nbsp; Em termos práticos, isso implica que o usuário consegue visualizar sua trajetória educacional de maneira nítida, compreendendo exatamente quais passos precisa percorrer para atingir um objetivo ou obter um certificado. As trilhas tornam o processo de aprendizado mais organizado, individualizado e estimulante, uma vez que possibilitam que cada indivíduo rastreie seu avanço, selecione rotas adequadas aos seus interesses ou necessidades, e progrida no seu próprio tempo. <br>
 
-```javascript
+```sql
 CREATE TABLE IF NOT EXISTS path (
   id SERIAL PRIMARY KEY,
   title VARCHAR(255),
@@ -684,7 +684,7 @@ Assim como bookmarks em navegadores e leitores de PDF facilitam a navegação e 
 &nbsp;&nbsp;&nbsp;&nbsp;
 Em resumo, a tabela bookmarks melhora a navegação, aumenta a eficiência e torna a experiência do usuário mais personalizada e motivadora dentro da plataforma de aprendizagem. <br>
 
-```javascript
+```sql
 CREATE TABLE IF NOT EXISTS bookmarks (
   id SERIAL PRIMARY KEY,
   id_user INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
@@ -709,7 +709,7 @@ ____________________
 &nbsp;&nbsp;&nbsp;&nbsp; Essas avaliações medem o progresso e o conhecimento adquirido permitindo que o usuário pode acompanhar sua evolução, identificar pontos fortes e áreas que precisam de reforço, e consolidar o que aprendeu ao longo do curso.
 Motivam e engajam: Testes bem estruturados criam um senso de desafio e realização, estimulando o usuário a continuar avançando e a buscar melhores resultados. <br>
 
-```javascript
+```sql
 CREATE TABLE IF NOT EXISTS tests (
   id SERIAL PRIMARY KEY,
   id_module INTEGER NOT NULL REFERENCES module(id) ON DELETE CASCADE,
@@ -729,7 +729,7 @@ _______________________
 &nbsp;&nbsp;&nbsp;&nbsp; A tabela score_test documenta o rendimento dos utilizadores em testes conduzidos na ferramenta. Quando um usuário realiza um teste, essa tabela registra o número do teste realizado (id_test), o nome do usuário responsável (id_user), a pontuação obtida (score) e as datas e horas de início e término (started_at, ended_at). <br>
 &nbsp;&nbsp;&nbsp;&nbsp; Para o usuário, isso implica que seu avanço e desempenho nas avaliações são monitorados de maneira individual e clara. Ele tem a capacidade de analisar seu histórico de desempenho, determinar em quais testes se saiu melhor ou precisa aprimorar, e utilizar esses dados para acompanhar sua progressão ao longo dos anos. Ademais, a pontuação pode atuar como estímulo para alcançar melhores performances e pode ser empregada para liberar materiais, emitir certificados ou formar notas finais, tornando a experiência de aprendizado mais clara. <br>
 
-```javascript
+```sql
 CREATE TABLE IF NOT EXISTS user_test_score (
   id SERIAL PRIMARY KEY,
   id_test INTEGER NOT NULL REFERENCES tests(id) ON DELETE CASCADE,
@@ -784,12 +784,25 @@ __________________
 
 ### 3.5.2. Consultas SQL e lógica proposicional (sprint 2)
 
-*posicione aqui uma lista de consultas SQL compostas, realizadas pelo back-end da aplicação web, com sua respectiva lógica proposicional, descrita conforme template abaixo. Lembre-se que para usar LaTeX em markdown, basta você colocar as expressões entre $ ou $$*
 
 *Template de SQL + lógica proposicional*
 #1 | ---
 --- | ---
-**Expressão SQL** | SELECT * FROM suppliers WHERE (state = 'California' AND supplier_id <> 900) OR (supplier_id = 100); 
+**Expressão SQL** | SELECT 
+```sql
+SELECT 
+  u.name, 
+  m.title AS module_title, 
+  c.title AS content_title, 
+  ucp.completed_at
+FROM user_content_progress ucp
+JOIN users u ON ucp.user_id = u.id
+JOIN module m ON ucp.module_id = m.id
+JOIN content c ON ucp.content_id = c.id
+JOIN roles rp ON u.id_role = rp.id
+WHERE rp.name_role = 'PTD' 
+  AND m.id = 1;
+```
 **Proposições lógicas** | $A$: O estado é 'California' (state = 'California') <br> $B$: O ID do fornecedor não é 900 (supplier_id ≠ 900) <br> $C$: O ID do fornecedor é 100 (supplier_id = 100)
 **Expressão lógica proposicional** | $(A \land B) \lor C$
 **Tabela Verdade** | <table> <thead> <tr> <th>$A$</th> <th>$B$</th> <th>$C$</th> <th>$(A \land B)$</th> <th>$(A \land B) \lor C$</th> </tr> </thead> <tbody> <tr> <td>F</td> <td>F</td> <td>F</td> <td>F</td> <td>F</td> </tr> <tr> <td>F</td> <td>F</td> <td>V</td> <td>F</td> <td>V</td> </tr> <tr> <td>F</td> <td>V</td> <td>F</td> <td>F</td> <td>F</td> </tr> <tr> <td>F</td> <td>V</td> <td>V</td> <td>F</td> <td>V</td> </tr> <tr> <td>V</td> <td>F</td> <td>F</td> <td>F</td> <td>F</td> </tr> <tr> <td>V</td> <td>F</td> <td>V</td> <td>F</td> <td>V</td> </tr> <tr> <td>V</td> <td>V</td> <td>F</td> <td>V</td> <td>V</td> </tr> <tr> <td>V</td> <td>V</td> <td>V</td> <td>V</td> <td>V</td> </tr> </tbody> </table>
