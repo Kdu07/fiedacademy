@@ -431,6 +431,8 @@ Critério de aceite 5 | CR5: Histórico de relatórios exportados fica disponív
 
 ### 3.5.1. Modelo relacional (sprints 2 e 4)
 
+
+
 &nbsp;&nbsp;&nbsp;&nbsp;  O banco de dados mostrado adere aos fundamentos da modelagem relacional, como explicado por Heuser[9], organizando a informação em tabelas que simbolizam entidades do campo educacional, tais como usuários, módulos, conteúdos, trilhas, certificados, avaliações e permissões. Cada tabela é formada por linhas (tuplas) e colunas (atributos), assegurando a integridade dos dados através de restrições como chaves primárias - que identificam cada registro de maneira exclusiva - e chaves estrangeiras, encarregadas de criar conexões entre as tabelas, como a conexão entre usuários e suas funções, conteúdos e módulos, ou certificados e trilhas. Esta metodologia possibilita a representação clara e organizada dos componentes do mundo real, simplificando a implementação, conservação e ampliação do sistema de informação. <br>
 
 &nbsp;&nbsp;&nbsp;&nbsp;  No contexto da aplicação, tabelas como Users, module, content, path e certificate organizam o fluxo de aprendizagem, enquanto tabelas auxiliares como feedbacks_modulo, score_test, bookmarks e emphasis ampliam as funcionalidades ao permitir avaliações, acompanhamento de progresso, personalização e destaque de conteúdos. A tabela role_permissions define os diferentes perfis de acesso e suas permissões, promovendo segurança e flexibilidade na gestão do sistema. Assim, o modelo relacional adotado oferece uma base sólida para o desenvolvimento de uma plataforma educacional, garantindo integridade, clareza e escalabilidade. <br>
@@ -446,6 +448,112 @@ div align = "center">
 </div>
 
 ____________________
+&nbsp;&nbsp;&nbsp;&nbsp; A tabela Users é crucial para a experiência do utilizador, uma vez que guarda todas as informações pessoais e de acesso de cada indivíduo registrado na plataforma. Ela gerencia informações como nome, e-mail, senha, perfil (função ou cargo), região, pontuação, imagem de perfil, data do último acesso e conexão com certificados obtidos. <br>
+Em termos práticos, essa tabela possibilita que cada usuário possua uma conta exclusiva, com um histórico individual de progresso, resultados e realizações. A atribuição do papel (id_role) estabelece as funções e permissões que o usuário terá no sistema (por exemplo: estudante, docente, gestor). Adicionalmente, a área de pontuação pode ser utilizada para a gamificação, incentivando o usuário a se envolver mais. O histórico do último acesso e a imagem do perfil enriquecem a experiência. Assim, a tabela Users garante o acesso individualizado, a segurança das informações e a personalização da navegação e dos recursos disponíveis para cada pessoa na plataforma. <br>
+
+```javascript
+CREATE TABLE IF NOT EXISTS users (
+  id SERIAL PRIMARY KEY,
+  id_role INTEGER NOT NULL REFERENCES roles(id) ON DELETE CASCADE,
+  name VARCHAR(255),
+  region VARCHAR(255),
+  email VARCHAR(255),
+  password VARCHAR(255),
+  score INTEGER NOT NULL,
+  last_login TIMESTAMP,
+  profile_photo_path VARCHAR(255)
+);
+```
+
+#### Users
+*Finalidade:* Armazena informações dos usuários cadastrados na plataforma.<br>
+*Campos:*
+
+1. id: Identificador único do usuário (chave primária).
+2. id_role: Chave estrangeira para role_permissions, indicando o papel do usuário.
+3. Name: Nome do usuário.
+4.Region: Localidade do usuário.
+5. Email: E-mail do usuário (único).
+6. Password: Senha.
+7. Score: Pontuação do usuário.
+8. last_login: Data e hora do último acesso.
+9. Profile_photo: Caminho ou URL da foto de perfil.
+10. id_certificate: Chave estrangeira para certificate, vinculando o usuário ao seu certificado.
+_____________________
+&nbsp;&nbsp;&nbsp;&nbsp; A tabela role_permissions estabelece os diversos papéis (ou funções) que um usuário pode exercer na plataforma, tais como estudante, monitor, docente, coordenador ou administrador, e detalha quais permissões cada um desses papéis tem. Os campos can_create, can_read, can_update e can_delete indicam claramente se um papel tem permissão para criar, visualizar, alterar ou apagar dados no sistema. <br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;  Em termos práticos, essa tabela afeta diretamente o que cada usuário tem permissão ou não para realizar ao utilizar a plataforma. Por exemplo, um estudante só tem a capacidade de visualizar materiais, enquanto um administrador tem a capacidade de criar e modificar módulos, usuários e materiais. Isso assegura proteção, organização e customização do acesso, adequando a experiência do usuário ao seu perfil e prevenindo ações não autorizadas. <br>
+
+```javascript
+CREATE TABLE IF NOT EXISTS roles (
+  id SERIAL PRIMARY KEY,
+  name_role VARCHAR(50),
+  can_create BOOLEAN,
+  can_read BOOLEAN,
+  can_update BOOLEAN,
+  can_delete BOOLEAN
+);
+```
+
+#### Role_permissions
+*Finalidade:* Define os diferentes papéis (roles) do sistema, como PTD, gestor ou administrador, e as permissões associadas a cada um.  <br>
+
+*Campos:*
+1. id: Identificador único do papel (chave primária).
+2. nome_role: Nome do papel.
+3. can_create, can_read, can_update, can_delete: Permissões booleanas que determinam o que cada papel pode fazer no sistema.
+_____________________
+
+&nbsp;&nbsp;&nbsp;&nbsp; A tabela User_content_progress é fundamental para a experiência do usuário em plataformas de e-learning, pois registra o progresso individual de cada pessoa em cada conteúdo e módulo do curso. Sempre que o usuário acessa ou conclui um conteúdo, essa tabela armazena se aquele material já foi finalizado (is_completed), vinculando sempre o usuário, o módulo e o conteúdo específico. Isso permite um acompanhamento personalizado, onde o usuário pode visualizar facilmente quais conteúdos já estudou e quais ainda faltam, permitindo um aprendizado no seu próprio ritmo e de acordo com suas necessidades. Além disso, caso precise interromper os estudos, ele pode retornar exatamente de onde parou, sem perder tempo procurando o que já foi feito.
+
+```javascript
+CREATE TABLE IF NOT EXISTS user_content_progress (
+  id SERIAL PRIMARY KEY,
+  user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  module_id INTEGER NOT NULL REFERENCES module(id) ON DELETE CASCADE,
+  content_id INTEGER NOT NULL REFERENCES content(id) ON DELETE CASCADE,
+  completed_at TIMESTAMP
+);
+
+```
+#### User_content_progress
+*Finalidade:* Registra o progresso do usuário em cada conteúdo e módulo. <br>
+*Campos:*
+1. id: Identificador único do progresso (chave primária).
+2. user_id: Chave estrangeira para Users.
+3. module_id: Chave estrangeira para module.
+4. content_id: Chave estrangeira para content.
+5. is_completed: Indica se o usuário concluiu o conteúdo (booleano).
+
+_________________
+
+&nbsp;&nbsp;&nbsp;&nbsp; A tabela content é crucial para a experiência do utilizador, uma vez que guarda todos os recursos de estudo (vídeos, textos, PDFs e imagens) associados a cada módulo da plataforma. Ela estrutura o material em uma sequência lógica (order), estabelece datas limite para acesso (due_time) e possibilita realçar materiais relevantes (id_emphasis).
+Em termos práticos, isso implica que o usuário pode facilmente localizar todos os recursos necessários para progredir em sua jornada de aprendizado, sabendo exatamente o que precisa ser estudado em cada fase. O acesso a diversos formatos (vídeo, texto, imagem) torna a aprendizagem mais interativa e ajustável a variados métodos de estudo.<br>
+
+
+```javascript
+CREATE TABLE IF NOT EXISTS content (
+  id SERIAL PRIMARY KEY,
+  id_module INTEGER NOT NULL REFERENCES module(id) ON DELETE CASCADE,
+  doc_path VARCHAR(255),
+  video_path VARCHAR(255),
+  img_path VARCHAR(255),
+  "order" INTEGER NOT NULL,
+  highlight BOOLEAN
+);
+```
+#### Content
+*Finalidade:* Armazena os conteúdos (aulas,pdfs, vídeos, textos) de cada módulo. <br>
+*Campos:*
+1. id: Identificador único do conteúdo (chave primária).
+2. id_modulo: Chave estrangeira para module.
+3. id_emphasis: Indica se o conteúdo é um destaque. (booleano).
+4. doc_path: Caminho para material textual.
+5. video_path: Caminho para vídeo.
+6. img_path: Caminho para imagem.
+7. order: Ordem do conteúdo dentro do módulo.
+8. due_time: Prazo ou data limite para acessar o conteúdo.
+______________________
 
 &nbsp;&nbsp;&nbsp;&nbsp; A tabela emphasis influencia diretamente a experiência do usuário em uma plataforma de e-learning ou sistema educacional ao permitir que determinados conteúdos ou módulos sejam destacados ou priorizados para cada pessoa. Na prática, ela possibilita que o sistema marque quais materiais são mais importantes, urgentes ou recomendados para um usuário específico, geralmente com uma data limite para conclusão (due_date). Assim, o usuário pode visualizar facilmente o que deve focar primeiro em sua trilha de aprendizagem, facilitando o acompanhamento do progresso, a organização dos estudos e a priorização de tarefas. Esse tipo de funcionalidade é comum em sistemas de gestão de aprendizagem (LMS), pois ajuda a tornar o aprendizado mais personalizado, eficiente e alinhado às necessidades individuais de cada estudante. <br>
 
@@ -468,15 +576,14 @@ CREATE TABLE emphasis (
 3. id_modulo: Chave estrangeira para module.
 4. id_content: Chave estrangeira para content.
 5. due_date: Data limite para o destaque.
-
 _________________
 
 &nbsp;&nbsp;&nbsp;&nbsp; A tabela module afeta a experiência do usuário ao organizar e estruturar o conteúdo em módulos em uma plataforma de aprendizado ou sistema de ensino. Cada entrada nesta tabela simboliza um módulo, que consiste numa unidade temática ou fase de um percurso de aprendizado. O campo id_path indica a trilha (ou curso) à qual o módulo está associado, enquanto o campo title define o nome do módulo e "order" determina a ordem na qual os módulos serão exibidos ao utilizador.<br>
 
 ```javascript
-CREATE TABLE module (
+CREATE TABLE IF NOT EXISTS module (
   id SERIAL PRIMARY KEY,
-  id_path INTEGER NOT NULL,
+  id_path INTEGER NOT NULL REFERENCES path(id),
   title VARCHAR(255),
   "order" INTEGER NOT NULL
 );
@@ -488,77 +595,16 @@ CREATE TABLE module (
 2. id_path: Chave estrangeira para path.
 3. title: Título do módulo.
 4. order: Ordem do módulo dentro da trilha.
-
-__________________
-
-
-&nbsp;&nbsp;&nbsp;&nbsp; A tabela Users é crucial para a experiência do utilizador, uma vez que guarda todas as informações pessoais e de acesso de cada indivíduo registrado na plataforma. Ela gerencia informações como nome, e-mail, senha, perfil (função ou cargo), região, pontuação, imagem de perfil, data do último acesso e conexão com certificados obtidos. <br>
-Em termos práticos, essa tabela possibilita que cada usuário possua uma conta exclusiva, com um histórico individual de progresso, resultados e realizações. A atribuição do papel (id_role) estabelece as funções e permissões que o usuário terá no sistema (por exemplo: estudante, docente, gestor). Adicionalmente, a área de pontuação pode ser utilizada para a gamificação, incentivando o usuário a se envolver mais. O histórico do último acesso e a imagem do perfil enriquecem a experiência. Assim, a tabela Users garante o acesso individualizado, a segurança das informações e a personalização da navegação e dos recursos disponíveis para cada pessoa na plataforma. <br>
-
-```javascript
-CREATE TABLE Users (
-  id SERIAL PRIMARY KEY,
-  id_role INTEGER NOT NULL REFERENCES role_permissions(id),
-  name VARCHAR(255),
-  region VARCHAR(255),
-  email VARCHAR(255),
-  password VARCHAR(255),
-  score INTEGER NOT NULL,
-  last_login TIMESTAMP,
-  profile_photo VARCHAR(255),
-  id_certificate INTEGER NOT NULL REFERENCES certificate(id)
-);
-```
-
-#### Users
-*Finalidade:* Armazena informações dos usuários cadastrados na plataforma.<br>
-*Campos:*
-
-1. id: Identificador único do usuário (chave primária).
-2. id_role: Chave estrangeira para role_permissions, indicando o papel do usuário.
-3. Name: Nome do usuário.
-4.Region: Localidade do usuário.
-5. Email: E-mail do usuário (único).
-6. Password: Senha.
-7. Score: Pontuação do usuário.
-8. last_login: Data e hora do último acesso.
-9. Profile_photo: Caminho ou URL da foto de perfil.
-10. id_certificate: Chave estrangeira para certificate, vinculando o usuário ao seu certificado.
 _____________________
 
-&nbsp;&nbsp;&nbsp;&nbsp; A tabela role_permissions estabelece os diversos papéis (ou funções) que um usuário pode exercer na plataforma, tais como estudante, monitor, docente, coordenador ou administrador, e detalha quais permissões cada um desses papéis tem. Os campos can_create, can_read, can_update e can_delete indicam claramente se um papel tem permissão para criar, visualizar, alterar ou apagar dados no sistema. <br>
-
-&nbsp;&nbsp;&nbsp;&nbsp;  Em termos práticos, essa tabela afeta diretamente o que cada usuário tem permissão ou não para realizar ao utilizar a plataforma. Por exemplo, um estudante só tem a capacidade de visualizar materiais, enquanto um administrador tem a capacidade de criar e modificar módulos, usuários e materiais. Isso assegura proteção, organização e customização do acesso, adequando a experiência do usuário ao seu perfil e prevenindo ações não autorizadas. <br>
-
-```javascript
-CREATE TABLE role_permissions (
-  id SERIAL PRIMARY KEY,
-  nome_role VARCHAR(50),
-  can_create BOOLEAN,
-  can_read BOOLEAN,
-  can_update BOOLEAN,
-  can_delete BOOLEAN
-);
-```
-
-#### Role_permissions
-*Finalidade:* Define os diferentes papéis (roles) do sistema, como PTD, gestor ou administrador, e as permissões associadas a cada um.  <br>
-
-*Campos:*
-1. id: Identificador único do papel (chave primária).
-2. nome_role: Nome do papel.
-3. can_create, can_read, can_update, can_delete: Permissões booleanas que determinam o que cada papel pode fazer no sistema.
-
-_____________________
 &nbsp;&nbsp;&nbsp;&nbsp; A tabela certificate guarda dados referentes aos certificados concedidos a usuários que finalizam trilhas na plataforma. Esta tabela é crucial para o usuário, pois possibilita o registro, a validação e o acesso simplificado aos certificados digitais, que atestam a conclusão de cursos, treinamentos ou percursos de aprendizagem. O campo id_path associa o certificado à trilha finalizada, a data de emissão e o hash_code asseguram a autenticidade e simplificam a verificação online do documento, pois diversos sistemas possibilitam a verificação da validade do certificado através deste código único. <br>
 
 &nbsp;&nbsp;&nbsp;&nbsp;  Em termos práticos, isso implica que o usuário tem a capacidade de acessar, baixar, compartilhar e validar seus certificados a qualquer instante, de maneira ágil e segura, sem a necessidade de procedimentos manuais ou impressos. Isso valoriza a experiência do estudante, simplifica a validação de habilidades em processos de seleção, avanços na carreira e expande as chances de reconhecimento acadêmico e profissional. <br>
 
 ```javascript
-CREATE TABLE certificate (
+CREATE TABLE IF NOT EXISTS certificate (
   id SERIAL PRIMARY KEY,
-  id_path INTEGER NOT NULL,
-  issue_date DATE,
+  id_path INTEGER NOT NULL REFERENCES path(id),
   hash_code VARCHAR(100)
 );
 ```
@@ -570,53 +616,34 @@ CREATE TABLE certificate (
 2. id_path: Chave estrangeira para path, indicando a trilha concluída.
 3. issue_date: Data de emissão do certificado.
 4. hash_code: Código único para validação do certificado.
-
 ___________________
 
-&nbsp;&nbsp;&nbsp;&nbsp; A tabela score_test documenta o rendimento dos utilizadores em testes conduzidos na ferramenta. Quando um usuário realiza um teste, essa tabela registra o número do teste realizado (id_test), o nome do usuário responsável (id_user), a pontuação obtida (score) e as datas e horas de início e término (started_at, ended_at). <br>
-&nbsp;&nbsp;&nbsp;&nbsp; Para o usuário, isso implica que seu avanço e desempenho nas avaliações são monitorados de maneira individual e clara. Ele tem a capacidade de analisar seu histórico de desempenho, determinar em quais testes se saiu melhor ou precisa aprimorar, e utilizar esses dados para acompanhar sua progressão ao longo dos anos. Ademais, a pontuação pode atuar como estímulo para alcançar melhores performances e pode ser empregada para liberar materiais, emitir certificados ou formar notas finais, tornando a experiência de aprendizado mais clara. <br>
-
 ```javascript
-CREATE TABLE score_test (
+CREATE TABLE IF NOT EXISTS user_certificate_progress (
   id SERIAL PRIMARY KEY,
-  id_test INTEGER NOT NULL REFERENCES tests(id),
-  id_user INTEGER NOT NULL REFERENCES Users(id),
-  score INTEGER NOT NULL,
-  started_at TIMESTAMP,
-  ended_at TIMESTAMP
+  id_user INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  id_certificate INTEGER NOT NULL REFERENCES certificate(id) ON DELETE CASCADE,
+  completed_at DATE
 );
 ```
+___________________
 
-#### Score_test
-*Finalidade:* Registra o desempenho do usuário em testes.<br>
-
-*Campos:*
-1. id: Identificador único (chave primária).
-2. id_test: Chave estrangeira para tests.
-3. id_user: Chave estrangeira para Users.
-4. score: Pontuação obtida.
-5. started_at: Data/hora de início do teste.
-6. ended_at: Data/hora de término do teste.
-
-__________________
-
-&nbsp;&nbsp;&nbsp;&nbsp; O usuário é impactado pela tabela feedbacks_modulo, que possibilita o registro de comentários e avaliações sobre conteúdos e módulos específicos na plataforma de aprendizado. Esta funcionalidade proporciona ao usuário um meio direto para expressar opiniões, propor melhorias e trocar experiências, tornando o processo de aprendizagem mais interativo e individualizado.
+&nbsp;&nbsp;&nbsp;&nbsp; O usuário é impactado pela tabela feedbacks_content_modulo, que possibilita o registro de comentários e avaliações sobre conteúdos e módulos específicos na plataforma de aprendizado. Esta funcionalidade proporciona ao usuário um meio direto para expressar opiniões, propor melhorias e trocar experiências, tornando o processo de aprendizagem mais interativo e individualizado.
 O retorno imediato e estruturado auxilia o usuário a ponderar sobre seu avanço, reconhecer suas habilidades e áreas que necessitam de aprimoramento, além de incentivar a participação constante no curso. Ademais, ao perceber que seus pontos de vista são levados em conta, o usuário se sente apreciado e mais integrado à comunidade de aprendizado25. <br>
 
 ```javascript
-CREATE TABLE feedbacks_modulo (
+CREATE TABLE IF NOT EXISTS feedbacks_content_module (
   id SERIAL PRIMARY KEY,
-  id_content INTEGER NOT NULL REFERENCES content(id),
-  id_modulo INTEGER NOT NULL REFERENCES module(id),
-  id_user INTEGER NOT NULL REFERENCES Users(id),
+  id_content INTEGER NOT NULL REFERENCES content(id) ON DELETE CASCADE,
+  id_module INTEGER NOT NULL REFERENCES module(id) ON DELETE CASCADE,
+  id_user INTEGER NOT NULL REFERENCES users(id),
   message TEXT,
   rating SMALLINT,
   created_at TIMESTAMP
 );
 ```
-
-#### Feedbacks_modulo
-*Finalidade:* Armazena feedbacks e avaliações que usuários deixam sobre os módulos.<br>
+#### Feedbacks_content_module 
+*Finalidade:* Armazena feedbacks e avaliações que usuários deixam sobre os módulos e conteúdos.<br>
 *Campos:*
 1. id: Identificador único (chave primária).
 2. id_content: Chave estrangeira para content.
@@ -632,14 +659,11 @@ _________________________
 
 &nbsp;&nbsp;&nbsp;&nbsp; Em termos práticos, isso implica que o usuário consegue visualizar sua trajetória educacional de maneira nítida, compreendendo exatamente quais passos precisa percorrer para atingir um objetivo ou obter um certificado. As trilhas tornam o processo de aprendizado mais organizado, individualizado e estimulante, uma vez que possibilitam que cada indivíduo rastreie seu avanço, selecione rotas adequadas aos seus interesses ou necessidades, e progrida no seu próprio tempo. <br>
 
-
 ```javascript
-CREATE TABLE path (
+CREATE TABLE IF NOT EXISTS path (
   id SERIAL PRIMARY KEY,
-  id_certification INTEGER NOT NULL,
   title VARCHAR(255),
-  description TEXT,
-  category category_enum
+  description TEXT
 );
 ```
 
@@ -651,60 +675,8 @@ CREATE TABLE path (
 3. title: Título da trilha.
 4. description: Descrição da trilha.
 5. category: Categoria da trilha (ex: programação, design, etc).
-
 _______________________
 
-&nbsp;&nbsp;&nbsp;&nbsp; A tabela content é crucial para a experiência do utilizador, uma vez que guarda todos os recursos de estudo (vídeos, textos, PDFs e imagens) associados a cada módulo da plataforma. Ela estrutura o material em uma sequência lógica (order), estabelece datas limite para acesso (due_time) e possibilita realçar materiais relevantes (id_emphasis).
-Em termos práticos, isso implica que o usuário pode facilmente localizar todos os recursos necessários para progredir em sua jornada de aprendizado, sabendo exatamente o que precisa ser estudado em cada fase. O acesso a diversos formatos (vídeo, texto, imagem) torna a aprendizagem mais interativa e ajustável a variados métodos de estudo.<br>
-
-
-```javascript
-CREATE TABLE content (
-  id SERIAL PRIMARY KEY,
-  id_modulo INTEGER NOT NULL REFERENCES module(id),
-  id_emphasis BOOLEAN,
-  doc_path VARCHAR(255),
-  video_path VARCHAR(255),
-  img_path VARCHAR(255),
-  "order" INTEGER NOT NULL,
-  due_time TIMESTAMP,
-  title VARCHAR(255),
-);
-```
-
-#### Content
-*Finalidade:* Armazena os conteúdos (aulas,pdfs, vídeos, textos) de cada módulo. <br>
-*Campos:*
-1. id: Identificador único do conteúdo (chave primária).
-2. id_modulo: Chave estrangeira para module.
-3. id_emphasis: Indica se o conteúdo é um destaque. (booleano).
-4. doc_path: Caminho para material textual.
-5. video_path: Caminho para vídeo.
-6. img_path: Caminho para imagem.
-7. order: Ordem do conteúdo dentro do módulo.
-8. due_time: Prazo ou data limite para acessar o conteúdo.
-_______________________
-
-```javascript
-CREATE TABLE User_content_progress (
-  id SERIAL PRIMARY KEY,
-  user_id INTEGER NOT NULL REFERENCES Users(id),
-  module_id INTEGER NOT NULL REFERENCES module(id),
-  content_id INTEGER NOT NULL REFERENCES content(id),
-  is_completed BOOLEAN NOT NULL
-);
-
-```
-#### User_content_progress
-*Finalidade:* Registra o progresso do usuário em cada conteúdo e módulo. <br>
-*Campos:*
-1. id: Identificador único do progresso (chave primária).
-2. user_id: Chave estrangeira para Users.
-3. module_id: Chave estrangeira para module.
-4. content_id: Chave estrangeira para content.
-5. is_completed: Indica se o usuário concluiu o conteúdo (booleano).
-
-_________________
 
 &nbsp;&nbsp;&nbsp;&nbsp; A tabela bookmarks influencia a experiência do usuário ao permitir que ele salve conteúdos e módulos como favoritos ou atalhos para acesso rápido dentro da plataforma. Na prática, isso significa que o usuário pode marcar materiais importantes, revisitar facilmente aulas, vídeos ou documentos que deseja estudar novamente, e organizar melhor sua rotina de aprendizagem.
 Assim como bookmarks em navegadores e leitores de PDF facilitam a navegação e o retorno a pontos relevantes, a funcionalidade de bookmarks em plataformas de e-learning torna o acesso ao conteúdo mais prático e personalizado. <br> 
@@ -713,11 +685,10 @@ Assim como bookmarks em navegadores e leitores de PDF facilitam a navegação e 
 Em resumo, a tabela bookmarks melhora a navegação, aumenta a eficiência e torna a experiência do usuário mais personalizada e motivadora dentro da plataforma de aprendizagem. <br>
 
 ```javascript
-CREATE TABLE bookmarks (
+CREATE TABLE IF NOT EXISTS bookmarks (
   id SERIAL PRIMARY KEY,
-  id_user INTEGER NOT NULL REFERENCES Users(id),
-  id_content INTEGER NOT NULL REFERENCES content(id),
-  id_module INTEGER NOT NULL REFERENCES module(id),
+  id_user INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  id_content INTEGER NOT NULL REFERENCES content(id) ON DELETE CASCADE,
   saved_at TIMESTAMP
 );
 
@@ -739,9 +710,9 @@ ____________________
 Motivam e engajam: Testes bem estruturados criam um senso de desafio e realização, estimulando o usuário a continuar avançando e a buscar melhores resultados. <br>
 
 ```javascript
-CREATE TABLE tests (
+CREATE TABLE IF NOT EXISTS tests (
   id SERIAL PRIMARY KEY,
-  id_modulo INTEGER NOT NULL REFERENCES module(id),
+  id_module INTEGER NOT NULL REFERENCES module(id) ON DELETE CASCADE,
   questions TEXT,
   num_questions INTEGER NOT NULL
 );
@@ -754,6 +725,33 @@ CREATE TABLE tests (
 3. questions: Texto contendo as perguntas.
 4. num_questions: Número de questões do teste.
 _______________________
+
+&nbsp;&nbsp;&nbsp;&nbsp; A tabela score_test documenta o rendimento dos utilizadores em testes conduzidos na ferramenta. Quando um usuário realiza um teste, essa tabela registra o número do teste realizado (id_test), o nome do usuário responsável (id_user), a pontuação obtida (score) e as datas e horas de início e término (started_at, ended_at). <br>
+&nbsp;&nbsp;&nbsp;&nbsp; Para o usuário, isso implica que seu avanço e desempenho nas avaliações são monitorados de maneira individual e clara. Ele tem a capacidade de analisar seu histórico de desempenho, determinar em quais testes se saiu melhor ou precisa aprimorar, e utilizar esses dados para acompanhar sua progressão ao longo dos anos. Ademais, a pontuação pode atuar como estímulo para alcançar melhores performances e pode ser empregada para liberar materiais, emitir certificados ou formar notas finais, tornando a experiência de aprendizado mais clara. <br>
+
+```javascript
+CREATE TABLE IF NOT EXISTS user_test_score (
+  id SERIAL PRIMARY KEY,
+  id_test INTEGER NOT NULL REFERENCES tests(id) ON DELETE CASCADE,
+  id_user INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  score INTEGER NOT NULL,
+  started_at TIMESTAMP,
+  ended_at TIMESTAMP
+);
+```
+
+#### Score_test
+*Finalidade:* Registra o desempenho do usuário em testes.<br>
+
+*Campos:*
+1. id: Identificador único (chave primária).
+2. id_test: Chave estrangeira para tests.
+3. id_user: Chave estrangeira para Users.
+4. score: Pontuação obtida.
+5. started_at: Data/hora de início do teste.
+6. ended_at: Data/hora de término do teste.
+
+__________________
 
 #### Cardinalidade entre Tabelas
 
