@@ -441,13 +441,13 @@ Tela | Recursos | User Story
 
 Tela | Recursos | User Story 
 --- | --- | ---
-<img src="../assets/assets_wad/wireframes/loginPTD.png"> | **Tela de Login:** Mesmas funcionalidades do PTD | <div align = "center"> 1<br></div>
+<img src="../assets/assets_wad/wireframes/loginPTD.png"> | **Tela de Login:** Mesmas funcionalidades do PTD | <div align = "center"> 7<br></div>
 <img src="../assets/assets_wad/wireframes/homePTD.png">  | **Tela Home:** Mesmas funcionalidades do PTD| <div align = "center"> 1<br>2<br>3 </div>
 <img src="../assets/assets_wad/wireframes/trilhasGestor.png"> | **Tela Trilhas:**  - Cards de trilhas gerais e Botão de adicionar nova trilha  |  <div align = "center"> 1<br>2<br>3<br></div>
-<br> <img src="../assets/assets_wad/wireframes/trilhas2Gestor.png"> | **Tela Dashboard:** Conteúdo sequêncial - Informações laterais - Material espeífico - Avaliação dos assuntos. | <div align = "center"> 4<br></div>
- <img src="../assets/assets_wad/wireframes/helpGestor.png"> | **Tela Help:** Aba de buscas rápidas - Cards de assuntos e temas recorrentes. | <div align = "center"> 1<br></div>
- <img src="../assets/assets_wad/wireframes/artigoGestor.png"> | **Tela do artigo:** Aba de buscas rápidas - Lado direito: artigo - Lado esquerdo: lista de artigos da mesma categoria. | <div align = "center"> 1<br></div>
-  <img src="../assets/assets_wad/wireframes/progressoGestor.png"> | **Tela de progresso:** Aba de buscas rápidas - Lado direito: artigo - Lado esquerdo: lista de artigos da mesma categoria. | <div align = "center"> 1<br></div>
+<br> <img src="../assets/assets_wad/wireframes/trilhas2Gestor.png"> | **Tela Dashboard:** Conteúdo sequêncial - Observar avaliação dos assuntos - Adição de novos conteúdos para usuários | <div align = "center"> 4<br></div>
+ <img src="../assets/assets_wad/wireframes/helpGestor.png"> | **Tela Help:** Aba de buscas rápidas - Funcionalidade de adição de novos cards. | <div align = "center"> 1<br></div>
+ <img src="../assets/assets_wad/wireframes/artigoGestor.png"> | **Tela do artigo:** Aba de buscas rápidas - Lado direito: artigo - Lado esquerdo: Adição de novos artigos. | <div align = "center"> 1<br></div>
+  <img src="../assets/assets_wad/wireframes/progressoGestor.png"> | **Tela de progresso:** Seleção de usuário - Gráficos de progresso dos usuários. | <div align = "center"> 1<br></div>
 
 <sup>Fonte: Material produzido pelos autores (2025).</sup><br>
 </div>
