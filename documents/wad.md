@@ -437,7 +437,7 @@ Critério de aceite 5 | CR5: Histórico de relatórios exportados fica disponív
 
 &nbsp;&nbsp;&nbsp;&nbsp;  No contexto da aplicação, tabelas como Users, module, content, path e certificate organizam o fluxo de aprendizagem, enquanto tabelas auxiliares como feedbacks_modulo, score_test, bookmarks e emphasis ampliam as funcionalidades ao permitir avaliações, acompanhamento de progresso, personalização e destaque de conteúdos. A tabela role_permissions define os diferentes perfis de acesso e suas permissões, promovendo segurança e flexibilidade na gestão do sistema. Assim, o modelo relacional adotado oferece uma base sólida para o desenvolvimento de uma plataforma educacional, garantindo integridade, clareza e escalabilidade. <br>
 
-div align = "center">
+<div align = "center">
 
 <sup>Figura 7: Diagrama Modelo Relacional.</sup><br>
 
@@ -464,10 +464,10 @@ CREATE TABLE IF NOT EXISTS users (
   profile_photo_path VARCHAR(255)
 );
 ```
-
 #### Users
-*Finalidade:* Armazena informações dos usuários cadastrados na plataforma.<br>
-*Campos:*
+**Finalidade:** Armazena informações dos usuários cadastrados na plataforma.<br>
+
+**Campos:**
 
 1. id: Identificador único do usuário (chave primária).
 2. id_role: Chave estrangeira para role_permissions, indicando o papel do usuário.
@@ -496,9 +496,9 @@ CREATE TABLE IF NOT EXISTS roles (
 ```
 
 #### Role_permissions
-*Finalidade:* Define os diferentes papéis (roles) do sistema, como PTD, gestor ou administrador, e as permissões associadas a cada um.  <br>
+**Finalidade:** Define os diferentes papéis (roles) do sistema, como PTD, gestor ou administrador, e as permissões associadas a cada um.  <br>
 
-*Campos:*
+**Campos:**
 1. id: Identificador único do papel (chave primária).
 2. nome_role: Nome do papel.
 3. can_create, can_read, can_update, can_delete: Permissões booleanas que determinam o que cada papel pode fazer no sistema.
@@ -517,8 +517,9 @@ CREATE TABLE IF NOT EXISTS user_content_progress (
 
 ```
 #### User_content_progress
-*Finalidade:* Registra o progresso do usuário em cada conteúdo e módulo. <br>
-*Campos:*
+**Finalidade:** Registra o progresso do usuário em cada conteúdo e módulo. <br>
+
+**Campos:**
 1. id: Identificador único do progresso (chave primária).
 2. user_id: Chave estrangeira para Users.
 3. module_id: Chave estrangeira para module.
@@ -529,7 +530,6 @@ _________________
 
 &nbsp;&nbsp;&nbsp;&nbsp; A tabela content é crucial para a experiência do utilizador, uma vez que guarda todos os recursos de estudo (vídeos, textos, PDFs e imagens) associados a cada módulo da plataforma. Ela estrutura o material em uma sequência lógica (order), estabelece datas limite para acesso (due_time) e possibilita realçar materiais relevantes (id_emphasis).
 Em termos práticos, isso implica que o usuário pode facilmente localizar todos os recursos necessários para progredir em sua jornada de aprendizado, sabendo exatamente o que precisa ser estudado em cada fase. O acesso a diversos formatos (vídeo, texto, imagem) torna a aprendizagem mais interativa e ajustável a variados métodos de estudo.<br>
-
 
 ```javascript
 CREATE TABLE IF NOT EXISTS content (
@@ -543,8 +543,9 @@ CREATE TABLE IF NOT EXISTS content (
 );
 ```
 #### Content
-*Finalidade:* Armazena os conteúdos (aulas,pdfs, vídeos, textos) de cada módulo. <br>
-*Campos:*
+**Finalidade:** Armazena os conteúdos (aulas,pdfs, vídeos, textos) de cada módulo. <br>
+
+**Campos:**
 1. id: Identificador único do conteúdo (chave primária).
 2. id_modulo: Chave estrangeira para module.
 3. id_emphasis: Indica se o conteúdo é um destaque. (booleano).
@@ -568,9 +569,9 @@ CREATE TABLE emphasis (
 
 ```
 #### Emphasis
-*Finalidade:* Marca conteúdos ou módulos como "em destaque" para um usuário, ou para fins de priorização.<br>
+**Finalidade:** Marca conteúdos ou módulos como "em destaque" para um usuário, ou para fins de priorização.<br>
 
-*Campos:*
+**Campos:**
 1. id: Identificador único (chave primária).
 2. id_user: Chave estrangeira para Users.
 3. id_modulo: Chave estrangeira para module.
@@ -590,7 +591,7 @@ CREATE TABLE IF NOT EXISTS module (
 ```
 #### Module
 *Finalidade:* Representa os módulos que compõem uma trilha de aprendizagem.<br>
-*Campos:*
+*Campos:**
 1. id: Identificador único (chave primária).
 2. id_path: Chave estrangeira para path.
 3. title: Título do módulo.
@@ -761,19 +762,19 @@ __________________
 
 | Entidade A | Entidade B | Cardinalidade | Explicação |
 |-----|-----|------|------|
-| role_permissions | Users | 1:N | Uma role pode estar associada a vários usuários |
-| Users| certificate| 1:N | Um usuário pode ter muitos certificados |
-| certificate| path| 1:N| Um certificado pode estar ligado a várias trilhas|
+| role_permissions | Users | 1:1 | Uma role pode estar associada a vários usuários |
+| Users| user_certification_progress| N:N | Um usuário pode ter muitos certificados |
+| certificate| path| 1:1 | Um certificado pode estar ligado a várias trilhas|
 | path  | module | 1:N | Uma trilha contém vários módulos |
 | module | content | 1:N | Um módulo contém vários conteúdos |
-| Users | User_content_progress | 1:N | Um usuário pode ter muitos registros de progresso |
-| content | User_content_progress | 1:N | Um conteúdo pode estar em vários registros de progresso |
+| Users | User_content_progress | 1:1 | Um usuário pode ter muitos registros de progresso |
+| content | User_content_progress | N:N | Um conteúdo pode estar em vários registros de progresso |
 | module | User_content_progress   | 1:N | Um módulo pode estar em vários registros de progresso |
-| Users | bookmarks | 1:N | Um usuário pode ter vários conteúdos fixados                                |
+| Users | bookmarks | 1:1 | Um usuário pode ter vários conteúdos fixados                                |
 | content | bookmarks | 1:N | Um conteúdo pode estar fixado por vários usuários |
 | module | bookmarks | 1:N | Um módulo pode estar em vários registros de fixação |
-| module | tests | 1:N | Um módulo pode ter vários testes |
-| tests | score_test | 1:N | Um teste pode gerar vários registros de pontuação |
+| module | tests | 1 :N | Um módulo pode ter vários testes |
+| tests | user_test_score | N :N | Um teste pode gerar vários registros de pontuação |
 | Users, content, module | emphasis | N:N | Representa ênfase de usuários para conteúdos específicos (tabela associativa) |
 | Users, content, module | feedbacks_modulo | N:N | Representa feedbacks deixados por usuários em conteúdos (tabela associativa)|
 
