@@ -809,6 +809,26 @@ WHERE id = 3 AND id_module = 3;
 
 Da mesma forma que a consulta anterior, esta consulta é restritiva. Assim, só haverá retorno de informações se as preposições A e B forem simultaneamente verdadeiras.
 
+**Expressão SQL:**
+```sql
+DELETE FROM users
+WHERE email = 'ptd@exemplo.com' AND id_role = (
+  SELECT id FROM roles WHERE name_role = 'PTD'
+);
+```
+**Proposições lógicas** | $A$: O email do usuário é `'ptd@exemplo.com'` <br> $B$: O O usuário é um PTD (`m.id = 3`) <br>
+**Expressão lógica proposicional** | $(A \land B)$
+**Tabela Verdade:**
+
+| $A$ | $B$ | $(A \land B)$ |
+|---|---|---------------|
+| F | F | F             |
+| F | V | F             |
+| V | F | F             |
+| V | V | V             |
+
+Novamente, a consulta só será executada com êxito se ambas as proposições A e B forem simultaneamente verdadeiras, ou seja: se houver um usuário com o cargo PTD e com o email "ptd@exemplo.com".
+
 ## 3.6. WebAPI e endpoints (sprints 3 e 4)
 
 *Utilize um link para outra página de documentação contendo a descrição completa de cada endpoint. Ou descreva aqui cada endpoint criado para seu sistema.* 
