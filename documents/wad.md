@@ -435,37 +435,17 @@ Critério de aceite 5 | CR5: Histórico de relatórios exportados fica disponív
 
 Segundo Heuser[1], a modelagem relacional é uma etapa fundamental no projeto de sistemas de banco de dados, sendo responsável pela representação lógica dos dados e de seus relacionamentos por meio de estruturas chamadas de tabelas. No contexto cada tabela é composta por linhas (tuplas) e colunas (atributos), e a integridade dos dados é garantida por restrições como a chave primária (identificador único de cada registro) e a chave estrangeira (responsável por estabelecer vínculos entre tabelas). Essa abordagem, proposta por Peter Chen em 1976, permite representar de forma clara e estruturada os elementos do mundo real, facilitando a implementação, manutenção e expansão dos sistemas de informação.
 
-div align = "center">
+<div align = "center">
 
-<sup>Figura 5: Persona "Mariana Lima" (PTD).</sup><br>
+<sup>Figura 7: Modelagem relacional do banco de dados.</sup><br>
 
-<img src="../assets/assets_wad/Mariana Lima Persona.png"><br>
+<img src="../assets/assets_wad/modelagem_relacional_FieldAcademy.png"><br>
 
 <sub>Fonte: Material produzido pelos autores (2025). </sub><br>
-
-____________________
-```javascript
-CREATE TABLE `emphasis` (
-  `id` integer,
-  `id_user` integer,
-  `id_modulo` integer,
-  `id_content` integer,
-  `due_date` timestamp default
-);
-
-```
-#### Emphasis
-*Finalidade:* Marca conteúdos ou módulos como "em destaque" para um usuário, ou para fins de priorização.
-
-*Campos:*
-1. id: Identificador único (chave primária).
-2. id_user: Chave estrangeira para Users.
-3. id_modulo: Chave estrangeira para module.
-4. id_content: Chave estrangeira para content.
-5. due_date: Data limite para o destaque.
+</div>
 
 _________________
-```javascript
+```sql
 CREATE TABLE `module` (
   `id` integer,
   `id_path` integer NN,
@@ -474,15 +454,16 @@ CREATE TABLE `module` (
 );
 ```
 #### Module
-*Finalidade:* Representa os módulos que compõem uma trilha de aprendizagem.
-*Campos:*
+**Finalidade:** Representa os módulos que compõem uma trilha de aprendizagem.
+
+**Campos:**
 1. id: Identificador único (chave primária).
-2. id_path: Chave estrangeira para path.
+2. id_path: Chave estrangeira para a entidade `path`.
 3. title: Título do módulo.
 4. order: Ordem do módulo dentro da trilha.
 
 __________________
-```javascript
+```sql
 CREATE TABLE `Users` (
   `id` integer,
   `id_role` integer,
@@ -499,22 +480,23 @@ CREATE TABLE `Users` (
 ```
 
 #### Users
-*Finalidade:* Armazena informações dos usuários cadastrados na plataforma.
-*Campos:*
+**Finalidade:** Armazena informações dos usuários cadastrados na plataforma.
+
+**Campos:**
 
 1. id: Identificador único do usuário (chave primária).
-2. id_role: Chave estrangeira para role_permissions, indicando o papel do usuário.
+2. id_role: Chave estrangeira para a entidade `role_permissions`
 3. Name: Nome do usuário.
-4.Region: Localidade do usuário.
+4. Region: Localidade do usuário.
 5. Email: E-mail do usuário (único).
 6. Password: Senha.
 7. Score: Pontuação do usuário.
 8. last_login: Data e hora do último acesso.
 9. Profile_photo: Caminho ou URL da foto de perfil.
-10. id_certificate: Chave estrangeira para certificate, vinculando o usuário ao seu certificado.
+10. id_certificate: Chave estrangeira para a entidade `certificate`.
 _____________________
 
-```javascript
+```sql
 CREATE TABLE `role_permissions` (
   `id` integer,
   `nome_role` varchar(50),
@@ -526,15 +508,16 @@ CREATE TABLE `role_permissions` (
 ```
 
 #### Role_permissions
-*Finalidade:* Define os diferentes papéis (roles) do sistema, como PTD, gestor ou administrador, e as permissões associadas a cada um.
-*Campos:*
+**Finalidade:** Define os diferentes papéis (roles) do sistema, como PTD, gestor ou administrador, e as permissões associadas a cada um.
+
+**Campos:**
 1. id: Identificador único do papel (chave primária).
 2. nome_role: Nome do papel.
 3. can_create, can_read, can_update, can_delete: Permissões booleanas que determinam o que cada papel pode fazer no sistema.
 
 _____________________
 
-```javascript
+```sql
 CREATE TABLE `certificate` (
   `id` integer,
   `id_path` integer,
@@ -544,16 +527,16 @@ CREATE TABLE `certificate` (
 );
 ```
 #### Certificate
-*Finalidade:*  Registra os certificados emitidos para usuários que concluem trilhas.
+**Finalidade:**  Registra os certificados emitidos para usuários que concluem trilhas.
 
-*Campos:*
+**Campos:**
 1. id: Identificador único do certificado (chave primária).
 2. id_path: Chave estrangeira para path, indicando a trilha concluída.
 3. issue_date: Data de emissão do certificado.
 4. hash_code: Código único para validação do certificado.
 
 ___________________
-```javascript
+```sql
 CREATE TABLE `score_test` (
   `id` integer,
   `id_test` integer,
@@ -565,18 +548,18 @@ CREATE TABLE `score_test` (
 ```
 
 #### Score_test
-*Finalidade:* Registra o desempenho do usuário em testes.
+**Finalidade:** Registra o desempenho do usuário em testes.
 
-*Campos:*
+**Campos:**
 1. id: Identificador único (chave primária).
-2. id_test: Chave estrangeira para tests.
-3. id_user: Chave estrangeira para Users.
+2. id_test: Chave estrangeira para a entidade `tests`.
+3. id_user: Chave estrangeira para a entidade `users`.
 4. score: Pontuação obtida.
 5. started_at: Data/hora de início do teste.
 6. ended_at: Data/hora de término do teste.
 
 __________________
-```javascript
+```sql
 CREATE TABLE `feedbacks_modulo` (
   `id` integer,
   `id_content` integer,
@@ -589,19 +572,20 @@ CREATE TABLE `feedbacks_modulo` (
 ```
 
 #### Feedbacks_modulo
-*Finalidade:* Armazena feedbacks e avaliações que usuários deixam sobre os módulos.
-*Campos:*
+**Finalidade:** Armazena feedbacks e avaliações que usuários deixam sobre os módulos.
+
+**Campos:**
 1. id: Identificador único (chave primária).
-2. id_content: Chave estrangeira para content.
-3. id_modulo: Chave estrangeira para module.
-4. id_user: Chave estrangeira para Users.
+2. id_content: Chave estrangeira para a entidade `content`.
+3. id_modulo: Chave estrangeira para a entidade `module`.
+4. id_user: Chave estrangeira para a entidade `users`.
 5. message: Comentário do usuário.
 6. rating: Avaliação numérica (ex: 1 a 5).
 7. created_at: Data/hora do feedback.
 
 _________________________
 
-```javascript
+```sql
 CREATE TABLE `path` (
   `id` integer,
   `id_certification` integer,
@@ -612,16 +596,17 @@ CREATE TABLE `path` (
 ```
 
 #### Path
-*Finalidade:* Representa as trilhas disponíveis na plataforma.
-*Campos:*
+**Finalidade:** Representa as trilhas disponíveis na plataforma.
+
+**Campos:**
 1. id: Identificador único (chave primária).
-2. id_certification: Chave estrangeira para certificate (caso a trilha gere certificado).
+2. id_certification: Chave estrangeira para a entidade `certificate`. 
 3. title: Título da trilha.
 4. description: Descrição da trilha.
 5. category: Categoria da trilha (ex: programação, design, etc).
 
 _________________
-```javascript
+```sql
 CREATE TABLE `User_content_progress` (
   `id` integer,
   `user_id ` integer NN,
@@ -632,27 +617,40 @@ CREATE TABLE `User_content_progress` (
 
 ```
 #### User_content_progress
-*Finalidade:* Registra o progresso do usuário em cada conteúdo e módulo.
-*Campos:*
+**Finalidade:** Registra o progresso do usuário em cada conteúdo e módulo.
+
+**Campos:**
 1. id: Identificador único do progresso (chave primária).
-2. user_id: Chave estrangeira para Users.
-3. module_id: Chave estrangeira para module.
-4. content_id: Chave estrangeira para content.
+2. user_id: Chave estrangeira para a entidade `users`.
+3. module_id: Chave estrangeira para a entidade `module`.
+4. content_id: Chave estrangeira para a entidade `content`.
 5. is_completed: Indica se o usuário concluiu o conteúdo (booleano).
 _______________________
 
-
+```sql
 CREATE TABLE `content` (
   `id` integer,
   `id_modulo` integer,
-  `id_emphasis` booleana,
+  `title` varchar,
   `doc_path` varchar(255),
   `video_path` varchar(255),
   `img_path` varchar(255),
+  `feedback` text,
   `order` integer,
-  `due_time` timestamp
 );
+```
+#### Content
+**Finalidade:** Representa os conteúdos presentes em cada módulo de aprendizagem
 
+**Campos:**
+1. id: Identificador único de conteúdo (chave primária)
+2. id_modulo: Chave estrangeira para a entidade `module`
+3. title: Título do conteúdo
+4. doc_path: url do documento de texto
+5. video_path: url da vídeo-aula
+6. img_path: url da imagem
+7. feedback: Feedback do usuário para o conteúdo
+8. order: ordem em que o conteúdo aparece na plataforma
 
 ### 3.5.2. Consultas SQL e lógica proposicional (sprint 2)
 
