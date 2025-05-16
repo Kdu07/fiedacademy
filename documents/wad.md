@@ -402,8 +402,63 @@ Critério de aceite 5 | CR5: Histórico de relatórios exportados fica disponív
 *Posicione aqui o diagrama de arquitetura da sua solução de aplicação web. Atualize sempre que necessário*
 
 ## 3.2. Wireframes (sprint 2)
+Wireframe é um rascunho visual que mostra a estrutura básica de uma interface, focando na organização dos elementos e na navegação, sem detalhar o design final.
+Para alinhar os componentes de forma clara e responsiva, foi utilizada a estrutura de grid abaixo:
 
-*Posicione aqui as imagens do wireframe construído para sua solução e, opcionalmente, o link para acesso (mantenha o link sempre público para visualização)*
+Desktop | Mobile
+---|---
+<img src="../assets/assets_wad/wireframes/GRID.png"  width="200"> | <img src="../assets/assets_wad/wireframes/GRID2.png"  width="70"> 
+[Link dos wireframes](https://www.figma.com/design/bOsRfHBpYqRksHS4GiNW74/bayer-project?node-id=0-1&p=f&t=S55FkKepuUIl5D6k-11)
+
+### Versão PTD
+<div align = "center">
+
+<sup>Figura X: Wireframes da plataforma para o PTD - Desktop</sup><br>
+
+Tela | Recursos | User Story 
+--- | --- | ---
+<img src="../assets/assets_wad/wireframes/loginPTD.png"> | **Tela de Login:** Campo de Email - Campo para a senha - Botão de confirmação de login | <div align = "center"> 1<br></div>
+<img src="../assets/assets_wad/wireframes/homePTD.png">  | **Tela Home:** Aba de buscas rápidas - Direcionamento para tela de trilhas - Direcionamento para tela de help - Artigos que podem ser fixados pelo PTD para acesso rápido. - Sino de notificações. | <div align = "center"> 1<br>2<br>3 </div>
+<img src="../assets/assets_wad/wireframes/trilhasPTD.png"> <br> <img src="../assets/assets_wad/wireframes/trilhas2PTD.png">  | **Tela Trilhas:** Progesso atual - Histórico de trilhas - Recomendações de tilhas - Base de conteúdos gerais e opcionais. |  <div align = "center"> 1<br>2<br>3<br></div>
+ <img src="../assets/assets_wad/wireframes/dashboardPTD.png"> | **Tela Dashboard:** Conteúdo sequêncial - Informações laterais - Material espeífico - Avaliação dos assuntos. | <div align = "center"> 4<br></div>
+ <img src="../assets/assets_wad/wireframes/helpPTD.png"> | **Tela Help:** Aba de buscas rápidas - Cards de assuntos e temas recorrentes. | <div align = "center"> 1<br></div>
+ <img src="../assets/assets_wad/wireframes/help2PTD.png"> | **Tela do artigo:** Aba de buscas rápidas - Lado direito: artigo - Lado esquerdo: lista de artigos da mesma categoria. | <div align = "center"> 1<br></div>
+
+<sup>Fonte: Material produzido pelos autores (2025).</sup><br>
+</div>
+
+#### Versão Mobile
+<div align = "center">
+<sup>Figura X: Wireframes da plataforma para o PTD - Mobile </sup><br>
+<img src="../assets/assets_wad/wireframes/.png"> 
+
+<sup>Fonte: Material produzido pelos autores (2025).</sup><br>
+</div>
+
+### Versão Gestor
+<div align = "center">
+<sup>Figura X: Wireframes da plataforma para o Gestor - Desktop </sup><br>
+
+Tela | Recursos | User Story 
+--- | --- | ---
+<img src="../assets/assets_wad/wireframes/loginPTD.png"> | **Tela de Login:** Mesmas funcionalidades do PTD | <div align = "center"> 7<br></div>
+<img src="../assets/assets_wad/wireframes/homePTD.png">  | **Tela Home:** Mesmas funcionalidades do PTD| <div align = "center"> 7<br></div>
+<img src="../assets/assets_wad/wireframes/trilhasGestor.png"> | **Tela Trilhas:**  - Cards de trilhas gerais e Botão de adicionar nova trilha  |  <div align = "center"> 6<br>7</div>
+<br> <img src="../assets/assets_wad/wireframes/trilhas2Gestor.png"> | **Tela Dashboard:** Conteúdo sequêncial - Observar avaliação dos assuntos - Adição de novos conteúdos para usuários | <div align = "center"> 7<br>8</div>
+ <img src="../assets/assets_wad/wireframes/helpGestor.png"> | **Tela Help:** Aba de buscas rápidas - Funcionalidade de adição de novos cards. | <div align = "center"> 7<br></div>
+ <img src="../assets/assets_wad/wireframes/artigoGestor.png"> | **Tela do artigo:** Aba de buscas rápidas - Lado direito: artigo - Lado esquerdo: Adição de novos artigos. | <div align = "center"> 8<br></div>
+  <img src="../assets/assets_wad/wireframes/progressoGestor.png"> | **Tela de progresso:** Seleção de usuário - Dados do progresso do usuário. | <div align = "center"> 6<br>7<br>8</div>
+
+<sup>Fonte: Material produzido pelos autores (2025).</sup><br>
+</div>
+
+#### Versão Mobile
+<div align = "center">
+<sup>Figura X: Wireframes da plataforma para o Gestor - Mobile </sup><br>
+<img src="../assets/assets_wad/wireframes/.png"> 
+
+<sup>Fonte: Material produzido pelos autores (2025).</sup><br>
+</div>
 
 ## 3.3. Guia de estilos (sprint 3)
 
@@ -439,6 +494,7 @@ Critério de aceite 5 | CR5: Histórico de relatórios exportados fica disponív
 
 <div align = "center">
 
+
 <sup>Figura 7: Diagrama Modelo Relacional.</sup><br>
 
 <img src="../assets/assets_wad/modelagem_relacional_FieldAcademy.png"><br>
@@ -464,10 +520,10 @@ CREATE TABLE IF NOT EXISTS users (
   profile_photo_path VARCHAR(255)
 );
 ```
-
 #### Users
-**Finalidade:** Armazena informações dos usuários cadastrados na plataforma.<br>
-**Campos:**
+***Finalidade:*** Armazena informações dos usuários cadastrados na plataforma.<br>
+*
+**Campos:***
 
 1. id: Identificador único do usuário (chave primária).
 2. id_role: Chave estrangeira para a entidade `role_permissions`
@@ -497,7 +553,9 @@ CREATE TABLE IF NOT EXISTS roles (
 
 #### Role_permissions
 **Finalidade:** Define os diferentes papéis (roles) do sistema, como PTD, gestor ou administrador, e as permissões associadas a cada um.  <br>
+**Finalidade:** Define os diferentes papéis (roles) do sistema, como PTD, gestor ou administrador, e as permissões associadas a cada um.  <br>
 
+**Campos:**
 **Campos:**
 1. id: Identificador único do papel (chave primária).
 2. nome_role: Nome do papel.
@@ -518,6 +576,7 @@ CREATE TABLE IF NOT EXISTS user_content_progress (
 ```
 #### User_content_progress
 **Finalidade:** Registra o progresso do usuário em cada conteúdo e módulo. <br>
+
 **Campos:**
 1. id: Identificador único do progresso (chave primária).
 2. user_id: Chave estrangeira para Users.
@@ -529,8 +588,6 @@ _________________
 
 &nbsp;&nbsp;&nbsp;&nbsp; A tabela content é crucial para a experiência do utilizador, uma vez que guarda todos os recursos de estudo (vídeos, textos, PDFs e imagens) associados a cada módulo da plataforma. Ela estrutura o material em uma sequência lógica (order), estabelece datas limite para acesso (due_time) e possibilita realçar materiais relevantes (id_emphasis).
 Em termos práticos, isso implica que o usuário pode facilmente localizar todos os recursos necessários para progredir em sua jornada de aprendizado, sabendo exatamente o que precisa ser estudado em cada fase. O acesso a diversos formatos (vídeo, texto, imagem) torna a aprendizagem mais interativa e ajustável a variados métodos de estudo.<br>
-
-
 ```sql
 CREATE TABLE IF NOT EXISTS content (
   id SERIAL PRIMARY KEY,
@@ -544,6 +601,9 @@ CREATE TABLE IF NOT EXISTS content (
 ```
 #### Content
 **Finalidade:** Armazena os conteúdos (aulas,pdfs, vídeos, textos) de cada módulo. <br>
+
+**Campos:**
+**Finalidade:** Armazena os conteúdos (aulas,pdfs, vídeos, textos) de cada módulo. <br>
 **Campos:**
 1. id: Identificador único do conteúdo (chave primária).
 2. id_modulo: Chave estrangeira para module.
@@ -553,6 +613,29 @@ CREATE TABLE IF NOT EXISTS content (
 6. img_path: Caminho para imagem.
 7. order: Ordem do conteúdo dentro do módulo.
 8. due_time: Prazo ou data limite para acessar o conteúdo.
+______________________
+
+&nbsp;&nbsp;&nbsp;&nbsp; A tabela emphasis influencia diretamente a experiência do usuário em uma plataforma de e-learning ou sistema educacional ao permitir que determinados conteúdos ou módulos sejam destacados ou priorizados para cada pessoa. Na prática, ela possibilita que o sistema marque quais materiais são mais importantes, urgentes ou recomendados para um usuário específico, geralmente com uma data limite para conclusão (due_date). Assim, o usuário pode visualizar facilmente o que deve focar primeiro em sua trilha de aprendizagem, facilitando o acompanhamento do progresso, a organização dos estudos e a priorização de tarefas. Esse tipo de funcionalidade é comum em sistemas de gestão de aprendizagem (LMS), pois ajuda a tornar o aprendizado mais personalizado, eficiente e alinhado às necessidades individuais de cada estudante. <br>
+
+```javascript
+CREATE TABLE emphasis (
+  id SERIAL PRIMARY KEY,
+  id_user INTEGER NOT NULL REFERENCES Users(id),
+  id_modulo INTEGER NOT NULL REFERENCES module(id),
+  id_content INTEGER NOT NULL REFERENCES content(id),
+  due_date TIMESTAMP
+);
+
+```
+#### Emphasis
+**Finalidade:** Marca conteúdos ou módulos como "em destaque" para um usuário, ou para fins de priorização.<br>
+
+**Campos:**
+1. id: Identificador único (chave primária).
+2. id_user: Chave estrangeira para Users.
+3. id_modulo: Chave estrangeira para module.
+4. id_content: Chave estrangeira para content.
+5. due_date: Data limite para o destaque.
 _________________
 
 &nbsp;&nbsp;&nbsp;&nbsp; A tabela module afeta a experiência do usuário ao organizar e estruturar o conteúdo em módulos em uma plataforma de aprendizado ou sistema de ensino. Cada entrada nesta tabela simboliza um módulo, que consiste numa unidade temática ou fase de um percurso de aprendizado. O campo id_path indica a trilha (ou curso) à qual o módulo está associado, enquanto o campo title define o nome do módulo e "order" determina a ordem na qual os módulos serão exibidos ao utilizador.<br>
@@ -568,6 +651,8 @@ CREATE TABLE IF NOT EXISTS module (
 #### Module
 **Finalidade:** Representa os módulos que compõem uma trilha de aprendizagem.<br>
 **Campos:**
+*Finalidade:* Representa os módulos que compõem uma trilha de aprendizagem.<br>
+*Campos:**
 1. id: Identificador único (chave primária).
 2. id_path: Chave estrangeira para path.
 3. title: Título do módulo.
@@ -738,21 +823,22 @@ __________________
 
 | Entidade A | Entidade B | Cardinalidade | Explicação |
 |-----|-----|------|------|
-| role_permissions | Users | 1:N | Uma role pode estar associada a vários usuários |
-| Users| certificate| 1:N | Um usuário pode ter muitos certificados |
-| certificate| path| 1:N| Um certificado pode estar ligado a várias trilhas|
-| path  | module | 1:N | Uma trilha contém vários módulos |
-| module | content | 1:N | Um módulo contém vários conteúdos |
-| Users | User_content_progress | 1:N | Um usuário pode ter muitos registros de progresso |
-| content | User_content_progress | 1:N | Um conteúdo pode estar em vários registros de progresso |
-| module | User_content_progress   | 1:N | Um módulo pode estar em vários registros de progresso |
-| Users | bookmarks | 1:N | Um usuário pode ter vários conteúdos fixados                                |
-| content | bookmarks | 1:N | Um conteúdo pode estar fixado por vários usuários |
-| module | bookmarks | 1:N | Um módulo pode estar em vários registros de fixação |
-| module | tests | 1:N | Um módulo pode ter vários testes |
-| tests | score_test | 1:N | Um teste pode gerar vários registros de pontuação |
-| Users, content, module | emphasis | N:N | Representa ênfase de usuários para conteúdos específicos (tabela associativa) |
-| Users, content, module | feedbacks_modulo | N:N | Representa feedbacks deixados por usuários em conteúdos (tabela associativa)|
+| Users, Content, Module | feedbacks_modulo | N:N | Representa feedbacks deixados por usuários em conteúdos (tabela associativa)|
+| Users| User_certification_progress| N:N | Um usuário pode ter muitos certificados |
+| Users, Content, Module | Emphasis | N:N | Representa ênfase de usuários para conteúdos específicos (tabela associativa) |
+| Users | User_content_progress | 1:1 | Um usuário pode ter muitos registros de progresso |
+| Role_permissions | Users | 1:1 | Uma role pode estar associada a vários usuários |
+| Certificate| path| 1:1 | Um certificado pode estar ligado a várias trilhas|
+| Path  | Module | 1:N | Uma trilha contém vários módulos |
+| Module | Content | 1:N | Um módulo contém vários conteúdos |
+| Content | User_content_progress | N:N | Um conteúdo pode estar em vários registros de progresso |
+| Module | User_content_progress   | 1:N | Um módulo pode estar em vários registros de progresso |
+| Users | Bookmarks | 1:1 | Um usuário pode ter vários conteúdos fixados |
+| Content | Bookmarks | 1:N | Um conteúdo pode estar fixado por vários usuários |
+| Module | Bookmarks | 1:N | Um módulo pode estar em vários registros de fixação |
+| Module | Tests | 1 :N | Um módulo pode ter vários testes |
+| Tests | User_test_score | N :N | Um teste pode gerar vários registros de pontuação |
+
 
 
 <sub>Fonte: Material produzido pelos autores (2025). </sub><br>
