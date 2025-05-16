@@ -402,8 +402,63 @@ Critério de aceite 5 | CR5: Histórico de relatórios exportados fica disponív
 *Posicione aqui o diagrama de arquitetura da sua solução de aplicação web. Atualize sempre que necessário*
 
 ## 3.2. Wireframes (sprint 2)
+Wireframe é um rascunho visual que mostra a estrutura básica de uma interface, focando na organização dos elementos e na navegação, sem detalhar o design final.
+Para alinhar os componentes de forma clara e responsiva, foi utilizada a estrutura de grid abaixo:
 
-*Posicione aqui as imagens do wireframe construído para sua solução e, opcionalmente, o link para acesso (mantenha o link sempre público para visualização)*
+Desktop | Mobile
+---|---
+<img src="../assets/assets_wad/wireframes/GRID.png"  width="200"> | <img src="../assets/assets_wad/wireframes/GRID2.png"  width="70"> 
+[Link dos wireframes](https://www.figma.com/design/bOsRfHBpYqRksHS4GiNW74/bayer-project?node-id=0-1&p=f&t=S55FkKepuUIl5D6k-11)
+
+### Versão PTD
+<div align = "center">
+
+<sup>Figura X: Wireframes da plataforma para o PTD - Desktop</sup><br>
+
+Tela | Recursos | User Story 
+--- | --- | ---
+<img src="../assets/assets_wad/wireframes/loginPTD.png"> | **Tela de Login:** Campo de Email - Campo para a senha - Botão de confirmação de login | <div align = "center"> 1<br></div>
+<img src="../assets/assets_wad/wireframes/homePTD.png">  | **Tela Home:** Aba de buscas rápidas - Direcionamento para tela de trilhas - Direcionamento para tela de help - Artigos que podem ser fixados pelo PTD para acesso rápido. - Sino de notificações. | <div align = "center"> 1<br>2<br>3 </div>
+<img src="../assets/assets_wad/wireframes/trilhasPTD.png"> <br> <img src="../assets/assets_wad/wireframes/trilhas2PTD.png">  | **Tela Trilhas:** Progesso atual - Histórico de trilhas - Recomendações de tilhas - Base de conteúdos gerais e opcionais. |  <div align = "center"> 1<br>2<br>3<br></div>
+ <img src="../assets/assets_wad/wireframes/dashboardPTD.png"> | **Tela Dashboard:** Conteúdo sequêncial - Informações laterais - Material espeífico - Avaliação dos assuntos. | <div align = "center"> 4<br></div>
+ <img src="../assets/assets_wad/wireframes/helpPTD.png"> | **Tela Help:** Aba de buscas rápidas - Cards de assuntos e temas recorrentes. | <div align = "center"> 1<br></div>
+ <img src="../assets/assets_wad/wireframes/help2PTD.png"> | **Tela do artigo:** Aba de buscas rápidas - Lado direito: artigo - Lado esquerdo: lista de artigos da mesma categoria. | <div align = "center"> 1<br></div>
+
+<sup>Fonte: Material produzido pelos autores (2025).</sup><br>
+</div>
+
+#### Versão Mobile
+<div align = "center">
+<sup>Figura X: Wireframes da plataforma para o PTD - Mobile </sup><br>
+<img src="../assets/assets_wad/wireframes/.png"> 
+
+<sup>Fonte: Material produzido pelos autores (2025).</sup><br>
+</div>
+
+### Versão Gestor
+<div align = "center">
+<sup>Figura X: Wireframes da plataforma para o Gestor - Desktop </sup><br>
+
+Tela | Recursos | User Story 
+--- | --- | ---
+<img src="../assets/assets_wad/wireframes/loginPTD.png"> | **Tela de Login:** Mesmas funcionalidades do PTD | <div align = "center"> 7<br></div>
+<img src="../assets/assets_wad/wireframes/homePTD.png">  | **Tela Home:** Mesmas funcionalidades do PTD| <div align = "center"> 7<br></div>
+<img src="../assets/assets_wad/wireframes/trilhasGestor.png"> | **Tela Trilhas:**  - Cards de trilhas gerais e Botão de adicionar nova trilha  |  <div align = "center"> 6<br>7</div>
+<br> <img src="../assets/assets_wad/wireframes/trilhas2Gestor.png"> | **Tela Dashboard:** Conteúdo sequêncial - Observar avaliação dos assuntos - Adição de novos conteúdos para usuários | <div align = "center"> 7<br>8</div>
+ <img src="../assets/assets_wad/wireframes/helpGestor.png"> | **Tela Help:** Aba de buscas rápidas - Funcionalidade de adição de novos cards. | <div align = "center"> 7<br></div>
+ <img src="../assets/assets_wad/wireframes/artigoGestor.png"> | **Tela do artigo:** Aba de buscas rápidas - Lado direito: artigo - Lado esquerdo: Adição de novos artigos. | <div align = "center"> 8<br></div>
+  <img src="../assets/assets_wad/wireframes/progressoGestor.png"> | **Tela de progresso:** Seleção de usuário - Dados do progresso do usuário. | <div align = "center"> 6<br>7<br>8</div>
+
+<sup>Fonte: Material produzido pelos autores (2025).</sup><br>
+</div>
+
+#### Versão Mobile
+<div align = "center">
+<sup>Figura X: Wireframes da plataforma para o Gestor - Mobile </sup><br>
+<img src="../assets/assets_wad/wireframes/.png"> 
+
+<sup>Fonte: Material produzido pelos autores (2025).</sup><br>
+</div>
 
 ## 3.3. Guia de estilos (sprint 3)
 
