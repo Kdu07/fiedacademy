@@ -439,9 +439,10 @@ Critério de aceite 5 | CR5: Histórico de relatórios exportados fica disponív
 
 <div align = "center">
 
+
 <sup>Figura 7: Diagrama Modelo Relacional.</sup><br>
 
-<img src="![alt text](../assets/assets_wad/Diagrama.png)"><br>
+<img src="../assets/assets_wad/modelagem_relacional_FieldAcademy.png"><br>
 
 <sub>Fonte: Material produzido pelos autores (2025). </sub><br>
 
@@ -451,7 +452,7 @@ ____________________
 &nbsp;&nbsp;&nbsp;&nbsp; A tabela Users é crucial para a experiência do utilizador, uma vez que guarda todas as informações pessoais e de acesso de cada indivíduo registrado na plataforma. Ela gerencia informações como nome, e-mail, senha, perfil (função ou cargo), região, pontuação, imagem de perfil, data do último acesso e conexão com certificados obtidos. <br>
 Em termos práticos, essa tabela possibilita que cada usuário possua uma conta exclusiva, com um histórico individual de progresso, resultados e realizações. A atribuição do papel (id_role) estabelece as funções e permissões que o usuário terá no sistema (por exemplo: estudante, docente, gestor). Adicionalmente, a área de pontuação pode ser utilizada para a gamificação, incentivando o usuário a se envolver mais. O histórico do último acesso e a imagem do perfil enriquecem a experiência. Assim, a tabela Users garante o acesso individualizado, a segurança das informações e a personalização da navegação e dos recursos disponíveis para cada pessoa na plataforma. <br>
 
-```javascript
+```sql
 CREATE TABLE IF NOT EXISTS users (
   id SERIAL PRIMARY KEY,
   id_role INTEGER NOT NULL REFERENCES roles(id) ON DELETE CASCADE,
@@ -465,26 +466,26 @@ CREATE TABLE IF NOT EXISTS users (
 );
 ```
 #### Users
-**Finalidade:** Armazena informações dos usuários cadastrados na plataforma.<br>
-
-**Campos:**
+***Finalidade:*** Armazena informações dos usuários cadastrados na plataforma.<br>
+*
+**Campos:***
 
 1. id: Identificador único do usuário (chave primária).
-2. id_role: Chave estrangeira para role_permissions, indicando o papel do usuário.
+2. id_role: Chave estrangeira para a entidade `role_permissions`
 3. Name: Nome do usuário.
-4.Region: Localidade do usuário.
+4. Region: Localidade do usuário.
 5. Email: E-mail do usuário (único).
 6. Password: Senha.
 7. Score: Pontuação do usuário.
 8. last_login: Data e hora do último acesso.
 9. Profile_photo: Caminho ou URL da foto de perfil.
-10. id_certificate: Chave estrangeira para certificate, vinculando o usuário ao seu certificado.
+10. id_certificate: Chave estrangeira para a entidade `certificate`.
 _____________________
 &nbsp;&nbsp;&nbsp;&nbsp; A tabela role_permissions estabelece os diversos papéis (ou funções) que um usuário pode exercer na plataforma, tais como estudante, monitor, docente, coordenador ou administrador, e detalha quais permissões cada um desses papéis tem. Os campos can_create, can_read, can_update e can_delete indicam claramente se um papel tem permissão para criar, visualizar, alterar ou apagar dados no sistema. <br>
 
 &nbsp;&nbsp;&nbsp;&nbsp;  Em termos práticos, essa tabela afeta diretamente o que cada usuário tem permissão ou não para realizar ao utilizar a plataforma. Por exemplo, um estudante só tem a capacidade de visualizar materiais, enquanto um administrador tem a capacidade de criar e modificar módulos, usuários e materiais. Isso assegura proteção, organização e customização do acesso, adequando a experiência do usuário ao seu perfil e prevenindo ações não autorizadas. <br>
 
-```javascript
+```sql
 CREATE TABLE IF NOT EXISTS roles (
   id SERIAL PRIMARY KEY,
   name_role VARCHAR(50),
@@ -497,7 +498,9 @@ CREATE TABLE IF NOT EXISTS roles (
 
 #### Role_permissions
 **Finalidade:** Define os diferentes papéis (roles) do sistema, como PTD, gestor ou administrador, e as permissões associadas a cada um.  <br>
+**Finalidade:** Define os diferentes papéis (roles) do sistema, como PTD, gestor ou administrador, e as permissões associadas a cada um.  <br>
 
+**Campos:**
 **Campos:**
 1. id: Identificador único do papel (chave primária).
 2. nome_role: Nome do papel.
@@ -506,7 +509,7 @@ _____________________
 
 &nbsp;&nbsp;&nbsp;&nbsp; A tabela User_content_progress é fundamental para a experiência do usuário em plataformas de e-learning, pois registra o progresso individual de cada pessoa em cada conteúdo e módulo do curso. Sempre que o usuário acessa ou conclui um conteúdo, essa tabela armazena se aquele material já foi finalizado (is_completed), vinculando sempre o usuário, o módulo e o conteúdo específico. Isso permite um acompanhamento personalizado, onde o usuário pode visualizar facilmente quais conteúdos já estudou e quais ainda faltam, permitindo um aprendizado no seu próprio ritmo e de acordo com suas necessidades. Além disso, caso precise interromper os estudos, ele pode retornar exatamente de onde parou, sem perder tempo procurando o que já foi feito.
 
-```javascript
+```sql
 CREATE TABLE IF NOT EXISTS user_content_progress (
   id SERIAL PRIMARY KEY,
   user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
@@ -530,8 +533,7 @@ _________________
 
 &nbsp;&nbsp;&nbsp;&nbsp; A tabela content é crucial para a experiência do utilizador, uma vez que guarda todos os recursos de estudo (vídeos, textos, PDFs e imagens) associados a cada módulo da plataforma. Ela estrutura o material em uma sequência lógica (order), estabelece datas limite para acesso (due_time) e possibilita realçar materiais relevantes (id_emphasis).
 Em termos práticos, isso implica que o usuário pode facilmente localizar todos os recursos necessários para progredir em sua jornada de aprendizado, sabendo exatamente o que precisa ser estudado em cada fase. O acesso a diversos formatos (vídeo, texto, imagem) torna a aprendizagem mais interativa e ajustável a variados métodos de estudo.<br>
-
-```javascript
+```sql
 CREATE TABLE IF NOT EXISTS content (
   id SERIAL PRIMARY KEY,
   id_module INTEGER NOT NULL REFERENCES module(id) ON DELETE CASCADE,
@@ -545,6 +547,8 @@ CREATE TABLE IF NOT EXISTS content (
 #### Content
 **Finalidade:** Armazena os conteúdos (aulas,pdfs, vídeos, textos) de cada módulo. <br>
 
+**Campos:**
+**Finalidade:** Armazena os conteúdos (aulas,pdfs, vídeos, textos) de cada módulo. <br>
 **Campos:**
 1. id: Identificador único do conteúdo (chave primária).
 2. id_modulo: Chave estrangeira para module.
@@ -581,7 +585,7 @@ _________________
 
 &nbsp;&nbsp;&nbsp;&nbsp; A tabela module afeta a experiência do usuário ao organizar e estruturar o conteúdo em módulos em uma plataforma de aprendizado ou sistema de ensino. Cada entrada nesta tabela simboliza um módulo, que consiste numa unidade temática ou fase de um percurso de aprendizado. O campo id_path indica a trilha (ou curso) à qual o módulo está associado, enquanto o campo title define o nome do módulo e "order" determina a ordem na qual os módulos serão exibidos ao utilizador.<br>
 
-```javascript
+```sql
 CREATE TABLE IF NOT EXISTS module (
   id SERIAL PRIMARY KEY,
   id_path INTEGER NOT NULL REFERENCES path(id),
@@ -590,6 +594,8 @@ CREATE TABLE IF NOT EXISTS module (
 );
 ```
 #### Module
+**Finalidade:** Representa os módulos que compõem uma trilha de aprendizagem.<br>
+**Campos:**
 *Finalidade:* Representa os módulos que compõem uma trilha de aprendizagem.<br>
 *Campos:**
 1. id: Identificador único (chave primária).
@@ -602,7 +608,7 @@ _____________________
 
 &nbsp;&nbsp;&nbsp;&nbsp;  Em termos práticos, isso implica que o usuário tem a capacidade de acessar, baixar, compartilhar e validar seus certificados a qualquer instante, de maneira ágil e segura, sem a necessidade de procedimentos manuais ou impressos. Isso valoriza a experiência do estudante, simplifica a validação de habilidades em processos de seleção, avanços na carreira e expande as chances de reconhecimento acadêmico e profissional. <br>
 
-```javascript
+```sql
 CREATE TABLE IF NOT EXISTS certificate (
   id SERIAL PRIMARY KEY,
   id_path INTEGER NOT NULL REFERENCES path(id),
@@ -610,16 +616,16 @@ CREATE TABLE IF NOT EXISTS certificate (
 );
 ```
 #### Certificate
-*Finalidade:*  Registra os certificados emitidos para usuários que concluem trilhas. <br>
+**Finalidade:**  Registra os certificados emitidos para usuários que concluem trilhas. <br>
 
-*Campos:*
+**Campos:**
 1. id: Identificador único do certificado (chave primária).
 2. id_path: Chave estrangeira para path, indicando a trilha concluída.
 3. issue_date: Data de emissão do certificado.
 4. hash_code: Código único para validação do certificado.
 ___________________
 
-```javascript
+```sql
 CREATE TABLE IF NOT EXISTS user_certificate_progress (
   id SERIAL PRIMARY KEY,
   id_user INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
@@ -632,7 +638,7 @@ ___________________
 &nbsp;&nbsp;&nbsp;&nbsp; O usuário é impactado pela tabela feedbacks_content_modulo, que possibilita o registro de comentários e avaliações sobre conteúdos e módulos específicos na plataforma de aprendizado. Esta funcionalidade proporciona ao usuário um meio direto para expressar opiniões, propor melhorias e trocar experiências, tornando o processo de aprendizagem mais interativo e individualizado.
 O retorno imediato e estruturado auxilia o usuário a ponderar sobre seu avanço, reconhecer suas habilidades e áreas que necessitam de aprimoramento, além de incentivar a participação constante no curso. Ademais, ao perceber que seus pontos de vista são levados em conta, o usuário se sente apreciado e mais integrado à comunidade de aprendizado25. <br>
 
-```javascript
+```sql
 CREATE TABLE IF NOT EXISTS feedbacks_content_module (
   id SERIAL PRIMARY KEY,
   id_content INTEGER NOT NULL REFERENCES content(id) ON DELETE CASCADE,
@@ -644,12 +650,12 @@ CREATE TABLE IF NOT EXISTS feedbacks_content_module (
 );
 ```
 #### Feedbacks_content_module 
-*Finalidade:* Armazena feedbacks e avaliações que usuários deixam sobre os módulos e conteúdos.<br>
-*Campos:*
+**Finalidade:** Armazena feedbacks e avaliações que usuários deixam sobre os módulos e conteúdos.<br>
+**Campos:**
 1. id: Identificador único (chave primária).
-2. id_content: Chave estrangeira para content.
-3. id_modulo: Chave estrangeira para module.
-4. id_user: Chave estrangeira para Users.
+2. id_content: Chave estrangeira para a entidade `content`.
+3. id_modulo: Chave estrangeira para a entidade `module`.
+4. id_user: Chave estrangeira para a entidade `users`.
 5. message: Comentário do usuário.
 6. rating: Avaliação numérica (ex: 1 a 5).
 7. created_at: Data/hora do feedback.
@@ -660,7 +666,7 @@ _________________________
 
 &nbsp;&nbsp;&nbsp;&nbsp; Em termos práticos, isso implica que o usuário consegue visualizar sua trajetória educacional de maneira nítida, compreendendo exatamente quais passos precisa percorrer para atingir um objetivo ou obter um certificado. As trilhas tornam o processo de aprendizado mais organizado, individualizado e estimulante, uma vez que possibilitam que cada indivíduo rastreie seu avanço, selecione rotas adequadas aos seus interesses ou necessidades, e progrida no seu próprio tempo. <br>
 
-```javascript
+```sql
 CREATE TABLE IF NOT EXISTS path (
   id SERIAL PRIMARY KEY,
   title VARCHAR(255),
@@ -669,10 +675,10 @@ CREATE TABLE IF NOT EXISTS path (
 ```
 
 #### Path
-*Finalidade:* Representa as trilhas disponíveis na plataforma. <br>
-*Campos:*
+**Finalidade:** Representa as trilhas disponíveis na plataforma. <br>
+**Campos:**
 1. id: Identificador único (chave primária).
-2. id_certification: Chave estrangeira para certificate (caso a trilha gere certificado).
+2. id_certification: Chave estrangeira para a entidade `certificate`. 
 3. title: Título da trilha.
 4. description: Descrição da trilha.
 5. category: Categoria da trilha (ex: programação, design, etc).
@@ -685,7 +691,7 @@ Assim como bookmarks em navegadores e leitores de PDF facilitam a navegação e 
 &nbsp;&nbsp;&nbsp;&nbsp;
 Em resumo, a tabela bookmarks melhora a navegação, aumenta a eficiência e torna a experiência do usuário mais personalizada e motivadora dentro da plataforma de aprendizagem. <br>
 
-```javascript
+```sql
 CREATE TABLE IF NOT EXISTS bookmarks (
   id SERIAL PRIMARY KEY,
   id_user INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
@@ -695,9 +701,9 @@ CREATE TABLE IF NOT EXISTS bookmarks (
 
 ```
 #### Bookmarks
-*Finalidade:* Permite que usuários salvem conteúdos ou módulos como favoritos e como atalhos para acesso rápido. <br>
+**Finalidade:** Permite que usuários salvem conteúdos ou módulos como favoritos e como atalhos para acesso rápido. <br>
 
-*Campos:*
+**Campos:**
 1. id: Identificador único (chave primária).
 2. id_user: Chave estrangeira para Users.
 3. id_content: Chave estrangeira para content.
@@ -710,7 +716,7 @@ ____________________
 &nbsp;&nbsp;&nbsp;&nbsp; Essas avaliações medem o progresso e o conhecimento adquirido permitindo que o usuário pode acompanhar sua evolução, identificar pontos fortes e áreas que precisam de reforço, e consolidar o que aprendeu ao longo do curso.
 Motivam e engajam: Testes bem estruturados criam um senso de desafio e realização, estimulando o usuário a continuar avançando e a buscar melhores resultados. <br>
 
-```javascript
+```sql
 CREATE TABLE IF NOT EXISTS tests (
   id SERIAL PRIMARY KEY,
   id_module INTEGER NOT NULL REFERENCES module(id) ON DELETE CASCADE,
@@ -719,8 +725,8 @@ CREATE TABLE IF NOT EXISTS tests (
 );
 ```
 #### Tests
-*Finalidade:* Armazena testes associados a conclusão dos módulos. <br>
-*Campos:*
+**Finalidade:** Armazena testes associados a conclusão dos módulos. <br>
+**Campos:**
 1. id: Identificador único do teste (chave primária).
 2. id_modulo: Chave estrangeira para module.
 3. questions: Texto contendo as perguntas.
@@ -730,7 +736,7 @@ _______________________
 &nbsp;&nbsp;&nbsp;&nbsp; A tabela score_test documenta o rendimento dos utilizadores em testes conduzidos na ferramenta. Quando um usuário realiza um teste, essa tabela registra o número do teste realizado (id_test), o nome do usuário responsável (id_user), a pontuação obtida (score) e as datas e horas de início e término (started_at, ended_at). <br>
 &nbsp;&nbsp;&nbsp;&nbsp; Para o usuário, isso implica que seu avanço e desempenho nas avaliações são monitorados de maneira individual e clara. Ele tem a capacidade de analisar seu histórico de desempenho, determinar em quais testes se saiu melhor ou precisa aprimorar, e utilizar esses dados para acompanhar sua progressão ao longo dos anos. Ademais, a pontuação pode atuar como estímulo para alcançar melhores performances e pode ser empregada para liberar materiais, emitir certificados ou formar notas finais, tornando a experiência de aprendizado mais clara. <br>
 
-```javascript
+```sql
 CREATE TABLE IF NOT EXISTS user_test_score (
   id SERIAL PRIMARY KEY,
   id_test INTEGER NOT NULL REFERENCES tests(id) ON DELETE CASCADE,
@@ -742,9 +748,9 @@ CREATE TABLE IF NOT EXISTS user_test_score (
 ```
 
 #### Score_test
-*Finalidade:* Registra o desempenho do usuário em testes.<br>
+**Finalidade:** Registra o desempenho do usuário em testes.<br>
 
-*Campos:*
+**Campos:**
 1. id: Identificador único (chave primária).
 2. id_test: Chave estrangeira para tests.
 3. id_user: Chave estrangeira para Users.
@@ -785,12 +791,25 @@ __________________
 
 ### 3.5.2. Consultas SQL e lógica proposicional (sprint 2)
 
-*posicione aqui uma lista de consultas SQL compostas, realizadas pelo back-end da aplicação web, com sua respectiva lógica proposicional, descrita conforme template abaixo. Lembre-se que para usar LaTeX em markdown, basta você colocar as expressões entre $ ou $$*
 
 *Template de SQL + lógica proposicional*
 #1 | ---
 --- | ---
-**Expressão SQL** | SELECT * FROM suppliers WHERE (state = 'California' AND supplier_id <> 900) OR (supplier_id = 100); 
+**Expressão SQL** | SELECT 
+```sql
+SELECT 
+  u.name, 
+  m.title AS module_title, 
+  c.title AS content_title, 
+  ucp.completed_at
+FROM user_content_progress ucp
+JOIN users u ON ucp.user_id = u.id
+JOIN module m ON ucp.module_id = m.id
+JOIN content c ON ucp.content_id = c.id
+JOIN roles rp ON u.id_role = rp.id
+WHERE rp.name_role = 'PTD' 
+  AND m.id = 1;
+```
 **Proposições lógicas** | $A$: O estado é 'California' (state = 'California') <br> $B$: O ID do fornecedor não é 900 (supplier_id ≠ 900) <br> $C$: O ID do fornecedor é 100 (supplier_id = 100)
 **Expressão lógica proposicional** | $(A \land B) \lor C$
 **Tabela Verdade** | <table> <thead> <tr> <th>$A$</th> <th>$B$</th> <th>$C$</th> <th>$(A \land B)$</th> <th>$(A \land B) \lor C$</th> </tr> </thead> <tbody> <tr> <td>F</td> <td>F</td> <td>F</td> <td>F</td> <td>F</td> </tr> <tr> <td>F</td> <td>F</td> <td>V</td> <td>F</td> <td>V</td> </tr> <tr> <td>F</td> <td>V</td> <td>F</td> <td>F</td> <td>F</td> </tr> <tr> <td>F</td> <td>V</td> <td>V</td> <td>F</td> <td>V</td> </tr> <tr> <td>V</td> <td>F</td> <td>F</td> <td>F</td> <td>F</td> </tr> <tr> <td>V</td> <td>F</td> <td>V</td> <td>F</td> <td>V</td> </tr> <tr> <td>V</td> <td>V</td> <td>F</td> <td>V</td> <td>V</td> </tr> <tr> <td>V</td> <td>V</td> <td>V</td> <td>V</td> <td>V</td> </tr> </tbody> </table>
