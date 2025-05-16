@@ -768,21 +768,22 @@ __________________
 
 | Entidade A | Entidade B | Cardinalidade | Explicação |
 |-----|-----|------|------|
-| role_permissions | Users | 1:1 | Uma role pode estar associada a vários usuários |
-| Users| user_certification_progress| N:N | Um usuário pode ter muitos certificados |
-| certificate| path| 1:1 | Um certificado pode estar ligado a várias trilhas|
-| path  | module | 1:N | Uma trilha contém vários módulos |
-| module | content | 1:N | Um módulo contém vários conteúdos |
+| Users, Content, Module | feedbacks_modulo | N:N | Representa feedbacks deixados por usuários em conteúdos (tabela associativa)|
+| Users| User_certification_progress| N:N | Um usuário pode ter muitos certificados |
+| Users, Content, Module | Emphasis | N:N | Representa ênfase de usuários para conteúdos específicos (tabela associativa) |
 | Users | User_content_progress | 1:1 | Um usuário pode ter muitos registros de progresso |
-| content | User_content_progress | N:N | Um conteúdo pode estar em vários registros de progresso |
-| module | User_content_progress   | 1:N | Um módulo pode estar em vários registros de progresso |
-| Users | bookmarks | 1:1 | Um usuário pode ter vários conteúdos fixados                                |
-| content | bookmarks | 1:N | Um conteúdo pode estar fixado por vários usuários |
-| module | bookmarks | 1:N | Um módulo pode estar em vários registros de fixação |
-| module | tests | 1 :N | Um módulo pode ter vários testes |
-| tests | user_test_score | N :N | Um teste pode gerar vários registros de pontuação |
-| Users, content, module | emphasis | N:N | Representa ênfase de usuários para conteúdos específicos (tabela associativa) |
-| Users, content, module | feedbacks_modulo | N:N | Representa feedbacks deixados por usuários em conteúdos (tabela associativa)|
+| Role_permissions | Users | 1:1 | Uma role pode estar associada a vários usuários |
+| Certificate| path| 1:1 | Um certificado pode estar ligado a várias trilhas|
+| Path  | Module | 1:N | Uma trilha contém vários módulos |
+| Module | Content | 1:N | Um módulo contém vários conteúdos |
+| Content | User_content_progress | N:N | Um conteúdo pode estar em vários registros de progresso |
+| Module | User_content_progress   | 1:N | Um módulo pode estar em vários registros de progresso |
+| Users | Bookmarks | 1:1 | Um usuário pode ter vários conteúdos fixados |
+| Content | Bookmarks | 1:N | Um conteúdo pode estar fixado por vários usuários |
+| Module | Bookmarks | 1:N | Um módulo pode estar em vários registros de fixação |
+| Module | Tests | 1 :N | Um módulo pode ter vários testes |
+| Tests | User_test_score | N :N | Um teste pode gerar vários registros de pontuação |
+
 
 
 <sub>Fonte: Material produzido pelos autores (2025). </sub><br>
