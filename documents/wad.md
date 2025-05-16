@@ -441,7 +441,7 @@ Critério de aceite 5 | CR5: Histórico de relatórios exportados fica disponív
 
 <sup>Figura 7: Diagrama Modelo Relacional.</sup><br>
 
-<img src="![alt text](../assets/assets_wad/Diagrama.png)"><br>
+<img src="../assets/assets_wad/modelagem_relacional_FieldAcademy.png"><br>
 
 <sub>Fonte: Material produzido pelos autores (2025). </sub><br>
 
@@ -466,8 +466,8 @@ CREATE TABLE IF NOT EXISTS users (
 ```
 
 #### Users
-*Finalidade:* Armazena informações dos usuários cadastrados na plataforma.<br>
-*Campos:*
+**Finalidade:** Armazena informações dos usuários cadastrados na plataforma.<br>
+**Campos:**
 
 1. id: Identificador único do usuário (chave primária).
 2. id_role: Chave estrangeira para a entidade `role_permissions`
@@ -496,9 +496,9 @@ CREATE TABLE IF NOT EXISTS roles (
 ```
 
 #### Role_permissions
-*Finalidade:* Define os diferentes papéis (roles) do sistema, como PTD, gestor ou administrador, e as permissões associadas a cada um.  <br>
+**Finalidade:** Define os diferentes papéis (roles) do sistema, como PTD, gestor ou administrador, e as permissões associadas a cada um.  <br>
 
-*Campos:*
+**Campos:**
 1. id: Identificador único do papel (chave primária).
 2. nome_role: Nome do papel.
 3. can_create, can_read, can_update, can_delete: Permissões booleanas que determinam o que cada papel pode fazer no sistema.
@@ -517,8 +517,8 @@ CREATE TABLE IF NOT EXISTS user_content_progress (
 
 ```
 #### User_content_progress
-*Finalidade:* Registra o progresso do usuário em cada conteúdo e módulo. <br>
-*Campos:*
+**Finalidade:** Registra o progresso do usuário em cada conteúdo e módulo. <br>
+**Campos:**
 1. id: Identificador único do progresso (chave primária).
 2. user_id: Chave estrangeira para Users.
 3. module_id: Chave estrangeira para module.
@@ -543,8 +543,8 @@ CREATE TABLE IF NOT EXISTS content (
 );
 ```
 #### Content
-*Finalidade:* Armazena os conteúdos (aulas,pdfs, vídeos, textos) de cada módulo. <br>
-*Campos:*
+**Finalidade:** Armazena os conteúdos (aulas,pdfs, vídeos, textos) de cada módulo. <br>
+**Campos:**
 1. id: Identificador único do conteúdo (chave primária).
 2. id_modulo: Chave estrangeira para module.
 3. id_emphasis: Indica se o conteúdo é um destaque. (booleano).
@@ -553,29 +553,6 @@ CREATE TABLE IF NOT EXISTS content (
 6. img_path: Caminho para imagem.
 7. order: Ordem do conteúdo dentro do módulo.
 8. due_time: Prazo ou data limite para acessar o conteúdo.
-______________________
-
-&nbsp;&nbsp;&nbsp;&nbsp; A tabela emphasis influencia diretamente a experiência do usuário em uma plataforma de e-learning ou sistema educacional ao permitir que determinados conteúdos ou módulos sejam destacados ou priorizados para cada pessoa. Na prática, ela possibilita que o sistema marque quais materiais são mais importantes, urgentes ou recomendados para um usuário específico, geralmente com uma data limite para conclusão (due_date). Assim, o usuário pode visualizar facilmente o que deve focar primeiro em sua trilha de aprendizagem, facilitando o acompanhamento do progresso, a organização dos estudos e a priorização de tarefas. Esse tipo de funcionalidade é comum em sistemas de gestão de aprendizagem (LMS), pois ajuda a tornar o aprendizado mais personalizado, eficiente e alinhado às necessidades individuais de cada estudante. <br>
-
-```sql
-CREATE TABLE emphasis (
-  id SERIAL PRIMARY KEY,
-  id_user INTEGER NOT NULL REFERENCES Users(id),
-  id_modulo INTEGER NOT NULL REFERENCES module(id),
-  id_content INTEGER NOT NULL REFERENCES content(id),
-  due_date TIMESTAMP
-);
-
-```
-#### Emphasis
-*Finalidade:* Marca conteúdos ou módulos como "em destaque" para um usuário, ou para fins de priorização.<br>
-
-*Campos:*
-1. id: Identificador único (chave primária).
-2. id_user: Chave estrangeira para Users.
-3. id_modulo: Chave estrangeira para module.
-4. id_content: Chave estrangeira para content.
-5. due_date: Data limite para o destaque.
 _________________
 
 &nbsp;&nbsp;&nbsp;&nbsp; A tabela module afeta a experiência do usuário ao organizar e estruturar o conteúdo em módulos em uma plataforma de aprendizado ou sistema de ensino. Cada entrada nesta tabela simboliza um módulo, que consiste numa unidade temática ou fase de um percurso de aprendizado. O campo id_path indica a trilha (ou curso) à qual o módulo está associado, enquanto o campo title define o nome do módulo e "order" determina a ordem na qual os módulos serão exibidos ao utilizador.<br>
@@ -589,8 +566,8 @@ CREATE TABLE IF NOT EXISTS module (
 );
 ```
 #### Module
-*Finalidade:* Representa os módulos que compõem uma trilha de aprendizagem.<br>
-*Campos:*
+**Finalidade:** Representa os módulos que compõem uma trilha de aprendizagem.<br>
+**Campos:**
 1. id: Identificador único (chave primária).
 2. id_path: Chave estrangeira para path.
 3. title: Título do módulo.
@@ -609,7 +586,7 @@ CREATE TABLE IF NOT EXISTS certificate (
 );
 ```
 #### Certificate
-*Finalidade:*  Registra os certificados emitidos para usuários que concluem trilhas. <br>
+**Finalidade:**  Registra os certificados emitidos para usuários que concluem trilhas. <br>
 
 **Campos:**
 1. id: Identificador único do certificado (chave primária).
@@ -643,8 +620,8 @@ CREATE TABLE IF NOT EXISTS feedbacks_content_module (
 );
 ```
 #### Feedbacks_content_module 
-*Finalidade:* Armazena feedbacks e avaliações que usuários deixam sobre os módulos e conteúdos.<br>
-*Campos:*
+**Finalidade:** Armazena feedbacks e avaliações que usuários deixam sobre os módulos e conteúdos.<br>
+**Campos:**
 1. id: Identificador único (chave primária).
 2. id_content: Chave estrangeira para a entidade `content`.
 3. id_modulo: Chave estrangeira para a entidade `module`.
@@ -668,8 +645,8 @@ CREATE TABLE IF NOT EXISTS path (
 ```
 
 #### Path
-*Finalidade:* Representa as trilhas disponíveis na plataforma. <br>
-*Campos:*
+**Finalidade:** Representa as trilhas disponíveis na plataforma. <br>
+**Campos:**
 1. id: Identificador único (chave primária).
 2. id_certification: Chave estrangeira para a entidade `certificate`. 
 3. title: Título da trilha.
@@ -694,9 +671,9 @@ CREATE TABLE IF NOT EXISTS bookmarks (
 
 ```
 #### Bookmarks
-*Finalidade:* Permite que usuários salvem conteúdos ou módulos como favoritos e como atalhos para acesso rápido. <br>
+**Finalidade:** Permite que usuários salvem conteúdos ou módulos como favoritos e como atalhos para acesso rápido. <br>
 
-*Campos:*
+**Campos:**
 1. id: Identificador único (chave primária).
 2. id_user: Chave estrangeira para Users.
 3. id_content: Chave estrangeira para content.
@@ -718,8 +695,8 @@ CREATE TABLE IF NOT EXISTS tests (
 );
 ```
 #### Tests
-*Finalidade:* Armazena testes associados a conclusão dos módulos. <br>
-*Campos:*
+**Finalidade:** Armazena testes associados a conclusão dos módulos. <br>
+**Campos:**
 1. id: Identificador único do teste (chave primária).
 2. id_modulo: Chave estrangeira para module.
 3. questions: Texto contendo as perguntas.
@@ -741,9 +718,9 @@ CREATE TABLE IF NOT EXISTS user_test_score (
 ```
 
 #### Score_test
-*Finalidade:* Registra o desempenho do usuário em testes.<br>
+**Finalidade:** Registra o desempenho do usuário em testes.<br>
 
-*Campos:*
+**Campos:**
 1. id: Identificador único (chave primária).
 2. id_test: Chave estrangeira para tests.
 3. id_user: Chave estrangeira para Users.
