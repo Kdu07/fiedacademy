@@ -761,11 +761,7 @@ __________________
 
 ### 3.5.2. Consultas SQL e lógica proposicional (sprint 2)
 
-
-*Template de SQL + lógica proposicional*
-#1 | ---
---- | ---
-**Expressão SQL** | SELECT 
+**Expressão SQL:** 
 ```sql
 SELECT 
   u.name, 
@@ -780,7 +776,7 @@ JOIN roles rp ON u.id_role = rp.id
 WHERE rp.name_role = 'PTD' 
   AND m.id = 1;
 ```
-**Proposições lógicas** | $A$: O usuário é PTD (role = 'PTD') <br> $B$: O ID do módulo é igual a 1 (m.id = 1) <br>
+**Proposições lógicas** | $A$: O usuário é PTD (`name_role = 'PTD'`) <br> $B$: O ID do módulo é igual a 1 (`m.id = 1`) <br>
 **Expressão lógica proposicional** | $(A \land B)$
 **Tabela Verdade:**
 
@@ -793,7 +789,25 @@ WHERE rp.name_role = 'PTD'
 
 Interpretando a tabela em conjunto com o código, é possível depreender que se o usuário não for um PTD, não será retornada nenhuma informação. Ademais, o código só retorna informações se as duas proposições forem verdadeiras, ou seja: se o usuário for um PTD e se houver um módulo de ID igual a 1, afinal, as consultas são restritivas.
 
+**Expressão SQL:**
+```sql
+UPDATE content
+SET title = 'Novo Titulo'
+WHERE id = 3 AND id_module = 3;
+```
 
+**Proposições lógicas** | $A$: O ID do conteúdo é igual a 3 (`id = 3`) <br> $B$: O ID do módulo é igual a 3 (`m.id = 3`) <br>
+**Expressão lógica proposicional** | $(A \land B)$
+**Tabela Verdade:**
+
+| $A$ | $B$ | $(A \land B)$ |
+|---|---|---------------|
+| F | F | F             |
+| F | V | F             |
+| V | F | F             |
+| V | V | V             |
+
+Da mesma forma que a consulta anterior, esta consulta é restritiva. Assim, só haverá retorno de informações se as preposições A e B forem simultaneamente verdadeiras.
 
 ## 3.6. WebAPI e endpoints (sprints 3 e 4)
 
