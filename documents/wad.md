@@ -780,11 +780,20 @@ JOIN roles rp ON u.id_role = rp.id
 WHERE rp.name_role = 'PTD' 
   AND m.id = 1;
 ```
-**Proposições lógicas** | $A$: O estado é 'California' (state = 'California') <br> $B$: O ID do fornecedor não é 900 (supplier_id ≠ 900) <br> $C$: O ID do fornecedor é 100 (supplier_id = 100)
-**Expressão lógica proposicional** | $(A \land B) \lor C$
-**Tabela Verdade** | <table> <thead> <tr> <th>$A$</th> <th>$B$</th> <th>$C$</th> <th>$(A \land B)$</th> <th>$(A \land B) \lor C$</th> </tr> </thead> <tbody> <tr> <td>F</td> <td>F</td> <td>F</td> <td>F</td> <td>F</td> </tr> <tr> <td>F</td> <td>F</td> <td>V</td> <td>F</td> <td>V</td> </tr> <tr> <td>F</td> <td>V</td> <td>F</td> <td>F</td> <td>F</td> </tr> <tr> <td>F</td> <td>V</td> <td>V</td> <td>F</td> <td>V</td> </tr> <tr> <td>V</td> <td>F</td> <td>F</td> <td>F</td> <td>F</td> </tr> <tr> <td>V</td> <td>F</td> <td>V</td> <td>F</td> <td>V</td> </tr> <tr> <td>V</td> <td>V</td> <td>F</td> <td>V</td> <td>V</td> </tr> <tr> <td>V</td> <td>V</td> <td>V</td> <td>V</td> <td>V</td> </tr> </tbody> </table>
+**Proposições lógicas** | $A$: O usuário é PTD (role = 'PTD') <br> $B$: O ID do módulo é igual a 1 (m.id = 1) <br>
+**Expressão lógica proposicional** | $(A \land B)$
+**Tabela Verdade:**
 
-*Dica: edite a tabela verdade fora do markdown, para ter melhor controle*
+| $A$ | $B$ | $(A \land B)$ |
+|---|---|---------------|
+| F | F | F             |
+| F | V | F             |
+| V | F | F             |
+| V | V | V             |
+
+Interpretando a tabela em conjunto com o código, é possível depreender que se o usuário não for um PTD, não será retornada nenhuma informação. Ademais, o código só retorna informações se as duas proposições forem verdadeiras, ou seja: se o usuário for um PTD e se houver um módulo de ID igual a 1, afinal, as consultas são restritivas.
+
+
 
 ## 3.6. WebAPI e endpoints (sprints 3 e 4)
 
