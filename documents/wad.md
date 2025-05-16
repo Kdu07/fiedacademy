@@ -402,8 +402,63 @@ Critério de aceite 5 | CR5: Histórico de relatórios exportados fica disponív
 *Posicione aqui o diagrama de arquitetura da sua solução de aplicação web. Atualize sempre que necessário*
 
 ## 3.2. Wireframes (sprint 2)
+Wireframe é um rascunho visual que mostra a estrutura básica de uma interface, focando na organização dos elementos e na navegação, sem detalhar o design final.
+Para alinhar os componentes de forma clara e responsiva, foi utilizada a estrutura de grid abaixo:
 
-*Posicione aqui as imagens do wireframe construído para sua solução e, opcionalmente, o link para acesso (mantenha o link sempre público para visualização)*
+Desktop | Mobile
+---|---
+<img src="../assets/assets_wad/wireframes/GRID.png"  width="200"> | <img src="../assets/assets_wad/wireframes/GRID2.png"  width="70"> 
+[Link dos wireframes](https://www.figma.com/design/bOsRfHBpYqRksHS4GiNW74/bayer-project?node-id=0-1&p=f&t=S55FkKepuUIl5D6k-11)
+
+### Versão PTD
+<div align = "center">
+
+<sup>Figura X: Wireframes da plataforma para o PTD - Desktop</sup><br>
+
+Tela | Recursos | User Story 
+--- | --- | ---
+<img src="../assets/assets_wad/wireframes/loginPTD.png"> | **Tela de Login:** Campo de Email - Campo para a senha - Botão de confirmação de login | <div align = "center"> 1<br></div>
+<img src="../assets/assets_wad/wireframes/homePTD.png">  | **Tela Home:** Aba de buscas rápidas - Direcionamento para tela de trilhas - Direcionamento para tela de help - Artigos que podem ser fixados pelo PTD para acesso rápido. - Sino de notificações. | <div align = "center"> 1<br>2<br>3 </div>
+<img src="../assets/assets_wad/wireframes/trilhasPTD.png"> <br> <img src="../assets/assets_wad/wireframes/trilhas2PTD.png">  | **Tela Trilhas:** Progesso atual - Histórico de trilhas - Recomendações de tilhas - Base de conteúdos gerais e opcionais. |  <div align = "center"> 1<br>2<br>3<br></div>
+ <img src="../assets/assets_wad/wireframes/dashboardPTD.png"> | **Tela Dashboard:** Conteúdo sequêncial - Informações laterais - Material espeífico - Avaliação dos assuntos. | <div align = "center"> 4<br></div>
+ <img src="../assets/assets_wad/wireframes/helpPTD.png"> | **Tela Help:** Aba de buscas rápidas - Cards de assuntos e temas recorrentes. | <div align = "center"> 1<br></div>
+ <img src="../assets/assets_wad/wireframes/help2PTD.png"> | **Tela do artigo:** Aba de buscas rápidas - Lado direito: artigo - Lado esquerdo: lista de artigos da mesma categoria. | <div align = "center"> 1<br></div>
+
+<sup>Fonte: Material produzido pelos autores (2025).</sup><br>
+</div>
+
+#### Versão Mobile
+<div align = "center">
+<sup>Figura X: Wireframes da plataforma para o PTD - Mobile </sup><br>
+<img src="../assets/assets_wad/wireframes/.png"> 
+
+<sup>Fonte: Material produzido pelos autores (2025).</sup><br>
+</div>
+
+### Versão Gestor
+<div align = "center">
+<sup>Figura X: Wireframes da plataforma para o Gestor - Desktop </sup><br>
+
+Tela | Recursos | User Story 
+--- | --- | ---
+<img src="../assets/assets_wad/wireframes/loginPTD.png"> | **Tela de Login:** Mesmas funcionalidades do PTD | <div align = "center"> 7<br></div>
+<img src="../assets/assets_wad/wireframes/homePTD.png">  | **Tela Home:** Mesmas funcionalidades do PTD| <div align = "center"> 7<br></div>
+<img src="../assets/assets_wad/wireframes/trilhasGestor.png"> | **Tela Trilhas:**  - Cards de trilhas gerais e Botão de adicionar nova trilha  |  <div align = "center"> 6<br>7</div>
+<br> <img src="../assets/assets_wad/wireframes/trilhas2Gestor.png"> | **Tela Dashboard:** Conteúdo sequêncial - Observar avaliação dos assuntos - Adição de novos conteúdos para usuários | <div align = "center"> 7<br>8</div>
+ <img src="../assets/assets_wad/wireframes/helpGestor.png"> | **Tela Help:** Aba de buscas rápidas - Funcionalidade de adição de novos cards. | <div align = "center"> 7<br></div>
+ <img src="../assets/assets_wad/wireframes/artigoGestor.png"> | **Tela do artigo:** Aba de buscas rápidas - Lado direito: artigo - Lado esquerdo: Adição de novos artigos. | <div align = "center"> 8<br></div>
+  <img src="../assets/assets_wad/wireframes/progressoGestor.png"> | **Tela de progresso:** Seleção de usuário - Dados do progresso do usuário. | <div align = "center"> 6<br>7<br>8</div>
+
+<sup>Fonte: Material produzido pelos autores (2025).</sup><br>
+</div>
+
+#### Versão Mobile
+<div align = "center">
+<sup>Figura X: Wireframes da plataforma para o Gestor - Mobile </sup><br>
+<img src="../assets/assets_wad/wireframes/.png"> 
+
+<sup>Fonte: Material produzido pelos autores (2025).</sup><br>
+</div>
 
 ## 3.3. Guia de estilos (sprint 3)
 
@@ -431,21 +486,434 @@ Critério de aceite 5 | CR5: Histórico de relatórios exportados fica disponív
 
 ### 3.5.1. Modelo relacional (sprints 2 e 4)
 
-*posicione aqui os diagramas de modelos relacionais do seu banco de dados, apresentando todos os esquemas de tabelas e suas relações. Utilize texto para complementar suas explicações, se necessário* 
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;  O banco de dados mostrado adere aos fundamentos da modelagem relacional, como explicado por Heuser[9], organizando a informação em tabelas que simbolizam entidades do campo educacional, tais como usuários, módulos, conteúdos, trilhas, certificados, avaliações e permissões. Cada tabela é formada por linhas (tuplas) e colunas (atributos), assegurando a integridade dos dados através de restrições como chaves primárias - que identificam cada registro de maneira exclusiva - e chaves estrangeiras, encarregadas de criar conexões entre as tabelas, como a conexão entre usuários e suas funções, conteúdos e módulos, ou certificados e trilhas. Esta metodologia possibilita a representação clara e organizada dos componentes do mundo real, simplificando a implementação, conservação e ampliação do sistema de informação. <br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;  No contexto da aplicação, tabelas como Users, module, content, path e certificate organizam o fluxo de aprendizagem, enquanto tabelas auxiliares como feedbacks_modulo, score_test, bookmarks e emphasis ampliam as funcionalidades ao permitir avaliações, acompanhamento de progresso, personalização e destaque de conteúdos. A tabela role_permissions define os diferentes perfis de acesso e suas permissões, promovendo segurança e flexibilidade na gestão do sistema. Assim, o modelo relacional adotado oferece uma base sólida para o desenvolvimento de uma plataforma educacional, garantindo integridade, clareza e escalabilidade. <br>
+
+<div align = "center">
+
+
+<sup>Figura 7: Diagrama Modelo Relacional.</sup><br>
+
+<img src="../assets/assets_wad/modelagem_relacional_FieldAcademy.png"><br>
+
+<sub>Fonte: Material produzido pelos autores (2025). </sub><br>
+
+</div>
+
+____________________
+&nbsp;&nbsp;&nbsp;&nbsp; A tabela Users é crucial para a experiência do utilizador, uma vez que guarda todas as informações pessoais e de acesso de cada indivíduo registrado na plataforma. Ela gerencia informações como nome, e-mail, senha, perfil (função ou cargo), região, pontuação, imagem de perfil, data do último acesso e conexão com certificados obtidos. <br>
+Em termos práticos, essa tabela possibilita que cada usuário possua uma conta exclusiva, com um histórico individual de progresso, resultados e realizações. A atribuição do papel (id_role) estabelece as funções e permissões que o usuário terá no sistema (por exemplo: estudante, docente, gestor). Adicionalmente, a área de pontuação pode ser utilizada para a gamificação, incentivando o usuário a se envolver mais. O histórico do último acesso e a imagem do perfil enriquecem a experiência. Assim, a tabela Users garante o acesso individualizado, a segurança das informações e a personalização da navegação e dos recursos disponíveis para cada pessoa na plataforma. <br>
+
+```sql
+CREATE TABLE IF NOT EXISTS users (
+  id SERIAL PRIMARY KEY,
+  id_role INTEGER NOT NULL REFERENCES roles(id) ON DELETE CASCADE,
+  name VARCHAR(255),
+  region VARCHAR(255),
+  email VARCHAR(255),
+  password VARCHAR(255),
+  score INTEGER NOT NULL,
+  last_login TIMESTAMP,
+  profile_photo_path VARCHAR(255)
+);
+```
+#### Users
+***Finalidade:*** Armazena informações dos usuários cadastrados na plataforma.<br>
+*
+**Campos:***
+
+1. id: Identificador único do usuário (chave primária).
+2. id_role: Chave estrangeira para a entidade `role_permissions`
+3. Name: Nome do usuário.
+4. Region: Localidade do usuário.
+5. Email: E-mail do usuário (único).
+6. Password: Senha.
+7. Score: Pontuação do usuário.
+8. last_login: Data e hora do último acesso.
+9. Profile_photo: Caminho ou URL da foto de perfil.
+10. id_certificate: Chave estrangeira para a entidade `certificate`.
+_____________________
+&nbsp;&nbsp;&nbsp;&nbsp; A tabela role_permissions estabelece os diversos papéis (ou funções) que um usuário pode exercer na plataforma, tais como estudante, monitor, docente, coordenador ou administrador, e detalha quais permissões cada um desses papéis tem. Os campos can_create, can_read, can_update e can_delete indicam claramente se um papel tem permissão para criar, visualizar, alterar ou apagar dados no sistema. <br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;  Em termos práticos, essa tabela afeta diretamente o que cada usuário tem permissão ou não para realizar ao utilizar a plataforma. Por exemplo, um estudante só tem a capacidade de visualizar materiais, enquanto um administrador tem a capacidade de criar e modificar módulos, usuários e materiais. Isso assegura proteção, organização e customização do acesso, adequando a experiência do usuário ao seu perfil e prevenindo ações não autorizadas. <br>
+
+```sql
+CREATE TABLE IF NOT EXISTS roles (
+  id SERIAL PRIMARY KEY,
+  name_role VARCHAR(50),
+  can_create BOOLEAN,
+  can_read BOOLEAN,
+  can_update BOOLEAN,
+  can_delete BOOLEAN
+);
+```
+
+#### Role_permissions
+**Finalidade:** Define os diferentes papéis (roles) do sistema, como PTD, gestor ou administrador, e as permissões associadas a cada um.  <br>
+**Finalidade:** Define os diferentes papéis (roles) do sistema, como PTD, gestor ou administrador, e as permissões associadas a cada um.  <br>
+
+**Campos:**
+**Campos:**
+1. id: Identificador único do papel (chave primária).
+2. nome_role: Nome do papel.
+3. can_create, can_read, can_update, can_delete: Permissões booleanas que determinam o que cada papel pode fazer no sistema.
+_____________________
+
+&nbsp;&nbsp;&nbsp;&nbsp; A tabela User_content_progress é fundamental para a experiência do usuário em plataformas de e-learning, pois registra o progresso individual de cada pessoa em cada conteúdo e módulo do curso. Sempre que o usuário acessa ou conclui um conteúdo, essa tabela armazena se aquele material já foi finalizado (is_completed), vinculando sempre o usuário, o módulo e o conteúdo específico. Isso permite um acompanhamento personalizado, onde o usuário pode visualizar facilmente quais conteúdos já estudou e quais ainda faltam, permitindo um aprendizado no seu próprio ritmo e de acordo com suas necessidades. Além disso, caso precise interromper os estudos, ele pode retornar exatamente de onde parou, sem perder tempo procurando o que já foi feito.
+
+```sql
+CREATE TABLE IF NOT EXISTS user_content_progress (
+  id SERIAL PRIMARY KEY,
+  user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  module_id INTEGER NOT NULL REFERENCES module(id) ON DELETE CASCADE,
+  content_id INTEGER NOT NULL REFERENCES content(id) ON DELETE CASCADE,
+  completed_at TIMESTAMP
+);
+
+```
+#### User_content_progress
+**Finalidade:** Registra o progresso do usuário em cada conteúdo e módulo. <br>
+
+**Campos:**
+1. id: Identificador único do progresso (chave primária).
+2. user_id: Chave estrangeira para Users.
+3. module_id: Chave estrangeira para module.
+4. content_id: Chave estrangeira para content.
+5. is_completed: Indica se o usuário concluiu o conteúdo (booleano).
+
+_________________
+
+&nbsp;&nbsp;&nbsp;&nbsp; A tabela content é crucial para a experiência do utilizador, uma vez que guarda todos os recursos de estudo (vídeos, textos, PDFs e imagens) associados a cada módulo da plataforma. Ela estrutura o material em uma sequência lógica (order), estabelece datas limite para acesso (due_time) e possibilita realçar materiais relevantes (id_emphasis).
+Em termos práticos, isso implica que o usuário pode facilmente localizar todos os recursos necessários para progredir em sua jornada de aprendizado, sabendo exatamente o que precisa ser estudado em cada fase. O acesso a diversos formatos (vídeo, texto, imagem) torna a aprendizagem mais interativa e ajustável a variados métodos de estudo.<br>
+```sql
+CREATE TABLE IF NOT EXISTS content (
+  id SERIAL PRIMARY KEY,
+  id_module INTEGER NOT NULL REFERENCES module(id) ON DELETE CASCADE,
+  doc_path VARCHAR(255),
+  video_path VARCHAR(255),
+  img_path VARCHAR(255),
+  "order" INTEGER NOT NULL,
+  highlight BOOLEAN
+);
+```
+#### Content
+**Finalidade:** Armazena os conteúdos (aulas,pdfs, vídeos, textos) de cada módulo. <br>
+
+**Campos:**
+**Finalidade:** Armazena os conteúdos (aulas,pdfs, vídeos, textos) de cada módulo. <br>
+**Campos:**
+1. id: Identificador único do conteúdo (chave primária).
+2. id_modulo: Chave estrangeira para module.
+3. id_emphasis: Indica se o conteúdo é um destaque. (booleano).
+4. doc_path: Caminho para material textual.
+5. video_path: Caminho para vídeo.
+6. img_path: Caminho para imagem.
+7. order: Ordem do conteúdo dentro do módulo.
+8. due_time: Prazo ou data limite para acessar o conteúdo.
+______________________
+
+&nbsp;&nbsp;&nbsp;&nbsp; A tabela emphasis influencia diretamente a experiência do usuário em uma plataforma de e-learning ou sistema educacional ao permitir que determinados conteúdos ou módulos sejam destacados ou priorizados para cada pessoa. Na prática, ela possibilita que o sistema marque quais materiais são mais importantes, urgentes ou recomendados para um usuário específico, geralmente com uma data limite para conclusão (due_date). Assim, o usuário pode visualizar facilmente o que deve focar primeiro em sua trilha de aprendizagem, facilitando o acompanhamento do progresso, a organização dos estudos e a priorização de tarefas. Esse tipo de funcionalidade é comum em sistemas de gestão de aprendizagem (LMS), pois ajuda a tornar o aprendizado mais personalizado, eficiente e alinhado às necessidades individuais de cada estudante. <br>
+
+```javascript
+CREATE TABLE emphasis (
+  id SERIAL PRIMARY KEY,
+  id_user INTEGER NOT NULL REFERENCES Users(id),
+  id_modulo INTEGER NOT NULL REFERENCES module(id),
+  id_content INTEGER NOT NULL REFERENCES content(id),
+  due_date TIMESTAMP
+);
+
+```
+#### Emphasis
+**Finalidade:** Marca conteúdos ou módulos como "em destaque" para um usuário, ou para fins de priorização.<br>
+
+**Campos:**
+1. id: Identificador único (chave primária).
+2. id_user: Chave estrangeira para Users.
+3. id_modulo: Chave estrangeira para module.
+4. id_content: Chave estrangeira para content.
+5. due_date: Data limite para o destaque.
+_________________
+
+&nbsp;&nbsp;&nbsp;&nbsp; A tabela module afeta a experiência do usuário ao organizar e estruturar o conteúdo em módulos em uma plataforma de aprendizado ou sistema de ensino. Cada entrada nesta tabela simboliza um módulo, que consiste numa unidade temática ou fase de um percurso de aprendizado. O campo id_path indica a trilha (ou curso) à qual o módulo está associado, enquanto o campo title define o nome do módulo e "order" determina a ordem na qual os módulos serão exibidos ao utilizador.<br>
+
+```sql
+CREATE TABLE IF NOT EXISTS module (
+  id SERIAL PRIMARY KEY,
+  id_path INTEGER NOT NULL REFERENCES path(id),
+  title VARCHAR(255),
+  "order" INTEGER NOT NULL
+);
+```
+#### Module
+**Finalidade:** Representa os módulos que compõem uma trilha de aprendizagem.<br>
+**Campos:**
+*Finalidade:* Representa os módulos que compõem uma trilha de aprendizagem.<br>
+*Campos:**
+1. id: Identificador único (chave primária).
+2. id_path: Chave estrangeira para path.
+3. title: Título do módulo.
+4. order: Ordem do módulo dentro da trilha.
+_____________________
+
+&nbsp;&nbsp;&nbsp;&nbsp; A tabela certificate guarda dados referentes aos certificados concedidos a usuários que finalizam trilhas na plataforma. Esta tabela é crucial para o usuário, pois possibilita o registro, a validação e o acesso simplificado aos certificados digitais, que atestam a conclusão de cursos, treinamentos ou percursos de aprendizagem. O campo id_path associa o certificado à trilha finalizada, a data de emissão e o hash_code asseguram a autenticidade e simplificam a verificação online do documento, pois diversos sistemas possibilitam a verificação da validade do certificado através deste código único. <br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;  Em termos práticos, isso implica que o usuário tem a capacidade de acessar, baixar, compartilhar e validar seus certificados a qualquer instante, de maneira ágil e segura, sem a necessidade de procedimentos manuais ou impressos. Isso valoriza a experiência do estudante, simplifica a validação de habilidades em processos de seleção, avanços na carreira e expande as chances de reconhecimento acadêmico e profissional. <br>
+
+```sql
+CREATE TABLE IF NOT EXISTS certificate (
+  id SERIAL PRIMARY KEY,
+  id_path INTEGER NOT NULL REFERENCES path(id),
+  hash_code VARCHAR(100)
+);
+```
+#### Certificate
+**Finalidade:**  Registra os certificados emitidos para usuários que concluem trilhas. <br>
+
+**Campos:**
+1. id: Identificador único do certificado (chave primária).
+2. id_path: Chave estrangeira para path, indicando a trilha concluída.
+3. issue_date: Data de emissão do certificado.
+4. hash_code: Código único para validação do certificado.
+___________________
+
+```sql
+CREATE TABLE IF NOT EXISTS user_certificate_progress (
+  id SERIAL PRIMARY KEY,
+  id_user INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  id_certificate INTEGER NOT NULL REFERENCES certificate(id) ON DELETE CASCADE,
+  completed_at DATE
+);
+```
+___________________
+
+&nbsp;&nbsp;&nbsp;&nbsp; O usuário é impactado pela tabela feedbacks_content_modulo, que possibilita o registro de comentários e avaliações sobre conteúdos e módulos específicos na plataforma de aprendizado. Esta funcionalidade proporciona ao usuário um meio direto para expressar opiniões, propor melhorias e trocar experiências, tornando o processo de aprendizagem mais interativo e individualizado.
+O retorno imediato e estruturado auxilia o usuário a ponderar sobre seu avanço, reconhecer suas habilidades e áreas que necessitam de aprimoramento, além de incentivar a participação constante no curso. Ademais, ao perceber que seus pontos de vista são levados em conta, o usuário se sente apreciado e mais integrado à comunidade de aprendizado25. <br>
+
+```sql
+CREATE TABLE IF NOT EXISTS feedbacks_content_module (
+  id SERIAL PRIMARY KEY,
+  id_content INTEGER NOT NULL REFERENCES content(id) ON DELETE CASCADE,
+  id_module INTEGER NOT NULL REFERENCES module(id) ON DELETE CASCADE,
+  id_user INTEGER NOT NULL REFERENCES users(id),
+  message TEXT,
+  rating SMALLINT,
+  created_at TIMESTAMP
+);
+```
+#### Feedbacks_content_module 
+**Finalidade:** Armazena feedbacks e avaliações que usuários deixam sobre os módulos e conteúdos.<br>
+**Campos:**
+1. id: Identificador único (chave primária).
+2. id_content: Chave estrangeira para a entidade `content`.
+3. id_modulo: Chave estrangeira para a entidade `module`.
+4. id_user: Chave estrangeira para a entidade `users`.
+5. message: Comentário do usuário.
+6. rating: Avaliação numérica (ex: 1 a 5).
+7. created_at: Data/hora do feedback.
+
+_________________________
+
+&nbsp;&nbsp;&nbsp;&nbsp; A tabela path auxilia o usuário na organização e estruturação das rotas de aprendizado disponíveis na plataforma. Cada entrada nesta tabela simboliza uma "rota" ou "caminho" de aprendizagem, formada por módulos e materiais sequenciais, contendo dados como título, descrição, categoria e relação com certificações.<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp; Em termos práticos, isso implica que o usuário consegue visualizar sua trajetória educacional de maneira nítida, compreendendo exatamente quais passos precisa percorrer para atingir um objetivo ou obter um certificado. As trilhas tornam o processo de aprendizado mais organizado, individualizado e estimulante, uma vez que possibilitam que cada indivíduo rastreie seu avanço, selecione rotas adequadas aos seus interesses ou necessidades, e progrida no seu próprio tempo. <br>
+
+```sql
+CREATE TABLE IF NOT EXISTS path (
+  id SERIAL PRIMARY KEY,
+  title VARCHAR(255),
+  description TEXT
+);
+```
+
+#### Path
+**Finalidade:** Representa as trilhas disponíveis na plataforma. <br>
+**Campos:**
+1. id: Identificador único (chave primária).
+2. id_certification: Chave estrangeira para a entidade `certificate`. 
+3. title: Título da trilha.
+4. description: Descrição da trilha.
+5. category: Categoria da trilha (ex: programação, design, etc).
+_______________________
+
+
+&nbsp;&nbsp;&nbsp;&nbsp; A tabela bookmarks influencia a experiência do usuário ao permitir que ele salve conteúdos e módulos como favoritos ou atalhos para acesso rápido dentro da plataforma. Na prática, isso significa que o usuário pode marcar materiais importantes, revisitar facilmente aulas, vídeos ou documentos que deseja estudar novamente, e organizar melhor sua rotina de aprendizagem.
+Assim como bookmarks em navegadores e leitores de PDF facilitam a navegação e o retorno a pontos relevantes, a funcionalidade de bookmarks em plataformas de e-learning torna o acesso ao conteúdo mais prático e personalizado. <br> 
+
+&nbsp;&nbsp;&nbsp;&nbsp;
+Em resumo, a tabela bookmarks melhora a navegação, aumenta a eficiência e torna a experiência do usuário mais personalizada e motivadora dentro da plataforma de aprendizagem. <br>
+
+```sql
+CREATE TABLE IF NOT EXISTS bookmarks (
+  id SERIAL PRIMARY KEY,
+  id_user INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  id_content INTEGER NOT NULL REFERENCES content(id) ON DELETE CASCADE,
+  saved_at TIMESTAMP
+);
+
+```
+#### Bookmarks
+**Finalidade:** Permite que usuários salvem conteúdos ou módulos como favoritos e como atalhos para acesso rápido. <br>
+
+**Campos:**
+1. id: Identificador único (chave primária).
+2. id_user: Chave estrangeira para Users.
+3. id_content: Chave estrangeira para content.
+4. id_module: Chave estrangeira para module.
+5. saved_at: Data e hora em que o conteúdo foi salvo.
+____________________
+
+&nbsp;&nbsp;&nbsp;&nbsp; A tabela tests influencia a experiência do usuário ao estruturar e disponibilizar avaliações dentro da plataforma de aprendizagem. Ela armazena informações sobre cada teste associado a um módulo, incluindo as perguntas e o número total de questões. Para o usuário, isso significa que ele pode ser avaliado de forma prática e organizada ao final de cada módulo, recebendo feedback imediato sobre seu desempenho. <br>
+
+&nbsp;&nbsp;&nbsp;&nbsp; Essas avaliações medem o progresso e o conhecimento adquirido permitindo que o usuário pode acompanhar sua evolução, identificar pontos fortes e áreas que precisam de reforço, e consolidar o que aprendeu ao longo do curso.
+Motivam e engajam: Testes bem estruturados criam um senso de desafio e realização, estimulando o usuário a continuar avançando e a buscar melhores resultados. <br>
+
+```sql
+CREATE TABLE IF NOT EXISTS tests (
+  id SERIAL PRIMARY KEY,
+  id_module INTEGER NOT NULL REFERENCES module(id) ON DELETE CASCADE,
+  questions TEXT,
+  num_questions INTEGER NOT NULL
+);
+```
+#### Tests
+**Finalidade:** Armazena testes associados a conclusão dos módulos. <br>
+**Campos:**
+1. id: Identificador único do teste (chave primária).
+2. id_modulo: Chave estrangeira para module.
+3. questions: Texto contendo as perguntas.
+4. num_questions: Número de questões do teste.
+_______________________
+
+&nbsp;&nbsp;&nbsp;&nbsp; A tabela score_test documenta o rendimento dos utilizadores em testes conduzidos na ferramenta. Quando um usuário realiza um teste, essa tabela registra o número do teste realizado (id_test), o nome do usuário responsável (id_user), a pontuação obtida (score) e as datas e horas de início e término (started_at, ended_at). <br>
+&nbsp;&nbsp;&nbsp;&nbsp; Para o usuário, isso implica que seu avanço e desempenho nas avaliações são monitorados de maneira individual e clara. Ele tem a capacidade de analisar seu histórico de desempenho, determinar em quais testes se saiu melhor ou precisa aprimorar, e utilizar esses dados para acompanhar sua progressão ao longo dos anos. Ademais, a pontuação pode atuar como estímulo para alcançar melhores performances e pode ser empregada para liberar materiais, emitir certificados ou formar notas finais, tornando a experiência de aprendizado mais clara. <br>
+
+```sql
+CREATE TABLE IF NOT EXISTS user_test_score (
+  id SERIAL PRIMARY KEY,
+  id_test INTEGER NOT NULL REFERENCES tests(id) ON DELETE CASCADE,
+  id_user INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  score INTEGER NOT NULL,
+  started_at TIMESTAMP,
+  ended_at TIMESTAMP
+);
+```
+
+#### Score_test
+**Finalidade:** Registra o desempenho do usuário em testes.<br>
+
+**Campos:**
+1. id: Identificador único (chave primária).
+2. id_test: Chave estrangeira para tests.
+3. id_user: Chave estrangeira para Users.
+4. score: Pontuação obtida.
+5. started_at: Data/hora de início do teste.
+6. ended_at: Data/hora de término do teste.
+
+__________________
+
+#### Cardinalidade entre Tabelas
+
+<div align = "center">
+
+<sup>Quadro X: Cardinalidades entre as tabelas do banco de dados.</sup><br>
+
+| Entidade A | Entidade B | Cardinalidade | Explicação |
+|-----|-----|------|------|
+| Users, Content, Module | feedbacks_modulo | N:N | Representa feedbacks deixados por usuários em conteúdos (tabela associativa)|
+| Users| User_certification_progress| N:N | Um usuário pode ter muitos certificados |
+| Users, Content, Module | Emphasis | N:N | Representa ênfase de usuários para conteúdos específicos (tabela associativa) |
+| Users | User_content_progress | 1:1 | Um usuário pode ter muitos registros de progresso |
+| Role_permissions | Users | 1:1 | Uma role pode estar associada a vários usuários |
+| Certificate| path| 1:1 | Um certificado pode estar ligado a várias trilhas|
+| Path  | Module | 1:N | Uma trilha contém vários módulos |
+| Module | Content | 1:N | Um módulo contém vários conteúdos |
+| Content | User_content_progress | N:N | Um conteúdo pode estar em vários registros de progresso |
+| Module | User_content_progress   | 1:N | Um módulo pode estar em vários registros de progresso |
+| Users | Bookmarks | 1:1 | Um usuário pode ter vários conteúdos fixados |
+| Content | Bookmarks | 1:N | Um conteúdo pode estar fixado por vários usuários |
+| Module | Bookmarks | 1:N | Um módulo pode estar em vários registros de fixação |
+| Module | Tests | 1 :N | Um módulo pode ter vários testes |
+| Tests | User_test_score | N :N | Um teste pode gerar vários registros de pontuação |
+
+
+
+<sub>Fonte: Material produzido pelos autores (2025). </sub><br>
+
+</div>
 
 ### 3.5.2. Consultas SQL e lógica proposicional (sprint 2)
 
-*posicione aqui uma lista de consultas SQL compostas, realizadas pelo back-end da aplicação web, com sua respectiva lógica proposicional, descrita conforme template abaixo. Lembre-se que para usar LaTeX em markdown, basta você colocar as expressões entre $ ou $$*
+**Expressão SQL:** 
+```sql
+SELECT 
+  u.name, 
+  m.title AS module_title, 
+  c.title AS content_title, 
+  ucp.completed_at
+FROM user_content_progress ucp
+JOIN users u ON ucp.user_id = u.id
+JOIN module m ON ucp.module_id = m.id
+JOIN content c ON ucp.content_id = c.id
+JOIN roles rp ON u.id_role = rp.id
+WHERE rp.name_role = 'PTD' 
+  AND m.id = 1;
+```
+**Proposições lógicas** | $A$: O usuário é PTD (`name_role = 'PTD'`) <br> $B$: O ID do módulo é igual a 1 (`m.id = 1`) <br>
+**Expressão lógica proposicional** | $(A \land B)$
+**Tabela Verdade:**
 
-*Template de SQL + lógica proposicional*
-#1 | ---
---- | ---
-**Expressão SQL** | SELECT * FROM suppliers WHERE (state = 'California' AND supplier_id <> 900) OR (supplier_id = 100); 
-**Proposições lógicas** | $A$: O estado é 'California' (state = 'California') <br> $B$: O ID do fornecedor não é 900 (supplier_id ≠ 900) <br> $C$: O ID do fornecedor é 100 (supplier_id = 100)
-**Expressão lógica proposicional** | $(A \land B) \lor C$
-**Tabela Verdade** | <table> <thead> <tr> <th>$A$</th> <th>$B$</th> <th>$C$</th> <th>$(A \land B)$</th> <th>$(A \land B) \lor C$</th> </tr> </thead> <tbody> <tr> <td>F</td> <td>F</td> <td>F</td> <td>F</td> <td>F</td> </tr> <tr> <td>F</td> <td>F</td> <td>V</td> <td>F</td> <td>V</td> </tr> <tr> <td>F</td> <td>V</td> <td>F</td> <td>F</td> <td>F</td> </tr> <tr> <td>F</td> <td>V</td> <td>V</td> <td>F</td> <td>V</td> </tr> <tr> <td>V</td> <td>F</td> <td>F</td> <td>F</td> <td>F</td> </tr> <tr> <td>V</td> <td>F</td> <td>V</td> <td>F</td> <td>V</td> </tr> <tr> <td>V</td> <td>V</td> <td>F</td> <td>V</td> <td>V</td> </tr> <tr> <td>V</td> <td>V</td> <td>V</td> <td>V</td> <td>V</td> </tr> </tbody> </table>
+| $A$ | $B$ | $(A \land B)$ |
+|---|---|---------------|
+| F | F | F             |
+| F | V | F             |
+| V | F | F             |
+| V | V | V             |
 
-*Dica: edite a tabela verdade fora do markdown, para ter melhor controle*
+Interpretando a tabela em conjunto com o código, é possível depreender que se o usuário não for um PTD, não será retornada nenhuma informação. Ademais, o código só retorna informações se as duas proposições forem verdadeiras, ou seja: se o usuário for um PTD e se houver um módulo de ID igual a 1, afinal, as consultas são restritivas.
+
+**Expressão SQL:**
+```sql
+UPDATE content
+SET title = 'Novo Titulo'
+WHERE id = 3 AND id_module = 3;
+```
+
+**Proposições lógicas** | $A$: O ID do conteúdo é igual a 3 (`id = 3`) <br> $B$: O ID do módulo é igual a 3 (`m.id = 3`) <br>
+**Expressão lógica proposicional** | $(A \land B)$
+**Tabela Verdade:**
+
+| $A$ | $B$ | $(A \land B)$ |
+|---|---|---------------|
+| F | F | F             |
+| F | V | F             |
+| V | F | F             |
+| V | V | V             |
+
+Da mesma forma que a consulta anterior, esta consulta é restritiva. Assim, só haverá retorno de informações se as preposições A e B forem simultaneamente verdadeiras.
+
+**Expressão SQL:**
+```sql
+DELETE FROM users
+WHERE email = 'ptd@exemplo.com' AND id_role = (
+  SELECT id FROM roles WHERE name_role = 'PTD'
+);
+```
+**Proposições lógicas** | $A$: O email do usuário é `'ptd@exemplo.com'` <br> $B$: O O usuário é um PTD (`m.id = 3`) <br>
+**Expressão lógica proposicional** | $(A \land B)$
+**Tabela Verdade:**
+
+| $A$ | $B$ | $(A \land B)$ |
+|---|---|---------------|
+| F | F | F             |
+| F | V | F             |
+| V | F | F             |
+| V | V | V             |
+
+Novamente, a consulta só será executada com êxito se ambas as proposições A e B forem simultaneamente verdadeiras, ou seja: se houver um usuário com o cargo PTD e com o email "ptd@exemplo.com".
 
 ## 3.6. WebAPI e endpoints (sprints 3 e 4)
 
@@ -562,8 +1030,11 @@ Descreva os principais segmentos de mercado a serem atendidos pela aplicação. 
 
 <a name="c16">[8]</a> FERRAMENTAS DA QUALIDADE. Matriz de Riscos – Matriz de Probabilidade e Impacto. Disponível em: https://ferramentasdaqualidade.org/matriz-de-riscos-matriz-de-probabilidade-e-impacto/. Acesso em: 20/04/25.
 
+<a name="c16">[9]</a>HEUSER, C. A. Projeto de Banco de Dados. 6. ed. Porto Alegre: Bookman, 2009.
 
 INTELI. Adalove. Disponível em: https://adalove.inteli.edu.br/feed. Acesso em: 15/04/2025. <br>
+
+
 
 # <a name="c9"></a>Anexos
 
