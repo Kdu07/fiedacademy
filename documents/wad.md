@@ -522,8 +522,8 @@ CREATE TABLE IF NOT EXISTS users (
 ```
 #### Users
 ***Finalidade:*** Armazena informações dos usuários cadastrados na plataforma.<br>
-*
-**Campos:***
+
+**Campos:**
 
 1. id: Identificador único do usuário (chave primária).
 2. id_role: Chave estrangeira para a entidade `role_permissions`
@@ -553,9 +553,7 @@ CREATE TABLE IF NOT EXISTS roles (
 
 #### Role_permissions
 **Finalidade:** Define os diferentes papéis (roles) do sistema, como PTD, gestor ou administrador, e as permissões associadas a cada um.  <br>
-**Finalidade:** Define os diferentes papéis (roles) do sistema, como PTD, gestor ou administrador, e as permissões associadas a cada um.  <br>
 
-**Campos:**
 **Campos:**
 1. id: Identificador único do papel (chave primária).
 2. nome_role: Nome do papel.
@@ -603,8 +601,6 @@ CREATE TABLE IF NOT EXISTS content (
 **Finalidade:** Armazena os conteúdos (aulas,pdfs, vídeos, textos) de cada módulo. <br>
 
 **Campos:**
-**Finalidade:** Armazena os conteúdos (aulas,pdfs, vídeos, textos) de cada módulo. <br>
-**Campos:**
 1. id: Identificador único do conteúdo (chave primária).
 2. id_modulo: Chave estrangeira para module.
 3. id_emphasis: Indica se o conteúdo é um destaque. (booleano).
@@ -651,8 +647,7 @@ CREATE TABLE IF NOT EXISTS module (
 #### Module
 **Finalidade:** Representa os módulos que compõem uma trilha de aprendizagem.<br>
 **Campos:**
-*Finalidade:* Representa os módulos que compõem uma trilha de aprendizagem.<br>
-*Campos:**
+
 1. id: Identificador único (chave primária).
 2. id_path: Chave estrangeira para path.
 3. title: Título do módulo.
@@ -839,15 +834,13 @@ __________________
 | Module | Tests | 1 :N | Um módulo pode ter vários testes |
 | Tests | User_test_score | N :N | Um teste pode gerar vários registros de pontuação |
 
-
-
 <sub>Fonte: Material produzido pelos autores (2025). </sub><br>
 
 </div>
 
 ### 3.5.2. Consultas SQL e lógica proposicional (sprint 2)
 
-**Expressão SQL:** 
+#### **Expressão SQL - 1:** 
 ```sql
 SELECT 
   u.name, 
@@ -875,7 +868,7 @@ WHERE rp.name_role = 'PTD'
 
 Interpretando a tabela em conjunto com o código, é possível depreender que se o usuário não for um PTD, não será retornada nenhuma informação. Ademais, o código só retorna informações se as duas proposições forem verdadeiras, ou seja: se o usuário for um PTD e se houver um módulo de ID igual a 1, afinal, as consultas são restritivas.
 
-**Expressão SQL:**
+#### **Expressão SQL - 2:** 
 ```sql
 UPDATE content
 SET title = 'Novo Titulo'
@@ -895,7 +888,7 @@ WHERE id = 3 AND id_module = 3;
 
 Da mesma forma que a consulta anterior, esta consulta é restritiva. Assim, só haverá retorno de informações se as preposições A e B forem simultaneamente verdadeiras.
 
-**Expressão SQL:**
+#### **Expressão SQL - 3:** 
 ```sql
 DELETE FROM users
 WHERE email = 'ptd@exemplo.com' AND id_role = (
