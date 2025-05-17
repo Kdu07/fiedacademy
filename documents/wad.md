@@ -405,57 +405,64 @@ Critério de aceite 5 | CR5: Histórico de relatórios exportados fica disponív
 Wireframe é um rascunho visual que mostra a estrutura básica de uma interface, focando na organização dos elementos e na navegação, sem detalhar o design final.
 Para alinhar os componentes de forma clara e responsiva, foi utilizada a estrutura de grid abaixo:
 
+<div align = "center">
+
+<sup>Quadro 13: Grid utilizada</sup><br>
+
 Desktop | Mobile
 ---|---
 <img src="../assets/assets_wad/wireframes/GRID.png"  width="200"> | <img src="../assets/assets_wad/wireframes/GRID2.png"  width="70"> 
 [Link dos wireframes](https://www.figma.com/design/bOsRfHBpYqRksHS4GiNW74/bayer-project?node-id=0-1&p=f&t=S55FkKepuUIl5D6k-11)
 
+<sup>Fonte: Material produzido pelos autores (2025).</sup><br>
+</div>
+
 ### Versão PTD
 <div align = "center">
 
-<sup>Figura X: Wireframes da plataforma para o PTD - Desktop</sup><br>
+<sup>Quadro 14: Wireframes da plataforma para o PTD - Desktop</sup><br>
 
 Tela | Recursos | User Story 
 --- | --- | ---
-<img src="../assets/assets_wad/wireframes/loginPTD.png"> | **Tela de Login:** Campo de Email - Campo para a senha - Botão de confirmação de login | <div align = "center"> 1<br></div>
-<img src="../assets/assets_wad/wireframes/homePTD.png">  | **Tela Home:** Aba de buscas rápidas - Direcionamento para tela de trilhas - Direcionamento para tela de help - Artigos que podem ser fixados pelo PTD para acesso rápido. - Sino de notificações. | <div align = "center"> 1<br>2<br>3 </div>
-<img src="../assets/assets_wad/wireframes/trilhasPTD.png"> <br> <img src="../assets/assets_wad/wireframes/trilhas2PTD.png">  | **Tela Trilhas:** Progesso atual - Histórico de trilhas - Recomendações de tilhas - Base de conteúdos gerais e opcionais. |  <div align = "center"> 1<br>2<br>3<br></div>
- <img src="../assets/assets_wad/wireframes/dashboardPTD.png"> | **Tela Dashboard:** Conteúdo sequêncial - Informações laterais - Material espeífico - Avaliação dos assuntos. | <div align = "center"> 4<br></div>
- <img src="../assets/assets_wad/wireframes/helpPTD.png"> | **Tela Help:** Aba de buscas rápidas - Cards de assuntos e temas recorrentes. | <div align = "center"> 1<br></div>
- <img src="../assets/assets_wad/wireframes/help2PTD.png"> | **Tela do artigo:** Aba de buscas rápidas - Lado direito: artigo - Lado esquerdo: lista de artigos da mesma categoria. | <div align = "center"> 1<br></div>
+<img src="../assets/assets_wad/wireframes/loginPTD.png"> | **Tela de Login:** <br> - Campo de Email <br> - Campo para a senha <br>- Botão de confirmação de login | <div align = "center"> 1<br></div> 
+<img src="../assets/assets_wad/wireframes/homePTD.png"> <br> <img src="../assets/assets_wad/wireframes/home2PTD.png">| **Tela Home:** <br> - Aba de buscas rápidas <br> - Direcionamento para tela de trilhas <br> - Direcionamento para tela de help <br> - Artigos que podem ser fixados pelo PTD para acesso rápido.  - Sino de notificações. | <div align = "center"> 1<br>2<br>3 </div>
+<img src="../assets/assets_wad/wireframes/trilhasPTD.png"> <br> <img src="../assets/assets_wad/wireframes/trilhas2PTD.png">  | **Tela Trilhas:** <br> - Progesso atual <br> - Histórico de trilhas <br> - Recomendações de tilhas <br> - Base de conteúdos gerais e opcionais. |  <div align = "center"> 1<br>2<br>3<br></div>
+ <img src="../assets/assets_wad/wireframes/dashboardPTD.png"> | **Tela Dashboard:** <br> - Conteúdo sequêncial <br> - Informações laterais <br> - Material espeífico <br> - Avaliação dos assuntos. | <div align = "center"> 4<br></div>
+ <img src="../assets/assets_wad/wireframes/helpPTD.png"> | **Tela Help:** <br> - Aba de buscas rápidas <br> - Cards de assuntos e temas recorrentes. | <div align = "center"> 1<br></div>
+ <img src="../assets/assets_wad/wireframes/help2PTD.png"> | **Tela do artigo:** <br> - Aba de buscas rápidas <br> - Lado direito: artigo <br> - Lado esquerdo: lista de artigos da mesma categoria. | <div align = "center"> 1<br></div>
 
 <sup>Fonte: Material produzido pelos autores (2025).</sup><br>
 </div>
 
 #### Versão Mobile
 <div align = "center">
-<sup>Figura X: Wireframes da plataforma para o PTD - Mobile </sup><br>
-<img src="../assets/assets_wad/wireframes/.png"> 
+<sup>Figura 7: Wireframes da plataforma para o PTD - Mobile </sup><br>
+<img src="../assets/assets_wad/wireframes/wireframeMobPTD.png"> 
 
 <sup>Fonte: Material produzido pelos autores (2025).</sup><br>
 </div>
 
 ### Versão Gestor
 <div align = "center">
-<sup>Figura X: Wireframes da plataforma para o Gestor - Desktop </sup><br>
+<sup>Quadro 15: Wireframes da plataforma para o Gestor - Desktop </sup><br>
 
 Tela | Recursos | User Story 
 --- | --- | ---
-<img src="../assets/assets_wad/wireframes/loginPTD.png"> | **Tela de Login:** Mesmas funcionalidades do PTD | <div align = "center"> 7<br></div>
-<img src="../assets/assets_wad/wireframes/homePTD.png">  | **Tela Home:** Mesmas funcionalidades do PTD| <div align = "center"> 7<br></div>
-<img src="../assets/assets_wad/wireframes/trilhasGestor.png"> | **Tela Trilhas:**  - Cards de trilhas gerais e Botão de adicionar nova trilha  |  <div align = "center"> 6<br>7</div>
-<br> <img src="../assets/assets_wad/wireframes/trilhas2Gestor.png"> | **Tela Dashboard:** Conteúdo sequêncial - Observar avaliação dos assuntos - Adição de novos conteúdos para usuários | <div align = "center"> 7<br>8</div>
- <img src="../assets/assets_wad/wireframes/helpGestor.png"> | **Tela Help:** Aba de buscas rápidas - Funcionalidade de adição de novos cards. | <div align = "center"> 7<br></div>
- <img src="../assets/assets_wad/wireframes/artigoGestor.png"> | **Tela do artigo:** Aba de buscas rápidas - Lado direito: artigo - Lado esquerdo: Adição de novos artigos. | <div align = "center"> 8<br></div>
-  <img src="../assets/assets_wad/wireframes/progressoGestor.png"> | **Tela de progresso:** Seleção de usuário - Dados do progresso do usuário. | <div align = "center"> 6<br>7<br>8</div>
+<img src="../assets/assets_wad/wireframes/loginPTD.png"> | **Tela de Login:** <br> - Mesmas funcionalidades do PTD | <div align = "center"> 7<br></div>
+<img src="../assets/assets_wad/wireframes/homePTD.png"> <br> <img src="../assets/assets_wad/wireframes/home2PTD.png">  | **Tela Home:** <br> - Mesmas funcionalidades do PTD| <div align = "center"> 7<br></div>
+<img src="../assets/assets_wad/wireframes/trilhasGestor.png"> | **Tela Trilhas:** <br> - Cards de trilhas gerais <br> - Botão de adicionar nova trilha  |  <div align = "center"> 6<br>7</div>
+<br> <img src="../assets/assets_wad/wireframes/trilhas2Gestor.png"> | **Tela Dashboard:** <br> - Conteúdo sequêncial <br> - Observar avaliação dos assuntos <br> - Adição de novos conteúdos para usuários | <div align = "center"> 7<br>8</div>
+ <img src="../assets/assets_wad/wireframes/helpGestor.png"> | **Tela Help:** <br> - Aba de buscas rápidas <br> - Funcionalidade de adição de novos cards. | <div align = "center"> 7<br></div>
+ <img src="../assets/assets_wad/wireframes/artigoGestor.png"> | **Tela do artigo:** <br> - Aba de buscas rápidas <br> - Lado direito: artigo <br> - Lado esquerdo: Adição de novos artigos. | <div align = "center"> 8<br></div>
+  <img src="../assets/assets_wad/wireframes/progressoGestor.png"> | **Tela de progresso:** <br> - Seleção de usuário <br> - Dados do progresso do usuário. | <div align = "center"> 6<br>7<br>8</div>
 
 <sup>Fonte: Material produzido pelos autores (2025).</sup><br>
 </div>
 
 #### Versão Mobile
 <div align = "center">
-<sup>Figura X: Wireframes da plataforma para o Gestor - Mobile </sup><br>
-<img src="../assets/assets_wad/wireframes/.png"> 
+<sup>Figura 8: Wireframes da plataforma para o Gestor - Mobile </sup><br>
+<img src="../assets/assets_wad/wireframes/wireframeMobGestor.png"> 
 
 <sup>Fonte: Material produzido pelos autores (2025).</sup><br>
 </div>
@@ -495,7 +502,7 @@ Tela | Recursos | User Story
 <div align = "center">
 
 
-<sup>Figura 7: Diagrama Modelo Relacional.</sup><br>
+<sup>Figura 9: Diagrama Modelo Relacional.</sup><br>
 
 <img src="../assets/assets_wad/modelagem_relacional_FieldAcademy.png"><br>
 
@@ -522,8 +529,8 @@ CREATE TABLE IF NOT EXISTS users (
 ```
 #### Users
 ***Finalidade:*** Armazena informações dos usuários cadastrados na plataforma.<br>
-*
-**Campos:***
+
+**Campos:**
 
 1. id: Identificador único do usuário (chave primária).
 2. id_role: Chave estrangeira para a entidade `role_permissions`
@@ -553,9 +560,7 @@ CREATE TABLE IF NOT EXISTS roles (
 
 #### Role_permissions
 **Finalidade:** Define os diferentes papéis (roles) do sistema, como PTD, gestor ou administrador, e as permissões associadas a cada um.  <br>
-**Finalidade:** Define os diferentes papéis (roles) do sistema, como PTD, gestor ou administrador, e as permissões associadas a cada um.  <br>
 
-**Campos:**
 **Campos:**
 1. id: Identificador único do papel (chave primária).
 2. nome_role: Nome do papel.
@@ -603,8 +608,6 @@ CREATE TABLE IF NOT EXISTS content (
 **Finalidade:** Armazena os conteúdos (aulas,pdfs, vídeos, textos) de cada módulo. <br>
 
 **Campos:**
-**Finalidade:** Armazena os conteúdos (aulas,pdfs, vídeos, textos) de cada módulo. <br>
-**Campos:**
 1. id: Identificador único do conteúdo (chave primária).
 2. id_modulo: Chave estrangeira para module.
 3. id_emphasis: Indica se o conteúdo é um destaque. (booleano).
@@ -651,8 +654,7 @@ CREATE TABLE IF NOT EXISTS module (
 #### Module
 **Finalidade:** Representa os módulos que compõem uma trilha de aprendizagem.<br>
 **Campos:**
-*Finalidade:* Representa os módulos que compõem uma trilha de aprendizagem.<br>
-*Campos:**
+
 1. id: Identificador único (chave primária).
 2. id_path: Chave estrangeira para path.
 3. title: Título do módulo.
@@ -819,7 +821,7 @@ __________________
 
 <div align = "center">
 
-<sup>Quadro X: Cardinalidades entre as tabelas do banco de dados.</sup><br>
+<sup>Quadro 16: Cardinalidades entre as tabelas do banco de dados.</sup><br>
 
 | Entidade A | Entidade B | Cardinalidade | Explicação |
 |-----|-----|------|------|
@@ -839,15 +841,13 @@ __________________
 | Module | Tests | 1 :N | Um módulo pode ter vários testes |
 | Tests | User_test_score | N :N | Um teste pode gerar vários registros de pontuação |
 
-
-
 <sub>Fonte: Material produzido pelos autores (2025). </sub><br>
 
 </div>
 
 ### 3.5.2. Consultas SQL e lógica proposicional (sprint 2)
 
-**Expressão SQL:** 
+#### **Expressão SQL - 1:** 
 ```sql
 SELECT 
   u.name, 
@@ -875,7 +875,7 @@ WHERE rp.name_role = 'PTD'
 
 Interpretando a tabela em conjunto com o código, é possível depreender que se o usuário não for um PTD, não será retornada nenhuma informação. Ademais, o código só retorna informações se as duas proposições forem verdadeiras, ou seja: se o usuário for um PTD e se houver um módulo de ID igual a 1, afinal, as consultas são restritivas.
 
-**Expressão SQL:**
+#### **Expressão SQL - 2:** 
 ```sql
 UPDATE content
 SET title = 'Novo Titulo'
@@ -895,7 +895,7 @@ WHERE id = 3 AND id_module = 3;
 
 Da mesma forma que a consulta anterior, esta consulta é restritiva. Assim, só haverá retorno de informações se as preposições A e B forem simultaneamente verdadeiras.
 
-**Expressão SQL:**
+#### **Expressão SQL - 3:** 
 ```sql
 DELETE FROM users
 WHERE email = 'ptd@exemplo.com' AND id_role = (

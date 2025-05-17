@@ -42,52 +42,53 @@ Mais do que um ambiente de treinamento, o projeto busca transformar o processo d
 _Coloque aqui o link para seu projeto publicado e link para vídeo de demonstração_
 
 ## 📁 Estrutura de pastas
+O projeto segue o padrão arquitetural **MVC (Model-View-Controller)**, que organiza o código em três camadas principais:
 
-Dentre os arquivos e pastas presentes na raiz do projeto, definem-se:
+- **Model**: Define a estrutura dos dados e realiza a comunicação com o banco.
+- **View**: Responsável pelas páginas que o usuário vê.
+- **Controller**: Processa as requisições, interage com os Models e retorna as Views.
 
-- <b>assets</b>: aqui estão os arquivos relacionados a elementos não-estruturados deste repositório, como imagens.
+Para isso, a estrutura de pastas foi organizada da seguinte forma:
 
-- <b>document</b>: aqui estão todos os documentos do projeto, como o Web Application  Document (WAD) bem como documentos complementares, na pasta "other".
-
-- <b>src</b>: Todo o código fonte criado para o desenvolvimento do projeto de aplicação web.
-
-- <b>README.md</b>: arquivo que serve como guia introdutório e explicação geral sobre o projeto e a aplicação (o mesmo arquivo que você está lendo agora).
+- `assets/`: Contém imagens e outros arquivos estáticos.
+- `document/`: Armazena os documentos do projeto, como o modelo do banco de dados e a documentação WAD.
+ - `config/`: Arquivos de configuração, como a conexão com o banco de dados.
+- `controllers/`, `models/`, `routes/`, `views/`: Pastas principais do padrão MVC.
+- `styles/` e `scripts/`: Arquivos CSS e JS públicos.
+- `README.md`: Documento explicativo principal do projeto.
 
 ## 💻 Configuração para desenvolvimento e execução do código
-
-*Acrescentar as informações necessárias sobre pré-requisitos (IDEs, bibliotecas, serviços etc.) e instalação básica do projeto, descrevendo eventuais versões utilizadas. Colocar um passo a passo de como o leitor pode baixar o código e executar a aplicação a partir de sua máquina local.*
-
-*exemplo de instruções*
 
 Aqui encontram-se todas as instruções necessárias para a instalação de todos os programas, bibliotecas e ferramentas imprescindíveis para a configuração do ambiente de desenvolvimento.
 
 1. Baixar e instalar o node.js: [https://nodejs.org/pt-br/](https://nodejs.org/pt-br/) (versão 16.15.1 LTS)
-2. Clone o repositório em questão.
-3. No modo administrador, abra o "prompt de comando" ou o "terminal" e, após, abra a pasta "src/backend" no diretório raiz do repositório clonado e digite o segundo comando:
 
-```sh
-npm install
-```
+2. Clone este repositório:
+   ```bash
+   git clone https://github.com/Inteli-College/2025-1B-T15-IN02-G05
 
-Isso instalará todas as dependências definidas no arquivo <b>package.json</b> que são necessárias para rodar o projeto. Agora o projeto já está pronto para ser modificado. Caso ainda deseje iniciar a aplicação, digite o comando abaixo no terminal:
+2. Instale as dependências:
+   ```bash
+   npm install
 
-```sh
-npm start
-```
-5. Agora você pode acessar a aplicação através do link http://localhost:1234/
-6. O servidor está online.
+3. Inicie o servidor:
+    ```bash
+    node server.js
+4. Acesse em seu navegador:
+    ```bash
+    http://localhost:3000
 
 ## 🗃 Histórico de lançamentos
 
-* 0.5.0 - XX/XX/2024
+* 0.5.0 - XX/XX/2025
     * 
-* 0.4.0 - XX/XX/2024
+* 0.4.0 - XX/XX/2025
     * 
-* 0.3.0 - XX/XX/2024
+* 0.3.0 - XX/XX/2025
     * 
-* 0.2.0 - XX/XX/2024
+* 0.2.0 - 15/06/2025 - Prototipação de baixa fidelidade e construção do banco de dados.
     * 
-* 0.1.0 - 30/04/2024 - Idealização inicial da plataforma, a partir do entendimento do negócio e do problema.*
+* 0.1.0 - 30/04/2025 - Idealização inicial da plataforma, a partir do entendimento do negócio e do problema.*
     
 
 ## 📋 Licença/License
