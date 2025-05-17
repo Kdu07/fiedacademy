@@ -502,7 +502,7 @@ Tela | Recursos | User Story
 <div align = "center">
 
 
-<sup>Figura 7: Diagrama Modelo Relacional.</sup><br>
+<sup>Figura 9: Diagrama Modelo Relacional.</sup><br>
 
 <img src="../assets/assets_wad/modelagem_relacional_FieldAcademy.png"><br>
 
@@ -821,7 +821,7 @@ __________________
 
 <div align = "center">
 
-<sup>Quadro X: Cardinalidades entre as tabelas do banco de dados.</sup><br>
+<sup>Quadro 16: Cardinalidades entre as tabelas do banco de dados.</sup><br>
 
 | Entidade A | Entidade B | Cardinalidade | Explicação |
 |-----|-----|------|------|
