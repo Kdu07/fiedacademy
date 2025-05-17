@@ -441,13 +441,13 @@ Tela | Recursos | User Story
 
 Tela | Recursos | User Story 
 --- | --- | ---
-<img src="../assets/assets_wad/wireframes/loginPTD.png"> | **Tela de Login:** Mesmas funcionalidades do PTD | <div align = "center"> 7<br></div>
-<img src="../assets/assets_wad/wireframes/homePTD.png"> <br> <img src="../assets/assets_wad/wireframes/home2PTD.png">  | **Tela Home:** Mesmas funcionalidades do PTD| <div align = "center"> 7<br></div>
-<img src="../assets/assets_wad/wireframes/trilhasGestor.png"> | **Tela Trilhas:**  - Cards de trilhas gerais e Botão de adicionar nova trilha  |  <div align = "center"> 6<br>7</div>
-<br> <img src="../assets/assets_wad/wireframes/trilhas2Gestor.png"> | **Tela Dashboard:** Conteúdo sequêncial - Observar avaliação dos assuntos - Adição de novos conteúdos para usuários | <div align = "center"> 7<br>8</div>
- <img src="../assets/assets_wad/wireframes/helpGestor.png"> | **Tela Help:** Aba de buscas rápidas - Funcionalidade de adição de novos cards. | <div align = "center"> 7<br></div>
- <img src="../assets/assets_wad/wireframes/artigoGestor.png"> | **Tela do artigo:** Aba de buscas rápidas - Lado direito: artigo - Lado esquerdo: Adição de novos artigos. | <div align = "center"> 8<br></div>
-  <img src="../assets/assets_wad/wireframes/progressoGestor.png"> | **Tela de progresso:** Seleção de usuário - Dados do progresso do usuário. | <div align = "center"> 6<br>7<br>8</div>
+<img src="../assets/assets_wad/wireframes/loginPTD.png"> | **Tela de Login:** <br> - Mesmas funcionalidades do PTD | <div align = "center"> 7<br></div>
+<img src="../assets/assets_wad/wireframes/homePTD.png"> <br> <img src="../assets/assets_wad/wireframes/home2PTD.png">  | **Tela Home:** <br> - Mesmas funcionalidades do PTD| <div align = "center"> 7<br></div>
+<img src="../assets/assets_wad/wireframes/trilhasGestor.png"> | **Tela Trilhas:** <br> - Cards de trilhas gerais <br> - Botão de adicionar nova trilha  |  <div align = "center"> 6<br>7</div>
+<br> <img src="../assets/assets_wad/wireframes/trilhas2Gestor.png"> | **Tela Dashboard:** <br> - Conteúdo sequêncial <br> - Observar avaliação dos assuntos <br> - Adição de novos conteúdos para usuários | <div align = "center"> 7<br>8</div>
+ <img src="../assets/assets_wad/wireframes/helpGestor.png"> | **Tela Help:** <br> - Aba de buscas rápidas <br> - Funcionalidade de adição de novos cards. | <div align = "center"> 7<br></div>
+ <img src="../assets/assets_wad/wireframes/artigoGestor.png"> | **Tela do artigo:** <br> - Aba de buscas rápidas <br> - Lado direito: artigo <br> - Lado esquerdo: Adição de novos artigos. | <div align = "center"> 8<br></div>
+  <img src="../assets/assets_wad/wireframes/progressoGestor.png"> | **Tela de progresso:** <br> - Seleção de usuário <br> - Dados do progresso do usuário. | <div align = "center"> 6<br>7<br>8</div>
 
 <sup>Fonte: Material produzido pelos autores (2025).</sup><br>
 </div>
