@@ -407,7 +407,7 @@ Para alinhar os componentes de forma clara e responsiva, foi utilizada a estrutu
 
 <div align = "center">
 
-<sup>Quadro X: Grid utilizada</sup><br>
+<sup>Quadro 13: Grid utilizada</sup><br>
 
 Desktop | Mobile
 ---|---
@@ -420,7 +420,7 @@ Desktop | Mobile
 ### Versão PTD
 <div align = "center">
 
-<sup>Quadro X: Wireframes da plataforma para o PTD - Desktop</sup><br>
+<sup>Quadro 14: Wireframes da plataforma para o PTD - Desktop</sup><br>
 
 Tela | Recursos | User Story 
 --- | --- | ---
@@ -436,7 +436,7 @@ Tela | Recursos | User Story
 
 #### Versão Mobile
 <div align = "center">
-<sup>Figura X: Wireframes da plataforma para o PTD - Mobile </sup><br>
+<sup>Figura 7: Wireframes da plataforma para o PTD - Mobile </sup><br>
 <img src="../assets/assets_wad/wireframes/wireframeMobPTD.png"> 
 
 <sup>Fonte: Material produzido pelos autores (2025).</sup><br>
@@ -444,7 +444,7 @@ Tela | Recursos | User Story
 
 ### Versão Gestor
 <div align = "center">
-<sup>Quadro X: Wireframes da plataforma para o Gestor - Desktop </sup><br>
+<sup>Quadro 15: Wireframes da plataforma para o Gestor - Desktop </sup><br>
 
 Tela | Recursos | User Story 
 --- | --- | ---
@@ -461,7 +461,7 @@ Tela | Recursos | User Story
 
 #### Versão Mobile
 <div align = "center">
-<sup>Figura X: Wireframes da plataforma para o Gestor - Mobile </sup><br>
+<sup>Figura 8: Wireframes da plataforma para o Gestor - Mobile </sup><br>
 <img src="../assets/assets_wad/wireframes/wireframeMobGestor.png"> 
 
 <sup>Fonte: Material produzido pelos autores (2025).</sup><br>
