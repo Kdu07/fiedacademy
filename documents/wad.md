@@ -413,16 +413,16 @@ Desktop | Mobile
 ### Versão PTD
 <div align = "center">
 
-<sup>Figura X: Wireframes da plataforma para o PTD - Desktop</sup><br>
+<sup>Quadro X: Wireframes da plataforma para o PTD - Desktop</sup><br>
 
 Tela | Recursos | User Story 
 --- | --- | ---
 <img src="../assets/assets_wad/wireframes/loginPTD.png"> | **Tela de Login:** <br> - Campo de Email <br> - Campo para a senha <br>- Botão de confirmação de login | <div align = "center"> 1<br></div> 
 <img src="../assets/assets_wad/wireframes/homePTD.png"> <br> <img src="../assets/assets_wad/wireframes/home2PTD.png">| **Tela Home:** <br> - Aba de buscas rápidas <br> - Direcionamento para tela de trilhas <br> - Direcionamento para tela de help <br> - Artigos que podem ser fixados pelo PTD para acesso rápido.  - Sino de notificações. | <div align = "center"> 1<br>2<br>3 </div>
 <img src="../assets/assets_wad/wireframes/trilhasPTD.png"> <br> <img src="../assets/assets_wad/wireframes/trilhas2PTD.png">  | **Tela Trilhas:** <br> - Progesso atual <br> - Histórico de trilhas <br> - Recomendações de tilhas <br> - Base de conteúdos gerais e opcionais. |  <div align = "center"> 1<br>2<br>3<br></div>
- <img src="../assets/assets_wad/wireframes/dashboardPTD.png"> | **Tela Dashboard:** Conteúdo sequêncial - Informações laterais - Material espeífico - Avaliação dos assuntos. | <div align = "center"> 4<br></div>
- <img src="../assets/assets_wad/wireframes/helpPTD.png"> | **Tela Help:** Aba de buscas rápidas - Cards de assuntos e temas recorrentes. | <div align = "center"> 1<br></div>
- <img src="../assets/assets_wad/wireframes/help2PTD.png"> | **Tela do artigo:** Aba de buscas rápidas - Lado direito: artigo - Lado esquerdo: lista de artigos da mesma categoria. | <div align = "center"> 1<br></div>
+ <img src="../assets/assets_wad/wireframes/dashboardPTD.png"> | **Tela Dashboard:** <br> - Conteúdo sequêncial <br> - Informações laterais <br> - Material espeífico <br> - Avaliação dos assuntos. | <div align = "center"> 4<br></div>
+ <img src="../assets/assets_wad/wireframes/helpPTD.png"> | **Tela Help:** <br> - Aba de buscas rápidas <br> - Cards de assuntos e temas recorrentes. | <div align = "center"> 1<br></div>
+ <img src="../assets/assets_wad/wireframes/help2PTD.png"> | **Tela do artigo:** <br> - Aba de buscas rápidas <br> - Lado direito: artigo <br> - Lado esquerdo: lista de artigos da mesma categoria. | <div align = "center"> 1<br></div>
 
 <sup>Fonte: Material produzido pelos autores (2025).</sup><br>
 </div>
