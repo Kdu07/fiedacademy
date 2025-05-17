@@ -405,10 +405,17 @@ Critério de aceite 5 | CR5: Histórico de relatórios exportados fica disponív
 Wireframe é um rascunho visual que mostra a estrutura básica de uma interface, focando na organização dos elementos e na navegação, sem detalhar o design final.
 Para alinhar os componentes de forma clara e responsiva, foi utilizada a estrutura de grid abaixo:
 
+<div align = "center">
+
+<sup>Quadro X: Grid utilizada</sup><br>
+
 Desktop | Mobile
 ---|---
 <img src="../assets/assets_wad/wireframes/GRID.png"  width="200"> | <img src="../assets/assets_wad/wireframes/GRID2.png"  width="70"> 
 [Link dos wireframes](https://www.figma.com/design/bOsRfHBpYqRksHS4GiNW74/bayer-project?node-id=0-1&p=f&t=S55FkKepuUIl5D6k-11)
+
+<sup>Fonte: Material produzido pelos autores (2025).</sup><br>
+</div>
 
 ### Versão PTD
 <div align = "center">
@@ -437,7 +444,7 @@ Tela | Recursos | User Story
 
 ### Versão Gestor
 <div align = "center">
-<sup>Figura X: Wireframes da plataforma para o Gestor - Desktop </sup><br>
+<sup>Quadro X: Wireframes da plataforma para o Gestor - Desktop </sup><br>
 
 Tela | Recursos | User Story 
 --- | --- | ---
