@@ -430,7 +430,7 @@ Tela | Recursos | User Story
 #### Versão Mobile
 <div align = "center">
 <sup>Figura X: Wireframes da plataforma para o PTD - Mobile </sup><br>
-<img src="../assets/assets_wad/wireframes/.png"> 
+<img src="../assets/assets_wad/wireframes/wireframeMobPTD.png"> 
 
 <sup>Fonte: Material produzido pelos autores (2025).</sup><br>
 </div>
@@ -455,7 +455,7 @@ Tela | Recursos | User Story
 #### Versão Mobile
 <div align = "center">
 <sup>Figura X: Wireframes da plataforma para o Gestor - Mobile </sup><br>
-<img src="../assets/assets_wad/wireframes/.png"> 
+<img src="../assets/assets_wad/wireframes/wireframeMobGestor.png"> 
 
 <sup>Fonte: Material produzido pelos autores (2025).</sup><br>
 </div>
