@@ -1,12 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/css/style.css" rel="stylesheet">
-    <title>Grupo 05</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Home - Plataforma Bayer Agro</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <h1 class="">hello world</h1>
+<body class="bg-gray-50 min-h-screen flex flex-col">
+
+  <!-- Header -->
+  <header class="bg-white shadow-md">
+    <div class="container mx-auto flex items-center justify-between py-4 px-6">
+      <div class="flex items-center gap-3">
+        <img src="https://www.bayer.com/sites/default/files/styles/16_9_1280x720/public/2021-01/bayer-logo.png" alt="Bayer Logo" class="h-10 w-10">
+        <a href="/">
+          <span class="text-xl font-bold text-[#0057A6]">FieldAcademy</span>     
+        </a>
+      </div>
+      <nav class="space-x-6">
+        <a href="#" class="text-[#0057A6] font-medium hover:text-[#78BE20] transition">Início</a>
+        <a href="#" class="text-gray-700 font-medium hover:text-[#78BE20] transition">Trilhas</a>
+        <a href="#" class="text-gray-700 font-medium hover:text-[#78BE20] transition">Meu Progresso</a>
+        <a href="#" class="text-gray-700 font-medium hover:text-[#78BE20] transition">Sair</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Banner de boas-vindas -->
+  <section class="bg-gradient-to-r from-[#0057A6] to-[#78BE20] py-10">
+    <div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
+      <div>
+        <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">Olá, [Nome do Usuário]!</h1>
+        <p class="text-lg text-white mb-4 max-w-xl">Continue seu aprendizado nas trilhas de treinamento Bayer Agro. Escolha um módulo para começar ou retomar de onde parou.</p>
+        <a href="/paths" class="inline-block bg-white text-[#0057A6] font-semibold px-5 py-2 rounded-lg shadow hover:bg-[#78BE20] hover:text-white transition">Ver Trilhas</a>
+      </div>
+      <img src="https://www.bayer.com/sites/default/files/styles/16_9_1280x720/public/2021-01/bayer-agro.jpg" alt="Treinamento Bayer" class="w-64 h-40 object-cover rounded-lg shadow-lg mt-8 md:mt-0 md:ml-8">
+    </div>
+  </section>
+
+  <!-- Resumo do progresso -->
+  <main class="container mx-auto px-6 py-10 flex-1">
+    <h2 class="text-2xl font-bold text-[#0057A6] mb-6">Seu Progresso</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="bg-white rounded-xl shadow p-6 flex flex-col items-center">
+        <span class="text-4xl font-bold text-[#78BE20] mb-2">3</span>
+        <span class="text-gray-700">Trilhas em andamento</span>
+      </div>
+      <div class="bg-white rounded-xl shadow p-6 flex flex-col items-center">
+        <span class="text-4xl font-bold text-[#0057A6] mb-2">8</span>
+        <span class="text-gray-700">Módulos concluídos</span>
+      </div>
+      <div class="bg-white rounded-xl shadow p-6 flex flex-col items-center">
+        <span class="text-4xl font-bold text-[#78BE20] mb-2">2</span>
+        <span class="text-gray-700">Certificados</span>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-white border-t py-4">
+    <div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
+      <span class="text-gray-500 text-sm">&copy; 2024 Bayer AG. Todos os direitos reservados.</span>
+      <div class="flex space-x-4 mt-2 md:mt-0">
+        <a href="#" class="text-[#0057A6] hover:text-[#78BE20] text-sm">Política de Privacidade</a>
+        <a href="#" class="text-[#0057A6] hover:text-[#78BE20] text-sm">Termos de Uso</a>
+      </div>
+    </div>
+  </footer>
+
 </body>
 </html>
