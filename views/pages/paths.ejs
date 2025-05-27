@@ -1,92 +1,178 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Trilhas de Treinamento - Bayer Agro</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= typeof trilha !== 'undefined' ? trilha.nome : 'Trilha de Estudos' %></title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4; /* Light grey background for the page */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .header {
+            background-color: #8BC34A; /* Green header */
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header .menu-icon {
+            font-size: 24px;
+            cursor: pointer;
+            margin-right: 20px;
+        }
+
+        .header .search-bar {
+            flex-grow: 1;
+            margin-right: 20px;
+        }
+
+        .header .search-bar input {
+            width: 100%;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 20px; /* Rounded search bar */
+            font-size: 16px;
+        }
+
+        .header .notification-icon {
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .main-content {
+            padding: 20px;
+            flex-grow: 1;
+            overflow-y: auto; /* Allows content to scroll if it overflows */
+        }
+
+        .trail-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .module-card {
+            background-color: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .module-card h3 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .progress-bar-container {
+            background-color: #e0e0e0; /* Grey background for progress bar */
+            border-radius: 10px;
+            height: 15px; /* Adjusted height to better match mockup */
+            overflow: hidden;
+            margin-bottom: 20px; /* Space between progress bar and button */
+        }
+
+        .progress-bar {
+            background-color: #2196F3; /* Blue progress */
+            height: 100%;
+            border-radius: 10px 0 0 10px; /* Keep left radius if progress > 0 */
+            transition: width 0.3s ease-in-out;
+        }
+        .progress-bar.full {
+            border-radius: 10px; /* Full radius if 100% */
+        }
+
+
+        .module-card button {
+            background-color: #8BC34A; /* Green button */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .module-card button .arrow {
+            margin-left: 8px;
+            font-weight: bold;
+        }
+
+        .footer {
+            background-color: #8BC34A; /* Green footer */
+            color: #505050; /* Darker text for contrast, adjust as needed */
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+            position: sticky;
+            bottom: 0;
+            z-index: 1000;
+        }
+        .footer a {
+            color: #505050;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+         .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
-<body class="bg-gray-50 min-h-screen flex flex-col">
+<body>
 
-  <!-- Header -->
-  <header class="bg-white shadow-md">
-    <div class="container mx-auto flex items-center justify-between py-4 px-6">
-      <div class="flex items-center gap-3">
-        <img src="https://www.bayer.com/sites/default/files/styles/16_9_1280x720/public/2021-01/bayer-logo.png" alt="Bayer Logo" class="h-10 w-10">
-        <a href="/">
-          <span class="text-xl font-bold text-[#0057A6]">FieldAcademy</span>     
-        </a>
-      </div>
-      <nav class="space-x-6">
-        <a href="#" class="text-[#0057A6] font-medium hover:text-[#78BE20] transition">Início</a>
-        <a href="#" class="text-gray-700 font-medium hover:text-[#78BE20] transition">Trilhas</a>
-        <a href="#" class="text-gray-700 font-medium hover:text-[#78BE20] transition">Meu Progresso</a>
-        <a href="#" class="text-gray-700 font-medium hover:text-[#78BE20] transition">Sair</a>
-      </nav>
-    </div>
-  </header>
+    <header class="header">
+        <div class="menu-icon">&#9776;</div>
+        <div class="search-bar">
+            <input type="text" placeholder="Buscar...">
+        </div>
+        <div class="notification-icon">&#128276;</div>
+    </header>
 
-  <!-- Título e filtro -->
-  <main class="container mx-auto px-6 py-10 flex-1">
-    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-8">
-      <h2 class="text-2xl font-bold text-[#0057A6] mb-4 md:mb-0">Trilhas de Treinamento</h2>
-      <div>
-        <input type="text" placeholder="Buscar trilha..." class="px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#78BE20] w-64">
-      </div>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <!-- Trilha 1 -->
-      <div class="bg-white rounded-xl shadow-md p-6 flex flex-col hover:shadow-lg transition">
-        <h3 class="text-xl font-semibold text-[#0057A6] mb-2">Trilha: Sistema Básico</h3>
-        <p class="text-gray-600 mb-4">Aprenda o essencial para começar a usar o sistema Bayer Agro.</p>
-        <div class="flex items-center mb-4">
-          <span class="text-sm text-gray-500 mr-2">Progresso:</span>
-          <div class="w-32 bg-gray-200 rounded-full h-3">
-            <div class="bg-[#78BE20] h-3 rounded-full" style="width: 60%"></div>
-          </div>
-          <span class="ml-2 text-sm text-[#78BE20] font-bold">60%</span>
-        </div>
-        <a href="/content" class="mt-auto text-[#78BE20] font-medium hover:underline">Continuar trilha</a>
-      </div>
-      <!-- Trilha 2 -->
-      <div class="bg-white rounded-xl shadow-md p-6 flex flex-col hover:shadow-lg transition">
-        <h3 class="text-xl font-semibold text-[#0057A6] mb-2">Trilha: Gestão Avançada</h3>
-        <p class="text-gray-600 mb-4">Aprofunde seus conhecimentos em gestão de dados e processos.</p>
-        <div class="flex items-center mb-4">
-          <span class="text-sm text-gray-500 mr-2">Progresso:</span>
-          <div class="w-32 bg-gray-200 rounded-full h-3">
-            <div class="bg-[#0057A6] h-3 rounded-full" style="width: 30%"></div>
-          </div>
-          <span class="ml-2 text-sm text-[#0057A6] font-bold">30%</span>
-        </div>
-        <a href="#" class="mt-auto text-[#78BE20] font-medium hover:underline">Continuar trilha</a>
-      </div>
-      <!-- Trilha 3 -->
-      <div class="bg-white rounded-xl shadow-md p-6 flex flex-col hover:shadow-lg transition">
-        <h3 class="text-xl font-semibold text-[#0057A6] mb-2">Trilha: Boas Práticas</h3>
-        <p class="text-gray-600 mb-4">Descubra como garantir qualidade e segurança no uso do sistema.</p>
-        <div class="flex items-center mb-4">
-          <span class="text-sm text-gray-500 mr-2">Progresso:</span>
-          <div class="w-32 bg-gray-200 rounded-full h-3">
-            <div class="bg-[#78BE20] h-3 rounded-full" style="width: 100%"></div>
-          </div>
-          <span class="ml-2 text-sm text-[#78BE20] font-bold">100%</span>
-        </div>
-        <a href="#" class="mt-auto text-[#78BE20] font-medium hover:underline">Ver certificado</a>
-      </div>
-    </div>
-  </main>
+    <main class="main-content">
+        <h2 class="trail-title"><%= typeof trilha !== 'undefined' ? trilha.nome : 'Trilha Básica' %></h2>
 
-  <!-- Footer -->
-  <footer class="bg-white border-t py-4">
-    <div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
-      <span class="text-gray-500 text-sm">&copy; 2024 Bayer AG. Todos os direitos reservados.</span>
-      <div class="flex space-x-4 mt-2 md:mt-0">
-        <a href="#" class="text-[#0057A6] hover:text-[#78BE20] text-sm">Política de Privacidade</a>
-        <a href="#" class="text-[#0057A6] hover:text-[#78BE20] text-sm">Termos de Uso</a>
-      </div>
-    </div>
-  </footer>
+        <% if (typeof trilha !== 'undefined' && trilha.modulos && trilha.modulos.length > 0) { %>
+            <% trilha.modulos.forEach(function(modulo) { %>
+                <div class="module-card">
+                    <h3><%= modulo.nome %></h3>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar <% if (modulo.progresso === 100) { %>full<% } %>" style="width: <%= modulo.progresso %>%;"></div>
+                    </div>
+                    <button onclick="location.href='<%= modulo.link || '#' %>' ">
+                        <%= modulo.progresso > 0 && modulo.progresso < 100 ? 'Continuar' : (modulo.progresso === 100 ? 'Revisar' : 'Iniciar') %>
+                        <span class="arrow">&rarr;</span>
+                    </button>
+                </div>
+            <% }); %>
+        <% } else { %>
+            <p>Nenhum módulo encontrado para esta trilha.</p>
+        <% } %>
+    </main>
+
+    <footer class="footer">
+        <div><a href="#">Sobre nós</a></div>
+        <div><a href="#">FieldView</a></div>
+        <div><a href="#">Bayer</a></div>
+    </footer>
 
 </body>
 </html>
