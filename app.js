@@ -11,7 +11,8 @@ app.use('/assets', express.static(path.join(__dirname, 'assets')));
 
 // Rota da home
 app.get('/', (req, res) => {
-  res.render('home');
+    const trilhas = ['Onboarding', 'Básico', 'Intermediário', 'Avançado'];
+    res.render('home', { trilhas });
 });
 
 // Inicia o servidor

@@ -15,7 +15,7 @@
                 <!-- Ícone de menu -->
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M4 6h16M4 12h16M4 18h16"/>
+                          d="M4 6h16M4 12h16M4 18h16"/>
                 </svg>
             </button>
             <div class="relative">
@@ -23,7 +23,7 @@
                 <div class="absolute left-2 top-2.5 text-gray-500">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M21 21l-4.35-4.35M17 11a6 6 0 11-12 0 6 6 0 0112 0z"/>
+                              d="M21 21l-4.35-4.35M17 11a6 6 0 11-12 0 6 6 0 0112 0z"/>
                     </svg>
                 </div>
             </div>
@@ -32,7 +32,7 @@
             <!-- Ícone de notificação -->
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                      d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
             </svg>
         </button>
     </nav>
@@ -52,8 +52,9 @@
     <section class="max-w-md mx-auto mt-8 border rounded-lg p-6 shadow-sm">
         <h2 class="text-center text-2xl font-semibold mb-6">TRILHAS</h2>
 
-        <% const trilhas = ['Onboarding', 'Básico', 'Intermediário', 'Avançado']; %>
-        <% trilhas.forEach(t => { %>
+        <% trilhas.forEach(t => { 
+            const slug = t.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, '-');
+        %>
             <div class="flex items-center justify-between mb-4">
                 <div>
                     <p class="font-medium"><%= t %></p>
@@ -61,15 +62,46 @@
                         <div class="bg-blue-500 h-2.5 rounded-full" style="width: 60%"></div>
                     </div>
                 </div>
-                <button class="bg-green-200 text-green-900 font-semibold px-4 py-1 rounded-full hover:bg-green-300 flex items-center space-x-1">
+                <a href="/paths/<%= slug %>" class="bg-green-200 text-green-900 font-semibold px-4 py-1 rounded-full hover:bg-green-300 flex items-center space-x-1">
                     <span>Continuar</span>
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                     </svg>
-                </button>
+                </a>
             </div>
         <% }) %>
     </section>
+
+    <!-- Tabela de conteúdos fixados -->
+    <section class="max-w-4xl mx-auto mt-10">
+        <h2 class="text-2xl font-semibold mb-4">Favoritos</h2>
+        <table class="min-w-full bg-white border border-gray-300 rounded-lg shadow-sm">
+            <thead>
+                <tr class="bg-green-100 text-left">
+                    <th class="py-2 px-4 border-b">Conteúdo</th>
+                    <th class="py-2 px-4 border-b">Trilha</th>
+                    <th class="py-2 px-4 border-b">Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="py-2 px-4 border-b">Introdução ao Sistema</td>
+                    <td class="py-2 px-4 border-b">Onboarding</td>
+                    <td class="py-2 px-4 border-b text-green-600 font-medium">Concluído</td>
+                </tr>
+                <tr>
+                    <td class="py-2 px-4 border-b">Primeiros passos</td>
+                    <td class="py-2 px-4 border-b">Básico</td>
+                    <td class="py-2 px-4 border-b text-yellow-600 font-medium">Em andamento</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-green-600 text-white text-center py-4 mt-10">
+        &copy; <%= new Date().getFullYear() %> FieldAcademy. Todos os direitos reservados.
+    </footer>
 
 </body>
 </html>
