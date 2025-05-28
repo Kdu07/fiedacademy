@@ -1,11 +1,75 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My EJS Project</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FieldAcademy</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
-    <h1><%= message %></h1>
+<body class="bg-white text-green-900">
+
+    <!-- Navbar -->
+    <nav class="bg-green-600 p-4 flex items-center justify-between">
+        <div class="flex items-center space-x-4">
+            <button class="text-white">
+                <!-- Ícone de menu -->
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </button>
+            <div class="relative">
+                <input type="text" placeholder="Search" class="pl-10 pr-4 py-2 rounded-md" />
+                <div class="absolute left-2 top-2.5 text-gray-500">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M21 21l-4.35-4.35M17 11a6 6 0 11-12 0 6 6 0 0112 0z"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <button class="text-white">
+            <!-- Ícone de notificação -->
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+            </svg>
+        </button>
+    </nav>
+
+    <!-- Banner -->
+    <section class="relative">
+        <img src="https://images.unsplash.com/photo-1524592094714-0f0654e20314" alt="campo" class="w-full h-48 object-cover" />
+        <h1 class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-4xl font-bold text-green-900">FieldAcademy</h1>
+    </section>
+
+    <!-- Barra de ajuda -->
+    <div class="flex justify-center mt-4">
+        <input type="text" placeholder="Help" class="border border-gray-300 rounded-md px-4 py-2 w-1/2"/>
+    </div>
+
+    <!-- Trilhas -->
+    <section class="max-w-md mx-auto mt-8 border rounded-lg p-6 shadow-sm">
+        <h2 class="text-center text-2xl font-semibold mb-6">TRILHAS</h2>
+
+        <% const trilhas = ['Onboarding', 'Básico', 'Intermediário', 'Avançado']; %>
+        <% trilhas.forEach(t => { %>
+            <div class="flex items-center justify-between mb-4">
+                <div>
+                    <p class="font-medium"><%= t %></p>
+                    <div class="w-40 bg-gray-200 rounded-full h-2.5 mt-1">
+                        <div class="bg-blue-500 h-2.5 rounded-full" style="width: 60%"></div>
+                    </div>
+                </div>
+                <button class="bg-green-200 text-green-900 font-semibold px-4 py-1 rounded-full hover:bg-green-300 flex items-center space-x-1">
+                    <span>Continuar</span>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                </button>
+            </div>
+        <% }) %>
+    </section>
+
 </body>
 </html>
