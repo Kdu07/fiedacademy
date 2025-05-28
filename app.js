@@ -1,27 +1,20 @@
 const express = require('express');
-const path = require("path");
-
 const app = express();
-const PORT = 3000;
+const path = require('path');
 
-// Middleware para processar JSON
-app.use(express.json());
+// Configura EJS
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
 
-// Configura o mecanismo de views para EJS
-app.set("view engine", "ejs");
+// Torna a pasta 'assets' pública
+app.use('/assets', express.static(path.join(__dirname, 'assets')));
 
-// Define onde ficam as views
-app.set("views", path.join(__dirname, "views"));
-
-// Define a pasta pública com CSS e outros arquivos estáticos
-app.use(express.static(path.join(__dirname, "public")));
-
-// Rotas
-const routes = require('./routes/index');
-app.use('/', routes);
-
-// Inicializa o servidor
-app.listen(PORT, () => {
-  console.log(`Servidor rodando na porta ${PORT}`); 
+// Rota da home
+app.get('/', (req, res) => {
+  res.render('home');
 });
 
+// Inicia o servidor
+app.listen(3000, () => {
+  console.log('Servidor rodando em http://localhost:3000');
+});
