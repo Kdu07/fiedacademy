@@ -921,6 +921,9 @@ Novamente, a consulta só será executada com êxito se ambas as proposições A
 
 *Cada endpoint deve conter endereço, método (GET, POST, PUT, PATCH, DELETE), header, body e formatos de response*
 
+
+  
+
 # <a name="c4"></a>4. Desenvolvimento da Aplicação Web
 
 ## 4.1. Primeira versão da aplicação web (sprint 3)
