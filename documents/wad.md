@@ -847,8 +847,11 @@ __________________
 
 ### 3.5.2. Consultas SQL e lógica proposicional (sprint 2)
 
+<<<<<<< Updated upstream
 #### **Expressão SQL - 1:** 
 
+=======
+>>>>>>> Stashed changes
 *Template de SQL + lógica proposicional*
 #1 | ---
 --- | ---
