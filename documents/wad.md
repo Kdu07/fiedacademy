@@ -848,6 +848,12 @@ __________________
 ### 3.5.2. Consultas SQL e lógica proposicional (sprint 2)
 
 #### **Expressão SQL - 1:** 
+
+*Template de SQL + lógica proposicional*
+#1 | ---
+--- | ---
+
+**Expressão SQL** | SELECT 
 ```sql
 SELECT 
   u.name, 
