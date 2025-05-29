@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -175,4 +175,62 @@
     </footer>
 
 </body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Trilha Onboarding</title>
+
+  <!-- Tailwind via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Estilos Customizados com Tailwind usando @apply -->
+  <style type="text/tailwindcss">
+    @layer components {
+      .card-modulo {
+        @apply border rounded-xl p-4 mb-6 shadow hover:shadow-md transition-all;
+      }
+      .titulo-modulo {
+        @apply text-xl text-green-800 font-semibold mb-2;
+      }
+      .barra-container {
+        @apply w-full h-3 bg-gray-300 rounded-full overflow-hidden;
+      }
+      .barra-preenchida {
+        @apply h-full bg-cyan-400 rounded-full transition-all;
+      }
+      .botao-modulo {
+        @apply bg-lime-200 text-black px-4 py-1 rounded shadow hover:bg-lime-300 inline-flex items-center gap-1 font-medium;
+      }
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-white p-4 font-sans">
+  <!-- Título -->
+  <h1 class="text-3xl font-bold text-green-800 mb-8">Trilha Onboarding</h1>
+
+  <!-- Módulo 1 -->
+  <div class="card-modulo">
+    <h2 class="titulo-modulo">Módulo 1 - Mapas e Dados</h2>
+    <div class="barra-container mb-4">
+      <div class="barra-preenchida w-[60%]"></div>
+    </div>
+    <button class="botao-modulo">Continuar <span>→</span></button>
+  </div>
+
+  <!-- Módulo 2 -->
+  <div class="card-modulo">
+    <h2 class="titulo-modulo">Módulo 2 - Pulverização</h2>
+    <div class="barra-container mb-4">
+      <div class="barra-preenchida w-[0%]"></div>
+    </div>
+    <button class="botao-modulo">Iniciar <span>→</span></button>
+  </div>
+</body>
 </html>
+
+
+
