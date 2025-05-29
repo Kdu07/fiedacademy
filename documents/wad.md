@@ -522,9 +522,51 @@ Cor Texto secundário| Texto claro | #FFFFFF| Texto para fundos escuros ou botõ
 <div align = "center">
 <sup>Figura 8: Tipografia </sup><br>
 <img src="assets/assets_wad/iconografia (1).png"> 
-
 <sup>Fonte: Material produzido pelos autores (2025).</sup><br>
 </div>
+
+#### NavBar Mobile
+Icone | Funcionalidade | 
+
+| --- | ---|
+
+Colheita | Acessa informações e registros sobre colheitas realizadas, facilitando o controle de produção. |
+Boas Práticas | Exibe dicas, orientações e conteúdos educativos para melhorar processos e resultados. |
+Perfil | 	Permite visualizar e editar dados pessoais e preferências do usuário. |
+Plantio| Gerencia informações sobre o plantio, como datas, áreas e culturas cultivadas. |
+Mapas e dados | 	Mostra mapas interativos e dados georreferenciados para análise e tomada de decisão. |
+Data inbox e integração| Centraliza dados recebidos e integrações com outros sistemas ou dispositivos. |
+
+#### NavBar
+
+Icone | Funcionalidade | 
+
+| --- | ---|
+
+Perfil | Visualiza e edita dados do usuário, foto e configurações pessoais.|
+Barra de Navegação | Abre/fecha o menu lateral de navegação do sistema. | 
+Favoritados | 	Acessa rapidamente itens ou conteúdos marcados como favoritos.|
+Feedback | Permite enviar opiniões, sugestões ou avaliações sobre o sistema ou conteúdos. |
+FieldAcademy | Direciona para área de cursos, treinamentos ou materiais educativos.|
+Barra de pesquisa | Visualiza e edita dados do usuário (atalho extra).|
+FieldView | Exibe visualizações detalhadas do campo, mapas ou dashboards de monitoramento. |
+Notificação | 	Mostra alertas, lembretes ou mensagens importantes para o usuário.|
+Adicionar um módulo| 	Permite criar um novo módulo, etapa ou item dentro do sistema.|
+Minhas trilhas | 	Exibe os percursos, trilhas de aprendizagem ou fluxos personalizados do usuário.|
+Download | 	Realiza o download de arquivos, relatórios ou dados da plataforma.| 
+Lixeira | Acessa itens excluídos, permitindo restaurar ou excluir definitivamente conteúdos.|
+
+
+Icone | Funcionalidade | 
+
+| --- | ---|
+
+Adicionar | Cria ou cadastra um novo item, pedido ou módulo. |
+Boas práticas (botão)|	Acesso rápido ao conteúdo de boas práticas, dicas e recomendações.|
+Continuar|Avança, visualiza detalhes ou inicia uma ação/tarefa.|
+Ver mais|Avança, visualiza detalhes ou inicia uma ação/tarefa.|
+Curtir/Descurtir (like/dislike)|Avalia conteúdos, módulos ou funcionalidades com feedback positivo ou negativo.|
+
 
 ## 3.4 Protótipo de alta fidelidade (sprint 3)
 
