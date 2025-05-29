@@ -528,7 +528,7 @@ Cor Texto secundário| Texto claro | #FFFFFF| Texto para fundos escuros ou botõ
 #### NavBar Mobile
 Icone | Funcionalidade | 
 
-| --- | ---|
+--- | ---|
 
 Colheita | Acessa informações e registros sobre colheitas realizadas, facilitando o controle de produção. |
 Boas Práticas | Exibe dicas, orientações e conteúdos educativos para melhorar processos e resultados. |
@@ -541,7 +541,7 @@ Data inbox e integração| Centraliza dados recebidos e integrações com outros
 
 Icone | Funcionalidade | 
 
-| --- | ---|
+ --- | ---|
 
 Perfil | Visualiza e edita dados do usuário, foto e configurações pessoais.|
 Barra de Navegação | Abre/fecha o menu lateral de navegação do sistema. | 
@@ -559,7 +559,7 @@ Lixeira | Acessa itens excluídos, permitindo restaurar ou excluir definitivamen
 
 Icone | Funcionalidade | 
 
-| --- | ---|
+--- | ---|
 
 Adicionar | Cria ou cadastra um novo item, pedido ou módulo. |
 Boas práticas (botão)|	Acesso rápido ao conteúdo de boas práticas, dicas e recomendações.|
