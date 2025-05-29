@@ -13,8 +13,12 @@ module.exports.index = async (req, res) => { // Adicionei async, para q a funç�
     // Chama o model getAll dentro do arquivo bookmarksModel
     // Coloca o return dentro da const bookmarks
     // Usa await para esperar a resposta do bd antes de continuar de executar a função
-    const bookmarks = await bookmarksModel.getAll();
+    //const bookmarks = await bookmarksModel.getAll();
+    // const paths = await pathsModel.getAll();
+    //console.log(bookmarks[0].saved_at); // Exemplo de uso do console.log para verificar os dados
+    // console.log(paths); // Exemplo de uso do console.log para verificar os dados
+
 
     // Renderize sua view, por exemplo:
-    res.render('home', { trilhas });
+   res.render('home', { trilhas });
 };
