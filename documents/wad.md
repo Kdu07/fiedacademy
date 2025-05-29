@@ -570,7 +570,34 @@ Curtir/Descurtir (like/dislike)|Avalia conteúdos, módulos ou funcionalidades c
 
 ## 3.4 Protótipo de alta fidelidade (sprint 3)
 
-*posicione aqui algumas imagens demonstrativas de seu protótipo de alta fidelidade e o link para acesso ao protótipo completo (mantenha o link sempre público para visualização)*
+## Protótipo da tela de home, versão gestor, desktop.
+<img src="../assets/assets_wad/protótipos/Protótipo Home Gestor 3.png">
+
+## Protótipo da tela de home, versão PTD, desktop.
+<img src="../assets/assets_wad/protótipos/Protótipo-Home-PTD 2.png">
+
+## Protótipo da tela de login, versão PTD, desktop.
+<img src="../assets/assets_wad/protótipos/Protótipo-Login-PTD.png">
+
+## Protótipo da tela de login, versão gestor, desktop.
+<img src="../assets/assets_wad/protótipos/Protótipo-Login-Gestor.png">
+
+## Protótipo da tela de login, versão PTD, mobile.
+<img src="../assets/assets_wad/protótipos/Protótipo-Login-PTD-Mobile.png">
+
+## Protótipo da tela de progresso do gestor, desktop.
+<img src="../assets/assets_wad/protótipos/Protótipo-Progresso-Gestor.png">
+
+## Protótipo da tela de help, versão PTD, mobile.
+<img src="../assets/assets_wad/protótipos/Protótipo-Help-PTD-Mobile-2.png">
+
+## Protótipo da segunda tela de help, versão PTD, desktop.
+<img src="../assets/assets_wad/protótipos/Protótipo-Help-PTD.png">
+
+## Protótipo da tela introdutória do projeto, desktop. 
+<img src="../assets/assets_wad/protótipos/Protótipo-TelaFieldAcademy.png">
+
+
 
 ## 3.5. Modelagem do banco de dados (sprints 2 e 4)
 
