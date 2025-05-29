@@ -5,3 +5,5 @@ exports.index = (req, res) => {
       mensagem: 'Escolha a trilha que deseja seguir'
     });
   };
+
+  

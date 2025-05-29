@@ -1,236 +1,79 @@
-<!-- <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= typeof trilha !== 'undefined' ? trilha.nome : 'Trilha de Estudos' %></title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4; /* Light grey background for the page */
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
+<%
+// MOCK LOCAL para teste sem backend:
+const trilha = {
+  nome: "Pulverização",
+  modulos: [
+    { id: 1, titulo: "Mapas e Dados", progresso: 10 },
+    { id: 2, titulo: "Planejamento", progresso: 0 },
+    { id: 3, titulo: "Aplicação", progresso: 0 }
+  ]
+};
+%>
 
-        .header {
-            background-color: #8BC34A; /* Green header */
-            padding: 15px 20px;
-            display: flex;
-            align-items: center;
-            color: white;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .header .menu-icon {
-            font-size: 24px;
-            cursor: pointer;
-            margin-right: 20px;
-        }
-
-        .header .search-bar {
-            flex-grow: 1;
-            margin-right: 20px;
-        }
-
-        .header .search-bar input {
-            width: 100%;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 20px; /* Rounded search bar */
-            font-size: 16px;
-        }
-
-        .header .notification-icon {
-            font-size: 24px;
-            cursor: pointer;
-        }
-
-        .main-content {
-            padding: 20px;
-            flex-grow: 1;
-            overflow-y: auto; /* Allows content to scroll if it overflows */
-        }
-
-        .trail-title {
-            font-size: 24px;
-            font-weight: bold;
-            color: #333;
-            margin-bottom: 20px;
-        }
-
-        .module-card {
-            background-color: white;
-            border: 1px solid #e0e0e0;
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        .module-card h3 {
-            margin-top: 0;
-            margin-bottom: 15px;
-            font-size: 18px;
-            color: #333;
-        }
-
-        .progress-bar-container {
-            background-color: #e0e0e0; /* Grey background for progress bar */
-            border-radius: 10px;
-            height: 15px; /* Adjusted height to better match mockup */
-            overflow: hidden;
-            margin-bottom: 20px; /* Space between progress bar and button */
-        }
-
-        .progress-bar {
-            background-color: #2196F3; /* Blue progress */
-            height: 100%;
-            border-radius: 10px 0 0 10px; /* Keep left radius if progress > 0 */
-            transition: width 0.3s ease-in-out;
-        }
-        .progress-bar.full {
-            border-radius: 10px; /* Full radius if 100% */
-        }
-
-
-        .module-card button {
-            background-color: #8BC34A; /* Green button */
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 14px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .module-card button .arrow {
-            margin-left: 8px;
-            font-weight: bold;
-        }
-
-        .footer {
-            background-color: #8BC34A; /* Green footer */
-            color: #505050; /* Darker text for contrast, adjust as needed */
-            padding: 15px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 14px;
-            position: sticky;
-            bottom: 0;
-            z-index: 1000;
-        }
-        .footer a {
-            color: #505050;
-            text-decoration: none;
-            margin: 0 10px;
-        }
-         .footer a:hover {
-            text-decoration: underline;
-        }
-    </style>
-</head>
-<body>
-
-    <header class="header">
-        <div class="menu-icon">&#9776;</div>
-        <div class="search-bar">
-            <input type="text" placeholder="Buscar...">
-        </div>
-        <div class="notification-icon">&#128276;</div>
-    </header>
-
-    <main class="main-content">
-        <h2 class="trail-title"><%= typeof trilha !== 'undefined' ? trilha.nome : 'Trilha Básica' %></h2>
-
-        <% if (typeof trilha !== 'undefined' && trilha.modulos && trilha.modulos.length > 0) { %>
-            <% trilha.modulos.forEach(function(modulo) { %>
-                <div class="module-card">
-                    <h3><%= modulo.nome %></h3>
-                    <div class="progress-bar-container">
-                        <div class="progress-bar <% if (modulo.progresso === 100) { %>full<% } %>" style="width: <%= modulo.progresso %>%;"></div>
-                    </div>
-                    <button onclick="location.href='<%= modulo.link || '#' %>' ">
-                        <%= modulo.progresso > 0 && modulo.progresso < 100 ? 'Continuar' : (modulo.progresso === 100 ? 'Revisar' : 'Iniciar') %>
-                        <span class="arrow">&rarr;</span>
-                    </button>
-                </div>
-            <% }); %>
-        <% } else { %>
-            <p>Nenhum módulo encontrado para esta trilha.</p>
-        <% } %>
-    </main>
-
-    <footer class="footer">
-        <div><a href="#">Sobre nós</a></div>
-        <div><a href="#">FieldView</a></div>
-        <div><a href="#">Bayer</a></div>
-    </footer>
-
-</body>
-</html> -->
-
+<!-- views/pages/paths.ejs -->
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Trilha Onboarding</title>
-
-  <!-- Tailwind via CDN -->
+  <title><%= trilha.nome %> | Trilha Onboarding </title>
   <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Estilos Customizados com Tailwind usando @apply -->
-  <style type="text/tailwindcss">
-    @layer components {
-      .card-modulo {
-        @apply border rounded-xl p-4 mb-6 shadow hover:shadow-md transition-all;
-      }
-      .titulo-modulo {
-        @apply text-xl text-green-800 font-semibold mb-2;
-      }
-      .barra-container {
-        @apply w-full h-3 bg-gray-300 rounded-full overflow-hidden;
-      }
-      .barra-preenchida {
-        @apply h-full bg-cyan-400 rounded-full transition-all;
-      }
-      .botao-modulo {
-        @apply bg-lime-200 text-black px-4 py-1 rounded shadow hover:bg-lime-300 inline-flex items-center gap-1 font-medium;
-      }
-    }
-  </style>
 </head>
-<body class="min-h-screen bg-white p-4 font-sans">
-  <!-- Título -->
-  <h1 class="text-3xl font-bold text-green-800 mb-8">Trilha Onboarding</h1>
+<body class="bg-white font-sans text-gray-800">
 
-  <!-- Módulo 1 -->
-  <div class="card-modulo">
-    <h2 class="titulo-modulo">Módulo 1 - Mapas e Dados</h2>
-    <div class="barra-container mb-4">
-      <div class="barra-preenchida w-[60%]"></div>
-    </div>
-    <button class="botao-modulo">Continuar <span>→</span></button>
+  <div class="min-h-screen p-6 max-w-4xl mx-auto">
+    <h1 class="text-3xl font-bold text-green-800 mb-8">Trilha: <%= trilha.nome %></h1>
+
+    <% trilha.modulos.forEach((modulo, index) => { %>
+      <div class="border rounded-xl p-5 mb-6 shadow-md">
+        <h2 class="text-xl font-semibold text-green-800 mb-2">Módulo <%= index + 1 %> - <%= modulo.titulo %></h2>
+
+        <!-- Barra de progresso -->
+        <div class="w-full h-3 bg-gray-200 rounded-full mb-4">
+          <div class="h-full bg-cyan-400 rounded-full" style="width: <%= modulo.progresso %>%;"></div>
+        </div>
+
+        <!-- Botão -->
+        <a href="/conteudo/<%= modulo.id %>" class="bg-lime-200 hover:bg-lime-300 text-black px-4 py-2 rounded shadow flex items-center gap-2 w-fit">
+          <%= modulo.progresso > 0 ? "Continuar" : "Iniciar" %> <span>→</span>
+        </a>
+      </div>
+    <% }) %>
   </div>
 
-  <!-- Módulo 2 -->
-  <div class="card-modulo">
-    <h2 class="titulo-modulo">Módulo 2 - Pulverização</h2>
-    <div class="barra-container mb-4">
-      <div class="barra-preenchida w-[0%]"></div>
-    </div>
-    <button class="botao-modulo">Iniciar <span>→</span></button>
-  </div>
 </body>
 </html>
 
+<!-- views/pages/paths.ejs -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title><%= trilha.nome %> | Trilha Onboarding </title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white font-sans text-gray-800">
 
+  <div class="min-h-screen p-6 max-w-4xl mx-auto">
+    <h1 class="text-3xl font-bold text-green-800 mb-8">Trilha: <%= trilha.nome %></h1>
 
+    <% trilha.modulos.forEach((modulo, index) => { %>
+      <div class="border rounded-xl p-5 mb-6 shadow-md">
+        <h2 class="text-xl font-semibold text-green-800 mb-2">Módulo <%= index + 1 %> - <%= modulo.titulo %></h2>
+
+        <!-- Barra de progresso -->
+        <div class="w-full h-3 bg-gray-200 rounded-full mb-4">
+          <div class="h-full bg-cyan-400 rounded-full" style="width: <%= modulo.progresso %>%;"></div>
+        </div>
+
+        <!-- Botão -->
+        <a href="/conteudo/<%= modulo.id %>" class="bg-lime-200 hover:bg-lime-300 text-black px-4 py-2 rounded shadow flex items-center gap-2 w-fit">
+          <%= modulo.progresso > 0 ? "Continuar" : "Iniciar" %> <span>→</span>
+        </a>
+      </div>
+    <% }) %>
+  </div>
+
+</body>
+</html>
