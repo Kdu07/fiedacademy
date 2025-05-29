@@ -5,7 +5,28 @@ const trilha = {
   modulos: [
     { id: 1, titulo: "Mapas e Dados", progresso: 10 },
     { id: 2, titulo: "Planejamento", progresso: 0 },
-    { id: 3, titulo: "Aplicação", progresso: 0 }
+    { id: 3, titulo: "Aplicação", progresso: 0 },
+    { id: 4, titulo: "AAA", progresso: 0 }
+  ]
+};
+
+const trilha2 = {
+  nome: "Básico",
+  modulos: [
+    { id: 1, titulo: "Mapas e Dados", progresso: 10 },
+    { id: 2, titulo: "Planejamento", progresso: 0 },
+    { id: 3, titulo: "Aplicação", progresso: 0 },
+    { id: 4, titulo: "AAA", progresso: 0 }
+  ]
+};
+
+const trilha3 = {
+  nome: "Básico",
+  modulos: [
+    { id: 1, titulo: "Mapas e Dados", progresso: 10 },
+    { id: 2, titulo: "Planejamento", progresso: 0 },
+    { id: 3, titulo: "Aplicação", progresso: 0 },
+    { id: 4, titulo: "AAA", progresso: 0 }
   ]
 };
 %>
@@ -21,9 +42,11 @@ const trilha = {
 </head>
 <body class="bg-white font-sans text-gray-800">
 
+  <!-- Trilhas -->
   <div class="min-h-screen p-6 max-w-4xl mx-auto">
     <h1 class="text-3xl font-bold text-green-800 mb-8">Trilha: <%= trilha.nome %></h1>
 
+    <!-- Módulos -->
     <% trilha.modulos.forEach((modulo, index) => { %>
       <div class="border rounded-xl p-5 mb-6 shadow-md">
         <h2 class="text-xl font-semibold text-green-800 mb-2">Módulo <%= index + 1 %> - <%= modulo.titulo %></h2>
@@ -50,13 +73,13 @@ const trilha = {
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title><%= trilha.nome %> | Trilha Onboarding </title>
+  <title><%= trilha2.nome %> | Trilha Onboarding </title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-white font-sans text-gray-800">
 
   <div class="min-h-screen p-6 max-w-4xl mx-auto">
-    <h1 class="text-3xl font-bold text-green-800 mb-8">Trilha: <%= trilha.nome %></h1>
+    <h1 class="text-3xl font-bold text-green-800 mb-8">Trilha: <%= trilha2.nome %></h1>
 
     <% trilha.modulos.forEach((modulo, index) => { %>
       <div class="border rounded-xl p-5 mb-6 shadow-md">
