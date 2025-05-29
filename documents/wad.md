@@ -471,19 +471,102 @@ Tela | Recursos | User Story
 
 *Descreva aqui orientações gerais para o leitor sobre como utilizar os componentes do guia de estilos de sua solução*
 
+&nbsp;&nbsp;&nbsp;&nbsp; O Guia de Estilos serve como referência oficial para todos os envolvidos no projeto, garantindo consistência visual, clareza de comunicação e aplicação correta dos elementos da marca.  <br>
+
+
+!!!!!!!!!!!!!!!!!!!!!!
+
 ### 3.3.1 Cores
 
 *Apresente aqui a paleta de cores, com seus códigos de aplicação e suas respectivas funções*
 
+<div align = "center">
+<sup>Figura 8: Tipografia </sup><br>
+<img src="![alt text](<../assets/assets_wad/Paleta de cores.png>)"> 
+
+<sup>Fonte: Material produzido pelos autores (2025).</sup><br>
+</div>
+
+Recomendação Aplicada| Nome da cor | Hex | Função | 
+
+--- | --- | --- | ---|
+
+Cor primária | Verde | #66B512 | Cor para destacar tanto fundo, quanto botões principais, destaques, header, ícones |
+Cor priméria mais clara| Verde claro | #D2EEAE | Cor para destacar fundo de cards e botões secundários. |
+Cor de composição | Azul | #0091DF | Cor ultilizada para barra de progresso, botões secundárias, caixa de notificações, perfil do ranking, o rodapé da página do FieldAcaemy. |
+Cor de composição | Cinza | #D9D9D9 | undo de cards, divisores, bordas. | Fundo de cards, divisores, bordas |
+Cor Texto primária| Texto escuro | #1F1C1C| Texto principal sobre fundos claros|
+Cor Texto secundário| Texto claro | #FFFFFF| Texto para fundos escuros ou botões coloridos fortes|
+
 ### 3.3.2 Tipografia
 
 *Apresente aqui a tipografia da solução, com famílias de fontes e suas respectivas funções*
+&nbsp;&nbsp;&nbsp;&nbsp; A tipografia padroniza a leitura e reforça a identidade da marca. Especifique fontes, tamanhos, pesos, espaçamentos e exemplos de uso. Ela  define as fontes, tamanhos, pesos e estilos utilizados em todos os textos da interface. Ela estabelece uma hierarquia visual clara, facilita a leitura e reforça a identidade da marca. <br>
+
+<div align = "center">
+<sup>Figura 8: Tipografia </sup><br>
+<img src="assets/assets_wad/Tipografia.png"> 
+
+<sup>Fonte: Material produzido pelos autores (2025).</sup><br>
+</div>
+
 
 ### 3.3.3 Iconografia e imagens 
 
 *(esta subseção é opcional, caso não existam ícones e imagens, apague esta subseção)*
 
 *posicione aqui imagens e textos contendo exemplos padronizados de ícones e imagens, com seus respectivos atributos de aplicação, utilizadas na solução*
+
+&nbsp;&nbsp;&nbsp;&nbsp; A iconografia reúne todos os ícones utilizados na interface, padronizando seu estilo, tamanho, cor e aplicação. Os ícones devem ser facilmente reconhecíveis, reforçando ações e informações sem gerar ambiguidade. <br>
+
+<div align = "center">
+<sup>Figura 8: Tipografia </sup><br>
+<img src="assets/assets_wad/iconografia (1).png"> 
+<sup>Fonte: Material produzido pelos autores (2025).</sup><br>
+</div>
+
+#### NavBar Mobile
+Icone | Funcionalidade | 
+
+| --- | ---|
+
+Colheita | Acessa informações e registros sobre colheitas realizadas, facilitando o controle de produção. |
+Boas Práticas | Exibe dicas, orientações e conteúdos educativos para melhorar processos e resultados. |
+Perfil | 	Permite visualizar e editar dados pessoais e preferências do usuário. |
+Plantio| Gerencia informações sobre o plantio, como datas, áreas e culturas cultivadas. |
+Mapas e dados | 	Mostra mapas interativos e dados georreferenciados para análise e tomada de decisão. |
+Data inbox e integração| Centraliza dados recebidos e integrações com outros sistemas ou dispositivos. |
+
+#### NavBar
+
+Icone | Funcionalidade | 
+
+| --- | ---|
+
+Perfil | Visualiza e edita dados do usuário, foto e configurações pessoais.|
+Barra de Navegação | Abre/fecha o menu lateral de navegação do sistema. | 
+Favoritados | 	Acessa rapidamente itens ou conteúdos marcados como favoritos.|
+Feedback | Permite enviar opiniões, sugestões ou avaliações sobre o sistema ou conteúdos. |
+FieldAcademy | Direciona para área de cursos, treinamentos ou materiais educativos.|
+Barra de pesquisa | Visualiza e edita dados do usuário (atalho extra).|
+FieldView | Exibe visualizações detalhadas do campo, mapas ou dashboards de monitoramento. |
+Notificação | 	Mostra alertas, lembretes ou mensagens importantes para o usuário.|
+Adicionar um módulo| 	Permite criar um novo módulo, etapa ou item dentro do sistema.|
+Minhas trilhas | 	Exibe os percursos, trilhas de aprendizagem ou fluxos personalizados do usuário.|
+Download | 	Realiza o download de arquivos, relatórios ou dados da plataforma.| 
+Lixeira | Acessa itens excluídos, permitindo restaurar ou excluir definitivamente conteúdos.|
+
+
+Icone | Funcionalidade | 
+
+| --- | ---|
+
+Adicionar | Cria ou cadastra um novo item, pedido ou módulo. |
+Boas práticas (botão)|	Acesso rápido ao conteúdo de boas práticas, dicas e recomendações.|
+Continuar|Avança, visualiza detalhes ou inicia uma ação/tarefa.|
+Ver mais|Avança, visualiza detalhes ou inicia uma ação/tarefa.|
+Curtir/Descurtir (like/dislike)|Avalia conteúdos, módulos ou funcionalidades com feedback positivo ou negativo.|
+
 
 ## 3.4 Protótipo de alta fidelidade (sprint 3)
 
@@ -847,7 +930,16 @@ __________________
 
 ### 3.5.2. Consultas SQL e lógica proposicional (sprint 2)
 
+<<<<<<< Updated upstream
 #### **Expressão SQL - 1:** 
+
+=======
+>>>>>>> Stashed changes
+*Template de SQL + lógica proposicional*
+#1 | ---
+--- | ---
+
+**Expressão SQL** | SELECT 
 ```sql
 SELECT 
   u.name, 
