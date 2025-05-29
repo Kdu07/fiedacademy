@@ -6,6 +6,6 @@ const pathsController = require('../controllers/pathsController');
 router.get('/', pathsController.index);
 
 // Rota dinâmica para cada trilha
-router.get('/:slug', pathsController.trilhas);
+router.get('/:slug', pathsController.trilha);
 
 module.exports = router;

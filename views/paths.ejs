@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Trilhas de Treinamento - Bayer Agro</title>
+  <title>Trilha: <%= trilha.nome %> - Bayer Agro</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-50 min-h-screen flex flex-col">
@@ -18,7 +18,7 @@
         </a>
       </div>
       <nav class="space-x-6">
-        <a href="#" class="text-[#0057A6] font-medium hover:text-[#78BE20] transition">Início</a>
+        <a href="/" class="text-[#0057A6] font-medium hover:text-[#78BE20] transition">Início</a>
         <a href="#" class="text-gray-700 font-medium hover:text-[#78BE20] transition">Trilhas</a>
         <a href="#" class="text-gray-700 font-medium hover:text-[#78BE20] transition">Meu Progresso</a>
         <a href="#" class="text-gray-700 font-medium hover:text-[#78BE20] transition">Sair</a>
@@ -26,55 +26,22 @@
     </div>
   </header>
 
-  <!-- Título e filtro -->
+  <!-- Conteúdo da trilha -->
   <main class="container mx-auto px-6 py-10 flex-1">
-    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-8">
-      <h2 class="text-2xl font-bold text-[#0057A6] mb-4 md:mb-0">Trilhas de Treinamento</h2>
-      <div>
-        <input type="text" placeholder="Buscar trilha..." class="px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#78BE20] w-64">
-      </div>
+    <div class="mb-8">
+      <h2 class="text-2xl font-bold text-[#0057A6] mb-2">Trilha: <%= trilha.nome %></h2>
+      <p class="text-gray-600 mb-4">Confira os módulos disponíveis nesta trilha:</p>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <!-- Trilha 1 -->
-      <div class="bg-white rounded-xl shadow-md p-6 flex flex-col hover:shadow-lg transition">
-        <h3 class="text-xl font-semibold text-[#0057A6] mb-2">Trilha: Sistema Básico</h3>
-        <p class="text-gray-600 mb-4">Aprenda o essencial para começar a usar o sistema Bayer Agro.</p>
-        <div class="flex items-center mb-4">
-          <span class="text-sm text-gray-500 mr-2">Progresso:</span>
-          <div class="w-32 bg-gray-200 rounded-full h-3">
-            <div class="bg-[#78BE20] h-3 rounded-full" style="width: 60%"></div>
-          </div>
-          <span class="ml-2 text-sm text-[#78BE20] font-bold">60%</span>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <% trilha.modulos.forEach(function(modulo, idx) { %>
+        <div class="bg-white rounded-xl shadow-md p-6 flex flex-col hover:shadow-lg transition">
+          <h3 class="text-xl font-semibold text-[#0057A6] mb-2">Módulo <%= idx + 1 %>: <%= modulo %></h3>
+          <p class="text-gray-600 mb-4">Conteúdo do módulo <%= modulo %> em breve.</p>
+          <a href="#" class="mt-auto text-[#78BE20] font-medium hover:underline cursor-not-allowed opacity-60">Acessar módulo</a>
         </div>
-        <a href="/content" class="mt-auto text-[#78BE20] font-medium hover:underline">Continuar trilha</a>
-      </div>
-      <!-- Trilha 2 -->
-      <div class="bg-white rounded-xl shadow-md p-6 flex flex-col hover:shadow-lg transition">
-        <h3 class="text-xl font-semibold text-[#0057A6] mb-2">Trilha: Gestão Avançada</h3>
-        <p class="text-gray-600 mb-4">Aprofunde seus conhecimentos em gestão de dados e processos.</p>
-        <div class="flex items-center mb-4">
-          <span class="text-sm text-gray-500 mr-2">Progresso:</span>
-          <div class="w-32 bg-gray-200 rounded-full h-3">
-            <div class="bg-[#0057A6] h-3 rounded-full" style="width: 30%"></div>
-          </div>
-          <span class="ml-2 text-sm text-[#0057A6] font-bold">30%</span>
-        </div>
-        <a href="#" class="mt-auto text-[#78BE20] font-medium hover:underline">Continuar trilha</a>
-      </div>
-      <!-- Trilha 3 -->
-      <div class="bg-white rounded-xl shadow-md p-6 flex flex-col hover:shadow-lg transition">
-        <h3 class="text-xl font-semibold text-[#0057A6] mb-2">Trilha: Boas Práticas</h3>
-        <p class="text-gray-600 mb-4">Descubra como garantir qualidade e segurança no uso do sistema.</p>
-        <div class="flex items-center mb-4">
-          <span class="text-sm text-gray-500 mr-2">Progresso:</span>
-          <div class="w-32 bg-gray-200 rounded-full h-3">
-            <div class="bg-[#78BE20] h-3 rounded-full" style="width: 100%"></div>
-          </div>
-          <span class="ml-2 text-sm text-[#78BE20] font-bold">100%</span>
-        </div>
-        <a href="#" class="mt-auto text-[#78BE20] font-medium hover:underline">Ver certificado</a>
-      </div>
+      <% }) %>
     </div>
+    <a href="/" class="mt-8 inline-block text-[#78BE20] font-medium hover:underline">Voltar para Home</a>
   </main>
 
   <!-- Footer -->
