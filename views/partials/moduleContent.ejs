@@ -13,9 +13,13 @@
 
         <div class="rounded-lg bg-mainGreen w-full">
           <a href="/module/1/page/<%= page.page %>">
+            <% if (page.page === moduleContent.page) { %>
+            <p class="text-white p-2 text-center font-semibold text-xl">
+              Lição #<%= page.page %> (ATUAL)
+            <% } else { %>
             <p class="text-white p-2 text-center font-medium text-xl">
               Lição #<%= page.page %>
-            </p>
+            <% } %>
           </a>
         </div>
 
