@@ -645,8 +645,6 @@ Segue o link de todos os protótipos do nosso projeto : https://www.figma.com/de
 
 ### 3.5.1. Modelo relacional (sprints 2 e 4)
 
-
-
 &nbsp;&nbsp;&nbsp;&nbsp;  O banco de dados mostrado adere aos fundamentos da modelagem relacional, como explicado por Heuser[9], organizando a informação em tabelas que simbolizam entidades do campo educacional, tais como usuários, módulos, conteúdos, trilhas, certificados, avaliações e permissões. Cada tabela é formada por linhas (tuplas) e colunas (atributos), assegurando a integridade dos dados através de restrições como chaves primárias - que identificam cada registro de maneira exclusiva - e chaves estrangeiras, encarregadas de criar conexões entre as tabelas, como a conexão entre usuários e suas funções, conteúdos e módulos, ou certificados e trilhas. Esta metodologia possibilita a representação clara e organizada dos componentes do mundo real, simplificando a implementação, conservação e ampliação do sistema de informação. <br>
 
 &nbsp;&nbsp;&nbsp;&nbsp;  No contexto da aplicação, tabelas como Users, module, content, path e certificate organizam o fluxo de aprendizagem, enquanto tabelas auxiliares como feedbacks_modulo, score_test, bookmarks e emphasis ampliam as funcionalidades ao permitir avaliações, acompanhamento de progresso, personalização e destaque de conteúdos. A tabela role_permissions define os diferentes perfis de acesso e suas permissões, promovendo segurança e flexibilidade na gestão do sistema. Assim, o modelo relacional adotado oferece uma base sólida para o desenvolvimento de uma plataforma educacional, garantindo integridade, clareza e escalabilidade. <br>
@@ -1086,10 +1084,75 @@ Novamente, a consulta só será executada com êxito se ambas as proposições A
 *Cada endpoint deve conter endereço, método (GET, POST, PUT, PATCH, DELETE), header, body e formatos de response*
 
 # <a name="c4"></a>4. Desenvolvimento da Aplicação Web
-
 ## 4.1. Primeira versão da aplicação web (sprint 3)
 
-*Descreva e ilustre aqui o desenvolvimento da sua primeira versão do sistema web, explicando brevemente o que foi entregue em termos de código e sistema. Utilize prints de tela para ilustrar. Indique as eventuais dificuldades e próximos passos.*
+&nbsp;&nbsp;&nbsp;&nbsp;Inicialmente, na Sprint 1, foi feita a análise do mercado e o entendimento do negócio no qual a Bayer está inserida, visando explorar vulnerabilidades e oportunidades da empresa. Além disso, também foi realizado um aprofundamento no tema trazido pelo parceiro, identificando os riscos possíveis durante o desenvolvimento do projeto. <br>
+&nbsp;&nbsp;&nbsp;&nbsp;Na Sprint 2, foi iniciado o desenvolvimento do banco de dados, com as funcionalidades necessárias para o funcionamento do website. Essa etapa foi importante para um entendimento mais aprofundado de banco de dados e consultas SQL. Paralelamente, aprofundamo-nos no modelo MVC, necessário para a estruturação do código do projeto.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Na Sprint 3, antes da prototipação inicial, foi criado o guia de estilos (seção 3.3 do WAD), importante para que toda a equipe seguisse um mesmo padrão de UX Design durante o desenvolvimento do projeto. No guia foram definidas as cores principais, a tipografia a ser utilizada, a iconografia e as imagens, padronizando os elementos visuais que serão seguidos ao longo do desenvolvimento. <br> 
+Com o guia de estilos definido, para facilitar o desenvolvimento de cada funcionalidade do website, foi feita a prototipação de alta fidelidade das telas que seriam desenvolvidas. Para mais detalhes do protótipo, acesse este [link](https://www.figma.com/design/bOsRfHBpYqRksHS4GiNW74/bayer-project?node-id=3664-2&t=BTBf5Vqe9DNHOrw0-1) no Figma.  
+&nbsp;&nbsp;&nbsp;&nbsp; A partir da prototipação, foi iniciado o desenvolvimento em código do site, seguindo o padrão MVC (Models, Views e Controllers). Para a entrega da Sprint 3, foram desenvolvidas cinco telas principais:<br>
+
+**Tela de login**: Onde o usuário faz seu cadastro na plataforma ou entra diretamente através de sua conta.
+<div align = "center">
+
+<sup>Figura X: Tela de login.</sup><br>
+
+<img src="../assets/assets_wad/telaLogin.png" width="300"><br>
+
+<sub>Fonte: Material produzido pelos autores (2025). </sub><br>
+
+</div>
+
+**Tela de Home**: Onde o usuário terá acesso à busca rápida, help (onde ele encontra conteúdos por tópicos), trilhas e conteúdos favoritados.
+
+<div align = "center">
+
+<sup>Figura X: Tela de Home.</sup><br>
+
+<img src="../assets/assets_wad/telaHome1.png" width="300"><br>
+<img src="../assets/assets_wad/telaHome2.png" width="300"><br>
+
+<sub>Fonte: Material produzido pelos autores (2025). </sub><br>
+
+</div>
+
+**Tela de Trilhas**: Onde o usuário terá acesso aos módulos de cada trilha.
+
+<div align = "center">
+
+<sup>Figura X: Tela de Trilhas.</sup><br>
+
+<img src="../assets/assets_wad/telaTrilha.png" width="300"><br>
+
+<sub>Fonte: Material produzido pelos autores (2025). </sub><br>
+
+</div>
+
+**Tela de Conteúdos**: Onde o usuário terá acesso aos conteúdos de cada módulo, sendo em textos, vídeos ou em ambos.
+
+<div align = "center">
+
+<sup>Figura X: Tela de Conteudos.</sup><br>
+
+<img src="../assets/assets_wad/telaConteudo.png" width="300"><br>
+
+<sub>Fonte: Material produzido pelos autores (2025). </sub><br>
+
+</div>
+
+**Tela de Help**: Onde o usuário terá acesso a cards com temas específicos e perguntas frequentes.
+
+<div align = "center">
+
+<sup>Figura X: Tela de Help.</sup><br>
+
+<img src="../assets/assets_wad/telaHelp.png" width="300"><br>
+
+<sub>Fonte: Material produzido pelos autores (2025). </sub><br>
+
+</div>
+
+&nbsp;&nbsp;&nbsp;&nbsp; Essas foram as telas desenvolvidas até o momento, todas seguindo o padrão de estrutura MVC, com rotas já conectadas. No entanto, a conexão com o banco de dados ainda não está completa, visto que, nesta sprint, a equipe concentrou esforços no entendimento e aplicação da estrutura de código exigida, que envolve a divisão em diferentes funcionalidades — um processo que demandou tempo. Assim, como próximos passos, estão previstos a integração completa e funcional do banco de dados, bem como o aprimoramento e a criação de novas telas.<br>
 
 ## 4.2. Segunda versão da aplicação web (sprint 4)
 
