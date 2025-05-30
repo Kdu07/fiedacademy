@@ -1089,11 +1089,14 @@ Novamente, a consulta só será executada com êxito se ambas as proposições A
 
 # <a name="c4"></a>4. Desenvolvimento da Aplicação Web
 ## 4.1. Primeira versão da aplicação web (sprint 3)
-&nbsp;&nbsp;&nbsp;&nbsp; Inicialmente, na Sprint 1, foi foita análise do mercado e entendimento do negócio, no qual a Bayer se insere, visando explorar vulnerabilidades e oportunidades da empresa. Além disso, também foi aprofundado no tema trazido pelo parceiro, elencando também os riscos possíveis durante o desenvolvimento do projeto. <br>
-&nbsp;&nbsp;&nbsp;&nbsp; Na Sprint 2, foi feito o desenvolvimento inicial do banco de dados, com as funcionalidades necessária para o desenvolvimento do website. Essa etapa foi importante para o entendimento mais aprofundado em banco de dados e consultas SQL. Paralelamente, apronfudamo-nos no modelo MVC, necessário para estruturação do código do projeto. <br>
-&nbsp;&nbsp;&nbsp;&nbsp; Na Sprint 3, antes da prototipação inicial, foi feito o guia de estilos (seção 3.3 do WAD), im portante para que toda a equipe seguisse um mesmo padrão de UX design durante o desenvolvimento do projeto. No guia foram definidas as cores principais, a tipografia que será utilizada, a iconografia e as imagens, padronizando os elementos vizuais que serão seguidos ao longo do desenvolvimento. <br>
-Com o guia de estilos definido, para o desenvolvimento mais claro de cada funcionalidade do website, foi feita a prototipação de alta fidelidade das telas que seriam desenvolvidas. Para mais detalhes do protótipo acesse esse [link](https://www.figma.com/design/bOsRfHBpYqRksHS4GiNW74/bayer-project?node-id=3664-2&t=BTBf5Vqe9DNHOrw0-1) do figma.
-&nbsp;&nbsp;&nbsp;&nbsp; A partir da prototipação foi iniciado o desenvolvimento em código do site, seguindo o padrão MVC (Models, Views e Controllers). Para a entrega da Sprint 3, foram desenvolvida 4 tela principais:
+
+&nbsp;&nbsp;&nbsp;&nbsp;Inicialmente, na Sprint 1, foi feita a análise do mercado e o entendimento do negócio no qual a Bayer está inserida, visando explorar vulnerabilidades e oportunidades da empresa. Além disso, também foi realizado um aprofundamento no tema trazido pelo parceiro, identificando os riscos possíveis durante o desenvolvimento do projeto. <br>
+&nbsp;&nbsp;&nbsp;&nbsp;Na Sprint 2, foi iniciado o desenvolvimento do banco de dados, com as funcionalidades necessárias para o funcionamento do website. Essa etapa foi importante para um entendimento mais aprofundado de banco de dados e consultas SQL. Paralelamente, aprofundamo-nos no modelo MVC, necessário para a estruturação do código do projeto.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Na Sprint 3, antes da prototipação inicial, foi criado o guia de estilos (seção 3.3 do WAD), importante para que toda a equipe seguisse um mesmo padrão de UX Design durante o desenvolvimento do projeto. No guia foram definidas as cores principais, a tipografia a ser utilizada, a iconografia e as imagens, padronizando os elementos visuais que serão seguidos ao longo do desenvolvimento. <br> 
+Com o guia de estilos definido, para facilitar o desenvolvimento de cada funcionalidade do website, foi feita a prototipação de alta fidelidade das telas que seriam desenvolvidas. Para mais detalhes do protótipo, acesse este [link](https://www.figma.com/design/bOsRfHBpYqRksHS4GiNW74/bayer-project?node-id=3664-2&t=BTBf5Vqe9DNHOrw0-1) no Figma.  
+&nbsp;&nbsp;&nbsp;&nbsp; A partir da prototipação, foi iniciado o desenvolvimento em código do site, seguindo o padrão MVC (Models, Views e Controllers). Para a entrega da Sprint 3, foram desenvolvidas quatro telas principais, voltadas ao PTD:<br>
+**Tela de login**: Onde o usuário faz seu cadastro na plataforma ou entra diretamente através de sua conta.
+
 
 Código
 
