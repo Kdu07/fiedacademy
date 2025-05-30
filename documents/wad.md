@@ -1252,7 +1252,6 @@ app.use('/api', apiRoutes);
   ]
   ```
 
-
 * **URL:** `GET /paths/:id`
 * **Método:** GET
 * **Descrição:** Pega as informações de uma trilha específica pelo ID
@@ -1270,9 +1269,8 @@ app.use('/api', apiRoutes);
   ]
   ```
 
-### Método
-
-**GET** ` /module/:id/page/:page_id`
+#### Rotas para conteúdos dos módulos (`/module/:id/page/:page_id`)
+**Método:** GET
 
 ### Headers de resposta
 
@@ -1286,7 +1284,7 @@ app.use('/api', apiRoutes);
 | Connection     | keep-alive                         |
 | Keep-Alive     | timeout=5                          |
 
-### Response
+#### Response
 
 **Status:** `200 OK`  
 **Content-Type:** `text/html`
