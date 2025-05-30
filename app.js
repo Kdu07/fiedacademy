@@ -11,6 +11,7 @@ app.set('views', path.join(__dirname, 'views'));
 
 // Torna a pasta 'assets' pública
 app.use('/assets', express.static(path.join(__dirname, 'assets')));
+app.use(express.static('public')); // <-- Define a pasta public como estática
 
 // Usa as rotas principais
 app.use('/', indexRoutes);
