@@ -21,5 +21,5 @@ module.exports.index = async (req, res) => { // Adicionei async, para q a fun√ß√
 
     // Renderize sua view, por exemplo:
     console.log(paths);
-    res.render('home', { paths });
+    res.render('home', { paths, bookmarks });
 };

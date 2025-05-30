@@ -7,18 +7,9 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body class="bg-white text-green-900">
-
-    <!-- Navbar -->
     <nav class="bg-green-600 p-4 flex items-center justify-between">
         <div class="flex items-center space-x-4">
-            <button class="text-white">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                          d="M4 6h16M4 12h16M4 18h16"/>
-                </svg>
-            </button>
             <div class="relative">
-                <input type="text" placeholder="Search" class="pl-10 pr-4 py-2 rounded-md" />
                 <div class="absolute left-2 top-2.5 text-gray-500">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -49,17 +40,20 @@
     <!-- Trilhas -->
     <section class="max-w-md mx-auto mt-8 border rounded-lg p-6 shadow-sm">
         <h2 class="text-center text-2xl font-semibold mb-6">TRILHAS</h2>
-
-        <% paths.forEach(t => { 
-            const slug = t.title.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, '-');
-        %>
-            <div class="flex items-center justify-between mb-4">
-                 <p class="text-lg font-medium"><%= t.title %></p>
-                 <a href="/paths/<%= slug %>" class="bg-green-200 text-green-900 font-semibold px-4 py-1 rounded-full hover:bg-green-300">
-                    Continuar
-                </a>
-            </div>
-        <% }) %>
+        <% if (paths && paths.length) { %>
+            <% paths.forEach(t => { 
+                const slug = t.title.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, '-');
+            %>
+                <div class="flex items-center justify-between mb-4">
+                    <p class="text-lg font-medium"><%= t.title %></p>
+                    <a href="/paths/<%= slug %>" class="bg-green-200 text-green-900 font-semibold px-4 py-1 rounded-full hover:bg-green-300">
+                        Continuar
+                    </a>
+                </div>
+            <% }) %>
+        <% } else { %>
+            <p class="text-center text-gray-500">Nenhuma trilha encontrada.</p>
+        <% } %>
     </section>
 
     <!-- Tabela de conteúdos fixados -->
@@ -92,6 +86,5 @@
     <footer class="bg-green-600 text-white text-center py-4 mt-10">
         &copy; <%= new Date().getFullYear() %> FieldAcademy. Todos os direitos reservados.
     </footer>
-
 </body>
 </html>
