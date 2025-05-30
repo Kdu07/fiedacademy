@@ -4,11 +4,9 @@
 <a href= "https://www.inteli.edu.br/"><img src="/assets/assets_wad/inteli.png" alt="Inteli - Instituto de Tecnologia e Liderança" border="0"></a>
 </p>
 
-# Nome do projeto
+# FieldAcademy
 
-## Nome do grupo
-
-## :student: Integrantes: 
+## Integrantes: 
 - <a href="https://www.linkedin.com/in/antoniodicillo/">Antonio Di Cillo</a>
 - <a href="https://github.com/CaduQuaglia">Carlos Quaglia</a>
 - <a href="https://www.linkedin.com/in/emanuelly-cantarelli-2a0480305/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app">Emanuelly Dias</a> 
@@ -17,7 +15,7 @@
 - <a href="https://www.linkedin.com/in/maria-arielly/">Maria Arielly</a> 
 - <a href="https://www.linkedin.com/in/-rafael-cabral/">Rafael Cabral</a>
 
-## :teacher: Professores:
+# Professores:
 ### Orientador(a) 
 - <a href="https://www.linkedin.com/in/marcelo-gon%C3%A7alves-phd-a550652/">Marcelo Luiz do Amaral Gonçalves</a>
 ### Instrutores
@@ -84,7 +82,7 @@ Aqui encontram-se todas as instruções necessárias para a instalação de todo
     * 
 * 0.4.0 - XX/XX/2025
     * 
-* 0.3.0 - XX/XX/2025
+* 0.3.0 - Prototipação de alta fidelidade (MockUp) e Arquiteru de Software (MVC) 
     * 
 * 0.2.0 - 15/06/2025 - Prototipação de baixa fidelidade e construção do banco de dados.
     * 

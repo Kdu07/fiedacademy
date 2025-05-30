@@ -469,80 +469,76 @@ Tela | Recursos | User Story
 
 ## 3.3. Guia de estilos (sprint 3)
 
-*Descreva aqui orientações gerais para o leitor sobre como utilizar os componentes do guia de estilos de sua solução*
+&nbsp;&nbsp;&nbsp;&nbsp; No contexto do desenvolvimento de projetos acadêmicos orientados por metodologias ágeis, a adoção de um guia de estilos revela-se uma prática essencial para assegurar consistência, padronização e eficiência na construção de produtos digitais. O guia de estilos constitui-se como um documento que organiza e define diretrizes visuais e comunicacionais, abrangendo aspectos como tipografia, paleta de cores, iconografia, espaçamento, componentes de interface e tom de voz. Sua aplicação sistemática contribui para a coerência estética do produto e facilita a comunicação entre os integrantes da equipe. <br>
 
-&nbsp;&nbsp;&nbsp;&nbsp; O Guia de Estilos serve como referência oficial para todos os envolvidos no projeto, garantindo consistência visual, clareza de comunicação e aplicação correta dos elementos da marca.  <br>
+&nbsp;&nbsp;&nbsp;&nbsp; Considerando que este projeto é desenvolvido por estudantes em processo de formação, o guia de estilos cumpre também um papel pedagógico, ao estruturar o trabalho colaborativo de maneira mais clara e objetiva. Sua utilização tem proporcionado maior alinhamento entre os membros da equipe, redução de inconsistências visuais e agilidade nas tomadas de decisão ao longo das iterações. Dessa forma, o guia de estilos atua não apenas como instrumento técnico, mas como um elemento estratégico de apoio à organização, à aprendizagem contínua e à consolidação de práticas colaborativas em ambientes educacionais baseados em metodologias ágeis. <br>
 
+&nbsp;&nbsp;&nbsp;&nbsp; Em suma, o Guia de Estilos serve como referência oficial para todos os envolvidos no projeto, garantindo consistência visual, clareza de comunicação e aplicação correta dos elementos da marca.  <br>
 
-!!!!!!!!!!!!!!!!!!!!!!
+![alt text](../assets/assets_wad/Grid.png)
+
 
 ### 3.3.1 Cores
 
-*Apresente aqui a paleta de cores, com seus códigos de aplicação e suas respectivas funções*
+&nbsp;&nbsp;&nbsp;&nbsp; A paleta de cores de um projeto consiste no conjunto de cores previamente selecionadas para representar visualmente a identidade do produto digital em todos os seus elementos gráficos e funcionais. Essa paleta inclui cores primárias, secundárias, de destaque e de fundo, que devem ser utilizadas de forma sistemática em interfaces, componentes, textos e elementos de navegação. Seu propósito é assegurar uniformidade visual, fortalecer a comunicação da marca e facilitar a percepção do usuário ao interagir com o sistema. <br>
 
-<div align = "center">
-<sup>Figura 8: Tipografia </sup><br>
-<img src="![alt text](<../assets/assets_wad/Paleta de cores.png>)"> 
+&nbsp;&nbsp;&nbsp;&nbsp; A adoção de uma paleta de cores bem estruturada e alinhada entre os designers e a equipe de desenvolvimento front-end é essencial para garantir coerência estética e funcionalidade técnica. Em ambientes colaborativos, especialmente no contexto de projetos acadêmicos baseados em metodologias ágeis, essa padronização contribui para a consistência visual entre protótipos e implementações, reduz retrabalho, otimiza a comunicação entre os membros da equipe e assegura a acessibilidade por meio de contrastes adequados. A padronização cromática ainda reforça a identidade do produto, tornando-o mais reconhecível e profissional perante os usuários. <br>
 
-<sup>Fonte: Material produzido pelos autores (2025).</sup><br>
-</div>
+![alt text](../assets/assets_wad/Paleta_cores.png)
 
-Recomendação Aplicada| Nome da cor | Hex | Função | 
+Recomendação Aplicada| Nome da cor | Hex | Função 
+---| --- | --- | ---
+Cor primária | Verde | #66B512 | Cor para destacar tanto fundo, quanto botões principais, destaques, header, ícones 
+Cor priméria mais clara| Verde claro | #D2EEAE | Cor para destacar fundo de cards e botões secundários. 
+Cor de composição | Azul | #0091DF | Cor ultilizada para barra de progresso, botões secundárias, caixa de notificações, perfil do ranking, o rodapé da página do FieldAcaemy. 
+Cor de composição | Cinza | #D9D9D9 | Fundo de cards, divisores, bordas. 
+Cor Texto primária| Texto escuro | #1F1C1C| |
+Texto principal sobre fundos claros| |
+Cor Texto secundário| Texto claro | #FFFFFF | |
+Texto para fundos escuros ou botões | aaa |  coloridos fortes. | |
 
---- | --- | --- | ---|
-
-Cor primária | Verde | #66B512 | Cor para destacar tanto fundo, quanto botões principais, destaques, header, ícones |
-Cor priméria mais clara| Verde claro | #D2EEAE | Cor para destacar fundo de cards e botões secundários. |
-Cor de composição | Azul | #0091DF | Cor ultilizada para barra de progresso, botões secundárias, caixa de notificações, perfil do ranking, o rodapé da página do FieldAcaemy. |
-Cor de composição | Cinza | #D9D9D9 | undo de cards, divisores, bordas. | Fundo de cards, divisores, bordas |
-Cor Texto primária| Texto escuro | #1F1C1C| Texto principal sobre fundos claros|
-Cor Texto secundário| Texto claro | #FFFFFF| Texto para fundos escuros ou botões coloridos fortes|
 
 ### 3.3.2 Tipografia
 
-*Apresente aqui a tipografia da solução, com famílias de fontes e suas respectivas funções*
+
 &nbsp;&nbsp;&nbsp;&nbsp; A tipografia padroniza a leitura e reforça a identidade da marca. Especifique fontes, tamanhos, pesos, espaçamentos e exemplos de uso. Ela  define as fontes, tamanhos, pesos e estilos utilizados em todos os textos da interface. Ela estabelece uma hierarquia visual clara, facilita a leitura e reforça a identidade da marca. <br>
 
-<div align = "center">
-<sup>Figura 8: Tipografia </sup><br>
-<img src="assets/assets_wad/Tipografia.png"> 
+&nbsp;&nbsp;&nbsp;&nbsp;  A tipografia é um elemento essencial na construção da identidade visual de uma interface. Ela influencia diretamente na legibilidade e na percepção da marca. Em um guia de estilos, a definição tipográfica deve incluir as famílias tipográficas utilizadas (ex: sans-serif ou serif), tamanhos, pesos (light, regular, bold), espaçamentos (entre letras e linhas) e hierarquia de títulos (H1, H2, H3 etc.) e parágrafos. <br>
 
-<sup>Fonte: Material produzido pelos autores (2025).</sup><br>
-</div>
+![assets/assets_wad/Tipografia.png](../assets/assets_wad/Tipografia.png)
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;   É fundamental garantir contraste suficiente entre texto e fundo para atender critérios de acessibilidade. A padronização tipográfica no guia de estilos contribui para a coesão visual em todos os materiais da marca ou produto digital. <br>
 
 
 ### 3.3.3 Iconografia e imagens 
 
-*(esta subseção é opcional, caso não existam ícones e imagens, apague esta subseção)*
+&nbsp;&nbsp;&nbsp;&nbsp; A iconografia no design de interfaces refere-se ao uso sistemático de ícones como elementos gráficos que representam ações, objetos ou ideias. Ícones são recursos visuais que auxiliam na comunicação rápida e intuitiva com o usuário, reduzindo a dependência de texto e melhorando a usabilidade. Para garantir clareza e consistência, os ícones devem seguir princípios de simplicidade, legibilidade, universalidade e coerência com a identidade visual da marca ou produto. <br>
 
-*posicione aqui imagens e textos contendo exemplos padronizados de ícones e imagens, com seus respectivos atributos de aplicação, utilizadas na solução*
+&nbsp;&nbsp;&nbsp;&nbsp; Ao definir um sistema de iconografia, é necessário padronizar estilos (traço, espessura, preenchimento), tamanhos, espaçamentos e significados. Esses elementos devem estar descritos no guia de estilos da interface, promovendo uma linguagem visual coesa entre diferentes telas e dispositivos. Ícones interativos devem apresentar feedback visual (como mudança de cor ao passar o cursor) para indicar funcionalidade. <br>
 
-&nbsp;&nbsp;&nbsp;&nbsp; A iconografia reúne todos os ícones utilizados na interface, padronizando seu estilo, tamanho, cor e aplicação. Os ícones devem ser facilmente reconhecíveis, reforçando ações e informações sem gerar ambiguidade. <br>
+ &nbsp;&nbsp;&nbsp;&nbsp; A iconografia reúne todos os ícones utilizados na interface, padronizando seu estilo, tamanho, cor e aplicação. Os ícones devem ser facilmente reconhecíveis, reforçando ações e informações sem gerar ambiguidade. <br>
 
-<div align = "center">
-<sup>Figura 8: Tipografia </sup><br>
-<img src="assets/assets_wad/iconografia (1).png"> 
-<sup>Fonte: Material produzido pelos autores (2025).</sup><br>
-</div>
+![alt text](<../assets/assets_wad/iconografia (1).png>)
 
-#### NavBar Mobile
+<br>
+
+#### Icons Mobile
+
 Icone | Funcionalidade | 
-
-| --- | ---|
-
-Colheita | Acessa informações e registros sobre colheitas realizadas, facilitando o controle de produção. |
+ --- | ---|
+ Colheita | Acessa informações e registros sobre colheitas realizadas, facilitando o controle de produção. |
 Boas Práticas | Exibe dicas, orientações e conteúdos educativos para melhorar processos e resultados. |
 Perfil | 	Permite visualizar e editar dados pessoais e preferências do usuário. |
 Plantio| Gerencia informações sobre o plantio, como datas, áreas e culturas cultivadas. |
 Mapas e dados | 	Mostra mapas interativos e dados georreferenciados para análise e tomada de decisão. |
 Data inbox e integração| Centraliza dados recebidos e integrações com outros sistemas ou dispositivos. |
+<br>
 
-#### NavBar
+#### Icons Desktop
 
-Icone | Funcionalidade | 
-
-| --- | ---|
-
+ Icone | Funcionalidade | 
+ --- | ---|
 Perfil | Visualiza e edita dados do usuário, foto e configurações pessoais.|
 Barra de Navegação | Abre/fecha o menu lateral de navegação do sistema. | 
 Favoritados | 	Acessa rapidamente itens ou conteúdos marcados como favoritos.|
@@ -555,22 +551,95 @@ Adicionar um módulo| 	Permite criar um novo módulo, etapa ou item dentro do si
 Minhas trilhas | 	Exibe os percursos, trilhas de aprendizagem ou fluxos personalizados do usuário.|
 Download | 	Realiza o download de arquivos, relatórios ou dados da plataforma.| 
 Lixeira | Acessa itens excluídos, permitindo restaurar ou excluir definitivamente conteúdos.|
-
+<br>
 
 Icone | Funcionalidade | 
-
-| --- | ---|
-
+--- | ---|
 Adicionar | Cria ou cadastra um novo item, pedido ou módulo. |
 Boas práticas (botão)|	Acesso rápido ao conteúdo de boas práticas, dicas e recomendações.|
 Continuar|Avança, visualiza detalhes ou inicia uma ação/tarefa.|
 Ver mais|Avança, visualiza detalhes ou inicia uma ação/tarefa.|
 Curtir/Descurtir (like/dislike)|Avalia conteúdos, módulos ou funcionalidades com feedback positivo ou negativo.|
-
+<br>
 
 ## 3.4 Protótipo de alta fidelidade (sprint 3)
+&nbsp;&nbsp;&nbsp;&nbsp; Protótipos de alta fidelidade são representações visuais altamente detalhadas de um produto digital, como aplicativos, sites ou sistemas. Eles imitam com grande precisão a aparência final da interface e, muitas vezes, simulam também interações, transições e fluxos de navegação. Esses protótipos incluem cores, tipografias, imagens, ícones e elementos gráficos que corresponde a basicamente todo o front-end do projeto, onde trabalhamos para manter a identidade visual do parceiro. <br>
 
-*posicione aqui algumas imagens demonstrativas de seu protótipo de alta fidelidade e o link para acesso ao protótipo completo (mantenha o link sempre público para visualização)*
+&nbsp;&nbsp;&nbsp;&nbsp;Os protótipos de alta fidelidade servem principalmente para permitir uma visualização precisa do produto final, facilitando que todas as partes interessadas, como stakeholders, clientes e desenvolvedores, compreendam claramente o design e validem as soluções propostas antes da codificação. Eles também são essenciais para garantir o alinhamento entre as equipes de design, desenvolvimento e produto, funcionando como uma referência visual concreta do que será construído. Além disso, esses protótipos são frequentemente utilizados em testes de usabilidade, onde se simula a experiência final do usuário para coletar feedbacks sobre a navegação, compreensão e interação com a interface. Isso permite identificar e corrigir problemas antes que sejam feitos investimentos significativos na fase de desenvolvimento. <br>
+
+## Protótipo da tela de home, versão gestor, desktop:
+
+<img src="../assets/assets_wad/protótipos/Protótipo Home Gestor 3.png">
+
+Esta tela representa a tela inicial do site, a tela de home para gestores, no formato desktop. No topo, há um menu de navegação com ícone de menu lateral, barra de busca e ícone de notificações, que exibe uma lista suspensa de avisos. A tela oferece uma visão clara e funcional para que o gestor acompanhe a evolução da equipe e acesse rapidamente as principais funcionalidades. 
+
+## Protótipo da tela de home, versão PTD, desktop:
+
+<img src="../assets/assets_wad/protótipos/Protótipo-Home-PTD 2.png">
+
+Esta tela corresponde a tela de Home para usuários PTD, na versão desktop. No topo, há um menu lateral, barra de busca e ícone de notificações com lista suspensa. A identidade visual mantém a imagem temática de plantação e o logotipo FieldAcademy. Abaixo, há o botão "Help" para suporte ao usuário.
+Em seguida, a seção "Trilhas" apresenta quatro categorias (Onboarding, Básico, Intermediário e Avançado), cada uma com barra de progresso indicando o avanço e o botão "Continuar" para seguir o conteúdo.
+A tela oferece uma navegação clara para o usuário acompanhar o progresso nas trilhas, acessar conteúdos fixos e visualizar os destaques de performance da equipe.
+
+## Protótipo da tela de login, versão PTD, desktop:
+
+
+<img src="../assets/assets_wad/protótipos/Protótipo-Login-PTD.png">
+
+A tela de login apresenta uma imagem de fundo relacionada ao setor agrícola. No centro, há o título “Cadastre-se” seguido de uma breve descrição. Abaixo, localizam-se três campos para preenchimento: email, senha e confirmação de senha. Logo em seguida, há um botão verde com a inscrição “Criar conta”. Ao final da interface, há uma opção de link convidando o usuário a criar uma conta, caso ainda não possua. O logotipo da empresa está posicionado no canto superior direito. O design é limpo e direto, com foco na funcionalidade e clareza para o usuário.
+
+## Protótipo da tela de login, versão gestor, desktop:
+
+<img src="../assets/assets_wad/protótipos/Protótipo-Login-Gestor.png">
+
+A tela de login versão gestor, possui os mesmos botões da tela de login versão PTD porém alteramos a imagem de fundo para aumentar o engajamento do projeto.
+
+## Protótipo da tela de login, versão PTD, mobile:
+
+<img src="../assets/assets_wad/protótipos/Protótipo-Login-PTD-Mobile.png">
+A imagem mostra a tela de login com tema agrícola. A parte inferior da imagem exibe o formulário de cadastro sobreposto a um fundo semi-transparente branco, o que destaca os elementos visuais sem ocultar totalmente a imagem de fundo. O título “Cadastre-se” está centralizado e em negrito, seguido por um texto de exemplo (“Bla bla bla bla bla bla bla bla”), que será substituído por uma breve descrição do sistema. Abaixo, há três campos de entrada: “Email”, “Senha” e “Confirme sua senha”. Em seguida, um botão verde com o texto “Criar conta” é exibido em destaque. Na parte inferior do formulário, há um link para redirecionar usuários que ainda não possuem conta, com a frase “Não possui uma conta? Crie agora” .O logotipo da empresa está posicionado no canto superior direito. O design é limpo e direto, com foco na funcionalidade e clareza para o usuário.
+
+
+## Protótipo da tela de progresso do gestor, desktop:
+
+<img src="../assets/assets_wad/protótipos/Protótipo-Progresso-Gestor.png">
+
+A imagem apresenta a tela de progresso do gestor da plataforma FieldAcademy. No topo, há um cabeçalho com fundo verde, contendo o logotipo e o nome da plataforma. Abaixo, à esquerda, há um card que exibe o nome do usuário, o número da ficha e o progresso do PTD. Ao lado direito, há uma barra de busca com um campo placeholder e um ícone de lupa. Na seção seguinte, aparece um card intitulado “Atividade do PTD”, exibindo o e-mail do usuário e a região correspondente (Sudeste). Logo abaixo, há dois gráficos: um com o título “Trilhas Completas” e outro “Médias de acertos”, ambos representados com gráficos lineares de cor azul. Na parte inferior da interface, encontra-se a seção “Certificados”, em um bloco com fundo verde-claro. Essa área contém diversos botões de certificados organizados em três linhas, com rótulos genéricos no formato “Certificado - Módulo X” e acompanhados de um ícone azul.
+
+Por fim, a tela é finalizada com um rodapé de fundo verde, mantendo a identidade visual da plataforma.
+
+## Protótipo da tela de home, versão PTD, mobile:
+
+<img src="../assets/assets_wad/protótipos/Protótipo-Help-PTD-Mobile-2.png">
+
+A imagem apresenta a tela incial do projeto porém na versão mobile, a tela é focada em trilhas de aprendizado voltadas ao setor agrícola. No topo da tela, há uma barra verde com ícones de menu, busca e notificações, seguida de uma imagem de fundo com vegetação e céu, sobre a qual está o título “FieldAcademy” centralizado. Abaixo, uma seção destacada com o texto “Help” indica uma área de suporte ou orientação. Em seguida, encontra-se a seção “Trilhas”, que organiza o conteúdo em níveis: “Onboarding”, “Básico”, “Intermediário” e “Avançado”. Cada trilha é exibida com uma barra de progresso estilizada em azul e roxo, acompanhada de um botão “Continuar” com menu dropdown ao lado direito. Mais abaixo, a seção “Fixados” exibe cartões organizados em grade, todos rotulados como “Boas práticas”, cada um com um botão azul de ação “Ver mais”. O layout é limpo, responsivo e utiliza uma paleta de cores que remete à natureza, reforçando a proposta educacional ligada ao campo.
+
+## Protótipo da tela de help, versão PTD, desktop:
+
+<img src="../assets/assets_wad/protótipos/Protótipo-Help-PTD.png">
+
+A imagem apresenta a interface da tela de help do FieldAcademy, voltada para usuários do setor agrícola. No topo, há uma barra verde com ícones de menu , busca (lupa) e notificações (sino), reforçando a navegabilidade e interação com a plataforma. Abaixo da barra de navegação, o título “Como podemos te ajudar hoje?” introduz uma grade de seis botões verdes com ícones pretos, cada um representando uma categoria de suporte: “Mapas e dados”, “Boas práticas”, “Data inbox e integrações”, “Plantio”, “Colheita” e “Primeiros passos”. Os ícones são ilustrativos e reforçam visualmente a função de cada botão, facilitando a identificação rápida das opções. Ao final da tela, uma barra fixa inferior contém links de navegação: “Sobre nós”, “FieldView” e “Bayer”, provavelmente conectando a páginas institucionais ou parceiros do sistema. O layout é limpo, com uso predominante de verde, alinhado ao tema agrícola e sustentável da plataforma.
+
+## Protótipo da tela de conteúdo, versão gestor, desktop:
+
+<img src="../assets/assets_wad/protótipos/Protótipo-Conteúdo-Gestor.png">
+
+A imagem mostra a interface de um módulo educacional da plataforma, voltada à capacitação no setor agrícola. No topo da tela, há uma barra verde com o logotipo da plataforma à esquerda e ícones de menu e navegação. Abaixo, um banner verde com texto em branco destaca o título do módulo atual. À esquerda da tela, há um menu vertical com botões verdes que representam as lições numeradas (#1 a #7), além de dois botões adicionais: “EXIBIR MAIS” e “EDITAR TRILHA”, indicando funcionalidades administrativas. No centro, encontra-se o conteúdo da lição atual, que trata da questão “O que é Remote View e como usar?”, com um espaço reservado para texto e um vídeo ilustrativo abaixo, com miniatura mostrando uma silhueta de um homem à frente de um trator ao entardecer. No canto inferior direito, há botões de interação — um positivo (curtir), um negativo (não curtir) — e um botão azul “PRÓXIMO” para avançar para a próxima lição. A interface mantém o padrão visual em tons de verde e branco, reforçando a identidade da plataforma e sua conexão com o ambiente agrícola.
+
+## Protótipo da tela de trilhas, versão PTD, desktop:
+
+<img src="../assets/assets_wad/protótipos/Protótipo-Módulo-Avançado-PTD.png">
+
+A imagem mostra a tela da “Trilha Avançado” da plataforma FieldAcademy. Nela, os módulos de aprendizagem são exibidos com indicadores de progresso e botões de ação. O Módulo 1 – Mapas e Dados já foi parcialmente concluído, indicado por uma barra de progresso azul, e há um botão verde claro com a palavra “Continuar”. A interface segue o padrão visual com elementos em verde, tipografia clara e botões bem definidos, facilitando a navegação e seguindo a identidade visual do parceiro. O layout é limpo e funcional, mantendo consistência com os outros protótipos já enviados.
+
+## Protótipo da tela introdutória do projeto, desktop:
+
+<img src="../assets/assets_wad/protótipos/Protótipo-TelaFieldAcademy.png">
+
+A imagem apresenta a interface da tela introdutória do projeto. No topo, há um cabeçalho com fundo azul, contendo o logotipo e o nome da plataforma no canto esquerdo, além de um ícone de menu no canto direito. Logo abaixo, encontra-se o título “O que é o FieldAcademy?” destacado em verde escuro. Em seguida, há um texto explicativo sobre a plataforma, ressaltando seu caráter inovador, estruturado e acessível, com foco na capacitação dos PTDs (Promotores Técnicos Digitais). O texto também enfatiza os diferenciais da plataforma, como a utilização de gamificação para tornar o aprendizado mais dinâmico e a possibilidade de acesso offline, facilitando a consulta de conteúdos em regiões remotas. Na parte inferior da tela, aparecem as fotos dos integrantes da equipe de desenvolvimento, cada uma acompanhada do respectivo nome e função: Carlos Quaglia, Luiz Hinuy, Rafael Cabral, João Agmont, Emanuelly Dias, Antonio Cillo e Maria Arielly, todos identificados como "Desenvolvedor Design". Por fim, no rodapé, há uma área de “Contatos” sobre um fundo azul, listando os e-mails institucionais de todos os membros da equipe em destaque. Ao lado, aparecem também ícones gráficos relacionados a comunicação e suporte, com um link para a seção de “Ajuda”.
+
+
+Segue o link de todos os protótipos do nosso projeto : https://www.figma.com/design/bOsRfHBpYqRksHS4GiNW74/bayer-project?node-id=3664-2&p=f&t=Qf7bovjAhDRUTjIr-0
 
 ## 3.5. Modelagem do banco de dados (sprints 2 e 4)
 
@@ -699,6 +768,8 @@ CREATE TABLE IF NOT EXISTS content (
 6. img_path: Caminho para imagem.
 7. order: Ordem do conteúdo dentro do módulo.
 8. due_time: Prazo ou data limite para acessar o conteúdo.
+
+
 ______________________
 
 &nbsp;&nbsp;&nbsp;&nbsp; A tabela emphasis influencia diretamente a experiência do usuário em uma plataforma de e-learning ou sistema educacional ao permitir que determinados conteúdos ou módulos sejam destacados ou priorizados para cada pessoa. Na prática, ela possibilita que o sistema marque quais materiais são mais importantes, urgentes ou recomendados para um usuário específico, geralmente com uma data limite para conclusão (due_date). Assim, o usuário pode visualizar facilmente o que deve focar primeiro em sua trilha de aprendizagem, facilitando o acompanhamento do progresso, a organização dos estudos e a priorização de tarefas. Esse tipo de funcionalidade é comum em sistemas de gestão de aprendizagem (LMS), pois ajuda a tornar o aprendizado mais personalizado, eficiente e alinhado às necessidades individuais de cada estudante. <br>
@@ -874,6 +945,7 @@ CREATE TABLE IF NOT EXISTS tests (
 _______________________
 
 &nbsp;&nbsp;&nbsp;&nbsp; A tabela score_test documenta o rendimento dos utilizadores em testes conduzidos na ferramenta. Quando um usuário realiza um teste, essa tabela registra o número do teste realizado (id_test), o nome do usuário responsável (id_user), a pontuação obtida (score) e as datas e horas de início e término (started_at, ended_at). <br>
+
 &nbsp;&nbsp;&nbsp;&nbsp; Para o usuário, isso implica que seu avanço e desempenho nas avaliações são monitorados de maneira individual e clara. Ele tem a capacidade de analisar seu histórico de desempenho, determinar em quais testes se saiu melhor ou precisa aprimorar, e utilizar esses dados para acompanhar sua progressão ao longo dos anos. Ademais, a pontuação pode atuar como estímulo para alcançar melhores performances e pode ser empregada para liberar materiais, emitir certificados ou formar notas finais, tornando a experiência de aprendizado mais clara. <br>
 
 ```sql
@@ -1120,6 +1192,13 @@ Descreva os principais segmentos de mercado a serem atendidos pela aplicação. 
 <a name="c16">[8]</a> FERRAMENTAS DA QUALIDADE. Matriz de Riscos – Matriz de Probabilidade e Impacto. Disponível em: https://ferramentasdaqualidade.org/matriz-de-riscos-matriz-de-probabilidade-e-impacto/. Acesso em: 20/04/25.
 
 <a name="c16">[9]</a>HEUSER, C. A. Projeto de Banco de Dados. 6. ed. Porto Alegre: Bookman, 2009.
+
+
+<a name="c16">[10] </a> NORMAN, Donald A. O design do dia a dia. 2. ed. Rio de Janeiro: Rocco, 2016
+
+<a name="c16">[8]</a> LIDWELL, William; HOLDEN, Kritina; BUTLER, Jill. Princípios universais do design. 2. ed. Rio de Janeiro: Gustavo Gili, 2019. //griddesktop// paleta de cores
+
+<a name="c16">[8]</a>  BRINGHURST, Robert. Os elementos do estilo tipográfico. São Paulo: Cosac Naify, 2005.
 
 INTELI. Adalove. Disponível em: https://adalove.inteli.edu.br/feed. Acesso em: 15/04/2025. <br>
 
