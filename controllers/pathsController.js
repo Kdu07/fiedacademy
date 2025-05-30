@@ -1,12 +1,18 @@
 // controllers/trilhaController.js
-const pathModel = require('../models/pathModel');
+const pathsModel = require('../models/pathsModel');
 
 exports.index = async (req, res) => {
+  /*
   try {
     const pathId = req.params.id; // Supondo rota /trilhas/:id
-    const path = await pathModel.getPathWithModule(pathId);
+    const path = await pathsModel.getPathWithModule(pathId);
     res.render('pages/paths', { path });
   } catch (err) {
     res.status(500).send('Erro ao carregar a trilha');
   }
+  */
+
+  
+  const path = await pathsModel.getPathWithModules(req.params.id);
+  res.render('paths', { path });
 };

@@ -2,8 +2,7 @@ const express = require('express');
 const router = express.Router();
 require('dotenv').config();
 const home = require('../controllers/homeController');
-const login = require('../controllers/loginController');
-const path = require('../controllers/pathController');
+const paths = require('../controllers/pathsController');
 const content = require('../controllers/contentController');
 const help = require('../controllers/helpController');
 const moduleController = require('../controllers/ModuleController');
@@ -18,7 +17,7 @@ router.get('/module/:id/page/:page_id', moduleController.index)
 router.get('/', home.index);
 
 // Rota de paths
-router.get('/paths', path.index);
+router.get('/paths/:id', paths.index);
 
 // Rota de content
 router.get('/content/:id', content.index);
@@ -31,8 +30,5 @@ router.get('/help', help.index);
 
 // E aqui você usa, depois das rotas principais:
     // router.use(pathRoutes);
-
-// Isso faz com que todas as rotas definidas em pathRoutes.js sejam reconhecidas
-
 
 module.exports = router;

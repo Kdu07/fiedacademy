@@ -19,7 +19,7 @@ app.use(express.static('public')); // <-- Define a pasta public como estática
 app.use('/', indexRoutes);
 
 // Usa as rotas de trilhas dinâmicas
-app.use('/paths', pathsRoutes);
+// app.use('/paths', pathsRoutes);
 
 // Define a route to render the index.ejs file
 app.get('/', (req, res) => {
