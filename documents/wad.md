@@ -1094,13 +1094,27 @@ Novamente, a consulta só será executada com êxito se ambas as proposições A
 &nbsp;&nbsp;&nbsp;&nbsp;Na Sprint 2, foi iniciado o desenvolvimento do banco de dados, com as funcionalidades necessárias para o funcionamento do website. Essa etapa foi importante para um entendimento mais aprofundado de banco de dados e consultas SQL. Paralelamente, aprofundamo-nos no modelo MVC, necessário para a estruturação do código do projeto.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;Na Sprint 3, antes da prototipação inicial, foi criado o guia de estilos (seção 3.3 do WAD), importante para que toda a equipe seguisse um mesmo padrão de UX Design durante o desenvolvimento do projeto. No guia foram definidas as cores principais, a tipografia a ser utilizada, a iconografia e as imagens, padronizando os elementos visuais que serão seguidos ao longo do desenvolvimento. <br> 
 Com o guia de estilos definido, para facilitar o desenvolvimento de cada funcionalidade do website, foi feita a prototipação de alta fidelidade das telas que seriam desenvolvidas. Para mais detalhes do protótipo, acesse este [link](https://www.figma.com/design/bOsRfHBpYqRksHS4GiNW74/bayer-project?node-id=3664-2&t=BTBf5Vqe9DNHOrw0-1) no Figma.  
-&nbsp;&nbsp;&nbsp;&nbsp; A partir da prototipação, foi iniciado o desenvolvimento em código do site, seguindo o padrão MVC (Models, Views e Controllers). Para a entrega da Sprint 3, foram desenvolvidas cinco telas principais, voltadas ao PTD:<br>
+&nbsp;&nbsp;&nbsp;&nbsp; A partir da prototipação, foi iniciado o desenvolvimento em código do site, seguindo o padrão MVC (Models, Views e Controllers). Para a entrega da Sprint 3, foram desenvolvidas cinco telas principais:<br>
+
 **Tela de login**: Onde o usuário faz seu cadastro na plataforma ou entra diretamente através de sua conta.
 <div align = "center">
 
 <sup>Figura X: Tela de login.</sup><br>
 
-<img src="../assets/assets_wad/modelagem_relacional_FieldAcademy.png"><br>
+<img src="../assets/assets_wad/telaLogin.png" width="300"><br>
+
+<sub>Fonte: Material produzido pelos autores (2025). </sub><br>
+
+</div>
+
+**Tela de Home**: Onde o usuário terá acesso à busca rápida, help (onde ele encontra conteúdos por tópicos), trilhas e conteúdos favoritados.
+
+<div align = "center">
+
+<sup>Figura X: Tela de Home.</sup><br>
+
+<img src="../assets/assets_wad/telaHome1.png" width="300"><br>
+<img src="../assets/assets_wad/telaHome2.png" width="300"><br>
 
 <sub>Fonte: Material produzido pelos autores (2025). </sub><br>
 
