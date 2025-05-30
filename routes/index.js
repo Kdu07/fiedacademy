@@ -21,4 +21,5 @@ router.get('/content', content.index);
 // Rota de help
 router.get('/help', help.index);
 
+
 module.exports = router;
