@@ -84,7 +84,7 @@ Aqui encontram-se todas as instruções necessárias para a instalação de todo
     * 
 * 0.4.0 - XX/XX/2025
     * 
-* 0.3.0 - XX/XX/2025
+* 0.3.0 - Prototipação de alta fidelidade (MockUp) e Arquiteru de Software MVC 
     * 
 * 0.2.0 - 15/06/2025 - Prototipação de baixa fidelidade e construção do banco de dados.
     * 
