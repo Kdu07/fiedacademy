@@ -21,4 +21,12 @@ router.get('/content', content.index);
 // Rota de help
 router.get('/help', help.index);
 
+// Aqui você importa o novo arquivo de rotas
+const trilhaRoutes = require('./trilhaRoutes');
+
+// E aqui você usa, depois das rotas principais:
+router.use(trilhaRoutes);
+
+// Isso faz com que todas as rotas definidas em trilhaRoutes.js sejam reconhecidas
+
 module.exports = router;
