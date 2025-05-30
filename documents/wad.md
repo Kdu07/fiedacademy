@@ -469,16 +469,17 @@ Tela | Recursos | User Story
 
 ## 3.3. Guia de estilos (sprint 3)
 
-*Descreva aqui orientações gerais para o leitor sobre como utilizar os componentes do guia de estilos de sua solução*
+&nbsp;&nbsp;&nbsp;&nbsp; No contexto do desenvolvimento de projetos acadêmicos orientados por metodologias ágeis, a adoção de um guia de estilos revela-se uma prática essencial para assegurar consistência, padronização e eficiência na construção de produtos digitais. O guia de estilos constitui-se como um documento que organiza e define diretrizes visuais e comunicacionais, abrangendo aspectos como tipografia, paleta de cores, iconografia, espaçamento, componentes de interface e tom de voz. Sua aplicação sistemática contribui para a coerência estética do produto e facilita a comunicação entre os integrantes da equipe. <br>
 
-&nbsp;&nbsp;&nbsp;&nbsp; O Guia de Estilos serve como referência oficial para todos os envolvidos no projeto, garantindo consistência visual, clareza de comunicação e aplicação correta dos elementos da marca.  <br>
+&nbsp;&nbsp;&nbsp;&nbsp; Considerando que este projeto é desenvolvido por estudantes em processo de formação, o guia de estilos cumpre também um papel pedagógico, ao estruturar o trabalho colaborativo de maneira mais clara e objetiva. Sua utilização tem proporcionado maior alinhamento entre os membros da equipe, redução de inconsistências visuais e agilidade nas tomadas de decisão ao longo das iterações. Dessa forma, o guia de estilos atua não apenas como instrumento técnico, mas como um elemento estratégico de apoio à organização, à aprendizagem contínua e à consolidação de práticas colaborativas em ambientes educacionais baseados em metodologias ágeis. <br>
 
-
-!!!!!!!!!!!!!!!!!!!!!!
+&nbsp;&nbsp;&nbsp;&nbsp; Em suma, o Guia de Estilos serve como referência oficial para todos os envolvidos no projeto, garantindo consistência visual, clareza de comunicação e aplicação correta dos elementos da marca.  <br>
 
 ### 3.3.1 Cores
 
-*Apresente aqui a paleta de cores, com seus códigos de aplicação e suas respectivas funções*
+&nbsp;&nbsp;&nbsp;&nbsp; A paleta de cores de um projeto consiste no conjunto de cores previamente selecionadas para representar visualmente a identidade do produto digital em todos os seus elementos gráficos e funcionais. Essa paleta inclui cores primárias, secundárias, de destaque e de fundo, que devem ser utilizadas de forma sistemática em interfaces, componentes, textos e elementos de navegação. Seu propósito é assegurar uniformidade visual, fortalecer a comunicação da marca e facilitar a percepção do usuário ao interagir com o sistema. <br>
+
+&nbsp;&nbsp;&nbsp;&nbsp; A adoção de uma paleta de cores bem estruturada e alinhada entre os designers e a equipe de desenvolvimento front-end é essencial para garantir coerência estética e funcionalidade técnica. Em ambientes colaborativos, especialmente no contexto de projetos acadêmicos baseados em metodologias ágeis, essa padronização contribui para a consistência visual entre protótipos e implementações, reduz retrabalho, otimiza a comunicação entre os membros da equipe e assegura a acessibilidade por meio de contrastes adequados. A padronização cromática ainda reforça a identidade do produto, tornando-o mais reconhecível e profissional perante os usuários. <br>
 
 <div align = "center">
 <sup>Figura 8: Tipografia </sup><br>
@@ -494,10 +495,10 @@ Cor priméria mais clara| Verde claro | #D2EEAE | Cor para destacar fundo de car
 Cor de composição | Azul | #0091DF | Cor ultilizada para barra de progresso, botões secundárias, caixa de notificações, perfil do ranking, o rodapé da página do FieldAcaemy. 
 Cor de composição | Cinza | #D9D9D9 | undo de cards, divisores, bordas. 
 Fundo de cards, divisores, bordas |
-Cor Texto primária| Texto escuro | #1F1C1C
-Texto principal sobre fundos claros|
-Cor Texto secundário| Texto claro | #FFFFFF
-Texto para fundos escuros ou botões | aaa |  coloridos fortes
+Cor Texto primária| Texto escuro | #1F1C1C| |
+Texto principal sobre fundos claros| |
+Cor Texto secundário| Texto claro | #FFFFFF | |
+Texto para fundos escuros ou botões | aaa |  coloridos fortes. | |
 
 
 ### 3.3.2 Tipografia
@@ -777,7 +778,7 @@ CREATE TABLE IF NOT EXISTS content (
 7. order: Ordem do conteúdo dentro do módulo.
 8. due_time: Prazo ou data limite para acessar o conteúdo.
 
-// hdubb jneetsgoiie hbasoi roubaram mminha tav qo eu wu nhago qeu fazer gator. 
+
 ______________________
 
 &nbsp;&nbsp;&nbsp;&nbsp; A tabela emphasis influencia diretamente a experiência do usuário em uma plataforma de e-learning ou sistema educacional ao permitir que determinados conteúdos ou módulos sejam destacados ou priorizados para cada pessoa. Na prática, ela possibilita que o sistema marque quais materiais são mais importantes, urgentes ou recomendados para um usuário específico, geralmente com uma data limite para conclusão (due_date). Assim, o usuário pode visualizar facilmente o que deve focar primeiro em sua trilha de aprendizagem, facilitando o acompanhamento do progresso, a organização dos estudos e a priorização de tarefas. Esse tipo de funcionalidade é comum em sistemas de gestão de aprendizagem (LMS), pois ajuda a tornar o aprendizado mais personalizado, eficiente e alinhado às necessidades individuais de cada estudante. <br>
@@ -1207,7 +1208,7 @@ Descreva os principais segmentos de mercado a serem atendidos pela aplicação. 
 
 <a name="c16">[10] </a> NORMAN, Donald A. O design do dia a dia. 2. ed. Rio de Janeiro: Rocco, 2016
 
-<a name="c16">[8]</a> LIDWELL, William; HOLDEN, Kritina; BUTLER, Jill. Princípios universais do design. 2. ed. Rio de Janeiro: Gustavo Gili, 2019. //griddesktop
+<a name="c16">[8]</a> LIDWELL, William; HOLDEN, Kritina; BUTLER, Jill. Princípios universais do design. 2. ed. Rio de Janeiro: Gustavo Gili, 2019. //griddesktop// paleta de cores
 
 <a name="c16">[8]</a>  BRINGHURST, Robert. Os elementos do estilo tipográfico. São Paulo: Cosac Naify, 2005.
 
