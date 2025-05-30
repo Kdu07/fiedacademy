@@ -399,7 +399,7 @@ Critério de aceite 5 | CR5: Histórico de relatórios exportados fica disponív
 
 ## 3.1. Arquitetura (sprints 3 e 4)
 
-*Posicione aqui o diagrama de arquitetura da sua solução de aplicação web. Atualize sempre que necessário*
+<img src="../assets/assets_wad/arquiteturaSolucao.png">
 
 ## 3.2. Wireframes (sprint 2)
 Wireframe é um rascunho visual que mostra a estrutura básica de uma interface, focando na organização dos elementos e na navegação, sem detalhar o design final.
@@ -930,11 +930,8 @@ __________________
 
 ### 3.5.2. Consultas SQL e lógica proposicional (sprint 2)
 
-<<<<<<< Updated upstream
 #### **Expressão SQL - 1:** 
 
-=======
->>>>>>> Stashed changes
 *Template de SQL + lógica proposicional*
 #1 | ---
 --- | ---
