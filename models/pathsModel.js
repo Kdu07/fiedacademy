@@ -39,7 +39,7 @@ const path = {
   return path;
 };
 
-// Teste isolado (remova ou comente em produção)
+// Teste isolado
 if (require.main === module) {
   (async () => {
     try {
