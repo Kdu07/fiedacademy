@@ -15,8 +15,14 @@ app.use(express.static('public')); // <-- Define a pasta public como estática
 
 // Usa as rotas principais
 app.use('/', indexRoutes);
+
 // Usa as rotas de trilhas dinâmicas
 app.use('/paths', pathsRoutes);
+
+// Define a route to render the index.ejs file
+app.get('/', (req, res) => {
+    res.render('index', { message: 'Hello, World!' });
+});
 
 // Inicia o servidor
 app.listen(3000, () => {
