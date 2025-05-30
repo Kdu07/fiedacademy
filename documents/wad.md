@@ -493,8 +493,7 @@ Recomendação Aplicada| Nome da cor | Hex | Função
 Cor primária | Verde | #66B512 | Cor para destacar tanto fundo, quanto botões principais, destaques, header, ícones 
 Cor priméria mais clara| Verde claro | #D2EEAE | Cor para destacar fundo de cards e botões secundários. 
 Cor de composição | Azul | #0091DF | Cor ultilizada para barra de progresso, botões secundárias, caixa de notificações, perfil do ranking, o rodapé da página do FieldAcaemy. 
-Cor de composição | Cinza | #D9D9D9 | undo de cards, divisores, bordas. 
-Fundo de cards, divisores, bordas |
+Cor de composição | Cinza | #D9D9D9 | Fundo de cards, divisores, bordas. 
 Cor Texto primária| Texto escuro | #1F1C1C| |
 Texto principal sobre fundos claros| |
 Cor Texto secundário| Texto claro | #FFFFFF | |
@@ -503,37 +502,33 @@ Texto para fundos escuros ou botões | aaa |  coloridos fortes. | |
 
 ### 3.3.2 Tipografia
 
-*Apresente aqui a tipografia da solução, com famílias de fontes e suas respectivas funções*
 
 &nbsp;&nbsp;&nbsp;&nbsp; A tipografia padroniza a leitura e reforça a identidade da marca. Especifique fontes, tamanhos, pesos, espaçamentos e exemplos de uso. Ela  define as fontes, tamanhos, pesos e estilos utilizados em todos os textos da interface. Ela estabelece uma hierarquia visual clara, facilita a leitura e reforça a identidade da marca. <br>
 
 &nbsp;&nbsp;&nbsp;&nbsp;  A tipografia é um elemento essencial na construção da identidade visual de uma interface. Ela influencia diretamente na legibilidade e na percepção da marca. Em um guia de estilos, a definição tipográfica deve incluir as famílias tipográficas utilizadas (ex: sans-serif ou serif), tamanhos, pesos (light, regular, bold), espaçamentos (entre letras e linhas) e hierarquia de títulos (H1, H2, H3 etc.) e parágrafos. <br>
 
-&nbsp;&nbsp;&nbsp;&nbsp;   É fundamental garantir contraste suficiente entre texto e fundo para atender critérios de acessibilidade. A padronização tipográfica no guia de estilos contribui para a coesão visual em todos os materiais da marca ou produto digital. <br>
-
-<div align = "center">
-<sup>Figura 8: Tipografia </sup><br>
-<img src="assets/assets_wad/Tipografia.png"> 
+![](../assets/assets_wad/Tipografia.png)
+<img src=
 
 <sup>Fonte: Material produzido pelos autores (2025).</sup><br>
 </div>
+
+&nbsp;&nbsp;&nbsp;&nbsp;   É fundamental garantir contraste suficiente entre texto e fundo para atender critérios de acessibilidade. A padronização tipográfica no guia de estilos contribui para a coesão visual em todos os materiais da marca ou produto digital. <br>
 
 
 ### 3.3.3 Iconografia e imagens 
 
-&nbsp;&nbsp;&nbsp;&nbsp; A iconografia no design de interfaces refere-se ao uso sistemático de ícones como elementos gráficos que representam ações, objetos ou ideias. Ícones são recursos visuais que auxiliam na comunicação rápida e intuitiva com o usuário, reduzindo a dependência de texto e melhorando a usabilidade. Para garantir clareza e consistência, os ícones devem seguir princípios de simplicidade, legibilidade, universalidade e coerência com a identidade visual da marca ou produto.
+&nbsp;&nbsp;&nbsp;&nbsp; A iconografia no design de interfaces refere-se ao uso sistemático de ícones como elementos gráficos que representam ações, objetos ou ideias. Ícones são recursos visuais que auxiliam na comunicação rápida e intuitiva com o usuário, reduzindo a dependência de texto e melhorando a usabilidade. Para garantir clareza e consistência, os ícones devem seguir princípios de simplicidade, legibilidade, universalidade e coerência com a identidade visual da marca ou produto. <br>
 
-Ao definir um sistema de iconografia, é necessário padronizar estilos (traço, espessura, preenchimento), tamanhos, espaçamentos e significados. Esses elementos devem estar descritos no guia de estilos da interface, promovendo uma linguagem visual coesa entre diferentes telas e dispositivos. Ícones interativos devem apresentar feedback visual (como mudança de cor ao passar o cursor) para indicar funcionalidade.
+&nbsp;&nbsp;&nbsp;&nbsp; Ao definir um sistema de iconografia, é necessário padronizar estilos (traço, espessura, preenchimento), tamanhos, espaçamentos e significados. Esses elementos devem estar descritos no guia de estilos da interface, promovendo uma linguagem visual coesa entre diferentes telas e dispositivos. Ícones interativos devem apresentar feedback visual (como mudança de cor ao passar o cursor) para indicar funcionalidade. <br>
 
- A iconografia reúne todos os ícones utilizados na interface, padronizando seu estilo, tamanho, cor e aplicação. Os ícones devem ser facilmente reconhecíveis, reforçando ações e informações sem gerar ambiguidade. <br>
+ &nbsp;&nbsp;&nbsp;&nbsp; A iconografia reúne todos os ícones utilizados na interface, padronizando seu estilo, tamanho, cor e aplicação. Os ícones devem ser facilmente reconhecíveis, reforçando ações e informações sem gerar ambiguidade. <br>
 
-<div align = "center">
-<sup>Figura 8: Tipografia </sup><br>
-<img src= "assets/assets_wad/iconografia (1).png"> 
-<sup>Fonte: Material produzido pelos autores (2025).</sup><br>
-</div>
+![alt text](<../assets/assets_wad/iconografia (1).png>)
 
-#### NavBar Mobile
+<br>
+
+#### Barra de Navegação Mobile
 
 Icone | Funcionalidade | 
 --- | ---|
@@ -545,9 +540,9 @@ Mapas e dados | 	Mostra mapas interativos e dados georreferenciados para anális
 Data inbox e integração| Centraliza dados recebidos e integrações com outros sistemas ou dispositivos. |
 <br>
 
-#### NavBar
+#### Barra de Navegação Desktop
 
-Icone | Funcionalidade | 
+png| Icone | Funcionalidade | 
  --- | ---|
 Perfil | Visualiza e edita dados do usuário, foto e configurações pessoais.|
 Barra de Navegação | Abre/fecha o menu lateral de navegação do sistema. | 
@@ -573,9 +568,9 @@ Curtir/Descurtir (like/dislike)|Avalia conteúdos, módulos ou funcionalidades c
 <br>
 
 ## 3.4 Protótipo de alta fidelidade (sprint 3)
-Protótipos de alta fidelidade são representações visuais altamente detalhadas de um produto digital, como aplicativos, sites ou sistemas. Eles imitam com grande precisão a aparência final da interface e, muitas vezes, simulam também interações, transições e fluxos de navegação. Esses protótipos incluem cores, tipografias, imagens, ícones e elementos gráficos que corresponde a basicamente todo o front-end do projeto, onde trabalhamos para manter a identidade visual do parceiro. <br>
+&nbsp;&nbsp;&nbsp;&nbsp; Protótipos de alta fidelidade são representações visuais altamente detalhadas de um produto digital, como aplicativos, sites ou sistemas. Eles imitam com grande precisão a aparência final da interface e, muitas vezes, simulam também interações, transições e fluxos de navegação. Esses protótipos incluem cores, tipografias, imagens, ícones e elementos gráficos que corresponde a basicamente todo o front-end do projeto, onde trabalhamos para manter a identidade visual do parceiro. <br>
 
-Os protótipos de alta fidelidade servem principalmente para permitir uma visualização precisa do produto final, facilitando que todas as partes interessadas, como stakeholders, clientes e desenvolvedores, compreendam claramente o design e validem as soluções propostas antes da codificação. Eles também são essenciais para garantir o alinhamento entre as equipes de design, desenvolvimento e produto, funcionando como uma referência visual concreta do que será construído. Além disso, esses protótipos são frequentemente utilizados em testes de usabilidade, onde se simula a experiência final do usuário para coletar feedbacks sobre a navegação, compreensão e interação com a interface. Isso permite identificar e corrigir problemas antes que sejam feitos investimentos significativos na fase de desenvolvimento. <br>
+&nbsp;&nbsp;&nbsp;&nbsp;Os protótipos de alta fidelidade servem principalmente para permitir uma visualização precisa do produto final, facilitando que todas as partes interessadas, como stakeholders, clientes e desenvolvedores, compreendam claramente o design e validem as soluções propostas antes da codificação. Eles também são essenciais para garantir o alinhamento entre as equipes de design, desenvolvimento e produto, funcionando como uma referência visual concreta do que será construído. Além disso, esses protótipos são frequentemente utilizados em testes de usabilidade, onde se simula a experiência final do usuário para coletar feedbacks sobre a navegação, compreensão e interação com a interface. Isso permite identificar e corrigir problemas antes que sejam feitos investimentos significativos na fase de desenvolvimento. <br>
 
 ## Protótipo da tela de home, versão gestor, desktop:
 
