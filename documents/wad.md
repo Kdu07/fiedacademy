@@ -553,6 +553,7 @@ Download | 	Realiza o download de arquivos, relatórios ou dados da plataforma.|
 Lixeira | Acessa itens excluídos, permitindo restaurar ou excluir definitivamente conteúdos.|
 <br>
 
+
 Icone | Funcionalidade | 
 --- | ---|
 Adicionar | Cria ou cadastra um novo item, pedido ou módulo. |
@@ -643,7 +644,6 @@ Segue o link de todos os protótipos do nosso projeto : https://www.figma.com/de
 ## 3.5. Modelagem do banco de dados (sprints 2 e 4)
 
 ### 3.5.1. Modelo relacional (sprints 2 e 4)
-
 
 
 &nbsp;&nbsp;&nbsp;&nbsp;  O banco de dados mostrado adere aos fundamentos da modelagem relacional, como explicado por Heuser[9], organizando a informação em tabelas que simbolizam entidades do campo educacional, tais como usuários, módulos, conteúdos, trilhas, certificados, avaliações e permissões. Cada tabela é formada por linhas (tuplas) e colunas (atributos), assegurando a integridade dos dados através de restrições como chaves primárias - que identificam cada registro de maneira exclusiva - e chaves estrangeiras, encarregadas de criar conexões entre as tabelas, como a conexão entre usuários e suas funções, conteúdos e módulos, ou certificados e trilhas. Esta metodologia possibilita a representação clara e organizada dos componentes do mundo real, simplificando a implementação, conservação e ampliação do sistema de informação. <br>
