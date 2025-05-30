@@ -13,7 +13,7 @@ router.get('/module/:id/page/:page_id', moduleController.index)
 
 // Rota de login
 router.get('/', login.index);
-
+    
 // Rota da home
 router.get('/home', home.index);
 
