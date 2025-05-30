@@ -1,29 +1,19 @@
-/* const express = require('express');
-const path = require("path");
-require('dotenv').config();
-
+const express = require('express');
 const app = express();
-const PORT = 3000;
+const path = require('path');
 
-// Middleware para processar JSON
-app.use(express.json());
+// Set EJS as the view engine
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
 
-// Configura o mecanismo de views para EJS
-app.set("view engine", "ejs");
-
-// Define onde ficam as views
-app.set("views", path.join(__dirname, "views"));
-
-// Define a pasta pública com CSS e outros arquivos estáticos
-app.use(express.static(path.join(__dirname, "public")));
-
-// Rotas
-const routes = require('./routes/index');
-app.use('/', routes);
-
-// Inicializa o servidor
-app.listen(PORT, () => {
-  console.log(`Servidor rodando na porta ${PORT}`); 
+// Define a route to render the index.ejs file
+app.get('/', (req, res) => {
+    res.render('index', { message: 'Hello, World!' });
 });
 
-*/
+// Start the server
+const PORT = 3000;
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});
+

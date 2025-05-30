@@ -1,178 +1,71 @@
+<%
+// MOCK LOCAL para teste sem backend: 
+const trilha = {
+  id: 1,
+  title: "Onboarding",
+  modules: [
+    {
+      id: 1,
+      title: "O que é FieldView",
+      order: 1,
+      progresso: 30 // dado simulado a partir da tabela `user_content_progress`
+    },
+    {
+      id: 2,
+      title: "Como instalar FieldView",
+      order: 2,
+      progresso: 10
+    },
+    {
+      id: 3,
+      title: "Boas práticas",
+      order: 3,
+      progresso: 0
+    }
+  ]
+};
+%>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= typeof trilha !== 'undefined' ? trilha.nome : 'Trilha de Estudos' %></title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4; /* Light grey background for the page */
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-
-        .header {
-            background-color: #8BC34A; /* Green header */
-            padding: 15px 20px;
-            display: flex;
-            align-items: center;
-            color: white;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .header .menu-icon {
-            font-size: 24px;
-            cursor: pointer;
-            margin-right: 20px;
-        }
-
-        .header .search-bar {
-            flex-grow: 1;
-            margin-right: 20px;
-        }
-
-        .header .search-bar input {
-            width: 100%;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 20px; /* Rounded search bar */
-            font-size: 16px;
-        }
-
-        .header .notification-icon {
-            font-size: 24px;
-            cursor: pointer;
-        }
-
-        .main-content {
-            padding: 20px;
-            flex-grow: 1;
-            overflow-y: auto; /* Allows content to scroll if it overflows */
-        }
-
-        .trail-title {
-            font-size: 24px;
-            font-weight: bold;
-            color: #333;
-            margin-bottom: 20px;
-        }
-
-        .module-card {
-            background-color: white;
-            border: 1px solid #e0e0e0;
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        .module-card h3 {
-            margin-top: 0;
-            margin-bottom: 15px;
-            font-size: 18px;
-            color: #333;
-        }
-
-        .progress-bar-container {
-            background-color: #e0e0e0; /* Grey background for progress bar */
-            border-radius: 10px;
-            height: 15px; /* Adjusted height to better match mockup */
-            overflow: hidden;
-            margin-bottom: 20px; /* Space between progress bar and button */
-        }
-
-        .progress-bar {
-            background-color: #2196F3; /* Blue progress */
-            height: 100%;
-            border-radius: 10px 0 0 10px; /* Keep left radius if progress > 0 */
-            transition: width 0.3s ease-in-out;
-        }
-        .progress-bar.full {
-            border-radius: 10px; /* Full radius if 100% */
-        }
-
-
-        .module-card button {
-            background-color: #8BC34A; /* Green button */
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 14px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .module-card button .arrow {
-            margin-left: 8px;
-            font-weight: bold;
-        }
-
-        .footer {
-            background-color: #8BC34A; /* Green footer */
-            color: #505050; /* Darker text for contrast, adjust as needed */
-            padding: 15px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 14px;
-            position: sticky;
-            bottom: 0;
-            z-index: 1000;
-        }
-        .footer a {
-            color: #505050;
-            text-decoration: none;
-            margin: 0 10px;
-        }
-         .footer a:hover {
-            text-decoration: underline;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title><%= trilha.title %> | Trilha Onboarding </title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
 
-    <header class="header">
-        <div class="menu-icon">&#9776;</div>
-        <div class="search-bar">
-            <input type="text" placeholder="Buscar...">
-        </div>
-        <div class="notification-icon">&#128276;</div>
-    </header>
+  <!-- Cabeçalho -->
+  <%- include('../partials/header') %>
 
-    <main class="main-content">
-        <h2 class="trail-title"><%= typeof trilha !== 'undefined' ? trilha.nome : 'Trilha Básica' %></h2>
+  <!-- Trilhas -->
+  <div class="min-h-screen p-6 max-w-4xl mx-auto">
+    <h1 class="text-3xl font-bold text-green-800 mb-8">Trilha: <%= trilha.title %></h1>
 
-        <% if (typeof trilha !== 'undefined' && trilha.modulos && trilha.modulos.length > 0) { %>
-            <% trilha.modulos.forEach(function(modulo) { %>
-                <div class="module-card">
-                    <h3><%= modulo.nome %></h3>
-                    <div class="progress-bar-container">
-                        <div class="progress-bar <% if (modulo.progresso === 100) { %>full<% } %>" style="width: <%= modulo.progresso %>%;"></div>
-                    </div>
-                    <button onclick="location.href='<%= modulo.link || '#' %>' ">
-                        <%= modulo.progresso > 0 && modulo.progresso < 100 ? 'Continuar' : (modulo.progresso === 100 ? 'Revisar' : 'Iniciar') %>
-                        <span class="arrow">&rarr;</span>
-                    </button>
-                </div>
-            <% }); %>
-        <% } else { %>
-            <p>Nenhum módulo encontrado para esta trilha.</p>
-        <% } %>
-    </main>
+  <% trilha.modules
+   .sort((a, b) => a.order - b.order) // garante que os modulos vem na ordem
+   .forEach((modulo, index) => { %>
+  
+  <!-- Módulos -->
+  <div class="border rounded-xl p-5 mb-6 shadow-md">
+    <h2 class="text-xl font-semibold text-green-800 mb-2">Módulo <%= index + 1 %> - <%= modulo.title %></h2>
 
-    <footer class="footer">
-        <div><a href="#">Sobre nós</a></div>
-        <div><a href="#">FieldView</a></div>
-        <div><a href="#">Bayer</a></div>
-    </footer>
+  <!-- Barra de progresso -->
+    <div class="w-full h-3 bg-gray-200 rounded-full mb-4">
+      <div class="h-full bg-cyan-400 rounded-full" style="width: <%= modulo.progresso %>%;">
+      </div>
 
+  <!-- Botão de continuar -->
+    </div>
+    <a href="/conteudo/<%= modulo.id %>" class="bg-lime-200 hover:bg-lime-300 text-black px-4 py-2 rounded shadow flex items-center gap-2 w-fit">
+      <%= modulo.progresso > 0 ? "Continuar" : "Iniciar" %> <span>→</span>
+    </a>
+  </div>
+<% }); %>
+</div>
+<!-- Rodapé -->
+  <%- include('../partials/footer') %>
+  
 </body>
 </html>
+

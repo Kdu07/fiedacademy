@@ -1,7 +1,10 @@
-const pool = require("../config/db");
+const bookmarksModel = require('../models/bookmarksModel')
+const pathsModel = require('../models/pathsModel')
 
-exports.index = async (req, res) => {
-  const userId = 1; // Supondo que você salva o id do usuário na sessão
+module.exports.index = async (req, res) => { 
+    const bookmarks = await bookmarksModel.getAll();
+    const paths = await pathsModel.getAll();
 
-  res.render("pages/home", {});
+    console.log(paths);
+    res.render('home', { paths, bookmarks });
 };

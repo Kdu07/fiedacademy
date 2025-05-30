@@ -96,3 +96,5 @@ CREATE TABLE IF NOT EXISTS feedbacks_content_module (
   rating SMALLINT,
   created_at TIMESTAMP
 );
+
+-- CREATE TABLE IF NOT EXISTS LOGS
