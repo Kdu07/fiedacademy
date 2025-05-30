@@ -1120,7 +1120,6 @@ Com o guia de estilos definido, para facilitar o desenvolvimento de cada funcion
 
 </div>
 
-
 **Tela de Trilhas**: Onde o usuário terá acesso aos módulos de cada trilha.
 
 <div align = "center">
@@ -1137,7 +1136,7 @@ Com o guia de estilos definido, para facilitar o desenvolvimento de cada funcion
 
 <div align = "center">
 
-<sup>Figura X: Tela de Home.</sup><br>
+<sup>Figura X: Tela de Conteudos.</sup><br>
 
 <img src="../assets/assets_wad/telaConteudo.png" width="300"><br>
 
@@ -1145,8 +1144,18 @@ Com o guia de estilos definido, para facilitar o desenvolvimento de cada funcion
 
 </div>
 
+**Tela de Help**: Onde o usuário terá acesso a cards com temas específicos e perguntas frequentes.
 
-*Descreva e ilustre aqui o desenvolvimento da sua primeira versão do sistema web, explicando brevemente o que foi entregue em termos de código e sistema. Utilize prints de tela para ilustrar. Indique as eventuais dificuldades e próximos passos.*
+<div align = "center">
+
+<sup>Figura X: Tela de Help.</sup><br>
+
+<img src="../assets/assets_wad/telaHelp.png" width="300"><br>
+
+<sub>Fonte: Material produzido pelos autores (2025). </sub><br>
+
+</div>
+
 
 ## 4.2. Segunda versão da aplicação web (sprint 4)
 
