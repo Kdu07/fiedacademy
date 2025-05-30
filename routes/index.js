@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const home = require('../controllers/homeController');
 const login = require('../controllers/loginController');
-const paths = require('../controllers/pathsController');
+const paths = require('../controllers/pathController');
 const content = require('../controllers/contentController');
 const help = require('../controllers/helpController');
 
@@ -22,11 +22,11 @@ router.get('/content', content.index);
 router.get('/help', help.index);
 
 // Aqui você importa o novo arquivo de rotas
-const trilhaRoutes = require('./trilhaRoutes');
+    //  const pathRoutes = require('./pathRoutes');
 
 // E aqui você usa, depois das rotas principais:
-router.use(trilhaRoutes);
+    // router.use(pathRoutes);
 
-// Isso faz com que todas as rotas definidas em trilhaRoutes.js sejam reconhecidas
+// Isso faz com que todas as rotas definidas em pathRoutes.js sejam reconhecidas
 
 module.exports = router;
