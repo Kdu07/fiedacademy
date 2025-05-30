@@ -12,10 +12,10 @@ const moduleController = require('../controllers/ModuleController');
 router.get('/module/:id/page/:page_id', moduleController.index)
 
 // Rota de login
-router.get('/', login.index);
+// router.get('/', login.index);
     
 // Rota da home
-router.get('/home', home.index);
+router.get('/', home.index);
 
 // Rota de paths
 router.get('/paths', paths.index);

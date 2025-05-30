@@ -1,5 +1,5 @@
-const bookmarksModel = require('../models/BookmarksModel')
-const pathsModel = require('../models/PathsModel')
+const bookmarksModel = require('../models/bookmarksModel')
+const pathsModel = require('../models/pathsModel')
 
 module.exports.index = async (req, res) => { 
     const bookmarks = await bookmarksModel.getAll();
