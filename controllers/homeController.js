@@ -29,7 +29,7 @@ exports.index = async (req, res) => {
 
     // Buscar bookmarks do usuário
     const bookmarksResult = await pool.query(`
-      SELECT c.id, c.doc_path, c.video_path, c.img_path, c."order", c.highlight, m.title as module_title
+      SELECT c.id, c.doc_path, c.video_path, c.img_path, c.highlight, m.title as module_title
       FROM bookmarks b
       JOIN content c ON c.id = b.id_content
       JOIN module m ON m.id = c.module_id

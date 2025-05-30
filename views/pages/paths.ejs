@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= typeof trilha !== 'undefined' ? trilha.nome : 'Trilha de Estudos' %></title>
+    <title><%= typeof trilha !== 'undefined' ? trilha.name : 'Trilha de Estudos' %></title>
     <style>
         body {
             margin: 0;
@@ -148,17 +148,17 @@
     </header>
 
     <main class="main-content">
-        <h2 class="trail-title"><%= typeof trilha !== 'undefined' ? trilha.nome : 'Trilha Básica' %></h2>
+        <h2 class="trail-title"><%= typeof trilha !== 'undefined' ? trilha.name : 'Trilha Básica' %></h2>
 
-        <% if (typeof trilha !== 'undefined' && trilha.modulos && trilha.modulos.length > 0) { %>
-            <% trilha.modulos.forEach(function(modulo) { %>
+        <% if (typeof trilha !== 'undefined' && trilha.modules && trilha.modules.length > 0) { %>
+            <% trilha.modules.forEach(function(module) { %>
                 <div class="module-card">
-                    <h3><%= modulo.nome %></h3>
+                    <h3><%= module.name %></h3>
                     <div class="progress-bar-container">
-                        <div class="progress-bar <% if (modulo.progresso === 100) { %>full<% } %>" style="width: <%= modulo.progresso %>%;"></div>
+                        <div class="progress-bar <% if (module.progress === 100) { %>full<% } %>" style="width: <%= module.progress %>%;"></div>
                     </div>
-                    <button onclick="location.href='<%= modulo.link || '#' %>' ">
-                        <%= modulo.progresso > 0 && modulo.progresso < 100 ? 'Continuar' : (modulo.progresso === 100 ? 'Revisar' : 'Iniciar') %>
+                    <button onclick="location.href='<%= module.link || '#' %>' ">
+                        <%= module.progress > 0 && module.progress < 100 ? 'Continuar' : (module.progress === 100 ? 'Revisar' : 'Iniciar') %>
                         <span class="arrow">&rarr;</span>
                     </button>
                 </div>
