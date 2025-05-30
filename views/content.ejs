@@ -1,73 +1,79 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Dashboard - Conteúdos de Estudo | Bayer Agro</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gray-50 min-h-screen flex flex-col">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dashboard - Conteúdos de Estudo | Bayer Agro</title>
+     <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body class="bg-gray-50 min-h-screen flex flex-col">
+    <%- include('./partials/header') %>
 
-  <!-- Header -->
-  <header class="bg-white shadow-md">
-    <div class="container mx-auto flex items-center justify-between py-4 px-6">
-      <div class="flex items-center gap-3">
-        <img src="https://www.bayer.com/sites/default/files/styles/16_9_1280x720/public/2021-01/bayer-logo.png" alt="Bayer Logo" class="h-10 w-10">
-        <a href="/">
-          <span class="text-xl font-bold text-[#0057A6]">FieldAcademy</span>     
-        </a>
+    <!-- Conteúdo principal -->
+    <main class="container mx-auto px-6 py-10 flex-1">
+      <div
+        class="flex flex-col md:flex-row md:items-center md:justify-between mb-8"
+      >
+        <h2 class="text-2xl font-bold text-[#0057A6] mb-4 md:mb-0">
+          Conteúdos para Estudo
+        </h2>
+        <div>
+          <input
+            type="text"
+            placeholder="Buscar conteúdo..."
+            class="px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#78BE20] w-64"
+          />
         </div>
-      <nav class="space-x-6">
-        <a href="#" class="text-[#0057A6] font-medium hover:text-[#78BE20] transition">Início</a>
-        <a href="#" class="text-gray-700 font-medium hover:text-[#78BE20] transition">Trilhas</a>
-        <a href="#" class="text-gray-700 font-medium hover:text-[#78BE20] transition">Dashboard</a>
-        <a href="#" class="text-gray-700 font-medium hover:text-[#78BE20] transition">Ajuda</a>
-        <a href="#" class="text-gray-700 font-medium hover:text-[#78BE20] transition">Sair</a>
-      </nav>
-    </div>
-  </header>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Conteúdo 1 -->
+        <div
+          class="bg-white rounded-xl shadow-md p-6 flex flex-col hover:shadow-lg transition"
+        >
+          <h3 class="text-lg font-semibold text-[#0057A6] mb-2">
+            Manual do Sistema
+          </h3>
+          <p class="text-gray-600 mb-4">
+            Guia completo para entender todas as funções do sistema Bayer Agro.
+          </p>
+          <a href="#" class="mt-auto text-[#78BE20] font-medium hover:underline"
+            >Acessar material</a
+          >
+        </div>
+        <!-- Conteúdo 2 -->
+        <div
+          class="bg-white rounded-xl shadow-md p-6 flex flex-col hover:shadow-lg transition"
+        >
+          <h3 class="text-lg font-semibold text-[#0057A6] mb-2">
+            Vídeo: Cadastro de Produtos
+          </h3>
+          <p class="text-gray-600 mb-4">
+            Assista ao passo a passo para cadastrar produtos corretamente.
+          </p>
+          <a href="#" class="mt-auto text-[#78BE20] font-medium hover:underline"
+            >Assistir vídeo</a
+          >
+        </div>
+        <!-- Conteúdo 3 -->
+        <div
+          class="bg-white rounded-xl shadow-md p-6 flex flex-col hover:shadow-lg transition"
+        >
+          <h3 class="text-lg font-semibold text-[#0057A6] mb-2">
+            Quiz: Boas Práticas
+          </h3>
+          <p class="text-gray-600 mb-4">
+            Teste seus conhecimentos sobre segurança e qualidade no sistema.
+          </p>
+          <a href="#" class="mt-auto text-[#78BE20] font-medium hover:underline"
+            >Iniciar quiz</a
+          >
+        </div>
+      </div>
+      <!-- Adicione mais cards conforme necessário -->
+    </main>
 
-  <!-- Conteúdo principal -->
-  <main class="container mx-auto px-6 py-10 flex-1">
-    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-8">
-      <h2 class="text-2xl font-bold text-[#0057A6] mb-4 md:mb-0">Conteúdos para Estudo</h2>
-      <div>
-        <input type="text" placeholder="Buscar conteúdo..." class="px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#78BE20] w-64">
-      </div>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <!-- Conteúdo 1 -->
-      <div class="bg-white rounded-xl shadow-md p-6 flex flex-col hover:shadow-lg transition">
-        <h3 class="text-lg font-semibold text-[#0057A6] mb-2">Manual do Sistema</h3>
-        <p class="text-gray-600 mb-4">Guia completo para entender todas as funções do sistema Bayer Agro.</p>
-        <a href="#" class="mt-auto text-[#78BE20] font-medium hover:underline">Acessar material</a>
-      </div>
-      <!-- Conteúdo 2 -->
-      <div class="bg-white rounded-xl shadow-md p-6 flex flex-col hover:shadow-lg transition">
-        <h3 class="text-lg font-semibold text-[#0057A6] mb-2">Vídeo: Cadastro de Produtos</h3>
-        <p class="text-gray-600 mb-4">Assista ao passo a passo para cadastrar produtos corretamente.</p>
-        <a href="#" class="mt-auto text-[#78BE20] font-medium hover:underline">Assistir vídeo</a>
-      </div>
-      <!-- Conteúdo 3 -->
-      <div class="bg-white rounded-xl shadow-md p-6 flex flex-col hover:shadow-lg transition">
-        <h3 class="text-lg font-semibold text-[#0057A6] mb-2">Quiz: Boas Práticas</h3>
-        <p class="text-gray-600 mb-4">Teste seus conhecimentos sobre segurança e qualidade no sistema.</p>
-        <a href="#" class="mt-auto text-[#78BE20] font-medium hover:underline">Iniciar quiz</a>
-      </div>
-    </div>
-    <!-- Adicione mais cards conforme necessário -->
-  </main>
+    <!-- Footer -->
+    <%- include('./partials/footer') %>
 
-  <!-- Footer -->
-  <footer class="bg-white border-t py-4">
-    <div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
-      <span class="text-gray-500 text-sm">&copy; 2024 Bayer AG. Todos os direitos reservados.</span>
-      <div class="flex space-x-4 mt-2 md:mt-0">
-        <a href="#" class="text-[#0057A6] hover:text-[#78BE20] text-sm">Política de Privacidade</a>
-        <a href="#" class="text-[#0057A6] hover:text-[#78BE20] text-sm">Termos de Uso</a>
-      </div>
-    </div>
-  </footer>
-
-</body>
+  </body>
 </html>

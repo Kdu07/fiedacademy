@@ -5,6 +5,31 @@
 //     "Avançado"
 // ];
 
+const trilha = {
+  id: 1,
+  title: "Onboarding",
+  modules: [
+    {
+      id: 1,
+      title: "O que é FieldView",
+      order: 1,
+      progresso: 30 // dado simulado a partir da tabela `user_content_progress`
+    },
+    {
+      id: 2,
+      title: "Como instalar FieldView",
+      order: 2,
+      progresso: 10
+    },
+    {
+      id: 3,
+      title: "Boas práticas",
+      order: 3,
+      progresso: 0
+    }
+  ]
+};
+
 module.exports.index = (req, res) => {
     res.render('home', { trilhas });
 };
@@ -48,9 +73,10 @@ module.exports.trilha = (req, res) => {
 }; 
 // Controlador da rota /
 exports.index = (req, res) => {
-    res.render('pages/paths', {
+    res.render('paths', {
       titulo: 'Trilhas',
-      mensagem: 'Escolha a trilha que deseja seguir'
+      mensagem: 'Escolha a trilha que deseja seguir',
+      trilha
     });
   };
 
