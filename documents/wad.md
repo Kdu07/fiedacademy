@@ -1156,6 +1156,7 @@ Com o guia de estilos definido, para facilitar o desenvolvimento de cada funcion
 
 </div>
 
+&nbsp;&nbsp;&nbsp;&nbsp; Essas foram as telas desenvolvidas até o momento, todas seguindo o padrão de estrutura MVC, com rotas já conectadas. No entanto, a conexão com o banco de dados ainda não está completa, visto que, nesta sprint, a equipe concentrou esforços no entendimento e aplicação da estrutura de código exigida, que envolve a divisão em diferentes funcionalidades — um processo que demandou tempo. Assim, como próximos passos, estão previstos a integração completa e funcional do banco de dados, bem como o aprimoramento e a criação de novas telas.<br>
 
 ## 4.2. Segunda versão da aplicação web (sprint 4)
 
