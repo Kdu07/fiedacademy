@@ -649,8 +649,6 @@ Segue o link de todos os protótipos do nosso projeto : https://www.figma.com/de
 
 ### 3.5.1. Modelo relacional (sprints 2 e 4)
 
-
-
 &nbsp;&nbsp;&nbsp;&nbsp;  O banco de dados mostrado adere aos fundamentos da modelagem relacional, como explicado por Heuser[9], organizando a informação em tabelas que simbolizam entidades do campo educacional, tais como usuários, módulos, conteúdos, trilhas, certificados, avaliações e permissões. Cada tabela é formada por linhas (tuplas) e colunas (atributos), assegurando a integridade dos dados através de restrições como chaves primárias - que identificam cada registro de maneira exclusiva - e chaves estrangeiras, encarregadas de criar conexões entre as tabelas, como a conexão entre usuários e suas funções, conteúdos e módulos, ou certificados e trilhas. Esta metodologia possibilita a representação clara e organizada dos componentes do mundo real, simplificando a implementação, conservação e ampliação do sistema de informação. <br>
 
 &nbsp;&nbsp;&nbsp;&nbsp;  No contexto da aplicação, tabelas como Users, module, content, path e certificate organizam o fluxo de aprendizagem, enquanto tabelas auxiliares como feedbacks_modulo, score_test, bookmarks e emphasis ampliam as funcionalidades ao permitir avaliações, acompanhamento de progresso, personalização e destaque de conteúdos. A tabela role_permissions define os diferentes perfis de acesso e suas permissões, promovendo segurança e flexibilidade na gestão do sistema. Assim, o modelo relacional adotado oferece uma base sólida para o desenvolvimento de uma plataforma educacional, garantindo integridade, clareza e escalabilidade. <br>
@@ -1090,9 +1088,10 @@ Novamente, a consulta só será executada com êxito se ambas as proposições A
 *Cada endpoint deve conter endereço, método (GET, POST, PUT, PATCH, DELETE), header, body e formatos de response*
 
 # <a name="c4"></a>4. Desenvolvimento da Aplicação Web
-
 ## 4.1. Primeira versão da aplicação web (sprint 3)
-
+&nbsp;&nbsp;&nbsp;&nbsp; Inicialmente, na Sprint 1, foi foita análise do mercado e entendimento do negócio, no qual a Bayer se insere, visando explorar vulnerabilidades e oportunidades da empresa. Além disso, também foi aprofundado no tema trazido pelo parceiro, elencando também os riscos possíveis durante o desenvolvimento do projeto. <br>
+&nbsp;&nbsp;&nbsp;&nbsp; Na Sprint 2, foi feito o desenvolvimento inicial do banco de dados, com as funcionalidades necessária para o desenvolvimento do website. Essa etapa foi importante para o entendimento mais aprofundado em banco de dados e consultas SQL. Paralelamente, apronfudamo-nos no modelo MVC, necessário para estruturação do código do projeto. <be>
+&nbsp;&nbsp;&nbsp;&nbsp; Na Sprint atual, a 3, foi desenvolvida a primeira versão da aplicação Web, implementando Models, Views e Controllers para cada tela da aplicação. Primeiramente, para o um desenvolvimento mais claro de cada função necessária no website, foi feito a prototipação de alta fidelidade (sessão 3),
 *Descreva e ilustre aqui o desenvolvimento da sua primeira versão do sistema web, explicando brevemente o que foi entregue em termos de código e sistema. Utilize prints de tela para ilustrar. Indique as eventuais dificuldades e próximos passos.*
 
 ## 4.2. Segunda versão da aplicação web (sprint 4)
