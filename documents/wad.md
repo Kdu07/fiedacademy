@@ -503,7 +503,12 @@ Texto para fundos escuros ou botões | aaa |  coloridos fortes
 ### 3.3.2 Tipografia
 
 *Apresente aqui a tipografia da solução, com famílias de fontes e suas respectivas funções*
+
 &nbsp;&nbsp;&nbsp;&nbsp; A tipografia padroniza a leitura e reforça a identidade da marca. Especifique fontes, tamanhos, pesos, espaçamentos e exemplos de uso. Ela  define as fontes, tamanhos, pesos e estilos utilizados em todos os textos da interface. Ela estabelece uma hierarquia visual clara, facilita a leitura e reforça a identidade da marca. <br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;  A tipografia é um elemento essencial na construção da identidade visual de uma interface. Ela influencia diretamente na legibilidade e na percepção da marca. Em um guia de estilos, a definição tipográfica deve incluir as famílias tipográficas utilizadas (ex: sans-serif ou serif), tamanhos, pesos (light, regular, bold), espaçamentos (entre letras e linhas) e hierarquia de títulos (H1, H2, H3 etc.) e parágrafos. <br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;   É fundamental garantir contraste suficiente entre texto e fundo para atender critérios de acessibilidade. A padronização tipográfica no guia de estilos contribui para a coesão visual em todos os materiais da marca ou produto digital. <br>
 
 <div align = "center">
 <sup>Figura 8: Tipografia </sup><br>
@@ -515,23 +520,22 @@ Texto para fundos escuros ou botões | aaa |  coloridos fortes
 
 ### 3.3.3 Iconografia e imagens 
 
-*(esta subseção é opcional, caso não existam ícones e imagens, apague esta subseção)*
+&nbsp;&nbsp;&nbsp;&nbsp; A iconografia no design de interfaces refere-se ao uso sistemático de ícones como elementos gráficos que representam ações, objetos ou ideias. Ícones são recursos visuais que auxiliam na comunicação rápida e intuitiva com o usuário, reduzindo a dependência de texto e melhorando a usabilidade. Para garantir clareza e consistência, os ícones devem seguir princípios de simplicidade, legibilidade, universalidade e coerência com a identidade visual da marca ou produto.
 
-*posicione aqui imagens e textos contendo exemplos padronizados de ícones e imagens, com seus respectivos atributos de aplicação, utilizadas na solução*
+Ao definir um sistema de iconografia, é necessário padronizar estilos (traço, espessura, preenchimento), tamanhos, espaçamentos e significados. Esses elementos devem estar descritos no guia de estilos da interface, promovendo uma linguagem visual coesa entre diferentes telas e dispositivos. Ícones interativos devem apresentar feedback visual (como mudança de cor ao passar o cursor) para indicar funcionalidade.
 
-&nbsp;&nbsp;&nbsp;&nbsp; A iconografia reúne todos os ícones utilizados na interface, padronizando seu estilo, tamanho, cor e aplicação. Os ícones devem ser facilmente reconhecíveis, reforçando ações e informações sem gerar ambiguidade. <br>
+ A iconografia reúne todos os ícones utilizados na interface, padronizando seu estilo, tamanho, cor e aplicação. Os ícones devem ser facilmente reconhecíveis, reforçando ações e informações sem gerar ambiguidade. <br>
 
 <div align = "center">
 <sup>Figura 8: Tipografia </sup><br>
-<img src="assets/assets_wad/iconografia (1).png"> 
+<img src= "assets/assets_wad/iconografia (1).png"> 
 <sup>Fonte: Material produzido pelos autores (2025).</sup><br>
 </div>
 
 #### NavBar Mobile
+
 Icone | Funcionalidade | 
-
 --- | ---|
-
 Colheita | Acessa informações e registros sobre colheitas realizadas, facilitando o controle de produção. |
 Boas Práticas | Exibe dicas, orientações e conteúdos educativos para melhorar processos e resultados. |
 Perfil | 	Permite visualizar e editar dados pessoais e preferências do usuário. |
@@ -543,9 +547,7 @@ Data inbox e integração| Centraliza dados recebidos e integrações com outros
 #### NavBar
 
 Icone | Funcionalidade | 
-
  --- | ---|
-
 Perfil | Visualiza e edita dados do usuário, foto e configurações pessoais.|
 Barra de Navegação | Abre/fecha o menu lateral de navegação do sistema. | 
 Favoritados | 	Acessa rapidamente itens ou conteúdos marcados como favoritos.|
@@ -558,22 +560,21 @@ Adicionar um módulo| 	Permite criar um novo módulo, etapa ou item dentro do si
 Minhas trilhas | 	Exibe os percursos, trilhas de aprendizagem ou fluxos personalizados do usuário.|
 Download | 	Realiza o download de arquivos, relatórios ou dados da plataforma.| 
 Lixeira | Acessa itens excluídos, permitindo restaurar ou excluir definitivamente conteúdos.|
-
+<br>
 
 Icone | Funcionalidade | 
-
 --- | ---|
-
 Adicionar | Cria ou cadastra um novo item, pedido ou módulo. |
 Boas práticas (botão)|	Acesso rápido ao conteúdo de boas práticas, dicas e recomendações.|
 Continuar|Avança, visualiza detalhes ou inicia uma ação/tarefa.|
 Ver mais|Avança, visualiza detalhes ou inicia uma ação/tarefa.|
 Curtir/Descurtir (like/dislike)|Avalia conteúdos, módulos ou funcionalidades com feedback positivo ou negativo.|
-
+<br>
 
 ## 3.4 Protótipo de alta fidelidade (sprint 3)
-Protótipos de alta fidelidade são representações visuais altamente detalhadas de um produto digital, como aplicativos, sites ou sistemas. Eles imitam com grande precisão a aparência final da interface e, muitas vezes, simulam também interações, transições e fluxos de navegação. Esses protótipos incluem cores, tipografias, imagens, ícones e elementos gráficos que corresponde a basicamente todo o front-end do projeto, onde trabalhamos para manter a identidade visual do parceiro. 
-Os protótipos de alta fidelidade servem principalmente para permitir uma visualização precisa do produto final, facilitando que todas as partes interessadas, como stakeholders, clientes e desenvolvedores, compreendam claramente o design e validem as soluções propostas antes da codificação. Eles também são essenciais para garantir o alinhamento entre as equipes de design, desenvolvimento e produto, funcionando como uma referência visual concreta do que será construído. Além disso, esses protótipos são frequentemente utilizados em testes de usabilidade, onde se simula a experiência final do usuário para coletar feedbacks sobre a navegação, compreensão e interação com a interface. Isso permite identificar e corrigir problemas antes que sejam feitos investimentos significativos na fase de desenvolvimento.
+Protótipos de alta fidelidade são representações visuais altamente detalhadas de um produto digital, como aplicativos, sites ou sistemas. Eles imitam com grande precisão a aparência final da interface e, muitas vezes, simulam também interações, transições e fluxos de navegação. Esses protótipos incluem cores, tipografias, imagens, ícones e elementos gráficos que corresponde a basicamente todo o front-end do projeto, onde trabalhamos para manter a identidade visual do parceiro. <br>
+
+Os protótipos de alta fidelidade servem principalmente para permitir uma visualização precisa do produto final, facilitando que todas as partes interessadas, como stakeholders, clientes e desenvolvedores, compreendam claramente o design e validem as soluções propostas antes da codificação. Eles também são essenciais para garantir o alinhamento entre as equipes de design, desenvolvimento e produto, funcionando como uma referência visual concreta do que será construído. Além disso, esses protótipos são frequentemente utilizados em testes de usabilidade, onde se simula a experiência final do usuário para coletar feedbacks sobre a navegação, compreensão e interação com a interface. Isso permite identificar e corrigir problemas antes que sejam feitos investimentos significativos na fase de desenvolvimento. <br>
 
 ## Protótipo da tela de home, versão gestor, desktop:
 
@@ -1205,6 +1206,10 @@ Descreva os principais segmentos de mercado a serem atendidos pela aplicação. 
 
 
 <a name="c16">[10] </a> NORMAN, Donald A. O design do dia a dia. 2. ed. Rio de Janeiro: Rocco, 2016
+
+<a name="c16">[8]</a> LIDWELL, William; HOLDEN, Kritina; BUTLER, Jill. Princípios universais do design. 2. ed. Rio de Janeiro: Gustavo Gili, 2019. //griddesktop
+
+<a name="c16">[8]</a>  BRINGHURST, Robert. Os elementos do estilo tipográfico. São Paulo: Cosac Naify, 2005.
 
 INTELI. Adalove. Disponível em: https://adalove.inteli.edu.br/feed. Acesso em: 15/04/2025. <br>
 
