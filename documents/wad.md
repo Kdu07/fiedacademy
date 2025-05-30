@@ -1121,6 +1121,19 @@ Com o guia de estilos definido, para facilitar o desenvolvimento de cada funcion
 </div>
 
 
+**Tela de Trilhas**: Onde o usuário terá acesso aos módulos de cada trilha.
+
+<div align = "center">
+
+<sup>Figura X: Tela de Trilhas.</sup><br>
+
+<img src="../assets/assets_wad/telaTrilha.png" width="300"><br>
+
+<sub>Fonte: Material produzido pelos autores (2025). </sub><br>
+
+</div>
+
+
 
 *Descreva e ilustre aqui o desenvolvimento da sua primeira versão do sistema web, explicando brevemente o que foi entregue em termos de código e sistema. Utilize prints de tela para ilustrar. Indique as eventuais dificuldades e próximos passos.*
 
