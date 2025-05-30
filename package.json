@@ -13,6 +13,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@supabase/supabase-js": "^2.49.8",
     "@tailwindcss/postcss": "^4.1.5",
     "autoprefixer": "^10.4.21",
     "dotenv": "^10.0.0",
