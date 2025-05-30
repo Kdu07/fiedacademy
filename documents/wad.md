@@ -571,13 +571,13 @@ Curtir/Descurtir (like/dislike)|Avalia conteúdos, módulos ou funcionalidades c
 
 <img src="../assets/assets_wad/protótipos/Protótipo Home Gestor 3.png">
 
-Esta tela representa a Home para gestores, no formato desktop. No topo, há um menu de navegação com ícone de menu lateral, barra de busca e ícone de notificações, que exibe uma lista suspensa de avisos. A tela oferece uma visão clara e funcional para que o gestor acompanhe a evolução da equipe e acesse rapidamente as principais funcionalidades. 
+Esta tela representa a tela inicial do site, a tela de home para gestores, no formato desktop. No topo, há um menu de navegação com ícone de menu lateral, barra de busca e ícone de notificações, que exibe uma lista suspensa de avisos. A tela oferece uma visão clara e funcional para que o gestor acompanhe a evolução da equipe e acesse rapidamente as principais funcionalidades. 
 
 ## Protótipo da tela de home, versão PTD, desktop:
 
 <img src="../assets/assets_wad/protótipos/Protótipo-Home-PTD 2.png">
 
-Esta tela corresponde à Home para usuários PTD, na versão desktop. No topo, há um menu lateral, barra de busca e ícone de notificações com lista suspensa. A identidade visual mantém a imagem temática de plantação e o logotipo FieldAcademy. Abaixo, há o botão "Help" para suporte ao usuário.
+Esta tela corresponde a tela de Home para usuários PTD, na versão desktop. No topo, há um menu lateral, barra de busca e ícone de notificações com lista suspensa. A identidade visual mantém a imagem temática de plantação e o logotipo FieldAcademy. Abaixo, há o botão "Help" para suporte ao usuário.
 Em seguida, a seção "Trilhas" apresenta quatro categorias (Onboarding, Básico, Intermediário e Avançado), cada uma com barra de progresso indicando o avanço e o botão "Continuar" para seguir o conteúdo.
 A tela oferece uma navegação clara para o usuário acompanhar o progresso nas trilhas, acessar conteúdos fixos e visualizar os destaques de performance da equipe.
 
@@ -592,51 +592,52 @@ A tela de login apresenta uma imagem de fundo relacionada ao setor agrícola. No
 
 <img src="../assets/assets_wad/protótipos/Protótipo-Login-Gestor.png">
 
-A tela de login versão gestor basicamente é igual porém alteramos a imagem para aumentar o engajamento do projeto.
+A tela de login versão gestor, possui os mesmos botões da tela de login versão PTD porém alteramos a imagem de fundo para aumentar o engajamento do projeto.
 
 ## Protótipo da tela de login, versão PTD, mobile:
 
 <img src="../assets/assets_wad/protótipos/Protótipo-Login-PTD-Mobile.png">
-
-A tela de login apresenta uma imagem de fundo relacionada ao setor agrícola. No centro, há o título “Cadastre-se” seguido de uma breve descrição. Abaixo, localizam-se três campos para preenchimento: email, senha e confirmação de senha. Logo em seguida, há um botão verde com a inscrição “Criar conta”. Ao final da interface, há uma opção de link convidando o usuário a criar uma conta, caso ainda não possua. O logotipo da empresa está posicionado no canto superior direito. O design é limpo e direto, com foco na funcionalidade e clareza para o usuário.
+A imagem mostra a tela de login com tema agrícola. A parte inferior da imagem exibe o formulário de cadastro sobreposto a um fundo semi-transparente branco, o que destaca os elementos visuais sem ocultar totalmente a imagem de fundo. O título “Cadastre-se” está centralizado e em negrito, seguido por um texto de exemplo (“Bla bla bla bla bla bla bla bla”), que será substituído por uma breve descrição do sistema. Abaixo, há três campos de entrada: “Email”, “Senha” e “Confirme sua senha”. Em seguida, um botão verde com o texto “Criar conta” é exibido em destaque. Na parte inferior do formulário, há um link para redirecionar usuários que ainda não possuem conta, com a frase “Não possui uma conta? Crie agora” .O logotipo da empresa está posicionado no canto superior direito. O design é limpo e direto, com foco na funcionalidade e clareza para o usuário.
 
 
 ## Protótipo da tela de progresso do gestor, desktop:
 
 <img src="../assets/assets_wad/protótipos/Protótipo-Progresso-Gestor.png">
 
-A imagem mostra a tela de login com tema agrícola. A parte inferior da imagem exibe o formulário de cadastro sobreposto a um fundo semi-transparente branco, o que destaca os elementos visuais sem ocultar totalmente a imagem de fundo. O título “Cadastre-se” está centralizado e em negrito, seguido por um texto de exemplo (“Bla bla bla bla bla bla bla bla”), que provavelmente será substituído por uma breve descrição do sistema. Abaixo, há três campos de entrada: “Email”, “Senha” e “Confirme sua senha”. Em seguida, um botão verde com o texto “Criar conta” é exibido em destaque. Na parte inferior do formulário, há um link para redirecionar usuários que ainda não possuem conta, com a frase “Não possui uma conta? Crie agora”.
+A imagem apresenta a tela de progresso do gestor da plataforma FieldAcademy. No topo, há um cabeçalho com fundo verde, contendo o logotipo e o nome da plataforma. Abaixo, à esquerda, há um card que exibe o nome do usuário, o número da ficha e o progresso do PTD. Ao lado direito, há uma barra de busca com um campo placeholder e um ícone de lupa. Na seção seguinte, aparece um card intitulado “Atividade do PTD”, exibindo o e-mail do usuário e a região correspondente (Sudeste). Logo abaixo, há dois gráficos: um com o título “Trilhas Completas” e outro “Médias de acertos”, ambos representados com gráficos lineares de cor azul. Na parte inferior da interface, encontra-se a seção “Certificados”, em um bloco com fundo verde-claro. Essa área contém diversos botões de certificados organizados em três linhas, com rótulos genéricos no formato “Certificado - Módulo X” e acompanhados de um ícone azul.
 
+Por fim, a tela é finalizada com um rodapé de fundo verde, mantendo a identidade visual da plataforma.
 
-## Protótipo da tela de help, versão PTD, mobile:
+## Protótipo da tela de home, versão PTD, mobile:
 
 <img src="../assets/assets_wad/protótipos/Protótipo-Help-PTD-Mobile-2.png">
 
-A imagem apresenta a interface mobile do sistema "FieldAcademy", focada em trilhas de aprendizado voltadas ao setor agrícola. No topo da tela, há uma barra verde com ícones de menu, busca e notificações, seguida de uma imagem de fundo com vegetação e céu, sobre a qual está o título “FieldAcademy” centralizado. Abaixo, uma seção destacada com o texto “Help” indica uma área de suporte ou orientação. Em seguida, encontra-se a seção “Trilhas”, que organiza o conteúdo em níveis: “Onboarding”, “Básico”, “Intermediário” e “Avançado”. Cada trilha é exibida com uma barra de progresso estilizada em azul e roxo, acompanhada de um botão “Continuar” com menu dropdown ao lado direito. Mais abaixo, a seção “Fixados” exibe cartões organizados em grade, todos rotulados como “Boas práticas”, cada um com um botão azul de ação “Ver mais”. O layout é limpo, responsivo e utiliza uma paleta de cores que remete à natureza, reforçando a proposta educacional ligada ao campo.
+A imagem apresenta a tela incial do projeto porém na versão mobile, a tela é focada em trilhas de aprendizado voltadas ao setor agrícola. No topo da tela, há uma barra verde com ícones de menu, busca e notificações, seguida de uma imagem de fundo com vegetação e céu, sobre a qual está o título “FieldAcademy” centralizado. Abaixo, uma seção destacada com o texto “Help” indica uma área de suporte ou orientação. Em seguida, encontra-se a seção “Trilhas”, que organiza o conteúdo em níveis: “Onboarding”, “Básico”, “Intermediário” e “Avançado”. Cada trilha é exibida com uma barra de progresso estilizada em azul e roxo, acompanhada de um botão “Continuar” com menu dropdown ao lado direito. Mais abaixo, a seção “Fixados” exibe cartões organizados em grade, todos rotulados como “Boas práticas”, cada um com um botão azul de ação “Ver mais”. O layout é limpo, responsivo e utiliza uma paleta de cores que remete à natureza, reforçando a proposta educacional ligada ao campo.
 
-## Protótipo da segunda tela de help, versão PTD, desktop:
+## Protótipo da tela de help, versão PTD, desktop:
 
 <img src="../assets/assets_wad/protótipos/Protótipo-Help-PTD.png">
 
-A imagem apresenta a interface da seção de ajuda do sistema "FieldAcademy", voltada para usuários do setor agrícola. No topo, há uma barra verde com ícones de menu , busca (lupa) e notificações (sino), reforçando a navegabilidade e interação com a plataforma. Abaixo da barra de navegação, o título “Como podemos te ajudar hoje?” introduz uma grade de seis botões verdes com ícones pretos, cada um representando uma categoria de suporte: “Mapas e dados”, “Boas práticas”, “Data inbox e integrações”, “Plantio”, “Colheita” e “Primeiros passos”. Os ícones são ilustrativos e reforçam visualmente a função de cada botão, facilitando a identificação rápida das opções. Ao final da tela, uma barra fixa inferior contém links de navegação: “Sobre nós”, “FieldView” e “Bayer”, provavelmente conectando a páginas institucionais ou parceiros do sistema. O layout é limpo, com uso predominante de verde, alinhado ao tema agrícola e sustentável da plataforma.
+A imagem apresenta a interface da tela de help do FieldAcademy, voltada para usuários do setor agrícola. No topo, há uma barra verde com ícones de menu , busca (lupa) e notificações (sino), reforçando a navegabilidade e interação com a plataforma. Abaixo da barra de navegação, o título “Como podemos te ajudar hoje?” introduz uma grade de seis botões verdes com ícones pretos, cada um representando uma categoria de suporte: “Mapas e dados”, “Boas práticas”, “Data inbox e integrações”, “Plantio”, “Colheita” e “Primeiros passos”. Os ícones são ilustrativos e reforçam visualmente a função de cada botão, facilitando a identificação rápida das opções. Ao final da tela, uma barra fixa inferior contém links de navegação: “Sobre nós”, “FieldView” e “Bayer”, provavelmente conectando a páginas institucionais ou parceiros do sistema. O layout é limpo, com uso predominante de verde, alinhado ao tema agrícola e sustentável da plataforma.
 
 ## Protótipo da tela de conteúdo, versão gestor, desktop:
 
 <img src="../assets/assets_wad/protótipos/Protótipo-Conteúdo-Gestor.png">
 
-A imagem mostra a interface de um módulo educacional da plataforma "FieldAcademy", voltada à capacitação no setor agrícola. No topo da tela, há uma barra verde com o logotipo da plataforma à esquerda e ícones de menu e navegação. Abaixo, um banner verde com texto em branco destaca o título do módulo atual. À esquerda da tela, há um menu vertical com botões verdes que representam as lições numeradas (#1 a #7), além de dois botões adicionais: “EXIBIR MAIS” e “EDITAR TRILHA”, indicando funcionalidades administrativas. No centro, encontra-se o conteúdo da lição atual, que trata da questão “O que é Remote View e como usar?”, com um espaço reservado para texto e um vídeo ilustrativo abaixo, com miniatura mostrando uma silhueta de um homem à frente de um trator ao entardecer. No canto inferior direito, há botões de interação — um positivo (curtir), um negativo (não curtir) — e um botão azul “PRÓXIMO” para avançar para a próxima lição. A interface mantém o padrão visual em tons de verde e branco, reforçando a identidade da plataforma e sua conexão com o ambiente agrícola.
+A imagem mostra a interface de um módulo educacional da plataforma, voltada à capacitação no setor agrícola. No topo da tela, há uma barra verde com o logotipo da plataforma à esquerda e ícones de menu e navegação. Abaixo, um banner verde com texto em branco destaca o título do módulo atual. À esquerda da tela, há um menu vertical com botões verdes que representam as lições numeradas (#1 a #7), além de dois botões adicionais: “EXIBIR MAIS” e “EDITAR TRILHA”, indicando funcionalidades administrativas. No centro, encontra-se o conteúdo da lição atual, que trata da questão “O que é Remote View e como usar?”, com um espaço reservado para texto e um vídeo ilustrativo abaixo, com miniatura mostrando uma silhueta de um homem à frente de um trator ao entardecer. No canto inferior direito, há botões de interação — um positivo (curtir), um negativo (não curtir) — e um botão azul “PRÓXIMO” para avançar para a próxima lição. A interface mantém o padrão visual em tons de verde e branco, reforçando a identidade da plataforma e sua conexão com o ambiente agrícola.
 
 ## Protótipo da tela de trilhas, versão PTD, desktop:
 
 <img src="../assets/assets_wad/protótipos/Protótipo-Módulo-Avançado-PTD.png">
 
-A imagem mostra a tela da “Trilha Avançado” da plataforma FieldAcademy. Nela, os módulos de aprendizagem são exibidos com indicadores de progresso e botões de ação. O Módulo 1 – Mapas e Dados já foi parcialmente concluído, indicado por uma barra de progresso azul, e há um botão verde claro com a palavra “Continuar”. Logo abaixo, o Módulo 2 – Pulverização ainda não foi iniciado, mostrado por uma barra de progresso totalmente cinza e um botão escuro com a palavra “Iniciar”. A interface segue o padrão visual com elementos em verde, tipografia clara e botões bem definidos, facilitando a navegação. O layout é limpo e funcional, mantendo consistência com os outros protótipos já enviados.
+A imagem mostra a tela da “Trilha Avançado” da plataforma FieldAcademy. Nela, os módulos de aprendizagem são exibidos com indicadores de progresso e botões de ação. O Módulo 1 – Mapas e Dados já foi parcialmente concluído, indicado por uma barra de progresso azul, e há um botão verde claro com a palavra “Continuar”. A interface segue o padrão visual com elementos em verde, tipografia clara e botões bem definidos, facilitando a navegação e seguindo a identidade visual do parceiro. O layout é limpo e funcional, mantendo consistência com os outros protótipos já enviados.
 
 ## Protótipo da tela introdutória do projeto, desktop:
 
 <img src="../assets/assets_wad/protótipos/Protótipo-TelaFieldAcademy.png">
 
-Está é a nossa tela que introduz a base do projeto e também mostra os participantes. 
+A imagem apresenta a interface da tela introdutória do projeto. No topo, há um cabeçalho com fundo azul, contendo o logotipo e o nome da plataforma no canto esquerdo, além de um ícone de menu no canto direito. Logo abaixo, encontra-se o título “O que é o FieldAcademy?” destacado em verde escuro. Em seguida, há um texto explicativo sobre a plataforma, ressaltando seu caráter inovador, estruturado e acessível, com foco na capacitação dos PTDs (Promotores Técnicos Digitais). O texto também enfatiza os diferenciais da plataforma, como a utilização de gamificação para tornar o aprendizado mais dinâmico e a possibilidade de acesso offline, facilitando a consulta de conteúdos em regiões remotas. Na parte inferior da tela, aparecem as fotos dos integrantes da equipe de desenvolvimento, cada uma acompanhada do respectivo nome e função: Carlos Quaglia, Luiz Hinuy, Rafael Cabral, João Agmont, Emanuelly Dias, Antonio Cillo e Maria Arielly, todos identificados como "Desenvolvedor Design". Por fim, no rodapé, há uma área de “Contatos” sobre um fundo azul, listando os e-mails institucionais de todos os membros da equipe em destaque. Ao lado, aparecem também ícones gráficos relacionados a comunicação e suporte, com um link para a seção de “Ajuda”.
+
 
 Segue o link de todos os protótipos do nosso projeto : https://www.figma.com/design/bOsRfHBpYqRksHS4GiNW74/bayer-project?node-id=3664-2&p=f&t=Qf7bovjAhDRUTjIr-0
 
