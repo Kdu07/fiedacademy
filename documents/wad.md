@@ -1133,6 +1133,17 @@ Com o guia de estilos definido, para facilitar o desenvolvimento de cada funcion
 
 </div>
 
+**Tela de Conteúdos**: Onde o usuário terá acesso aos conteúdos de cada módulo, sendo em textos, vídeos ou em ambos.
+
+<div align = "center">
+
+<sup>Figura X: Tela de Home.</sup><br>
+
+<img src="../assets/assets_wad/telaConteudo.png" width="300"><br>
+
+<sub>Fonte: Material produzido pelos autores (2025). </sub><br>
+
+</div>
 
 
 *Descreva e ilustre aqui o desenvolvimento da sua primeira versão do sistema web, explicando brevemente o que foi entregue em termos de código e sistema. Utilize prints de tela para ilustrar. Indique as eventuais dificuldades e próximos passos.*
