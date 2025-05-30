@@ -475,18 +475,16 @@ Tela | Recursos | User Story
 
 &nbsp;&nbsp;&nbsp;&nbsp; Em suma, o Guia de Estilos serve como referência oficial para todos os envolvidos no projeto, garantindo consistência visual, clareza de comunicação e aplicação correta dos elementos da marca.  <br>
 
+![alt text](../assets/assets_wad/Grid.png)
+
+
 ### 3.3.1 Cores
 
 &nbsp;&nbsp;&nbsp;&nbsp; A paleta de cores de um projeto consiste no conjunto de cores previamente selecionadas para representar visualmente a identidade do produto digital em todos os seus elementos gráficos e funcionais. Essa paleta inclui cores primárias, secundárias, de destaque e de fundo, que devem ser utilizadas de forma sistemática em interfaces, componentes, textos e elementos de navegação. Seu propósito é assegurar uniformidade visual, fortalecer a comunicação da marca e facilitar a percepção do usuário ao interagir com o sistema. <br>
 
 &nbsp;&nbsp;&nbsp;&nbsp; A adoção de uma paleta de cores bem estruturada e alinhada entre os designers e a equipe de desenvolvimento front-end é essencial para garantir coerência estética e funcionalidade técnica. Em ambientes colaborativos, especialmente no contexto de projetos acadêmicos baseados em metodologias ágeis, essa padronização contribui para a consistência visual entre protótipos e implementações, reduz retrabalho, otimiza a comunicação entre os membros da equipe e assegura a acessibilidade por meio de contrastes adequados. A padronização cromática ainda reforça a identidade do produto, tornando-o mais reconhecível e profissional perante os usuários. <br>
 
-<div align = "center">
-<sup>Figura 8: Tipografia </sup><br>
-<img src="![alt text](<../assets/assets_wad/Paleta de cores.png>)"> 
-
-<sup>Fonte: Material produzido pelos autores (2025).</sup><br>
-</div>
+![alt text](../assets/assets_wad/Paleta_cores.png)
 
 Recomendação Aplicada| Nome da cor | Hex | Função 
 ---| --- | --- | ---
@@ -507,11 +505,8 @@ Texto para fundos escuros ou botões | aaa |  coloridos fortes. | |
 
 &nbsp;&nbsp;&nbsp;&nbsp;  A tipografia é um elemento essencial na construção da identidade visual de uma interface. Ela influencia diretamente na legibilidade e na percepção da marca. Em um guia de estilos, a definição tipográfica deve incluir as famílias tipográficas utilizadas (ex: sans-serif ou serif), tamanhos, pesos (light, regular, bold), espaçamentos (entre letras e linhas) e hierarquia de títulos (H1, H2, H3 etc.) e parágrafos. <br>
 
-![](../assets/assets_wad/Tipografia.png)
-<img src=
+![assets/assets_wad/Tipografia.png](../assets/assets_wad/Tipografia.png)
 
-<sup>Fonte: Material produzido pelos autores (2025).</sup><br>
-</div>
 
 &nbsp;&nbsp;&nbsp;&nbsp;   É fundamental garantir contraste suficiente entre texto e fundo para atender critérios de acessibilidade. A padronização tipográfica no guia de estilos contribui para a coesão visual em todos os materiais da marca ou produto digital. <br>
 
@@ -528,11 +523,11 @@ Texto para fundos escuros ou botões | aaa |  coloridos fortes. | |
 
 <br>
 
-#### Barra de Navegação Mobile
+#### Icons Mobile
 
 Icone | Funcionalidade | 
---- | ---|
-Colheita | Acessa informações e registros sobre colheitas realizadas, facilitando o controle de produção. |
+ --- | ---|
+ Colheita | Acessa informações e registros sobre colheitas realizadas, facilitando o controle de produção. |
 Boas Práticas | Exibe dicas, orientações e conteúdos educativos para melhorar processos e resultados. |
 Perfil | 	Permite visualizar e editar dados pessoais e preferências do usuário. |
 Plantio| Gerencia informações sobre o plantio, como datas, áreas e culturas cultivadas. |
@@ -540,9 +535,9 @@ Mapas e dados | 	Mostra mapas interativos e dados georreferenciados para anális
 Data inbox e integração| Centraliza dados recebidos e integrações com outros sistemas ou dispositivos. |
 <br>
 
-#### Barra de Navegação Desktop
+#### Icons Desktop
 
-png| Icone | Funcionalidade | 
+ Icone | Funcionalidade | 
  --- | ---|
 Perfil | Visualiza e edita dados do usuário, foto e configurações pessoais.|
 Barra de Navegação | Abre/fecha o menu lateral de navegação do sistema. | 
