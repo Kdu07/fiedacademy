@@ -7,19 +7,19 @@ const trilha = {
   modules: [
     {
       id: 1,
-      title: "Mapas e Dados",
+      title: "O que é FieldView",
       order: 1,
       progresso: 10 // dado simulado a partir da tabela `user_content_progress`
     },
     {
       id: 2,
-      title: "Planejamento",
+      title: "Como instalar FieldView",
       order: 2,
       progresso: 0
     },
     {
       id: 3,
-      title: "Aplicação",
+      title: "Boas práticas",
       order: 3,
       progresso: 0
     }
@@ -69,3 +69,48 @@ const trilha = {
   
 </body>
 </html>
+
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title><%= trilha.nome %> | Trilha Onboarding </title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+  <!-- Cabeçalho -->
+  <%- include('../partials/header') %>
+
+  <!-- Trilhas -->
+  <div class="min-h-screen p-6 max-w-4xl mx-auto">
+    <h1 class="text-3xl font-bold text-green-800 mb-8">Trilha: <%= trilha.title %></h1>
+
+  <% trilha.modules
+   .sort((a, b) => a.order - b.order) // garante que os modulos vem na ordem
+   .forEach((modulo, index) => { %>
+  
+  <!-- Módulos -->
+  <div class="border rounded-xl p-5 mb-6 shadow-md">
+    <h2 class="text-xl font-semibold text-green-800 mb-2">Módulo <%= index + 1 %> - <%= modulo.title %></h2>
+
+  <!-- Barra de progresso -->
+    <div class="w-full h-3 bg-gray-200 rounded-full mb-4">
+      <div class="h-full bg-cyan-400 rounded-full" style="width: <%= modulo.progresso %>%;">
+      </div>
+
+  <!-- Botão de continuar -->
+    </div>
+    <a href="/conteudo/<%= modulo.id %>" class="bg-lime-200 hover:bg-lime-300 text-black px-4 py-2 rounded shadow flex items-center gap-2 w-fit">
+      <%= modulo.progresso > 0 ? "Continuar" : "Iniciar" %> <span>→</span>
+    </a>
+  </div>
+<% }); %>
+
+<!-- Rodapé -->
+  <%- include('../partials/footer') %>
+  
+</body>
+</html>
+
