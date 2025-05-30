@@ -52,7 +52,8 @@ CREATE TABLE IF NOT EXISTS content (
   video_path VARCHAR(255),
   img_path VARCHAR(255),
   "order" INTEGER NOT NULL,
-  highlight BOOLEAN
+  highlight BOOLEAN,
+  body VARCHAR(3000),
 );
 
 CREATE TABLE IF NOT EXISTS user_content_progress (
@@ -95,3 +96,5 @@ CREATE TABLE IF NOT EXISTS feedbacks_content_module (
   rating SMALLINT,
   created_at TIMESTAMP
 );
+
+-- CREATE TABLE IF NOT EXISTS LOGS

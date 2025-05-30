@@ -1,4 +1,6 @@
+require('dotenv').config({ path: require('path').resolve(__dirname, '../.env') });
 const { Pool } = require('pg');
+require('dotenv').config();
 
 const pool = new Pool({
   host: process.env.DB_HOST,
@@ -6,7 +8,9 @@ const pool = new Pool({
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
   database: process.env.DB_DATABASE,
-  ssl: { rejectUnauthorized: false } // Supabase exige SSL!
+  ssl: {
+    rejectUnauthorized: false
+  }
 });
 
 module.exports = {
