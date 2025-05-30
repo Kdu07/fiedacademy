@@ -487,16 +487,18 @@ Tela | Recursos | User Story
 <sup>Fonte: Material produzido pelos autores (2025).</sup><br>
 </div>
 
-Recomendação Aplicada| Nome da cor | Hex | Função | 
+Recomendação Aplicada| Nome da cor | Hex | Função 
+---| --- | --- | ---
+Cor primária | Verde | #66B512 | Cor para destacar tanto fundo, quanto botões principais, destaques, header, ícones 
+Cor priméria mais clara| Verde claro | #D2EEAE | Cor para destacar fundo de cards e botões secundários. 
+Cor de composição | Azul | #0091DF | Cor ultilizada para barra de progresso, botões secundárias, caixa de notificações, perfil do ranking, o rodapé da página do FieldAcaemy. 
+Cor de composição | Cinza | #D9D9D9 | undo de cards, divisores, bordas. 
+Fundo de cards, divisores, bordas |
+Cor Texto primária| Texto escuro | #1F1C1C
+Texto principal sobre fundos claros|
+Cor Texto secundário| Texto claro | #FFFFFF
+Texto para fundos escuros ou botões | aaa |  coloridos fortes
 
---- | --- | --- | ---|
-
-Cor primária | Verde | #66B512 | Cor para destacar tanto fundo, quanto botões principais, destaques, header, ícones |
-Cor priméria mais clara| Verde claro | #D2EEAE | Cor para destacar fundo de cards e botões secundários. |
-Cor de composição | Azul | #0091DF | Cor ultilizada para barra de progresso, botões secundárias, caixa de notificações, perfil do ranking, o rodapé da página do FieldAcaemy. |
-Cor de composição | Cinza | #D9D9D9 | undo de cards, divisores, bordas. | Fundo de cards, divisores, bordas |
-Cor Texto primária| Texto escuro | #1F1C1C| Texto principal sobre fundos claros|
-Cor Texto secundário| Texto claro | #FFFFFF| Texto para fundos escuros ou botões coloridos fortes|
 
 ### 3.3.2 Tipografia
 
@@ -536,6 +538,7 @@ Perfil | 	Permite visualizar e editar dados pessoais e preferências do usuário
 Plantio| Gerencia informações sobre o plantio, como datas, áreas e culturas cultivadas. |
 Mapas e dados | 	Mostra mapas interativos e dados georreferenciados para análise e tomada de decisão. |
 Data inbox e integração| Centraliza dados recebidos e integrações com outros sistemas ou dispositivos. |
+<br>
 
 #### NavBar
 
@@ -699,6 +702,8 @@ CREATE TABLE IF NOT EXISTS content (
 6. img_path: Caminho para imagem.
 7. order: Ordem do conteúdo dentro do módulo.
 8. due_time: Prazo ou data limite para acessar o conteúdo.
+
+// hdubb jneetsgoiie hbasoi roubaram mminha tav qo eu wu nhago qeu fazer gator. 
 ______________________
 
 &nbsp;&nbsp;&nbsp;&nbsp; A tabela emphasis influencia diretamente a experiência do usuário em uma plataforma de e-learning ou sistema educacional ao permitir que determinados conteúdos ou módulos sejam destacados ou priorizados para cada pessoa. Na prática, ela possibilita que o sistema marque quais materiais são mais importantes, urgentes ou recomendados para um usuário específico, geralmente com uma data limite para conclusão (due_date). Assim, o usuário pode visualizar facilmente o que deve focar primeiro em sua trilha de aprendizagem, facilitando o acompanhamento do progresso, a organização dos estudos e a priorização de tarefas. Esse tipo de funcionalidade é comum em sistemas de gestão de aprendizagem (LMS), pois ajuda a tornar o aprendizado mais personalizado, eficiente e alinhado às necessidades individuais de cada estudante. <br>
@@ -874,6 +879,7 @@ CREATE TABLE IF NOT EXISTS tests (
 _______________________
 
 &nbsp;&nbsp;&nbsp;&nbsp; A tabela score_test documenta o rendimento dos utilizadores em testes conduzidos na ferramenta. Quando um usuário realiza um teste, essa tabela registra o número do teste realizado (id_test), o nome do usuário responsável (id_user), a pontuação obtida (score) e as datas e horas de início e término (started_at, ended_at). <br>
+
 &nbsp;&nbsp;&nbsp;&nbsp; Para o usuário, isso implica que seu avanço e desempenho nas avaliações são monitorados de maneira individual e clara. Ele tem a capacidade de analisar seu histórico de desempenho, determinar em quais testes se saiu melhor ou precisa aprimorar, e utilizar esses dados para acompanhar sua progressão ao longo dos anos. Ademais, a pontuação pode atuar como estímulo para alcançar melhores performances e pode ser empregada para liberar materiais, emitir certificados ou formar notas finais, tornando a experiência de aprendizado mais clara. <br>
 
 ```sql
@@ -1123,6 +1129,9 @@ Descreva os principais segmentos de mercado a serem atendidos pela aplicação. 
 <a name="c16">[8]</a> FERRAMENTAS DA QUALIDADE. Matriz de Riscos – Matriz de Probabilidade e Impacto. Disponível em: https://ferramentasdaqualidade.org/matriz-de-riscos-matriz-de-probabilidade-e-impacto/. Acesso em: 20/04/25.
 
 <a name="c16">[9]</a>HEUSER, C. A. Projeto de Banco de Dados. 6. ed. Porto Alegre: Bookman, 2009.
+
+
+<a name="c16">[10] </a> NORMAN, Donald A. O design do dia a dia. 2. ed. Rio de Janeiro: Rocco, 2016
 
 INTELI. Adalove. Disponível em: https://adalove.inteli.edu.br/feed. Acesso em: 15/04/2025. <br>
 
