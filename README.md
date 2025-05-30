@@ -53,7 +53,7 @@ Para isso, a estrutura de pastas foi organizada da seguinte forma:
  - `config/`: Arquivos de configuração, como a conexão com o banco de dados.
 - `controllers/`, `models/`, `routes/`, `views/`: Pastas principais do padrão MVC.
 - `styles/` e `scripts/`: Arquivos CSS e JS públicos.
-- `README.md`: Documento explicativo principal do projeto.
+- `README.md`: Documentação explicativa principal do projeto.
 
 ## 💻 Configuração para desenvolvimento e execução do código
 
