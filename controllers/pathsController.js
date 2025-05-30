@@ -46,3 +46,12 @@ module.exports.trilha = (req, res) => {
     // Renderiza a view passando os módulos da trilha
     res.render('paths', { trilha });
 }; 
+// Controlador da rota /
+exports.index = (req, res) => {
+    res.render('pages/paths', {
+      titulo: 'Trilhas',
+      mensagem: 'Escolha a trilha que deseja seguir'
+    });
+  };
+
+  
