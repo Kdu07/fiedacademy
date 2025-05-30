@@ -623,9 +623,6 @@ video {
 .grid {
   display: grid;
 }
-.hidden {
-  display: none;
-}
 .h-1\/2 {
   height: 50%;
 }
@@ -701,9 +698,6 @@ video {
 }
 .flex-1 {
   flex: 1 1 0%;
-}
-.flex-grow {
-  flex-grow: 1;
 }
 .-translate-x-1\/2 {
   --tw-translate-x: -50%;
