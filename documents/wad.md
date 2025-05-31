@@ -504,7 +504,6 @@ A camada de cliente representa a interface que o usuário acessa diretamente. El
 
 #### Banco de Dados <br>
 O **Servidor de Banco de Dados** é o repositório central das informações manipuladas pela aplicação. Através dos modelos definidos no back-end, o sistema realiza operações de leitura e escrita nos dados, garantindo persistência e integridade das informações.<br>
-<img src="../assets/assets_wad/arquiteturaSolucao.png">
 
 ## 3.2. Wireframes (sprint 2)
 
@@ -585,79 +584,42 @@ Para alinhar os componentes de forma clara e responsiva, foi utilizada a estrutu
 
 ## 3.3. Guia de estilos (sprint 3)
 
-*Descreva aqui orientações gerais para o leitor sobre como utilizar os componentes do guia de estilos de sua solução*
-
 &nbsp;&nbsp;&nbsp;&nbsp; O Guia de Estilos serve como referência oficial para todos os envolvidos no projeto, garantindo consistência visual, clareza de comunicação e aplicação correta dos elementos da marca.  <br>
 
 &nbsp;&nbsp;&nbsp;&nbsp; Em suma, o Guia de Estilos serve como referência oficial para todos os envolvidos no projeto, garantindo consistência visual, clareza de comunicação e aplicação correta dos elementos da marca. <br>
 
-!!!!!!!!!!!!!!!!!!!!!!
 <div align = "center">
 <sup>Figura 10: Grid </sup><br>
-<img src="../assets/../assets/assets_wad/Grid.png">
+<img src="../assets/assets_wad/grid.png">
 
 <sup>Fonte: Material produzido pelos autores (2025).</sup><br>
 
 </div>
 
 ### 3.3.1 Cores
-
-*Apresente aqui a paleta de cores, com seus códigos de aplicação e suas respectivas funções*
-
 <div align = "center">
-<sup>Figura 8: Tipografia </sup><br>
-<img src="![alt text](<../assets/assets_wad/Paleta de cores.png>)"> 
+<sup>Figura 11: Cores </sup><br>
+<img src="../assets/assets_wad/paletaCores.png"> 
 
 <sup>Fonte: Material produzido pelos autores (2025).</sup><br>
 </div>
 
 Recomendação Aplicada| Nome da cor | Hex | Função | 
-
 --- | --- | --- | ---|
-
 Cor primária | Verde | #66B512 | Cor para destacar tanto fundo, quanto botões principais, destaques, header, ícones |
 Cor priméria mais clara| Verde claro | #D2EEAE | Cor para destacar fundo de cards e botões secundários. |
 Cor de composição | Azul | #0091DF | Cor ultilizada para barra de progresso, botões secundárias, caixa de notificações, perfil do ranking, o rodapé da página do FieldAcaemy. |
 Cor de composição | Cinza | #D9D9D9 | undo de cards, divisores, bordas. | Fundo de cards, divisores, bordas |
 Cor Texto primária| Texto escuro | #1F1C1C| Texto principal sobre fundos claros|
 Cor Texto secundário| Texto claro | #FFFFFF| Texto para fundos escuros ou botões coloridos fortes|
+
 &nbsp;&nbsp;&nbsp;&nbsp; A paleta de cores de um projeto consiste no conjunto de cores previamente selecionadas para representar visualmente a identidade do produto digital em todos os seus elementos gráficos e funcionais. Essa paleta inclui cores primárias, secundárias, de destaque e de fundo, que devem ser utilizadas de forma sistemática em interfaces, componentes, textos e elementos de navegação. Seu propósito é assegurar uniformidade visual, fortalecer a comunicação da marca e facilitar a percepção do usuário ao interagir com o sistema. <br>
 
 &nbsp;&nbsp;&nbsp;&nbsp; A adoção de uma paleta de cores bem estruturada e alinhada entre os designers e a equipe de desenvolvimento front-end é essencial para garantir coerência estética e funcionalidade técnica. Em ambientes colaborativos, especialmente no contexto de projetos acadêmicos baseados em metodologias ágeis, essa padronização contribui para a consistência visual entre protótipos e implementações, reduz retrabalho, otimiza a comunicação entre os membros da equipe e assegura a acessibilidade por meio de contrastes adequados. A padronização cromática ainda reforça a identidade do produto, tornando-o mais reconhecível e profissional perante os usuários. <br>
-
-<div align = "center">
-<sup>Figura 11: Cores </sup><br>
-<img src="../assets/assets_wad/Paleta_cores.png">
-
-<sup>Fonte: Material produzido pelos autores (2025).</sup><br>
-
-</div>
-
-| Recomendação Aplicada               | Nome da cor  | Hex               | Função                                                                                                                                   |
-| ----------------------------------- | ------------ | ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| Cor primária                        | Verde        | #66B512           | Cor para destacar tanto fundo, quanto botões principais, destaques, header, ícones                                                       |
-| Cor priméria mais clara             | Verde claro  | #D2EEAE           | Cor para destacar fundo de cards e botões secundários.                                                                                   |
-| Cor de composição                   | Azul         | #0091DF           | Cor ultilizada para barra de progresso, botões secundárias, caixa de notificações, perfil do ranking, o rodapé da página do FieldAcaemy. |
-| Cor de composição                   | Cinza        | #D9D9D9           | Fundo de cards, divisores, bordas.                                                                                                       |
-| Cor Texto primária                  | Texto escuro | #1F1C1C           |                                                                                                                                          |
-| Texto principal sobre fundos claros |              |
-| Cor Texto secundário                | Texto claro  | #FFFFFF           |                                                                                                                                          |
-| Texto para fundos escuros ou botões | aaa          | coloridos fortes. |                                                                                                                                          |
-
 ### 3.3.2 Tipografia
-
-*Apresente aqui a tipografia da solução, com famílias de fontes e suas respectivas funções*
 &nbsp;&nbsp;&nbsp;&nbsp; A tipografia padroniza a leitura e reforça a identidade da marca. Especifique fontes, tamanhos, pesos, espaçamentos e exemplos de uso. Ela  define as fontes, tamanhos, pesos e estilos utilizados em todos os textos da interface. Ela estabelece uma hierarquia visual clara, facilita a leitura e reforça a identidade da marca. <br>
-&nbsp;&nbsp;&nbsp;&nbsp; A tipografia padroniza a leitura e reforça a identidade da marca. Especifique fontes, tamanhos, pesos, espaçamentos e exemplos de uso. Ela define as fontes, tamanhos, pesos e estilos utilizados em todos os textos da interface. Ela estabelece uma hierarquia visual clara, facilita a leitura e reforça a identidade da marca. <br>
 
 &nbsp;&nbsp;&nbsp;&nbsp; A tipografia é um elemento essencial na construção da identidade visual de uma interface. Ela influencia diretamente na legibilidade e na percepção da marca. Em um guia de estilos, a definição tipográfica deve incluir as famílias tipográficas utilizadas (ex: sans-serif ou serif), tamanhos, pesos (light, regular, bold), espaçamentos (entre letras e linhas) e hierarquia de títulos (H1, H2, H3 etc.) e parágrafos. <br>
-
-<div align = "center">
-<sup>Figura 8: Tipografia </sup><br>
-<img src="assets/assets_wad/Tipografia.png"> 
-
-<sup>Fonte: Material produzido pelos autores (2025).</sup><br>
-</div>
 
 <div align = "center">
 <sup>Figura 12: Tipografia </sup><br>
@@ -671,30 +633,8 @@ Cor Texto secundário| Texto claro | #FFFFFF| Texto para fundos escuros ou botõ
 
 ### 3.3.3 Iconografia e imagens
 
-*(esta subseção é opcional, caso não existam ícones e imagens, apague esta subseção)*
-
-*posicione aqui imagens e textos contendo exemplos padronizados de ícones e imagens, com seus respectivos atributos de aplicação, utilizadas na solução*
-
-&nbsp;&nbsp;&nbsp;&nbsp; A iconografia reúne todos os ícones utilizados na interface, padronizando seu estilo, tamanho, cor e aplicação. Os ícones devem ser facilmente reconhecíveis, reforçando ações e informações sem gerar ambiguidade. <br>
 &nbsp;&nbsp;&nbsp;&nbsp; A iconografia reúne todos os ícones utilizados na interface, padronizando seu estilo, tamanho, cor e aplicação. Os ícones devem ser facilmente reconhecíveis, reforçando ações e informações sem gerar ambiguidade. <br>
 
-<div align = "center">
-<sup>Figura 8: Tipografia </sup><br>
-<img src="assets/assets_wad/iconografia (1).png"> 
-<sup>Fonte: Material produzido pelos autores (2025).</sup><br>
-</div>
-
-#### NavBar Mobile
-Icone | Funcionalidade | 
-
-| --- | ---|
-
-Colheita | Acessa informações e registros sobre colheitas realizadas, facilitando o controle de produção. |
-Boas Práticas | Exibe dicas, orientações e conteúdos educativos para melhorar processos e resultados. |
-Perfil | 	Permite visualizar e editar dados pessoais e preferências do usuário. |
-Plantio| Gerencia informações sobre o plantio, como datas, áreas e culturas cultivadas. |
-Mapas e dados | 	Mostra mapas interativos e dados georreferenciados para análise e tomada de decisão. |
-Data inbox e integração| Centraliza dados recebidos e integrações com outros sistemas ou dispositivos. |
 <div align = "center">
 <sup>Figura 13: Iconografia </sup><br>
 <img src="../assets/assets_wad/iconografia.png">
@@ -715,37 +655,6 @@ Data inbox e integração| Centraliza dados recebidos e integrações com outros
 | Data inbox e integração | Centraliza dados recebidos e integrações com outros sistemas ou dispositivos.                  |
 
 <br>
-
-#### NavBar
-
-Icone | Funcionalidade | 
-
-| --- | ---|
-
-Perfil | Visualiza e edita dados do usuário, foto e configurações pessoais.|
-Barra de Navegação | Abre/fecha o menu lateral de navegação do sistema. | 
-Favoritados | 	Acessa rapidamente itens ou conteúdos marcados como favoritos.|
-Feedback | Permite enviar opiniões, sugestões ou avaliações sobre o sistema ou conteúdos. |
-FieldAcademy | Direciona para área de cursos, treinamentos ou materiais educativos.|
-Barra de pesquisa | Visualiza e edita dados do usuário (atalho extra).|
-FieldView | Exibe visualizações detalhadas do campo, mapas ou dashboards de monitoramento. |
-Notificação | 	Mostra alertas, lembretes ou mensagens importantes para o usuário.|
-Adicionar um módulo| 	Permite criar um novo módulo, etapa ou item dentro do sistema.|
-Minhas trilhas | 	Exibe os percursos, trilhas de aprendizagem ou fluxos personalizados do usuário.|
-Download | 	Realiza o download de arquivos, relatórios ou dados da plataforma.| 
-Lixeira | Acessa itens excluídos, permitindo restaurar ou excluir definitivamente conteúdos.|
-
-
-Icone | Funcionalidade | 
-
-| --- | ---|
-
-Adicionar | Cria ou cadastra um novo item, pedido ou módulo. |
-Boas práticas (botão)|	Acesso rápido ao conteúdo de boas práticas, dicas e recomendações.|
-Continuar|Avança, visualiza detalhes ou inicia uma ação/tarefa.|
-Ver mais|Avança, visualiza detalhes ou inicia uma ação/tarefa.|
-Curtir/Descurtir (like/dislike)|Avalia conteúdos, módulos ou funcionalidades com feedback positivo ou negativo.|
-
 
 ## 3.4 Protótipo de alta fidelidade (sprint 3)
 
@@ -966,7 +875,6 @@ CREATE TABLE IF NOT EXISTS content (
 6. img_path: Caminho para imagem.
 7. order: Ordem do conteúdo dentro do módulo.
 8. due_time: Prazo ou data limite para acessar o conteúdo.
-______________________
 
 ---
 
@@ -1227,18 +1135,7 @@ CREATE TABLE IF NOT EXISTS user_test_score (
 
 ### 3.5.2. Consultas SQL e lógica proposicional (sprint 2)
 
-
 #### **Expressão SQL - 1:**
-
-=======
-
-> > > > > > > Stashed changes
-> > > > > > > _Template de SQL + lógica proposicional_
-> > > > > > > #1 | ---
-> > > > > > > --- | ---
-*Template de SQL + lógica proposicional*
-#1 | ---
---- | ---
 
 **Expressão SQL** | SELECT
 
