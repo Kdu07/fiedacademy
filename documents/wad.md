@@ -726,26 +726,32 @@ Esta tela representa a tela inicial do site, a tela de home para gestores, no fo
 
 Esta tela corresponde a tela de Home para usuários PTD, na versão desktop. No topo, há um menu lateral, barra de busca e ícone de notificações com lista suspensa. A identidade visual mantém a imagem temática de plantação e o logotipo FieldAcademy. Abaixo, há o botão "Help" para suporte ao usuário.
 Em seguida, a seção "Trilhas" apresenta quatro categorias (Onboarding, Básico, Intermediário e Avançado), cada uma com barra de progresso indicando o avanço e o botão "Continuar" para seguir o conteúdo.
-A tela oferece uma navegação clara para o usuário acompanhar o progresso nas trilhas, acessar conteúdos fixos e visualizar os destaques de performance da equipe.
+A tela oferece uma navegação clara para o usuário acompanhar o progresso nas trilhas, acessar conteúdos fixos e visualizar os destaques de performance da equipe. <br>
 
-## Protótipo da tela de login, versão PTD, desktop:
+#### Protótipo da tela de login, versão PTD e Gestor - desktop:
 
+<div align = "center">
+<sup>Figura 16: Protótipo tela Login Desktop - PTD e Gestor.</sup><br>
 <img src="../assets/assets_wad/protótipos/Protótipo-Login-PTD.png">
 
-A tela de login apresenta uma imagem de fundo relacionada ao setor agrícola. No centro, há o título “Cadastre-se” seguido de uma breve descrição. Abaixo, localizam-se três campos para preenchimento: email, senha e confirmação de senha. Logo em seguida, há um botão verde com a inscrição “Criar conta”. Ao final da interface, há uma opção de link convidando o usuário a criar uma conta, caso ainda não possua. O logotipo da empresa está posicionado no canto superior direito. O design é limpo e direto, com foco na funcionalidade e clareza para o usuário.
+<sup>Fonte: Material produzido pelos autores (2025).</sup><br>
+</div>
 
-## Protótipo da tela de login, versão gestor, desktop:
+A tela de login apresenta uma imagem de fundo relacionada ao setor agrícola. No centro, há o título “Cadastre-se” seguido de uma breve descrição. Abaixo, localizam-se três campos para preenchimento: email, senha e confirmação de senha. Logo em seguida, há um botão verde com a inscrição “Criar conta”. Ao final da interface, há uma opção de link convidando o usuário a criar uma conta, caso ainda não possua. O logotipo da empresa está posicionado no canto superior direito. O design é limpo e direto, com foco na funcionalidade e clareza para o usuário.<br>
 
-<img src="../assets/assets_wad/protótipos/Protótipo-Login-Gestor.png">
 
-A tela de login versão gestor, possui os mesmos botões da tela de login versão PTD porém alteramos a imagem de fundo para aumentar o engajamento do projeto.
+## Protótipo da tela de login, versão PTD e Gestor - mobile:
 
-## Protótipo da tela de login, versão PTD, mobile:
+<div align = "center">
+<sup>Figura 17: Protótipo tela Login Mobile - PTD e Gestor.</sup><br>
+<img src= "../assets/assets_wad/protótipos/Protótipo-Login-PTD-Mobile.png">
 
-<img src="../assets/assets_wad/protótipos/Protótipo-Login-PTD-Mobile.png">
-A imagem mostra a tela de login com tema agrícola. A parte inferior da imagem exibe o formulário de cadastro sobreposto a um fundo semi-transparente branco, o que destaca os elementos visuais sem ocultar totalmente a imagem de fundo. O título “Cadastre-se” está centralizado e em negrito, seguido por um texto de exemplo (“Bla bla bla bla bla bla bla bla”), que será substituído por uma breve descrição do sistema. Abaixo, há três campos de entrada: “Email”, “Senha” e “Confirme sua senha”. Em seguida, um botão verde com o texto “Criar conta” é exibido em destaque. Na parte inferior do formulário, há um link para redirecionar usuários que ainda não possuem conta, com a frase “Não possui uma conta? Crie agora” .O logotipo da empresa está posicionado no canto superior direito. O design é limpo e direto, com foco na funcionalidade e clareza para o usuário.
+<sup>Fonte: Material produzido pelos autores (2025).</sup><br>
+</div>
 
-## Protótipo da tela de progresso do gestor, desktop:
+A tela de cadastro possui um design com tema agrícola e foco na simplicidade. Exibe um formulário com campos para **email**, **senha** e **confirmação de senha**, além de um botão “Criar conta”. Há também um link para usuários que ainda não possuem conta. O layout é limpo, com fundo semi-transparente e destaque para os elementos principais, facilitando a navegação e compreensão da interface.
+
+## Protótipo da tela de progresso  - Gestor - desktop:
 
 <img src="../assets/assets_wad/protótipos/Protótipo-Progresso-Gestor.png">
 
