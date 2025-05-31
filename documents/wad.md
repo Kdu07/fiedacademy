@@ -470,7 +470,7 @@ Dessa forma, foi desenvolvido o seguinte diagrama de arquitetura:
 
 <div align = "center">
 
-<sup>Figura 5: Diagrama de Arquitetura.</sup><br>
+<sup>Figura 7: Diagrama de Arquitetura.</sup><br>
 
 <img src="../assets/assets_wad/diagramaArquitetura.png"><br>
 
@@ -546,7 +546,7 @@ Para alinhar os componentes de forma clara e responsiva, foi utilizada a estrutu
 #### Versão Mobile
 
 <div align = "center">
-<sup>Figura 7: Wireframes da plataforma para o PTD - Mobile </sup><br>
+<sup>Figura 8: Wireframes da plataforma para o PTD - Mobile </sup><br>
 <img src="../assets/assets_wad/wireframes/wireframeMobPTD.png">
 
 <sup>Fonte: Material produzido pelos autores (2025).</sup><br>
@@ -575,7 +575,7 @@ Para alinhar os componentes de forma clara e responsiva, foi utilizada a estrutu
 #### Versão Mobile
 
 <div align = "center">
-<sup>Figura 8: Wireframes da plataforma para o Gestor - Mobile </sup><br>
+<sup>Figura 9: Wireframes da plataforma para o Gestor - Mobile </sup><br>
 <img src="../assets/assets_wad/wireframes/wireframeMobGestor.png">
 
 <sup>Fonte: Material produzido pelos autores (2025).</sup><br>
@@ -590,7 +590,13 @@ Para alinhar os componentes de forma clara e responsiva, foi utilizada a estrutu
 
 &nbsp;&nbsp;&nbsp;&nbsp; Em suma, o Guia de Estilos serve como referência oficial para todos os envolvidos no projeto, garantindo consistência visual, clareza de comunicação e aplicação correta dos elementos da marca. <br>
 
-![alt text](../assets/assets_wad/Grid.png)
+<div align = "center">
+<sup>Figura 10: Grid </sup><br>
+<img src="../assets/../assets/assets_wad/Grid.png">
+
+<sup>Fonte: Material produzido pelos autores (2025).</sup><br>
+
+</div>
 
 ### 3.3.1 Cores
 
@@ -598,7 +604,13 @@ Para alinhar os componentes de forma clara e responsiva, foi utilizada a estrutu
 
 &nbsp;&nbsp;&nbsp;&nbsp; A adoção de uma paleta de cores bem estruturada e alinhada entre os designers e a equipe de desenvolvimento front-end é essencial para garantir coerência estética e funcionalidade técnica. Em ambientes colaborativos, especialmente no contexto de projetos acadêmicos baseados em metodologias ágeis, essa padronização contribui para a consistência visual entre protótipos e implementações, reduz retrabalho, otimiza a comunicação entre os membros da equipe e assegura a acessibilidade por meio de contrastes adequados. A padronização cromática ainda reforça a identidade do produto, tornando-o mais reconhecível e profissional perante os usuários. <br>
 
-![alt text](../assets/assets_wad/Paleta_cores.png)
+<div align = "center">
+<sup>Figura 11: Cores </sup><br>
+<img src="../assets/assets_wad/Paleta_cores.png">
+
+<sup>Fonte: Material produzido pelos autores (2025).</sup><br>
+
+</div>
 
 | Recomendação Aplicada               | Nome da cor  | Hex               | Função                                                                                                                                   |
 | ----------------------------------- | ------------ | ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
@@ -617,7 +629,13 @@ Para alinhar os componentes de forma clara e responsiva, foi utilizada a estrutu
 
 &nbsp;&nbsp;&nbsp;&nbsp; A tipografia é um elemento essencial na construção da identidade visual de uma interface. Ela influencia diretamente na legibilidade e na percepção da marca. Em um guia de estilos, a definição tipográfica deve incluir as famílias tipográficas utilizadas (ex: sans-serif ou serif), tamanhos, pesos (light, regular, bold), espaçamentos (entre letras e linhas) e hierarquia de títulos (H1, H2, H3 etc.) e parágrafos. <br>
 
-![assets/assets_wad/Tipografia.png](../assets/assets_wad/Tipografia.png)
+<div align = "center">
+<sup>Figura 12: Tipografia </sup><br>
+<img src="../assets/assets_wad/Tipografia.png">
+
+<sup>Fonte: Material produzido pelos autores (2025).</sup><br>
+
+</div>
 
 &nbsp;&nbsp;&nbsp;&nbsp; É fundamental garantir contraste suficiente entre texto e fundo para atender critérios de acessibilidade. A padronização tipográfica no guia de estilos contribui para a coesão visual em todos os materiais da marca ou produto digital. <br>
 
@@ -629,9 +647,13 @@ Para alinhar os componentes de forma clara e responsiva, foi utilizada a estrutu
 
 &nbsp;&nbsp;&nbsp;&nbsp; A iconografia reúne todos os ícones utilizados na interface, padronizando seu estilo, tamanho, cor e aplicação. Os ícones devem ser facilmente reconhecíveis, reforçando ações e informações sem gerar ambiguidade. <br>
 
-![alt text](<../assets/assets_wad/iconografia (1).png>)
+<div align = "center">
+<sup>Figura 13: Iconografia </sup><br>
+<img src="../assets/assets_wad/iconografia.png">
 
-<br>
+<sup>Fonte: Material produzido pelos autores (2025).</sup><br>
+
+</div>
 
 #### Icons Mobile
 
@@ -677,17 +699,30 @@ Curtir/Descurtir (like/dislike)|Avalia conteúdos, módulos ou funcionalidades c
 
 &nbsp;&nbsp;&nbsp;&nbsp; Protótipos de alta fidelidade são representações visuais altamente detalhadas de um produto digital, como aplicativos, sites ou sistemas. Eles imitam com grande precisão a aparência final da interface e, muitas vezes, simulam também interações, transições e fluxos de navegação. Esses protótipos incluem cores, tipografias, imagens, ícones e elementos gráficos que corresponde a basicamente todo o front-end do projeto, onde trabalhamos para manter a identidade visual do parceiro. <br>
 
-&nbsp;&nbsp;&nbsp;&nbsp;Os protótipos de alta fidelidade servem principalmente para permitir uma visualização precisa do produto final, facilitando que todas as partes interessadas, como stakeholders, clientes e desenvolvedores, compreendam claramente o design e validem as soluções propostas antes da codificação. Eles também são essenciais para garantir o alinhamento entre as equipes de design, desenvolvimento e produto, funcionando como uma referência visual concreta do que será construído. Além disso, esses protótipos são frequentemente utilizados em testes de usabilidade, onde se simula a experiência final do usuário para coletar feedbacks sobre a navegação, compreensão e interação com a interface. Isso permite identificar e corrigir problemas antes que sejam feitos investimentos significativos na fase de desenvolvimento. <br>
+&nbsp;&nbsp;&nbsp;&nbsp; Dessa forma, foi desenvolvida a prototipação de quatro versões do website FieldAcademy: duas versões são voltadas aos **PTDs** (Promotores Técnicos Digitais), sendo elas as versões desktop e mobile, e duas versões que desenvolvidas para o **Gestor**, tendo funcionalidades mais abrangentes como a de editar e adicionar novas trilhas e módulos.
+Logo abaixo estão diponíveis algumas telas da prototipação de alta fidelidade.
+<br>
 
-## Protótipo da tela de home, versão gestor, desktop:
+#### Protótipo da tela de home, versão Gestor - desktop:
 
-<img src="../assets/assets_wad/protótipos/Protótipo Home Gestor 3.png">
+<div align = "center">
+<sup>Figura 14: Protótipo tela Home Desktop - Gestor.</sup><br>
+<img src= "../assets/assets_wad/protótipos/Protótipo Home Gestor 3.png">
 
-Esta tela representa a tela inicial do site, a tela de home para gestores, no formato desktop. No topo, há um menu de navegação com ícone de menu lateral, barra de busca e ícone de notificações, que exibe uma lista suspensa de avisos. A tela oferece uma visão clara e funcional para que o gestor acompanhe a evolução da equipe e acesse rapidamente as principais funcionalidades.
+<sup>Fonte: Material produzido pelos autores (2025).</sup><br>
 
-## Protótipo da tela de home, versão PTD, desktop:
+</div>
 
-<img src="../assets/assets_wad/protótipos/Protótipo-Home-PTD 2.png">
+Esta tela representa a tela inicial do site, a tela de home para gestores, no formato desktop. No topo, há um menu de navegação com ícone de menu lateral, barra de busca e ícone de notificações, que exibe uma lista suspensa de avisos. A tela oferece uma visão clara e funcional para que o gestor acompanhe a evolução da equipe e acesse rapidamente as principais funcionalidades. <div>
+
+#### Protótipo da tela de home, versão PTD - desktop:
+
+<div align = "center">
+<sup>Figura 15: Protótipo tela Home Desktop - PTD.</sup><br>
+<img src= "../assets/assets_wad/protótipos/Protótipo-Home-PTD 2.png">
+
+<sup>Fonte: Material produzido pelos autores (2025).</sup><br>
+</div>
 
 Esta tela corresponde a tela de Home para usuários PTD, na versão desktop. No topo, há um menu lateral, barra de busca e ícone de notificações com lista suspensa. A identidade visual mantém a imagem temática de plantação e o logotipo FieldAcademy. Abaixo, há o botão "Help" para suporte ao usuário.
 Em seguida, a seção "Trilhas" apresenta quatro categorias (Onboarding, Básico, Intermediário e Avançado), cada uma com barra de progresso indicando o avanço e o botão "Continuar" para seguir o conteúdo.
