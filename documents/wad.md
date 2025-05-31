@@ -981,6 +981,7 @@ app.use('/api', apiRoutes);
   ```
 
 
+
 * **URL:** `GET /paths/:id`
 * **Método:** GET
 * **Descrição:** Pega as informações de uma trilha específica pelo ID
@@ -997,6 +998,37 @@ app.use('/api', apiRoutes);
     }
   ]
   ```
+---------------------
+
+* **URL:** `GET /paths/:id`
+* **Método:** GET
+* **Descrição:** Retorna as informações detalhadas de uma trilha de aprendizado específica, identificada pelo seu ID. Ideal para exibir o nome, descrição e módulos de uma trilha para o usuário.
+* **Header:** `Content-Type: application/json`
+* **Parâmetros de rota:** `id`: ID da trilha (número inteiro)
+* **Corpo da requisição:** Não se aplica
+* **Exemplo de resposta:** 
+
+  ```
+{
+  "name": "Basic Path", 
+  "description": "Content for beginners", 
+  "modules": [
+
+    {
+      "name": "Module 1",
+      "Progress": 0,
+      "link": "/module/1"
+    },
+    {
+      "name": "Module 2", 
+      "Progress": 0,
+      "link": "/content/2"
+
+    },
+  ]
+}
+```
+
 
 # <a name="c4"></a>4. Desenvolvimento da Aplicação Web
 
