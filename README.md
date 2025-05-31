@@ -55,7 +55,7 @@ Para isso, a estrutura de pastas foi organizada da seguinte forma:
  - `config/`: Arquivos de configuração, como a conexão com o banco de dados.
 - `controllers/`, `models/`, `routes/`, `views/`: Pastas principais do padrão MVC.
 - `styles/` e `scripts/`: Arquivos CSS e JS públicos.
-- `README.md`: Documento explicativo principal do projeto.
+- `README.md`: Documentação explicativa principal do projeto.
 
 ## 💻 Configuração para desenvolvimento e execução do código
 
@@ -84,9 +84,9 @@ Aqui encontram-se todas as instruções necessárias para a instalação de todo
     * 
 * 0.4.0 - XX/XX/2025
     * 
-* 0.3.0 - XX/XX/2025
+* 0.3.0 - 30/05/2025 - Prototipação de alta fidelidade (MockUp) e Arquiteru de Software (MVC) 
     * 
-* 0.2.0 - 15/06/2025 - Prototipação de baixa fidelidade e construção do banco de dados.
+* 0.2.0 - 15/05/2025 - Prototipação de baixa fidelidade e construção do banco de dados.
     * 
 * 0.1.0 - 30/04/2025 - Idealização inicial da plataforma, a partir do entendimento do negócio e do problema.*
     
