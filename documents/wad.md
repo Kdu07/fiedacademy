@@ -1252,6 +1252,118 @@ app.use('/api', apiRoutes);
   ]
   ```
 
+
+
+* **URL:** `GET /paths/:id`
+* **Método:** GET
+* **Descrição:** Pega as informações de uma trilha específica pelo ID
+* **Header:** `Content-Type: text/html`
+* **Parâmetros de rota:** `id`: ID da trilha (número inteiro)
+* **Corpo da requisição:** Não se aplica
+* **Exemplo de resposta:** 
+  ```
+  [
+    {
+    "id": 2,
+    "title": "Path to Content Creation",
+    "description": "This path includes modules for content creation."
+    }
+  ]
+  ```
+---------------------
+
+* **URL:** `GET /paths/:id`
+* **Método:** GET
+* **Descrição:** Retorna as informações detalhadas de uma trilha de aprendizado específica, identificada pelo seu ID. Ideal para exibir o nome, descrição e módulos de uma trilha para o usuário.
+* **Header:** `Content-Type: application/json`
+* **Parâmetros de rota:** `id`: ID da trilha (número inteiro)
+* **Corpo da requisição:** Não se aplica
+* **Exemplo de resposta:** 
+
+  ```
+{
+  "name": "Basic Path", 
+  "description": "Content for beginners", 
+  "modules": [
+
+    {
+      "name": "Module 1",
+      "Progress": 0,
+      "link": "/module/1"
+    },
+    {
+      "name": "Module 2", 
+      "Progress": 0,
+      "link": "/content/2"
+
+    },
+  ]
+}
+```
+
+Uma WebAPI (Interface de Programação de Aplicações Web) permite que o frontend (interface visual do usuário) e o backend (servidor e banco de dados) se comuniquem de forma estruturada e segura. Através de endpoints, que são os caminhos definidos no servidor, é possível requisitar, enviar ou modificar dados da aplicação.
+
+Um endpoint é uma URL que representa uma funcionalidade específica do sistema. Por exemplo, um endpoint pode ser usado para buscar todas as trilhas de aprendizagem ou salvar os conteúdos favoritos de um usuário. No projeto, utilizamos dois tipos principais de endpoints:
+
+ * Endpoints HTML (servidor renderiza páginas com EJS): utilizados quando o backend devolve páginas completas já com os dados embutidos (renderização no servidor).
+
+ * Endpoints REST (API JSON): utilizados quando o backend devolve apenas os dados em JSON para que o frontend os exiba dinamicamente.
+
+Essa documentação apresenta todos os endpoints implementados até o momento, organizados entre rotas HTML e rotas REST, conforme seus respectivos papéis no sistema.
+
+### Inicialização das rotas (app.js)
+```javascript
+const express = require('express');
+require('dotenv').config();
+const app = express();
+const path = require('path');
+
+const indexRoutes = require('./routes/index');
+const pathsRoutes = require('./routes/paths');
+
+// Configura EJS
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+
+// Arquivos estáticos
+app.use('/assets', express.static(path.join(__dirname, 'assets')));
+app.use(express.static('public'));
+
+// Rotas principais
+app.use('/', indexRoutes);
+app.use('/paths', pathsRoutes);
+
+// Inicia o servidor
+app.listen(3000, () => {
+  console.log('Servidor rodando em http://localhost:3000');
+});js
+const homeRoutes = require('./routes/homeRoutes');
+app.use('/', homeRoutes);
+
+const apiRoutes = require('./routes/apiRoutes');
+app.use('/api', apiRoutes);
+```
+
+### Rotas HTML (renderização com EJS)
+
+#### Trilhas na Home (`/`)
+
+* **URL:** `GET /paths`
+* **Método:** GET
+* **Descrição:** Pega todas as trilhas do banco de dados e renderiza na página de Home.
+* **Header:** `Content-Type: text/html`
+* **Corpo da requisição:** Não se aplica
+* **Exemplo de resposta:**
+  ```
+  [
+    {
+    "id": 1,
+    "title": "Path to Certification",
+    "description": "This path leads to various certification modules."
+    }
+  ]
+  ```
+
 * **URL:** `GET /paths/:id`
 * **Método:** GET
 * **Descrição:** Pega as informações de uma trilha específica pelo ID

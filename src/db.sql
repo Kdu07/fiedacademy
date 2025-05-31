@@ -1,0 +1,100 @@
+CREATE TABLE IF NOT EXISTS roles (
+  id SERIAL PRIMARY KEY,
+  name_role VARCHAR(50),
+  can_create BOOLEAN,
+  can_read BOOLEAN,
+  can_update BOOLEAN,
+  can_delete BOOLEAN
+);
+
+CREATE TABLE IF NOT EXISTS path (
+  id SERIAL PRIMARY KEY,
+  title VARCHAR(255),
+  description TEXT
+);
+
+CREATE TABLE IF NOT EXISTS certificate (
+  id SERIAL PRIMARY KEY,
+  id_path INTEGER NOT NULL REFERENCES path(id),
+  hash_code VARCHAR(100)
+);
+
+CREATE TABLE IF NOT EXISTS module (
+  id SERIAL PRIMARY KEY,
+  id_path INTEGER NOT NULL REFERENCES path(id),
+  title VARCHAR(255),
+  "order" INTEGER NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS users (
+  id SERIAL PRIMARY KEY,
+  id_role INTEGER NOT NULL REFERENCES roles(id) ON DELETE CASCADE,
+  name VARCHAR(255),
+  region VARCHAR(255),
+  email VARCHAR(255),
+  password VARCHAR(255),
+  score INTEGER NOT NULL,
+  last_login TIMESTAMP,
+  profile_photo_path VARCHAR(255)
+);
+
+CREATE TABLE IF NOT EXISTS user_certificate_progress (
+  id SERIAL PRIMARY KEY,
+  id_user INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  id_certificate INTEGER NOT NULL REFERENCES certificate(id) ON DELETE CASCADE,
+  completed_at DATE
+);
+
+CREATE TABLE IF NOT EXISTS content (
+  id SERIAL PRIMARY KEY,
+  id_module INTEGER NOT NULL REFERENCES module(id) ON DELETE CASCADE,
+  doc_path VARCHAR(255),
+  video_path VARCHAR(255),
+  img_path VARCHAR(255),
+  "order" INTEGER NOT NULL,
+  highlight BOOLEAN,
+  body VARCHAR(3000),
+);
+
+CREATE TABLE IF NOT EXISTS user_content_progress (
+  id SERIAL PRIMARY KEY,
+  user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  module_id INTEGER NOT NULL REFERENCES module(id) ON DELETE CASCADE,
+  content_id INTEGER NOT NULL REFERENCES content(id) ON DELETE CASCADE,
+  completed_at TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS bookmarks (
+  id SERIAL PRIMARY KEY,
+  id_user INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  id_content INTEGER NOT NULL REFERENCES content(id) ON DELETE CASCADE,
+  saved_at TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS tests (
+  id SERIAL PRIMARY KEY,
+  id_module INTEGER NOT NULL REFERENCES module(id) ON DELETE CASCADE,
+  questions TEXT,
+  num_questions INTEGER NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS user_test_score (
+  id SERIAL PRIMARY KEY,
+  id_test INTEGER NOT NULL REFERENCES tests(id) ON DELETE CASCADE,
+  id_user INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  score INTEGER NOT NULL,
+  started_at TIMESTAMP,
+  ended_at TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS feedbacks_content_module (
+  id SERIAL PRIMARY KEY,
+  id_content INTEGER NOT NULL REFERENCES content(id) ON DELETE CASCADE,
+  id_module INTEGER NOT NULL REFERENCES module(id) ON DELETE CASCADE,
+  id_user INTEGER NOT NULL REFERENCES users(id),
+  message TEXT,
+  rating SMALLINT,
+  created_at TIMESTAMP
+);
+
+-- CREATE TABLE IF NOT EXISTS LOGS
