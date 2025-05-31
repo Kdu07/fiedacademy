@@ -1410,7 +1410,7 @@ Com o guia de estilos definido, para facilitar o desenvolvimento de cada funcion
 **Tela de login**: Onde o usuário faz seu cadastro na plataforma ou entra diretamente através de sua conta.
 <div align = "center">
 
-<sup>Figura X: Tela de login.</sup><br>
+<sup>Figura 21: Tela de login.</sup><br>
 
 <img src="../assets/assets_wad/telaLogin.png" width="300"><br>
 
@@ -1422,7 +1422,7 @@ Com o guia de estilos definido, para facilitar o desenvolvimento de cada funcion
 
 <div align = "center">
 
-<sup>Figura X: Tela de Home.</sup><br>
+<sup>Figura 22: Tela de Home.</sup><br>
 
 <img src="../assets/assets_wad/telaHome1.png" width="300"><br>
 <img src="../assets/assets_wad/telaHome2.png" width="300"><br>
@@ -1435,7 +1435,7 @@ Com o guia de estilos definido, para facilitar o desenvolvimento de cada funcion
 
 <div align = "center">
 
-<sup>Figura X: Tela de Trilhas.</sup><br>
+<sup>Figura 23: Tela de Trilhas.</sup><br>
 
 <img src="../assets/assets_wad/telaTrilha.png" width="300"><br>
 
@@ -1447,7 +1447,7 @@ Com o guia de estilos definido, para facilitar o desenvolvimento de cada funcion
 
 <div align = "center">
 
-<sup>Figura X: Tela de Conteudos.</sup><br>
+<sup>Figura 24: Tela de Conteudos.</sup><br>
 
 <img src="../assets/assets_wad/telaConteudo.png" width="300"><br>
 
@@ -1459,7 +1459,7 @@ Com o guia de estilos definido, para facilitar o desenvolvimento de cada funcion
 
 <div align = "center">
 
-<sup>Figura X: Tela de Help.</sup><br>
+<sup>Figura 25: Tela de Help.</sup><br>
 
 <img src="../assets/assets_wad/telaHelp.png" width="300"><br>
 
