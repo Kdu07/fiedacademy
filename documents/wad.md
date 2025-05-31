@@ -740,7 +740,7 @@ A tela oferece uma navegação clara para o usuário acompanhar o progresso nas 
 A tela de login apresenta uma imagem de fundo relacionada ao setor agrícola. No centro, há o título “Cadastre-se” seguido de uma breve descrição. Abaixo, localizam-se três campos para preenchimento: email, senha e confirmação de senha. Logo em seguida, há um botão verde com a inscrição “Criar conta”. Ao final da interface, há uma opção de link convidando o usuário a criar uma conta, caso ainda não possua. O logotipo da empresa está posicionado no canto superior direito. O design é limpo e direto, com foco na funcionalidade e clareza para o usuário.<br>
 
 
-## Protótipo da tela de login, versão PTD e Gestor - mobile:
+#### Protótipo da tela de login, versão PTD e Gestor - mobile:
 
 <div align = "center">
 <sup>Figura 17: Protótipo tela Login Mobile - PTD e Gestor.</sup><br>
@@ -751,45 +751,29 @@ A tela de login apresenta uma imagem de fundo relacionada ao setor agrícola. No
 
 A tela de cadastro possui um design com tema agrícola e foco na simplicidade. Exibe um formulário com campos para **email**, **senha** e **confirmação de senha**, além de um botão “Criar conta”. Há também um link para usuários que ainda não possuem conta. O layout é limpo, com fundo semi-transparente e destaque para os elementos principais, facilitando a navegação e compreensão da interface.
 
-## Protótipo da tela de progresso  - Gestor - desktop:
+#### Protótipo da tela de progresso  - Gestor - desktop:
 
+<div align = "center">
+<sup>Figura 18: Protótipo tela de Progresso Desktop - Gestor.</sup><br>
 <img src="../assets/assets_wad/protótipos/Protótipo-Progresso-Gestor.png">
 
-A imagem apresenta a tela de progresso do gestor da plataforma FieldAcademy. No topo, há um cabeçalho com fundo verde, contendo o logotipo e o nome da plataforma. Abaixo, à esquerda, há um card que exibe o nome do usuário, o número da ficha e o progresso do PTD. Ao lado direito, há uma barra de busca com um campo placeholder e um ícone de lupa. Na seção seguinte, aparece um card intitulado “Atividade do PTD”, exibindo o e-mail do usuário e a região correspondente (Sudeste). Logo abaixo, há dois gráficos: um com o título “Trilhas Completas” e outro “Médias de acertos”, ambos representados com gráficos lineares de cor azul. Na parte inferior da interface, encontra-se a seção “Certificados”, em um bloco com fundo verde-claro. Essa área contém diversos botões de certificados organizados em três linhas, com rótulos genéricos no formato “Certificado - Módulo X” e acompanhados de um ícone azul.
+<sup>Fonte: Material produzido pelos autores (2025).</sup><br>
+</div>
 
-Por fim, a tela é finalizada com um rodapé de fundo verde, mantendo a identidade visual da plataforma.
+A tela de **progresso do gestor** da plataforma apresenta um cabeçalho verde com o logotipo e o nome da plataforma. Exibe um card com as informações do PTD (nome, número da ficha e progresso), uma barra de busca, e um card com a atividade do usuário (e-mail e região). Abaixo, são mostrados dois gráficos: **“Trilhas Completas”** e **“Médias de acertos”**, ambos em azul. Ao final, há a seção **“Certificados”**, com botões organizados em linhas, cada um identificado como “Certificado - Módulo X”. A função principal dessa tela é voltada para que o Gestor possa acompanhar o progresso de cada PTD na plataforma FIeldAcademy, de forma detalhada.<br>
 
-## Protótipo da tela de home, versão PTD, mobile:
+#### Protótipo da tela de conteúdo, versão gestor - desktop:
 
-<img src="../assets/assets_wad/protótipos/Protótipo-Help-PTD-Mobile-2.png">
-
-A imagem apresenta a tela incial do projeto porém na versão mobile, a tela é focada em trilhas de aprendizado voltadas ao setor agrícola. No topo da tela, há uma barra verde com ícones de menu, busca e notificações, seguida de uma imagem de fundo com vegetação e céu, sobre a qual está o título “FieldAcademy” centralizado. Abaixo, uma seção destacada com o texto “Help” indica uma área de suporte ou orientação. Em seguida, encontra-se a seção “Trilhas”, que organiza o conteúdo em níveis: “Onboarding”, “Básico”, “Intermediário” e “Avançado”. Cada trilha é exibida com uma barra de progresso estilizada em azul e roxo, acompanhada de um botão “Continuar” com menu dropdown ao lado direito. Mais abaixo, a seção “Fixados” exibe cartões organizados em grade, todos rotulados como “Boas práticas”, cada um com um botão azul de ação “Ver mais”. O layout é limpo, responsivo e utiliza uma paleta de cores que remete à natureza, reforçando a proposta educacional ligada ao campo.
-
-## Protótipo da tela de help, versão PTD, desktop:
-
-<img src="../assets/assets_wad/protótipos/Protótipo-Help-PTD.png">
-
-A imagem apresenta a interface da tela de help do FieldAcademy, voltada para usuários do setor agrícola. No topo, há uma barra verde com ícones de menu , busca (lupa) e notificações (sino), reforçando a navegabilidade e interação com a plataforma. Abaixo da barra de navegação, o título “Como podemos te ajudar hoje?” introduz uma grade de seis botões verdes com ícones pretos, cada um representando uma categoria de suporte: “Mapas e dados”, “Boas práticas”, “Data inbox e integrações”, “Plantio”, “Colheita” e “Primeiros passos”. Os ícones são ilustrativos e reforçam visualmente a função de cada botão, facilitando a identificação rápida das opções. Ao final da tela, uma barra fixa inferior contém links de navegação: “Sobre nós”, “FieldView” e “Bayer”, provavelmente conectando a páginas institucionais ou parceiros do sistema. O layout é limpo, com uso predominante de verde, alinhado ao tema agrícola e sustentável da plataforma.
-
-## Protótipo da tela de conteúdo, versão gestor, desktop:
-
+<div align = "center">
+<sup>Figura 19: Protótipo tela de Conteúdo Desktop - Gestor.</sup><br>
 <img src="../assets/assets_wad/protótipos/Protótipo-Conteúdo-Gestor.png">
 
-A imagem mostra a interface de um módulo educacional da plataforma, voltada à capacitação no setor agrícola. No topo da tela, há uma barra verde com o logotipo da plataforma à esquerda e ícones de menu e navegação. Abaixo, um banner verde com texto em branco destaca o título do módulo atual. À esquerda da tela, há um menu vertical com botões verdes que representam as lições numeradas (#1 a #7), além de dois botões adicionais: “EXIBIR MAIS” e “EDITAR TRILHA”, indicando funcionalidades administrativas. No centro, encontra-se o conteúdo da lição atual, que trata da questão “O que é Remote View e como usar?”, com um espaço reservado para texto e um vídeo ilustrativo abaixo, com miniatura mostrando uma silhueta de um homem à frente de um trator ao entardecer. No canto inferior direito, há botões de interação — um positivo (curtir), um negativo (não curtir) — e um botão azul “PRÓXIMO” para avançar para a próxima lição. A interface mantém o padrão visual em tons de verde e branco, reforçando a identidade da plataforma e sua conexão com o ambiente agrícola.
+<sup>Fonte: Material produzido pelos autores (2025).</sup><br>
+</div>
 
-## Protótipo da tela de trilhas, versão PTD, desktop:
+A interface do módulo apresenta uma barra superior com logo e menu, um menu lateral com lições e opções administrativas, e no centro a lição atual sobre “Remote View” com texto e vídeo. Há botões de interação (curtir, não curtir) e um botão “PRÓXIMO” para avançar. A paleta verde e branca reforça a identidade visual agrícola. O diferencial dessa tela para a do PTD está na possibilidade de edição de trilhas, exclusiva do Gestor.<br>
 
-<img src="../assets/assets_wad/protótipos/Protótipo-Módulo-Avançado-PTD.png">
-
-A imagem mostra a tela da “Trilha Avançado” da plataforma FieldAcademy. Nela, os módulos de aprendizagem são exibidos com indicadores de progresso e botões de ação. O Módulo 1 – Mapas e Dados já foi parcialmente concluído, indicado por uma barra de progresso azul, e há um botão verde claro com a palavra “Continuar”. A interface segue o padrão visual com elementos em verde, tipografia clara e botões bem definidos, facilitando a navegação e seguindo a identidade visual do parceiro. O layout é limpo e funcional, mantendo consistência com os outros protótipos já enviados.
-
-## Protótipo da tela introdutória do projeto, desktop:
-
-<img src="../assets/assets_wad/protótipos/Protótipo-TelaFieldAcademy.png">
-
-A imagem apresenta a interface da tela introdutória do projeto. No topo, há um cabeçalho com fundo azul, contendo o logotipo e o nome da plataforma no canto esquerdo, além de um ícone de menu no canto direito. Logo abaixo, encontra-se o título “O que é o FieldAcademy?” destacado em verde escuro. Em seguida, há um texto explicativo sobre a plataforma, ressaltando seu caráter inovador, estruturado e acessível, com foco na capacitação dos PTDs (Promotores Técnicos Digitais). O texto também enfatiza os diferenciais da plataforma, como a utilização de gamificação para tornar o aprendizado mais dinâmico e a possibilidade de acesso offline, facilitando a consulta de conteúdos em regiões remotas. Na parte inferior da tela, aparecem as fotos dos integrantes da equipe de desenvolvimento, cada uma acompanhada do respectivo nome e função: Carlos Quaglia, Luiz Hinuy, Rafael Cabral, João Agmont, Emanuelly Dias, Antonio Cillo e Maria Arielly, todos identificados como "Desenvolvedor Design". Por fim, no rodapé, há uma área de “Contatos” sobre um fundo azul, listando os e-mails institucionais de todos os membros da equipe em destaque. Ao lado, aparecem também ícones gráficos relacionados a comunicação e suporte, com um link para a seção de “Ajuda”.
-
-Segue o link de todos os protótipos do nosso projeto : https://www.figma.com/design/bOsRfHBpYqRksHS4GiNW74/bayer-project?node-id=3664-2&p=f&t=Qf7bovjAhDRUTjIr-0
+[Link para acessar o protótipo completo das versões PTD e Gestor, amobos em mobile e desktop.](https://www.figma.com/design/bOsRfHBpYqRksHS4GiNW74/bayer-project?node-id=3664-2&t=75lexEkyPQQWuFiA-1)
 
 ## 3.5. Modelagem do banco de dados (sprints 2 e 4)
 
@@ -801,7 +785,7 @@ Segue o link de todos os protótipos do nosso projeto : https://www.figma.com/de
 
 <div align = "center">
 
-<sup>Figura 9: Diagrama Modelo Relacional.</sup><br>
+<sup>Figura 20: Diagrama Modelo Relacional.</sup><br>
 
 <img src="../assets/assets_wad/modelagem_relacional_FieldAcademy.png"><br>
 
@@ -1359,114 +1343,6 @@ app.use('/api', apiRoutes);
   ```
 ---------------------
 
-* **URL:** `GET /paths/:id`
-* **Método:** GET
-* **Descrição:** Retorna as informações detalhadas de uma trilha de aprendizado específica, identificada pelo seu ID. Ideal para exibir o nome, descrição e módulos de uma trilha para o usuário.
-* **Header:** `Content-Type: application/json`
-* **Parâmetros de rota:** `id`: ID da trilha (número inteiro)
-* **Corpo da requisição:** Não se aplica
-* **Exemplo de resposta:** 
-
-  ```
-{
-  "name": "Basic Path", 
-  "description": "Content for beginners", 
-  "modules": [
-
-    {
-      "name": "Module 1",
-      "Progress": 0,
-      "link": "/module/1"
-    },
-    {
-      "name": "Module 2", 
-      "Progress": 0,
-      "link": "/content/2"
-
-    },
-  ]
-}
-```
-
-Uma WebAPI (Interface de Programação de Aplicações Web) permite que o frontend (interface visual do usuário) e o backend (servidor e banco de dados) se comuniquem de forma estruturada e segura. Através de endpoints, que são os caminhos definidos no servidor, é possível requisitar, enviar ou modificar dados da aplicação.
-
-Um endpoint é uma URL que representa uma funcionalidade específica do sistema. Por exemplo, um endpoint pode ser usado para buscar todas as trilhas de aprendizagem ou salvar os conteúdos favoritos de um usuário. No projeto, utilizamos dois tipos principais de endpoints:
-
- * Endpoints HTML (servidor renderiza páginas com EJS): utilizados quando o backend devolve páginas completas já com os dados embutidos (renderização no servidor).
-
- * Endpoints REST (API JSON): utilizados quando o backend devolve apenas os dados em JSON para que o frontend os exiba dinamicamente.
-
-Essa documentação apresenta todos os endpoints implementados até o momento, organizados entre rotas HTML e rotas REST, conforme seus respectivos papéis no sistema.
-
-### Inicialização das rotas (app.js)
-```javascript
-const express = require('express');
-require('dotenv').config();
-const app = express();
-const path = require('path');
-
-const indexRoutes = require('./routes/index');
-const pathsRoutes = require('./routes/paths');
-
-// Configura EJS
-app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'views'));
-
-// Arquivos estáticos
-app.use('/assets', express.static(path.join(__dirname, 'assets')));
-app.use(express.static('public'));
-
-// Rotas principais
-app.use('/', indexRoutes);
-app.use('/paths', pathsRoutes);
-
-// Inicia o servidor
-app.listen(3000, () => {
-  console.log('Servidor rodando em http://localhost:3000');
-});js
-const homeRoutes = require('./routes/homeRoutes');
-app.use('/', homeRoutes);
-
-const apiRoutes = require('./routes/apiRoutes');
-app.use('/api', apiRoutes);
-```
-
-### Rotas HTML (renderização com EJS)
-
-#### Trilhas na Home (`/`)
-
-* **URL:** `GET /paths`
-* **Método:** GET
-* **Descrição:** Pega todas as trilhas do banco de dados e renderiza na página de Home.
-* **Header:** `Content-Type: text/html`
-* **Corpo da requisição:** Não se aplica
-* **Exemplo de resposta:**
-  ```
-  [
-    {
-    "id": 1,
-    "title": "Path to Certification",
-    "description": "This path leads to various certification modules."
-    }
-  ]
-  ```
-
-* **URL:** `GET /paths/:id`
-* **Método:** GET
-* **Descrição:** Pega as informações de uma trilha específica pelo ID
-* **Header:** `Content-Type: text/html`
-* **Parâmetros de rota:** `id`: ID da trilha (número inteiro)
-* **Corpo da requisição:** Não se aplica
-* **Exemplo de resposta:** 
-  ```
-  [
-    {
-    "id": 2,
-    "title": "Path to Content Creation",
-    "description": "This path includes modules for content creation."
-    }
-  ]
-  ```
 
 #### Rotas para conteúdos dos módulos (`/module/:id/page/:page_id`)
 **Método:** GET
