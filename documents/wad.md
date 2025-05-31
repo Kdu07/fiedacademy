@@ -369,16 +369,15 @@ User Stories são descrições simples das funcionalidades do sistema escritas d
 <sub>Fonte: Material produzido pelos autores (2025).</sub><br>
 
 <sup>Quadro 7: US05.</sup><br>
-
-| US05 (Prioritária)   | Identificação                                                                                                     |
-| -------------------- | ----------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------ | --------------------------------------------------------- | ------------------------------------------------------------- | -------------------------------------------------- | ----------------------------------------------- |
-| Persona              | Mariana Lima (PTD)                                                                                                |
-| User Story           | “Como PTD, quero baixar módulos e vídeos para acessar offline, para não ficar sem suporte em áreas sem internet.” |
-| Critério de aceite 1 | CR1: Mariana pode selecionar e baixar conteúdos.                                                                  |
-| Critério de aceite 2 | CR2: Conteúdo baixado é acessível sem conexão.                                                                    |
-| Critério de aceite 3 | CR3: O sistema indica conteúdos disponíveis offline.                                                              |
-| Critério de aceite 4 | CR4: Mariana pode remover conteúdos baixados.                                                                     |
-| Critérios INVEST     | <br> **Independente:** Não depende de notificações ou ranking.                                                    | <br> **Negociável:** Pode ser implementado para tipos de conteúdo específicos. | <br> **Valorosa:** Garante acesso à capacitação no campo. | <br> **Estimável:** Download, cache e notificação são claros. | <br> **Small:** Foco em download e acesso offline. | <br> **Testável:** Simulação de acesso offline. |
+| US05 (Prioritária)     | Identificação                                                                                                |
+|-----------------------|-------------------------------------------------------------------------------------------------------------|
+| Persona         | Mariana Lima (PTD)                                                                                           |
+| User Story       | “Como PTD, quero baixar módulos e vídeos para acessar offline, para não ficar sem suporte em áreas sem internet.” |
+| Critério de aceite 1 | CR1: Mariana pode selecionar e baixar conteúdos.                                                          |
+| Critério de aceite 2 | CR2: Conteúdo baixado é acessível sem conexão.                                                            |
+| Critério de aceite 3 | CR3: O sistema indica conteúdos disponíveis offline.                                                      |
+| Critério de aceite 4 | CR4: Mariana pode remover conteúdos baixados.                                                             |
+| Critérios INVEST | **Independente:** Não depende de notificações ou ranking.<br>**Negociável:** Pode ser implementado para tipos de conteúdo específicos.<br>**Valorosa:** Garante acesso à capacitação no campo.<br>**Estimável:** Download, cache e notificação são claros.<br>**Small:** Foco em download e acesso offline.<br>**Testável:** Simulação de acesso offline. |
 
 <sub>Fonte: Material produzido pelos autores (2025).</sub><br>
 
@@ -457,7 +456,54 @@ User Stories são descrições simples das funcionalidades do sistema escritas d
 
 ## 3.1. Arquitetura (sprints 3 e 4)
 
-_Posicione aqui o diagrama de arquitetura da sua solução de aplicação web. Atualize sempre que necessário_
+O sistema desenvolvido adota um **diagrama de arquitetura** para representar de forma visual os principais componentes da aplicação e o fluxo de dados entre eles, facilitando a compreensão de sua estrutura e responsabilidades.
+
+A arquitetura segue o padrão **MVC (Model-View-Controller)**, que organiza o sistema em três camadas:
+
+- **Model:** gerencia os dados e regras de negócio, como usuários, conteúdos, provas e progresso.
+- **View:** exibe as informações ao usuário, com páginas específicas para perfis como PTD, Gestor e Admin.
+- **Controller:** recebe as requisições, processa as ações e interage com os modelos.
+
+O **front-end**, desenvolvido com **HTML, Tailwind CSS e Vue.js**, se comunica com o **back-end** por meio de um roteador. O **servidor** está estruturado em views, controllers e models, enquanto os dados são armazenados em um **servidor de banco de dados**, garantindo a persistência das informações essenciais.
+
+Dessa forma, foi desenvolvido o seguinte diagrama de arquitetura:
+
+<div align = "center">
+
+<sup>Figura 5: Diagrama de Arquitetura.</sup><br>
+
+<img src="../assets/assets_wad/diagramaArquitetura.png"><br>
+
+<sub>Fonte: Material produzido pelos autores (2025). </sub><br>
+[Link para o diagrama ](https://lucid.app/lucidchart/ef436dae-d492-4850-bd35-57e03da84208/edit?viewport_loc=-1299%2C554%2C5469%2C2390%2C0_0&invitationId=inv_1f28fcee-e5dc-496d-bdfa-a919c8171a3b) <br>
+</div>
+
+O diagrama de arquitetura desenvolvido está dividido em três grandes áreas: **Cliente (Front-End)**, **Servidor (Back-End)** e **Servidor de Banco de Dados**.<br>
+
+#### Cliente (Front-End) <br>
+
+A camada de cliente representa a interface que o usuário acessa diretamente. Ela foi construída utilizando **HTML, Tailwind CSS** e **Vue.js**, permitindo a criação de uma interface responsiva, moderna e interativa. Essa camada se comunica com o servidor através de requisições HTTP, roteadas por um **Router**, que direciona as ações ao controlador correspondente.<br>
+
+#### Servidor (Back-End) <br>
+
+- **Views:** são representadas com blocos separados para os três perfis de usuário:
+- **PTD (usuário comum):** possui acesso a funcionalidades como visualização de tribunas, envio de provas e feedbacks.
+- **Gestor:** visualiza o progresso dos usuários e pode emitir certificados.
+- **Admin:** possui permissões de gerenciamento total do sistema, podendo criar conteúdos, provas, módulos e usuários.<br>
+
+- **Controllers:** cada controlador está responsável por um conjunto específico de ações:
+  - `AuthController`: login e logout.
+  - `UserController`: informações do usuário.
+  - `ExamController`, `HelpController`, `ArticleController`: lidam com envio e gestão de provas, perguntas e artigos.
+  - `ModuleController`, `PathController`, `ContentController`: controlam a criação e edição de módulos, trilhas e conteúdos educacionais.<br>
+
+- **Models:** os modelos representam as entidades do banco de dados. Entre os principais estão:
+  - `users`, `contents`, `exams`, `feedbacks`, `modules`, `paths` e `certificates`.
+  - Também existem modelos relacionais como `user_content_progress`, `user_exam_score`, `feedbacks_content_module`, que tratam o progresso e desempenho dos usuários. <br>
+
+
+#### Banco de Dados <br>
+O **Servidor de Banco de Dados** é o repositório central das informações manipuladas pela aplicação. Através dos modelos definidos no back-end, o sistema realiza operações de leitura e escrita nos dados, garantindo persistência e integridade das informações.<br>
 
 ## 3.2. Wireframes (sprint 2)
 
