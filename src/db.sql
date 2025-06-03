@@ -45,7 +45,7 @@ CREATE TABLE IF NOT EXISTS user_certificate_progress (
   completed_at DATE
 );
 
-CREATE TABLE IF NOT EXISTS content (
+CREATE TABLE IF NOT EXISTS contents (
   id SERIAL PRIMARY KEY,
   id_module INTEGER NOT NULL REFERENCES module(id) ON DELETE CASCADE,
   doc_path VARCHAR(255),
