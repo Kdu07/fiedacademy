@@ -45,15 +45,14 @@ CREATE TABLE IF NOT EXISTS user_certificate_progress (
   completed_at DATE
 );
 
-CREATE TABLE IF NOT EXISTS contents (
+CREATE TABLE IF NOT EXISTS content (
   id SERIAL PRIMARY KEY,
   id_module INTEGER NOT NULL REFERENCES module(id) ON DELETE CASCADE,
   doc_path VARCHAR(255),
   video_path VARCHAR(255),
   img_path VARCHAR(255),
   "order" INTEGER NOT NULL,
-  highlight BOOLEAN,
-  body VARCHAR(3000),
+  highlight BOOLEAN
 );
 
 CREATE TABLE IF NOT EXISTS user_content_progress (
@@ -96,5 +95,3 @@ CREATE TABLE IF NOT EXISTS feedbacks_content_module (
   rating SMALLINT,
   created_at TIMESTAMP
 );
-
--- CREATE TABLE IF NOT EXISTS LOGS
