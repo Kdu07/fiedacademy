@@ -1,7 +1,7 @@
 const bookmarksModel = require("../models/bookmarksModel");
 const pathsModel = require("../models/pathsModel");
 
-const { getUserId } = require("../public/scripts/getUserId");
+const { getUserId } = require("../utils/jwtUtils");
 
 module.exports.index = async (req, res) => {
   const token = req.cookies.token; // Get the token from cookies

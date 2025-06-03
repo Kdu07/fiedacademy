@@ -5,7 +5,7 @@ const JWT_SECRET = process.env.JWT_SECRET;
 exports.create = async (req, res) => {
   const { email, password } = req.body;
   if(!email || !password) {
-    res.redirect('/login?error=Email%20e%20senha%20são%20obrigatórios');
+    return res.redirect('/login?error=Email%20e%20senha%20são%20obrigatórios');
   }
   const newUser = await createUser(email,password)
 
@@ -18,13 +18,13 @@ exports.create = async (req, res) => {
   const token = JWT.sign({ id: newUser.id }, JWT_SECRET, { expiresIn: '1d' });
 
   res.cookie('token', token, {httpOnly: true, secure: true}); // Set cookie with user ID
-  res.redirect("/");
+  return res.redirect("/");
 };
 
 exports.login = async (req, res) => {
    const { email, password } = req.body;
   if(!email || !password) {
-    res.redirect('/login?error=Email%20e%20senha%20são%20obrigatórios');
+    return res.redirect('/login?error=Email%20e%20senha%20são%20obrigatórios');
   }
   const user = await loginUser(email,password)
 
@@ -37,12 +37,12 @@ exports.login = async (req, res) => {
   const token = JWT.sign({ id: user.id }, JWT_SECRET, { expiresIn: '7d' });
 
   res.cookie('token', token, {httpOnly: true, secure: true}); // Set cookie with user ID
-  res.redirect("/");
+  return res.redirect("/");
 };
 
 
 exports.logout = async (req, res) => {
   console.log('Logging out user...');
   res.clearCookie('token', { httpOnly: true, secure: true });
-  res.redirect('/login');
+  return res.redirect('/login');
 }
