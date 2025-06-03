@@ -1,11 +1,10 @@
 const express = require('express');
 const router = express.Router();
 require('dotenv').config();
-const home = require('../controllers/homeController');
-const paths = require('../controllers/pathsController');
-const content = require('../controllers/contentController');
-const help = require('../controllers/helpController');
-const moduleController = require('../controllers/ModuleController');
+const homeController = require('../controllers/homeController');
+const pathController = require('../controllers/pathController');
+const moduleController = require('../controllers/moduleController');
+const helpController = require('../controllers/helpController');
 
 // Rota do conteúdo
 router.get('/module/:id/page/:page_id', moduleController.index)
@@ -14,16 +13,16 @@ router.get('/module/:id/page/:page_id', moduleController.index)
 // router.get('/', login.index);
     
 // Rota da home
-router.get('/', home.index);
+router.get('/', homeController.index);
 
 // Rota de paths
-router.get('/paths/:id', paths.index);
+router.get('/path/:id', pathController.index);
 
-// Rota de content
-router.get('/content/:id', content.index);
+// Rota de module
+router.get('/content/:id', moduleController.index);
 
 // Rota de help
-router.get('/help', help.index);
+router.get('/help', helpController.index);
 
 // Aqui você importa o novo arquivo de rotas
     //  const pathRoutes = require('./pathRoutes');

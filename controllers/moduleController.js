@@ -1,4 +1,4 @@
-const moduleModel = require("../models/moduleModel");
+const moduleModel = require("../models/modulesModel");
 
 // Controlador da rota /
 exports.index = async (req, res) => {

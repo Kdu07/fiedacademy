@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title><%= path.title %> | Trilha Onboarding </title>
+  <title><%= paths.title %> | Trilha Onboarding </title>
   <link rel="stylesheet" href="/css/style.css" />
 </head>
 
@@ -12,9 +12,9 @@
 
   <!-- Trilhas -->
   <div class="min-h-screen p-6 max-w-4xl mx-auto">
-    <h1 class="text-3xl font-bold text-green-800 mb-8">Trilha: <%= path.title %></h1>
+    <h1 class="text-3xl font-bold text-green-800 mb-8">Trilha: <%= paths.title %></h1>
 
-  <% path.modules
+  <% paths.modules
    .sort((a, b) => a.order - b.order) // garante que os modulos vem na ordem
    .forEach((modulo, index) => { %>
   

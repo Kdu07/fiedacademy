@@ -5,7 +5,6 @@ const app = express();
 const path = require('path');
 
 const indexRoutes = require('./routes/index');
-const pathsRoutes = require('./routes/paths');
 
 // Configura EJS
 app.set('view engine', 'ejs');
