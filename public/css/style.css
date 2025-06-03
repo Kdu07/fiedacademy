@@ -662,9 +662,6 @@ video {
 .h-full {
   height: 100%;
 }
-.h-1\/6 {
-  height: 16.666667%;
-}
 .min-h-screen {
   min-height: 100vh;
 }
@@ -811,10 +808,6 @@ video {
 .border-gray-300 {
   --tw-border-opacity: 1;
   border-color: rgb(209 213 219 / var(--tw-border-opacity, 1));
-}
-.border-white {
-  --tw-border-opacity: 1;
-  border-color: rgb(255 255 255 / var(--tw-border-opacity, 1));
 }
 .bg-\[\#0057A6\] {
   --tw-bg-opacity: 1;
