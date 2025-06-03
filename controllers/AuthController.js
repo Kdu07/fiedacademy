@@ -1,4 +1,4 @@
-const { createUser, loginUser } = require("../models/UserModel");
+const { createUser, loginUser } = require("../models/usersModel");
 const JWT = require('jsonwebtoken')
 const JWT_SECRET = process.env.JWT_SECRET;
 
