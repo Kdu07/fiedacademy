@@ -6,8 +6,8 @@ const pathController = require('../controllers/pathController');
 const helpController = require('../controllers/helpController');
 const contentController = require('../controllers/contentController');
 const loginController = require('../controllers/loginController');
-const moduleController = require('../controllers/ModuleController');
-const authController = require('../controllers/AuthController');
+const moduleController = require('../controllers/contentController');
+const authController = require('../controllers/authController');
 
 // Rota da home
 router.get('/', homeController.index);
@@ -22,11 +22,12 @@ router.get('/path/:id', pathController.index);
 router.get('/content/:id', contentController.index);
 
 // Rota de help
-router.get('/help', help.index);
+router.get('/help', helpController.index);
 
 // Rota de autenticação
-router.post('/api/create-user', auth.create);
-router.post('/api/login-user', auth.login);
+router.post('/api/create-user', authController.create);
+router.post('/api/login-user', authController.login);
+router.get('/logout-user', authController.logout);
 
 // Aqui você importa o novo arquivo de rotas
     //  const pathRoutes = require('./pathRoutes');
