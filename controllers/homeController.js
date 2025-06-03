@@ -1,10 +1,22 @@
-const bookmarksModel = require('../models/bookmarksModel')
-const pathsModel = require('../models/pathsModel')
+const bookmarksModel = require("../models/bookmarksModel");
+const pathsModel = require("../models/pathsModel");
 
-// Busca todas as trilhas e bookmarks do banco de dados e renderiza a página inicial
-module.exports.index = async (req, res) => { 
-    const bookmarks = await bookmarksModel.getAll();
-    const paths = await pathsModel.getAll();
+const { getUserId } = require("../utils/jwtUtils");
 
-    res.render('home', { paths, bookmarks });
+module.exports.index = async (req, res) => {
+  const token = req.cookies.token; // Get the token from cookies
+
+  if (!token) {
+    console.error("No token found in cookies");
+    return res.redirect("/login"); // Redirect to login if no token is present
+  }
+
+  const userId = await getUserId(token);
+  console.log(userId);
+ 
+
+  const bookmarks = await bookmarksModel.getAll();
+  const paths = await pathsModel.getAll();
+
+  res.render("home", { paths, bookmarks });
 };

@@ -3,12 +3,16 @@ require('dotenv').config();
 
 const app = express();
 const path = require('path');
+const cookieParser = require('cookie-parser');
 
 const indexRoutes = require('./routes/index');
 
 // Configura EJS
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
+app.use(cookieParser());
+
+app.use(express.urlencoded({ extended: true }));
 
 // Torna a pasta 'assets' pública
 app.use('/assets', express.static(path.join(__dirname, 'assets')));
