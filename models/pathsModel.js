@@ -2,25 +2,25 @@
 const db = require('../config/db');
 
 exports.getAll = async () => {
-  const res = await db.query('SELECT * FROM path');
+  const res = await db.query('SELECT * FROM paths');
   return res.rows;
 };
 
 exports.getById = async (id) => {
-  const res = await db.query('SELECT * FROM path WHERE id = $1', [id]);
+  const res = await db.query('SELECT * FROM paths WHERE id = $1', [id]);
   return res.rows[0];
 };
 
 // Busca uma trilha e seus módulos
 exports.getPathWithModules = async (pathId) => {
   // Busca a trilha
-  const pathResult = await db.query('SELECT id, title, description FROM path WHERE id = $1', [pathId]);
+  const pathResult = await db.query('SELECT id, title, description FROM paths WHERE id = $1', [pathId]);
   if (pathResult.rows.length === 0) throw new Error('Trilha não encontrada');
 
   const pathData = pathResult.rows[0];
 
   // Busca os módulos da trilha
-  const moduleResult = await db.query('SELECT id, title, "order" FROM module WHERE id_path = $1 ORDER BY "order" ASC', [pathId]);
+  const moduleResult = await db.query('SELECT id, title, "order" FROM modules WHERE id_path = $1 ORDER BY "order" ASC', [pathId]);
   const moduleData = moduleResult.rows;
 
   // Monta o objeto no formato esperado pela view
