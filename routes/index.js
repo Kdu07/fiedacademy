@@ -7,6 +7,7 @@ const helpController = require('../controllers/helpController');
 const contentController = require('../controllers/contentController');
 const loginController = require('../controllers/loginController');
 const authController = require('../controllers/authController');
+const dashboardController = require('../controllers/dashboardController');
 
 // Rota da home
 router.get('/', homeController.index);
@@ -22,6 +23,9 @@ router.get('/content/:id', contentController.index);
 
 // Rota de help
 router.get('/help', helpController.index);
+
+// Rota da dashboard
+router.get('/dashboard', dashboardController.index);
 
 // Rota de autenticação
 router.post('/api/create-user', authController.create);

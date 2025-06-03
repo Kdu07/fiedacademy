@@ -10,7 +10,7 @@ exports.index = async (req, res) => {
     return;
   }
 
-  res.render("moduleContent", {
+  res.render("content", {
     moduleContent,
     module,
     modulePages
