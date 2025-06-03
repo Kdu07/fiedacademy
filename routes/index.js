@@ -6,7 +6,6 @@ const pathController = require('../controllers/pathController');
 const helpController = require('../controllers/helpController');
 const contentController = require('../controllers/contentController');
 const loginController = require('../controllers/loginController');
-const moduleController = require('../controllers/contentController');
 const authController = require('../controllers/authController');
 
 // Rota da home

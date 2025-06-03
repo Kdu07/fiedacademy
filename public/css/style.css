@@ -867,7 +867,7 @@ video {
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
 }
 .bg-login-bg {
-  background-image: url('/images/login_fundo.jpg');
+  background-image: url('/images/login_fundo.png');
 }
 .from-mainGreen {
   --tw-gradient-from: #66B512 var(--tw-gradient-from-position);

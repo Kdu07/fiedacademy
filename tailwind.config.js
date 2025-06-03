@@ -7,7 +7,7 @@ module.exports = {
           mainGreen: "#66B512"
       },
       backgroundImage: {
-        'login-bg': "url('/images/login_fundo.jpg')",
+        'login-bg': "url('/images/login_fundo.png')",
       }
     }
   },
