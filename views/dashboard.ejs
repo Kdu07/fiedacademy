@@ -10,14 +10,33 @@
     <!-- Header -->
     <%- include('./partials/header') %>
 
-    <div class="flex flex-col">
-      <div class="flex flex-row">
-        <div class="m-auto w-4/6 bg-green-200 border-2 border-green-300 p-3">
-          <h1>Nome do usuário</h1>
-          <p>Email: </p>
-          <p>Região: </p>
+    <div class="flex flex-col m-auto w-4/6">
+      <div
+        class="border-2 border-gray-300 p-3 w-2/3 m-auto rounded-lg mt-4 mb-4"
+      >
+        <input
+          class="bg-white border-2 border-black w-full h-12 rounded-lg px-4"
+          type="text"
+          placeholder="Pesquisa PTD"
+        />
+      </div>
+      <div class="flex flex-row w-full me-auto">
+        <div class="bg-green-100 border-2 border-green-300 p-3 mb-4 w-1/2">
+          <h1 class="text-2xl">Nome do usuário</h1>
+          <p>Email:</p>
+          <p>Região:</p>
         </div>
-        <div></div>
+        <div class="grid grid-cols-2 w-full gap-4 ms-4">
+          <div class="bg-green-100 border-2 border-green-300 p-3 mb-4 w-full">
+            <h1 class="text-xl">Último login: 06/20/2025</h1>  
+          </div>
+          <div class="bg-green-100 border-2 border-green-300 p-3 mb-4 w-full">
+            <h1 class="text-xl">Último módulo: Galinheiro</h1>
+          </div>
+             <div class="bg-green-100 border-2 border-green-300 p-3 mb-4 w-full">
+            <h1 class="text-xl">Média: 9.</h1>
+          </div>
+        </div>
       </div>
     </div>
 

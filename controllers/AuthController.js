@@ -9,7 +9,7 @@ exports.create = async (req, res) => {
   }
   const newUser = await createUser(email,password)
 
-  console.log(newUser)
+  console.log('new user: '+newUser)
 
   if(!newUser || newUser.length === 0) {
     return res.redirect('/login?error=Email%20ou%20senha%20inválida');
