@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>O que é o FieldAcademy?</title>
+  <link rel="stylesheet" href="/css/style.css" />
+  <script>
+    function mostrarInfo(nome) {
+      alert(nome + " foi Desenvolvedor(a) e Designer deste projeto.");
+    }
+  </script>
+</head>
+<body class="bg-gray-50 min-h-screen flex flex-col">
+
+  <!-- Header -->
+  <%- include('./partials/header') %>
+
+  <!-- Conteúdo principal -->
+  <main class="container mx-auto px-6 py-10 flex-1">
+    <h2 class="text-2xl md:text-3xl font-bold text-[#0057A6] mb-8 text-center">O que é o FieldAcademy?</h2>
+    <div class="max-w-2xl mx-auto text-center mb-10">
+      <p class="text-gray-700 text-lg mb-6">
+        A FildAcademy é uma plataforma inovadora dedicada à capacitação técnica no agronegócio, criada para elevar o conhecimento e a eficiência dos PTDs (Promotores Técnicos Digitais). Com um sistema de aprendizado estruturado, personalizado e acessível, a FildAcademy busca solucionar os desafios da alta rotatividade e das lacunas de treinamento enfrentadas por esses profissionais.
+      </p>
+      <p class="text-gray-700 text-lg">
+        Ademais o Field Academy é um ambiente de aprendizado intuitivo, a plataforma se destaca pelo uso da gamificação, que torna o treinamento mais dinâmico e envolvente. Outro diferencial essencial é o acesso offline, permitindo que os profissionais consultem conteúdos mesmo em áreas remotas com pouca conectividade. Dessa forma, a Field Academy não apenas aprimora a qualificação técnica dos PTDs, como também promove uma transformação digital alinhada às necessidades reais do setor agrícola.
+      </p>
+    </div>
+
+    <h3 class="text-xl font-semibold text-[#0057A6] mb-6 text-center">Equipe de Desenvolvimento</h3>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto mb-12">
+      <div class="flex flex-col items-center">
+        <img src="/img/carlos.jpg" alt="Carlos Quaglia" class="w-24 h-24 rounded-full object-cover shadow cursor-pointer transition hover:scale-105" onclick="mostrarInfo('Carlos Quaglia')">
+        <span class="mt-2 font-medium text-gray-800">Carlos Quaglia</span>
+      </div>
+      <div class="flex flex-col items-center">
+        <img src="/img/luiz.jpg" alt="Luiz Hinuy" class="w-24 h-24 rounded-full object-cover shadow cursor-pointer transition hover:scale-105" onclick="mostrarInfo('Luiz Hinuy')">
+        <span class="mt-2 font-medium text-gray-800">Luiz Hinuy</span>
+      </div>
+      <div class="flex flex-col items-center">
+        <img src="/img/rafael.jpg" alt="Rafael Cabral" class="w-24 h-24 rounded-full object-cover shadow cursor-pointer transition hover:scale-105" onclick="mostrarInfo('Rafael Cabral')">
+        <span class="mt-2 font-medium text-gray-800">Rafael Cabral</span>
+      </div>
+      <div class="flex flex-col items-center">
+        <img src="/img/joao.jpg" alt="João Agmont" class="w-24 h-24 rounded-full object-cover shadow cursor-pointer transition hover:scale-105" onclick="mostrarInfo('João Agmont')">
+        <span class="mt-2 font-medium text-gray-800">João Agmont</span>
+      </div>
+      <div class="flex flex-col items-center">
+        <img src="/img/emanuely.jpg" alt="Emanuely Dias" class="w-24 h-24 rounded-full object-cover shadow cursor-pointer transition hover:scale-105" onclick="mostrarInfo('Emanuely Dias')">
+        <span class="mt-2 font-medium text-gray-800">Emanuely Dias</span>
+      </div>
+      <div class="flex flex-col items-center">
+        <img src="/img/antonio.jpg" alt="Antonio Cillo" class="w-24 h-24 rounded-full object-cover shadow cursor-pointer transition hover:scale-105" onclick="mostrarInfo('Antonio Cillo')">
+        <span class="mt-2 font-medium text-gray-800">Antonio Cillo</span>
+      </div>
+      <div class="flex flex-col items-center">
+        <img src="/img/maria.jpg" alt="Maria Arielly" class="w-24 h-24 rounded-full object-cover shadow cursor-pointer transition hover:scale-105" onclick="mostrarInfo('Maria Arielly')">
+        <span class="mt-2 font-medium text-gray-800">Maria Arielly</span>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-[#0090D0] py-6 mt-auto">
+    <div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
+      <div class="text-white text-sm mb-4 md:mb-0">
+        &copy; 2025 FieldAcademy. Todos os direitos reservados.
+      </div>
+      <div class="flex space-x-4">
+        <a href="mailto:Carlos.Quaglia@sou.inteli.edu.br" class="text-white underline">Carlos Quaglia</a>
+        <a href="mailto:Joao.Agmont@sou.inteli.edu.br" class="text-white underline">João Agmont</a>
+        <a href="mailto:Maria.arielly@sou.inteli.edu.br" class="text-white underline">Maria Arielly</a>
+        <a href="mailto:Luiz.Hinuy@sou.inteli.edu.br" class="text-white underline">Luiz Hinuy</a>
+        <a href="mailto:Rafael.Silva2@sou.inteli.edu.br" class="text-white underline">Rafael Cabral</a>
+        <a href="mailto:Emanuely.dias@sou.inteli.edu.br" class="text-white underline">Emanuely Dias</a>
+        <a href="mailto:Antonio.Cillo@sou.inteli.edu.br" class="text-white underline">Antonio Cillo</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
