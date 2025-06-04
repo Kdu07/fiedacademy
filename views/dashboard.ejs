@@ -4,38 +4,92 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="/css/style.css" rel="stylesheet" />
-    <title>Document</title>
+    <title>Dashboard</title>
   </head>
   <body>
     <!-- Header -->
     <%- include('./partials/header') %>
 
-    <div class="flex flex-col m-auto w-4/6">
-      <div
-        class="border-2 border-gray-300 p-3 w-2/3 m-auto rounded-lg mt-4 mb-4"
-      >
+    <div class="flex flex-col w-4/6 mx-auto">
+      <div class="w-full rounded-lg mt-4 mb-4">
         <input
           class="bg-white border-2 border-black w-full h-12 rounded-lg px-4"
           type="text"
           placeholder="Pesquisa PTD"
         />
       </div>
-      <div class="flex flex-row w-full me-auto">
-        <div class="bg-green-100 border-2 border-green-300 p-3 mb-4 w-1/2">
-          <h1 class="text-2xl">Nome do usuário</h1>
-          <p>Email:</p>
-          <p>Região:</p>
+      <div class="w-full">
+        <h1 class="text-3xl font-semibold">Nome do usuário</h1>
+        <p>Email</p>
+        <p>Região</p>
+      </div>
+      <div class="grid grid-cols-2 gap-4 mt-8">
+        <div
+          class="flex flex-col items-center justify-center bg-gray-100 rounded-lg"
+        >
+          <p>Último acesso</p>
+          <p class="text-xl font-semibold">04/06/2025</p>
         </div>
-        <div class="grid grid-cols-2 w-full gap-4 ms-4">
-          <div class="bg-green-100 border-2 border-green-300 p-3 mb-4 w-full">
-            <h1 class="text-xl">Último login: 06/20/2025</h1>  
+        <div
+          class="flex flex-col items-center justify-center bg-gray-100 rounded-lg"
+        >
+          <p>Último módulo</p>
+          <p class="text-xl font-semibold">Modulo 1</p>
+        </div>
+        <div
+          class="flex flex-col items-center justify-center bg-gray-100 rounded-lg"
+        >
+          <p>Média</p>
+          <p class="text-xl font-semibold">9.25</p>
+        </div>
+        <div
+          class="flex flex-col items-center justify-center bg-gray-100 rounded-lg"
+        >
+          <p>Ranking</p>
+          <p class="text-xl font-semibold">23</p>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 gap-6 bg-gray-100 rounded-lg mt-8 p-4">
+        <h1 class="text-3xl mb-4">Trilhas</h1>
+        <!-- Trilha -->
+        <div class="flex flex-row items-center justify-between">
+          <p class="me-4 text-xl w-1/6">Onboarding</p>
+          <div class="w-4/6 h-4 bg-gray-100 rounded-full">
+            <div class="h-full bg-cyan-400 rounded-full"></div>
           </div>
-          <div class="bg-green-100 border-2 border-green-300 p-3 mb-4 w-full">
-            <h1 class="text-xl">Último módulo: Galinheiro</h1>
+          <a href="/dashboard">
+            <img src="/icons/download.svg" alt="" />
+          </a>
+        </div>
+         <!-- Trilha -->
+        <div class="flex flex-row items-center justify-between">
+          <p class="me-4 text-xl w-1/6">Básico</p>
+          <div class="w-4/6 h-4 bg-gray-200 rounded-full">
+            <div class="h-full bg-cyan-400 rounded-full"></div>
           </div>
-             <div class="bg-green-100 border-2 border-green-300 p-3 mb-4 w-full">
-            <h1 class="text-xl">Média: 9.</h1>
+          <a href="/dashboard">
+            <img src="/icons/download.svg" alt="" />
+          </a>
+        </div>
+         <!-- Trilha -->
+        <div class="flex flex-row items-center justify-between">
+          <p class="me-4 text-xl w-1/6">Intermediário</p>
+          <div class="w-4/6 h-4 bg-gray-200 rounded-full">
+            <div class="h-full bg-cyan-400 rounded-full"></div>
           </div>
+          <a href="/dashboard">
+            <img src="/icons/download.svg" alt="" />
+          </a>
+        </div>
+             <!-- Trilha -->
+        <div class="flex flex-row items-center justify-between">
+          <p class="me-4 text-xl w-1/6">Avançado</p>
+          <div class="w-4/6 h-4 bg-gray-200 rounded-full">
+            <div class="h-full bg-cyan-400 rounded-full"></div>
+          </div>
+          <a href="/dashboard">
+            <img src="/icons/download.svg" alt="" />
+          </a>
         </div>
       </div>
     </div>
