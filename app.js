@@ -5,7 +5,13 @@ const app = express();
 const path = require('path');
 const cookieParser = require('cookie-parser');
 
-const indexRoutes = require('./routes/index');
+const homeRoutes = require('./routes/homeRoutes');
+const authRoutes = require('./routes/authRoutes');
+const helpRoutes = require('./routes/helpRoutes');
+const loginRoutes = require('./routes/loginRoutes');
+const pathRoutes = require('./routes/pathRoutes');
+const contentRoutes = require('./routes/contentRoutes');
+const dashboardRoutes = require('./routes/dashboardRoutes');
 
 // Configura EJS
 app.set('view engine', 'ejs');
@@ -19,7 +25,14 @@ app.use('/assets', express.static(path.join(__dirname, 'assets')));
 app.use(express.static('public')); // <-- Define a pasta public como estática
 
 // Usa as rotas principais
-app.use('/', indexRoutes);
+app.use('/', homeRoutes);
+app.use('/', authRoutes);
+app.use('/', helpRoutes);
+app.use('/', pathRoutes);
+app.use('/', loginRoutes);
+app.use('/', contentRoutes);
+app.use('/', dashboardRoutes);
+
 
 // Usa as rotas de trilhas dinâmicas
 // app.use('/paths', pathsRoutes);

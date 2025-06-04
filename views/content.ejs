@@ -26,14 +26,16 @@
             <% modulePages.forEach(page => { %>
 
             <div class="rounded-lg bg-mainGreen w-full">
-              <a href="/module/1/page/<%= page.page %>">
-                <% if (page.page === moduleContent.page) { %>
+              <a
+                href="/path/<%= pathId %>/module/1/page/<%= page.content_order %>"
+              >
+                <% if (page.content_order === moduleContent.content_order) { %>
                 <p class="text-white p-2 text-center font-semibold text-xl">
-                  Lição #<%= page.page %> (ATUAL) <% } else { %>
+                  Lição #<%= page.content_order %> (ATUAL) <% } else { %>
                 </p>
 
                 <p class="text-white p-2 text-center font-medium text-xl">
-                  Lição #<%= page.page %> <% } %>
+                  Lição #<%= page.content_order %> <% } %>
                 </p></a
               >
             </div>
@@ -58,13 +60,13 @@
       </div>
       <div class="absolute end-0 bg-mainGreen w-2/6 p-3 rounded-s-lg">
         <div class="flex flex-row">
-          <a href="/moduleContent">
+          <a href="/path/<%= pathId %>/module/1/page/1">
             <img src="/icons/thumb_up.svg" class="ms-4" alt="" />
           </a>
-          <a href="/moduleContent">
+          <a href="/path/<%= pathId %>/module/1/page/1">
             <img src="/icons/thumb_down.svg" class="ms-4" alt="" />
           </a>
-          <% if ((moduleContent.page + 1) > modulePages.length) { %>
+          <% if ((moduleContent.content_order + 1) > modulePages.length) { %>
           <button class="rounded-lg bg-blue-400 ms-auto me-4">
             <a href="/test" class="text-white p-3 ps-12 pe-12"
               >HORA DA PROVA!</a
@@ -73,7 +75,7 @@
           <% } else { %>
           <button class="rounded-lg bg-blue-400 ms-auto me-4">
             <a
-              href="/module/1/page/<%= moduleContent.page + 1 %>"
+              href="/path/<%= pathId %>/module/1/page/<%= moduleContent.content_order + 1 %>"
               class="text-white p-3 ps-12 pe-12"
               >PRÓXIMO</a
             >
