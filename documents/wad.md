@@ -1558,7 +1558,13 @@ _Descreva as funcionalidades, benefícios e diferenciais da aplicação_
 _6.2 Preço (até 200 palavras)_
 _Explique o modelo de precificação adotado e justifique com base nas análises anteriores._
 
+&nbsp;&nbsp;&nbsp;&nbsp; Ao analisarmos o cenário competitivo, observamos que plataformas com propostas similares de capacitação no agronegócio frequentemente adotam modelos de assinatura por usuário, com valores que podem iniciar em torno de R$ 79,90 mensais, ou oferecem pacotes corporativos com preços customizados. Esses pacotes geralmente variam conforme o volume de usuários, o nível de personalização da plataforma e as funcionalidades específicas contratadas. Nossa estratégia busca oferecer um pacote competitivo e alinhado ao valor percebido, focando no modelo corporativo que simplifica a gestão para a AgroBayer. <br>
 
+
+&nbsp;&nbsp;&nbsp;&nbsp; A escolha estratégica pelo modelo de assinatura se justifica plenamente pelas características do nosso serviço e pelas necessidades do cliente. A natureza dinâmica do agronegócio exige que os conteúdos sejam atualizados constantemente, algo que o modelo de assinatura suporta intrinsecamente. Ele oferece flexibilidade total de acesso aos promotores, que podem aprender no seu próprio ritmo e conforme sua disponibilidade, seja no escritório ou no campo (com funcionalidades offline). <br>
+
+
+ &nbsp;&nbsp;&nbsp;&nbsp; Para a AgroBayer, facilita enormemente a gestão dos acessos e o acompanhamento do progresso da equipe. Adicionalmente, este formato proporciona previsibilidade de receita para nós, enquanto incentiva o uso contínuo e o engajamento dos usuários com a plataforma. Por fim, favorece a mensuração clara dos resultados da capacitação, permitindo avaliar o retorno sobre o investimento em termos de aquisição e retenção de conhecimento pela equipe, alinhando-se perfeitamente às melhores práticas de precificação no setor de educação corporativa, especialmente no contexto do agronegócio. <br>
 
 _6.3 Praça (Distribuição) (até 200 palavras)_
 _Apresente os canais digitais utilizados para distribuir e entregar a aplicação ao público._
