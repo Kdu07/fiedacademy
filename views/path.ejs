@@ -3,41 +3,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title><%= paths.title %> | Trilha Onboarding </title>
+  <title><%= path.title %> | Trilha</title>
   <link rel="stylesheet" href="/css/style.css" />
 </head>
-
-  <!-- Cabeçalho -->
+<body>
   <%- include('./partials/header') %>
-
-  <!-- Trilhas -->
   <div class="min-h-screen p-6 max-w-4xl mx-auto">
-    <h1 class="text-3xl font-bold text-green-800 mb-8">Trilha: <%= paths.title %></h1>
+    <h1 class="text-3xl font-bold text-green-800 mb-8">Trilha: <%= path.title %></h1>
+    <p class="mb-8"><%= path.description %></p>
 
-  <% paths.modules
-   .sort((a, b) => a.order - b.order) // garante que os modulos vem na ordem
-   .forEach((modulo, index) => { %>
-  
-  <!-- Módulos -->
-  <div class="border rounded-xl p-5 mb-6 shadow-md">
-    <h2 class="text-xl font-semibold text-green-800 mb-2">Módulo <%= index + 1 %> - <%= modulo.title %></h2>
-
-  <!-- Barra de progresso -->
-    <div class="w-full h-3 bg-gray-200 rounded-full mb-4">
-      <div class="h-full bg-cyan-400 rounded-full" style="width: <%= modulo.progresso %>%;">
-      </div>
-
-  <!-- Botão de continuar -->
-    </div>
-    <a href="/module/<%= modulo.id %>/page/1" class="bg-lime-200 hover:bg-lime-300 text-black px-4 py-2 rounded shadow flex items-center gap-2 w-fit">
-      <%= modulo.progresso > 0 ? "Continuar" : "Iniciar" %> <span>→</span>
-    </a>
+    <% if (path.modules && path.modules.length) { %>
+      <% path.modules.forEach((modulo, index) => { %>
+        <div class="border rounded-xl p-5 mb-6 shadow-md">
+          <h2 class="text-xl font-semibold text-green-800 mb-2">
+            Módulo <%= index + 1 %> - <%= modulo.title %>
+          </h2>
+        </div>
+      <% }) %>
+    <% } else { %>
+      <p>Nenhum módulo encontrado para esta trilha.</p>
+    <% } %>
   </div>
-<% }); %>
-</div>
-<!-- Rodapé -->
   <%- include('./partials/footer') %>
-  
 </body>
 </html>
-

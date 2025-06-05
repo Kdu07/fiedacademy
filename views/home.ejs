@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FieldAcademy</title>
-    <link rel="stylesheet" href="/css/style.css" />
+    <!-- <link rel="stylesheet" href="/css/style.css" /> -->
+    <link rel="stylesheet" href="/css/tailwind.css" />
 </head>
 <body class="bg-white text-green-900">
     <!-- Importando o header -->
@@ -17,10 +18,10 @@
     </section>
 
     <!-- Botão de ajuda -->
-    <div class="flex justify-center mt-10 relative z-60">
-    <a href="/help" class="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700 transition">
-        Acessar Ajuda
-    </a>
+    <div class="flex justify-center mt-10">
+        <a href="/help" class="bg-mainGreen border-4 px-6 py-2 rounded-full hover:bg-green-700 transition">
+            Acessar Ajuda
+        </a>
     </div>
 
     <!-- Trilhas -->
@@ -28,12 +29,10 @@
         <h2 class="text-center text-2xl font-semibold mb-6">TRILHAS</h2>
         <!-- Daqui pra baixo as trilhas são puxadas do banco de dados pelos models, então elas podem ser alteradas dinamicamente. -->
         <% if (paths && paths.length) { %>
-            <% paths.forEach(t => { 
-                const slug = t.title.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, '-');
-            %>
+            <% paths.forEach(t => { %>
                 <div class="flex items-center justify-between mb-4">
                     <p class="text-lg font-medium"><%= t.title %></p>
-                    <a href="/paths/<%= slug %>" class="bg-green-200 text-green-900 font-semibold px-4 py-1 rounded-full hover:bg-green-300">
+                    <a href="/paths/<%= t.id %>" class="bg-green-200 text-green-900 font-semibold px-4 py-1 rounded-full hover:bg-green-300">
                         Continuar
                     </a>
                 </div>

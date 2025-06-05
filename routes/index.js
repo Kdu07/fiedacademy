@@ -15,7 +15,7 @@ router.get('/', homeController.index);
 router.get('/login', loginController.index);
 
 // Rota de paths
-router.get('/path/:id', pathController.index);
+router.get('/paths/:id', pathController.index);
 
 // Rota de content
 router.get('/content/:id', contentController.index);
