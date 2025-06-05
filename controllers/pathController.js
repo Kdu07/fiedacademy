@@ -1,17 +1,17 @@
 const pathModel = require('../models/pathsModel');
 
 exports.index = async (req, res) => {
-    try {
-        const { id } = req.params;
-        const path = await pathModel.getPathWithModules(id);
+  /*
+  try {
+    const pathId = req.params.id; // Supondo rota /trilhas/:id
+    const path = await pathsModel.getPathWithModule(pathId);
+    res.render('pages/paths', { path });
+  } catch (err) {
+    res.status(500).send('Erro ao carregar a trilha');
+  }
+  */
 
-        if (!path) {
-            return res.redirect('/');
-        }
-
-        res.render('path', { path });
-    } catch (error) {
-        console.error(error);
-        res.redirect('/');
-    }
+  const currentPath = req.params.id;
+  const paths = await pathsModel.getPathWithModules(currentPath);
+  res.render('path', { paths, currentPath });
 };
