@@ -31,8 +31,8 @@ app.use('/', pathRoutes);
 app.use('/', loginRoutes);
 app.use('/', modulesRoutes);
 
-// Usa as rotas de trilhas dinâmicas
-// app.use('/paths', pathsRoutes);
+//Usa as rotas de trilhas dinâmicas
+//app.use('/paths', pathsRoutes);
 
 // Inicia o servidor
 app.listen(3000, () => {

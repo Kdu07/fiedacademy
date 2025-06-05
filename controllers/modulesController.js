@@ -1,3 +1,4 @@
+const modulesModel = require("../models/modulesModel");
 const moduleModel = require("../models/modulesModel");
 
 // Controlador da rota /
@@ -11,6 +12,7 @@ exports.index = async (req, res) => {
   if (!module || !moduleContent) {
     return;
   }
+  
   //chama a view
   res.render("module", {
     moduleContent,
