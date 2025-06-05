@@ -7,7 +7,7 @@ exports.createUser = async (email, password) => {
     const hashedPassword = await bcrypt.hash(password, 10);
     const res = await db.query(
       "INSERT INTO users (email, password,id_role,score) VALUES ($1, $2, $3, $4) RETURNING *",
-      [email, hashedPassword, 1, 0]
+      [email, hashedPassword, 4, 0]
     );
     return res.rows[0];
   } catch (error) {

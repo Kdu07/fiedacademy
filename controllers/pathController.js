@@ -12,7 +12,7 @@ exports.index = async (req, res) => {
   }
   */
 
-  
-  const paths = await pathsModel.getPathWithModules(req.params.id);
-  res.render('path', { paths });
+  const currentPath = req.params.id;
+  const paths = await pathsModel.getPathWithModules(currentPath);
+  res.render('path', { paths, currentPath });
 };

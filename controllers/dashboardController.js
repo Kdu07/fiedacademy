@@ -17,7 +17,7 @@ exports.index = async (req, res) => {
     console.log("--------------------------------------------")
     console.log(progress)
 
-    //res.render("dashboard", { user, ranking, progress });
+    res.render("dashboard", { user, ranking, progress });
 };
 
 this.index();
