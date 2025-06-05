@@ -33,3 +33,37 @@ exports.loginUser = async (email, password) => {
     return; // Rethrow the error for handling in the controller
   }
 };
+
+exports.getAll = async () => {
+  try {
+    const res = await db.query('SELECT * FROM users');
+    return res.rows;
+  } catch (error) {
+    console.error("Error getting users:", error);
+    return; // Rethrow the error for handling in the controller
+  }
+}
+
+exports.getById = async (userId) => {
+  try {
+    const res = await db.query('SELECT * FROM users WHERE id = $1', [userId]);
+    return res.rows;
+  } catch (error) {
+    console.error("Error getting users:", error);
+    return; // Rethrow the error for handling in the controller
+  }
+}
+
+exports.getUsersRanking = async () => {
+  // Ordena os usuários pelo score, do maior para o menor
+  const users = await this.getAll();
+  const sortedUsers = users.slice().sort((a, b) => b.score - a.score);
+
+  // Mapeia para adicionar a posição no ranking
+  return sortedUsers.map((user, index) => ({
+  rank: index + 1,
+  id: user.id,
+  name: user.name,
+  score: user.score
+  }));
+}
