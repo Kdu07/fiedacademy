@@ -1,4 +1,4 @@
 // controllers/aboutUsController.js
-module.exports = (req, res) => {
-  res.render('pages/aboutUs'); 
+exports.index = (req, res) => {
+  res.render('aboutus'); 
 };
