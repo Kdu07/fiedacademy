@@ -1,81 +1,97 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FieldAcademy</title>
-    <!-- <link rel="stylesheet" href="/css/style.css" /> -->
-    <link rel="stylesheet" href="/css/tailwind.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Home | FieldAcademy</title>
+  <link rel="stylesheet" href="/css/style.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-white text-green-900">
-    <!-- Importando o header -->
-    <%- include('./partials/header') %>
+  <%- include('./partials/header') %>
 
-    <!-- Banner -->
-    <section class="relative">
-        <img src="/assets/bg_home.png" alt="campo" class="w-full h-48 object-cover" />
-        <h1 class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-4xl font-bold text-green-900">FieldAcademy</h1>
-    </section>
+  <!-- Botão de ajuda -->
+  <div class="flex justify-center mt-10">
+    <a href="/help" class="bg-mainGreen border-4 px-6 py-2 rounded-full hover:bg-green-700 transition">
+      Acessar Ajuda
+    </a>
+  </div>
 
-    <!-- Botão de ajuda -->
-    <div class="flex justify-center mt-10">
-        <a href="/help" class="bg-mainGreen border-4 px-6 py-2 rounded-full hover:bg-green-700 transition">
-            Acessar Ajuda
-        </a>
-    </div>
+  <!-- Trilhas -->
+  <section class="max-w-md mx-auto mt-8 border rounded-lg p-6 shadow-sm">
+    <h2 class="text-center text-2xl font-semibold mb-6">TRILHAS</h2>
+    <% if (paths && paths.length) { %>
+      <% paths.forEach(t => { %>
+        <div class="flex items-center justify-between mb-4">
+          <p class="text-lg font-medium"><%= t.title %></p>
+          <a href="/paths/<%= t.id %>" class="bg-green-200 text-green-900 font-semibold px-4 py-1 rounded-full hover:bg-green-300">
+            Continuar
+          </a>
+        </div>
+      <% }) %>
+    <% } else { %>
+      <p class="text-center text-gray-500">Nenhuma trilha encontrada.</p> 
+    <% } %>
+  </section>
 
-    <!-- Trilhas -->
-    <section class="max-w-md mx-auto mt-8 border rounded-lg p-6 shadow-sm">
-        <h2 class="text-center text-2xl font-semibold mb-6">TRILHAS</h2>
-        <!-- Daqui pra baixo as trilhas são puxadas do banco de dados pelos models, então elas podem ser alteradas dinamicamente. -->
-        <% if (paths && paths.length) { %>
-            <% paths.forEach(t => { %>
-                <div class="flex items-center justify-between mb-4">
-                    <p class="text-lg font-medium"><%= t.title %></p>
-                    <a href="/paths/<%= t.id %>" class="bg-green-200 text-green-900 font-semibold px-4 py-1 rounded-full hover:bg-green-300">
-                        Continuar
-                    </a>
-                </div>
-            <% }) %>
+  <!-- Favoritos -->
+  <section class="max-w-4xl mx-auto mt-10">
+    <h2 class="text-2xl font-semibold mb-4">Favoritos</h2>
+    <table class="min-w-full bg-white border border-gray-300 rounded-lg shadow-sm">
+      <thead>
+        <tr class="bg-green-100 text-left">
+          <th class="py-2 px-4 border-b">Conteúdo</th>
+          <th class="py-2 px-4 border-b">Trilha</th>
+          <th class="py-2 px-4 border-b">Data</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% if (bookmarks && bookmarks.length) { %>
+          <% bookmarks.forEach(b => { %>
+            <tr>
+              <td class="py-2 px-4 border-b"><%= b.contents_title %></td>
+              <td class="py-2 px-4 border-b"><%= b.path_title %></td>
+              <td class="py-2 px-4 border-b"><%= b.saved_at ? b.saved_at.toLocaleString() : '' %></td>
+            </tr>
+          <% }) %>
         <% } else { %>
-            <p class="text-center text-gray-500">Nenhuma trilha encontrada.</p> 
+          <tr>
+            <td colspan="3" class="text-center text-gray-500 py-4">Nenhum favorito encontrado.</td>
+          </tr>
         <% } %>
-    </section>
+      </tbody>
+    </table>
+  </section>
 
-    <!-- Tabela de conteúdos fixados (não está funcionando perfeitamente porque na entidade bookmarks não existe o atributo título e não há conexão com o aributo título da entidade contents) -->
-    <section class="max-w-4xl mx-auto mt-10">
-        <h2 class="text-2xl font-semibold mb-4">Favoritos</h2>
-        <table class="min-w-full bg-white border border-gray-300 rounded-lg shadow-sm">
-            <thead>
-                <tr class="bg-green-100 text-left">
-                    <th class="py-2 px-4 border-b">Conteúdo</th>
-                    <th class="py-2 px-4 border-b">Trilha</th>
-                    <th class="py-2 px-4 border-b">Status</th>
-                </tr>
-            </thead>
-            <tbody>
-                <% if (bookmarks && bookmarks.length) { %>
-                    <% bookmarks.forEach(b => { %>
-                        <tr>
-                            <td class="py-2 px-4 border-b"><%= b.content_title %></td>
-                            <td class="py-2 px-4 border-b"><%= b.path_title %></td>
-                            <td class="py-2 px-4 border-b text-green-600 font-medium">
-                                <%= b.status || "Favoritado" %>
-                            </td>
-                        </tr>
-                    <% }) %>
-                <% } else { %>
-                    <tr>
-                        <td colspan="3" class="py-2 px-4 border-b text-center text-gray-500">
-                            Nenhum conteúdo fixado encontrado.
-                        </td>
-                    </tr>
-                <% } %>
-            </tbody>
-        </table>
-    </section>
+  <!-- Ranking -->
+  <section class="max-w-md mx-auto mt-10 border rounded-lg p-6 shadow-sm">
+    <h2 class="text-center text-2xl font-semibold mb-6">Ranking</h2>
+    <table class="min-w-full bg-white border border-gray-300 rounded-lg shadow-sm">
+      <thead>
+        <tr class="bg-green-100 text-green-900 text-left">
+          <th class="py-2 px-4 border-b">#</th>
+          <th class="py-2 px-4 border-b">Usuário</th>
+          <th class="py-2 px-4 border-b">Score</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% if (ranking && ranking.length) { %>
+          <% ranking.forEach(user => { %>
+            <tr>
+              <td class="py-2 px-4 border-b"><%= user.rank %></td>
+              <td class="py-2 px-4 border-b"><%= user.name %></td>
+              <td class="py-2 px-4 border-b"><%= user.score %></td>
+            </tr>
+          <% }) %>
+        <% } else { %>
+          <tr>
+            <td colspan="3" class="text-center text-gray-500 py-4">Nenhum usuário no ranking.</td>
+          </tr>
+        <% } %>
+      </tbody>
+    </table>
+  </section>
 
-    <!-- Importando Footer -->
-    <%- include('./partials/footer') %>
+  <%- include('./partials/footer') %>
 </body>
 </html>

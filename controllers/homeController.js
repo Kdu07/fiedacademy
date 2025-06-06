@@ -1,5 +1,6 @@
 const bookmarksModel = require("../models/bookmarksModel");
 const pathsModel = require("../models/pathsModel");
+const usersModel = require('../models/usersModel');
 
 const { getUserId } = require("../utils/jwtUtils");
 
@@ -17,6 +18,7 @@ module.exports.index = async (req, res) => {
 
   const bookmarks = await bookmarksModel.getAll();
   const paths = await pathsModel.getAll();
+  const ranking = await usersModel.getUsersRanking();
 
-  res.render("home", { paths, bookmarks });
+  res.render("home", { paths, bookmarks, ranking });
 };
