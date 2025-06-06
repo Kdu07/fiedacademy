@@ -11,6 +11,7 @@ const helpRoutes = require('./routes/helpRoutes');
 const loginRoutes = require('./routes/loginRoutes');
 const pathRoutes = require('./routes/pathRoutes');
 const contentRoutes = require('./routes/contentRoutes');
+const dashboardRoutes = require('./routes/dashboardRoutes');
 
 // Configura EJS
 app.set('view engine', 'ejs');
@@ -30,6 +31,7 @@ app.use('/', helpRoutes);
 app.use('/', pathRoutes);
 app.use('/', loginRoutes);
 app.use('/', contentRoutes);
+app.use('/', dashboardRoutes);
 
 
 // Usa as rotas de trilhas dinâmicas

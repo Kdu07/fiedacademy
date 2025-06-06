@@ -12,7 +12,6 @@ exports.index = async (req, res) => {
     const moduleScores = await userTestModel.getUserModuleScores(userId);
 
     const data = [user, ranking, progress, moduleScores]
-    // res.render("dashboard", { user, ranking, progress });
 };
 // EXEMPLO DE DADOS DO CONTROLLER:
 /*

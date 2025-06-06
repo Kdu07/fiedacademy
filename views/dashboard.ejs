@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/css/style.css" rel="stylesheet" />
+    <title>Dashboard</title>
+  </head>
+  <body>
+    <!-- Header -->
+    <%- include('./partials/header') %>
+
+    <div class="flex flex-col w-4/6 mx-auto">
+      <div class="w-full rounded-lg mt-4 mb-4">
+        <input
+          class="bg-white border-2 border-black w-full h-12 rounded-lg px-4"
+          type="text"
+          placeholder="Pesquisa PTD"
+        />
+      </div>
+      <div class="w-full">
+        <h1 class="text-3xl font-semibold">Nome do usuário</h1>
+        <p>Email</p>
+        <p>Região</p>
+      </div>
+      <div class="grid grid-cols-2 gap-4 mt-8">
+        <div
+          class="flex flex-col items-center justify-center bg-gray-100 rounded-lg"
+        >
+          <p>Último acesso</p>
+          <p class="text-xl font-semibold">04/06/2025</p>
+        </div>
+        <div
+          class="flex flex-col items-center justify-center bg-gray-100 rounded-lg"
+        >
+          <p>Último módulo</p>
+          <p class="text-xl font-semibold">Modulo 1</p>
+        </div>
+        <div
+          class="flex flex-col items-center justify-center bg-gray-100 rounded-lg"
+        >
+          <p>Média</p>
+          <p class="text-xl font-semibold">9.25</p>
+        </div>
+        <div
+          class="flex flex-col items-center justify-center bg-gray-100 rounded-lg"
+        >
+          <p>Ranking</p>
+          <p class="text-xl font-semibold">23</p>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 gap-6 bg-gray-100 rounded-lg mt-8 p-4">
+        <h1 class="text-3xl mb-4">Trilhas</h1>
+        <!-- Trilha -->
+        <div class="flex flex-row items-center justify-between">
+          <p class="me-4 text-xl w-1/6">Onboarding</p>
+          <div class="w-4/6 h-4 bg-gray-100 rounded-full">
+            <div class="h-full bg-cyan-400 rounded-full"></div>
+          </div>
+          <a href="/dashboard">
+            <img src="/icons/download.svg" alt="" />
+          </a>
+        </div>
+        <!-- Trilha -->
+        <div class="flex flex-row items-center justify-between">
+          <p class="me-4 text-xl w-1/6">Básico</p>
+          <div class="w-4/6 h-4 bg-gray-200 rounded-full">
+            <div class="h-full bg-cyan-400 rounded-full"></div>
+          </div>
+          <a href="/dashboard">
+            <img src="/icons/download.svg" alt="" />
+          </a>
+        </div>
+        <!-- Trilha -->
+        <div class="flex flex-row items-center justify-between">
+          <p class="me-4 text-xl w-1/6">Intermediário</p>
+          <div class="w-4/6 h-4 bg-gray-200 rounded-full">
+            <div class="h-full bg-cyan-400 rounded-full"></div>
+          </div>
+          <a href="/dashboard">
+            <img src="/icons/download.svg" alt="" />
+          </a>
+        </div>
+        <!-- Trilha -->
+        <div class="flex flex-row items-center justify-between">
+          <p class="me-4 text-xl w-1/6">Avançado</p>
+          <div class="w-4/6 h-4 bg-gray-200 rounded-full">
+            <div class="h-full bg-cyan-400 rounded-full"></div>
+          </div>
+          <a href="/dashboard">
+            <img src="/icons/download.svg" alt="" />
+          </a>
+        </div>
+      </div>
+      <div
+        class="flex flex-col bg-gray-100 rounded-lg mt-8 p-4 justify-items-end"
+      >
+        <h1 class="text-3xl mb-4">Média das trilhas</h1>
+        <div
+          class="w-5/6 flex flex-row justify-between border-b-2 border-black self-end"
+        >
+          <p>0</p>
+          <p>1</p>
+          <p>2</p>
+          <p>3</p>
+          <p>4</p>
+          <p>5</p>
+          <p>6</p>
+          <p>7</p>
+          <p>8</p>
+          <p>9</p>
+          <p>10</p>
+        </div>
+        <div class="flex flex-col border-black border-e-2">
+          <!-- Trilha individual -->
+          <div class="flex flex-row items-center">
+            <div class="w-1/6 border-e-2 border-black">
+              <p>Onboarding</p>
+            </div>
+            <div class="w-5/6">
+              <div class="bg-mainGreen w-[100%] h-4"></div>
+            </div>
+          </div>
+          <!-- Trilha individual -->
+          <div class="flex flex-row items-center">
+            <div class="w-1/6 border-e-2 border-black">
+              <p>Básico</p>
+            </div>
+            <div class="w-5/6">
+              <div class="bg-mainGreen w-[93%] h-4"></div>
+            </div>
+          </div>
+          <!-- Trilha individual -->
+          <div class="flex flex-row items-center">
+            <div class="w-1/6 border-e-2 border-black">
+              <p>Intermediário</p>
+            </div>
+            <div class="w-5/6">
+              <div class="bg-mainGreen w-[86%] h-4"></div>
+            </div>
+          </div>
+           <!-- Trilha individual -->
+          <div class="flex flex-row items-center">
+            <div class="w-1/6 border-e-2 border-black">
+              <p>Avançado</p>
+            </div>
+            <div class="w-5/6">
+              <div class="bg-mainGreen w-[77%] h-4"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <%- include('./partials/footer') %>
+  </body>
+</html>
