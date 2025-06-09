@@ -15,3 +15,8 @@ module.exports.getAll = async () => {
     `);
     return result.rows;
 };
+
+module.exports.deleteById = async (id) => {
+    await pool.query('DELETE FROM bookmarks WHERE id = $1',
+     [id])
+};

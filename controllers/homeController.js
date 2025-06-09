@@ -22,3 +22,13 @@ module.exports.index = async (req, res) => {
 
   res.render("home", { paths, bookmarks, ranking });
 };
+
+// Função para deletar bookmark
+module.exports.deleteBookmark = async (req, res) => {
+  try {
+    await bookmarksModel.deleteById(req.params.id);
+    res.redirect('/');
+  } catch (err) {
+    res.status(500).send('Erro ao deletar bookmark');
+  }
+};

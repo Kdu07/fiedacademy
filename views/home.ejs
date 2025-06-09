@@ -42,7 +42,7 @@
         <tr class="bg-green-100 text-left">
           <th class="py-2 px-4 border-b">Conteúdo</th>
           <th class="py-2 px-4 border-b">Trilha</th>
-          <th class="py-2 px-4 border-b">Data</th>
+          <th class="py-2 px-4 border-b">Ações</th>
         </tr>
       </thead>
       <tbody>
@@ -51,12 +51,16 @@
             <tr>
               <td class="py-2 px-4 border-b"><%= b.contents_title %></td>
               <td class="py-2 px-4 border-b"><%= b.path_title %></td>
-              <td class="py-2 px-4 border-b"><%= b.saved_at ? b.saved_at.toLocaleString() : '' %></td>
+              <td class="py-2 px-4 border-b">
+                <form action="/bookmarks/delete/<%= b.id %>" method="POST" onsubmit="return confirm('Deseja remover este favorito?');">
+                  <button type="submit" class="text-red-600 hover:underline">Remover</button>
+                </form>
+              </td>
             </tr>
           <% }) %>
         <% } else { %>
           <tr>
-            <td colspan="3" class="text-center text-gray-500 py-4">Nenhum favorito encontrado.</td>
+            <td colspan="4" class="text-center text-gray-500 py-4">Nenhum favorito encontrado.</td>
           </tr>
         <% } %>
       </tbody>
