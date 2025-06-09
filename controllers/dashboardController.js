@@ -1,4 +1,4 @@
- const usersModel = require("../models/usersModel");
+const usersModel = require("../models/usersModel");
 const userContentModel = require("../models/userContentModel");
 const userTestModel = require("../models/userTestModel");
 
@@ -13,6 +13,7 @@ exports.index = async (req, res) => {
 
     const data = [user, ranking, progress, moduleScores]
 };
+
 // EXEMPLO DE DADOS DO CONTROLLER:
 /*
 [
