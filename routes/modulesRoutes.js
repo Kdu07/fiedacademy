@@ -2,9 +2,9 @@
 const router = express.Router();
 require('dotenv').config();
 
-const contentController = require('../controllers/modulesController');
+const modulesController = require('../controllers/modulesController');
 
 // Rota de content
-router.get('/path/:id_path/module/:id/page/:id_order', contentController.index);
+router.get('/path/:id_path/module/:id/page/:id_order', modulesController.index);
 
 module.exports = router;
