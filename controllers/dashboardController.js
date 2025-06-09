@@ -20,9 +20,9 @@ exports.index = async (req, res) => {
     res.render("dashboard", { user, ranking, progress });
 };
 
-this.index();
+/* this.index();
 
-
+ */
 // users ✅
     // Ficha: byID 
     // Ranking: getAll (comparar score dos users)
@@ -33,3 +33,4 @@ this.index();
 // user_test_score
     // Nota dos módulos: userID -> tests - user_test_score - modules
     // Média: userID -> tests - user_test_score - modules
+

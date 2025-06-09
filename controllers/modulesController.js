@@ -2,10 +2,10 @@ const modulesModel = require("../models/modulesModel");
 
 // Controlador da rota /
 exports.index = async (req, res) => {
-  const module = await moduleModel.findModule(req.params.id); // Busca o módulo pelo ID fornecido na rota
-  const moduleContent = await moduleModel.findModuleContentByOrder(req.params.id_order, req.params.id); // Busca o conteúdo do módulo pela ordem da página e ID do módulo
+  const module = await modulesModel.findModule(req.params.id); // Busca o módulo pelo ID fornecido na rota
+  const moduleContent = await modulesModel.findModuleContentByOrder(req.params.id_order, req.params.id); // Busca o conteúdo do módulo pela ordem da página e ID do módulo
 
-  const modulePages = await moduleModel.findAllModuleContent(req.params.id); // Busca todas as páginas de conteúdo do módulo, ordenadas por número da página
+  const modulePages = await modulesModel.findAllModuleContent(req.params.id); // Busca todas as páginas de conteúdo do módulo, ordenadas por número da página
   
   
   if (!module || !moduleContent) {
@@ -16,6 +16,7 @@ exports.index = async (req, res) => {
 
   res.render("content", {
     moduleContent,
+    modulesModel,
     module,
     modulePages,
     pathId
