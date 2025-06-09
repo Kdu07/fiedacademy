@@ -10,6 +10,8 @@ const authRoutes = require('./routes/authRoutes');
 const helpRoutes = require('./routes/helpRoutes');
 const loginRoutes = require('./routes/loginRoutes');
 const pathRoutes = require('./routes/pathRoutes');
+const contentRoutes = require('./routes/contentRoutes');
+const aboutUsRoutes = require('./routes/aboutUs');
 const modulesRoutes = require('./routes/modulesRoutes');
 const dashboardRoutes = require('./routes/dashboardRoutes');
 /* const modulesRoutes = require('./routes/modulesRoutes'); */
@@ -33,6 +35,9 @@ app.use('/', pathRoutes);
 app.use('/', loginRoutes);
 app.use('/', modulesRoutes);
 /* app.use('/', modulesRoutes); */
+app.use('/', contentRoutes);
+app.use('/', aboutUsRoutes);
+
 app.use('/', dashboardRoutes);
 
 //Usa as rotas de trilhas dinâmicas
