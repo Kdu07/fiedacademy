@@ -14,7 +14,7 @@ exports.index = async (req, res) => {
 
   const pathId = req.params.id_path
 
-  res.render("content", {
+  res.render("module", {
     moduleContent,
     modulesModel,
     module,
