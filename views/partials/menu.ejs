@@ -1,0 +1,38 @@
+<div>
+  <!-- Ícone de menu -->
+  <button aria-label="Menu" onclick="toggleMenu()">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="h-6 w-6 text-white"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M4 6h16M4 12h16M4 18h16"
+      />
+    </svg>
+  </button>
+  <div id="menu" class="fixed inset-0 z-20 bg-white -translate-x-full transition-transform duration-300 top-20">
+    <div class="flex flex-col items-center justify-center h-full gap-4">
+      <a class="text-4xl hover:font-bold" href="/">Home</a>
+      <a class="text-4xl hover:font-bold" href="/aboutus">Sobre nós</a>
+    </div>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("menu");
+      if (menu.classList.contains("-translate-x-full")) {
+        menu.classList.remove("-translate-x-full");
+        menu.classList.add("translate-x-0");
+      } else {
+        menu.classList.add("-translate-x-full");
+        menu.classList.remove("translate-x-0");
+      }
+    }
+  </script>
+</div>
