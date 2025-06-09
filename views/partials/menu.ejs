@@ -16,16 +16,25 @@
       />
     </svg>
   </button>
-  <div id="menu" class="fixed inset-0 z-20 bg-white -translate-x-full transition-transform duration-300 top-20">
-    <div class="flex flex-col items-center justify-center h-full gap-4">
-      <a class="text-4xl hover:font-bold" href="/">Home</a>
-      <a class="text-4xl hover:font-bold" href="/aboutus">Sobre nós</a>
+  <div
+    id="menu"
+    class="fixed inset-0 z-20 bg-white -translate-x-full transition-transform duration-300 top-20 w-full md:w-1/6"
+  >
+    <div
+      class="flex flex-col items-center h-full gap-8 mt-4 md:items-start md:ms-4 md:gap-2"
+    >
+      <a class="text-4xl md:text-xl hover:font-bold" href="/">Home</a>
+      <a class="text-4xl md:text-xl hover:font-bold" href="/aboutus"
+        >Sobre nós</a
+      >
     </div>
   </div>
 
   <script>
     function toggleMenu() {
       const menu = document.getElementById("menu");
+
+      // Apenas
       if (menu.classList.contains("-translate-x-full")) {
         menu.classList.remove("-translate-x-full");
         menu.classList.add("translate-x-0");
