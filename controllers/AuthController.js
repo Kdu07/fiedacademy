@@ -14,10 +14,7 @@ exports.create = async (req, res) => {
     return res.redirect('/login?error=Email%20ou%20senha%20inválida');
   }
 
-  const token = JWT.sign({ id: newUser.id }, JWT_SECRET, { expiresIn: '1d' });
-
-  res.cookie('token', token, {httpOnly: true, secure: true}); // Set cookie with user ID
-  return res.redirect("/");
+  return;
 };
 
 exports.login = async (req, res) => {

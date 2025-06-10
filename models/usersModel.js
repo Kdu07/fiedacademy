@@ -27,6 +27,11 @@ exports.loginUser = async (email, password) => {
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) return; // Password does not match
 
+    const lastLoginUpdate = await db.query(
+        "UPDATE users SET last_login = $1 WHERE id = $2",
+      [new Date(), user.id]
+    );
+
     return user; // Login successful
   } catch (error) {
     console.error("Error creating user:", error);
@@ -36,23 +41,33 @@ exports.loginUser = async (email, password) => {
 
 exports.getAll = async () => {
   try {
-    const res = await db.query('SELECT * FROM users');
+    const res = await db.query("SELECT * FROM users");
     return res.rows;
   } catch (error) {
     console.error("Error getting users:", error);
     return; // Rethrow the error for handling in the controller
   }
-}
+};
 
 exports.getById = async (userId) => {
   try {
-    const res = await db.query('SELECT * FROM users WHERE id = $1', [userId]);
-    return res.rows;
+    const res = await db.query("SELECT * FROM users WHERE id = $1", [userId]);
+    return res.rows[0];
   } catch (error) {
     console.error("Error getting users:", error);
     return; // Rethrow the error for handling in the controller
   }
-}
+};
+
+exports.getByEmail = async (email) => {
+  try {
+    const res = await db.query("SELECT * FROM users WHERE email = $1", [email]);
+    return res.rows[0];
+  } catch (error) {
+    console.error("Error getting users:", error);
+    return; // Rethrow the error for handling in the controller
+  }
+};
 
 exports.getUsersRanking = async () => {
   // Ordena os usuários pelo score, do maior para o menor
@@ -61,9 +76,9 @@ exports.getUsersRanking = async () => {
 
   // Mapeia para adicionar a posição no ranking
   return sortedUsers.map((user, index) => ({
-  rank: index + 1,
-  id: user.id,
-  name: user.name,
-  score: user.score
+    rank: index + 1,
+    id: user.id,
+    name: user.name,
+    score: user.score,
   }));
-}
+};
