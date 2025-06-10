@@ -1,0 +1,67 @@
+<div>
+  <!-- Ícone de menu -->
+  <button aria-label="Menu" onclick="toggleMenu()" id="menu-btn">
+    <!-- Hamburger icon -->
+    <svg
+      id="icon-menu"
+      xmlns="http://www.w3.org/2000/svg"
+      class="h-6 w-6 text-white block"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M4 6h16M4 12h16M4 18h16"
+      />
+    </svg>
+    <!-- X icon -->
+    <svg
+      id="icon-x"
+      xmlns="http://www.w3.org/2000/svg"
+      class="h-6 w-6 text-white hidden"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M6 18L18 6M6 6l12 12"
+      />
+    </svg>
+  </button>
+  <div
+  id="menu"
+  class="fixed top-20 left-0 h-[calc(100vh-5rem)] w-full md:w-1/6 z-20 bg-white transform -translate-x-full transition-transform duration-300"
+>
+  <div class="flex flex-col items-center h-full gap-8 mt-4 md:items-start md:ms-4 md:gap-2">
+    <a class="text-4xl md:text-xl hover:font-bold" href="/">Home</a>
+    <a class="text-4xl md:text-xl hover:font-bold" href="/help">Help</a>
+    <a class="text-4xl md:text-xl hover:font-bold" href="/aboutus">Sobre nós</a>
+  </div>
+</div>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("menu");
+      const iconMenu = document.getElementById("icon-menu");
+      const iconX = document.getElementById("icon-x");
+
+      if (menu.classList.contains("-translate-x-full")) {
+        menu.classList.remove("-translate-x-full");
+        menu.classList.add("translate-x-0");
+        iconMenu.classList.add("hidden");
+        iconX.classList.remove("hidden");
+      } else {
+        menu.classList.add("-translate-x-full");
+        menu.classList.remove("translate-x-0");
+        iconMenu.classList.remove("hidden");
+        iconX.classList.add("hidden");
+      }
+    }
+  </script>
+</div>
