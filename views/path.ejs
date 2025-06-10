@@ -3,14 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title><%= paths.title %> | Trilha Onboarding </title>
+  <title><%= path.title %> | Trilha</title>
   <link rel="stylesheet" href="/css/style.css" />
 </head>
-
-  <!-- Cabeçalho -->
+<body>
   <%- include('./partials/header') %>
-
-  <!-- Trilhas -->
   <div class="min-h-screen p-6 max-w-4xl mx-auto">
     <h1 class="text-3xl font-bold text-green-800 mb-8">Trilha: <%= paths.title %></h1>
 
@@ -33,11 +30,6 @@
       <%= modulo.progresso > 0 ? "Continuar" : "Iniciar" %> <span>→</span>
     </a>
   </div>
-<% }); %>
-</div>
-<!-- Rodapé -->
   <%- include('./partials/footer') %>
-  
 </body>
 </html>
-

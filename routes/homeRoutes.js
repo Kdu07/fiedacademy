@@ -5,6 +5,7 @@ const homeController = require('../controllers/homeController');
 
 // Rota da home
 router.get('/', homeController.index);
+router.post('/bookmarks/delete/:id', homeController.deleteBookmark);
 
 module.exports = router;
 
