@@ -5,6 +5,6 @@ require('dotenv').config();
 const pathController = require('../controllers/pathController');
 
 // Rota de paths
-router.get('/path/:id', pathController.index);
+router.get('/paths/:id', pathController.index);
 
 module.exports = router;
