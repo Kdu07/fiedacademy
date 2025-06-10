@@ -13,7 +13,6 @@ module.exports.index = async (req, res) => {
   }
 
   const userId = await getUserId(token);
-  console.log(userId);
  
 
   const bookmarks = await bookmarksModel.getAll();

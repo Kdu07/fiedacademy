@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title><%= path.title %> | Trilha</title>
+  <title><%= paths.title %> | Trilha</title>
   <link rel="stylesheet" href="/css/style.css" />
 </head>
 <body>
@@ -19,17 +19,18 @@
   <div class="border rounded-xl p-5 mb-6 shadow-md">
     <h2 class="text-xl font-semibold text-green-800 mb-2">Módulo <%= index + 1 %> - <%= modulo.title %></h2>
 
-  <!-- Barra de progresso -->
+    <!-- Barra de progresso -->
     <div class="w-full h-3 bg-gray-200 rounded-full mb-4">
       <div class="h-full bg-cyan-400 rounded-full" style="width: <%= modulo.progress %>%;">
       </div>
-
-  <!-- Botão de continuar -->
     </div>
+    <!-- Botão de continuar -->
     <a href="/path/<%= currentPath %>/module/<%= modulo.id %>/page/1" class="bg-lime-200 hover:bg-lime-300 text-black px-4 py-2 rounded shadow flex items-center gap-2 w-fit">
       <%= modulo.progresso > 0 ? "Continuar" : "Iniciar" %> <span>→</span>
     </a>
   </div>
-  <%- include('./partials/footer') %>
+<% }) %>
+
+<%- include('./partials/footer') %>
 </body>
 </html>
