@@ -7,7 +7,6 @@ exports.index = async (req, res) => {
 
   const modulePages = await modulesModel.findAllModuleContent(req.params.id); // Busca todas as páginas de conteúdo do módulo, ordenadas por número da página
   
-  
   if (!module || !moduleContent) {
     return;
   }
