@@ -44,7 +44,6 @@ if (require.main === module) {
   (async () => {
     try {
       const result = await exports.getPathWithModules(1); // troque o id conforme necessário
-      console.log(result);
     } catch (err) {
       console.error('Erro:', err.message);
     } finally {

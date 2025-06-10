@@ -1,5 +1,4 @@
-// controllers/trilhaController.js
-const pathsModel = require('../models/pathsModel');
+const pathModel = require('../models/pathsModel');
 
 exports.index = async (req, res) => {
   /*
@@ -13,6 +12,6 @@ exports.index = async (req, res) => {
   */
 
   const currentPath = req.params.id;
-  const paths = await pathsModel.getPathWithModules(currentPath);
+  const paths = await pathModel.getPathWithModules(currentPath);
   res.render('path', { paths, currentPath });
 };

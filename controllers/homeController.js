@@ -1,5 +1,6 @@
 const bookmarksModel = require("../models/bookmarksModel");
 const pathsModel = require("../models/pathsModel");
+const usersModel = require('../models/usersModel');
 
 const { getUserId } = require("../utils/jwtUtils");
 
@@ -12,11 +13,21 @@ module.exports.index = async (req, res) => {
   }
 
   const userId = await getUserId(token);
-  console.log(userId);
  
 
   const bookmarks = await bookmarksModel.getAll();
   const paths = await pathsModel.getAll();
+  const ranking = await usersModel.getUsersRanking();
 
-  res.render("home", { paths, bookmarks });
+  res.render("home", { paths, bookmarks, ranking });
+};
+
+// Função para deletar bookmark
+module.exports.deleteBookmark = async (req, res) => {
+  try {
+    await bookmarksModel.deleteById(req.params.id);
+    res.redirect('/');
+  } catch (err) {
+    res.status(500).send('Erro ao deletar bookmark');
+  }
 };

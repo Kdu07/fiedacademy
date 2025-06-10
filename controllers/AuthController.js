@@ -3,14 +3,12 @@ const JWT = require('jsonwebtoken')
 const JWT_SECRET = process.env.JWT_SECRET;
 
 exports.create = async (req, res) => {
-  console.log(req.body)
   const { email, password } = req.body;
   if(!email || !password) {
     return res.redirect('/login?error=Email%20e%20senha%20são%20obrigatórios');
   }
   const newUser = await createUser(email,password)
 
-  console.log('new user: '+newUser)
 
   if(!newUser || newUser.length === 0) {
     return res.redirect('/login?error=Email%20ou%20senha%20inválida');
@@ -29,7 +27,6 @@ exports.login = async (req, res) => {
   }
   const user = await loginUser(email,password)
 
-  console.log(user)
 
   if(!user || user.length === 0) {
     return res.redirect('/login?error=Email%20ou%20senha%20inválida');
@@ -43,7 +40,6 @@ exports.login = async (req, res) => {
 
 
 exports.logout = async (req, res) => {
-  console.log('Logging out user...');
   res.clearCookie('token', { httpOnly: true, secure: true });
   return res.redirect('/login');
 }
