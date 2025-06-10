@@ -1,6 +1,5 @@
 const subjectModel = require('../models/subjectModel');
 
-exports.getAll() = async (req, res) => {
-    res.render()
-
+exports.index = async (req, res) => {
+    res.render('subject');
 }

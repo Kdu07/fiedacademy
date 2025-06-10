@@ -5,12 +5,12 @@ const app = express();
 const path = require('path');
 const cookieParser = require('cookie-parser');
 
+const subjectRoutes = require('./routes/subjectRoutes');
 const homeRoutes = require('./routes/homeRoutes');
 const authRoutes = require('./routes/authRoutes');
 const helpRoutes = require('./routes/helpRoutes');
 const loginRoutes = require('./routes/loginRoutes');
 const pathRoutes = require('./routes/pathRoutes');
-const contentRoutes = require('./routes/contentRoutes');
 const aboutUsRoutes = require('./routes/aboutUs');
 const modulesRoutes = require('./routes/modulesRoutes');
 const dashboardRoutes = require('./routes/dashboardRoutes');
@@ -35,8 +35,8 @@ app.use('/', pathRoutes);
 app.use('/', loginRoutes);
 app.use('/', modulesRoutes);
 /* app.use('/', modulesRoutes); */
-app.use('/', contentRoutes);
 app.use('/', aboutUsRoutes);
+app.use('/', subjectRoutes);
 
 app.use('/', dashboardRoutes);
 
