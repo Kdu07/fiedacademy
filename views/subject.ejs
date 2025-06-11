@@ -1,11 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Plantio - Artigo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body>
-   <h1>Subject</h1>
+<body class="bg-white">
+    <!-- Header -->
+    <header class="bg-green-600 h-[65px] flex items-center px-4 shadow-md">
+        <button class="text-white p-2">
+            <i class="fas fa-bars text-3xl"></i>
+        </button>
+        
+        <div class="flex-1 mx-4">
+            <div class="relative">
+                <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                    <i class="fas fa-search text-gray-400"></i>
+                </div>
+                <input type="search" class="block w-full p-3 pl-10 text-lg text-gray-500 rounded-lg bg-white" placeholder="Search">
+            </div>
+        </div>
+        
+        <button class="text-white p-2">
+            <i class="fas fa-bell text-2xl"></i>
+        </button>
+    </header>
+
+    <!-- Main Content -->
+    <div class="flex">
+        <!-- Sidebar -->
+        <aside class="w-64 p-6">
+            <nav class="space-y-4">
+                <a href="#" class="block font-medium underline">O Artigo</a>
+                <a href="#" class="block text-gray-700">Outro artigo</a>
+                <a href="#" class="block text-gray-700">Outro artigo</a>
+                <a href="#" class="block text-gray-700">Outro artigo</a>
+                <a href="#" class="block text-gray-700">Outro artigo</a>
+                <a href="#" class="block text-gray-700">Outro artigo</a>
+                <a href="#" class="block text-gray-700">Outro artigo</a>
+                <a href="#" class="block text-gray-700">Outro artigo</a>
+                <a href="#" class="block text-gray-700">Outro artigo</a>
+            </nav>
+        </aside>
+
+        <!-- Article Content -->
+        <main class="flex-1 p-6 pr-8 max-w-4xl">
+            <article>
+                <h1 class="text-3xl font-bold mb-1">Plantio</h1>
+                <p class="text-gray-600 mb-6">Subtítulo e coisas importantes sobre esse artigo...</p>
+
+                <div class="prose max-w-none">
+                    <p class="mb-4">
+                        Porem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent auctor purus luctus enim egestas, ac scelerisque ante pulvinar. Donec ut rhoncus ex. Suspendisse ac rhoncus nisl, eu tempor urna. Curabitur vel bibendum lorem. Morbi convallis convallis diam sit amet lacinia. Aliquam in elementum tellus.
+                    </p>
+                    <p class="mb-4">
+                        Curabitur tempor quis eros tempus lacinia. Nam bibendum pellentesque quam a convallis. Sed ut vulputate nisi. Integer in felis sed leo vestibulum venenatis. Suspendisse quis arcu sem. Aenean feugiat ex eu vestibulum vestibulum. Morbi a eleifend magna. Nam metus lacus, porttitor eu mauris a, blandit ultrices nibh. Mauris sit amet magna non ligula vestibulum eleifend. Nulla varius volutpat turpis sed lacinia.
+                    </p>
+                </div>
+
+                <!-- Video Section -->
+                <div class="mt-8 mb-4">
+                    <div class="relative aspect-video bg-gray-800 rounded-lg overflow-hidden">
+                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/HELP-artigo-zHelEYHL2fj7mmjS4qvoz9NcbIWwmY.png" alt="Agricultor com trator no campo" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <button class="bg-white/80 hover:bg-white rounded-full w-16 h-16 flex items-center justify-center transition-all">
+                                <i class="fas fa-play text-gray-800 text-xl ml-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-green-600 text-white py-4">
+        <div class="container mx-auto flex justify-between px-8">
+            <a href="#" class="hover:underline">Sobre nós</a>
+            <a href="#" class="hover:underline">FieldView</a>
+            <a href="#" class="hover:underline">Bayer</a>
+        </div>
+    </footer>
 </body>
 </html>

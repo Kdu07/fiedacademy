@@ -4,6 +4,6 @@ require('dotenv').config();
 
 const subjectController = require('../controllers/subjectController');
 
-router.get('/subject1', subjectController.index);
+router.get('/subject', subjectController.index);
 
 module.exports = router;

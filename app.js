@@ -33,7 +33,7 @@ app.use('/', authRoutes);
 app.use('/', helpRoutes);
 app.use('/', pathRoutes);
 app.use('/', loginRoutes);
-app.use('/', modulesRoutes);
+// app.use('/', modulesRoutes);
 /* app.use('/', modulesRoutes); */
 app.use('/', aboutUsRoutes);
 app.use('/', subjectRoutes);
