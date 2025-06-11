@@ -7,22 +7,70 @@
     <link rel="stylesheet" href="/css/style.css" />
   </head>
 
-  <body>  
-    <div class="bg-login-bg h-full w-full fixed bg-cover flex flex-col">
-      <div class="h-2/6"></div>
-      <div class="h-4/6 bg-white/75 flex justify-center">
-        <div class="flex flex-col items-center h-5/6 mt-auto">
-          <h1 class="text-4xl font-semibold">Criar usuário</h1>
-          <p class="text-gray-600 mt-4 mb-2">Se é bayer, é bom</p>
-          <form action="/api/create-user" class="flex flex-col" method="POST">
+  <body class="flex flex-col min-h-screen">
+    <!-- Header -->
+    <%- include('./partials/header') %>
+
+    <div class="flex mt-8 w-4/6 m-auto">
+      <div class="flex flex-col h-5/6 mt-auto">
+        <h1 class="text-4xl font-semibold">Criar usuário</h1>
+        <p class="text-gray-600 mt-4 mb-2">Crie novo PTD aqui</p>
+        <form action="/api/create-user" class="flex flex-col" method="POST">
+          <div>
             <input
-              type="email"
-              name="email"
-              id="email"
+              type="text"
+              name="name"
+              id="name"
               class="rounded-lg border-black border-2 bg-transparent w-full md:w-96 h-12 mt-4 px-4 placeholder-black"
-              placeholder="Email"
+              placeholder="Nome"
               required
             />
+            <input
+              type="text"
+              name="region"
+              id="region"
+              class="rounded-lg border-black border-2 bg-transparent w-full md:w-72 h-12 mt-4 px-4 placeholder-black"
+              placeholder="Região"
+              required
+            />
+          </div>
+          <div class="flex flex-col">
+            <div>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                class="rounded-lg border-black border-2 bg-transparent w-full md:w-96 h-12 mt-4 px-4 placeholder-black"
+                placeholder="Email"
+                required
+              />
+              <% if(user.id_role === 6) { %>
+              <!-- Cargo -->
+              <select
+                name="role"
+                id="role"
+                class="rounded-lg border-black border-2 bg-gray-200 text-black bg-transparent w-1/2 md:w-40 h-12 mt-4 px-4 placeholder-black"
+                defaultValue="PTD"
+                required
+              >
+                <option value="PTD">PTD</option>
+                <option value="Gestor">Gestor</option>
+                <option value="Admin">Admin</option>
+              </select>
+              <% } else { %>
+              <!-- Cargo -->
+              <select
+                name="roleDisabled"
+                class="rounded-lg border-black border-2 bg-gray-200 text-gray-500 cursor-not-allowed w-1/2 md:w-40 h-12 mt-4 px-4 placeholder-black"
+                disabled
+                required
+              >
+                <option value="PTD" selected>PTD</option>
+              </select>
+              <input type="hidden" name="role" value="PTD">
+              <% } %>
+            </div>
+
             <input
               type="password"
               name="password"
@@ -31,20 +79,24 @@
               placeholder="Senha"
               required
             />
-            <% if(error) { %>
-            <p class="text-red-500 text-sm mt-2" id="errorMessage">
-              <%= error %>
-            </p>
-            <% } %>
-            <button
-              type="submit"
-              class="rounded-lg bg-mainGreen w-full md:w-96 h-12 mt-4 px-4"
-            >
-              <p class="text-white">Entrar</p>
-            </button>
-          </form>
-        </div>
+          </div>
+
+          <% if(error) { %>
+          <p class="text-red-500 text-sm mt-2" id="errorMessage">
+            <%= error %>
+          </p>
+          <% } %>
+          <button
+            type="submit"
+            class="rounded-lg bg-mainGreen w-full md:w-96 h-12 mt-8 px-4"
+          >
+            <p class="text-white">Criar</p>
+          </button>
+        </form>
       </div>
     </div>
+
+    <!-- Footer -->
+    <%- include('./partials/footer.ejs') %>
   </body>
 </html>
