@@ -1,5 +1,7 @@
 const modulesModel = require("../models/modulesModel");
+
 const { isAuthorized } = require("../utils/authUtils");
+const { getUserId } = require("../utils/jwtUtils");
 
 // Controlador da rota /
 exports.index = async (req, res) => {
@@ -24,11 +26,15 @@ exports.index = async (req, res) => {
 
   const pathId = req.params.id_path;
 
+  const id = await getUserId(token);
+  const user = await usersModel.getById(id);
+
   res.render("module", {
     moduleContent,
     modulesModel,
     module,
     modulePages,
     pathId,
+    user
   });
 };

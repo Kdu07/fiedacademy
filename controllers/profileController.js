@@ -23,7 +23,6 @@ exports.index = async (req, res) => {
 
   const lastLogin = new Date(user.last_login).toLocaleDateString("pt-BR");
 
-  console.log(moduleScores);
 
   progress.sort((a, b) => b.progress_percentage - a.progress_percentage);
 

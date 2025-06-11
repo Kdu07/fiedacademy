@@ -1,4 +1,6 @@
 const { isAuthorized } = require("../utils/authUtils");
+const { getUserId } = require("../utils/jwtUtils");
+const usersModel = require("../models/usersModel");
 
 // Controlador da rota /
 exports.index = async (req, res) => {
@@ -8,9 +10,10 @@ exports.index = async (req, res) => {
   if (auth === false) {
     return res.redirect("/");
   }
-  
+   const id = await getUserId(token);
+  const user = await usersModel.getById(id);
+
   res.render("help", {
-    titulo: "Ajuda",
-    mensagem: "Aqui estão os artigos de ajuda",
+    user
   });
 };
