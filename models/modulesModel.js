@@ -6,6 +6,7 @@ module.exports = {
     async findModule(moduleId) {
         const result = await db.query("SELECT * FROM modules WHERE id = $1", [moduleId]);
         return result.rows[0]; // Retorna o primeiro resultado encontrado
+        
     },
 
     // Busca o conteúdo de um módulo por ordem da página e ID do módulo
@@ -19,4 +20,5 @@ module.exports = {
         const result = await db.query("SELECT content_order FROM contents WHERE module_id = $1 ORDER BY content_order", [module]);
         return result.rows; // Retorna um array com as páginas do módulo
     }
+    
 }

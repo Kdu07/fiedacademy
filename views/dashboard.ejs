@@ -10,25 +10,37 @@
     <!-- Header -->
     <%- include('./partials/header') %>
 
-    <div class="flex flex-col w-4/6 mx-auto">
+    <div class="flex flex-col w-4/6 mx-auto mt-8">
       <div class="w-full rounded-lg mt-4 mb-4">
-        <input
-          class="bg-white border-2 border-black w-full h-12 rounded-lg px-4"
-          type="text"
-          placeholder="Pesquisa PTD"
-        />
+        <form action="/dashboard/getUser" method="POST" class="relative">
+          <input
+            class="bg-white border-2 border-black w-full h-12 rounded-lg px-4 pr-16"
+            type="text"
+            placeholder="Pesquisa PTD"
+            name="PTD"
+            id="PTD"
+            required
+          />
+          <button
+            type="submit"
+            class="bg-mainGreen absolute right-1 top-1 h-10 px-4 rounded-lg"
+          >
+            <p class="text-white">Buscar PTD</p>
+          </button>
+        </form>
       </div>
+      
       <div class="w-full">
-        <h1 class="text-3xl font-semibold">Nome do usuário</h1>
-        <p>Email</p>
-        <p>Região</p>
+        <h1 class="text-3xl font-semibold"><%- user.name %></h1>
+        <p><%- user.email %></p>
+        <p><%- user.region %></p>
       </div>
       <div class="grid grid-cols-2 gap-4 mt-8">
         <div
           class="flex flex-col items-center justify-center bg-gray-100 rounded-lg"
         >
           <p>Último acesso</p>
-          <p class="text-xl font-semibold">04/06/2025</p>
+          <p class="text-xl font-semibold"><%- lastLogin %></p>
         </div>
         <div
           class="flex flex-col items-center justify-center bg-gray-100 rounded-lg"
@@ -40,62 +52,46 @@
           class="flex flex-col items-center justify-center bg-gray-100 rounded-lg"
         >
           <p>Média</p>
-          <p class="text-xl font-semibold">9.25</p>
+          <p class="text-xl font-semibold"><%- user.score %></p>
         </div>
         <div
           class="flex flex-col items-center justify-center bg-gray-100 rounded-lg"
         >
-          <p>Ranking</p>
-          <p class="text-xl font-semibold">23</p>
+          <p>Posição no rank</p>
+          <% if(userRank === 1) { %>
+          <p class="text-xl font-bold"><%- userRank %>🏆</p>
+          <% } else { %>
+          <p class="text-xl font-semibold"><%- userRank %></p>
+          <% } %>
         </div>
       </div>
       <div class="grid grid-cols-1 gap-6 bg-gray-100 rounded-lg mt-8 p-4">
         <h1 class="text-3xl mb-4">Trilhas</h1>
+        <% progress.forEach((trilha) => { %>
         <!-- Trilha -->
         <div class="flex flex-row items-center justify-between">
-          <p class="me-4 text-xl w-1/6">Onboarding</p>
+          <p class="me-4 text-xl w-1/6">
+            <%- trilha.path_title %> (<%- trilha.progress_percentage %>%)
+          </p>
           <div class="w-4/6 h-4 bg-gray-100 rounded-full">
-            <div class="h-full bg-cyan-400 rounded-full"></div>
+            <div
+              class="h-full bg-cyan-400 rounded-full"
+              style="width: <%- trilha.progress_percentage %>%"
+            ></div>
           </div>
           <a href="/dashboard">
             <img src="/icons/download.svg" alt="" />
           </a>
         </div>
-        <!-- Trilha -->
-        <div class="flex flex-row items-center justify-between">
-          <p class="me-4 text-xl w-1/6">Básico</p>
-          <div class="w-4/6 h-4 bg-gray-200 rounded-full">
-            <div class="h-full bg-cyan-400 rounded-full"></div>
-          </div>
-          <a href="/dashboard">
-            <img src="/icons/download.svg" alt="" />
-          </a>
-        </div>
-        <!-- Trilha -->
-        <div class="flex flex-row items-center justify-between">
-          <p class="me-4 text-xl w-1/6">Intermediário</p>
-          <div class="w-4/6 h-4 bg-gray-200 rounded-full">
-            <div class="h-full bg-cyan-400 rounded-full"></div>
-          </div>
-          <a href="/dashboard">
-            <img src="/icons/download.svg" alt="" />
-          </a>
-        </div>
-        <!-- Trilha -->
-        <div class="flex flex-row items-center justify-between">
-          <p class="me-4 text-xl w-1/6">Avançado</p>
-          <div class="w-4/6 h-4 bg-gray-200 rounded-full">
-            <div class="h-full bg-cyan-400 rounded-full"></div>
-          </div>
-          <a href="/dashboard">
-            <img src="/icons/download.svg" alt="" />
-          </a>
-        </div>
+        <% }) %>
       </div>
       <div
         class="flex flex-col bg-gray-100 rounded-lg mt-8 p-4 justify-items-end"
       >
-        <h1 class="text-3xl mb-4">Média das trilhas</h1>
+        <h1 class="text-3xl mb-4">Média dos Módulos</h1>
+        <% if(moduleScores.length === 0) { %>
+        <p class="text-center text-gray-500">Nenhum módulo concluído</p>
+        <% } else {%>
         <div
           class="w-5/6 flex flex-row justify-between border-b-2 border-black self-end"
         >
@@ -112,42 +108,20 @@
           <p>10</p>
         </div>
         <div class="flex flex-col border-black border-e-2">
+          <% moduleScores.forEach((module) => { %>
           <!-- Trilha individual -->
           <div class="flex flex-row items-center">
             <div class="w-1/6 border-e-2 border-black">
-              <p>Onboarding</p>
+              <p><%- module.module_title %> [<%- module.user_score %>%]</p>
             </div>
             <div class="w-5/6">
-              <div class="bg-mainGreen w-[100%] h-4"></div>
+              <div
+                class="bg-mainGreen h-4"
+                style="width: <%- module.user_score %>%"
+              ></div>
             </div>
           </div>
-          <!-- Trilha individual -->
-          <div class="flex flex-row items-center">
-            <div class="w-1/6 border-e-2 border-black">
-              <p>Básico</p>
-            </div>
-            <div class="w-5/6">
-              <div class="bg-mainGreen w-[93%] h-4"></div>
-            </div>
-          </div>
-          <!-- Trilha individual -->
-          <div class="flex flex-row items-center">
-            <div class="w-1/6 border-e-2 border-black">
-              <p>Intermediário</p>
-            </div>
-            <div class="w-5/6">
-              <div class="bg-mainGreen w-[86%] h-4"></div>
-            </div>
-          </div>
-           <!-- Trilha individual -->
-          <div class="flex flex-row items-center">
-            <div class="w-1/6 border-e-2 border-black">
-              <p>Avançado</p>
-            </div>
-            <div class="w-5/6">
-              <div class="bg-mainGreen w-[77%] h-4"></div>
-            </div>
-          </div>
+          <% }) %> <% } %>
         </div>
       </div>
     </div>
