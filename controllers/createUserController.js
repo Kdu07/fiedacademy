@@ -1,13 +1,16 @@
-// Controlador da rota /
-exports.index = (req, res) => {
-  const token = req.cookies.token; // Get the token from cookies
+const { isAuthorized } = require("../utils/authUtils");
 
-  if(!token) {
-    return res.redirect("/"); // If token exists, redirect to home
+// Controlador da rota /
+exports.index = async (req, res) => {
+  const token = req.cookies.token;
+  const auth = await isAuthorized(token, "Gestor");
+
+  if (auth === false) {
+    return res.redirect("/");
   }
-  
+
   const error = req.query.error || null; // Get error message from query parameters
-    res.render('createUser', {
-      error: error
-    });
-  };
+  res.render("createUser", {
+    error: error,
+  });
+};

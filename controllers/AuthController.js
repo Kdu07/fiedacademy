@@ -14,7 +14,7 @@ exports.create = async (req, res) => {
     return res.redirect('/login?error=Email%20ou%20senha%20inválida');
   }
 
-  return;
+  return res.redirect('/create-user');
 };
 
 exports.login = async (req, res) => {

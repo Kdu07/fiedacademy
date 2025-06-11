@@ -3,10 +3,16 @@ const userContentModel = require("../models/userContentModel");
 const userTestModel = require("../models/userTestModel");
 
 const { getUserId } = require("../utils/jwtUtils");
-
+const { isAuthorized } = require("../utils/authUtils");
 
 exports.index = async (req, res) => {
-  const token = req.cookies.token; // Get the token from cookies
+  const token = req.cookies.token;
+  const auth = await isAuthorized(token, "PTD");
+
+  if (auth === false) {
+    return res.redirect("/");
+  }
+
   const userId = await getUserId(token);
 
   const user = await usersModel.getById(userId);
@@ -17,11 +23,17 @@ exports.index = async (req, res) => {
 
   const lastLogin = new Date(user.last_login).toLocaleDateString("pt-BR");
 
-  console.log(moduleScores)
+  console.log(moduleScores);
 
   progress.sort((a, b) => b.progress_percentage - a.progress_percentage);
 
-  res.render("profile", { user, userRank, progress: progress || [], moduleScores, lastLogin });
+  res.render("profile", {
+    user,
+    userRank,
+    progress: progress || [],
+    moduleScores,
+    lastLogin,
+  });
 };
 
 // EXEMPLO DE DADOS DO CONTROLLER:
