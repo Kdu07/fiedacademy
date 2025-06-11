@@ -80,7 +80,10 @@ exports.index = async (req, res) => {
 */
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 
@@ -99,6 +102,9 @@ exports.index = async (req, res) => {
     // Média: userID -> tests - user_test_score - modules
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
