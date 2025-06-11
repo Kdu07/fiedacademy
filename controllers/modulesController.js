@@ -29,8 +29,6 @@ exports.index = async (req, res) => {
   const id = await getUserId(token);
   const user = await usersModel.getById(id);
 
-=======
-  const pathId = req.params.id_path
   
   res.render("module", {
     moduleContent,
