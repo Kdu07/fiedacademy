@@ -8,3 +8,4 @@ const dashboardController = require('../controllers/dashboardController');
 router.get('/dashboard', dashboardController.index);
 
 module.exports = router;
+

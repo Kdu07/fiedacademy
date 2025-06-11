@@ -78,3 +78,21 @@ exports.index = async (req, res) => {
   ]
 ]
 */
+<<<<<<< Updated upstream
+=======
+
+/* this.index();
+
+ */
+// users ✅
+    // Ficha: byID 
+    // Ranking: getAll (comparar score dos users)
+// paths ✅
+    // Progresso da trilha: 
+        // 100%: pathID -> modules (contagem de modules que tem aquele pathID)
+        // user%: userID -> user_content_progress - modules - paths (contagem de módulos que o PTD completou)
+// user_test_score
+    // Nota dos módulos: userID -> tests - user_test_score - modules
+    // Média: userID -> tests - user_test_score - modules
+
+>>>>>>> Stashed changes

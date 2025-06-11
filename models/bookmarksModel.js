@@ -21,3 +21,13 @@ module.exports.deleteById = async (id) => {
      [id])
 };
 
+
+module.exports.insert = async (userId, contentId) => {
+  await pool.query(`
+    INSERT INTO bookmarks (id_usuario, id_content, saved_at)
+    SELECT $1, $2, NOW()
+    WHERE NOT EXISTS (
+      SELECT 1 FROM bookmarks WHERE id_usuario = $1 AND id_content = $2
+    )
+  `, [userId, contentId]);
+};
