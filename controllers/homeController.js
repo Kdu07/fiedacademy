@@ -1,33 +1,34 @@
 const bookmarksModel = require("../models/bookmarksModel");
 const pathsModel = require("../models/pathsModel");
-const usersModel = require('../models/usersModel');
+const usersModel = require("../models/usersModel");
 
+const { isAuthorized } = require("../utils/authUtils");
 const { getUserId } = require("../utils/jwtUtils");
 
 module.exports.index = async (req, res) => {
-  const token = req.cookies.token; // Get the token from cookies
+  const token = req.cookies.token;
+  const auth = await isAuthorized(token, "PTD");
 
-  if (!token) {
-    console.error("No token found in cookies");
-    return res.redirect("/login"); // Redirect to login if no token is present
+  if (auth === false) {
+    return res.redirect("/login");
   }
-
-  const userId = await getUserId(token);
- 
 
   const bookmarks = await bookmarksModel.getAll();
   const paths = await pathsModel.getAll();
   const ranking = await usersModel.getUsersRanking();
 
-  res.render("home", { paths, bookmarks, ranking });
+  const id = await getUserId(token);
+  const user = await usersModel.getById(id);
+
+  res.render("home", { paths, bookmarks, ranking, user });
 };
 
 // Função para deletar bookmark
 module.exports.deleteBookmark = async (req, res) => {
   try {
     await bookmarksModel.deleteById(req.params.id);
-    res.redirect('/');
+    res.redirect("/");
   } catch (err) {
-    res.status(500).send('Erro ao deletar bookmark');
+    res.status(500).send("Erro ao deletar bookmark");
   }
 };

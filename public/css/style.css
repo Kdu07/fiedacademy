@@ -538,14 +538,23 @@ video {
 .absolute {
   position: absolute;
 }
+.relative {
+  position: relative;
+}
 .end-0 {
   inset-inline-end: 0px;
 }
 .left-0 {
   left: 0px;
 }
+.right-1 {
+  right: 0.25rem;
+}
 .top-0 {
   top: 0px;
+}
+.top-1 {
+  top: 0.25rem;
 }
 .top-20 {
   top: 5rem;
@@ -555,6 +564,9 @@ video {
 }
 .z-50 {
   z-index: 50;
+}
+.m-auto {
+  margin: auto;
 }
 .mx-auto {
   margin-left: auto;
@@ -641,6 +653,9 @@ video {
 .h-1\/2 {
   height: 50%;
 }
+.h-10 {
+  height: 2.5rem;
+}
 .h-12 {
   height: 3rem;
 }
@@ -716,18 +731,6 @@ video {
 .w-7\/12 {
   width: 58.333333%;
 }
-.w-\[100\%\] {
-  width: 100%;
-}
-.w-\[77\%\] {
-  width: 77%;
-}
-.w-\[86\%\] {
-  width: 86%;
-}
-.w-\[93\%\] {
-  width: 93%;
-}
 .w-auto {
   width: auto;
 }
@@ -766,6 +769,9 @@ video {
 }
 .transform {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.cursor-not-allowed {
+  cursor: not-allowed;
 }
 .cursor-pointer {
   cursor: pointer;
@@ -989,6 +995,9 @@ video {
 .pe-12 {
   padding-inline-end: 3rem;
 }
+.pr-16 {
+  padding-right: 4rem;
+}
 .ps-12 {
   padding-inline-start: 3rem;
 }
@@ -1172,6 +1181,14 @@ video {
     width: 16.666667%;
   }
 
+  .md\:w-40 {
+    width: 10rem;
+  }
+
+  .md\:w-72 {
+    width: 18rem;
+  }
+
   .md\:w-96 {
     width: 24rem;
   }
@@ -1199,6 +1216,11 @@ video {
 
   .md\:text-xl {
     font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+
+  .md\:text-lg {
+    font-size: 1.125rem;
     line-height: 1.75rem;
   }
 }
