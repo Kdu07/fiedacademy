@@ -90,3 +90,10 @@ exports.getUsersRanking = async () => {
     score: user.score,
   }));
 };
+
+exports.updateProfilePhoto = async (photoUrl, userId) => {
+  await db.query(
+    "UPDATE users SET profile_photo_path = $1 WHERE id = $2",
+    [photoUrl, userId]
+  );
+};

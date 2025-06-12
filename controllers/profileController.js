@@ -23,7 +23,6 @@ exports.index = async (req, res) => {
 
   const lastLogin = new Date(user.last_login).toLocaleDateString("pt-BR");
 
-
   progress.sort((a, b) => b.progress_percentage - a.progress_percentage);
 
   res.render("profile", {
@@ -35,67 +34,73 @@ exports.index = async (req, res) => {
   });
 };
 
-// EXEMPLO DE DADOS DO CONTROLLER:
-/*
-[
-  [
-    {
-      id: 27,
-      id_role: 4,
-      name: 'Cafael Rabral',
-      region: 'São José dos Campos',
-      email: 'ptd@legal.com',
-      password: '$2b$10$hP1TRfK.60ky./QmGD81E.bE.28uu1TxYE4mP799shJ7rk4ScU93q',
-      score: 0,
-      last_login: null,
-      profile_photo_path: null
+exports.updatePicture = async (req, res) => {
+  const token = req.cookies.token;
+  const userId = await getUserId(token);
+
+
+  if (!userId) {
+    return res.status(401).send("Unauthorized");
+  }
+    const user = await usersModel.getById(userId);
+  if (!req.file) {
+    return res.status(400).send("No file uploaded.");
+  }
+
+  // Se a foto existe deleta o arquivo
+  if (user.profile_photo_path) {
+    const supabaseUrl = process.env.SUPABASE_URL;
+    const supabaseKey = process.env.SUPABASE_SERVICE_KEY;
+
+    // Extract the path after '/profiles/' from the public URL
+    const match = user.profile_photo_path.match(/\/profiles\/(.+)$/);
+    if (match && match[1]) {
+      const previousFileName = match[1];
+      const deleteUrl = `${supabaseUrl}/storage/v1/object/profiles/${previousFileName}`;
+
+      await fetch(deleteUrl, {
+        method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${supabaseKey}`,
+        },
+      });
     }
-  ],
-  Promise { [ [Object], [Object], [Object] ] },
-  [
-    {
-      path_id: 4,
-      path_title: 'Avançado',
-      total_contents: '0',
-      completed_contents: '0',
-      progress_percentage: '0'
+  }
+
+  // Ler o arquivo localmente
+  const fs = require("fs").promises;
+  const path = require("path");
+  const fileBuffer = await fs.readFile(req.file.path);
+  const fileExt = path.extname(req.file.originalname);
+  const fileName = `avatars/${userId}_${Date.now()}${fileExt}`;
+
+  // Upload do arquivo para o Supabase
+  const supabaseUrl = process.env.SUPABASE_URL;
+  const supabaseKey = process.env.SUPABASE_SERVICE_KEY;
+  const uploadUrl = `${supabaseUrl}/storage/v1/object/profiles/${fileName}`;
+
+  // Fetch API para enviar o arquivo
+  const response = await fetch(uploadUrl, {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${supabaseKey}`,
+      "Content-Type": req.file.mimetype,
+      "x-upsert": "true",
     },
-    {
-      path_id: 2,
-      path_title: 'Básico',
-      total_contents: '2',
-      completed_contents: '1',
-      progress_percentage: '50.00'
-    },
-    {
-      path_id: 5,
-      path_title: 'Help',
-      total_contents: '0',
-      completed_contents: '0',
-      progress_percentage: '0'
-    },
-    {
-      path_id: 3,
-      path_title: 'Intermediário',
-      total_contents: '1',
-      completed_contents: '0',
-      progress_percentage: '0.00'
-    },
-    {
-      path_id: 1,
-      path_title: 'Onboarding',
-      total_contents: '5',
-      completed_contents: '2',
-      progress_percentage: '40.00'
-    }
-  ],
-  [
-    {
-      module_id: 1,
-      module_title: 'Plantio',
-      test_id: 3,
-      user_score: 85
-    }
-  ]
-]
-*/
+    body: fileBuffer,
+  });
+
+  await fs.unlink(req.file.path); // Clean up local file
+
+  if (!response.ok) {
+    return res.status(500).send("Failed to upload to Supabase.");
+  }
+
+  // 3. Construct public URL
+  const publicUrl = `${supabaseUrl}/storage/v1/object/public/profiles/${fileName}`;
+
+  // 4. Save URL in DB using your model
+  await usersModel.updateProfilePhoto(publicUrl, userId);
+
+  res.redirect("/profile");
+};
