@@ -43,7 +43,7 @@ module.exports.addBookmark = async (req, res) => {
   const { contentId } = req.body; // vem do <input hidden name="contentId">
 
   try {
-    await bookmarksModel.insert(userId, contentId); // agora envia os dois valores corretamente
+    await bookmarksModel.insert(userId, contentId); //envia os dois valores (userId e contentId)
     res.redirect('/');
   } catch (err) {
     console.error('Erro ao salvar bookmark:', err);
