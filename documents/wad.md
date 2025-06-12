@@ -1479,7 +1479,19 @@ _Descreva e ilustre aqui o desenvolvimento da última versão do sistema web, ex
 
 ## 5.1. Relatório de testes de integração de endpoints automatizados (sprint 4)
 
-_Liste e descreva os testes unitários dos endpoints criados, automatizados e planejados para sua solução. Posicione aqui também o relatório de cobertura de testes Jest se houver (através de link ou transcrito para estrutura markdown)_
+<img src="../assets/assets_wad/test-path.png" width="300"><br>
+Teste: GET /path/:id<br>
+Descrição: Teste da rota para renderizar a página de trilha.<br>
+Status: 200 OK<br>
+Resposta: HTML da trilha<br><br>
+
+<img src="../assets/assets_wad/test-home.png" width="300"><br>
+Teste: GET /<br>
+Descrição: Teste da rota para renderizar a página de home<br>
+Status: 200 OK<br>
+Resposta: HTML da home<br><br>
+
+
 
 ## 5.2. Testes de usabilidade (sprint 5)
 
