@@ -8,7 +8,7 @@ router.get('/', homeController.index);
 router.post('/bookmarks/delete/:id', homeController.deleteBookmark);
 
 //adicionar bookmark
-router.post('/bookmarks/add:id/', homeController.addBookmark);
+router.post('/bookmarks/add', homeController.addBookmark);
 
 module.exports = router;
 

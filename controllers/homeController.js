@@ -31,18 +31,22 @@ module.exports.deleteBookmark = async (req, res) => {
   }
 };
 
-
 module.exports.addBookmark = async (req, res) => {
-  const { contentId } = req.body;
-  const userId = req.session.userId; //id do usuario
+  const token = req.cookies.token;
+
+  if (!token) {
+    console.error("Token não encontrado nos cookies");
+    return res.redirect("/login");
+  }
+
+  const userId = await getUserId(token); // extrai o ID do usuário do token JWT
+  const { contentId } = req.body; // vem do <input hidden name="contentId">
 
   try {
-    await Bookmark.insert(userId, contentId);
+    await bookmarksModel.insert(userId, contentId); // agora envia os dois valores corretamente
     res.redirect('/');
   } catch (err) {
     console.error('Erro ao salvar bookmark:', err);
     res.status(500).send('Erro ao salvar favorito');
   }
 };
-
-
