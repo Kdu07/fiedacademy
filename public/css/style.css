@@ -943,6 +943,10 @@ video {
 .bg-white\/75 {
   background-color: rgb(255 255 255 / 0.75);
 }
+.bg-yellow-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(250 204 21 / var(--tw-bg-opacity, 1));
+}
 .bg-login-bg {
   background-image: url('/images/login_fundo.png');
 }
@@ -1180,6 +1184,10 @@ video {
 .hover\:bg-lime-300:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(190 242 100 / var(--tw-bg-opacity, 1));
+}
+.hover\:bg-yellow-500:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(234 179 8 / var(--tw-bg-opacity, 1));
 }
 .hover\:font-bold:hover {
   font-weight: 700;
