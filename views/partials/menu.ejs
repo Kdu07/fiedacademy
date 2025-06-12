@@ -35,15 +35,34 @@
     </svg>
   </button>
   <div
-  id="menu"
-  class="fixed top-20 left-0 h-[calc(100vh-5rem)] w-full md:w-1/6 z-20 bg-white transform -translate-x-full transition-transform duration-300"
->
-  <div class="flex flex-col items-center h-full gap-8 mt-4 md:items-start md:ms-4 md:gap-2">
-    <a class="text-4xl md:text-xl hover:font-bold" href="/">Home</a>
-    <a class="text-4xl md:text-xl hover:font-bold" href="/help">Help</a>
-    <a class="text-4xl md:text-xl hover:font-bold" href="/aboutus">Sobre nós</a>
+    id="menu"
+    class="fixed top-20 left-0 h-[calc(100vh-5rem)] w-full md:w-1/6 z-20 bg-white transform -translate-x-full transition-transform duration-300"
+  >
+    <div
+      class="flex flex-col items-center h-full gap-8 mt-4 md:items-start md:ms-4 md:gap-2"
+    >
+      <a class="text-4xl md:text-xl hover:font-bold" href="/">Home</a>
+      <a class="text-4xl md:text-xl hover:font-bold" href="/profile">Perfil</a>
+      <a class="text-4xl md:text-xl hover:font-bold" href="/help">Help</a>
+      <a class="text-4xl md:text-xl hover:font-bold" href="/aboutus"
+        >Sobre nós</a
+      >
+      <% if (user.id_role !== 4) { %>
+      <a class="text-4xl md:text-xl hover:font-bold" href="/dashboard"
+        >Dashboard</a
+      >
+       <a class="text-4xl md:text-xl hover:font-bold" href="/create-user"
+        >Criar Usuário</a
+      >
+      <% }%>
+      <a
+        class="text-red-500 text-lg md:text-xl hover:font-bold"
+        href="/logout-user"
+        onclick="return confirm('Você tem certeza que quer sair?')"
+        >Logout</a
+      >
+    </div>
   </div>
-</div>
 
   <script>
     function toggleMenu() {

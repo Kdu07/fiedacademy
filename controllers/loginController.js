@@ -8,7 +8,6 @@ exports.index = (req, res) => {
   
   const error = req.query.error || null; // Get error message from query parameters
     res.render('login', {
-      titulo: 'Login',
       error: error
     });
   };
