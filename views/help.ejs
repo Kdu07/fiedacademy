@@ -5,40 +5,109 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Ajuda | Bayer Agro</title>
   <link rel="stylesheet" href="/css/style.css" />
-  <!-- Adiciona Montserrat do Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    .linha-botoes {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      margin-bottom: 32px;
+      width: 100%;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .botao-help {
+      flex: 1 1 0;
+      max-width: 220px;
+      min-width: 140px;
+      height: 180px;
+      background: #66B512;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      box-shadow: none;
+      padding: 0;
+      transition: transform 0.2s;
+      cursor: pointer;
+      margin: 0;
+    }
+    .botao-help:hover {
+      transform: scale(1.05);
+      background: #5c8a25;
+    }
+    .botao-help img {
+      width: 70%;
+      height: 70%;
+      object-fit: contain;
+      margin: 0;
+      background: transparent;
+      border: none;
+      box-shadow: none;
+      padding: 0;
+      display: block;
+      filter: none;
+      outline: none;
+    }
+    @media (max-width: 900px) {
+      .linha-botoes {
+        gap: 16px;
+        max-width: 100%;
+      }
+      .botao-help {
+        max-width: 33vw;
+        height: 24vw;
+        min-width: 90px;
+      }
+    }
+    @media (max-width: 600px) {
+      .linha-botoes {
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 10px;
+      }
+      .botao-help {
+        max-width: 100%;
+        width: 100%;
+        height: 80px;
+      }
+      .botao-help img {
+        width: 48px;
+        height: 48px;
+      }
+    }
+  </style>
 </head>
 <body class="bg-gray-50 min-h-screen flex flex-col justify-between">
 
   <!-- Header -->
    <%- include('./partials/header') %>
 
-  <!-- Main Content -->
   <div class="flex flex-col items-center flex-grow mt-0">
-    <h1 class="mt-4 mb-4 text-4xl font-bold text-[#4B6B1A] w-full text-center" style="font-family: 'Montserrat', sans-serif;">Como podemos te ajudar hoje?</h1>
-    <div class="flex flex-col gap-y-6 mb-0 pb-0 flex-grow w-full">
-      <!-- Primeira linha de 3 botões -->
-      <div class="flex flex-row space-x-8 justify-center">
-        <a href="/help/1" class="flex flex-col items-center bg-[#8CC63F] rounded-md p-0 w-56 h-56 shadow-md hover:scale-105 transition-transform cursor-pointer justify-center flex-grow">
-          <img src="/images/mapas.dados1.png" alt="Mapas e dados" class="h-16 mb-4" />
+    <h1 class="mt-4 mb-4 text-3xl font-bold text-[#4B6B1A] w-full text-center" style="font-family: 'Montserrat', sans-serif;">Como podemos te ajudar hoje?</h1>
+    <div class="flex flex-col mb-0 pb-0 flex-grow w-full">
+      <div class="linha-botoes">
+        <a href="/help/1" class="botao-help">
+          <img src="/images/mapas.dados2.png" alt="Mapas e dados" />
         </a>
-        <a href="/help/2" class="flex flex-col items-center bg-[#8CC63F] rounded-md p-0 w-56 h-56 shadow-md hover:scale-105 transition-transform cursor-pointer justify-center flex-grow">
-          <img src="/images/boas.praticas.png" alt="Boas práticas" class="h-16 mb-4" />
+        <a href="/help/2" class="botao-help">
+          <img src="/images/boas.praticas.png" alt="Boas práticas" />
         </a>
-        <a href="/help/3" class="flex flex-col items-center bg-[#8CC63F] rounded-md p-0 w-56 h-56 shadow-md hover:scale-105 transition-transform cursor-pointer justify-center flex-grow">
-          <img src="/images/data.inbox.png" alt="Data inbox e integrações" class="h-16 mb-4" />
+        <a href="/help/3" class="botao-help">
+          <img src="/images/data.inbox.png" alt="Data inbox e integrações" />
         </a>
       </div>
-      <!-- Segunda linha de 3 botões -->
-      <div class="flex flex-row space-x-8 justify-center">
-        <a href="/help/4" class="flex flex-col items-center bg-[#8CC63F] rounded-md p-0 w-56 h-56 shadow-md hover:scale-105 transition-transform cursor-pointer justify-center flex-grow">
-          <img src="/images/Plantio.png" alt="Plantio" class="h-16 mb-4" />
+      <div class="linha-botoes">
+        <a href="/help/4" class="botao-help">
+          <img src="/images/Plantio.png" alt="Plantio" />
         </a>
-        <a href="/help/5" class="flex flex-col items-center bg-[#8CC63F] rounded-md p-0 w-56 h-56 shadow-md hover:scale-105 transition-transform cursor-pointer justify-center flex-grow">
-          <img src="/images/Colheita.png" alt="Colheita" class="h-16 mb-4" />
+        <a href="/help/5" class="botao-help">
+          <img src="/images/Colheita.png" alt="Colheita" />
         </a>
-        <a href="/help/6" class="flex flex-col items-center bg-[#8CC63F] rounded-md p-0 w-56 h-56 shadow-md hover:scale-105 transition-transform cursor-pointer justify-center flex-grow">
-          <img src="/images/Passos.png" alt="Primeiros passos" class="h-16 mb-4" />
+        <a href="/help/6" class="botao-help">
+          <img src="/images/Passos.png" alt="Primeiros passos" />
         </a>
       </div>
     </div>
@@ -46,7 +115,6 @@
   
   <!-- Footer -->
   <%- include('./partials/footer') %>
-
 
 </body>
 </html>
