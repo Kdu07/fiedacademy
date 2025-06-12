@@ -1,5 +1,5 @@
 const modulesModel = require("../models/modulesModel");
-
+const usersModel = require("../models/usersModel");
 const { isAuthorized } = require("../utils/authUtils");
 const { getUserId } = require("../utils/jwtUtils");
 
