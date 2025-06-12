@@ -1226,44 +1226,55 @@ Essa documentação apresenta todos os endpoints implementados até o momento, o
 ```javascript
 const express = require('express');
 require('dotenv').config();
+
 const app = express();
 const path = require('path');
+const cookieParser = require('cookie-parser');
 
-const indexRoutes = require('./routes/index');
-const pathsRoutes = require('./routes/paths');
+const homeRoutes = require('./routes/homeRoutes');
+const authRoutes = require('./routes/authRoutes');
+const helpRoutes = require('./routes/helpRoutes');
+const loginRoutes = require('./routes/loginRoutes');
+const pathRoutes = require('./routes/pathRoutes');
+const aboutUsRoutes = require('./routes/aboutUs');
+const dashboardRoutes = require('./routes/dashboardRoutes');
+const moduleRoutes = require('./routes/modulesRoutes');
 
 // Configura EJS
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
+app.use(cookieParser());
 
-// Arquivos estáticos
+app.use(express.urlencoded({ extended: true }));
+
+// Torna a pasta 'assets' pública
 app.use('/assets', express.static(path.join(__dirname, 'assets')));
-app.use(express.static('public'));
+app.use(express.static('public')); // <-- Define a pasta public como estática
 
-// Rotas principais
-app.use('/', indexRoutes);
-app.use('/paths', pathsRoutes);
+// Usa as rotas principais
+app.use('/', homeRoutes);
+app.use('/', authRoutes);
+app.use('/', helpRoutes);
+app.use('/', pathRoutes);
+app.use('/', loginRoutes);
+app.use('/', aboutUsRoutes);
+app.use('/', dashboardRoutes);
+app.use('/', moduleRoutes)
 
 // Inicia o servidor
 app.listen(3000, () => {
   console.log('Servidor rodando em http://localhost:3000');
-});js
-const homeRoutes = require('./routes/homeRoutes');
-app.use('/', homeRoutes);
+});
 
-const apiRoutes = require('./routes/apiRoutes');
-app.use('/api', apiRoutes);
 ```
 
-### Rotas HTML (renderização com EJS)
+### Rotas da Home (homeRoutes)
 
-#### Trilhas na Home (`/`)
+#### Trilhas (`/`)
 
-* **URL:** `GET /paths`
+* **URL:** `/`
 * **Método:** GET
-* **Descrição:** Pega todas as trilhas do banco de dados e renderiza na página de Home.
-* **Header:** `Content-Type: text/html`
-* **Corpo da requisição:** Não se aplica
+* **Descrição:** Pega todas as trilhas, bookmarks e ranking do banco de dados.
 * **Exemplo de resposta:**
   ```
   [
@@ -1273,9 +1284,25 @@ app.use('/api', apiRoutes);
     "description": "This path leads to various certification modules."
     }
   ]
+
   ```
-
-
+  
+* **URL:** `/bookmarks/delete/:id`
+* **Método:** POST
+* **Descrição:** Pega as informações de uma trilha específica pelo ID
+* **Header:** `Content-Type: text/html`
+* **Parâmetros de rota:** `id`: ID da trilha (número inteiro)
+* **Corpo da requisição:** Não se aplica
+* **Exemplo de resposta:** 
+  ```
+  [
+    {
+    "id": 2,
+    "title": "Path to Content Creation",
+    "description": "This path includes modules for content creation."
+    }
+  ]
+  ```
 
 * **URL:** `GET /paths/:id`
 * **Método:** GET

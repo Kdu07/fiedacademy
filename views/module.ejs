@@ -85,10 +85,16 @@
             <a
               href="/path/<%= pathId %>/module/1/page/<%= moduleContent.content_order + 1 %>"
               class="text-white p-3 ps-12 pe-12"
-              >PRÓXIMO</a
-            >
+              >PRÓXIMO</a>
           </button>
-          <% } %>
+         <!-- Favoritar -->
+          <form action="/bookmarks/add" method="POST">
+          <input type="hidden" name="contentId" value="<%= moduleContent.id %>" />
+          <button type="submit" class="rounded-lg bg-yellow-400 text-white p-3 px-6 hover:bg-yellow-500">
+          Favoritar
+          </button>
+        </form>
+       <% } %>
         </div>
       </div>
       <div class="mb-40"></div>

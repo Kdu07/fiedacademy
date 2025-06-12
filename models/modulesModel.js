@@ -19,6 +19,8 @@ module.exports = {
     async findAllModuleContent(module) {
         const result = await db.query("SELECT content_order FROM contents WHERE module_id = $1 ORDER BY content_order", [module]);
         return result.rows; // Retorna um array com as páginas do módulo
-    }
-    
+    },
+
 }
+
+

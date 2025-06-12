@@ -7,6 +7,9 @@ const homeController = require('../controllers/homeController');
 router.get('/', homeController.index);
 router.post('/bookmarks/delete/:id', homeController.deleteBookmark);
 
+//adicionar bookmark
+router.post('/bookmarks/add', homeController.addBookmark);
+
 module.exports = router;
 
 // Aqui você importa o novo arquivo de rotas
