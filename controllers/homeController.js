@@ -13,6 +13,7 @@ module.exports.index = async (req, res) => {
     return res.redirect("/login");
   }
 
+
   const userId = await getUserId(token);
 
   const bookmarks = await bookmarksModel.getAll();
@@ -54,3 +55,4 @@ module.exports.addBookmark = async (req, res) => {
     res.status(500).send('Erro ao salvar favorito');
   }
 };
+
