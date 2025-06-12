@@ -1303,8 +1303,6 @@ const apiRoutes = require('./routes/apiRoutes');
 app.use('/api', apiRoutes);
 ```
 
-### Rotas HTML (renderização com EJS)
-
 #### Trilhas na Home (`/`)
 
 * **URL:** `GET /paths`
