@@ -11,10 +11,48 @@
     <%- include('./partials/header') %>
 
     <div class="flex flex-col w-4/6 mx-auto mt-8">
-      <div class="w-full">
-        <h1 class="text-3xl font-semibold"><%- user.name %></h1>
-        <p><%- user.email %></p>
-        <p><%- user.region %></p>
+      <div class="w-full flex flex-row">
+        <div
+          class="w-24 h-24 rounded-full border-2 border-black flex items-center justify-center mr-4 relative group hover:bg-gray-200 transition-colors duration-200"
+        >
+          <img
+            src="<%= user.profile_photo_path ? user.profile_photo_path : '/images/Conta_Default.svg' %>" 
+            class="w-full h-full rounded-full"
+            alt=""
+          />
+          <!-- Hidden file input -->
+          <form
+            id="avatar-form"
+            action="/profile/uploadPicture"
+            method="POST"
+            enctype="multipart/form-data"
+            class="absolute inset-0 m-auto w-full h-full flex items-center justify-center"
+          >
+            <input
+              type="file"
+              name="avatar"
+              id="avatar-input"
+              accept="image/*"
+              class="hidden"
+              onchange="this.form.submit()"
+            />
+            <label
+              for="avatar-input"
+              class="absolute inset-0 m-auto w-10 h-10 opacity-0 group-hover:opacity-100 transition-opacity duration-200 cursor-pointer flex items-center justify-center"
+            >
+              <img
+                src="/icons/edit.svg"
+                alt="Editar"
+                class="pointer-events-none w-10 h-10"
+              />
+            </label>
+          </form>
+        </div>
+        <div class="flex flex-col">
+          <h1 class="text-3xl font-semibold"><%- user.name %></h1>
+          <p><%- user.email %></p>
+          <p><%- user.region %></p>
+        </div>
       </div>
       <div class="grid grid-cols-2 gap-4 mt-8">
         <div
@@ -102,8 +140,7 @@
               ></div>
             </div>
           </div>
-          <% }) %> 
-          <% } %>
+          <% }) %> <% } %>
         </div>
       </div>
     </div>
