@@ -34,13 +34,15 @@ module.exports.deleteBookmark = async (req, res) => {
 
 module.exports.addBookmark = async (req, res) => {
   const { contentId } = req.body;
-  const userId = req.session.userId || 1; //id do usuario
+  const userId = req.session.userId; //id do usuario
 
   try {
     await Bookmark.insert(userId, contentId);
-    res.redirect('back');
+    res.redirect('/');
   } catch (err) {
     console.error('Erro ao salvar bookmark:', err);
     res.status(500).send('Erro ao salvar favorito');
   }
 };
+
+

@@ -21,7 +21,6 @@ module.exports.deleteById = async (id) => {
      [id])
 };
 
-
 module.exports.insert = async (userId, contentId) => {
   await pool.query(`
     INSERT INTO bookmarks (id_usuario, id_content, saved_at)
