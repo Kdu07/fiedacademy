@@ -1315,28 +1315,72 @@ app.listen(3000, () => {
 });
 
 ```
-
 ### Rotas da Home (homeRoutes)
-
+* **User Story:** 1 e 2
 * **URL:** `/`
 * **Método:** GET
 * **Descrição:** Pega todas as trilhas, bookmarks e ranking do banco de dados e mostra na página home.
+* **Headers:**
+  - `Content-Type: text/html`
+  - `Cookie:` `token=<JWT>`
+* **Body:** (não se aplica)<br>
+**Response**
+- **Status:** `200 OK`
+- **Body:**  
+  HTML renderizado contendo:
+  - Lista de trilhas
+  - Bookmarks do usuário
+  - Ranking de usuários
+
+---
 
 #### Deletar bookmark
+* **User Story:** 1
 * **URL:** `/bookmarks/delete/:id`
 * **Método:** POST
-* **Descrição:** Apaga o bookmark referente ao módulo e a trilha na qual ele está.
-* **Header:** `Content-Type: text/html`
+* **Descrição:** Apaga o bookmark referente ao módulo e a trilha na qual ele está. <br>
+* **Header:** `Content-Type: application/json`
+**Response**
+- **Status:** 200 OK
+- **Body (sucesso)**
+```
+{
+  "message": "Bookmark deletado com sucesso"
+}
+```
+- **Body (erro)**
+```
+{
+  "error": "Bookmark não encontrado ou falha na exclusão"
+}
+```
 <br>
 
 #### Adicionar ao bookmarks
+* **User Story** 1
 * **URL:** `/bookmarks/add`
 * **Método:** POST
-* **Descrição:** Seleciona um conteúdo e clica em favoritar, salavando então o conteúdo na tlac omosição <br>
-
+* **Descrição:** Seleciona um conteúdo e clica em favoritar, salavando então o conteúdo na tela de home <br>
+**Request**
+- **Headers:**
+  - `Content-Type: application/json` <br>
+**Response**
+* **Status:** 201 Created
+* **Body** (sucesso):
+```
+{
+  "message": "Bookmark adicionado com sucesso",
+  "bookmark": {
+    "id": "789",
+    "id_usuario": "123",
+    "titulo": "Nome do conteúdo"
+  }
+}
+```
 ### Tela de login (authRoutes)
 
 #### Login usuário
+* **User Story** 1, 6 e 8
 * **URL:** `/api/login-user`
 * **Método:** POST
 * **Descrição:** Usuário entra na plataforma através do login.
