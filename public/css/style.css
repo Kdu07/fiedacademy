@@ -578,6 +578,9 @@ video {
   margin-left: auto;
   margin-right: auto;
 }
+.mb-0 {
+  margin-bottom: 0px;
+}
 .mb-10 {
   margin-bottom: 2.5rem;
 }
@@ -770,6 +773,9 @@ video {
 }
 .flex-1 {
   flex: 1 1 0%;
+}
+.flex-grow {
+  flex-grow: 1;
 }
 .-translate-x-full {
   --tw-translate-x: -100%;
@@ -1000,6 +1006,9 @@ video {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
 }
+.pb-0 {
+  padding-bottom: 0px;
+}
 .pe-12 {
   padding-inline-end: 3rem;
 }
@@ -1054,6 +1063,10 @@ video {
 .text-\[\#0057A6\] {
   --tw-text-opacity: 1;
   color: rgb(0 87 166 / var(--tw-text-opacity, 1));
+}
+.text-\[\#4B6B1A\] {
+  --tw-text-opacity: 1;
+  color: rgb(75 107 26 / var(--tw-text-opacity, 1));
 }
 .text-black {
   --tw-text-opacity: 1;
@@ -1135,6 +1148,12 @@ video {
 .outline-none {
   outline: 2px solid transparent;
   outline-offset: 2px;
+}
+.outline {
+  outline-style: solid;
+}
+.filter {
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 .transition {
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
