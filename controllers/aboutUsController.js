@@ -5,7 +5,7 @@ const usersModel = require("../models/usersModel");
 // Controlador da rota /
 exports.index = async (req, res) => {
   const token = req.cookies.token;
-  const auth = await isAuthorized(token, "Gestor");
+  const auth = await isAuthorized(token, "PTD");
 
   if (auth === false) {
     return res.redirect("/");
