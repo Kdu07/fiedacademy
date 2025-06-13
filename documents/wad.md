@@ -1479,25 +1479,44 @@ _Descreva e ilustre aqui o desenvolvimento da última versão do sistema web, ex
 
 ## 5.1. Relatório de testes de integração de endpoints automatizados (sprint 4)
 
+<sup>Figura 26: Teste de deleção de conteúdos fixados.</sup><br>
+
 <img src="../assets/assets_wad/test-path.png" width="300"><br>
+
+<sub>Fonte: Material produzido pelos autores (2025). </sub><br>
 Teste: GET /path/:id<br>
 Descrição: Teste da rota para renderizar a página de trilha.<br>
 Status: 200 OK<br>
 Resposta: HTML da trilha<br><br>
 
+
+<sup>Figura 27: Teste de deleção de conteúdos fixados.</sup><br>
+
 <img src="../assets/assets_wad/test-home.png" width="300"><br>
+
+<sub>Fonte: Material produzido pelos autores (2025). </sub><br>
 Teste: GET /<br>
 Descrição: Teste da rota para renderizar a página de home<br>
 Status: 200 OK<br>
 Resposta: HTML da home<br><br>
 
+
+<sup>Figura 28: Teste de deleção de conteúdos fixados.</sup><br>
+
 <img src="../assets/assets_wad/test-delete-bookmark.png" width="300"><br>
+
+<sub>Fonte: Material produzido pelos autores (2025). </sub><br>
 Teste: POST /bookmarks/delete/:id<br>
 Descrição: Teste da rota para remover conteúdo fixado<br>
 Status: 200 OK<br>
 Requisição: Deletar linha da tabela bookmarks no banco de dados <br><br>
 
-<img src="../assets/assets_wad/test-create-user.png" width="300"><br>
+
+<sup>Figura 29: Teste de deleção de conteúdos fixados.</sup><br>
+
+<img src="../assets/assets_wad/test-delete-bookmark.png" width="300"><br>
+
+<sub>Fonte: Material produzido pelos autores (2025). </sub><br>
 Teste: POST /api/create-user<br>
 Descrição: Teste da rota para criar novo usuário<br>
 Status: 202 OK<br>
