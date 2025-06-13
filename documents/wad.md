@@ -1491,6 +1491,17 @@ Descrição: Teste da rota para renderizar a página de home<br>
 Status: 200 OK<br>
 Resposta: HTML da home<br><br>
 
+<img src="../assets/assets_wad/test-delete-bookmark.png" width="300"><br>
+Teste: POST /bookmarks/delete/:id<br>
+Descrição: Teste da rota para remover conteúdo fixado<br>
+Status: 200 OK<br>
+Requisição: Deletar linha da tabela bookmarks no banco de dados <br><br>
+
+<img src="../assets/assets_wad/test-create-user.png" width="300"><br>
+Teste: POST /api/create-user<br>
+Descrição: Teste da rota para criar novo usuário<br>
+Status: 202 OK<br>
+Requisição: Adicionar linha de usuário na tabela users<br><br>
 
 
 ## 5.2. Testes de usabilidade (sprint 5)
