@@ -1500,6 +1500,16 @@ Com o guia de estilos definido, para facilitar o desenvolvimento de cada funcion
 
 _Descreva e ilustre aqui o desenvolvimento da sua segunda versão do sistema web, explicando brevemente o que foi entregue em termos de código e sistema. Utilize prints de tela para ilustrar. Indique as eventuais dificuldades e próximos passos._
 
+&nbsp;&nbsp;&nbsp;&nbsp; Nas sprints anteriores, o projeto foi estruturado de forma incremental para garantir uma base sólida e alinhada às necessidades do público-alvo da Bayer. Na Sprint 1, o foco esteve na análise de mercado e compreensão do contexto do negócio, identificando oportunidades, vulnerabilidades e riscos para orientar o desenvolvimento da solução. Já na Sprint 2, demos início à construção do banco de dados, implementando as funcionalidades essenciais para o funcionamento do website e aprofundando o domínio do modelo MVC, fundamental para a organização e manutenção do código. <br>
+
+&nbsp;&nbsp;&nbsp;&nbsp; Na Sprint 3, o trabalho concentrou-se na padronização visual e na experiência do usuário. Criamos um guia de estilos detalhado, definindo cores, tipografia, iconografia e imagens, o que garantiu consistência no design. Em seguida, desenvolvemos protótipos de alta fidelidade das principais telas, facilitando o alinhamento da equipe e a visualização do produto final. Com o protótipo validado, iniciamos o desenvolvimento em código, seguindo o padrão MVC, e entregamos as primeiras telas funcionais do sistema, estabelecendo as bases para as evoluções das próximas sprints. <br>
+
+&nbsp;&nbsp;&nbsp;&nbsp; Nas sprints anteriores, o projeto foi estruturado de forma incremental para garantir uma base sólida e alinhada às necessidades do público-alvo da Bayer. Na Sprint 1, o foco esteve na análise de mercado e compreensão do contexto do negócio, identificando oportunidades, vulnerabilidades e riscos para orientar o desenvolvimento da solução. Já na Sprint 2, demos início à construção do banco de dados, implementando as funcionalidades essenciais para o funcionamento do website e aprofundando o domínio do modelo MVC, fundamental para a organização e manutenção do código. <br>
+
+&nbsp;&nbsp;&nbsp;&nbsp; Na Sprint 3, o trabalho concentrou-se na padronização visual e na experiência do usuário. Criamos um guia de estilos detalhado, definindo cores, tipografia, iconografia e imagens, o que garantiu consistência no design. Em seguida, desenvolvemos protótipos de alta fidelidade das principais telas, facilitando o alinhamento da equipe e a visualização do produto final. Com o protótipo validado, iniciamos o desenvolvimento em código, seguindo o padrão MVC, e entregamos as primeiras telas funcionais do sistema, estabelecendo as bases para as evoluções das próximas sprints. <br>
+
+
+
 ## 4.3. Versão final da aplicação web (sprint 5)
 
 _Descreva e ilustre aqui o desenvolvimento da última versão do sistema web, explicando brevemente o que foi entregue em termos de código e sistema. Utilize prints de tela para ilustrar. Indique as eventuais dificuldades e próximos passos._
