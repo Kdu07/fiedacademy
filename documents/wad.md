@@ -1593,6 +1593,8 @@ Com o guia de estilos definido, para facilitar o desenvolvimento de cada funcion
 
 </div>
 
+&nbsp;&nbsp;&nbsp;&nbsp;  A estrutura das telas da plataforma FieldAcademy foi cuidadosamente planejada para proporcionar uma experiência completa, intuitiva e eficiente aos diferentes perfis de usuários do agronegócio. A tela de login garante segurança e acessibilidade no acesso à plataforma, enquanto a tela de dashboard — exclusiva para administradores — oferece uma visão estratégica do desempenho e progresso dos usuários, facilitando a gestão e o acompanhamento dos resultados. Já a tela de perfil permite que cada usuário visualize e gerencie suas informações, acompanhe seu desenvolvimento e tenha acesso rápido a conteúdos relevantes e personalizados. Por fim, a página principal de trilhas de aprendizagem organiza o conteúdo de forma clara, promovendo o engajamento e a evolução contínua dos profissionais. Juntas, essas telas atendem às necessidades práticas e estratégicas da AgroBayer, promovendo capacitação, inovação e eficiência para todos os envolvidos, desde os promotores técnicos até os gestores e administradores da plataforma. <br>
+
 ## 4.3. Versão final da aplicação web (sprint 5)
 
 _Descreva e ilustre aqui o desenvolvimento da última versão do sistema web, explicando brevemente o que foi entregue em termos de código e sistema. Utilize prints de tela para ilustrar. Indique as eventuais dificuldades e próximos passos._
