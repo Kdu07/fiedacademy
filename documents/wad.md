@@ -1469,11 +1469,24 @@ Com o guia de estilos definido, para facilitar o desenvolvimento de cada funcion
 
 ## 4.2. Segunda versão da aplicação web (sprint 4)
 
-_Descreva e ilustre aqui o desenvolvimento da sua segunda versão do sistema web, explicando brevemente o que foi entregue em termos de código e sistema. Utilize prints de tela para ilustrar. Indique as eventuais dificuldades e próximos passos._
+Durante a sprint 4 foi continuado o desenvolvimento da aplicação, foram criadas telas novas (perfil, dashboard, criar usuário) e as telas existentes foram aprimoradas. O foco da sprint foi direcionado principalmente em garantir a entrega de várias funcionalidades do projeto, visto que para cada botão ou página é necessário criar um backend completo que interaja com o banco de dados.<br>
+
+**Tela de Dashboard**: Visualização de informações dos usuários pelo usuário administrador<br>
+<img src="../assets/assets_wad/telaDashboard.png" width="300"><br>
+
+**Tela de Perfil**: Informações da conta daquele usuário<br>
+<img src="../assets/assets_wad/telaPerfil.png" width="300"><br>
+
+**Cabeçalho**: O cabeçalho das página foi aprimorado com a logo do projeto e o funcionamento do botão de sidebar<br>
+<img src="../assets/assets_wad/header.png" width="300"><br>
+
+
 
 ## 4.3. Versão final da aplicação web (sprint 5)
 
 _Descreva e ilustre aqui o desenvolvimento da última versão do sistema web, explicando brevemente o que foi entregue em termos de código e sistema. Utilize prints de tela para ilustrar. Indique as eventuais dificuldades e próximos passos._
+
+
 
 # <a name="c5"></a>5. Testes
 
