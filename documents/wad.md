@@ -1504,9 +1504,72 @@ _Descreva e ilustre aqui o desenvolvimento da sua segunda versão do sistema web
 
 &nbsp;&nbsp;&nbsp;&nbsp; Na Sprint 3, o trabalho concentrou-se na padronização visual e na experiência do usuário. Criamos um guia de estilos detalhado, definindo cores, tipografia, iconografia e imagens, o que garantiu consistência no design. Em seguida, desenvolvemos protótipos de alta fidelidade das principais telas, facilitando o alinhamento da equipe e a visualização do produto final. Com o protótipo validado, iniciamos o desenvolvimento em código, seguindo o padrão MVC, e entregamos as primeiras telas funcionais do sistema, estabelecendo as bases para as evoluções das próximas sprints. <br>
 
-&nbsp;&nbsp;&nbsp;&nbsp; Nas sprints anteriores, o projeto foi estruturado de forma incremental para garantir uma base sólida e alinhada às necessidades do público-alvo da Bayer. Na Sprint 1, o foco esteve na análise de mercado e compreensão do contexto do negócio, identificando oportunidades, vulnerabilidades e riscos para orientar o desenvolvimento da solução. Já na Sprint 2, demos início à construção do banco de dados, implementando as funcionalidades essenciais para o funcionamento do website e aprofundando o domínio do modelo MVC, fundamental para a organização e manutenção do código. <br>
+&nbsp;&nbsp;&nbsp;&nbsp; Na Sprint 4, nosso foco foi consolidar e aprimorar a plataforma web de capacitação técnica desenvolvida para o time agro da Bayer. Após a entrega da primeira versão na Sprint 3 — quando estruturamos o banco de dados, definimos a identidade visual e lançamos o sistema inicial —, avançamos para uma segunda versão mais robusta e alinhada às necessidades do público-alvo, formado principalmente por Promotores Técnicos Digitais (PTDs), técnicos agrícolas e engenheiros agrônomos. Implementamos trilhas de aprendizado personalizadas, aprimoramos a busca inteligente por palavras-chave, ampliamos os recursos de gamificação e incluímos funcionalidades essenciais como o acesso offline e uma aba de “help” dedicada, facilitando o suporte imediato em campo. <br>
 
-&nbsp;&nbsp;&nbsp;&nbsp; Na Sprint 3, o trabalho concentrou-se na padronização visual e na experiência do usuário. Criamos um guia de estilos detalhado, definindo cores, tipografia, iconografia e imagens, o que garantiu consistência no design. Em seguida, desenvolvemos protótipos de alta fidelidade das principais telas, facilitando o alinhamento da equipe e a visualização do produto final. Com o protótipo validado, iniciamos o desenvolvimento em código, seguindo o padrão MVC, e entregamos as primeiras telas funcionais do sistema, estabelecendo as bases para as evoluções das próximas sprints. <br>
+&nbsp;&nbsp;&nbsp;&nbsp; Além das melhorias técnicas e de usabilidade, estruturamos um plano de marketing digital integrado para garantir ampla adesão e engajamento dos profissionais. As estratégias envolveram divulgação em portais internos, redes sociais, e-mail marketing, webinars e parcerias com instituições como o Senar, além de campanhas pagas e marketing de conteúdo voltado para boas práticas e inovações do setor. O objetivo foi comunicar com clareza os diferenciais da plataforma — centralização do conhecimento, personalização das trilhas e facilidade de acesso —, consolidando a solução como referência em capacitação técnica digital no agronegócio e fortalecendo a liderança da Bayer em inovação e sustentabilidade. <br>
+
+**Tela de login**: Onde o usuário faz seu cadastro na plataforma ou entra diretamente através de sua conta.
+<div align = "center">
+
+<sup>Figura 21: Tela de login.</sup><br>
+
+<img src="(../assets/login.jpeg)" width="300"><br>
+
+<sub>Fonte: Material produzido pelos autores (2025). </sub><br>
+
+</div>
+
+
+**Tela de Home**: Onde o usuário terá acesso à busca rápida, help (onde ele encontra conteúdos por tópicos), trilhas e conteúdos favoritados.
+
+<div align = "center">
+
+<sup>Figura 22: Tela de Home.</sup><br>
+
+<img src="../assets/assets_wad/telaHome1.png" width="300"><br>
+<img src="../assets/assets_wad/telaHome2.png" width="300"><br>
+
+<sub>Fonte: Material produzido pelos autores (2025). </sub><br>
+
+</div>
+
+
+**Tela de Trilhas**: A tela apresentada exibe a trilha de onboarding da plataforma FieldAcademy, organizada em módulos temáticos como Plantio, Máquinas e Introdução ao FieldView. Cada módulo é apresentado em um card individual, contendo o nome do módulo, uma barra de progresso visual que indica o avanço do usuário e um botão destacado para iniciar o conteúdo. 
+
+<sup>Figura 23: Tela de Trilhas.</sup><br>
+
+<img src="![../assets/assets_wad/telaTrilha.png]" width="300"><br>
+
+<sub>Fonte: Material produzido pelos autores (2025). </sub><br>
+
+</div>
+
+
+**Tela de Conteúdos**: Esta tela da plataforma FieldAcademy foi projetada para facilitar o aprendizado progressivo do usuário sobre o FieldView™, organizando o conteúdo em lições sequenciais e interativas. No lado esquerdo, há um painel com botões para cada lição, permitindo ao usuário navegar facilmente entre os módulos e visualizar qual está em andamento. Ao centro, a tela destaca o conteúdo principal da lição atual, incluindo uma explicação detalhada sobre o FieldView™ e um vídeo explicativo integrado, tornando o aprendizado mais dinâmico e acessível. Na parte inferior, botões de interação permitem que o usuário avance para a próxima lição, avalie o conteúdo com “curtir” ou “não curtir” e adicione a lição aos favoritos, promovendo engajamento, personalização da experiência e acompanhamento do progresso individual dentro da plataforma.
+
+<div align = "center">
+
+<sup>Figura 24: Tela de Conteudos.</sup><br>
+
+<img src="../assets/assets_wad/telaConteudo.png" width="300"><br>
+
+<sub>Fonte: Material produzido pelos autores (2025). </sub><br>
+
+</div>
+
+
+**Tela de Help**: A tela de Help da plataforma FieldAcademy foi desenvolvida para oferecer suporte rápido e eficiente ao usuário, reunindo cards temáticos que abrangem os principais tópicos e dúvidas frequentes relacionadas ao uso do sistema. Cada card direciona para conteúdos específicos, como “Mapas e dados”, “Boas práticas”, “Data inbox e integrações”, “Plantio”, “Colheita” e “Primeiros passos”, facilitando a navegação e a busca por informações relevantes. Essa abordagem visual e segmentada permite que o usuário encontre respostas de forma intuitiva, reduzindo o tempo de resolução de dúvidas e promovendo uma experiência mais autônoma e satisfatória dentro da plataforma.
+
+<div align = "center">
+
+<sup>Figura 25: Tela de Help.</sup><br>
+
+<img src="![../assets/assets_wad/telaHelp.png])" width="300"><br>
+
+<sub>Fonte: Material produzido pelos autores (2025). </sub><br>
+
+</div>
+
 
 
 
