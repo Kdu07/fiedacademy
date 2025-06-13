@@ -1586,6 +1586,8 @@ Com o guia de estilos definido, para facilitar o desenvolvimento de cada funcion
 
 _Descreva e ilustre aqui o desenvolvimento da última versão do sistema web, explicando brevemente o que foi entregue em termos de código e sistema. Utilize prints de tela para ilustrar. Indique as eventuais dificuldades e próximos passos._
 
+
+
 # <a name="c5"></a>5. Testes
 
 ## 5.1. Relatório de testes de integração de endpoints automatizados (sprint 4)
