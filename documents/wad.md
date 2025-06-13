@@ -1274,98 +1274,96 @@ Essa documentação apresenta todos os endpoints implementados até o momento, o
 ```javascript
 const express = require('express');
 require('dotenv').config();
+
 const app = express();
 const path = require('path');
+const cookieParser = require('cookie-parser');
 
-const indexRoutes = require('./routes/index');
-const pathsRoutes = require('./routes/paths');
+const homeRoutes = require('./routes/homeRoutes');
+const authRoutes = require('./routes/authRoutes');
+const helpRoutes = require('./routes/helpRoutes');
+const loginRoutes = require('./routes/loginRoutes');
+const pathRoutes = require('./routes/pathRoutes');
+const aboutUsRoutes = require('./routes/aboutUs');
+const dashboardRoutes = require('./routes/dashboardRoutes');
+const moduleRoutes = require('./routes/modulesRoutes');
 
 // Configura EJS
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
+app.use(cookieParser());
 
-// Arquivos estáticos
+app.use(express.urlencoded({ extended: true }));
+
+// Torna a pasta 'assets' pública
 app.use('/assets', express.static(path.join(__dirname, 'assets')));
-app.use(express.static('public'));
+app.use(express.static('public')); // <-- Define a pasta public como estática
 
-// Rotas principais
-app.use('/', indexRoutes);
-app.use('/paths', pathsRoutes);
+// Usa as rotas principais
+app.use('/', homeRoutes);
+app.use('/', authRoutes);
+app.use('/', helpRoutes);
+app.use('/', pathRoutes);
+app.use('/', loginRoutes);
+app.use('/', aboutUsRoutes);
+app.use('/', dashboardRoutes);
+app.use('/', moduleRoutes)
 
 // Inicia o servidor
 app.listen(3000, () => {
   console.log('Servidor rodando em http://localhost:3000');
-});js
-const homeRoutes = require('./routes/homeRoutes');
-app.use('/', homeRoutes);
+});
 
-const apiRoutes = require('./routes/apiRoutes');
-app.use('/api', apiRoutes);
 ```
 
-#### Trilhas na Home (`/`)
+### Rotas da Home (homeRoutes)
 
-* **URL:** `GET /paths`
+* **URL:** `/`
 * **Método:** GET
-* **Descrição:** Pega todas as trilhas do banco de dados e renderiza na página de Home.
+* **Descrição:** Pega todas as trilhas, bookmarks e ranking do banco de dados e mostra na página home.
+
+#### Deletar bookmark
+* **URL:** `/bookmarks/delete/:id`
+* **Método:** POST
+* **Descrição:** Apaga o bookmark referente ao módulo e a trilha na qual ele está.
 * **Header:** `Content-Type: text/html`
-* **Corpo da requisição:** Não se aplica
-* **Exemplo de resposta:**
-  ```
-  [
-    {
-    "id": 1,
-    "title": "Path to Certification",
-    "description": "This path leads to various certification modules."
-    }
-  ]
-  ```
+<br>
 
+#### Adicionar ao bookmarks
+* **URL:** `/bookmarks/add`
+* **Método:** POST
+* **Descrição:** Seleciona um conteúdo e clica em favoritar, salavando então o conteúdo na tlac omosição <br>
 
+### Tela de login (authRoutes)
 
-* **URL:** `GET /paths/:id`
-* **Método:** GET
-* **Descrição:** Pega as informações de uma trilha específica pelo ID
-* **Header:** `Content-Type: text/html`
-* **Parâmetros de rota:** `id`: ID da trilha (número inteiro)
-* **Corpo da requisição:** Não se aplica
-* **Exemplo de resposta:** 
-  ```
-  [
-    {
-    "id": 2,
-    "title": "Path to Content Creation",
-    "description": "This path includes modules for content creation."
-    }
-  ]
-  ```
----------------------
-
-
-#### Rotas para conteúdos dos módulos (`/module/:id/page/:page_id`)
-**Método:** GET
-
-### Headers de resposta
-
-| Header         | Value                              |
-| -------------- | ---------------------------------- |
-| X-Powered-By   | Express                            |
-| Content-Type   | text/html; charset=utf-8           |
-| Content-Length | 4265                               |
-| ETag           | WTToBe-JBfKHabc0R8fKVx6ewG7vsa.R\* |
-| Date           | Fri, 30 May 2025 19:15:24 GMT      |
-| Connection     | keep-alive                         |
-| Keep-Alive     | timeout=5                          |
-
-#### Response
-
+#### Login usuário
+* **URL:** `/api/login-user`
+* **Método:** POST
+* **Descrição:** Usuário entra na plataforma através do login.
 **Status:** `200 OK`  
-**Content-Type:** `text/html`
 
+#### Criar usuário
+* **URL:** `/api/create-user`
+* **Método:** POST
+* **Descrição:** Permite que o adiministrador possa criar usuários.
+**Status:** `200 OK`
+
+##### Logout usuário
+* **URL:** `/api/logout-user`
+* **Método:** GET
+* **Descrição:** Permite sair da conta logada.
+**Status:** `200 OK`
+
+### Tela de trilhas (pathRoutes)
+
+#### Direciona para os módulo da trilha
+* **URL:** `/paths/:id`
+* **Método:** GET
+* **Descrição:** Rendezira todos os módulos da trilha selecionada.
+**Status:** `200 OK`  
 **Body:**  
 Página HTML renderizada contendo os dados da lição:
-
-```html
+```javascript
 <!DOCTYPE html>
 <html>
   <!-- Head content -->
@@ -1383,18 +1381,49 @@ Página HTML renderizada contendo os dados da lição:
           <p class="text-white p-2 text-center font-semibold text-xl">
             Lição #1 (ATUAL)
           </p>
-        </a>
-      </div>
-    <div>
-    <!-- Conteúdo do módulo -->
-    <div class="w-full">
-      <h1 class="text-2xl font-bold">Título da lição</h1>
-      <p>Body da lição</p>
-    </div>
-    <!-- Footer -->
-  </body>
-</html>
 ```
+### Tela de módulos (moduleRoutes)
+
+##### Conteúdo do módulo
+* **URL:** `/path/:id_path/module/:id/page/:id_order`
+* **Método:** GET
+* **Descrição:** Mostra todos os módulos de uma trilha.
+**Status:** `200 OK`  
+
+##### Conteúdo do módulo
+* **URL:** `/path/:id_path/module/:id/page/:id_order`
+* **Método:** GET
+* **Descrição:** Mostra todos os conteúdos relacionados a um módulo de uma trilha.
+**Status:** `200 OK`  
+
+### Tela de Help (helpRoutes)
+
+##### Temas do Help
+* **URL:** `/help`
+* **Método:** GET
+* **Descrição:** Mostra todos os conteúdos do help.
+**Status:** `200 OK`  
+
+### Tela de dashboard (dashboardRoutes)
+
+##### Tela de dashboard
+* **URL:** `/dashboard`
+* **Método:** GET
+* **Descrição:** Mostra as informações dos PTDs de acordo com userId.
+**Status:** `200 OK` 
+
+##### Tela de perfil (profileRoutes)
+* **URL:** `/profile`
+* **Método:** GET
+* **Descrição:** Mostra o perfil dos PTDs.
+**Status:** `200 OK`  
+**Content-Type:** `text/html`
+
+##### Tela de perfil (profileRoutes)
+* **URL:** `/profile/uploadPicture`
+* **Método:** POST
+* **Descrição:** Editar o perfil dos PTDs.
+**Status:** `200 OK`
 
 # <a name="c4"></a>4. Desenvolvimento da Aplicação Web
 ## 4.1. Primeira versão da aplicação web (sprint 3)
@@ -1469,17 +1498,88 @@ Com o guia de estilos definido, para facilitar o desenvolvimento de cada funcion
 
 ## 4.2. Segunda versão da aplicação web (sprint 4)
 
-Durante a sprint 4 foi continuado o desenvolvimento da aplicação, foram criadas telas novas (perfil, dashboard, criar usuário) e as telas existentes foram aprimoradas. O foco da sprint foi direcionado principalmente em garantir a entrega de várias funcionalidades do projeto, visto que para cada botão ou página é necessário criar um backend completo que interaja com o banco de dados.<br>
 
-**Tela de Dashboard**: Visualização de informações dos usuários pelo usuário administrador<br>
-<img src="../assets/assets_wad/telaDashboard.png" width="300"><br>
+&nbsp;&nbsp;&nbsp;&nbsp; Nas sprints anteriores, o projeto foi estruturado de forma incremental para garantir uma base sólida e alinhada às necessidades do público-alvo da Bayer. Na Sprint 1, o foco esteve na análise de mercado e compreensão do contexto do negócio, identificando oportunidades, vulnerabilidades e riscos para orientar o desenvolvimento da solução. Já na Sprint 2, demos início à construção do banco de dados, implementando as funcionalidades essenciais para o funcionamento do website e aprofundando o domínio do modelo MVC, fundamental para a organização e manutenção do código. <br>
 
-**Tela de Perfil**: Informações da conta daquele usuário<br>
-<img src="../assets/assets_wad/telaPerfil.png" width="300"><br>
+&nbsp;&nbsp;&nbsp;&nbsp; Na Sprint 3, o trabalho concentrou-se na padronização visual e na experiência do usuário. Criamos um guia de estilos detalhado, definindo cores, tipografia, iconografia e imagens, o que garantiu consistência no design. Em seguida, desenvolvemos protótipos de alta fidelidade das principais telas, facilitando o alinhamento da equipe e a visualização do produto final. Com o protótipo validado, iniciamos o desenvolvimento em código, seguindo o padrão MVC, e entregamos as primeiras telas funcionais do sistema, estabelecendo as bases para as evoluções das próximas sprints. <br>
 
-**Cabeçalho**: O cabeçalho das página foi aprimorado com a logo do projeto e o funcionamento do botão de sidebar<br>
-<img src="../assets/assets_wad/header.png" width="300"><br>
+&nbsp;&nbsp;&nbsp;&nbsp; Na Sprint 4, nosso foco foi consolidar e aprimorar a plataforma web de capacitação técnica desenvolvida para o time agro da Bayer. Após a entrega da primeira versão na Sprint 3 — quando estruturamos o banco de dados, definimos a identidade visual e lançamos o sistema inicial —, avançamos para uma segunda versão mais robusta e alinhada às necessidades do público-alvo, formado principalmente por Promotores Técnicos Digitais (PTDs), técnicos agrícolas e engenheiros agrônomos. Implementamos trilhas de aprendizado personalizadas, aprimoramos a busca inteligente por palavras-chave, ampliamos os recursos de gamificação e incluímos funcionalidades essenciais como o acesso offline e uma aba de “help” dedicada, facilitando o suporte imediato em campo. <br>
 
+&nbsp;&nbsp;&nbsp;&nbsp; Além das melhorias técnicas e de usabilidade, estruturamos um plano de marketing digital integrado para garantir ampla adesão e engajamento dos profissionais. As estratégias envolveram divulgação em portais internos, redes sociais, e-mail marketing, webinars e parcerias com instituições como o Senar, além de campanhas pagas e marketing de conteúdo voltado para boas práticas e inovações do setor. O objetivo foi comunicar com clareza os diferenciais da plataforma — centralização do conhecimento, personalização das trilhas e facilidade de acesso —, consolidando a solução como referência em capacitação técnica digital no agronegócio e fortalecendo a liderança da Bayer em inovação e sustentabilidade. <br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;  **Tela de login**: A tela de login apresentada permite a autenticação de três tipos de usuários: o usuário comum (PTD), o gestor e o administrador. Cada um deles acessa a plataforma inserindo seu email e senha, com validação dos campos antes do envio das informações. Após a autenticação, o sistema direciona cada perfil para funcionalidades específicas: o usuário comum acessa apenas recursos básicos e informações pertinentes ao seu perfil; o gestor tem acesso a ferramentas de administração de equipes, relatórios e acompanhamento de desempenho; já o administrador possui permissões totais, podendo gerenciar todos os dados, usuários e configurações da aplicação web. A interface é intuitiva e responsiva, com campos claros e botão de ação destacado, garantindo acessibilidade e segurança para todos os perfis, além de reforçar a identidade institucional com a mensagem “Se é bayer, é bom”.<br>
+
+<div align = "center">
+
+<sup>Figura 21: Tela de login.</sup><br>
+
+<img src="(../assets/login.jpeg)" width="300"><br>
+
+<sub>Fonte: Material produzido pelos autores (2025). </sub><br>
+
+</div>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;  **Tela de Home**: A página apresentada na imagem da plataforma FieldAcademy oferece uma navegação centralizada em trilhas de aprendizagem, permitindo ao usuário acessar diferentes níveis de conteúdo, como Onboarding, Intermediário, Básico, Avançado e Help, por meio de botões de "Continuar" para cada trilha. Além disso, a interface conta com um campo de busca no topo para facilitar o acesso rápido a conteúdos específicos, um menu lateral para navegação geral e um botão destacado de "Acessar Ajuda", promovendo suporte imediato ao usuário. O layout é limpo, com elementos visuais que remetem ao contexto agrícola, reforçando a identidade da plataforma educacional e proporcionando uma experiência intuitiva e acessível para diferentes perfis de usuários. <br>
+
+<div align = "center">
+
+<sup>Figura 22: Tela de Home.</sup><br>
+
+<img src= "![alt text](../assets/Home.jpeg)" width="300"><br>
+
+<sub>Fonte: Material produzido pelos autores (2025). </sub><br>
+
+</div>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;  **Tela de Trilhas**: A tela apresentada exibe a trilha de onboarding da plataforma FieldAcademy, organizada em módulos temáticos como Plantio, Máquinas e Introdução ao FieldView. Cada módulo é apresentado em um card individual, contendo o nome do módulo, uma barra de progresso visual que indica o avanço do usuário e um botão destacado para iniciar o conteúdo. <br>
+
+<sup>Figura 23: Tela de Trilhas.</sup><br>
+
+<img src="![../assets/assets_wad/telaTrilha.png]" width="300"><br>
+
+<sub>Fonte: Material produzido pelos autores (2025). </sub><br>
+
+</div>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;  **Tela de Conteúdos**: Esta tela da plataforma FieldAcademy foi projetada para facilitar o aprendizado progressivo do usuário sobre o FieldView™, organizando o conteúdo em lições sequenciais e interativas. No lado esquerdo, há um painel com botões para cada lição, permitindo ao usuário navegar facilmente entre os módulos e visualizar qual está em andamento. Ao centro, a tela destaca o conteúdo principal da lição atual, incluindo uma explicação detalhada sobre o FieldView™ e um vídeo explicativo integrado, tornando o aprendizado mais dinâmico e acessível. Na parte inferior, botões de interação permitem que o usuário avance para a próxima lição, avalie o conteúdo com “curtir” ou “não curtir” e adicione a lição aos favoritos, promovendo engajamento, personalização da experiência e acompanhamento do progresso individual dentro da plataforma. <br>
+
+<div align = "center">
+
+<sup>Figura 24: Tela de Conteudos.</sup><br>
+
+<img src="../assets/assets_wad/telaConteudo.png" width="300"><br>
+
+<sub>Fonte: Material produzido pelos autores (2025). </sub><br>
+
+</div>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;  **Tela de Help**: A tela de Help da plataforma FieldAcademy foi desenvolvida para oferecer suporte rápido e eficiente ao usuário, reunindo cards temáticos que abrangem os principais tópicos e dúvidas frequentes relacionadas ao uso do sistema. Cada card direciona para conteúdos específicos, como “Mapas e dados”, “Boas práticas”, “Data inbox e integrações”, “Plantio”, “Colheita” e “Primeiros passos”, facilitando a navegação e a busca por informações relevantes. Essa abordagem visual e segmentada permite que o usuário encontre respostas de forma intuitiva, reduzindo o tempo de resolução de dúvidas e promovendo uma experiência mais autônoma e satisfatória dentro da plataforma. <br>
+
+<div align = "center">
+
+<sup>Figura 25: Tela de Help.</sup><br>
+
+<img src="![../assets/assets_wad/telaHelp.png])" width="300"><br>
+
+<sub>Fonte: Material produzido pelos autores (2025). </sub><br>
+
+</div>
+
+&nbsp;&nbsp;&nbsp;&nbsp;  **Tela de Dashboard**: Apresenta uma visão consolidada do perfil do usuário, exibindo informações essenciais como nome, email, localização, data do último acesso, módulo mais recente concluído, média de desempenho e posição no ranking geral. A interface oferece uma barra de busca para localizar rapidamente outros usuários (PTD) e destaca o progresso individual nas trilhas de aprendizagem, com indicadores percentuais e opções para baixar materiais relacionados. Essas funcionalidades permitem ao usuário acompanhar seu desempenho, identificar módulos pendentes e acessar facilmente conteúdos relevantes, promovendo engajamento e facilitando a gestão do aprendizado dentro da plataforma. 
+
+<div align = "center">
+
+<sup>Figura 25: Tela de Help.</sup><br>
+
+<img src="" width="300"><br>
+
+<sub>Fonte: Material produzido pelos autores (2025). </sub><br>
+
+</div>
 
 
 ## 4.3. Versão final da aplicação web (sprint 5)
