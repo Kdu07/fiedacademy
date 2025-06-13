@@ -1378,9 +1378,9 @@ app.listen(3000, () => {
 }
 ```
 ### Tela de login (authRoutes)
+* **User Story** 1, 6 e 8
 
 #### Login usuário
-* **User Story** 1, 6 e 8
 * **URL:** `/api/login-user`
 * **Método:** POST
 * **Descrição:** Usuário entra na plataforma através do login.
@@ -1389,16 +1389,53 @@ app.listen(3000, () => {
 #### Criar usuário
 * **URL:** `/api/create-user`
 * **Método:** POST
-* **Descrição:** Permite que o adiministrador possa criar usuários.
-**Status:** `200 OK`
+* **Descrição:** Permite que o adiministrador possa criar usuários.<br>
+ Request
+- **Headers:**
+  - `Content-Type: application/json`
+
+- **Body:**
+```json
+{
+  "email": "usuario@email.com",
+  "senha": "123456"
+}
+```
+**Response**
+* **Status:** 201 Created
+* **Body** (sucesso):
+```
+{
+  "message": "Bookmark adicionado com sucesso",
+  "bookmark": {
+    "id": "789",
+    "id_usuario": "123",
+    "titulo": "Nome do conteúdo"
+  }
+}
+```
 
 ##### Logout usuário
 * **URL:** `/api/logout-user`
 * **Método:** GET
 * **Descrição:** Permite sair da conta logada.
+**Request**
+- **Headers:**
+  - `Cookie: token=<JWT>` <br>
 **Status:** `200 OK`
 
+- **Body:** não se aplica
+**Response**
+* **Status:** 201 Created
+* **Body** (sucesso):
+```
+{
+  "message": "Logout realizado com sucesso"
+}
+```
+
 ### Tela de trilhas (pathRoutes)
+**User Story:** 2 e 3
 
 #### Direciona para os módulo da trilha
 * **URL:** `/paths/:id`
@@ -1427,29 +1464,54 @@ Página HTML renderizada contendo os dados da lição:
           </p>
 ```
 ### Tela de módulos (moduleRoutes)
-
+**User Story:** 2, 3, 4 e 6
 ##### Conteúdo do módulo
 * **URL:** `/path/:id_path/module/:id/page/:id_order`
 * **Método:** GET
-* **Descrição:** Mostra todos os módulos de uma trilha.
-**Status:** `200 OK`  
+* **Descrição:** Mostra todos os módulos de uma trilha e seus conteúdos.
+**Status:** `200 OK` <br>
+Request
 
-##### Conteúdo do módulo
-* **URL:** `/path/:id_path/module/:id/page/:id_order`
-* **Método:** GET
-* **Descrição:** Mostra todos os conteúdos relacionados a um módulo de uma trilha.
-**Status:** `200 OK`  
+- **Headers:**
+  - `Content-Type: text/html`
+  - `Cookie: token=<JWT>`
+
+- **Body:** (não se aplica) <br>
+Response
+
+- **Status:** `200 OK`
+- Body (HTML renderizado)
 
 ### Tela de Help (helpRoutes)
-
+**User Story:** 1
 ##### Temas do Help
 * **URL:** `/help`
 * **Método:** GET
-* **Descrição:** Mostra todos os conteúdos do help.
-**Status:** `200 OK`  
+* **Descrição:** Mostra todos os conteúdos do help. <br>
+Request
+- **Headers:**
+  - `Content-Type: text/html`
+  - `Cookie: token=<JWT>`
 
+- **Body:** (não se aplica)<br>
+Response
+
+- **Status:** `200 OK`
+
+- Body (HTML renderizado)
 ### Tela de dashboard (dashboardRoutes)
+**User Story:** 6, 7 e 8<br>
+Request
+- **Headers:**
+  - `Content-Type: text/html`
+  - `Cookie: token=<JWT>`
 
+- **Body:** (não se aplica)<br>
+Response
+
+- **Status:** `200 OK`
+
+- **Body (HTML renderizado)**
 ##### Tela de dashboard
 * **URL:** `/dashboard`
 * **Método:** GET
