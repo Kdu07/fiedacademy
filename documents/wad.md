@@ -1544,7 +1544,7 @@ Com o guia de estilos definido, para facilitar o desenvolvimento de cada funcion
 </div>
 
 
-&nbsp;&nbsp;&nbsp;&nbsp;  **Tela de Conteúdos**: Esta tela da plataforma FieldAcademy foi projetada para facilitar o aprendizado progressivo do usuário sobre o FieldView™, organizando o conteúdo em lições sequenciais e interativas. No lado esquerdo, há um painel com botões para cada lição, permitindo ao usuário navegar facilmente entre os módulos e visualizar qual está em andamento. Ao centro, a tela destaca o conteúdo principal da lição atual, incluindo uma explicação detalhada sobre o FieldView™ e um vídeo explicativo integrado, tornando o aprendizado mais dinâmico e acessível. Na parte inferior, botões de interação permitem que o usuário avance para a próxima lição, avalie o conteúdo com “curtir” ou “não curtir” e adicione a lição aos favoritos, promovendo engajamento, personalização da experiência e acompanhamento do progresso individual dentro da plataforma. <br>
+&nbsp;&nbsp;&nbsp;&nbsp;  **Tela de Conteúdos**:  No lado esquerdo, há um painel com botões para cada lição, permitindo ao usuário navegar facilmente entre os módulos e visualizar qual está em andamento. Ao centro, a tela destaca o conteúdo principal da lição atual, incluindo uma explicação detalhada sobre o FieldView™ e um vídeo explicativo integrado, tornando o aprendizado mais dinâmico e acessível. Na parte inferior, botões de interação permitem que o usuário avance para a próxima lição, avalie o conteúdo com “curtir” ou “não curtir” e adicione a lição aos favoritos, promovendo engajamento, personalização da experiência e acompanhamento do progresso individual dentro da plataforma. <br>
 
 <div align = "center">
 
