@@ -1274,98 +1274,96 @@ Essa documentação apresenta todos os endpoints implementados até o momento, o
 ```javascript
 const express = require('express');
 require('dotenv').config();
+
 const app = express();
 const path = require('path');
+const cookieParser = require('cookie-parser');
 
-const indexRoutes = require('./routes/index');
-const pathsRoutes = require('./routes/paths');
+const homeRoutes = require('./routes/homeRoutes');
+const authRoutes = require('./routes/authRoutes');
+const helpRoutes = require('./routes/helpRoutes');
+const loginRoutes = require('./routes/loginRoutes');
+const pathRoutes = require('./routes/pathRoutes');
+const aboutUsRoutes = require('./routes/aboutUs');
+const dashboardRoutes = require('./routes/dashboardRoutes');
+const moduleRoutes = require('./routes/modulesRoutes');
 
 // Configura EJS
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
+app.use(cookieParser());
 
-// Arquivos estáticos
+app.use(express.urlencoded({ extended: true }));
+
+// Torna a pasta 'assets' pública
 app.use('/assets', express.static(path.join(__dirname, 'assets')));
-app.use(express.static('public'));
+app.use(express.static('public')); // <-- Define a pasta public como estática
 
-// Rotas principais
-app.use('/', indexRoutes);
-app.use('/paths', pathsRoutes);
+// Usa as rotas principais
+app.use('/', homeRoutes);
+app.use('/', authRoutes);
+app.use('/', helpRoutes);
+app.use('/', pathRoutes);
+app.use('/', loginRoutes);
+app.use('/', aboutUsRoutes);
+app.use('/', dashboardRoutes);
+app.use('/', moduleRoutes)
 
 // Inicia o servidor
 app.listen(3000, () => {
   console.log('Servidor rodando em http://localhost:3000');
-});js
-const homeRoutes = require('./routes/homeRoutes');
-app.use('/', homeRoutes);
+});
 
-const apiRoutes = require('./routes/apiRoutes');
-app.use('/api', apiRoutes);
 ```
 
-#### Trilhas na Home (`/`)
+### Rotas da Home (homeRoutes)
 
-* **URL:** `GET /paths`
+* **URL:** `/`
 * **Método:** GET
-* **Descrição:** Pega todas as trilhas do banco de dados e renderiza na página de Home.
+* **Descrição:** Pega todas as trilhas, bookmarks e ranking do banco de dados e mostra na página home.
+
+#### Deletar bookmark
+* **URL:** `/bookmarks/delete/:id`
+* **Método:** POST
+* **Descrição:** Apaga o bookmark referente ao módulo e a trilha na qual ele está.
 * **Header:** `Content-Type: text/html`
-* **Corpo da requisição:** Não se aplica
-* **Exemplo de resposta:**
-  ```
-  [
-    {
-    "id": 1,
-    "title": "Path to Certification",
-    "description": "This path leads to various certification modules."
-    }
-  ]
-  ```
+<br>
 
+#### Adicionar ao bookmarks
+* **URL:** `/bookmarks/add`
+* **Método:** POST
+* **Descrição:** Seleciona um conteúdo e clica em favoritar, salavando então o conteúdo na tlac omosição <br>
 
+### Tela de login (authRoutes)
 
-* **URL:** `GET /paths/:id`
-* **Método:** GET
-* **Descrição:** Pega as informações de uma trilha específica pelo ID
-* **Header:** `Content-Type: text/html`
-* **Parâmetros de rota:** `id`: ID da trilha (número inteiro)
-* **Corpo da requisição:** Não se aplica
-* **Exemplo de resposta:** 
-  ```
-  [
-    {
-    "id": 2,
-    "title": "Path to Content Creation",
-    "description": "This path includes modules for content creation."
-    }
-  ]
-  ```
----------------------
-
-
-#### Rotas para conteúdos dos módulos (`/module/:id/page/:page_id`)
-**Método:** GET
-
-### Headers de resposta
-
-| Header         | Value                              |
-| -------------- | ---------------------------------- |
-| X-Powered-By   | Express                            |
-| Content-Type   | text/html; charset=utf-8           |
-| Content-Length | 4265                               |
-| ETag           | WTToBe-JBfKHabc0R8fKVx6ewG7vsa.R\* |
-| Date           | Fri, 30 May 2025 19:15:24 GMT      |
-| Connection     | keep-alive                         |
-| Keep-Alive     | timeout=5                          |
-
-#### Response
-
+#### Login usuário
+* **URL:** `/api/login-user`
+* **Método:** POST
+* **Descrição:** Usuário entra na plataforma através do login.
 **Status:** `200 OK`  
-**Content-Type:** `text/html`
 
+#### Criar usuário
+* **URL:** `/api/create-user`
+* **Método:** POST
+* **Descrição:** Permite que o adiministrador possa criar usuários.
+**Status:** `200 OK`
+
+##### Logout usuário
+* **URL:** `/api/logout-user`
+* **Método:** GET
+* **Descrição:** Permite sair da conta logada.
+**Status:** `200 OK`
+
+### Tela de trilhas (pathRoutes)
+
+#### Direciona para os módulo da trilha
+* **URL:** `/paths/:id`
+* **Método:** GET
+* **Descrição:** Rendezira todos os módulos da trilha selecionada.
+**Status:** `200 OK`  
 **Body:**  
 Página HTML renderizada contendo os dados da lição:
-
-```html
+```javascript
 <!DOCTYPE html>
 <html>
   <!-- Head content -->
@@ -1383,18 +1381,49 @@ Página HTML renderizada contendo os dados da lição:
           <p class="text-white p-2 text-center font-semibold text-xl">
             Lição #1 (ATUAL)
           </p>
-        </a>
-      </div>
-    <div>
-    <!-- Conteúdo do módulo -->
-    <div class="w-full">
-      <h1 class="text-2xl font-bold">Título da lição</h1>
-      <p>Body da lição</p>
-    </div>
-    <!-- Footer -->
-  </body>
-</html>
 ```
+### Tela de módulos (moduleRoutes)
+
+##### Conteúdo do módulo
+* **URL:** `/path/:id_path/module/:id/page/:id_order`
+* **Método:** GET
+* **Descrição:** Mostra todos os módulos de uma trilha.
+**Status:** `200 OK`  
+
+##### Conteúdo do módulo
+* **URL:** `/path/:id_path/module/:id/page/:id_order`
+* **Método:** GET
+* **Descrição:** Mostra todos os conteúdos relacionados a um módulo de uma trilha.
+**Status:** `200 OK`  
+
+### Tela de Help (helpRoutes)
+
+##### Temas do Help
+* **URL:** `/help`
+* **Método:** GET
+* **Descrição:** Mostra todos os conteúdos do help.
+**Status:** `200 OK`  
+
+### Tela de dashboard (dashboardRoutes)
+
+##### Tela de dashboard
+* **URL:** `/dashboard`
+* **Método:** GET
+* **Descrição:** Mostra as informações dos PTDs de acordo com userId.
+**Status:** `200 OK` 
+
+##### Tela de perfil (profileRoutes)
+* **URL:** `/profile`
+* **Método:** GET
+* **Descrição:** Mostra o perfil dos PTDs.
+**Status:** `200 OK`  
+**Content-Type:** `text/html`
+
+##### Tela de perfil (profileRoutes)
+* **URL:** `/profile/uploadPicture`
+* **Método:** POST
+* **Descrição:** Editar o perfil dos PTDs.
+**Status:** `200 OK`
 
 # <a name="c4"></a>4. Desenvolvimento da Aplicação Web
 ## 4.1. Primeira versão da aplicação web (sprint 3)
