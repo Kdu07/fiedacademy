@@ -1479,7 +1479,20 @@ _Descreva e ilustre aqui o desenvolvimento da última versão do sistema web, ex
 
 ## 5.1. Relatório de testes de integração de endpoints automatizados (sprint 4)
 
-_Liste e descreva os testes unitários dos endpoints criados, automatizados e planejados para sua solução. Posicione aqui também o relatório de cobertura de testes Jest se houver (através de link ou transcrito para estrutura markdown)_
+<div align = "center">
+
+<sup>Figura 28: Teste de deleção de conteúdos fixados.</sup><br>
+
+<img src="../assets/assets_wad/test-delete-bookmark.png" width="300"><br>
+
+<sub>Fonte: Material produzido pelos autores (2025). </sub><br>
+
+</div>
+
+Teste: POST /bookmarks/delete/:id<br>
+Descrição: Teste da rota para remover conteúdo fixado<br>
+Status: 200 OK<br>
+Requisição: Deletar linha da tabela bookmarks no banco de dados <br><br>
 
 ## 5.2. Testes de usabilidade (sprint 5)
 
