@@ -1507,11 +1507,11 @@ Com o guia de estilos definido, para facilitar o desenvolvimento de cada funcion
 
 &nbsp;&nbsp;&nbsp;&nbsp; Além das melhorias técnicas e de usabilidade, estruturamos um plano de marketing digital integrado para garantir ampla adesão e engajamento dos profissionais. As estratégias envolveram divulgação em portais internos, redes sociais, e-mail marketing, webinars e parcerias com instituições como o Senar, além de campanhas pagas e marketing de conteúdo voltado para boas práticas e inovações do setor. O objetivo foi comunicar com clareza os diferenciais da plataforma — centralização do conhecimento, personalização das trilhas e facilidade de acesso —, consolidando a solução como referência em capacitação técnica digital no agronegócio e fortalecendo a liderança da Bayer em inovação e sustentabilidade. <br>
 
-&nbsp;&nbsp;&nbsp;&nbsp;  **Tela de login**: A tela de login apresentada permite a autenticação de três tipos de usuários: o usuário comum (PTD), o gestor e o administrador. Cada um deles acessa a plataforma inserindo seu email e senha, com validação dos campos antes do envio das informações. Após a autenticação, o sistema direciona cada perfil para funcionalidades específicas: o usuário comum acessa apenas recursos básicos e informações pertinentes ao seu perfil; o gestor tem acesso a ferramentas de administração de equipes, relatórios e acompanhamento de desempenho; já o administrador possui permissões totais, podendo gerenciar todos os dados, usuários e configurações da aplicação web. A interface é intuitiva e responsiva, com campos claros e botão de ação destacado, garantindo acessibilidade e segurança para todos os perfis, além de reforçar a identidade institucional com a mensagem “Se é bayer, é bom” (Figura 21).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;  **Tela de login**: A tela de login apresentada permite a autenticação de três tipos de usuários: o usuário comum (PTD), o gestor e o administrador. Cada um deles acessa a plataforma inserindo seu email e senha, com validação dos campos antes do envio das informações. Após a autenticação, o sistema direciona cada perfil para funcionalidades específicas: o usuário comum acessa apenas recursos básicos e informações pertinentes ao seu perfil; o gestor tem acesso a ferramentas de administração de equipes, relatórios e acompanhamento de desempenho; já o administrador possui permissões totais, podendo gerenciar todos os dados, usuários e configurações da aplicação web. A interface é intuitiva e responsiva, com campos claros e botão de ação destacado, garantindo acessibilidade e segurança para todos os perfis, além de reforçar a identidade institucional com a mensagem “Se é bayer, é bom” (Figura 26).<br>
 
 <div align = "center">
 
-<sup>Figura 21: Tela de login.</sup><br>
+<sup>Figura 26: Tela de login.</sup><br>
 
 <img src="(../assets/login.jpeg)" width="300"><br>
 
@@ -1520,11 +1520,11 @@ Com o guia de estilos definido, para facilitar o desenvolvimento de cada funcion
 </div>
 
 
-&nbsp;&nbsp;&nbsp;&nbsp;  **Tela de Home**: A página apresentada na imagem da plataforma FieldAcademy oferece uma navegação centralizada em trilhas de aprendizagem, permitindo ao usuário acessar diferentes níveis de conteúdo, como Onboarding, Intermediário, Básico, Avançado e Help, por meio de botões de "Continuar" para cada trilha. Além disso, a interface conta com um campo de busca no topo para facilitar o acesso rápido a conteúdos específicos, um menu lateral para navegação geral e um botão destacado de "Acessar Ajuda", promovendo suporte imediato ao usuário. O layout é limpo, com elementos visuais que remetem ao contexto agrícola, reforçando a identidade da plataforma educacional e proporcionando uma experiência intuitiva e acessível para diferentes perfis de usuários(Figura 21). <br>
+&nbsp;&nbsp;&nbsp;&nbsp;  **Tela de Home**: A página apresentada na imagem da plataforma FieldAcademy oferece uma navegação centralizada em trilhas de aprendizagem, permitindo ao usuário acessar diferentes níveis de conteúdo, como Onboarding, Intermediário, Básico, Avançado e Help, por meio de botões de "Continuar" para cada trilha. Além disso, a interface conta com um campo de busca no topo para facilitar o acesso rápido a conteúdos específicos, um menu lateral para navegação geral e um botão destacado de "Acessar Ajuda", promovendo suporte imediato ao usuário. O layout é limpo, com elementos visuais que remetem ao contexto agrícola, reforçando a identidade da plataforma educacional e proporcionando uma experiência intuitiva e acessível para diferentes perfis de usuários(Figura 27). <br>
 
 <div align = "center">
 
-<sup>Figura 22: Tela de Home.</sup><br>
+<sup>Figura 27: Tela de Home.</sup><br>
 
 <img src= "![alt text](../assets/Home.jpeg)" width="300"><br>
 
@@ -1533,9 +1533,9 @@ Com o guia de estilos definido, para facilitar o desenvolvimento de cada funcion
 </div>
 
 
-&nbsp;&nbsp;&nbsp;&nbsp;  **Tela de Trilhas**: A tela apresentada exibe a trilha de onboarding da plataforma FieldAcademy, organizada em módulos temáticos como Plantio, Máquinas e Introdução ao FieldView. Cada módulo é apresentado em um card individual, contendo o nome do módulo, uma barra de progresso visual que indica o avanço do usuário e um botão destacado para iniciar o conteúdo(Figura 21). <br>
+&nbsp;&nbsp;&nbsp;&nbsp;  **Tela de Trilhas**: A tela apresentada exibe a trilha de onboarding da plataforma FieldAcademy, organizada em módulos temáticos como Plantio, Máquinas e Introdução ao FieldView. Cada módulo é apresentado em um card individual, contendo o nome do módulo, uma barra de progresso visual que indica o avanço do usuário e um botão destacado para iniciar o conteúdo(Figura 28). <br>
 
-<sup>Figura 23: Tela de Trilhas.</sup><br>
+<sup>Figura 28: Tela de Trilhas.</sup><br>
 
 <img src="![../assets/assets_wad/telaTrilha.png]" width="300"><br>
 
@@ -1544,11 +1544,11 @@ Com o guia de estilos definido, para facilitar o desenvolvimento de cada funcion
 </div>
 
 
-&nbsp;&nbsp;&nbsp;&nbsp;  **Tela de Conteúdos**:  No lado esquerdo, há um painel com botões para cada lição, permitindo ao usuário navegar facilmente entre os módulos e visualizar qual está em andamento. Ao centro, a tela destaca o conteúdo principal da lição atual, incluindo uma explicação detalhada sobre o FieldView™ e um vídeo explicativo integrado, tornando o aprendizado mais dinâmico e acessível. Na parte inferior, botões de interação permitem que o usuário avance para a próxima lição, avalie o conteúdo com “curtir” ou “não curtir” e adicione a lição aos favoritos, promovendo engajamento, personalização da experiência e acompanhamento do progresso individual dentro da plataforma(Figura 21). <br>
+&nbsp;&nbsp;&nbsp;&nbsp;  **Tela de Conteúdos**:  No lado esquerdo, há um painel com botões para cada lição, permitindo ao usuário navegar facilmente entre os módulos e visualizar qual está em andamento. Ao centro, a tela destaca o conteúdo principal da lição atual, incluindo uma explicação detalhada sobre o FieldView™ e um vídeo explicativo integrado, tornando o aprendizado mais dinâmico e acessível. Na parte inferior, botões de interação permitem que o usuário avance para a próxima lição, avalie o conteúdo com “curtir” ou “não curtir” e adicione a lição aos favoritos, promovendo engajamento, personalização da experiência e acompanhamento do progresso individual dentro da plataforma(Figura 29). <br>
 
 <div align = "center">
 
-<sup>Figura 24: Tela de Conteudos.</sup><br>
+<sup>Figura 29: Tela de Conteudos.</sup><br>
 
 <img src= '![alt text](../assets/assets_wad/Modulos.jpeg)' width="300"><br>
 
@@ -1556,11 +1556,11 @@ Com o guia de estilos definido, para facilitar o desenvolvimento de cada funcion
 
 </div>
 
-&nbsp;&nbsp;&nbsp;&nbsp;  **Tela de Help**: A tela de Help da plataforma FieldAcademy foi desenvolvida para oferecer suporte rápido e eficiente ao usuário, reunindo cards temáticos que abrangem os principais tópicos e dúvidas frequentes relacionadas ao uso do sistema. Cada card direciona para conteúdos específicos, como “Mapas e dados”, “Boas práticas”, “Data inbox e integrações”, “Plantio”, “Colheita” e “Primeiros passos”, facilitando a navegação e a busca por informações relevantes. Essa abordagem visual e segmentada permite que o usuário encontre respostas de forma intuitiva, reduzindo o tempo de resolução de dúvidas e promovendo uma experiência mais autônoma e satisfatória dentro da plataforma(Figura 21). <br>
+&nbsp;&nbsp;&nbsp;&nbsp;  **Tela de Help**: A tela de Help da plataforma FieldAcademy foi desenvolvida para oferecer suporte rápido e eficiente ao usuário, reunindo cards temáticos que abrangem os principais tópicos e dúvidas frequentes relacionadas ao uso do sistema. Cada card direciona para conteúdos específicos, como “Mapas e dados”, “Boas práticas”, “Data inbox e integrações”, “Plantio”, “Colheita” e “Primeiros passos”, facilitando a navegação e a busca por informações relevantes. Essa abordagem visual e segmentada permite que o usuário encontre respostas de forma intuitiva, reduzindo o tempo de resolução de dúvidas e promovendo uma experiência mais autônoma e satisfatória dentro da plataforma(Figura 30). <br>
 
 <div align = "center">
 
-<sup>Figura 25: Tela de Help.</sup><br>
+<sup>Figura 30: Tela de Help.</sup><br>
 
 <img src="![../assets/assets_wad/telaHelp.png])" width="300"><br>
 
@@ -1568,11 +1568,11 @@ Com o guia de estilos definido, para facilitar o desenvolvimento de cada funcion
 
 </div>
 
-&nbsp;&nbsp;&nbsp;&nbsp;  **Tela de Dashboard**: A tela de Dashboard apresenta uma visão consolidada do perfil do usuário, exibindo informações essenciais como nome, email, localização, data do último acesso, módulo mais recente concluído, média de desempenho e posição no ranking geral. A interface conta ainda com uma barra de busca para localizar rapidamente outros usuários (PTD) e destaca o progresso individual nas trilhas de aprendizagem, com indicadores percentuais e opções para baixar materiais relacionados. É importante ressaltar que o acesso a essa página é exclusivo para o perfil ADMIN, permitindo que apenas administradores acompanhem o desempenho dos usuários, identifiquem módulos pendentes e gerenciem conteúdos relevantes, promovendo engajamento e facilitando a gestão do aprendizado dentro da plataforma(Figura 21). <br>
+&nbsp;&nbsp;&nbsp;&nbsp;  **Tela de Dashboard**: A tela de Dashboard apresenta uma visão consolidada do perfil do usuário, exibindo informações essenciais como nome, email, localização, data do último acesso, módulo mais recente concluído, média de desempenho e posição no ranking geral. A interface conta ainda com uma barra de busca para localizar rapidamente outros usuários (PTD) e destaca o progresso individual nas trilhas de aprendizagem, com indicadores percentuais e opções para baixar materiais relacionados. É importante ressaltar que o acesso a essa página é exclusivo para o perfil ADMIN, permitindo que apenas administradores acompanhem o desempenho dos usuários, identifiquem módulos pendentes e gerenciem conteúdos relevantes, promovendo engajamento e facilitando a gestão do aprendizado dentro da plataforma(Figura 31). <br>
 
 <div align = "center">
 
-<sup>Figura 25: Tela de Dashboard.</sup><br>
+<sup>Figura 31: Tela de Dashboard.</sup><br>
 
 <img src="![alt text](../assets/assets_wad/dashboard.jpeg)" width="300"><br>
 
@@ -1581,11 +1581,11 @@ Com o guia de estilos definido, para facilitar o desenvolvimento de cada funcion
 </div>
 
 
-&nbsp;&nbsp;&nbsp;&nbsp;  **Tela de Perfil**: A tela de perfil da plataforma FieldAcademy exibe de forma clara e organizada as principais informações do usuário, como nome, email, localização, data do último acesso, módulo mais recente concluído, média de desempenho e posição no ranking geral. Além disso, a interface apresenta o progresso individual em diferentes trilhas de aprendizagem, mostrando percentuais de conclusão e oferecendo a opção de baixar materiais relacionados a cada trilha. A barra de busca no topo facilita a localização de outros usuários ou conteúdos, tornando a navegação mais eficiente. Essas funcionalidades permitem ao usuário acompanhar seu desempenho, identificar facilmente módulos pendentes e acessar recursos relevantes para seu desenvolvimento dentro da plataforma, promovendo uma experiência do usuário. <br>
+&nbsp;&nbsp;&nbsp;&nbsp;  **Tela de Perfil**: A tela de perfil da plataforma FieldAcademy exibe de forma clara e organizada as principais informações do usuário, como nome, email, localização, data do último acesso, módulo mais recente concluído, média de desempenho e posição no ranking geral. Além disso, a interface apresenta o progresso individual em diferentes trilhas de aprendizagem, mostrando percentuais de conclusão e oferecendo a opção de baixar materiais relacionados a cada trilha. A barra de busca no topo facilita a localização de outros usuários ou conteúdos, tornando a navegação mais eficiente. Essas funcionalidades permitem ao usuário acompanhar seu desempenho, identificar facilmente módulos pendentes e acessar recursos relevantes para seu desenvolvimento dentro da plataforma, promovendo uma experiência do usuário(Figura 32). <br>
 
 <div align = "center">
 
-<sup>Figura 25: Tela de Dashboard.</sup><br>
+<sup>Figura 32: Tela de Dashboard.</sup><br>
 
 <img src="![alt text](../assets/assets_wad/Perfil.jpeg)" width="300"><br>
 
