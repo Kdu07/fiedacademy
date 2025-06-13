@@ -1550,12 +1550,11 @@ Com o guia de estilos definido, para facilitar o desenvolvimento de cada funcion
 
 <sup>Figura 24: Tela de Conteudos.</sup><br>
 
-<img src="../assets/assets_wad/telaConteudo.png" width="300"><br>
+<img src= '![alt text](../assets/assets_wad/Modulos.jpeg)' width="300"><br>
 
 <sub>Fonte: Material produzido pelos autores (2025). </sub><br>
 
 </div>
-
 
 &nbsp;&nbsp;&nbsp;&nbsp;  **Tela de Help**: A tela de Help da plataforma FieldAcademy foi desenvolvida para oferecer suporte rápido e eficiente ao usuário, reunindo cards temáticos que abrangem os principais tópicos e dúvidas frequentes relacionadas ao uso do sistema. Cada card direciona para conteúdos específicos, como “Mapas e dados”, “Boas práticas”, “Data inbox e integrações”, “Plantio”, “Colheita” e “Primeiros passos”, facilitando a navegação e a busca por informações relevantes. Essa abordagem visual e segmentada permite que o usuário encontre respostas de forma intuitiva, reduzindo o tempo de resolução de dúvidas e promovendo uma experiência mais autônoma e satisfatória dentro da plataforma. <br>
 
