@@ -1498,7 +1498,6 @@ Com o guia de estilos definido, para facilitar o desenvolvimento de cada funcion
 
 ## 4.2. Segunda versão da aplicação web (sprint 4)
 
-_Descreva e ilustre aqui o desenvolvimento da sua segunda versão do sistema web, explicando brevemente o que foi entregue em termos de código e sistema. Utilize prints de tela para ilustrar. Indique as eventuais dificuldades e próximos passos._
 
 &nbsp;&nbsp;&nbsp;&nbsp; Nas sprints anteriores, o projeto foi estruturado de forma incremental para garantir uma base sólida e alinhada às necessidades do público-alvo da Bayer. Na Sprint 1, o foco esteve na análise de mercado e compreensão do contexto do negócio, identificando oportunidades, vulnerabilidades e riscos para orientar o desenvolvimento da solução. Já na Sprint 2, demos início à construção do banco de dados, implementando as funcionalidades essenciais para o funcionamento do website e aprofundando o domínio do modelo MVC, fundamental para a organização e manutenção do código. <br>
 
@@ -1508,7 +1507,8 @@ _Descreva e ilustre aqui o desenvolvimento da sua segunda versão do sistema web
 
 &nbsp;&nbsp;&nbsp;&nbsp; Além das melhorias técnicas e de usabilidade, estruturamos um plano de marketing digital integrado para garantir ampla adesão e engajamento dos profissionais. As estratégias envolveram divulgação em portais internos, redes sociais, e-mail marketing, webinars e parcerias com instituições como o Senar, além de campanhas pagas e marketing de conteúdo voltado para boas práticas e inovações do setor. O objetivo foi comunicar com clareza os diferenciais da plataforma — centralização do conhecimento, personalização das trilhas e facilidade de acesso —, consolidando a solução como referência em capacitação técnica digital no agronegócio e fortalecendo a liderança da Bayer em inovação e sustentabilidade. <br>
 
-**Tela de login**: Onde o usuário faz seu cadastro na plataforma ou entra diretamente através de sua conta.
+&nbsp;&nbsp;&nbsp;&nbsp;  **Tela de login**: A tela de login apresentada permite a autenticação de três tipos de usuários: o usuário comum (PTD), o gestor e o administrador. Cada um deles acessa a plataforma inserindo seu email e senha, com validação dos campos antes do envio das informações. Após a autenticação, o sistema direciona cada perfil para funcionalidades específicas: o usuário comum acessa apenas recursos básicos e informações pertinentes ao seu perfil; o gestor tem acesso a ferramentas de administração de equipes, relatórios e acompanhamento de desempenho; já o administrador possui permissões totais, podendo gerenciar todos os dados, usuários e configurações da aplicação web. A interface é intuitiva e responsiva, com campos claros e botão de ação destacado, garantindo acessibilidade e segurança para todos os perfis, além de reforçar a identidade institucional com a mensagem “Se é bayer, é bom”.<br>
+
 <div align = "center">
 
 <sup>Figura 21: Tela de login.</sup><br>
@@ -1520,21 +1520,20 @@ _Descreva e ilustre aqui o desenvolvimento da sua segunda versão do sistema web
 </div>
 
 
-**Tela de Home**: Onde o usuário terá acesso à busca rápida, help (onde ele encontra conteúdos por tópicos), trilhas e conteúdos favoritados.
+&nbsp;&nbsp;&nbsp;&nbsp;  **Tela de Home**: A página apresentada na imagem da plataforma FieldAcademy oferece uma navegação centralizada em trilhas de aprendizagem, permitindo ao usuário acessar diferentes níveis de conteúdo, como Onboarding, Intermediário, Básico, Avançado e Help, por meio de botões de "Continuar" para cada trilha. Além disso, a interface conta com um campo de busca no topo para facilitar o acesso rápido a conteúdos específicos, um menu lateral para navegação geral e um botão destacado de "Acessar Ajuda", promovendo suporte imediato ao usuário. O layout é limpo, com elementos visuais que remetem ao contexto agrícola, reforçando a identidade da plataforma educacional e proporcionando uma experiência intuitiva e acessível para diferentes perfis de usuários. <br>
 
 <div align = "center">
 
 <sup>Figura 22: Tela de Home.</sup><br>
 
-<img src="../assets/assets_wad/telaHome1.png" width="300"><br>
-<img src="../assets/assets_wad/telaHome2.png" width="300"><br>
+<img src= "![alt text](../assets/Home.jpeg)" width="300"><br>
 
 <sub>Fonte: Material produzido pelos autores (2025). </sub><br>
 
 </div>
 
 
-**Tela de Trilhas**: A tela apresentada exibe a trilha de onboarding da plataforma FieldAcademy, organizada em módulos temáticos como Plantio, Máquinas e Introdução ao FieldView. Cada módulo é apresentado em um card individual, contendo o nome do módulo, uma barra de progresso visual que indica o avanço do usuário e um botão destacado para iniciar o conteúdo. 
+&nbsp;&nbsp;&nbsp;&nbsp;  **Tela de Trilhas**: A tela apresentada exibe a trilha de onboarding da plataforma FieldAcademy, organizada em módulos temáticos como Plantio, Máquinas e Introdução ao FieldView. Cada módulo é apresentado em um card individual, contendo o nome do módulo, uma barra de progresso visual que indica o avanço do usuário e um botão destacado para iniciar o conteúdo. <br>
 
 <sup>Figura 23: Tela de Trilhas.</sup><br>
 
@@ -1545,7 +1544,7 @@ _Descreva e ilustre aqui o desenvolvimento da sua segunda versão do sistema web
 </div>
 
 
-**Tela de Conteúdos**: Esta tela da plataforma FieldAcademy foi projetada para facilitar o aprendizado progressivo do usuário sobre o FieldView™, organizando o conteúdo em lições sequenciais e interativas. No lado esquerdo, há um painel com botões para cada lição, permitindo ao usuário navegar facilmente entre os módulos e visualizar qual está em andamento. Ao centro, a tela destaca o conteúdo principal da lição atual, incluindo uma explicação detalhada sobre o FieldView™ e um vídeo explicativo integrado, tornando o aprendizado mais dinâmico e acessível. Na parte inferior, botões de interação permitem que o usuário avance para a próxima lição, avalie o conteúdo com “curtir” ou “não curtir” e adicione a lição aos favoritos, promovendo engajamento, personalização da experiência e acompanhamento do progresso individual dentro da plataforma.
+&nbsp;&nbsp;&nbsp;&nbsp;  **Tela de Conteúdos**: Esta tela da plataforma FieldAcademy foi projetada para facilitar o aprendizado progressivo do usuário sobre o FieldView™, organizando o conteúdo em lições sequenciais e interativas. No lado esquerdo, há um painel com botões para cada lição, permitindo ao usuário navegar facilmente entre os módulos e visualizar qual está em andamento. Ao centro, a tela destaca o conteúdo principal da lição atual, incluindo uma explicação detalhada sobre o FieldView™ e um vídeo explicativo integrado, tornando o aprendizado mais dinâmico e acessível. Na parte inferior, botões de interação permitem que o usuário avance para a próxima lição, avalie o conteúdo com “curtir” ou “não curtir” e adicione a lição aos favoritos, promovendo engajamento, personalização da experiência e acompanhamento do progresso individual dentro da plataforma. <br>
 
 <div align = "center">
 
@@ -1558,7 +1557,7 @@ _Descreva e ilustre aqui o desenvolvimento da sua segunda versão do sistema web
 </div>
 
 
-**Tela de Help**: A tela de Help da plataforma FieldAcademy foi desenvolvida para oferecer suporte rápido e eficiente ao usuário, reunindo cards temáticos que abrangem os principais tópicos e dúvidas frequentes relacionadas ao uso do sistema. Cada card direciona para conteúdos específicos, como “Mapas e dados”, “Boas práticas”, “Data inbox e integrações”, “Plantio”, “Colheita” e “Primeiros passos”, facilitando a navegação e a busca por informações relevantes. Essa abordagem visual e segmentada permite que o usuário encontre respostas de forma intuitiva, reduzindo o tempo de resolução de dúvidas e promovendo uma experiência mais autônoma e satisfatória dentro da plataforma.
+&nbsp;&nbsp;&nbsp;&nbsp;  **Tela de Help**: A tela de Help da plataforma FieldAcademy foi desenvolvida para oferecer suporte rápido e eficiente ao usuário, reunindo cards temáticos que abrangem os principais tópicos e dúvidas frequentes relacionadas ao uso do sistema. Cada card direciona para conteúdos específicos, como “Mapas e dados”, “Boas práticas”, “Data inbox e integrações”, “Plantio”, “Colheita” e “Primeiros passos”, facilitando a navegação e a busca por informações relevantes. Essa abordagem visual e segmentada permite que o usuário encontre respostas de forma intuitiva, reduzindo o tempo de resolução de dúvidas e promovendo uma experiência mais autônoma e satisfatória dentro da plataforma. <br>
 
 <div align = "center">
 
@@ -1570,7 +1569,17 @@ _Descreva e ilustre aqui o desenvolvimento da sua segunda versão do sistema web
 
 </div>
 
+&nbsp;&nbsp;&nbsp;&nbsp;  **Tela de Dashboard**: Apresenta uma visão consolidada do perfil do usuário, exibindo informações essenciais como nome, email, localização, data do último acesso, módulo mais recente concluído, média de desempenho e posição no ranking geral. A interface oferece uma barra de busca para localizar rapidamente outros usuários (PTD) e destaca o progresso individual nas trilhas de aprendizagem, com indicadores percentuais e opções para baixar materiais relacionados. Essas funcionalidades permitem ao usuário acompanhar seu desempenho, identificar módulos pendentes e acessar facilmente conteúdos relevantes, promovendo engajamento e facilitando a gestão do aprendizado dentro da plataforma. 
 
+<div align = "center">
+
+<sup>Figura 25: Tela de Help.</sup><br>
+
+<img src="" width="300"><br>
+
+<sub>Fonte: Material produzido pelos autores (2025). </sub><br>
+
+</div>
 
 
 ## 4.3. Versão final da aplicação web (sprint 5)
