@@ -1227,8 +1227,19 @@ Essa documentação apresenta todos os endpoints implementados até o momento, o
 const express = require('express');
 require('dotenv').config();
 
+
 const app = express();
 const path = require('path');
+const cookieParser = require('cookie-parser');
+
+const homeRoutes = require('./routes/homeRoutes');
+const authRoutes = require('./routes/authRoutes');
+const helpRoutes = require('./routes/helpRoutes');
+const loginRoutes = require('./routes/loginRoutes');
+const pathRoutes = require('./routes/pathRoutes');
+const aboutUsRoutes = require('./routes/aboutUs');
+const dashboardRoutes = require('./routes/dashboardRoutes');
+const moduleRoutes = require('./routes/modulesRoutes');
 const cookieParser = require('cookie-parser');
 
 const homeRoutes = require('./routes/homeRoutes');
@@ -1244,13 +1255,27 @@ const moduleRoutes = require('./routes/modulesRoutes');
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 app.use(cookieParser());
+app.use(cookieParser());
 
+app.use(express.urlencoded({ extended: true }));
+
+// Torna a pasta 'assets' pública
 app.use(express.urlencoded({ extended: true }));
 
 // Torna a pasta 'assets' pública
 app.use('/assets', express.static(path.join(__dirname, 'assets')));
 app.use(express.static('public')); // <-- Define a pasta public como estática
+app.use(express.static('public')); // <-- Define a pasta public como estática
 
+// Usa as rotas principais
+app.use('/', homeRoutes);
+app.use('/', authRoutes);
+app.use('/', helpRoutes);
+app.use('/', pathRoutes);
+app.use('/', loginRoutes);
+app.use('/', aboutUsRoutes);
+app.use('/', dashboardRoutes);
+app.use('/', moduleRoutes)
 // Usa as rotas principais
 app.use('/', homeRoutes);
 app.use('/', authRoutes);
@@ -1267,6 +1292,12 @@ app.listen(3000, () => {
 });
 
 ```
+### Rotas da Home (homeRoutes)
+* **User Story:** 1 e 2
+* **URL:** `/`
+});
+
+```
 
 ### Rotas da Home (homeRoutes)
 
@@ -1274,6 +1305,128 @@ app.listen(3000, () => {
 
 * **URL:** `/`
 * **Método:** GET
+* **Descrição:** Pega todas as trilhas, bookmarks e ranking do banco de dados e mostra na página home.
+* **Headers:**
+  - `Content-Type: text/html`
+  - `Cookie:` `token=<JWT>`
+* **Body:** (não se aplica)<br>
+**Response**
+- **Status:** `200 OK`
+- **Body:**  
+  HTML renderizado contendo:
+  - Lista de trilhas
+  - Bookmarks do usuário
+  - Ranking de usuários
+
+---
+
+#### Deletar bookmark
+* **User Story:** 1
+* **URL:** `/bookmarks/delete/:id`
+* **Método:** POST
+* **Descrição:** Apaga o bookmark referente ao módulo e a trilha na qual ele está. <br>
+* **Header:** `Content-Type: application/json`
+**Response**
+- **Status:** 200 OK
+- **Body (sucesso)**
+```
+{
+  "message": "Bookmark deletado com sucesso"
+}
+```
+- **Body (erro)**
+```
+{
+  "error": "Bookmark não encontrado ou falha na exclusão"
+}
+```
+<br>
+
+#### Adicionar ao bookmarks
+* **User Story** 1
+* **URL:** `/bookmarks/add`
+* **Método:** POST
+* **Descrição:** Seleciona um conteúdo e clica em favoritar, salavando então o conteúdo na tela de home <br>
+**Request**
+- **Headers:**
+  - `Content-Type: application/json` <br>
+**Response**
+* **Status:** 201 Created
+* **Body** (sucesso):
+```
+{
+  "message": "Bookmark adicionado com sucesso",
+  "bookmark": {
+    "id": "789",
+    "id_usuario": "123",
+    "titulo": "Nome do conteúdo"
+  }
+}
+```
+### Tela de login (authRoutes)
+* **User Story** 1, 6 e 8
+
+#### Login usuário
+* **URL:** `/api/login-user`
+* **Método:** POST
+* **Descrição:** Usuário entra na plataforma através do login.
+**Status:** `200 OK`  
+
+#### Criar usuário
+* **URL:** `/api/create-user`
+* **Método:** POST
+* **Descrição:** Permite que o adiministrador possa criar usuários.<br>
+ Request
+- **Headers:**
+  - `Content-Type: application/json`
+
+- **Body:**
+```json
+{
+  "email": "usuario@email.com",
+  "senha": "123456"
+}
+```
+**Response**
+* **Status:** 201 Created
+* **Body** (sucesso):
+```
+{
+  "message": "Bookmark adicionado com sucesso",
+  "bookmark": {
+    "id": "789",
+    "id_usuario": "123",
+    "titulo": "Nome do conteúdo"
+  }
+}
+```
+
+##### Logout usuário
+* **URL:** `/api/logout-user`
+* **Método:** GET
+* **Descrição:** Permite sair da conta logada.
+**Request**
+- **Headers:**
+  - `Cookie: token=<JWT>` <br>
+**Status:** `200 OK`
+
+- **Body:** não se aplica
+**Response**
+* **Status:** 201 Created
+* **Body** (sucesso):
+```
+{
+  "message": "Logout realizado com sucesso"
+}
+```
+
+### Tela de trilhas (pathRoutes)
+**User Story:** 2 e 3
+
+#### Direciona para os módulo da trilha
+* **URL:** `/paths/:id`
+* **Método:** GET
+* **Descrição:** Rendezira todos os módulos da trilha selecionada.
 * **Descrição:** Pega todas as trilhas, bookmarks e ranking do banco de dados.
 * **Exemplo de resposta:**
   ```
@@ -1341,12 +1494,9 @@ app.listen(3000, () => {
 #### Response
 
 **Status:** `200 OK`  
-**Content-Type:** `text/html`
-
 **Body:**  
 Página HTML renderizada contendo os dados da lição:
-
-```html
+```javascript
 <!DOCTYPE html>
 <html>
   <!-- Head content -->
@@ -1364,18 +1514,74 @@ Página HTML renderizada contendo os dados da lição:
           <p class="text-white p-2 text-center font-semibold text-xl">
             Lição #1 (ATUAL)
           </p>
-        </a>
-      </div>
-    <div>
-    <!-- Conteúdo do módulo -->
-    <div class="w-full">
-      <h1 class="text-2xl font-bold">Título da lição</h1>
-      <p>Body da lição</p>
-    </div>
-    <!-- Footer -->
-  </body>
-</html>
 ```
+### Tela de módulos (moduleRoutes)
+**User Story:** 2, 3, 4 e 6
+##### Conteúdo do módulo
+* **URL:** `/path/:id_path/module/:id/page/:id_order`
+* **Método:** GET
+* **Descrição:** Mostra todos os módulos de uma trilha e seus conteúdos.
+**Status:** `200 OK` <br>
+Request
+
+- **Headers:**
+  - `Content-Type: text/html`
+  - `Cookie: token=<JWT>`
+
+- **Body:** (não se aplica) <br>
+Response
+
+- **Status:** `200 OK`
+- Body (HTML renderizado)
+
+### Tela de Help (helpRoutes)
+**User Story:** 1
+##### Temas do Help
+* **URL:** `/help`
+* **Método:** GET
+* **Descrição:** Mostra todos os conteúdos do help. <br>
+Request
+- **Headers:**
+  - `Content-Type: text/html`
+  - `Cookie: token=<JWT>`
+
+- **Body:** (não se aplica)<br>
+Response
+
+- **Status:** `200 OK`
+
+- Body (HTML renderizado)
+### Tela de dashboard (dashboardRoutes)
+**User Story:** 6, 7 e 8<br>
+Request
+- **Headers:**
+  - `Content-Type: text/html`
+  - `Cookie: token=<JWT>`
+
+- **Body:** (não se aplica)<br>
+Response
+
+- **Status:** `200 OK`
+
+- **Body (HTML renderizado)**
+##### Tela de dashboard
+* **URL:** `/dashboard`
+* **Método:** GET
+* **Descrição:** Mostra as informações dos PTDs de acordo com userId.
+**Status:** `200 OK` 
+
+##### Tela de perfil (profileRoutes)
+* **URL:** `/profile`
+* **Método:** GET
+* **Descrição:** Mostra o perfil dos PTDs.
+**Status:** `200 OK`  
+**Content-Type:** `text/html`
+
+##### Tela de perfil (profileRoutes)
+* **URL:** `/profile/uploadPicture`
+* **Método:** POST
+* **Descrição:** Editar o perfil dos PTDs.
+**Status:** `200 OK`
 
 # <a name="c4"></a>4. Desenvolvimento da Aplicação Web
 ## 4.1. Primeira versão da aplicação web (sprint 3)
@@ -1450,17 +1656,156 @@ Com o guia de estilos definido, para facilitar o desenvolvimento de cada funcion
 
 ## 4.2. Segunda versão da aplicação web (sprint 4)
 
-_Descreva e ilustre aqui o desenvolvimento da sua segunda versão do sistema web, explicando brevemente o que foi entregue em termos de código e sistema. Utilize prints de tela para ilustrar. Indique as eventuais dificuldades e próximos passos._
+
+&nbsp;&nbsp;&nbsp;&nbsp; Nas etapas anteriores do projeto, adotamos uma abordagem incremental para garantir uma base robusta e alinhada às demandas do público-alvo da Bayer. Na Sprint 1, concentramos esforços na análise de mercado e na compreensão aprofundada do contexto do negócio, mapeando oportunidades, vulnerabilidades e riscos que nortearam o desenvolvimento da solução. Na Sprint 2, avançamos para a estruturação do banco de dados e implementação das funcionalidades essenciais do site, além de consolidar o domínio sobre o padrão MVC, fundamental para a organização, manutenção e escalabilidade do código <br>
+
+&nbsp;&nbsp;&nbsp;&nbsp; Na Sprint 3, o trabalho concentrou-se na padronização visual e na experiência do usuário. Criamos um guia de estilos detalhado, definindo cores, tipografia, iconografia e imagens, o que garantiu consistência no design. Em seguida, desenvolvemos protótipos de alta fidelidade das principais telas, facilitando o alinhamento da equipe e a visualização do produto final. Com o protótipo validado, iniciamos o desenvolvimento em código, seguindo o padrão MVC, e entregamos as primeiras telas funcionais do sistema, estabelecendo as bases para as evoluções das próximas sprints. <br>
+
+&nbsp;&nbsp;&nbsp;&nbsp; Na Sprint 4, nosso foco foi consolidar e aprimorar a plataforma web de capacitação técnica desenvolvida para o time agro da Bayer. Após a entrega da primeira versão na Sprint 3 — quando estruturamos o banco de dados, definimos a identidade visual e lançamos o sistema inicial —, avançamos para uma segunda versão mais robusta e alinhada às necessidades do público-alvo, formado principalmente por Promotores Técnicos Digitais (PTDs), técnicos agrícolas e engenheiros agrônomos. Implementamos trilhas de aprendizado personalizadas, aprimoramos a busca inteligente por palavras-chave, ampliamos os recursos de gamificação e incluímos funcionalidades essenciais como o acesso offline e uma aba de “help” dedicada, facilitando o suporte imediato em campo. <br>
+
+&nbsp;&nbsp;&nbsp;&nbsp; Além das melhorias técnicas e de usabilidade, estruturamos um plano de marketing digital integrado para garantir ampla adesão e engajamento dos profissionais. As estratégias envolveram divulgação em portais internos, redes sociais, e-mail marketing, webinars e parcerias com instituições como o Senar, além de campanhas pagas e marketing de conteúdo voltado para boas práticas e inovações do setor. O objetivo foi comunicar com clareza os diferenciais da plataforma — centralização do conhecimento, personalização das trilhas e facilidade de acesso —, consolidando a solução como referência em capacitação técnica digital no agronegócio e fortalecendo a liderança da Bayer em inovação e sustentabilidade. <br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;  **Tela de login**: A tela de login apresentada permite a autenticação de três tipos de usuários: o usuário comum (PTD), o gestor e o administrador. Cada um deles acessa a plataforma inserindo seu email e senha, com validação dos campos antes do envio das informações. Após a autenticação, o sistema direciona cada perfil para funcionalidades específicas: o usuário comum acessa apenas recursos básicos e informações pertinentes ao seu perfil; o gestor tem acesso a ferramentas de administração de equipes, relatórios e acompanhamento de desempenho; já o administrador possui permissões totais, podendo gerenciar todos os dados, usuários e configurações da aplicação web. A interface é intuitiva e responsiva, com campos claros e botão de ação destacado, garantindo acessibilidade e segurança para todos os perfis, além de reforçar a identidade institucional com a mensagem “Se é bayer, é bom” (Figura 26).<br>
+
+<div align = "center">
+
+<sup>Figura 26: Tela de login.</sup><br>
+
+<img src="(../assets/login.jpeg)" width="300"><br>
+
+<sub>Fonte: Material produzido pelos autores (2025). </sub><br>
+
+</div>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;  **Tela de Home**: A página apresentada na imagem da plataforma FieldAcademy oferece uma navegação centralizada em trilhas de aprendizagem, permitindo ao usuário acessar diferentes níveis de conteúdo, como Onboarding, Intermediário, Básico, Avançado e Help, por meio de botões de "Continuar" para cada trilha. Além disso, a interface conta com um campo de busca no topo para facilitar o acesso rápido a conteúdos específicos, um menu lateral para navegação geral e um botão destacado de "Acessar Ajuda", promovendo suporte imediato ao usuário. O layout é limpo, com elementos visuais que remetem ao contexto agrícola, reforçando a identidade da plataforma educacional e proporcionando uma experiência intuitiva e acessível para diferentes perfis de usuários(Figura 27). <br>
+
+<div align = "center">
+
+<sup>Figura 27: Tela de Home.</sup><br>
+
+<img src= "![alt text](../assets/Home.jpeg)" width="300"><br>
+
+<sub>Fonte: Material produzido pelos autores (2025). </sub><br>
+
+</div>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;  **Tela de Trilhas**: A tela apresentada exibe a trilha de onboarding da plataforma FieldAcademy, organizada em módulos temáticos como Plantio, Máquinas e Introdução ao FieldView. Cada módulo é apresentado em um card individual, contendo o nome do módulo, uma barra de progresso visual que indica o avanço do usuário e um botão destacado para iniciar o conteúdo(Figura 28). <br>
+
+<sup>Figura 28: Tela de Trilhas.</sup><br>
+
+<img src="![../assets/assets_wad/telaTrilha.png]" width="300"><br>
+
+<sub>Fonte: Material produzido pelos autores (2025). </sub><br>
+
+</div>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;  **Tela de Conteúdos**:  No lado esquerdo, há um painel com botões para cada lição, permitindo ao usuário navegar facilmente entre os módulos e visualizar qual está em andamento. Ao centro, a tela destaca o conteúdo principal da lição atual, incluindo uma explicação detalhada sobre o FieldView™ e um vídeo explicativo integrado, tornando o aprendizado mais dinâmico e acessível. Na parte inferior, botões de interação permitem que o usuário avance para a próxima lição, avalie o conteúdo com “curtir” ou “não curtir” e adicione a lição aos favoritos, promovendo engajamento, personalização da experiência e acompanhamento do progresso individual dentro da plataforma(Figura 29). <br>
+
+<div align = "center">
+
+<sup>Figura 29: Tela de Conteudos.</sup><br>
+
+<img src= '![alt text](../assets/assets_wad/Modulos.jpeg)' width="300"><br>
+
+<sub>Fonte: Material produzido pelos autores (2025). </sub><br>
+
+</div>
+
+&nbsp;&nbsp;&nbsp;&nbsp;  **Tela de Help**: A tela de Help da plataforma FieldAcademy foi desenvolvida para oferecer suporte rápido e eficiente ao usuário, reunindo cards temáticos que abrangem os principais tópicos e dúvidas frequentes relacionadas ao uso do sistema. Cada card direciona para conteúdos específicos, como “Mapas e dados”, “Boas práticas”, “Data inbox e integrações”, “Plantio”, “Colheita” e “Primeiros passos”, facilitando a navegação e a busca por informações relevantes. Essa abordagem visual e segmentada permite que o usuário encontre respostas de forma intuitiva, reduzindo o tempo de resolução de dúvidas e promovendo uma experiência mais autônoma e satisfatória dentro da plataforma(Figura 30). <br>
+
+<div align = "center">
+
+<sup>Figura 30: Tela de Help.</sup><br>
+
+<img src="![../assets/assets_wad/telaHelp.png])" width="300"><br>
+
+<sub>Fonte: Material produzido pelos autores (2025). </sub><br>
+
+</div>
+
+&nbsp;&nbsp;&nbsp;&nbsp;  **Tela de Dashboard**: A tela de Dashboard apresenta uma visão consolidada do perfil do usuário, exibindo informações essenciais como nome, email, localização, data do último acesso, módulo mais recente concluído, média de desempenho e posição no ranking geral. A interface conta ainda com uma barra de busca para localizar rapidamente outros usuários (PTD) e destaca o progresso individual nas trilhas de aprendizagem, com indicadores percentuais e opções para baixar materiais relacionados. É importante ressaltar que o acesso a essa página é exclusivo para o perfil ADMIN, permitindo que apenas administradores acompanhem o desempenho dos usuários, identifiquem módulos pendentes e gerenciem conteúdos relevantes, promovendo engajamento e facilitando a gestão do aprendizado dentro da plataforma(Figura 31). <br>
+
+<div align = "center">
+
+<sup>Figura 31: Tela de Dashboard.</sup><br>
+
+<img src="![alt text](../assets/assets_wad/dashboard.jpeg)" width="300"><br>
+
+<sub>Fonte: Material produzido pelos autores (2025). </sub><br>
+
+</div>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;  **Tela de Perfil**: A tela de perfil da plataforma FieldAcademy exibe de forma clara e organizada as principais informações do usuário, como nome, email, localização, data do último acesso, módulo mais recente concluído, média de desempenho e posição no ranking geral. Além disso, a interface apresenta o progresso individual em diferentes trilhas de aprendizagem, mostrando percentuais de conclusão e oferecendo a opção de baixar materiais relacionados a cada trilha. A barra de busca no topo facilita a localização de outros usuários ou conteúdos, tornando a navegação mais eficiente. Essas funcionalidades permitem ao usuário acompanhar seu desempenho, identificar facilmente módulos pendentes e acessar recursos relevantes para seu desenvolvimento dentro da plataforma, promovendo uma experiência do usuário(Figura 32). <br>
+
+<div align = "center">
+
+<sup>Figura 32: Tela de Dashboard.</sup><br>
+
+<img src="![alt text](../assets/assets_wad/Perfil.jpeg)" width="300"><br>
+
+<sub>Fonte: Material produzido pelos autores (2025). </sub><br>
+
+</div>
+
+&nbsp;&nbsp;&nbsp;&nbsp;  A estrutura das telas da plataforma FieldAcademy foi cuidadosamente planejada para proporcionar uma experiência completa, intuitiva e eficiente aos diferentes perfis de usuários do agronegócio. A tela de login garante segurança e acessibilidade no acesso à plataforma, enquanto a tela de dashboard — exclusiva para administradores — oferece uma visão estratégica do desempenho e progresso dos usuários, facilitando a gestão e o acompanhamento dos resultados. Já a tela de perfil permite que cada usuário visualize e gerencie suas informações, acompanhe seu desenvolvimento e tenha acesso rápido a conteúdos relevantes e personalizados. Por fim, a página principal de trilhas de aprendizagem organiza o conteúdo de forma clara, promovendo o engajamento e a evolução contínua dos profissionais. Juntas, essas telas atendem às necessidades práticas e estratégicas da AgroBayer, promovendo capacitação, inovação e eficiência para todos os envolvidos, desde os promotores técnicos até os gestores e administradores da plataforma. <br>
 
 ## 4.3. Versão final da aplicação web (sprint 5)
 
 _Descreva e ilustre aqui o desenvolvimento da última versão do sistema web, explicando brevemente o que foi entregue em termos de código e sistema. Utilize prints de tela para ilustrar. Indique as eventuais dificuldades e próximos passos._
 
+
+
 # <a name="c5"></a>5. Testes
 
 ## 5.1. Relatório de testes de integração de endpoints automatizados (sprint 4)
 
-_Liste e descreva os testes unitários dos endpoints criados, automatizados e planejados para sua solução. Posicione aqui também o relatório de cobertura de testes Jest se houver (através de link ou transcrito para estrutura markdown)_
+<sup>Figura 26: Teste de deleção de conteúdos fixados.</sup><br>
+
+<img src="../assets/assets_wad/test-path.png" width="300"><br>
+
+<sub>Fonte: Material produzido pelos autores (2025). </sub><br>
+Teste: GET /path/:id<br>
+Descrição: Teste da rota para renderizar a página de trilha.<br>
+Status: 200 OK<br>
+Resposta: HTML da trilha<br><br>
+
+
+<sup>Figura 27: Teste de deleção de conteúdos fixados.</sup><br>
+
+<img src="../assets/assets_wad/test-home.png" width="300"><br>
+
+<sub>Fonte: Material produzido pelos autores (2025). </sub><br>
+Teste: GET /<br>
+Descrição: Teste da rota para renderizar a página de home<br>
+Status: 200 OK<br>
+Resposta: HTML da home<br><br>
+
+
+<sup>Figura 28: Teste de deleção de conteúdos fixados.</sup><br>
+
+<img src="../assets/assets_wad/test-delete-bookmark.png" width="300"><br>
+
+<sub>Fonte: Material produzido pelos autores (2025). </sub><br>
+Teste: POST /bookmarks/delete/:id<br>
+Descrição: Teste da rota para remover conteúdo fixado<br>
+Status: 200 OK<br>
+Requisição: Deletar linha da tabela bookmarks no banco de dados <br><br>
+
+
+<sup>Figura 29: Teste de deleção de conteúdos fixados.</sup><br>
+
+<img src="../assets/assets_wad/test-delete-bookmark.png" width="300"><br>
+
+<sub>Fonte: Material produzido pelos autores (2025). </sub><br>
+Teste: POST /api/create-user<br>
+Descrição: Teste da rota para criar novo usuário<br>
+Status: 202 OK<br>
+Requisição: Adicionar linha de usuário na tabela users<br><br>
+
 
 ## 5.2. Testes de usabilidade (sprint 5)
 
@@ -1470,58 +1815,116 @@ _Posicione aqui as tabelas com enunciados de tarefas, etapas e resultados de tes
 
 ## 6.1 Resumo Executivo
 
-_Preencher com até 300 palavras, sem necessidade de fonte_
+A última versão do FieldAcademy propõe uma aplicação web de capacitação inovadora, desenvolvida para auxiliar promotores e clientes da Bayer. Entre as principais oportunidades de mercado estão a necessidade de treinamento estruturado para novos colaboradores, a alta rotatividade de profissionais e a dificuldade de acesso a informações em campo, especialmente em regiões com baixa conectividade. O avanço da agricultura digital e a busca por maior produtividade e redução de custos operacionais reforçam o potencial da solução. Os objetivos estratégicos do projeto incluem a redução do turnover dos PTDs, o aumento da autonomia e eficiência dos profissionais em campo, a padronização do atendimento ao produtor rural e a diminuição dos chamados ao suporte técnico, que estava saturado com o tanto de vezes que eram acionados pelos promotores. Destaca-se também o esforço conjunto da equipe com especialistas em programação para implementar funcionalidades offline, essenciais para o contexto rural. Além disso, a plataforma busca alinhar a operação de campo com as estratégias de inovação da empresa, promovendo capacitação contínua, avaliações, certificações e melhoria do desempenho dos colaboradores. Entre os diferenciais competitivos, destacam-se as trilhas de conhecimento personalizadas e atualizáveis, a centralização das informações, a interface intuitiva, a busca rápida por palavras-chave, além da gamificação no design e mecanismos de feedback e avaliação dos conteúdos, também implementamos a aba de “help” uma das prioridades apontadas pelo parceiro. A gestão do progresso dos colaboradores permite maior controle e   acompanhamento por parte dos gestores, facilitando a atualização constante dos materiais. Assim, a aplicação contribui de forma significativa para a transformação digital do agronegócio, fortalecendo a competitividade, a sustentabilidade e a capacidade de inovação da Bayer e de seus parceiros.
 
-_Apresente de forma clara e objetiva os principais destaques do projeto: oportunidades de mercado, diferenciais competitivos da aplicação web e os objetivos estratégicos pretendidos._
 
 ## 6.2 Análise de Mercado
 
-_a) Visão Geral do Setor (até 250 palavras)_
-_Contextualize o setor no qual a aplicação está inserida, considerando aspectos econômicos, tecnológicos e regulatórios. Utilize fontes confiáveis._
+ a) Visão Geral do Setor 
+O setor do agronegócio no Brasil representa grande parte do PIB e das exportações do país, além de ser um dos pilares econômicos. Nos últimos anos, o avanço da agricultura digital tem transformado o setor, impulsionando a adoção de tecnologias como agricultura de precisão, monitoramento por satélite, inteligência artificial e plataformas digitais de gestão agrícola. Essas inovações visam reduzir custos operacionais, aumentar a produtividade e promover a sustentabilidade ambiental. Empresas líderes, como a Bayer, investem fortemente em pesquisa, tanto que a Bayer registrou vendas totais de 46,6 bilhões de euros, com a divisão Crop Science, divisão que inclui a agricultura, defensivos e a seção de pesquisa, faturando 22,3 bilhões de euros, uma queda em relação a 2023. A Bayer também investe em desenvolvimento para oferecer soluções integradas que atendam às demandas de grandes produtores e cooperativas, que buscam eficiência e previsibilidade na produção. A digitalização do campo também enfrenta desafios, como a baixa conectividade em áreas rurais e a necessidade de capacitação técnica dos profissionais que atuam diretamente no campo, como os Promotores Técnicos Digitais (PTDs). Além disso, a crescente demanda por práticas sustentáveis e produtos orgânicos cria espaço para alternativas sustentáveis como biopesticidas, embora os produtos tradicionais ainda dominem o mercado pela escala e eficácia. Assim, o setor se caracteriza por alta competitividade, forte investimento em inovação tecnológica e um ambiente regulatório complexo, que juntos moldam as estratégias das empresas para manter a liderança e atender às necessidades do mercado.
 
-_b) Tamanho e Crescimento do Mercado (até 250 palavras)_
-_Apresente dados quantitativos sobre o tamanho atual e projeções de crescimento do mercado. Utilize fontes confiáveis._
+b) Tamanho e Crescimento do Mercado (até 250 palavras)_
+O agronegócio brasileiro é um dos maiores do mundo, respondendo por cerca de 25% do PIB nacional e mais de 40% das exportações totais do país. O mercado de tecnologias digitais para o agronegócio, que inclui agricultura de precisão, plataformas de gestão e capacitação digital, tem apresentado crescimento acelerado, impulsionado pela demanda por maior eficiência, sustentabilidade e inovação. Em 2024, o mercado global de agricultura digital foi estimado em aproximadamente 12 bilhões de dólares, com projeção de crescimento anual composto (CAGR) superior a 12% até 2030. No Brasil, esse crescimento é ainda mais expressivo, devido à importância do setor agrícola na economia e à crescente adoção de tecnologias digitais em propriedades rurais de todos os portes. A divisão Crop Science da Bayer, que engloba defensivos agrícolas, sementes e soluções digitais, faturou 22,3 bilhões de euros em 2024, demonstrando a relevância econômica do segmento. Além disso, o investimento em capacitação digital para profissionais do agronegócio, como os Promotores Técnicos Digitais (PTDs), cresce em paralelo, refletindo a necessidade de qualificação para operar tecnologias avançadas. O mercado de educação corporativa digital no agronegócio também acompanha essa tendência, com plataformas especializadas e soluções customizadas ganhando espaço. A expectativa é que a digitalização e a capacitação continuem a impulsionar a produtividade e a competitividade do setor, consolidando o agronegócio brasileiro como referência global em inovação.
 
-_c) Tendências de Mercado (até 300 palavras)_
-_Identifique e analise tendências relevantes (tecnológicas, comportamentais e mercadológicas) que influenciam o setor. Utilize fontes confiáveis._
+ c) Tendências de Mercado (até 300 palavras)_
+O agronegócio brasileiro está em plena metamorfose digital, impulsionada pelo  grande avanço tecnológico, novas dinâmicas de mercado que moldam o setor para 2025 e mudanças comportamentais. Um dos avanços tecnológicos que mais se destaca no cenário atual é a adoção crescente das inteligências artificiais (IAs), big data e internet das coisas (IoT), que possibilitam análises preditivas, monitoramento em tempo real e otimização das operações agrícolas. A conectividade rural, embora ainda limitada em muitas regiões, é fundamental para viabilizar essas inovações, com iniciativas como parcerias entre empresas e programas governamentais buscando ampliar o acesso à internet no campo. No mercado atual foi criada uma nova tendência mais conhecida como agricultura 5.0, conceito que integra tecnologias embarcadas em máquinas, drones, sensores avançados e biotecnologia, está revolucionando o campo ao promover maior precisão, sustentabilidade e eficiência. Drones equipados com câmeras multiespectrais e sensores permitem o monitoramento detalhado das  lavouras, enquanto a edição genética e o uso de bioinsumos contribuem para práticas agrícolas mais sustentáveis e produtivas. No aspecto comportamental, cresce a demanda por produtos agrícolas sustentáveis , rastreáveis e com menor impacto ambiental. Isso impulsiona o uso de tecnologias como blockchain para garantir transparência e autenticidade na cadeia produtiva, atendendo a consumidores cada vez mais conscientes e exigentes. É possível observar a expansão de plataformas digitais para compras e pagamentos online de insumos, facilitando a gestão financeira dos produtores.A tokenização de commodities usando blockchain é uma inovação que está mudando a forma como os produtos agrícolas são negociados, facilitando o acesso a novos mercados e oportunidades de investimento. Essas tendências reforçam a importância da capacitação digital dos profissionais do agronegócio, como os Promotores Técnicos Digitais, para garantir adaptação para o uso dessas tecnologias e práticas inovadoras, destacando a relevância de soluções especializadas como a FieldAcademy para o setor.
+
+Fontes: MundoCoop, BemAgro, Agro Summit, PwC Agtech Innovation (2025).
+
 
 ## 6.3 Análise da Concorrência
+# Principais concorrentes
+a) No mercado de capacitação digital para o agronegócio, obtemos tanto a concorrência indireta quanto a concorrência direta. Entre os concorrentes diretos, estão plataformas especializadas em treinamento e capacitação para o suporte técnico, como a AgriLearning e a AgTech Academy. Essas interfaces oferecem cursos online, trilhas de aprendizagem e certificações voltadas para o setor agrícola, com conteúdos atualizados sobre tecnologias, boas práticas e uso de ferramentas digitais. A AgriLearning se diferencia pelo foco em conteúdos multimídia e avaliações interativas, enquanto a AgTech Academy aposta em parcerias com grandes empresas do setor para garantir atualização constante dos materiais.
+Entre os concorrentes indiretos, destacam-se plataformas de educação corporativa de uso geral, como Udemy for Business, Coursera for Teams e LinkedIn Learning, que, embora não sejam focadas exclusivamente no agronegócio, oferecem cursos sobre inovação aplicável ao setor, tecnologia e gestão. Essas plataformas possuem grande variedade de recursos de gamificação, conteúdos, e ferramentas de acompanhamento de progresso, além de forte presença de mercado e reconhecimento de marca. Além disso, algumas empresas do agronegócio desenvolvem soluções internas de capacitação, como a Syngenta Digital e a Corteva Agriscience, que investem em plataformas de treinamento autônomas para equipes e parceiros. Essas iniciativas costumam ser altamente customizadas, mas nem sempre oferecem a flexibilidade e a atualização contínua de plataformas abertas. O FieldAcademy se posiciona como uma solução especializada, flexível e alinhada às necessidades específicas dos promotores técnicos digitais, buscando se diferenciar pela personalização, interface intuitiva e integração com as demandas do campo.
 
-_a) Principais Concorrentes (até 250 palavras)_
-_Liste os concorrentes diretos e indiretos, destacando suas principais características e posicionamento no mercado._
 
-_b) Vantagens Competitivas da Aplicação Web (até 250 palavras)_
-_Descreva os diferenciais da sua aplicação em relação aos concorrentes, sem necessidade de citação de fontes._
+# Vantagens Competitivas da Aplicação Web 
+b) A aplicação web apresenta vantagens competitivas claras em relação aos concorrentes do setor de capacitação digital para o agronegócio. O principal diferencial está na personalização das trilhas de conhecimento, que são adaptadas conforme as necessidades dos Promotores Técnicos Digitais (PTDs) e podem ser facilmente atualizadas pelos gestores e administradas pelos administradores da empresa, garantindo alinhamento contínuo com as demandas do campo e as inovações da empresa. A plataforma também se destaca pela possível funcionalidade de acesso offline, novidade no mercado, além de ser essencial para profissionais que atuam em regiões com baixa conectividade, permitindo que o aprendizado e a consulta de informações ocorram a qualquer momento, sem depender de internet.
+Outro ponto forte é a centralização de conteúdos em um único ambiente, facilitando o acesso rápido a materiais, manuais, vídeos e artigos, além de oferecer uma barra de busca eficiente por palavras-chave. A interface intuitiva foi projetada para maximizar a autonomia dos usuários, tornando a navegação simples e agradável. A presença de uma aba de “help” dedicada, desenvolvida a partir das prioridades do parceiro, garante suporte imediato para dúvidas recorrentes, reduzindo a dependência do suporte técnico tradicional.
+Além disso, a plataforma incorpora elementos de gamificação, como rankings, conquistas e certificados digitais, que aumentam o engajamento e motivam o usuário a obter mais conhecimento para subir no ranking ou ganhar uma recompensa, por exemplo. Os mecanismos de feedback e avaliação contínua dos conteúdos permitem melhorias constantes e maior aderência às necessidades dos PTDs. Por fim, a gestão do progresso dos colaboradores oferece aos gestores uma visão detalhada do desenvolvimento das equipes, facilitando a tomada de decisão e o direcionamento de treinamentos futuros.
 
+ 
 ## 6.4 Público-Alvo
 
 _a) Segmentação de Mercado (até 250 palavras)_
-Descreva os principais segmentos de mercado a serem atendidos pela aplicação. Utilize bases de dados e fontes confiáveis.\*
+&nbsp;&nbsp;&nbsp;&nbsp; Nossa plataforma de capacitação técnica da Agro Bayer é feita para quem está na linha de frente do agronegócio: os profissionais que ajudam o produtor rural a usar tecnologias como o Climate FieldView. Isso inclui principalmente os Promotores Técnicos Digitais (PTDs), técnicos agrícolas e engenheiros agrônomos, que levam inovação e eficiência para o campo. <br>
+
+&nbsp;&nbsp;&nbsp;&nbsp; Para entender melhor esse público, dividimos ele em alguns grupos principais. Temos os próprios profissionais técnicos que trabalham diretamente com o produtor, seja em empresas, cooperativas ou órgãos públicos. Há também as instituições que treinam e coordenam essas equipes, espalhando conhecimento. Não podemos esquecer dos gestores que planejam e acompanham o trabalho dos promotores. E, claro, os produtores rurais, que são os maiores beneficiados quando recebem um suporte técnico de qualidade[9]. <br>
+
+&nbsp;&nbsp;&nbsp;&nbsp; Ao definir esses grupos, levamos em conta onde eles atuam, o quanto já usam tecnologia e os desafios específicos que enfrentam no dia a dia, como o tipo de cultura ou o tamanho da propriedade. Isso nos ajuda a oferecer uma capacitação que realmente faz a diferença para esses profissionais tão importantes para o agronegócio brasileiro[10].<br>
+
 
 _b) Perfil do Público-Alvo (até 250 palavras)_
 _Caracterize o público-alvo com dados demográficos, psicográficos e comportamentais, incluindo necessidades específicas. Utilize fontes obrigatórias._
+
+&nbsp;&nbsp;&nbsp;&nbsp;  O público principal da nossa plataforma de capacitação AgroBayer são os profissionais que estão na linha de frente do agronegócio, como Promotores Técnicos Digitais (PTDs), técnicos agrícolas e engenheiros agrônomos. Eles são os responsáveis por levar tecnologias como o Climate FieldView aos produtores rurais. Em geral, são profissionais com formação na área agrária, entre 22 e 45 anos, atuando em todo o Brasil, especialmente nas grandes regiões produtoras. Embora a maioria seja homem, a presença feminina está crescendo.<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;  Esses profissionais valorizam resultados, inovação e agilidade para resolver problemas no campo. Estão sempre buscando se atualizar e demonstram grande interesse por ferramentas digitais que facilitem seu dia a dia e aumentem sua eficiência no atendimento ao produtor. Além disso, buscam reconhecimento, estabilidade e crescimento na carreira, mostrando grande disposição para aprender e adotar novas tecnologias que agreguem valor ao seu trabalho e ao negócio do produtor[11].<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;  Suas necessidades práticas incluem acesso rápido a informações técnicas, mesmo offline, e uma plataforma fácil de usar, com busca eficiente. Eles precisam de conteúdo sempre atualizado sobre as plataformas digitais e o agronegócio. Para mantê-los engajados, a plataforma oferece feedback, desafios (gamificação) e trilhas de aprendizado personalizadas. Esses profissionais são a ponte entre a tecnologia e o campo, essenciais para a produtividade e sustentabilidade do agronegócio[12].<br>
+
 
 ## 6.5 Posicionamento
 
 _a) Proposta de Valor Única (até 250 palavras)_
 _Defina de maneira clara o que torna a sua aplicação única e valiosa para o mercado._
 
+&nbsp;&nbsp;&nbsp;&nbsp; A proposta de valor única da aplicação é: Unificar, personalizar e facilitar o acesso ao conhecimento técnico dos promotores agro, promovendo excelência, autonomia e inovação no campo, com impacto direto na produtividade e na satisfação dos clientes AgroBayer. Assim, a AgroBayer potencializa a experiência do produtor rural e fortalece sua liderança em inovação e sustentabilidade no setor agro. <br>
+
+&nbsp;&nbsp;&nbsp;&nbsp; A plataforma permite busca inteligente por palavras-chave, recomendações automáticas de trilhas baseadas em necessidades individuais e acompanhamento do progresso, promovendo engajamento por meio de gamificação e feedbacks imediatos. Gestores podem atualizar conteúdos de forma ágil, garantindo que as informações estejam sempre alinhadas com as últimas inovações do agronegócio. O grande diferencial está na capacidade de transformar o processo de capacitação em um ciclo virtuoso de aprendizado, certificação e melhoria contínua, reduzindo custos operacionais, padronizando o atendimento e elevando a eficiência dos promotores. Organizamos o aprendizado em trilhas personalizadas, com módulos que vão do básico à atualização contínua, facilitando o desenvolvimento de cada profissional. O acesso é fácil e intuitivo, funcionando perfeitamente online e também offline – um diferencial crucial para quem atua em áreas rurais com conectividade limitada. Recursos como busca inteligente por palavras-chave, acompanhamento individual do progresso e elementos de gamificação mantêm a equipe engajada e motivada. <br>
+
+&nbsp;&nbsp;&nbsp;&nbsp; O grande benefício é transformar a capacitação em um processo eficiente que reduz custos operacionais, padroniza a qualidade do atendimento e eleva a autonomia e a eficiência dos promotores. Isso impacta diretamente na melhoria da experiência do produtor rural e fortalece a posição da AgroBayer como líder em inovação no agronegócio. Em essência, nossa plataforma unifica, personaliza e facilita o acesso ao conhecimento técnico, impulsionando a excelência no campo. Nossa plataforma de capacitação técnica para promotores agro da AgroBayer oferece um valor único ao resolver desafios reais do campo, como a rotatividade e a falta de conhecimento técnico centralizado. Diferente de treinamentos genéricos, reunimos todo o conteúdo essencial sobre o sistema FieldView em um só lugar, criando uma solução sob medida para a equipe Bayer. <br>
+
+
 _b) Estratégia de Diferenciação (até 250 palavras)_
 _Explique como sua aplicação se destacará da concorrência, evidenciando a lógica por trás do posicionamento._
+
+&nbsp;&nbsp;&nbsp;&nbsp;  A aplicação web de capacitação técnica para promotores agro da AgroBayer se diferencia da concorrência ao oferecer uma solução altamente personalizada, centrada nas reais dores e necessidades do campo, com foco em nivelamento do conhecimento, redução do turnover e suporte técnico eficiente. <br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;  Enquanto plataformas tradicionais do agronegócio, como Senar, Embrapa e iniciativas privadas, oferecem cursos generalistas e conteúdos dispersos, nossa solução unifica todo o conhecimento necessário sobre o sistema FieldView em um único ambiente digital, acessível por desktop, mobile e offline, o que é fundamental para quem atua em regiões rurais com baixa conectividade. <br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;  O design da aplicação prioriza a experiência do usuário: busca inteligente por palavras-chave, trilhas de aprendizagem adaptativas, módulos de onboarding e nivelamento, avaliações com feedback imediato e gamificação para engajamento contínuo. Gestores podem atualizar conteúdos em tempo real, garantindo que a plataforma acompanhe as constantes inovações do agronegócio e as necessidades do time em campo. Esse dinamismo é um diferencial frente a concorrentes que dependem de ciclos longos de atualização ou formatos pouco flexíveis. <br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;  Desse modo, a lógica de diferenciação está em alinhar a plataforma à cultura de inovação da Bayer, promovendo autonomia, eficiência e padronização do atendimento, com impacto direto na satisfação do produtor rural e na redução de custos operacionais. O ciclo virtuoso de capacitação, certificação e acompanhamento contínuo posiciona a solução como referência em educação digital personalizada para o agro, indo além do ensino tradicional ao entregar valor prático e mensurável para a operação e para o negócio. <br>
+
 
 ## 6.6 Estratégia de Marketing
 
 _a) Produto/Serviço (até 200 palavras)_
 _Descreva as funcionalidades, benefícios e diferenciais da aplicação_
 
+&nbsp;&nbsp;&nbsp;&nbsp; Nossa plataforma web de capacitação técnica foi criada pensando em você, promotor agro da AgroBayer. Ela oferece uma experiência completa para aprimorar seu conhecimento e facilitar seu trabalho no campo. Explore trilhas de aprendizado organizadas, acompanhe seu progresso com avaliações e receba sugestões personalizadas. Encontre informações rapidamente com a busca por palavras-chave e acesse materiais essenciais mesmo offline, com conteúdo sempre atualizado pelos gestores. <br>
+
+&nbsp;&nbsp;&nbsp;&nbsp; Com a plataforma, você ganha mais autonomia e eficiência, reduz a necessidade de contatar o suporte e padroniza seu atendimento, melhorando a experiência do produtor rural. Mantenha-se engajado com gamificação e feedback, acompanhando seu desenvolvimento. Nosso diferencial é unificar todo o conhecimento sobre FieldView em um portal intuitivo e acessível, mesmo com baixa conectividade. O foco na personalização e atualização constante garante que a ferramenta atenda suas necessidades e acompanhe as inovações do agronegócio. <br>
+
+
+
 _6.2 Preço (até 200 palavras)_
 _Explique o modelo de precificação adotado e justifique com base nas análises anteriores._
+
+ &nbsp;&nbsp;&nbsp;&nbsp;  O modelo de precificação adotado para a plataforma de capacitação técnica da AgroBayer é o de assinatura corporativa, com valores ajustados conforme o número de usuários, o grau de personalização e as funcionalidades contratadas. Essa escolha se baseia na análise do mercado de plataformas de educação para o agronegócio, onde a assinatura mensal por usuário ou pacotes customizados são práticas comuns, partindo de valores em torno de R$ 79,90 mensais. O modelo de assinatura é especialmente adequado ao contexto dinâmico do agronegócio, pois permite atualização contínua dos conteúdos, flexibilidade de acesso para os profissionais – inclusive offline – e facilita a gestão centralizada dos acessos pela empresa. Além disso, proporciona previsibilidade de receita e incentiva o uso constante da plataforma, promovendo o engajamento dos usuários e facilitando o acompanhamento dos resultados da capacitação. Esse formato está alinhado com as tendências do setor, que valoriza soluções digitais flexíveis e escaláveis para formação e qualificação de equipes técnicas, respondendo à crescente demanda por mão de obra especializada e atualização tecnológica no campo.<br>
+
+
+ &nbsp;&nbsp;&nbsp;&nbsp; Para a AgroBayer, facilita enormemente a gestão dos acessos e o acompanhamento do progresso da equipe. Adicionalmente, este formato proporciona previsibilidade de receita para nós, enquanto incentiva o uso contínuo e o engajamento dos usuários com a plataforma. Por fim, favorece a mensuração clara dos resultados da capacitação, permitindo avaliar o retorno sobre o investimento em termos de aquisição e retenção de conhecimento pela equipe, alinhando-se perfeitamente às melhores práticas de precificação no setor de educação corporativa, especialmente no contexto do agronegócio. <br>
 
 _6.3 Praça (Distribuição) (até 200 palavras)_
 _Apresente os canais digitais utilizados para distribuir e entregar a aplicação ao público._
 
+&nbsp;&nbsp;&nbsp;&nbsp; Levamos nossa plataforma de capacitação técnica diretamente até você, promotor agro da AgroBayer, usando principalmente canais digitais. O acesso principal é pela própria aplicação web, que funciona perfeitamente em computadores, tablets e celulares. Pensando na realidade do campo, incluímos a função de acesso offline, permitindo que você consulte materiais importantes mesmo sem internet. <br>
+
+&nbsp;&nbsp;&nbsp;&nbsp; Para garantir que todos conheçam e saibam usar a plataforma, utilizamos diversos meios de comunicação digital. Divulgamos através dos portais internos da Bayer, redes sociais como LinkedIn e Instagram, e-mail marketing e grupos de WhatsApp, que já são familiares para muitos. Além disso, promovemos webinars e eventos online para apresentar novidades e manter todos engajados. <br>
+
+&nbsp;&nbsp;&nbsp;&nbsp; Também contamos com parcerias importantes, como a do Senar, para ampliar o alcance da ferramenta. Essa estratégia digital integrada não só facilita o acesso à plataforma em todo o Brasil, mas também nos permite acompanhar o uso, atualizar conteúdos rapidamente e receber seu feedback, tornando a capacitação cada vez mais eficaz e alinhada às suas necessidades no agronegócio moderno. <br>
+
+
 _6.4 Promoção (até 200 palavras)_
 _Descreva as estratégias digitais planejadas, como SEO, redes sociais, marketing de conteúdo e campanhas pagas._
+
+
+&nbsp;&nbsp;&nbsp;&nbsp; Para divulgar nossa plataforma de capacitação aos promotores agro da AgroBayer, usaremos uma estratégia digital completa e integrada. O objetivo é garantir que todos conheçam a ferramenta e seus benefícios. Vamos otimizar nosso site e conteúdos (SEO) para que profissionais do agro nos encontrem facilmente em buscas online. Criaremos materiais úteis como artigos, vídeos e webinars (Marketing de Conteúdo) sobre o FieldView e boas práticas, posicionando a Bayer como referência em conhecimento. Estaremos ativos nas redes sociais (LinkedIn, Instagram, etc.), compartilhando conteúdos educativos, histórias de sucesso e interagindo com a comunidade agro. Usaremos anúncios pagos segmentados (Campanhas Pagas) para alcançar mais profissionais em momentos chave, como lançamentos de novos módulos. <br>
+
+&nbsp;&nbsp;&nbsp;&nbsp; Manteremos os promotores informados sobre novidades através de e-mails (E-mail Marketing) e colaboraremos com influenciadores do setor para ampliar nosso alcance. Essa combinação de ações garantirá visibilidade e engajamento, consolidando a plataforma como a principal ferramenta de capacitação técnica para o time AgroBayer. <br>
+
 
 # <a name="c7"></a>7. Conclusões e trabalhos futuros (sprint 5)
 
@@ -1556,6 +1959,14 @@ _Relacione também quaisquer outras ideias que o grupo tenha para melhorias futu
 <a name="c16">[8]</a> LIDWELL, William; HOLDEN, Kritina; BUTLER, Jill. Princípios universais do design. 2. ed. Rio de Janeiro: Gustavo Gili, 2019. //griddesktop// paleta de cores
 
 <a name="c16">[8]</a> BRINGHURST, Robert. Os elementos do estilo tipográfico. São Paulo: Cosac Naify, 2005.
+
+<a name="c16"> [9]</a> BRASIL. Ministério da Agricultura e Pecuária. Normas Técnicas — Ministério da Agricultura e Pecuária. Brasília: MAPA, 2025. Disponível em: https://www.gov.br/agricultura/pt-br/assuntos/sustentabilidade/producao-integrada/normas-tecnicas.
+
+<a name="c16"> [10]</a>IFRS. Manual do Profissional Técnico Agrícola. Bento Gonçalves: IFRS, 2019. Disponível em: https://ifrs.edu.br/bento/wp-content/uploads/sites/13/2019/11/Manual-profissional-tecnico-agricola-sintargs-1.pdf. 
+
+<a name="c16"> [11]</a> CLIMATE FIELDVIEW. Cursos - Universidade FieldView™. 2022. Disponível em: https://www.climatefieldview.com.br/universidadefv/cursos.
+
+<a name="c16"> [12]</a> IFRS. Manual do Profissional Técnico Agrícola. Bento Gonçalves: IFRS, 2019. Disponível em: https://ifrs.edu.br/bento/wp-content/uploads/sites/13/2019/11/Manual-profissional-tecnico-agricola-sintargs-1.pdf.
 
 INTELI. Adalove. Disponível em: https://adalove.inteli.edu.br/feed. Acesso em: 15/04/2025. <br>
 
