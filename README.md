@@ -82,9 +82,9 @@ Aqui encontram-se todas as instruções necessárias para a instalação de todo
 
 * 0.5.0 - XX/XX/2025
     * 
-* 0.4.0 - XX/XX/2025
+* 0.4.0 - XX/XX/2025 - Entrega da segunda versão da plataforma web e testes jest.
     * 
-* 0.3.0 - 30/05/2025 - Prototipação de alta fidelidade (MockUp) e Arquiteru de Software (MVC) 
+* 0.3.0 - 30/05/2025 - Prototipação de alta fidelidade (MockUp) e Arquiteru de Software (MVC).
     * 
 * 0.2.0 - 15/05/2025 - Prototipação de baixa fidelidade e construção do banco de dados.
     * 
