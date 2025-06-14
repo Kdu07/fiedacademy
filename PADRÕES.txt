@@ -1,0 +1,8 @@
+ARQUIVOS E VARIÁVEIS: 
+    camelCase e Inglês
+
+CONTEÚDOS E MENSAGENS AO USUÁRIO: 
+    Português
+
+EXPORT DE FUNÇÕES:
+    exports.nomeDaFuncao = async (req, res) => { };
