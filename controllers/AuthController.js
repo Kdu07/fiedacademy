@@ -2,6 +2,7 @@ const { createUser, loginUser } = require("../models/usersModel");
 const JWT = require("jsonwebtoken");
 const JWT_SECRET = process.env.JWT_SECRET;
 
+
 exports.create = async (req, res) => {
   const { email, password, name, region, role } = req.body;
   console.log(req.body)
