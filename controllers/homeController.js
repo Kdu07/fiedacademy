@@ -44,7 +44,7 @@ module.exports.deleteBookmark = async (req, res) => {
   }
 };
 
-module.exports.addBookmark = async (req, res) => {
+module.exports.toggleBookmark = async (req, res) => {
   const token = req.cookies.token;
   const url = req.headers.referer || "/";
 
@@ -54,15 +54,18 @@ module.exports.addBookmark = async (req, res) => {
   }
 
   const userId = await getUserId(token); // extrai o ID do usuário do token JWT
-  const { contentId } = req.body; // vem do <input hidden name="contentId">
-
-
-
+  const { contentId, add } = req.body; // vem do <input hidden name="contentId">
+ 
   try {
-    await bookmarksModel.insert(userId, contentId); //envia os dois valores (userId e contentId)
+    if (add == 'true') {
+      await bookmarksModel.insert(userId, contentId);
+    } else {
+
+      await bookmarksModel.deleteByUserAndContent(userId, contentId);
+    }
     res.redirect(url);
   } catch (err) {
-    console.error("Erro ao salvar bookmark:", err);
-    res.status(500).send("Erro ao salvar favorito");
+    console.error("Erro ao manipular bookmark:", err);
+    res.status(500).send("Erro ao manipular favorito");
   }
 };

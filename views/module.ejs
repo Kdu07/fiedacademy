@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Importa o arquivo de estilos CSS -->
     <link href="/css/style.css" rel="stylesheet" />
-    <!-- Título da página exibido na aba do navegador -->
+    <!-- Título da página exibida na aba do navegador -->
     <title>Grupo 05</title>
   </head>
   <body class="bg-gray-50">
@@ -60,11 +60,32 @@
           class="mt-8 me-8 w-7/12 rounded-lg flex flex-col items-start h-1/2"
         >
           <div class="w-full bg-white p-6 rounded-lg shadow-md">
-            <h1
-              class="text-2xl font-bold text-gray-800 mb-4 pb-2 border-b border-gray-100"
+            <div
+              class="flex justify-between items-center mb-4 pb-2 border-b border-gray-100"
             >
-              <%= moduleContent.title %>
-            </h1>
+              <h1 class="text-2xl font-bold text-gray-800">
+                <%= moduleContent.title %>
+              </h1>
+              <!-- Bookmark button moved here -->
+              <form action="/bookmarks/toggle" method="POST">
+                <input
+                  type="hidden"
+                  name="contentId"
+                  value="<%= moduleContent.id %>"
+                />
+                <% if(moduleContent.bookmarked) { %>
+                <input type="hidden" name="add" value="false" />
+                <button type="submit">
+                  <img src="/icons/star_full.svg" class="w-12 h-12" alt="" />
+                </button>
+                <% } else { %>
+                <input type="hidden" name="add" value="true" />
+                <button type="submit">
+                  <img src="/icons/star.svg" class="w-12 h-12" alt="" />
+                </button>
+                <% } %>
+              </form>
+            </div>
             <p class="text-gray-700 leading-relaxed mb-6">
               <%= moduleContent.body %>
             </p>
@@ -94,17 +115,13 @@
           <!-- Feedback buttons -->
           <div class="flex space-x-3">
             <form action="/feedback/update" method="POST" class="inline">
-              <input type="hidden" name="type" value=true />
+              <input type="hidden" name="type" value="true" />
               <input
                 type="hidden"
                 name="contentId"
                 value="<%= moduleContent.id %>"
               />
-              <input
-                type="hidden"
-                name="userId"
-                value="<%= user.id %>"
-              />
+              <input type="hidden" name="userId" value="<%= user.id %>" />
               <button
                 type="submit"
                 class="bg-white/10 hover:bg-white/20 p-2 rounded-full transition-colors flex items-center justify-center h-10 w-10 relative"
@@ -117,17 +134,13 @@
               </button>
             </form>
             <form action="/feedback/update" method="POST" class="inline">
-              <input type="hidden" name="type" value=false  />
+              <input type="hidden" name="type" value="false" />
               <input
                 type="hidden"
                 name="contentId"
                 value="<%= moduleContent.id %>"
               />
-              <input
-                type="hidden"
-                name="userId"
-                value="<%= user.id %>"
-              />
+              <input type="hidden" name="userId" value="<%= user.id %>" />
               <button
                 type="submit"
                 class="bg-white/10 hover:bg-white/20 p-2 rounded-full transition-colors flex items-center justify-center h-10 w-10 relative"
@@ -143,38 +156,6 @@
 
           <!-- Navigation buttons -->
           <div class="flex space-x-4">
-            <!-- Botão de bookmark -->
-            <form action="/bookmarks/add" method="POST">
-              <input
-                type="hidden"
-                name="contentId"
-                value="<%= moduleContent.id %>"
-              />
-
-              <% if(moduleContent.bookmarked) { %>
-              <div
-                type="submit"
-                class="rounded-lg bg-yellow-400 text-white p-3 px-6 transition-colors shadow-sm flex items-center"
-              >
-                <p class="font-bold">Favorito!</p>
-              </div>
-              <% } else { %>
-              <button
-                type="submit"
-                class="rounded-lg bg-yellow-400 text-white p-3 px-6 hover:bg-yellow-500 transition-colors shadow-sm flex items-center"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-5 w-5 mr-2"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path d="M5 4a2 2 0 012-2h6a2 2 0 012 2v14l-5-2.5L5 18V4z" />
-                </svg>
-                Favoritar
-              </button>
-              <% } %>
-            </form>
             <% if ((moduleContent.content_order + 1) > modulePages.length) { %>
             <button
               class="rounded-lg bg-blue-500 hover:bg-blue-600 transition-colors shadow-sm"
