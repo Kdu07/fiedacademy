@@ -56,7 +56,7 @@ exports.index = async (req, res) => {
   if (negativeFeedback.length > 0) {
     moduleContent.negativeFeedback = negativeFeedback.length;
   }
-  console.log('chicken: '+moduleContent.negativeFeedback);
+
   res.render("module", {
     moduleContent,
     modulesModel,
@@ -65,4 +65,16 @@ exports.index = async (req, res) => {
     pathId,
     user,
   });
+};
+
+exports.updateFeedback = async (req, res) => {
+  const { contentId, type, userId } = req.body;
+  const url = req.headers.referer || "/";
+  const feedback = await feedbacksContentModel.addFeedback(
+    userId,
+    contentId,
+    type
+  );
+
+  return res.redirect(url);
 };

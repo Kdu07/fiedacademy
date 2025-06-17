@@ -93,26 +93,52 @@
         <div class="flex items-center justify-between">
           <!-- Feedback buttons -->
           <div class="flex space-x-3">
-            <a
-              href="/path/<%= pathId %>/module/1/page/1"
-              class="bg-white/10 hover:bg-white/20 p-2 rounded-full transition-colors flex items-center justify-center h-10 w-10 relative"
-            >
-              <img src="/icons/thumb_up.svg" alt="Like" />
-              <span
-                class="absolute -top-2 -right-2 bg-green-500 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center"
-                ><%=moduleContent.positiveFeedback %></span
+            <form action="/feedback/update" method="POST" class="inline">
+              <input type="hidden" name="type" value=true />
+              <input
+                type="hidden"
+                name="contentId"
+                value="<%= moduleContent.id %>"
+              />
+              <input
+                type="hidden"
+                name="userId"
+                value="<%= user.id %>"
+              />
+              <button
+                type="submit"
+                class="bg-white/10 hover:bg-white/20 p-2 rounded-full transition-colors flex items-center justify-center h-10 w-10 relative"
               >
-            </a>
-            <a
-              href="/path/<%= pathId %>/module/1/page/1"
-              class="bg-white/10 hover:bg-white/20 p-2 rounded-full transition-colors flex items-center justify-center h-10 w-10 relative"
-            >
-              <img src="/icons/thumb_down.svg" alt="Dislike" />
-              <span
-                class="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center"
-                ><%=moduleContent.negativeFeedback %></span
+                <img src="/icons/thumb_up.svg" alt="Like" />
+                <span
+                  class="absolute -top-2 -right-2 bg-green-500 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center"
+                  ><%=moduleContent.positiveFeedback %></span
+                >
+              </button>
+            </form>
+            <form action="/feedback/update" method="POST" class="inline">
+              <input type="hidden" name="type" value=false  />
+              <input
+                type="hidden"
+                name="contentId"
+                value="<%= moduleContent.id %>"
+              />
+              <input
+                type="hidden"
+                name="userId"
+                value="<%= user.id %>"
+              />
+              <button
+                type="submit"
+                class="bg-white/10 hover:bg-white/20 p-2 rounded-full transition-colors flex items-center justify-center h-10 w-10 relative"
               >
-            </a>
+                <img src="/icons/thumb_down.svg" alt="Dislike" />
+                <span
+                  class="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center"
+                  ><%=moduleContent.negativeFeedback %></span
+                >
+              </button>
+            </form>
           </div>
 
           <!-- Navigation buttons -->
