@@ -19,7 +19,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 // Rota do perfil
-router.get('/profile', profileController.index);
+router.get('/profile/:id', profileController.index);
 
 // Rota para atualizar o perfil
 router.post('/profile/uploadPicture', upload.single('avatar'), profileController.updatePicture);

@@ -68,6 +68,16 @@ exports.getById = async (userId) => {
   }
 };
 
+exports.getRole = async (userId) => {
+  try {
+    const res = await db.query("SELECT id, id_role FROM users WHERE id = $1", [userId]);
+    return res.rows[0];
+  } catch (error) {
+    console.error("Error getting users:", error);
+    return; // Rethrow the error for handling in the controller
+  }
+}
+
 exports.getByEmail = async (email) => {
   try {
     const res = await db.query("SELECT * FROM users WHERE email = $1", [email]);

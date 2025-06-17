@@ -14,12 +14,17 @@ exports.index = async (req, res) => {
   }
 
   const userId = await getUserId(token);
+  
 
-  const user = await usersModel.getById(userId);
+  
+  const user = await usersModel.getRole(userId);
+  
+  const profileId = req.params.id
+  const userProfile = await usersModel.getById(profileId);
   const ranking = await usersModel.getUsersRanking();
-  const userRank = ranking.findIndex((u) => u.id === userId) + 1; // Find the user's rank
-  const progress = await userContentModel.getUserPathsProgress(userId);
-  const moduleScores = await userTestModel.getUserModuleScores(userId);
+  const userRank = ranking.findIndex((u) => u.id === profileId) + 1; // Find the user's rank
+  const progress = await userContentModel.getUserPathsProgress(profileId);
+  const moduleScores = await userTestModel.getUserModuleScores(profileId);
 
   const lastLogin = new Date(user.last_login).toLocaleDateString("pt-BR");
 
@@ -27,6 +32,7 @@ exports.index = async (req, res) => {
 
   res.render("profile", {
     user,
+    userProfile,
     userRank,
     progress: progress || [],
     moduleScores,
