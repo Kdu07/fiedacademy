@@ -31,3 +31,8 @@ module.exports.insert = async (userId, contentId) => {
     )
   `, [userId, contentId]);
 };
+
+module.exports.getByModuleId = async (userId, contentId) => {
+  const res = await pool.query("SELECT * FROM bookmarks WHERE id_user = $1 AND id_content = $2", [userId,contentId]);
+  return res.rows[0];
+}

@@ -109,6 +109,38 @@
 
           <!-- Navigation buttons -->
           <div class="flex space-x-4">
+            <!-- Botão de bookmark -->
+            <form action="/bookmarks/add" method="POST">
+              <input
+                type="hidden"
+                name="contentId"
+                value="<%= moduleContent.id %>"
+              />
+
+              <% if(moduleContent.bookmarked) { %>
+              <div
+                type="submit"
+                class="rounded-lg bg-yellow-400 text-white p-3 px-6 transition-colors shadow-sm flex items-center"
+              >
+                <p class="font-bold">Favorito!</p>
+              </div>
+              <% } else { %>
+              <button
+                type="submit"
+                class="rounded-lg bg-yellow-400 text-white p-3 px-6 hover:bg-yellow-500 transition-colors shadow-sm flex items-center"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 mr-2"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path d="M5 4a2 2 0 012-2h6a2 2 0 012 2v14l-5-2.5L5 18V4z" />
+                </svg>
+                Favoritar
+              </button>
+              <% } %>
+            </form>
             <% if ((moduleContent.content_order + 1) > modulePages.length) { %>
             <button
               class="rounded-lg bg-blue-500 hover:bg-blue-600 transition-colors shadow-sm"
@@ -135,29 +167,6 @@
               </a>
             </button>
             <% } else { %>
-            <!-- Favoritar button -->
-            <form action="/bookmarks/add" method="POST">
-              <input
-                type="hidden"
-                name="contentId"
-                value="<%= moduleContent.id %>"
-              />
-              <button
-                type="submit"
-                class="rounded-lg bg-yellow-400 text-white p-3 px-6 hover:bg-yellow-500 transition-colors shadow-sm flex items-center"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-5 w-5 mr-2"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path d="M5 4a2 2 0 012-2h6a2 2 0 012 2v14l-5-2.5L5 18V4z" />
-                </svg>
-                Favoritar
-              </button>
-            </form>
-
             <!-- Next button -->
             <button
               class="rounded-lg bg-blue-500 hover:bg-blue-600 transition-colors shadow-sm"

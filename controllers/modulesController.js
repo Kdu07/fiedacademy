@@ -1,3 +1,4 @@
+const bookmarksModel = require("../models/bookmarksModel");
 const modulesModel = require("../models/modulesModel");
 const usersModel = require("../models/usersModel");
 const { isAuthorized } = require("../utils/authUtils");
@@ -21,21 +22,27 @@ exports.index = async (req, res) => {
   const modulePages = await modulesModel.findAllModuleContent(req.params.id); // Busca todas as páginas de conteúdo do módulo, ordenadas por número da página
 
   if (!module || !moduleContent) {
-    return;
+    return res.redirect('/');
   }
 
   const pathId = req.params.id_path;
 
   const id = await getUserId(token);
   const user = await usersModel.getById(id);
-  
-  
+
+  // Logica para ver se o usuário deu um bookmark nesse módulo
+  const bookmarked = await bookmarksModel.getByModuleId(id, moduleContent.id);
+  moduleContent.bookmarked = false;
+  if (bookmarked) {
+    moduleContent.bookmarked = true;
+  }
+
   res.render("module", {
     moduleContent,
     modulesModel,
     module,
     modulePages,
     pathId,
-    user
+    user,
   });
 };
