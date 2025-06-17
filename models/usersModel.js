@@ -4,6 +4,7 @@ const bcrypt = require("bcryptjs");
 
 exports.createUser = async (email, password, name, region, role) => {
   try {
+    // Determina o cargo baseado no usuário
     if (role === "Admin") {
       role = 6;
     } else if (role === "Gestor") {

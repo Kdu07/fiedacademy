@@ -5,7 +5,6 @@ const JWT_SECRET = process.env.JWT_SECRET;
 
 exports.create = async (req, res) => {
   const { email, password, name, region, role } = req.body;
-  console.log(req.body)
   if (!email || !password || !name || !region || !role) {
     return res.redirect(
       "/create-user?error=Todos%20os%20campos%20devem%20ser%20preenchidos"
