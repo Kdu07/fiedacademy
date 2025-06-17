@@ -26,8 +26,7 @@ exports.index = async (req, res) => {
   const progress = await userContentModel.getUserPathsProgress(profileId);
   const moduleScores = await userTestModel.getUserModuleScores(profileId);
 
-  const lastLogin = new Date(user.last_login).toLocaleDateString("pt-BR");
-
+  const lastLogin = new Date(userProfile.last_login).toLocaleDateString("pt-BR");
   progress.sort((a, b) => b.progress_percentage - a.progress_percentage);
 
   res.render("profile", {
