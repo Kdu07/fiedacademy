@@ -1,6 +1,7 @@
 const bookmarksModel = require("../models/bookmarksModel");
 const pathsModel = require("../models/pathsModel");
 const usersModel = require("../models/usersModel");
+const modulesModel = require("../models/modulesModel");
 
 const { isAuthorized } = require("../utils/authUtils");
 const { getUserId } = require("../utils/jwtUtils");
@@ -13,7 +14,6 @@ module.exports.index = async (req, res) => {
     return res.redirect("/login");
   }
 
-
   const userId = await getUserId(token);
 
   const bookmarks = await bookmarksModel.getAll(userId);
@@ -22,6 +22,14 @@ module.exports.index = async (req, res) => {
 
   const id = await getUserId(token);
   const user = await usersModel.getById(id);
+
+  // logica para fazer a url do bookmark
+  await Promise.all(
+    bookmarks.map(async (bookmark) => {
+      const url = await modulesModel.getModuleUrl(bookmark.content_id);
+      bookmark.url = url;
+    })
+  );
 
   res.render("home", { paths, bookmarks, ranking, user });
 };
@@ -49,10 +57,9 @@ module.exports.addBookmark = async (req, res) => {
 
   try {
     await bookmarksModel.insert(userId, contentId); //envia os dois valores (userId e contentId)
-    res.redirect('/');
+    res.redirect("/");
   } catch (err) {
-    console.error('Erro ao salvar bookmark:', err);
-    res.status(500).send('Erro ao salvar favorito');
+    console.error("Erro ao salvar bookmark:", err);
+    res.status(500).send("Erro ao salvar favorito");
   }
 };
-

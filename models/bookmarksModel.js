@@ -6,7 +6,8 @@ module.exports.getAll = async (userId) => {
             bookmarks.id,
             contents.title AS contents_title,
             paths.title AS path_title,
-            bookmarks.saved_at
+            bookmarks.saved_at,
+            bookmarks.id_content AS content_id
         FROM bookmarks
         JOIN contents ON bookmarks.id_content = contents.id
         JOIN modules ON contents.module_id = modules.id
