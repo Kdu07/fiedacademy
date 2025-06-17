@@ -89,9 +89,7 @@ CREATE TABLE IF NOT EXISTS user_test_score (
 CREATE TABLE IF NOT EXISTS feedbacks_content_module (
   id SERIAL PRIMARY KEY,
   id_content INTEGER NOT NULL REFERENCES content(id) ON DELETE CASCADE,
-  id_module INTEGER NOT NULL REFERENCES module(id) ON DELETE CASCADE,
   id_user INTEGER NOT NULL REFERENCES users(id),
-  message TEXT,
-  rating SMALLINT,
+  value BOOLEAN,
   created_at TIMESTAMP
 );
