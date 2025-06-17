@@ -48,6 +48,16 @@ exports.loginUser = async (email, password) => {
   }
 };
 
+exports.getAllPTD = async () => {
+  try {
+    const res = await db.query("SELECT id, name, region, email, profile_photo_path, score, last_login, score FROM users");
+    return res.rows;
+  } catch (error) {
+    console.error("Error getting users:", error);
+    return; // Rethrow the error for handling in the controller
+  }
+};
+
 exports.getAll = async () => {
   try {
     const res = await db.query("SELECT * FROM users");
