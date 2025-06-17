@@ -8,38 +8,50 @@
     <!-- Título da página exibido na aba do navegador -->
     <title>Grupo 05</title>
   </head>
-  <body>
+  <body class="bg-gray-50">
     <!-- Cabeçalho  -->
     <%- include('./partials/header') %>
 
     <div class="mt-16">
-      <div class="bg-mainGreen h-20 rounded-e-xl w-3/6 flex items-center mb-8">
+      <div
+        class="bg-mainGreen h-20 rounded-e-xl w-2/6 flex items-center mb-8 shadow-md"
+      >
         <h1 class="text-white ms-8 text-3xl font-bold"><%= module.title %></h1>
       </div>
 
-      <div class="flex flex-row justify-between mb-12">
-        <!-- Botões para avançar lição -->
+      <div class="flex flex-row justify-between mb-16">
+        <!-- Botões para avançar lição - Improved version -->
         <div
-          class="bg-mainGreen/25 mt-8 ms-8 w-3/12 rounded-lg flex justify-center h-1/2 p-4"
+          class="bg-white mt-8 ms-8 w-3/12 rounded-xl flex flex-col p-6 shadow-md border border-gray-100"
         >
-          <div class="rounded-lg w-1/2 grid gap-6 justify-items-center">
-            <% modulePages.forEach(page => { %>
-
-            <div class="rounded-lg bg-mainGreen w-full">
-              <a
-                href="/path/<%= pathId %>/module/1/page/<%= page.content_order %>"
+          <h2
+            class="text-mainGreen font-bold text-xl mb-4 text-center border-b border-gray-100 pb-2"
+          >
+            Lições
+          </h2>
+          <div class="w-full grid gap-3">
+            <% modulePages.forEach(page => { const isCurrentPage =
+            page.content_order === moduleContent.content_order; %>
+            <a
+              href="/path/<%= pathId %>/module/1/page/<%= page.content_order %>"
+              class="block w-full"
+            >
+              <div
+                class="rounded-lg <%= isCurrentPage ? 'bg-mainGreen' : 'bg-mainGreen/80 hover:bg-mainGreen' %> transition-all duration-200 shadow-sm <%= isCurrentPage ? 'ring-2 ring-offset-2 ring-mainGreen' : '' %>"
               >
-                <% if (page.content_order === moduleContent.content_order) { %>
-                <p class="text-white p-2 text-center font-semibold text-xl">
-                  Lição #<%= page.content_order %> (ATUAL) <% } else { %>
-                </p>
-
-                <p class="text-white p-2 text-center font-medium text-xl">
-                  Lição #<%= page.content_order %> <% } %>
-                </p></a
-              >
-            </div>
-
+                <div class="px-4 py-3 flex items-center">
+                  <div
+                    class="flex-shrink-0 <%= isCurrentPage ? 'bg-white text-mainGreen' : 'bg-white/30 text-white' %> w-8 h-8 rounded-full flex items-center justify-center font-bold mr-3"
+                  >
+                    <%= page.content_order %>
+                  </div>
+                  <p class="text-white font-medium">
+                    Lição <%= page.content_order %> <% if (isCurrentPage) { %>
+                    <% } %>
+                  </p>
+                </div>
+              </div>
+            </a>
             <% }) %>
           </div>
         </div>
@@ -47,57 +59,134 @@
         <div
           class="mt-8 me-8 w-7/12 rounded-lg flex flex-col items-start h-1/2"
         >
-          <div class="w-full">
-            <h1 class="text-2xl font-bold"><%= moduleContent.title %></h1>
-            <p><%= moduleContent.body %></p>
+          <div class="w-full bg-white p-6 rounded-lg shadow-md">
+            <h1
+              class="text-2xl font-bold text-gray-800 mb-4 pb-2 border-b border-gray-100"
+            >
+              <%= moduleContent.title %>
+            </h1>
+            <p class="text-gray-700 leading-relaxed mb-6">
+              <%= moduleContent.body %>
+            </p>
 
-                <% if (moduleContent.video_path) { %>
-                <div class="h-60 w-full rounded-lg overflow-hidden mb-4">
-                  <iframe
-                    src="<%= moduleContent.video_path.replace('youtu.be/', 'www.youtube.com/embed/').split('?')[0] %>"
-                    class="w-full h-full rounded-lg"
-                    allow="autoplay"
-                    frameborder="0"
-                    allowfullscreen
-                  ></iframe>
-                </div>
-
+            <% if (moduleContent.video_path) { %>
+            <div
+              class="h-96 w-full rounded-lg overflow-hidden mb-4 shadow-md border border-gray-100"
+            >
+              <iframe
+                src="<%= moduleContent.video_path.replace('youtu.be/', 'www.youtube.com/embed/').split('?')[0] %>"
+                class="w-full h-full rounded-lg"
+                allow="autoplay"
+                frameborder="0"
+                allowfullscreen
+              ></iframe>
+            </div>
             <% } %>
           </div>
         </div>
       </div>
-      <div class="absolute end-0 bg-mainGreen w-2/6 p-3 rounded-s-lg">
-        <div class="flex flex-row">
-          <a href="/path/<%= pathId %>/module/1/page/1">
-            <img src="/icons/thumb_up.svg" class="ms-4" alt="" />
-          </a>
-          <a href="/path/<%= pathId %>/module/1/page/1">
-            <img src="/icons/thumb_down.svg" class="ms-4" alt="" />
-          </a>
-          <% if ((moduleContent.content_order + 1) > modulePages.length) { %>
-          <button class="rounded-lg bg-blue-400 ms-auto me-4">
-            <a href="/test" class="text-white p-3 ps-12 pe-12"
-              >HORA DA PROVA!</a
-            >
-          </button>
-          <% } else { %>
-          <button class="rounded-lg bg-blue-400 ms-auto me-4">
+
+      <!-- Action bar -->
+      <div
+        class="bg-mainGreen mx-auto w-full p-4 sticky bottom-0 z-50 shadow-lg"
+      >
+        <div class="flex items-center justify-between">
+          <!-- Feedback buttons -->
+          <div class="flex space-x-3">
             <a
-              href="/path/<%= pathId %>/module/1/page/<%= moduleContent.content_order + 1 %>"
-              class="text-white p-3 ps-12 pe-12"
-              >PRÓXIMO</a>
-          </button>
-         <!-- Favoritar -->
-          <form action="/bookmarks/add" method="POST">
-          <input type="hidden" name="contentId" value="<%= moduleContent.id %>" />
-          <button type="submit" class="rounded-lg bg-yellow-400 text-white p-3 px-6 hover:bg-yellow-500">
-          Favoritar
-          </button>
-        </form>
-       <% } %>
+              href="/path/<%= pathId %>/module/1/page/1"
+              class="bg-white/10 hover:bg-white/20 p-2 rounded-full transition-colors flex items-center justify-center h-10 w-10"
+            >
+              <img src="/icons/thumb_up.svg" alt="Like" />
+            </a>
+            <a
+              href="/path/<%= pathId %>/module/1/page/1"
+              class="bg-white/10 hover:bg-white/20 p-2 rounded-full transition-colors flex items-center justify-center h-10 w-10"
+            >
+              <img src="/icons/thumb_down.svg" alt="Dislike" />
+            </a>
+          </div>
+
+          <!-- Navigation buttons -->
+          <div class="flex space-x-4">
+            <% if ((moduleContent.content_order + 1) > modulePages.length) { %>
+            <button
+              class="rounded-lg bg-blue-500 hover:bg-blue-600 transition-colors shadow-sm"
+            >
+              <a
+                href="/test"
+                class="text-white p-3 px-8 md:px-12 font-medium inline-flex items-center"
+              >
+                PRÓXIMO (PROVA)
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 ml-2"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </a>
+            </button>
+            <% } else { %>
+            <!-- Favoritar button -->
+            <form action="/bookmarks/add" method="POST">
+              <input
+                type="hidden"
+                name="contentId"
+                value="<%= moduleContent.id %>"
+              />
+              <button
+                type="submit"
+                class="rounded-lg bg-yellow-400 text-white p-3 px-6 hover:bg-yellow-500 transition-colors shadow-sm flex items-center"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 mr-2"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path d="M5 4a2 2 0 012-2h6a2 2 0 012 2v14l-5-2.5L5 18V4z" />
+                </svg>
+                Favoritar
+              </button>
+            </form>
+
+            <!-- Next button -->
+            <button
+              class="rounded-lg bg-blue-500 hover:bg-blue-600 transition-colors shadow-sm"
+            >
+              <a
+                href="/path/<%= pathId %>/module/1/page/<%= moduleContent.content_order + 1 %>"
+                class="text-white p-3 px-8 md:px-12 font-medium inline-flex items-center"
+              >
+                PRÓXIMO
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 ml-2"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </a>
+            </button>
+            <% } %>
+          </div>
         </div>
       </div>
-      <div class="mb-40"></div>
     </div>
 
     <!-- Rodapé  -->

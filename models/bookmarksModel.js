@@ -1,6 +1,6 @@
 const pool = require('../config/db');
 
-module.exports.getAll = async () => {
+module.exports.getAll = async (userId) => {
     const result = await pool.query(`
         SELECT 
             bookmarks.id,
@@ -11,8 +11,9 @@ module.exports.getAll = async () => {
         JOIN contents ON bookmarks.id_content = contents.id
         JOIN modules ON contents.module_id = modules.id
         JOIN paths ON modules.id_path = paths.id
+        WHERE bookmarks.id_user = $1
         ORDER BY bookmarks.saved_at DESC
-    `);
+    `, [userId]);
     return result.rows;
 };
 

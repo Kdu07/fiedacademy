@@ -16,7 +16,7 @@ module.exports.index = async (req, res) => {
 
   const userId = await getUserId(token);
 
-  const bookmarks = await bookmarksModel.getAll();
+  const bookmarks = await bookmarksModel.getAll(userId);
   const paths = await pathsModel.getAll();
   const ranking = await usersModel.getUsersRanking();
 
