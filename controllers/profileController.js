@@ -14,19 +14,22 @@ exports.index = async (req, res) => {
   }
 
   const userId = await getUserId(token);
-
-  const user = await usersModel.getById(userId);
+  
+  const user = await usersModel.getRole(userId);
+  
+  const profileId = req.params.id
+  const userProfile = await usersModel.getById(profileId);
   const ranking = await usersModel.getUsersRanking();
-  const userRank = ranking.findIndex((u) => u.id === userId) + 1; // Find the user's rank
-  const progress = await userContentModel.getUserPathsProgress(userId);
-  const moduleScores = await userTestModel.getUserModuleScores(userId);
+  const userRank = ranking.findIndex((u) => u.id === profileId) + 1; // Find the user's rank
+  const progress = await userContentModel.getUserPathsProgress(profileId);
+  const moduleScores = await userTestModel.getUserModuleScores(profileId);
 
-  const lastLogin = new Date(user.last_login).toLocaleDateString("pt-BR");
-
+  const lastLogin = new Date(userProfile.last_login).toLocaleDateString("pt-BR");
   progress.sort((a, b) => b.progress_percentage - a.progress_percentage);
 
   res.render("profile", {
     user,
+    userProfile,
     userRank,
     progress: progress || [],
     moduleScores,
@@ -38,8 +41,7 @@ exports.updatePicture = async (req, res) => {
   const token = req.cookies.token;
   const userId = await getUserId(token);
 
-
-  if (!userId) {
+  if (!userId || userId !== parseInt(req.params.id)) {
     return res.status(401).send("Unauthorized");
   }
     const user = await usersModel.getById(userId);
@@ -102,5 +104,5 @@ exports.updatePicture = async (req, res) => {
   // 4. Save URL in DB using your model
   await usersModel.updateProfilePhoto(publicUrl, userId);
 
-  res.redirect("/profile");
+  res.redirect("/profile/"+req.params.id);
 };

@@ -15,15 +15,28 @@
         <div
           class="w-24 h-24 rounded-full border-2 border-black flex items-center justify-center mr-4 relative group hover:bg-gray-200 transition-colors duration-200"
         >
+          <% if (userProfile.profile_photo_path &&
+          userProfile.profile_photo_path.trim() !== '') { %>
           <img
-            src="<%= user.profile_photo_path ? user.profile_photo_path : '/images/Conta_Default.svg' %>" 
-            class="w-full h-full rounded-full"
-            alt=""
+            src="<%= userProfile.profile_photo_path %>"
+            class="w-full h-full rounded-full object-cover"
+            alt="<%= userProfile.name %>'s profile picture"
+            crossorigin="anonymous"
           />
+          <% } else { %>
+          <div
+            class="w-full h-full rounded-full bg-gray-300 flex items-center justify-center"
+          >
+            <span class="text-3xl font-semibold text-gray-600"
+              ><%= userProfile.name.charAt(0).toUpperCase() %></span
+            >
+          </div>
+          <% } %>
           <!-- Hidden file input -->
+          <% if (userProfile.id === user.id) { %>
           <form
             id="avatar-form"
-            action="/profile/uploadPicture"
+            action="/profile/<%= userProfile.id %>/uploadPicture"
             method="POST"
             enctype="multipart/form-data"
             class="absolute inset-0 m-auto w-full h-full flex items-center justify-center"
@@ -47,11 +60,12 @@
               />
             </label>
           </form>
+          <% } %>
         </div>
         <div class="flex flex-col">
-          <h1 class="text-3xl font-semibold"><%- user.name %></h1>
-          <p><%- user.email %></p>
-          <p><%- user.region %></p>
+          <h1 class="text-3xl font-semibold"><%- userProfile.name %></h1>
+          <p><%- userProfile.email %></p>
+          <p><%- userProfile.region %></p>
         </div>
       </div>
       <div class="grid grid-cols-2 gap-4 mt-8">
@@ -71,7 +85,7 @@
           class="flex flex-col items-center justify-center bg-gray-100 rounded-lg"
         >
           <p>Média</p>
-          <p class="text-xl font-semibold"><%- user.score %></p>
+          <p class="text-xl font-semibold"><%- userProfile.score %></p>
         </div>
         <div
           class="flex flex-col items-center justify-center bg-gray-100 rounded-lg"
