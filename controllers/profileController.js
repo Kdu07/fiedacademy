@@ -15,8 +15,6 @@ exports.index = async (req, res) => {
 
   const userId = await getUserId(token);
   
-
-  
   const user = await usersModel.getRole(userId);
   
   const profileId = req.params.id
@@ -43,8 +41,7 @@ exports.updatePicture = async (req, res) => {
   const token = req.cookies.token;
   const userId = await getUserId(token);
 
-
-  if (!userId) {
+  if (!userId || userId !== parseInt(req.params.id)) {
     return res.status(401).send("Unauthorized");
   }
     const user = await usersModel.getById(userId);
@@ -107,5 +104,5 @@ exports.updatePicture = async (req, res) => {
   // 4. Save URL in DB using your model
   await usersModel.updateProfilePhoto(publicUrl, userId);
 
-  res.redirect("/profile");
+  res.redirect("/profile/"+req.params.id);
 };

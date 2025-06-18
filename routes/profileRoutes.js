@@ -22,7 +22,7 @@ const upload = multer({ storage: storage });
 router.get('/profile/:id', profileController.index);
 
 // Rota para atualizar o perfil
-router.post('/profile/uploadPicture', upload.single('avatar'), profileController.updatePicture);
+router.post('/profile/:id/uploadPicture', upload.single('avatar'), profileController.updatePicture);
 
 
 module.exports = router;
