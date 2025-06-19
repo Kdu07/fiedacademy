@@ -23,12 +23,19 @@ exports.index = async (req, res) => {
   const ranking = await usersModel.getUsersRanking();
   const userRank = (ranking.find(u => u.id === parseInt(profileId))).rank; // Find the user's rank
   const progress = await userContentModel.getUserPathsProgress(profileId);
-  const lastLesson = await userContentModel.getLastLesson(profileId);
+  let lastLesson = await userContentModel.getLastLesson(profileId);
   const moduleScores = await userTestModel.getUserModuleScores(profileId);
 
   const lastLogin = new Date(userProfile.last_login).toLocaleDateString("pt-BR");
   progress.sort((a, b) => b.progress_percentage - a.progress_percentage);
 
+  if(!lastLesson) {
+    lastLesson = {
+      content_id: null,
+      title: "Nenhuma lição concluída",
+      completed_at: null
+    };
+  }
 
   res.render("profile", {
     user,
