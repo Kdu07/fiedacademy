@@ -99,32 +99,73 @@
 
           <% if (ranking && ranking.length) { %>
           <div class="space-y-2 max-h-[400px] overflow-y-auto pr-1">
-            <% ranking.slice(0, 10).forEach((user, index) => { %>
+            <% ranking.slice(0, 10).forEach((rankUser, index) => { const
+            isCurrentUser = rankUser.id === user.id; %>
             <div
-              class="flex items-center p-2 <%= index < 3 ? 'bg-yellow-50' : 'bg-gray-50' %> rounded-lg"
+              class="flex items-center p-2 <%= isCurrentUser ? 'bg-green-50 border border-secondaryGreen' : (index < 3 ? 'bg-yellow-50' : 'bg-gray-50') %> rounded-lg"
             >
               <div
                 class="w-7 h-7 <%= index < 3 ? 'bg-yellow-400' : 'bg-gray-200' %> rounded-full flex items-center justify-center mr-3"
               >
                 <span
                   class="<%= index < 3 ? 'text-yellow-800' : 'text-gray-700' %> font-bold text-sm"
-                  ><%= user.rank %></span
+                  ><%= rankUser.rank %></span
                 >
               </div>
               <div class="flex-grow">
                 <a
-                  href="/profile/<%= user.id %>"
-                  class="font-medium text-sm md:text-base hover:text-secondaryGreen transition-colors"
+                  href="/profile/<%= rankUser.id %>"
+                  class="<%= isCurrentUser ? 'font-bold' : 'font-medium' %> text-sm md:text-base hover:text-secondaryGreen transition-colors <%= isCurrentUser ? 'text-secondaryGreen' : '' %>"
                 >
-                  <%= user.name %>
+                  <%= rankUser.name %> <% if (isCurrentUser) { %>
+                  <span
+                    class="ml-1 text-xs bg-secondaryGreen text-white px-2 py-0.5 rounded-full"
+                    >Você</span
+                  >
+                  <% } %>
                 </a>
               </div>
               <div class="flex items-center">
                 <i class="fas fa-star text-yellow-500 mr-1 text-sm"></i>
-                <span class="font-bold text-sm"><%= user.score %></span>
+                <span class="font-bold text-sm"><%= rankUser.score %></span>
               </div>
             </div>
-            <% }) %>
+            <% }) %> <% // Check if current user is not in top 10 const
+            userInTop10 = ranking.slice(0, 10).some(r => r.id === user.id);
+            const userRank = ranking.find(r => r.id === user.id); if
+            (!userInTop10 && userRank) { %>
+            <div class="mt-4 pt-4 border-t border-dashed border-gray-300">
+              <div
+                class="flex items-center p-2 bg-green-50 border border-secondaryGreen rounded-lg"
+              >
+                <div
+                  class="w-7 h-7 bg-secondaryGreen rounded-full flex items-center justify-center mr-3"
+                >
+                  <span class="text-white font-bold text-sm"
+                    ><%= userRank.rank %></span
+                  >
+                </div>
+                <div class="flex-grow">
+                  <span
+                    class="font-bold text-sm md:text-base text-secondaryGreen"
+                  >
+                    <%= user.name %>
+                    <span
+                      class="ml-1 text-xs bg-secondaryGreen text-white px-2 py-0.5 rounded-full"
+                      >Você</span
+                    >
+                  </span>
+                </div>
+                <div class="flex items-center">
+                  <i class="fas fa-star text-yellow-500 mr-1 text-sm"></i>
+                  <span class="font-bold text-sm"><%= userRank.score %></span>
+                </div>
+              </div>
+              <p class="text-center text-sm text-gray-500 mt-2">
+                Continue ganhando pontos para subir no ranking!
+              </p>
+            </div>
+            <% } %>
           </div>
           <% } else { %>
           <div
@@ -216,56 +257,122 @@
         <% } %>
       </div>
 
-      <!-- Quick Stats Section - Updated with only two cards -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
-        <!-- Your Position -->
-        <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-secondaryGreen flex items-start">
-          <div class="w-16 h-16 bg-secondaryGreen/10 rounded-full flex items-center justify-center mr-4">
-            <i class="fas fa-medal text-secondaryGreen text-2xl"></i>
+      <!-- Quick Stats Section - Updated with only one card -->
+      <div class="grid grid-cols-1 gap-6 mb-10">
+        <!-- Your Position Summary -->
+        <div
+          class="bg-white p-6 rounded-lg shadow-md border-t-4 border-secondaryGreen"
+        >
+          <div class="flex items-center mb-6 pb-2 border-b border-gray-100">
+            <div
+              class="w-10 h-10 bg-secondaryGreen/10 rounded-full flex items-center justify-center mr-3"
+            >
+              <i class="fas fa-chart-line text-secondaryGreen"></i>
+            </div>
+            <h2 class="text-2xl font-bold">Seu Progresso</h2>
           </div>
-          <div class="flex-1">
-            <h3 class="text-xl font-bold mb-2">Sua Classificação</h3>
-            <p class="text-gray-600 mb-4">
-              Continue ganhando pontos para subir no ranking geral.
-            </p>
-            <div class="flex items-center mt-3 bg-yellow-50 p-3 rounded-lg">
-              <div class="w-10 h-10 bg-yellow-100 rounded-full flex items-center justify-center mr-3">
-                <i class="fas fa-trophy text-yellow-600"></i>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <!-- Pontuação Total Card -->
+            <div
+              class="bg-gradient-to-br from-green-50 to-emerald-100 p-5 rounded-lg border border-green-200 shadow-sm"
+            >
+              <div class="flex items-center justify-between mb-3">
+                <span class="font-semibold text-gray-700">Pontuação Total</span>
+                <div
+                  class="w-8 h-8 bg-green-500 bg-opacity-20 rounded-full flex items-center justify-center"
+                >
+                  <i class="fas fa-star text-green-600"></i>
+                </div>
               </div>
-              <div>
-                <p class="text-sm text-gray-500">Posição no ranking</p>
-                <p class="text-xl font-bold text-gray-800">
-                  <% const userRank = ranking && ranking.find(r => r.id === user.id)?.rank; %>
+              <div class="flex items-baseline">
+                <% const userScore = ranking && ranking.find(r => r.id ===
+                user.id)?.score; %>
+                <p class="text-3xl font-bold text-green-700">
+                  <%= userScore || '0' %>
+                </p>
+                <span class="ml-1 text-sm text-gray-600">pontos</span>
+              </div>
+              <p class="text-xs text-gray-500 mt-4">Seu total de pontos!  </p>
+            </div>
+
+            <!-- Classificação Card -->
+            <div
+              class="bg-gradient-to-br from-blue-50 to-indigo-100 p-5 rounded-lg border border-blue-200 shadow-sm"
+            >
+              <div class="flex items-center justify-between mb-3">
+                <span class="font-semibold text-gray-700"
+                  >Sua Classificação</span
+                >
+                <div
+                  class="w-8 h-8 bg-blue-500 bg-opacity-20 rounded-full flex items-center justify-center"
+                >
+                  <i class="fas fa-medal text-blue-600"></i>
+                </div>
+              </div>
+              <div class="flex items-baseline">
+                <% const userRank = ranking && ranking.find(r => r.id ===
+                user.id)?.rank; %>
+                <p class="text-3xl font-bold text-blue-700">
                   <%= userRank || 'N/A' %>
                 </p>
+                <span class="ml-1 text-sm text-gray-600">no ranking</span>
+              </div>
+              <div class="mt-3">
+                <% if (userRank) { %> <% if (userRank <= 3) { %>
+                <span
+                  class="bg-yellow-400 text-yellow-800 text-xs font-medium py-1 px-2 rounded-full"
+                  >Top 3!</span
+                >
+                <% } else if (userRank <= 10) { %>
+                <span
+                  class="bg-blue-400 text-blue-800 text-xs font-medium py-1 px-2 rounded-full"
+                  >Top 10!</span
+                >
+                <% } else { %>
+                <p class="text-xs text-gray-500 mt-4">Continue assim!</p>
+                <% }} else { %>
+                <p class="text-xs text-gray-500">
+                  Complete atividades para entrar no ranking
+                </p>
+                <% } %>
+              </div>
+            </div>
+
+            <!-- Conteúdos Card -->
+            <div
+              class="bg-gradient-to-br from-purple-50 to-violet-100 p-5 rounded-lg border border-purple-200 shadow-sm"
+            >
+              <div class="flex items-center justify-between mb-3">
+                <span class="font-semibold text-gray-700"
+                  >Conteúdos Salvos</span
+                >
+                <div
+                  class="w-8 h-8 bg-purple-500 bg-opacity-20 rounded-full flex items-center justify-center"
+                >
+                  <i class="fas fa-bookmark text-purple-600"></i>
+                </div>
+              </div>
+              <div class="flex items-baseline">
+                <p class="text-3xl font-bold text-purple-700">
+                  <%= bookmarks ? bookmarks.length : '0' %>
+                </p>
+                <span class="ml-1 text-sm text-gray-600">favoritos</span>
+              </div>
+              <div class="mt-3 flex">
+                <p class="text-xs text-gray-500 mt-2">Seus conteúdos favoritos  </p>
               </div>
             </div>
           </div>
-        </div>
 
-        <!-- Recent Activity -->
-        <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-secondaryGreen flex items-start">
-          <div class="w-16 h-16 bg-secondaryGreen/10 rounded-full flex items-center justify-center mr-4">
-            <i class="fas fa-clock text-secondaryGreen text-2xl"></i>
-          </div>
-          <div class="flex-1">
-            <h3 class="text-xl font-bold mb-2">Atividade Recente</h3>
-            <p class="text-gray-600 mb-4">
-              Continue de onde você parou em seu último acesso.
-            </p>
-            <a
-              href="#"
-              class="flex items-center mt-2 p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
-            >
-              <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-3">
-                <i class="fas fa-file-alt text-blue-600"></i>
-              </div>
-              <div class="flex-1">
-                <p class="font-medium">Introdução ao Climate FieldView</p>
-                <p class="text-sm text-gray-500">Continuar lendo</p>
-              </div>
-              <i class="fas fa-chevron-right text-gray-400"></i>
-            </a>
+          <div class="mt-6 bg-gray-50 p-4 rounded-lg border border-gray-200">
+            <div class="flex items-center">
+              <i class="fas fa-lightbulb text-yellow-500 mr-2"></i>
+              <p class="text-sm text-gray-600">
+                <span class="font-medium">Dica:</span> Complete as trilhas e
+                faça os quizzes para ganhar mais pontos e subir no ranking!
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -274,4 +381,3 @@
     <%- include('./partials/footer') %>
   </body>
 </html>
-         
