@@ -43,7 +43,7 @@ exports.login = async (req, res) => {
     return res.redirect("/dashboard");
   }
   
-  return res.redirect("/");
+  return res.redirect("/home");
 };
 
 exports.logout = async (req, res) => {

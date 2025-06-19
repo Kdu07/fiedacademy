@@ -4,7 +4,7 @@ require('dotenv').config();
 const homeController = require('../controllers/homeController');
 
 // Rota da home
-router.get('/', homeController.index);
+router.get('/home', homeController.index);
 router.post('/bookmarks/delete/:id', homeController.deleteBookmark);
 
 //adicionar bookmark
