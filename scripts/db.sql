@@ -7,19 +7,19 @@ CREATE TABLE IF NOT EXISTS roles (
   can_delete BOOLEAN
 );
 
-CREATE TABLE IF NOT EXISTS path (
+CREATE TABLE IF NOT EXISTS paths (
   id SERIAL PRIMARY KEY,
   title VARCHAR(255),
   description TEXT
 );
 
-CREATE TABLE IF NOT EXISTS certificate (
+CREATE TABLE IF NOT EXISTS certificates (
   id SERIAL PRIMARY KEY,
   id_path INTEGER NOT NULL REFERENCES path(id),
   hash_code VARCHAR(100)
 );
 
-CREATE TABLE IF NOT EXISTS module (
+CREATE TABLE IF NOT EXISTS modules (
   id SERIAL PRIMARY KEY,
   id_path INTEGER NOT NULL REFERENCES path(id),
   title VARCHAR(255),
@@ -45,7 +45,7 @@ CREATE TABLE IF NOT EXISTS user_certificate_progress (
   completed_at DATE
 );
 
-CREATE TABLE IF NOT EXISTS content (
+CREATE TABLE IF NOT EXISTS contents (
   id SERIAL PRIMARY KEY,
   id_module INTEGER NOT NULL REFERENCES module(id) ON DELETE CASCADE,
   doc_path VARCHAR(255),
