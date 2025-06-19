@@ -44,7 +44,7 @@ exports.userDoneTest = async (userId, testId) => {
 }
 
 exports.finishTest = async (userId, testId, score) => {
-    const sql = `INSERT INTO user_test_score (id_user, id_test, score) VALUES ($1, $2, $3);`;
-    await db.query(sql, [userId, testId, score]);
+    const sql = `INSERT INTO user_test_score (id_user, id_test, score, ended_at) VALUES ($1, $2, $3, $4);`;
+    await db.query(sql, [userId, testId, score, new Date()]);
     return;
 }

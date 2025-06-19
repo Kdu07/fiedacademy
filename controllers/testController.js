@@ -3,6 +3,7 @@ const { getUserId } = require("../utils/jwtUtils");
 
 const usersModel = require("../models/usersModel");
 const testModel = require("../models/userTestModel");
+const { parse } = require("dotenv");
 
 exports.index = async (req, res) => {
   const token = req.cookies.token;
@@ -26,13 +27,18 @@ exports.index = async (req, res) => {
   }
 
   const user = await usersModel.getById(id);
+  
+  let totalPoints = 0;
 
   test.questions = JSON.parse(test.questions);
   test.questions.forEach((question) => {
+    totalPoints += parseInt(question.points || 0);
     delete question.correctAnswer;
   });
 
-  res.render("test", { user, test });
+  console.log(test.questions)
+
+  res.render("test", { user, test, totalPoints });
 };
 
 exports.createTest = async (req, res) => {
@@ -66,7 +72,7 @@ exports.handleSubmit = async (req, res) => {
 
   const answers = req.body;
 
-  let earnedPoints = 0;
+  let earnedPoints = 0;   
 
   test.questions.forEach((question, index) => {
     const questionNumber = index + 1;
@@ -79,17 +85,24 @@ exports.handleSubmit = async (req, res) => {
     }
 
     if (userAnswer !== undefined && userAnswer == question.correctAnswer) {
+      question.answeredCorrectly = true;
+      question.userAnswer = userAnswer;
       earnedPoints += questionPoints;
+    } else {
+      question.answeredCorrectly = false;
+      question.userAnswer = userAnswer;
     }
   });
 
   testModel.finishTest(userId, test.id, earnedPoints);
 
-  console.log(user)
+  await usersModel.addScore(userId, earnedPoints)
+
 
   return res.render("testSubmitted", {
     user,
     earnedPoints,
     testTitle: test.title,
+    questions: test.questions
   });
 };

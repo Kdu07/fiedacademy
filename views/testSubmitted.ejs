@@ -75,6 +75,114 @@
             </div>
           </div>
 
+          <!-- New section for questions summary -->
+          <div class="border-b border-gray-100 py-6 mb-6">
+            <h3 class="text-xl font-bold text-secondaryGreen mb-4">
+              Resumo das Questões
+            </h3>
+
+            <div class="space-y-6">
+              <% questions.forEach((question, index) => { %>
+              <div
+                class="p-4 rounded-lg border <%= question.answeredCorrectly ? 'bg-green-50 border-green-100' : 'bg-red-50 border-red-100' %>"
+              >
+                <div class="flex items-start gap-3">
+                  <div class="mt-1">
+                    <% if(question.answeredCorrectly) { %>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-5 w-5 text-green-600"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                    <% } else { %>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-5 w-5 text-red-600"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M6 18L18 6M6 6l12 12"
+                      />
+                    </svg>
+                    <% } %>
+                  </div>
+                  <div class="flex-1">
+                    <div class="font-medium mb-2">
+                      <%= index + 1 %>. <%= question.text %>
+                    </div>
+
+                    <% if (question.options && question.options.length > 0) { %>
+                    <div class="ml-4 mt-2 space-y-1">
+                      <% question.options.forEach((option, optIndex) => { const
+                      optionLetter = String.fromCharCode(97 + optIndex); const
+                      isUserChoice = question.userAnswer === optionLetter; const
+                      isCorrectOption = question.correctAnswer === optionLetter;
+                      console.log(option)
+                      %>
+
+                      <div
+                        class="<%= isUserChoice ? (isCorrectOption ? 'text-green-700 font-medium' : 'text-red-700 font-medium') : (isCorrectOption ? 'text-green-700 font-medium' : '') %>"
+                      >
+                        <%= optionLetter %>) <%= option.text %> <% if(isUserChoice) {
+                        %>
+                        <span class="inline-block ml-2">[Sua resposta]</span>
+                        <% } %> <% if(isCorrectOption && (!isUserChoice ||
+                        !question.answeredCorrectly)) { %>
+                        <span class="inline-block ml-2"
+                          >[Resposta correta]</span
+                        >
+                        <% } %>
+                      </div>
+                      <% }); %>
+                    </div>
+                    <% } else if (typeof question.correctAnswer === 'boolean') {
+                    %>
+                    <div class="ml-4 mt-2 space-y-1">
+                      <div
+                        class="<%= question.userAnswer === true ? (question.correctAnswer === true ? 'text-green-700 font-medium' : 'text-red-700 font-medium') : '' %>"
+                      >
+                        Verdadeiro <% if(question.userAnswer === true) { %>
+                        <span class="inline-block ml-2">[Sua resposta]</span>
+                        <% } %> <% if(question.correctAnswer === true) { %>
+                        <span class="inline-block ml-2"
+                          >[Resposta correta]</span
+                        >
+                        <% } %>
+                      </div>
+                      <div
+                        class="<%= question.userAnswer === false ? (question.correctAnswer === false ? 'text-green-700 font-medium' : 'text-red-700 font-medium') : '' %>"
+                      >
+                        Falso <% if(question.userAnswer === false) { %>
+                        <span class="inline-block ml-2">[Sua resposta]</span>
+                        <% } %> <% if(question.correctAnswer === false) { %>
+                        <span class="inline-block ml-2"
+                          >[Resposta correta]</span
+                        >
+                        <% } %>
+                      </div>
+                    </div>
+                    <% } %>
+                  </div>
+                </div>
+              </div>
+              <% }); %>
+            </div>
+          </div>
+
           <div
             class="flex flex-col md:flex-row justify-between items-center gap-4"
           >
@@ -109,8 +217,8 @@
             <li class="flex items-start">
               <span class="mr-2">•</span>
               <span
-                >Entre em contato com seu instrutor se tiver dúvidas sobre o
-                conteúdo</span
+                >Entre em contato com seu gestor ou outro PTD mais experiente se
+                tiver dúvidas sobre o conteúdo</span
               >
             </li>
           </ul>
