@@ -2,6 +2,7 @@ const usersModel = require("../models/usersModel");
 const userContentModel = require("../models/userContentModel");
 const userTestModel = require("../models/userTestModel");
 
+
 const { getUserId } = require("../utils/jwtUtils");
 const { isAuthorized } = require("../utils/authUtils");
 
@@ -20,12 +21,14 @@ exports.index = async (req, res) => {
   const profileId = req.params.id
   const userProfile = await usersModel.getById(profileId);
   const ranking = await usersModel.getUsersRanking();
-  const userRank = ranking.findIndex((u) => u.id === profileId) + 1; // Find the user's rank
+  const userRank = (ranking.find(u => u.id === parseInt(profileId))).rank; // Find the user's rank
   const progress = await userContentModel.getUserPathsProgress(profileId);
+  const lastLesson = await userContentModel.getLastLesson(profileId);
   const moduleScores = await userTestModel.getUserModuleScores(profileId);
 
   const lastLogin = new Date(userProfile.last_login).toLocaleDateString("pt-BR");
   progress.sort((a, b) => b.progress_percentage - a.progress_percentage);
+
 
   res.render("profile", {
     user,
@@ -34,6 +37,7 @@ exports.index = async (req, res) => {
     progress: progress || [],
     moduleScores,
     lastLogin,
+    lastLesson
   });
 };
 
