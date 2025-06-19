@@ -5,125 +5,273 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Home | FieldAcademy</title>
     <link rel="stylesheet" href="/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
   </head>
-  <body class="bg-white text-green-900">
+  <body class="bg-gray-50 text-gray-800">
     <%- include('./partials/header') %>
 
-    <img
-      src="/assets/bg-final-home.jpg"
-      alt="Campo"
-      style="height: 200px; width: 100%; object-fit: cover"
-    />
-
-    <!-- Botão de ajuda -->
-    <div class="flex justify-center mt-10">
-      <a
-        href="/help"
-        class="bg-mainGreen border-4 px-6 py-2 rounded-full hover:bg-green-700 transition"
-      >
-        Acessar Ajuda
-      </a>
-    </div>
-
-    <!-- Trilhas -->
-    <section class="max-w-md mx-auto mt-8 border rounded-lg p-6 shadow-sm">
-      <h2 class="text-center text-2xl font-semibold mb-6">TRILHAS</h2>
-      <% if (paths && paths.length) { %> <% paths.forEach(t => { %>
-      <div class="flex items-center justify-between mb-4">
-        <p class="text-lg font-medium"><%= t.title %></p>
-        <a
-          href="/paths/<%= t.id %>"
-          class="bg-green-200 text-green-900 font-semibold px-4 py-1 rounded-full hover:bg-green-300"
+    <!-- Hero Section -->
+    <section class="relative">
+      <div class="w-full h-[300px] md:h-[350px] overflow-hidden">
+        <img
+          src="/assets/bg-final-home.jpg"
+          alt="Campo"
+          class="w-full h-full object-cover brightness-75"
+        />
+        <div class="absolute inset-0 bg-secondaryGreen bg-opacity-60"></div>
+        <div
+          class="absolute inset-0 flex flex-col justify-center items-center text-white px-4 md:px-0"
         >
-          Continuar
-        </a>
+          <h1 class="text-3xl md:text-4xl font-bold text-center mb-4">
+            Bem-vindo(a), <%= user.name %>!
+          </h1>
+          <p class="text-lg md:text-xl text-center max-w-2xl mb-6">
+            Continue seu aprendizado e acompanhe seu progresso aqui.
+          </p>
+          <a
+            href="/help"
+            class="bg-white hover:bg-gray-100 text-secondaryGreen py-3 px-8 rounded-lg font-bold text-lg transition-all flex items-center"
+          >
+            <i class="fas fa-question-circle mr-2"></i>
+            Precisa de Ajuda?
+          </a>
+        </div>
       </div>
-      <% }) %> <% } else { %>
-      <p class="text-center text-gray-500">Nenhuma trilha encontrada.</p>
-      <% } %>
     </section>
 
-    <!-- Favoritos -->
-    <section class="max-w-4xl mx-auto mt-10">
-      <h2 class="text-2xl font-semibold mb-4">Favoritos</h2>
-      <table
-        class="min-w-full bg-white border border-gray-300 rounded-lg shadow-sm"
-      >
-        <thead>
-          <tr class="bg-green-100 text-left">
-            <th class="py-2 px-4 border-b">Conteúdo</th>
-            <th class="py-2 px-4 border-b">Trilha</th>
-            <th class="py-2 px-4 border-b">Ações</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% if (bookmarks && bookmarks.length) { %> <% bookmarks.forEach(b => {
-          %>
-          <tr>
-            <td class="py-2 px-4 border-b">
-              <a href="<%=b.url%>" class="text-blue-600 hover:underline">
-                <%= b.contents_title %>
-              </a>
-            </td>
-            <td class="py-2 px-4 border-b"><%= b.path_title %></td>
-            <td class="py-2 px-4 border-b">
-              <form
-                action="/bookmarks/delete/<%= b.id %>"
-                method="POST"
-                onsubmit="return confirm('Deseja remover este favorito?');"
-              >
-                <button type="submit" class="text-red-600 hover:underline">
-                  Remover
-                </button>
-              </form>
-            </td>
-          </tr>
-          <% }) %> <% } else { %>
-          <tr>
-            <td colspan="4" class="text-center text-gray-500 py-4">
-              Nenhum favorito encontrado.
-            </td>
-          </tr>
-          <% } %>
-        </tbody>
-      </table>
-    </section>
+    <div class="max-w-7xl mx-auto px-4 py-8">
+      <!-- Main Sections Grid - Reorganized with improved sizing -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-10">
+        <!-- Trilhas Section - Resized to be more proportional -->
+        <div class="lg:col-span-7 bg-white p-6 rounded-lg shadow-md">
+          <div class="flex items-center mb-6 pb-2 border-b border-gray-100">
+            <div
+              class="w-10 h-10 bg-secondaryGreen/10 rounded-full flex items-center justify-center mr-3"
+            >
+              <i class="fas fa-route text-secondaryGreen"></i>
+            </div>
+            <h2 class="text-2xl font-bold">Trilhas de Aprendizado</h2>
+          </div>
 
-    <!-- Ranking -->
-    <section class="max-w-md mx-auto mt-10 border rounded-lg p-6 shadow-sm">
-      <h2 class="text-center text-2xl font-semibold mb-6">Ranking</h2>
-      <table
-        class="min-w-full bg-white border border-gray-300 rounded-lg shadow-sm"
-      >
-        <thead>
-          <tr class="bg-green-100 text-green-900 text-left">
-            <th class="py-2 px-4 border-b">#</th>
-            <th class="py-2 px-4 border-b">Usuário</th>
-            <th class="py-2 px-4 border-b">Score</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% if (ranking && ranking.length) { %> <% ranking.forEach(user => { %>
-          <tr>
-            <td class="py-2 px-4 border-b"><%= user.rank %></td>
-            <td class="py-2 px-4 border-b">
-              <a href="/profile/<%= user.id %>" class="hover:underline"
-                ><%= user.name %></a
+          <% if (paths && paths.length) { %>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <% paths.forEach(t => { %>
+            <a
+              href="/paths/<%= t.id %>"
+              class="bg-gray-50 rounded-lg p-3 hover:bg-gray-100 transition-colors border border-gray-100 flex items-center"
+            >
+              <div
+                class="w-8 h-8 bg-secondaryGreen/10 rounded-full flex items-center justify-center mr-2"
               >
-            </td>
-            <td class="py-2 px-4 border-b"><%= user.score %></td>
-          </tr>
-          <% }) %> <% } else { %>
-          <tr>
-            <td colspan="3" class="text-center text-gray-500 py-4">
-              Nenhum usuário no ranking.
-            </td>
-          </tr>
+                <i class="fas fa-book-open text-secondaryGreen text-sm"></i>
+              </div>
+              <div class="flex-grow">
+                <h3 class="font-medium text-sm md:text-base"><%= t.title %></h3>
+                <p class="text-xs text-gray-500">Clique para acessar</p>
+              </div>
+              <i class="fas fa-chevron-right text-gray-400 text-sm"></i>
+            </a>
+            <% }) %>
+          </div>
+          <% } else { %>
+          <div
+            class="flex flex-col items-center justify-center py-10 bg-gray-50 rounded-lg"
+          >
+            <i class="fas fa-map-signs text-4xl text-gray-400 mb-3"></i>
+            <p class="text-center text-gray-500">Nenhuma trilha encontrada.</p>
+          </div>
           <% } %>
-        </tbody>
-      </table>
-    </section>
+        </div>
+
+        <!-- Ranking Section - Resized to be more proportional -->
+        <div class="lg:col-span-5 bg-white p-6 rounded-lg shadow-md">
+          <div class="flex items-center mb-6 pb-2 border-b border-gray-100">
+            <div
+              class="w-10 h-10 bg-secondaryGreen/10 rounded-full flex items-center justify-center mr-3"
+            >
+              <i class="fas fa-trophy text-secondaryGreen"></i>
+            </div>
+            <h2 class="text-2xl font-bold">Top 10 Ranking</h2>
+          </div>
+
+          <% if (ranking && ranking.length) { %>
+          <div class="space-y-2 max-h-[400px] overflow-y-auto pr-1">
+            <% ranking.slice(0, 10).forEach((user, index) => { %>
+            <div
+              class="flex items-center p-2 <%= index < 3 ? 'bg-yellow-50' : 'bg-gray-50' %> rounded-lg"
+            >
+              <div
+                class="w-7 h-7 <%= index < 3 ? 'bg-yellow-400' : 'bg-gray-200' %> rounded-full flex items-center justify-center mr-3"
+              >
+                <span
+                  class="<%= index < 3 ? 'text-yellow-800' : 'text-gray-700' %> font-bold text-sm"
+                  ><%= user.rank %></span
+                >
+              </div>
+              <div class="flex-grow">
+                <a
+                  href="/profile/<%= user.id %>"
+                  class="font-medium text-sm md:text-base hover:text-secondaryGreen transition-colors"
+                >
+                  <%= user.name %>
+                </a>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-star text-yellow-500 mr-1 text-sm"></i>
+                <span class="font-bold text-sm"><%= user.score %></span>
+              </div>
+            </div>
+            <% }) %>
+          </div>
+          <% } else { %>
+          <div
+            class="flex flex-col items-center justify-center py-10 bg-gray-50 rounded-lg"
+          >
+            <i class="fas fa-trophy text-4xl text-gray-400 mb-3"></i>
+            <p class="text-center text-gray-500">Nenhum usuário no ranking.</p>
+          </div>
+          <% } %>
+        </div>
+      </div>
+
+      <!-- Favoritos Section -->
+      <div class="bg-white p-6 rounded-lg shadow-md mb-10">
+        <div class="flex items-center mb-6 pb-2 border-b border-gray-100">
+          <div
+            class="w-10 h-10 bg-secondaryGreen/10 rounded-full flex items-center justify-center mr-3"
+          >
+            <i class="fas fa-bookmark text-secondaryGreen"></i>
+          </div>
+          <h2 class="text-2xl font-bold">Conteúdos Favoritos</h2>
+        </div>
+
+        <% if (bookmarks && bookmarks.length) { %>
+        <div class="overflow-x-auto">
+          <table class="min-w-full">
+            <thead>
+              <tr class="bg-gray-50 text-left">
+                <th class="py-3 px-4 font-semibold text-gray-600 border-b">
+                  Conteúdo
+                </th>
+                <th class="py-3 px-4 font-semibold text-gray-600 border-b">
+                  Trilha
+                </th>
+                <th
+                  class="py-3 px-4 font-semibold text-gray-600 border-b text-center"
+                >
+                  Ações
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <% bookmarks.forEach(b => { %>
+              <tr class="hover:bg-gray-50 transition-colors">
+                <td class="py-3 px-4 border-b">
+                  <a
+                    href="<%= b.url %>"
+                    class="text-secondaryGreen hover:underline flex items-center"
+                  >
+                    <i class="fas fa-file-alt mr-2"></i>
+                    <%= b.contents_title %>
+                  </a>
+                </td>
+                <td class="py-3 px-4 border-b">
+                  <span
+                    class="bg-green-100 text-green-800 text-xs font-medium py-1 px-2 rounded-full"
+                  >
+                    <%= b.path_title %>
+                  </span>
+                </td>
+                <td class="py-3 px-4 border-b text-center">
+                  <form
+                    action="/bookmarks/delete/<%= b.id %>"
+                    method="POST"
+                    onsubmit="return confirm('Deseja remover este favorito?');"
+                  >
+                    <button
+                      type="submit"
+                      class="text-red-500 hover:text-red-700 transition-colors"
+                    >
+                      <i class="fas fa-trash-alt"></i>
+                    </button>
+                  </form>
+                </td>
+              </tr>
+              <% }) %>
+            </tbody>
+          </table>
+        </div>
+        <% } else { %>
+        <div
+          class="flex flex-col items-center justify-center py-10 bg-gray-50 rounded-lg"
+        >
+          <i class="fas fa-bookmark text-4xl text-gray-400 mb-3"></i>
+          <p class="text-center text-gray-500">
+            Você ainda não adicionou nenhum favorito.
+          </p>
+        </div>
+        <% } %>
+      </div>
+
+      <!-- Quick Stats Section - Updated with only two cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+        <!-- Your Position -->
+        <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-secondaryGreen flex items-start">
+          <div class="w-16 h-16 bg-secondaryGreen/10 rounded-full flex items-center justify-center mr-4">
+            <i class="fas fa-medal text-secondaryGreen text-2xl"></i>
+          </div>
+          <div class="flex-1">
+            <h3 class="text-xl font-bold mb-2">Sua Classificação</h3>
+            <p class="text-gray-600 mb-4">
+              Continue ganhando pontos para subir no ranking geral.
+            </p>
+            <div class="flex items-center mt-3 bg-yellow-50 p-3 rounded-lg">
+              <div class="w-10 h-10 bg-yellow-100 rounded-full flex items-center justify-center mr-3">
+                <i class="fas fa-trophy text-yellow-600"></i>
+              </div>
+              <div>
+                <p class="text-sm text-gray-500">Posição no ranking</p>
+                <p class="text-xl font-bold text-gray-800">
+                  <% const userRank = ranking && ranking.find(r => r.id === user.id)?.rank; %>
+                  <%= userRank || 'N/A' %>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recent Activity -->
+        <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-secondaryGreen flex items-start">
+          <div class="w-16 h-16 bg-secondaryGreen/10 rounded-full flex items-center justify-center mr-4">
+            <i class="fas fa-clock text-secondaryGreen text-2xl"></i>
+          </div>
+          <div class="flex-1">
+            <h3 class="text-xl font-bold mb-2">Atividade Recente</h3>
+            <p class="text-gray-600 mb-4">
+              Continue de onde você parou em seu último acesso.
+            </p>
+            <a
+              href="#"
+              class="flex items-center mt-2 p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
+            >
+              <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+                <i class="fas fa-file-alt text-blue-600"></i>
+              </div>
+              <div class="flex-1">
+                <p class="font-medium">Introdução ao Climate FieldView</p>
+                <p class="text-sm text-gray-500">Continuar lendo</p>
+              </div>
+              <i class="fas fa-chevron-right text-gray-400"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <%- include('./partials/footer') %>
   </body>
 </html>
+         

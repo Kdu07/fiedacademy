@@ -35,33 +35,64 @@
       />
     </svg>
   </button>
+
+  <!-- Font Awesome CDN Link -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+
   <div
     id="menu"
-    class="fixed top-20 left-0 h-[calc(100vh-5rem)] w-full md:w-1/6 z-20 bg-white transform -translate-x-full transition-transform duration-300"
+    class="fixed top-20 left-0 h-[calc(100vh-5rem)] w-full md:w-1/6 z-20 bg-gradient-to-b from-white to-gray-50 shadow-lg transform -translate-x-full transition-transform duration-300"
   >
-    <div
-      class="flex flex-col items-center h-full gap-8 mt-4 md:items-start md:ms-4 md:gap-2"
-    >
-      <a class="text-4xl md:text-xl hover:font-bold" href="/home">Home</a>
-      <a class="text-4xl md:text-xl hover:font-bold" href="/profile/<%= user.id %>">Perfil</a>
-      <a class="text-4xl md:text-xl hover:font-bold" href="/help">Help</a>
-      <a class="text-4xl md:text-xl hover:font-bold" href="/aboutus"
-        >Sobre nós</a
-      >
-      <% if (user.id_role !== 4) { %>
-      <a class="text-4xl md:text-xl hover:font-bold" href="/dashboard"
-        >Dashboard</a
-      >
-       <a class="text-4xl md:text-xl hover:font-bold" href="/create-user"
-        >Criar Usuário</a
-      >
-      <% }%>
+    <div class="flex flex-col h-full gap-2 py-6 px-4">
       <a
-        class="text-red-500 text-lg md:text-xl hover:font-bold"
+        class="flex items-center gap-3 text-2xl md:text-xl p-3 rounded-lg hover:bg-gray-100 transition-all duration-200"
+        href="/home"
+      >
+        <i class="fas fa-home text-secondaryGreen"></i>
+        <span>Home</span>
+      </a>
+      <a
+        class="flex items-center gap-3 text-2xl md:text-xl p-3 rounded-lg hover:bg-gray-100 transition-all duration-200"
+        href="/profile/<%= user.id %>"
+      >
+        <i class="fas fa-user text-secondaryGreen"></i>
+        <span>Perfil</span>
+      </a>
+      <a
+        class="flex items-center gap-3 text-2xl md:text-xl p-3 rounded-lg hover:bg-gray-100 transition-all duration-200"
+        href="/help"
+      >
+        <i class="fas fa-question-circle text-secondaryGreen"></i>
+        <span>Help</span>
+      </a>
+      <% if (user.id_role !== 4) { %>
+      <a
+        class="flex items-center gap-3 text-2xl md:text-xl p-3 rounded-lg hover:bg-gray-100 transition-all duration-200"
+        href="/dashboard"
+      >
+        <i class="fas fa-chart-line text-secondaryGreen"></i>
+        <span>Dashboard</span>
+      </a>
+      <a
+        class="flex items-center gap-3 text-2xl md:text-xl p-3 rounded-lg hover:bg-gray-100 transition-all duration-200"
+        href="/create-user"
+      >
+        <i class="fas fa-user-plus text-secondaryGreen"></i>
+        <span>Criar Usuário</span>
+      </a>
+      <% }%>
+      <div class="flex-grow"></div>
+      <a
+        class="flex items-center gap-3 text-2xl md:text-xl p-3 mt-auto text-red-500 rounded-lg hover:bg-red-50 transition-all duration-200"
         href="/logout-user"
         onclick="return confirm('Você tem certeza que quer sair?')"
-        >Logout</a
       >
+        <i class="fas fa-sign-out-alt"></i>
+        <span>Logout</span>
+      </a>
     </div>
   </div>
 
