@@ -48,3 +48,8 @@ exports.finishTest = async (userId, testId, score) => {
     await db.query(sql, [userId, testId, score, new Date()]);
     return;
 }
+
+exports.getUserTests = async (userId) => {
+  const res = await db.query('SELECT * FROM user_test_score WHERE id_user = $1', [userId]);
+  return res.rows;
+}

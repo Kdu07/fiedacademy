@@ -19,3 +19,15 @@ exports.getUserPathsProgress = async (userId) => {
     progress_percentage: Number(row.progress_percentage),
   }));
 };
+
+exports.getLastLesson = async (userId) => {
+  const sql = 
+    "SELECT ucp.*, c.title as title " +
+    "FROM user_content_progress ucp " +
+    "JOIN contents c ON ucp.content_id = c.id " +
+    "WHERE ucp.user_id = $1 " +
+    "ORDER BY ucp.completed_at DESC LIMIT 1";
+    
+  const res = await db.query(sql, [userId]);
+  return res.rows.length > 0 ? res.rows[0] : null;
+}
