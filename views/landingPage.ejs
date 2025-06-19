@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Home | FieldAcademy</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body class="bg-white text-gray-800">
+    <%- include('./partials/header') %>
+
+    <!-- Hero Section -->
+    <section class="relative">
+      <div class="w-full h-[500px] md:h-[600px] overflow-hidden">
+        <img
+          src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+          alt="Campo agrícola"
+          class="w-full h-full object-cover brightness-75"
+        />
+        <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+        <div
+          class="absolute inset-0 flex flex-col justify-center items-center text-white px-4 md:px-0"
+        >
+          <h1 class="text-4xl md:text-6xl font-bold text-center mb-4">
+            FieldAcademy
+          </h1>
+          <p class="text-xl md:text-2xl text-center max-w-3xl mb-8">
+            A plataforma de capacitação técnica para Promotores Técnicos
+            Digitais da AgroBayer
+          </p>
+          <div class="flex flex-col md:flex-row gap-4">
+            <a
+              href="/login"
+              class="bg-secondaryGreen hover:bg-opacity-90 text-white py-3 px-8 rounded-md font-bold text-lg transition-all"
+              >Acessar Plataforma</a
+            >
+            <a
+              href="/aboutus"
+              class="bg-white hover:bg-gray-100 text-secondaryGreen py-3 px-8 rounded-md font-bold text-lg transition-all"
+              >Conhecer Mais</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- O que é o FieldAcademy -->
+    <section id="conheca" class="py-16 px-4 md:px-8 lg:px-16 bg-gray-50">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">
+            O que é o FieldAcademy?
+          </h2>
+          <div class="w-24 h-1 bg-secondaryGreen mx-auto mb-6"></div>
+          <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+            Uma solução completa para capacitar os Promotores Técnicos Digitais
+            da Bayer, proporcionando conteúdos atualizados e acessíveis sobre o
+            Climate FieldView.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8 mt-12">
+          <div
+            class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all"
+          >
+            <div
+              class="w-16 h-16 bg-secondaryGreen/10 rounded-full flex items-center justify-center mb-4"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-8 w-8 text-secondaryGreen"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Trilhas de Conhecimento</h3>
+            <p class="text-gray-600">
+              Conteúdos organizados em módulos progressivos, do básico ao
+              avançado, para garantir o aprendizado contínuo.
+            </p>
+          </div>
+
+          <div
+            class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all"
+          >
+            <div
+              class="w-16 h-16 bg-secondaryGreen/10 rounded-full flex items-center justify-center mb-4"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-8 w-8 text-secondaryGreen"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Busca Inteligente</h3>
+            <p class="text-gray-600">
+              Encontre facilmente o que precisa com nossa busca por
+              palavras-chave, economizando tempo em campo.
+            </p>
+          </div>
+
+          <div
+            class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all"
+          >
+            <div
+              class="w-16 h-16 bg-secondaryGreen/10 rounded-full flex items-center justify-center mb-4"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-8 w-8 text-secondaryGreen"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"
+                />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Acesso Offline</h3>
+            <p class="text-gray-600">
+              Acesse conteúdos importantes mesmo sem internet, ideal para áreas
+              rurais com conectividade limitada.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefícios -->
+    <section class="py-16 px-4 md:px-8 lg:px-16">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">
+              Benefícios para os PTDs
+            </h2>
+            <div class="w-24 h-1 bg-secondaryGreen mb-6"></div>
+            <ul class="space-y-4">
+              <li class="flex items-start">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6 text-secondaryGreen mr-2 flex-shrink-0 mt-0.5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+                <p class="text-lg">
+                  Maior autonomia e eficiência no atendimento ao produtor rural
+                </p>
+              </li>
+              <li class="flex items-start">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6 text-secondaryGreen mr-2 flex-shrink-0 mt-0.5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+                <p class="text-lg">
+                  Acesso rápido às informações técnicas sobre o FieldView
+                </p>
+              </li>
+              <li class="flex items-start">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6 text-secondaryGreen mr-2 flex-shrink-0 mt-0.5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+                <p class="text-lg">
+                  Desenvolvimento profissional contínuo com certificações
+                </p>
+              </li>
+              <li class="flex items-start">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6 text-secondaryGreen mr-2 flex-shrink-0 mt-0.5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+                <p class="text-lg">
+                  Redução da necessidade de contato com suporte técnico
+                </p>
+              </li>
+              <li class="flex items-start">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6 text-secondaryGreen mr-2 flex-shrink-0 mt-0.5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+                <p class="text-lg">
+                  Engajamento através de gamificação e recompensas
+                </p>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <img
+              src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+              alt="Promotor Técnico Digital em campo"
+              class="w-full h-auto rounded-lg shadow-lg"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Funcionalidades -->
+    <section class="py-16 px-4 md:px-8 lg:px-16 bg-gray-50">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">
+            Principais Funcionalidades
+          </h2>
+          <div class="w-24 h-1 bg-secondaryGreen mx-auto mb-6"></div>
+          <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+            Conheça as ferramentas que tornam o FieldAcademy a solução ideal
+            para capacitação técnica.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div
+            class="bg-white p-6 rounded-lg shadow-md border-t-4 border-secondaryGreen"
+          >
+            <h3 class="text-xl font-bold mb-3">Trilhas Personalizadas</h3>
+            <p class="text-gray-600">
+              Percursos de aprendizagem adaptados às necessidades específicas de
+              cada promotor técnico.
+            </p>
+          </div>
+
+          <div
+            class="bg-white p-6 rounded-lg shadow-md border-t-4 border-secondaryGreen"
+          >
+            <h3 class="text-xl font-bold mb-3">Módulo de Help</h3>
+            <p class="text-gray-600">
+              Área dedicada para responder rapidamente às dúvidas mais
+              frequentes sobre o FieldView.
+            </p>
+          </div>
+
+          <div
+            class="bg-white p-6 rounded-lg shadow-md border-t-4 border-secondaryGreen"
+          >
+            <h3 class="text-xl font-bold mb-3">Avaliações e Feedback</h3>
+            <p class="text-gray-600">
+              Testes para validar o conhecimento adquirido e recomendações
+              personalizadas.
+            </p>
+          </div>
+
+          <div
+            class="bg-white p-6 rounded-lg shadow-md border-t-4 border-secondaryGreen"
+          >
+            <h3 class="text-xl font-bold mb-3">Certificados Digitais</h3>
+            <p class="text-gray-600">
+              Reconhecimento oficial das competências desenvolvidas após
+              conclusão dos módulos.
+            </p>
+          </div>
+
+          <div
+            class="bg-white p-6 rounded-lg shadow-md border-t-4 border-secondaryGreen"
+          >
+            <h3 class="text-xl font-bold mb-3">Conteúdo Multimídia</h3>
+            <p class="text-gray-600">
+              Vídeos, textos e infográficos para atender a diferentes estilos de
+              aprendizagem.
+            </p>
+          </div>
+
+          <div
+            class="bg-white p-6 rounded-lg shadow-md border-t-4 border-secondaryGreen"
+          >
+            <h3 class="text-xl font-bold mb-3">Dashboard de Progresso</h3>
+            <p class="text-gray-600">
+              Acompanhamento visual do desenvolvimento e conquistas na
+              plataforma.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- CTA -->
+    <section class="py-16 px-4 md:px-8 lg:px-16 bg-secondaryGreen text-white">
+      <div class="max-w-7xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">
+          Pronto para transformar sua capacitação técnica?
+        </h2>
+        <p class="text-xl mb-8 max-w-2xl mx-auto">
+          Acesse agora o FieldAcademy e descubra como nossa plataforma pode
+          ajudar você e sua equipe.
+        </p>
+        <div class="flex flex-col md:flex-row justify-center gap-4">
+          <a
+            href="/login"
+            class="bg-white text-secondaryGreen hover:bg-gray-100 py-3 px-8 rounded-md font-bold text-lg transition-all"
+            >Acessar Plataforma</a
+          >
+          <a
+            href="/about"
+            class="border-2 border-white hover:bg-white/10 text-white py-3 px-8 rounded-md font-bold text-lg transition-all"
+            >Sobre Nós</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <%- include('./partials/footer') %>
+  </body>
+</html>
