@@ -14,7 +14,7 @@ const token = req.cookies.token;
   }
 
 const userId = await getUserId(token);
-  const user = await usersModel.getById(userId);
+  const user = await usersModel.getRole(userId);
 
   try {
     const articles = await Help.getAll();

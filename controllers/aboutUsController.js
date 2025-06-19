@@ -6,7 +6,7 @@ exports.index = async (req, res) => {
   const token = req.cookies.token;
   const id = await getUserId(token);
 
-  let user = await usersModel.getById(id);
+  let user = await usersModel.getRole(id);
   if(!user) {
     user = {
       id: null,

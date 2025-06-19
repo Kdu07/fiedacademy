@@ -113,7 +113,7 @@ exports.getById = async (userId) => {
 
 exports.getRole = async (userId) => {
   try {
-    const res = await db.query("SELECT id, id_role FROM users WHERE id = $1", [
+    const res = await db.query("SELECT id, id_role, name FROM users WHERE id = $1", [
       userId,
     ]);
     return res.rows[0];
