@@ -39,16 +39,36 @@
               <div
                 class="rounded-lg <%= isCurrentPage ? 'bg-secondaryGreen' : 'bg-secondaryGreen/80 hover:bg-secondaryGreen' %> transition-all duration-200 shadow-sm <%= isCurrentPage ? 'ring-2 ring-offset-2 ring-secondaryGreen' : '' %>"
               >
-                <div class="px-4 py-3 flex items-center">
-                  <div
-                    class="flex-shrink-0 <%= isCurrentPage ? 'bg-white text-secondaryGreen' : 'bg-white/30 text-white' %> w-8 h-8 rounded-full flex items-center justify-center font-bold mr-3"
-                  >
-                    <%= page.content_order %>
+                <div class="px-4 py-3 flex items-center justify-between">
+                  <div class="flex items-center">
+                    <div
+                      class="flex-shrink-0 <%= isCurrentPage ? 'bg-white text-secondaryGreen' : 'bg-white/30 text-white' %> w-8 h-8 rounded-full flex items-center justify-center font-bold mr-3"
+                    >
+                      <%= page.content_order %>
+                    </div>
+                    <p class="text-white font-medium">
+                      Lição <%= page.content_order %> <% if (isCurrentPage) { %>
+                      <% } %>
+                    </p>
                   </div>
-                  <p class="text-white font-medium">
-                    Lição <%= page.content_order %> <% if (isCurrentPage) { %>
-                    <% } %>
-                  </p>
+                  <% if (page.done) { %>
+                  <div
+                    class="bg-white rounded-full p-1 w-6 h-6 flex items-center justify-center"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-4 w-4 text-secondaryGreen"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </div>
+                  <% } %>
                 </div>
               </div>
             </a>
