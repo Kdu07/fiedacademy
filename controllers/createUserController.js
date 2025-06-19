@@ -11,7 +11,7 @@ exports.index = async (req, res) => {
     return res.redirect("/");
   }
   const id = await getUserId(token);
-  const user = await usersModel.getById(id);
+  const user = await usersModel.getRole(id);
 
   const error = req.query.error || null; // Get error message from query parameters
   res.render("createUser", {

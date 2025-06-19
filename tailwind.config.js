@@ -10,7 +10,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-          mainGreen: "#66B512"
+          mainGreen: "#66B512",
+          secondaryGreen: "#4AC14D",
       },
       backgroundImage: {
         'login-bg': "url('/images/login_fundo.png')",

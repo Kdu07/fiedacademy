@@ -113,7 +113,7 @@ exports.getById = async (userId) => {
 
 exports.getRole = async (userId) => {
   try {
-    const res = await db.query("SELECT id, id_role FROM users WHERE id = $1", [
+    const res = await db.query("SELECT id, id_role, name FROM users WHERE id = $1", [
       userId,
     ]);
     return res.rows[0];
@@ -153,3 +153,17 @@ exports.updateProfilePhoto = async (photoUrl, userId) => {
     userId,
   ]);
 };
+
+exports.addScore = async (userId, score) => {
+  try {
+    // Atualiza o score do usuário
+    const res = await db.query(
+      "UPDATE users SET score = score + $1 WHERE id = $2 RETURNING *",
+      [score, userId]
+    );
+    return res.rows[0]; // Retorna o usuário atualizado
+  } catch (error) {
+    console.error("Error updating user score:", error);
+    return; // Rethrow the error for handling in the controller
+  }
+}

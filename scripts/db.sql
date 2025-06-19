@@ -73,6 +73,8 @@ CREATE TABLE IF NOT EXISTS bookmarks (
 CREATE TABLE IF NOT EXISTS tests (
   id SERIAL PRIMARY KEY,
   id_module INTEGER NOT NULL REFERENCES module(id) ON DELETE CASCADE,
+  title VARCHAR(100),
+  subtitle VARCHAR(255),
   questions TEXT,
   num_questions INTEGER NOT NULL
 );

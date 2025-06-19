@@ -1,0 +1,49 @@
+[
+  {
+    "id": "q1",
+    "type": "multiple-choice",
+    "text": "Which keyword is used to declare a variable in JavaScript?",
+    "points": 10,
+    "options": [
+      { "id": "a", "text": "var" },
+      { "id": "b", "text": "int" },
+      { "id": "c", "text": "string" },
+      { "id": "d", "text": "variable" }
+    ],
+    "correctAnswer": "a"
+  },
+  {
+    "id": "q2",
+    "type": "true-false",
+    "text": "JavaScript is a strongly typed language.",
+    "points": 5,
+    "correctAnswer": false
+  },
+  {
+    "id": "q3",
+    "type": "multiple-choice",
+    "text": "Which method converts JSON to a JavaScript object?",
+    "points": 10,
+    "options": [
+      { "id": "a", "text": "JSON.parse()" },
+      { "id": "b", "text": "JSON.stringify()" },
+      { "id": "c", "text": "JSON.convert()" },
+      { "id": "d", "text": "JSON.object()" }
+    ],
+    "correctAnswer": "a"
+  },
+  {
+    "id": "q4",
+    "type": "short-answer",
+    "text": "What does DOM stand for?",
+    "points": 15,
+    "correctAnswer": "Document Object Model"
+  },
+  {
+    "id": "q5",
+    "type": "code",
+    "text": "Write a function that returns the sum of two numbers.",
+    "points": 20,
+    "correctAnswer": "function sum(a, b) {\n  return a + b;\n}"
+  }
+]

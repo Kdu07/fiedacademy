@@ -14,7 +14,7 @@
 
     <div class="mt-16">
       <div
-        class="bg-mainGreen h-20 rounded-e-xl w-2/6 flex items-center mb-8 shadow-md"
+        class="bg-secondaryGreen h-20 rounded-e-xl w-2/6 flex items-center mb-8 shadow-md"
       >
         <h1 class="text-white ms-8 text-3xl font-bold"><%= module.title %></h1>
       </div>
@@ -25,7 +25,7 @@
           class="bg-white mt-8 ms-8 w-3/12 rounded-xl flex flex-col p-6 shadow-md border border-gray-100"
         >
           <h2
-            class="text-mainGreen font-bold text-xl mb-4 text-center border-b border-gray-100 pb-2"
+            class="text-secondaryGreen font-bold text-xl mb-4 text-center border-b border-gray-100 pb-2"
           >
             Lições
           </h2>
@@ -37,11 +37,11 @@
               class="block w-full"
             >
               <div
-                class="rounded-lg <%= isCurrentPage ? 'bg-mainGreen' : 'bg-mainGreen/80 hover:bg-mainGreen' %> transition-all duration-200 shadow-sm <%= isCurrentPage ? 'ring-2 ring-offset-2 ring-mainGreen' : '' %>"
+                class="rounded-lg <%= isCurrentPage ? 'bg-secondaryGreen' : 'bg-secondaryGreen/80 hover:bg-secondaryGreen' %> transition-all duration-200 shadow-sm <%= isCurrentPage ? 'ring-2 ring-offset-2 ring-secondaryGreen' : '' %>"
               >
                 <div class="px-4 py-3 flex items-center">
                   <div
-                    class="flex-shrink-0 <%= isCurrentPage ? 'bg-white text-mainGreen' : 'bg-white/30 text-white' %> w-8 h-8 rounded-full flex items-center justify-center font-bold mr-3"
+                    class="flex-shrink-0 <%= isCurrentPage ? 'bg-white text-secondaryGreen' : 'bg-white/30 text-white' %> w-8 h-8 rounded-full flex items-center justify-center font-bold mr-3"
                   >
                     <%= page.content_order %>
                   </div>
@@ -109,7 +109,7 @@
 
       <!-- Action bar -->
       <div
-        class="bg-mainGreen mx-auto w-full p-4 sticky bottom-0 z-50 shadow-lg"
+        class="bg-secondaryGreen mx-auto w-full p-4 sticky bottom-0 z-50 shadow-lg"
       >
         <div class="flex items-center justify-between">
           <!-- Feedback buttons -->
@@ -158,11 +158,11 @@
           <div class="flex space-x-4">
             <% if ((moduleContent.content_order + 1) > modulePages.length) { %>
             <button
-              class="rounded-lg bg-blue-500 hover:bg-blue-600 transition-colors shadow-sm"
+              class="rounded-lg bg-white hover:bg-blue-200 transition-colors shadow-sm"
             >
               <a
-                href="/test"
-                class="text-white p-3 px-8 md:px-12 font-medium inline-flex items-center"
+                href="/test/module/<%= module.id %>"
+                class="text-black p-3 px-8 md:px-12 font-medium inline-flex items-center"
               >
                 PRÓXIMO (PROVA)
                 <svg
@@ -184,11 +184,11 @@
             <% } else { %>
             <!-- Next button -->
             <button
-              class="rounded-lg bg-blue-500 hover:bg-blue-600 transition-colors shadow-sm"
+              class="rounded-lg bg-white hover:bg-blue-200 transition-colors shadow-sm"
             >
               <a
                 href="/path/<%= pathId %>/module/1/page/<%= moduleContent.content_order + 1 %>"
-                class="text-white p-3 px-8 md:px-12 font-medium inline-flex items-center"
+                class="text-black p-3 px-8 md:px-12 font-medium inline-flex items-center"
               >
                 PRÓXIMO
                 <svg

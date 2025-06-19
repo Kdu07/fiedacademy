@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "concurrently \"nodemon app.js\" \"postcss public/css/tailwind.css -o public/css/style.css --watch\"",
-    "init-db": "node src/runSQLScript.js",
+    "init-db": "node scripts/runSQLScript.js",
     "start": "node server.js"
   },
   "keywords": [],
