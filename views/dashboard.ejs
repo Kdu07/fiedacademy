@@ -236,22 +236,37 @@
                     </span>
                   </div>
 
+                  <!-- Modified score section with both rounded and real scores -->
                   <div
-                    class="grid grid-cols-2 gap-2 pt-3 border-t border-gray-100"
+                    class="grid grid-cols-1 gap-2 pt-3 border-t border-gray-100"
                   >
-                    <div class="text-center">
-                      <p class="text-lg font-bold text-gray-800">
-                        <%= ptd_user.score %>
-                      </p>
-                      <p class="text-xs text-gray-500">Pontuação</p>
-                    </div>
-                    <div class="text-center">
-                      <p class="text-sm font-medium text-gray-800">
-                        <%= ptd_user.last_login ? new
-                        Date(ptd_user.last_login).toLocaleDateString() : 'Nunca'
-                        %>
-                      </p>
-                      <p class="text-xs text-gray-500">Ultimo login</p>
+                    <!-- Score section -->
+                    <div class="flex justify-between items-center">
+                      <!-- Scores -->
+                      <div class="text-left">
+                        <div class="flex items-baseline">
+                          <p class="text-lg font-bold text-gray-800 mr-2">
+                            <%= ptd_user.score %>
+                          </p>
+                          <p class="text-xs text-gray-500">Pontuação</p>
+                        </div>
+                        <div class="flex items-baseline">
+                          <p class="text-sm font-medium text-blue-600 mr-2">
+                            <%= ptd_user.roundedScore %>
+                          </p>
+                          <p class="text-xs text-gray-500">Pontuação Média</p>
+                        </div>
+                      </div>
+
+                      <!-- Last login -->
+                      <div class="text-right">
+                        <p class="text-sm font-medium text-gray-800">
+                          <%= ptd_user.last_login ? new
+                          Date(ptd_user.last_login).toLocaleDateString() :
+                          'Nunca' %>
+                        </p>
+                        <p class="text-xs text-gray-500">Último login</p>
+                      </div>
                     </div>
                   </div>
                 </div>

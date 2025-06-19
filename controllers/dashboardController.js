@@ -1,4 +1,5 @@
 const usersModel = require("../models/usersModel");
+const testModel = require("../models/userTestModel");
 
 const { getUserId } = require("../utils/jwtUtils");
 const { isAuthorized } = require("../utils/authUtils");
@@ -27,17 +28,28 @@ exports.index = async (req, res) => {
   const all_Users = await usersModel.getAllPTD(order);
 
   let ptd_users = all_Users;
+  // Filtra por regiões se alguma foi selecionada
   if (selectedRegions.length !== 0) {
     ptd_users = all_Users.filter((user) =>
       selectedRegions.includes(user.region)
     );
   }
 
-  // Circulo de média de pontuação
+  // Process users with Promise.all to properly handle async operations
+  await Promise.all(
+    ptd_users.map(async (user) => {
+      const userGrade = await testModel.getUserTests(user.id);
+      user.roundedScore = user.score / userGrade.length || 0;
+      return user;
+    })
+  );
+
+  // Calculate average score after processing all users
   let mediumScore = 0;
   ptd_users.forEach((user) => {
-    mediumScore += user.score;
+    mediumScore += user.roundedScore;
   });
+
   const averageScore =
     ptd_users.length > 0 ? Math.round(mediumScore / ptd_users.length) : 0;
   const percentage = Math.min(100, Math.max(0, (averageScore / 100) * 100));
@@ -52,6 +64,6 @@ exports.index = async (req, res) => {
     averageScore,
     dashOffset,
     percentage,
-    selectedRegions
+    selectedRegions,
   });
 };

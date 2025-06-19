@@ -33,7 +33,7 @@
             <% modulePages.forEach(page => { const isCurrentPage =
             page.content_order === moduleContent.content_order; %>
             <a
-              href="/path/<%= pathId %>/module/1/page/<%= page.content_order %>"
+              href="/path/<%= pathId %>/module/<%= module.id %>/page/<%= page.content_order %>"
               class="block w-full"
             >
               <div
@@ -187,7 +187,7 @@
               class="rounded-lg bg-white hover:bg-blue-200 transition-colors shadow-sm"
             >
               <a
-                href="/path/<%= pathId %>/module/1/page/<%= moduleContent.content_order + 1 %>"
+                href="/path/<%= pathId %>/module/<%= module.id %>/page/<%= moduleContent.content_order + 1 %>"
                 class="text-black p-3 px-8 md:px-12 font-medium inline-flex items-center"
               >
                 PRÓXIMO

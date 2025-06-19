@@ -36,8 +36,6 @@ exports.index = async (req, res) => {
     delete question.correctAnswer;
   });
 
-  console.log(test.questions)
-
   res.render("test", { user, test, totalPoints });
 };
 
