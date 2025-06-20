@@ -22,7 +22,6 @@ exports.index = async (req, res) => {
 
   try {
     const allArticles = await subjectModel.getFirstArticleFromEachCategory();
-    console.log(allArticles);
 
     res.render("help", {
       user,
@@ -46,7 +45,7 @@ exports.create = async (req, res) => {
 };
 
 // Busca um artigo específico por ID
-exports.getArticleByCategory = async (req, res) => {
+exports.getArticleById = async (req, res) => {
   const { category, id_content } = req.params;
 
   try {
@@ -64,7 +63,19 @@ exports.getArticleByCategory = async (req, res) => {
       return res.status(400).send("Categoria ou ID do conteúdo não fornecidos");
     }
 
+    // First try to get the article from the specific ID
     const article = await modulesModel.findModule(id_content);
+
+    if (!article) {
+      return res.status(404).send("Artigo não encontrado");
+    }
+
+    // Make sure category is set on the article object
+    if (!article.category) {
+      article.category = category;
+    }
+
+    // Get all articles for the sidebar navigation
     const allArticles = await subjectModel.getAllArticles();
 
     // Logica dos feedbacks positivos e negativos
@@ -87,10 +98,14 @@ exports.getArticleByCategory = async (req, res) => {
       article.negativeFeedback = negativeFeedback.length;
     }
 
-    console.log(article)
-
-    res.render("subject", { user, article, allArticles });
+    res.render("subject", {
+      user,
+      article,
+      allArticles,
+      currentArticle: article, // For highlighting the current article in the sidebar
+    });
   } catch (err) {
-    res.status(500).send("Erro ao buscar artigo " + err.message);
+    console.error("Error in getArticleByCategory:", err);
+    res.status(500).send("Erro ao buscar artigo: " + err.message);
   }
 };

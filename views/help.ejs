@@ -30,147 +30,80 @@
               Selecione uma das categorias abaixo para encontrar as informações
               que você precisa.
             </p>
-          </div>
-
-          <div
+          </div>          <div
             class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-8"
           >
-            <!-- Mapas e dados -->
-            <a href="/help/Mapas%20e%20Dados/content/1" class="group">
-              <div
-                class="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 h-full flex flex-col"
-              >
-                <div class="flex justify-center">
-                  <img
-                    src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
-                    alt="Mapas e dados"
-                    class="h-32 w-full object-cover rounded-t-lg"
-                  />
-                </div>
-                <div class="p-5">
-                  <h3 class="font-semibold text-gray-800 mb-2">
-                    Mapas e dados
-                  </h3>
-                  <p class="text-gray-600 text-sm">
-                    Aprenda a utilizar os recursos de mapas e análise de dados
-                    da plataforma.
-                  </p>
-                </div>
+            <% if (typeof allArticles !== 'undefined' && Array.isArray(allArticles)) { %>
+              <% 
+                // Define images and descriptions for each category
+                var categoryInfo = {
+                  'Mapas e Dados': {
+                    img: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80',
+                    desc: 'Aprenda a utilizar os recursos de mapas e análise de dados da plataforma.'
+                  },
+                  'Boas Praticas': {
+                    img: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80',
+                    desc: 'Conheça as melhores práticas recomendadas para otimizar seus resultados.'
+                  },
+                  'Data Inbox': {
+                    img: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80',
+                    desc: 'Saiba como importar e exportar dados e integrar com outros sistemas.'
+                  },
+                  'Plantio': {
+                    img: 'https://images.unsplash.com/photo-1591154669695-5f2a8d20c089?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80',
+                    desc: 'Dicas e orientações sobre as melhores práticas de plantio.'
+                  },
+                  'Colheita': {
+                    img: 'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80',
+                    desc: 'Informações sobre colheita, armazenamento e processamento.'
+                  },
+                  'Primeiros Passos': {
+                    img: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80',
+                    desc: 'Guia introdutório para novos usuários da plataforma.'
+                  }
+                };
+                
+                // Loop through each article and create a card for it
+                for(var i = 0; i < allArticles.length; i++) {
+                  var article = allArticles[i];
+                  var category = article.category;
+                  var id = article.id;
+                  
+                  // Get the image and description for this category or use defaults
+                  var img = categoryInfo[category] ? categoryInfo[category].img : 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173';
+                  var desc = categoryInfo[category] ? categoryInfo[category].desc : 'Informações úteis sobre ' + category;
+                  
+                  // Create URL-safe category
+                  var categoryUrl = encodeURIComponent(category);
+              %>
+                <!-- <%= category %> -->
+                <a href="/help/<%= categoryUrl %>/content/<%= id %>" class="group">
+                  <div
+                    class="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 h-full flex flex-col"
+                  >
+                    <div class="flex justify-center">
+                      <img
+                        src="<%= img %>"
+                        alt="<%= category %>"
+                        class="h-32 w-full object-cover rounded-t-lg"
+                      />
+                    </div>
+                    <div class="p-5">
+                      <h3 class="font-semibold text-gray-800 mb-2">
+                        <%= category %>
+                      </h3>
+                      <p class="text-gray-500 text-xs mt-2">
+                        <%= desc %>
+                      </p>
+                    </div>
+                  </div>
+                </a>
+              <% } %>
+            <% } else { %>
+              <div class="col-span-3 text-center py-8 text-gray-500">
+                Nenhum artigo de ajuda disponível no momento.
               </div>
-            </a>
-
-            <!-- Boas práticas -->
-            <a href="/help/Boas%20Praticas/content/1" class="group">
-              <div
-                class="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 h-full flex flex-col"
-              >
-                <div class="flex justify-center">
-                  <img
-                    src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
-                    alt="Boas práticas"
-                    class="h-32 w-full object-cover rounded-t-lg"
-                  />
-                </div>
-                <div class="p-5">
-                  <h3 class="font-semibold text-gray-800 mb-2">
-                    Boas práticas
-                  </h3>
-                  <p class="text-gray-600 text-sm">
-                    Conheça as melhores práticas recomendadas para otimizar seus
-                    resultados.
-                  </p>
-                </div>
-              </div>
-            </a>
-
-            <!-- Data inbox -->
-            <a href="/help/Data%20Inbox/content/1" class="group">
-              <div
-                class="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 h-full flex flex-col"
-              >
-                <div class="flex justify-center">
-                  <img
-                    src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
-                    alt="Data inbox e integrações"
-                    class="h-32 w-full object-cover rounded-t-lg"
-                  />
-                </div>
-                <div class="p-5">
-                  <h3 class="font-semibold text-gray-800 mb-2">
-                    Data inbox e integrações
-                  </h3>
-                  <p class="text-gray-600 text-sm">
-                    Saiba como importar e exportar dados e integrar com outros
-                    sistemas.
-                  </p>
-                </div>
-              </div>
-            </a>
-
-            <!-- Plantio -->
-            <a href="/help/Plantio/content/1" class="group">
-              <div
-                class="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 h-full flex flex-col"
-              >
-                <div class="flex justify-center">
-                  <img
-                    src="https://images.unsplash.com/photo-1591154669695-5f2a8d20c089?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
-                    alt="Plantio"
-                    class="h-32 w-full object-cover rounded-t-lg"
-                  />
-                </div>
-                <div class="p-5">
-                  <h3 class="font-semibold text-gray-800 mb-2">Plantio</h3>
-                  <p class="text-gray-600 text-sm">
-                    Dicas e orientações sobre as melhores práticas de plantio.
-                  </p>
-                </div>
-              </div>
-            </a>
-
-            <!-- Colheita -->
-            <a href="/help/Colheita/content/1" class="group">
-              <div
-                class="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 h-full flex flex-col"
-              >
-                <div class="flex justify-center">
-                  <img
-                    src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
-                    alt="Colheita"
-                    class="h-32 w-full object-cover rounded-t-lg"
-                  />
-                </div>
-                <div class="p-5">
-                  <h3 class="font-semibold text-gray-800 mb-2">Colheita</h3>
-                  <p class="text-gray-600 text-sm">
-                    Informações sobre colheita, armazenamento e processamento.
-                  </p>
-                </div>
-              </div>
-            </a>
-
-            <!-- Primeiros passos -->
-            <a href="/help/Primeiros%20Passos/content/1" class="group">
-              <div
-                class="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 h-full flex flex-col"
-              >
-                <div class="flex justify-center">
-                  <img
-                    src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
-                    alt="Primeiros passos"
-                    class="h-32 w-full object-cover rounded-t-lg"
-                  />
-                </div>
-                <div class="p-5">
-                  <h3 class="font-semibold text-gray-800 mb-2">
-                    Primeiros passos
-                  </h3>
-                  <p class="text-gray-600 text-sm">
-                    Guia introdutório para novos usuários da plataforma.
-                  </p>
-                </div>
-              </div>
-            </a>
+            <% } %>
           </div>
         </div>
       </div>
