@@ -98,6 +98,8 @@ exports.getArticleById = async (req, res) => {
       article.negativeFeedback = negativeFeedback.length;
     }
 
+    
+
     res.render("subject", {
       user,
       article,

@@ -63,13 +63,12 @@
                 <%= article.title %>
               </a>
             </div>
-            <% } %> <%  const categoriesMap = {};
-            if (typeof allArticles !== 'undefined' &&
-            Array.isArray(allArticles)) { allArticles.forEach(function(article)
-            { if (!categoriesMap[article.category]) {
-            categoriesMap[article.category] = []; }
-            categoriesMap[article.category].push(article); }); } Object.keys(categoriesMap).forEach(function(category)
-            { %>
+            <% } %> <% const categoriesMap = {}; if (typeof allArticles !==
+            'undefined' && Array.isArray(allArticles)) {
+            allArticles.forEach(function(article) { if
+            (!categoriesMap[article.category]) { categoriesMap[article.category]
+            = []; } categoriesMap[article.category].push(article); }); }
+            Object.keys(categoriesMap).forEach(function(category) { %>
             <div class="mt-4">
               <h3
                 class="font-semibold text-gray-700 mb-2 text-sm uppercase tracking-wider"
@@ -77,9 +76,9 @@
                 <%= category %>
               </h3>
               <ul class="space-y-1 ml-2">
-                <% categoriesMap[category].forEach(function(article) { const isCurrentArticle =
-                typeof currentArticle !== 'undefined' && currentArticle &&
-                currentArticle.id === article.id; %>
+                <% categoriesMap[category].forEach(function(article) { const
+                isCurrentArticle = typeof currentArticle !== 'undefined' &&
+                currentArticle && currentArticle.id === article.id; %>
                 <li>
                   <a
                     href="/help/<%= article.category %>/content/<%= article.id %>"
@@ -128,6 +127,9 @@
               ></iframe>
             </div>
             <% } %>
+            <div class="border-t border-gray-200 pt-4 mt-4">
+              <h1>Ultima atualização: <%= (article.last_update).toLocaleDateString('pt-BR') %></h1>
+            </div>
 
             <!-- Article feedback section (moved from bottom) -->
             <div class="border-t border-gray-200 pt-4 mt-4">
