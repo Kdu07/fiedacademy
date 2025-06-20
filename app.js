@@ -5,7 +5,6 @@ const app = express();
 const path = require('path');
 const cookieParser = require('cookie-parser');
 
-const subjectRoutes = require('./routes/subjectRoutes');
 const homeRoutes = require('./routes/homeRoutes');
 const authRoutes = require('./routes/authRoutes');
 const helpRoutes = require('./routes/helpRoutes');
@@ -36,7 +35,6 @@ app.use('/', helpRoutes);
 app.use('/', pathRoutes);
 app.use('/', loginRoutes);
 app.use('/', aboutUsRoutes);
-app.use('/', subjectRoutes);
 app.use('/', dashboardRoutes);
 app.use('/', moduleRoutes)
 app.use('/', profileRoutes)

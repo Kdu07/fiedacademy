@@ -1,13 +1,15 @@
+const JWT = require("jsonwebtoken");
+const JWT_SECRET = process.env.JWT_SECRET;
+
 // Controlador da rota /
 exports.index = (req, res) => {
   const token = req.cookies.token; // Get the token from cookies
 
   if (token) {
-    try {
-      // Verify token with your JWT secret
-      jwt.verify(token, process.env.JWT_SECRET);
+    const verifyToken = JWT.verify(token, JWT_SECRET);
+    if (verifyToken) {
       return res.redirect("/home"); // Token valid, redirect to home
-    } catch (err) {
+    } else {
       // Token expired or invalid, clear cookie
       res.clearCookie("token");
     }

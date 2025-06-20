@@ -130,7 +130,6 @@ exports.getCertificate = async (req, res) => {
   }
 
   const path = await pathsModel.getById(req.params.path_id);
-  console.log(path)
   const completionDate = new Date().toLocaleDateString("pt-BR");
   const courseName = path.title
   const outputPath = `./certificates/${user.name.replace(/\s+/g, '_')}_certificate.pdf`;
