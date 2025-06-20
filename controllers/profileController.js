@@ -1,10 +1,11 @@
 const usersModel = require("../models/usersModel");
 const userContentModel = require("../models/userContentModel");
 const userTestModel = require("../models/userTestModel");
-
+const pathsModel = require("../models/pathsModel");
 
 const { getUserId } = require("../utils/jwtUtils");
 const { isAuthorized } = require("../utils/authUtils");
+const { generateCertificate } = require("../utils/generateCertificate");
 
 exports.index = async (req, res) => {
   const token = req.cookies.token;
@@ -117,3 +118,38 @@ exports.updatePicture = async (req, res) => {
 
   res.redirect("/profile/"+req.params.id);
 };
+
+
+exports.getCertificate = async (req, res) => {
+  const token = req.cookies.token;
+  const userId = await getUserId(token);
+  const user = await usersModel.getById(userId);
+
+  if (!user) {
+    return res.status(404).send("User not found");
+  }
+
+  const path = await pathsModel.getById(req.params.path_id);
+  console.log(path)
+  const completionDate = new Date().toLocaleDateString("pt-BR");
+  const courseName = path.title
+  const outputPath = `./certificates/${user.name.replace(/\s+/g, '_')}_certificate.pdf`;
+
+  try {
+    await generateCertificate({
+      userName: user.name,
+      courseName,
+      completionDate,
+      outputPath
+    });
+
+    res.download(outputPath, `${user.name}_certificate.pdf`, (err) => {
+      if (err) {
+        console.error("Error downloading certificate:", err);
+      }
+    });
+  } catch (error) {
+    console.error("Error generating certificate:", error);
+    res.status(500).send("Error generating certificate");
+  }
+}

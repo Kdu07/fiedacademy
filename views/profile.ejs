@@ -150,7 +150,9 @@
                 </svg>
               </div>
               <div>
-                <p class="text-xl font-semibold text-gray-800"><%= lastLesson.title %></p>
+                <p class="text-xl font-semibold text-gray-800">
+                  <%= lastLesson.title %>
+                </p>
                 <p class="text-sm text-gray-500">Em andamento</p>
               </div>
             </div>
@@ -251,8 +253,10 @@
                   style="width: <%- trilha.progress_percentage %>%"
                 ></div>
               </div>
+
+              <% if (userProfile.id === user.id && trilha.progress_percentage === 100) { %>
               <a
-                href="/dashboard"
+                href="/profile/<%= userProfile.id %>/path/<%= trilha.path_id %>/generateCertificate"
                 class="mt-2 md:mt-0 md:ml-4 p-2 bg-gray-100 hover:bg-gray-200 rounded-full transition-colors"
                 title="Baixar certificado"
               >
@@ -269,6 +273,7 @@
                   />
                 </svg>
               </a>
+              <% } %>
             </div>
             <% }) %>
           </div>
@@ -330,7 +335,7 @@
                   <div
                     class="absolute top-0 left-0 h-full bg-secondaryGreen rounded-lg transition-all duration-500"
                     style="width: <%= module.user_score %>%"
-                  ></div> 
+                  ></div>
                 </div>
               </div>
               <% }); %>
