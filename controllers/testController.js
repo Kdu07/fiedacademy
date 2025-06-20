@@ -10,7 +10,7 @@ exports.index = async (req, res) => {
   const auth = await isAuthorized(token, "PTD");
 
   if (auth === false) {
-    return res.redirect("/");
+    return res.redirect("/home");
   }
   const id = await getUserId(token);
   const testId = req.params.id;
@@ -22,7 +22,7 @@ exports.index = async (req, res) => {
     // Se for admin n redireciona se já fez o teste
     const userIsAdmin = await isAuthorized(token, "Admin");
     if (!userIsAdmin) {
-      return res.redirect("/");
+      return res.redirect("/home");
     }
   }
 
@@ -61,7 +61,7 @@ exports.handleSubmit = async (req, res) => {
   const testId = req.params.id;
   const doneTest = await testModel.userDoneTest(userId,testId);
   if (doneTest) {
-   return res.redirect("/");
+   return res.redirect("/home");
   }
 
   const test = await testModel.getTestById(testId);

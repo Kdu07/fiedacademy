@@ -38,7 +38,7 @@ module.exports.index = async (req, res) => {
 module.exports.deleteBookmark = async (req, res) => {
   try {
     await bookmarksModel.deleteById(req.params.id);
-    res.redirect("/");
+    res.redirect("/home");
   } catch (err) {
     res.status(500).send("Erro ao deletar bookmark");
   }

@@ -5,6 +5,7 @@ const path = require('path');
 require('dotenv').config();
 
 const profileController = require('../controllers/profileController');
+const { profile } = require('console');
 
 // Configurar armazenamento do multer 
 const storage = multer.diskStorage({
@@ -24,5 +25,6 @@ router.get('/profile/:id', profileController.index);
 // Rota para atualizar o perfil
 router.post('/profile/:id/uploadPicture', upload.single('avatar'), profileController.updatePicture);
 
+router.get('/profile/:id/path/:path_id/generateCertificate', profileController.getCertificate);
 
 module.exports = router;

@@ -3,95 +3,300 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Login - Plataforma Bayer Agro</title>
+    <title>Criar Usuário - Plataforma Bayer Agro</title>
     <link rel="stylesheet" href="/css/style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
 
-  <body class="flex flex-col min-h-screen">
+  <body class="flex flex-col min-h-screen bg-gray-50">
     <!-- Header -->
     <%- include('./partials/header') %>
 
-    <div class="flex mt-8 w-4/6 m-auto">
-      <div class="flex flex-col h-5/6 mt-auto">
-        <h1 class="text-4xl font-semibold">Criar usuário</h1>
-        <p class="text-gray-600 mt-4 mb-2">Crie novo PTD aqui</p>
-        <form action="/api/create-user" class="flex flex-col" method="POST">
-          <div>
-            <input
-              type="text"
-              name="name"
-              id="name"
-              class="rounded-lg border-black border-2 bg-transparent w-full md:w-96 h-12 mt-4 px-4 placeholder-black"
-              placeholder="Nome"
-              required
-            />
-            <input
-              type="text"
-              name="region"
-              id="region"
-              class="rounded-lg border-black border-2 bg-transparent w-full md:w-72 h-12 mt-4 px-4 placeholder-black"
-              placeholder="Região"
-              required
-            />
-          </div>
-          <div class="flex flex-col">
-            <div>
-              <input
-                type="email"
-                name="email"
-                id="email"
-                class="rounded-lg border-black border-2 bg-transparent w-full md:w-96 h-12 mt-4 px-4 placeholder-black"
-                placeholder="Email"
-                required
-              />
-              <% if(user.id_role === 6) { %>
-              <!-- Cargo -->
-              <select
-                name="role"
-                id="role"
-                class="rounded-lg border-black border-2 bg-gray-200 text-black bg-transparent w-1/2 md:w-40 h-12 mt-4 px-4 placeholder-black"
-                defaultValue="PTD"
-                required
+    <div class="bg-secondaryGreen h-20 rounded-e-xl w-2/6 flex items-center mb-8 shadow-md mt-16">
+        <h1 class="text-white ms-8 text-3xl font-bold">Criar usuário </h1>
+      </div>
+    <div class="container mx-auto px-4 py-8 max-w-4xl">
+      <div class="bg-white rounded-xl shadow-md p-6 md:p-8">
+        <div class="flex flex-col mb-6">
+          <h2 class="text-2xl font-semibold text-gray-800">
+            Cadastro de novo usuário
+          </h2>
+          <p class="text-gray-600 mt-2">
+            Preencha os campos abaixo para criar um novo PTD
+          </p>
+        </div>
+
+        <form action="/api/create-user" method="POST" class="space-y-6">
+          <!-- Nome e Região -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="flex flex-col">
+              <label for="name" class="mb-2 text-sm font-medium text-gray-700"
+                >Nome completo</label
               >
-                <option value="PTD">PTD</option>
-                <option value="Gestor">Gestor</option>
-                <option value="Admin">Admin</option>
-              </select>
-              <% } else { %>
-              <!-- Cargo -->
-              <select
-                name="roleDisabled"
-                class="rounded-lg border-black border-2 bg-gray-200 text-gray-500 cursor-not-allowed w-1/2 md:w-40 h-12 mt-4 px-4 placeholder-black"
-                disabled
-                required
-              >
-                <option value="PTD" selected>PTD</option>
-              </select>
-              <input type="hidden" name="role" value="PTD">
-              <% } %>
+              <div class="relative">
+                <div
+                  class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5 text-gray-500"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </div>
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  class="pl-10 rounded-lg border border-gray-300 w-full h-12 px-4 focus:ring-2 focus:ring-mainGreen focus:border-mainGreen"
+                  placeholder="Nome completo"
+                  required
+                />
+              </div>
             </div>
 
-            <input
-              type="password"
-              name="password"
-              id="password"
-              class="rounded-lg border-black border-2 bg-transparent w-full md:w-96 h-12 mt-4 px-4 placeholder-black"
-              placeholder="Senha"
-              required
-            />
+            <div class="flex flex-col">
+              <label for="region" class="mb-2 text-sm font-medium text-gray-700"
+                >Região</label
+              >
+              <div class="relative">
+                <div
+                  class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5 text-gray-500"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </div>
+                <input
+                  type="text"
+                  name="region"
+                  id="region"
+                  class="pl-10 rounded-lg border border-gray-300 w-full h-12 px-4 focus:ring-2 focus:ring-mainGreen focus:border-mainGreen"
+                  placeholder="Região de atuação"
+                  required
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Email e Cargo -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="md:col-span-2 flex flex-col">
+              <label for="email" class="mb-2 text-sm font-medium text-gray-700"
+                >Email</label
+              >
+              <div class="relative">
+                <div
+                  class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5 text-gray-500"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"
+                    />
+                    <path
+                      d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"
+                    />
+                  </svg>
+                </div>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  class="pl-10 rounded-lg border border-gray-300 w-full h-12 px-4 focus:ring-2 focus:ring-mainGreen focus:border-mainGreen"
+                  placeholder="email@exemplo.com"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="flex flex-col">
+              <label for="role" class="mb-2 text-sm font-medium text-gray-700"
+                >Cargo</label
+              >
+              <% if(user.id_role === 6) { %>
+              <div class="relative">
+                <div
+                  class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5 text-gray-500"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </div>
+                <select
+                  name="role"
+                  id="role"
+                  class="pl-10 rounded-lg border border-gray-300 bg-white w-full h-12 px-4 appearance-none focus:ring-2 focus:ring-mainGreen focus:border-mainGreen"
+                  required
+                >
+                  <option value="PTD">PTD</option>
+                  <option value="Gestor">Gestor</option>
+                  <option value="Admin">Admin</option>
+                </select>
+                <div
+                  class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700"
+                >
+                  <svg
+                    class="fill-current h-4 w-4"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <% } else { %>
+              <div class="relative">
+                <div
+                  class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5 text-gray-500"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </div>
+                <select
+                  name="roleDisabled"
+                  class="pl-10 rounded-lg border border-gray-300 bg-gray-100 text-gray-600 cursor-not-allowed w-full h-12 px-4 appearance-none"
+                  disabled
+                >
+                  <option value="PTD" selected>PTD</option>
+                </select>
+                <input type="hidden" name="role" value="PTD" />
+                <div
+                  class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-500"
+                >
+                  <svg
+                    class="fill-current h-4 w-4"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <% } %>
+            </div>
+          </div>
+
+          <!-- Senha -->
+          <div class="flex flex-col">
+            <label for="password" class="mb-2 text-sm font-medium text-gray-700"
+              >Senha</label
+            >
+            <div class="relative">
+              <div
+                class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 text-gray-500"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </div>
+              <input
+                type="password"
+                name="password"
+                id="password"
+                class="pl-10 rounded-lg border border-gray-300 w-full h-12 px-4 focus:ring-2 focus:ring-mainGreen focus:border-mainGreen"
+                placeholder="••••••••"
+                required
+              />
+            </div>
           </div>
 
           <% if(error) { %>
-          <p class="text-red-500 text-sm mt-2" id="errorMessage">
-            <%= error %>
-          </p>
+          <div class="bg-red-50 border-l-4 border-red-500 p-4 rounded-md">
+            <div class="flex">
+              <div class="flex-shrink-0">
+                <svg
+                  class="h-5 w-5 text-red-500"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </div>
+              <div class="ml-3">
+                <p class="text-sm text-red-600" id="errorMessage">
+                  <%= error %>
+                </p>
+              </div>
+            </div>
+          </div>
           <% } %>
-          <button
-            type="submit"
-            class="rounded-lg bg-mainGreen w-full md:w-96 h-12 mt-8 px-4"
-          >
-            <p class="text-white">Criar</p>
-          </button>
+          <div class="flex justify-end">
+            <button
+              type="submit"
+              class="rounded-lg bg-mainGreen hover:bg-green-700 transition-colors h-12 px-8 flex items-center justify-center shadow-md"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5 mr-2 text-white"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+              <span class="text-white font-medium">Criar Usuário</span>
+            </button>
+          </div>
         </form>
       </div>
     </div>

@@ -6,7 +6,7 @@ exports.index = (req, res) => {
     try {
       // Verify token with your JWT secret
       jwt.verify(token, process.env.JWT_SECRET);
-      return res.redirect("/"); // Token valid, redirect to home
+      return res.redirect("/home"); // Token valid, redirect to home
     } catch (err) {
       // Token expired or invalid, clear cookie
       res.clearCookie("token");
