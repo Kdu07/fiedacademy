@@ -3,7 +3,6 @@ const db = require('../config/db');
 exports.getAll = async () => {
   try {
     const res = await db.query('SELECT * FROM subjects_help');
-    console.log('Artigos de ajuda encontrados:', res.rows);
     return res.rows;
   } catch (error) {
     console.error('Erro ao buscar artigos de ajuda:', error);
