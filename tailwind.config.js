@@ -20,7 +20,7 @@ module.exports = {
           secondaryGreen: "#4AC14D",
       },
       backgroundImage: {
-        'login-bg': "url('/images/login_fundo.png')",
+        'login-bg': "url('/images/login_fundo.jpg')",
       }
     }
   },
