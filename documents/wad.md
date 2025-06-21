@@ -581,48 +581,40 @@ Para alinhar os componentes de forma clara e responsiva, foi utilizada a estrutu
 
 ## 3.3. Guia de estilos
 
-&nbsp;&nbsp;&nbsp;&nbsp; No contexto do desenvolvimento de projetos acadêmicos orientados por metodologias ágeis, a adoção de um guia de estilos revela-se uma prática essencial para assegurar consistência, padronização e eficiência na construção de produtos digitais. O guia de estilos constitui-se como um documento que organiza e define diretrizes visuais e comunicacionais, abrangendo aspectos como tipografia, paleta de cores, iconografia, espaçamento, componentes de interface e tom de voz. Sua aplicação sistemática contribui para a coerência estética do produto e facilita a comunicação entre os integrantes da equipe. <br>
-
-&nbsp;&nbsp;&nbsp;&nbsp; Considerando que este projeto é desenvolvido por estudantes em processo de formação, o guia de estilos cumpre também um papel pedagógico, ao estruturar o trabalho colaborativo de maneira mais clara e objetiva. Sua utilização tem proporcionado maior alinhamento entre os membros da equipe, redução de inconsistências visuais e agilidade nas tomadas de decisão ao longo das iterações. Dessa forma, o guia de estilos atua não apenas como instrumento técnico, mas como um elemento estratégico de apoio à organização, à aprendizagem contínua e à consolidação de práticas colaborativas em ambientes educacionais baseados em metodologias ágeis. <br>
+&nbsp;&nbsp;&nbsp;&nbsp; O Guia de Estilos serve como referência oficial para todos os envolvidos no projeto, garantindo consistência visual, clareza de comunicação e aplicação correta dos elementos da marca.  <br>
 
 &nbsp;&nbsp;&nbsp;&nbsp; Em suma, o Guia de Estilos serve como referência oficial para todos os envolvidos no projeto, garantindo consistência visual, clareza de comunicação e aplicação correta dos elementos da marca. <br>
 
 <div align = "center">
 <sup>Figura 10: Grid </sup><br>
-<img src="../assets/../assets/assets_wad/Grid.png">
+<img src="../assets/assets_wad/grid.png">
 
 <sup>Fonte: Material produzido pelos autores (2025).</sup><br>
 
 </div>
 
 ### 3.3.1 Cores
+<div align = "center">
+<sup>Figura 11: Cores </sup><br>
+<img src="../assets/assets_wad/paletaCores.png"> 
+
+<sup>Fonte: Material produzido pelos autores (2025).</sup><br>
+</div>
+
+Recomendação Aplicada| Nome da cor | Hex | Função | 
+--- | --- | --- | ---|
+Cor primária | Verde | #66B512 | Cor para destacar tanto fundo, quanto botões principais, destaques, header, ícones |
+Cor priméria mais clara| Verde claro | #D2EEAE | Cor para destacar fundo de cards e botões secundários. |
+Cor de composição | Azul | #0091DF | Cor ultilizada para barra de progresso, botões secundárias, caixa de notificações, perfil do ranking, o rodapé da página do FieldAcaemy. |
+Cor de composição | Cinza | #D9D9D9 | undo de cards, divisores, bordas. | Fundo de cards, divisores, bordas |
+Cor Texto primária| Texto escuro | #1F1C1C| Texto principal sobre fundos claros|
+Cor Texto secundário| Texto claro | #FFFFFF| Texto para fundos escuros ou botões coloridos fortes|
 
 &nbsp;&nbsp;&nbsp;&nbsp; A paleta de cores de um projeto consiste no conjunto de cores previamente selecionadas para representar visualmente a identidade do produto digital em todos os seus elementos gráficos e funcionais. Essa paleta inclui cores primárias, secundárias, de destaque e de fundo, que devem ser utilizadas de forma sistemática em interfaces, componentes, textos e elementos de navegação. Seu propósito é assegurar uniformidade visual, fortalecer a comunicação da marca e facilitar a percepção do usuário ao interagir com o sistema. <br>
 
 &nbsp;&nbsp;&nbsp;&nbsp; A adoção de uma paleta de cores bem estruturada e alinhada entre os designers e a equipe de desenvolvimento front-end é essencial para garantir coerência estética e funcionalidade técnica. Em ambientes colaborativos, especialmente no contexto de projetos acadêmicos baseados em metodologias ágeis, essa padronização contribui para a consistência visual entre protótipos e implementações, reduz retrabalho, otimiza a comunicação entre os membros da equipe e assegura a acessibilidade por meio de contrastes adequados. A padronização cromática ainda reforça a identidade do produto, tornando-o mais reconhecível e profissional perante os usuários. <br>
-
-<div align = "center">
-<sup>Figura 11: Cores </sup><br>
-<img src="../assets/assets_wad/Paleta_cores.png">
-
-<sup>Fonte: Material produzido pelos autores (2025).</sup><br>
-
-</div>
-
-| Recomendação Aplicada               | Nome da cor  | Hex               | Função                                                                                                                                   |
-| ----------------------------------- | ------------ | ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| Cor primária                        | Verde        | #66B512           | Cor para destacar tanto fundo, quanto botões principais, destaques, header, ícones                                                       |
-| Cor priméria mais clara             | Verde claro  | #D2EEAE           | Cor para destacar fundo de cards e botões secundários.                                                                                   |
-| Cor de composição                   | Azul         | #0091DF           | Cor ultilizada para barra de progresso, botões secundárias, caixa de notificações, perfil do ranking, o rodapé da página do FieldAcaemy. |
-| Cor de composição                   | Cinza        | #D9D9D9           | Fundo de cards, divisores, bordas.                                                                                                       |
-| Cor Texto primária                  | Texto escuro | #1F1C1C           |                                                                                                                                          |
-| Texto principal sobre fundos claros |              |
-| Cor Texto secundário                | Texto claro  | #FFFFFF           |                                                                                                                                          |
-| Texto para fundos escuros ou botões | aaa          | coloridos fortes. |                                                                                                                                          |
-
 ### 3.3.2 Tipografia
-
-&nbsp;&nbsp;&nbsp;&nbsp; A tipografia padroniza a leitura e reforça a identidade da marca. Especifique fontes, tamanhos, pesos, espaçamentos e exemplos de uso. Ela define as fontes, tamanhos, pesos e estilos utilizados em todos os textos da interface. Ela estabelece uma hierarquia visual clara, facilita a leitura e reforça a identidade da marca. <br>
+&nbsp;&nbsp;&nbsp;&nbsp; A tipografia padroniza a leitura e reforça a identidade da marca. Especifique fontes, tamanhos, pesos, espaçamentos e exemplos de uso. Ela  define as fontes, tamanhos, pesos e estilos utilizados em todos os textos da interface. Ela estabelece uma hierarquia visual clara, facilita a leitura e reforça a identidade da marca. <br>
 
 &nbsp;&nbsp;&nbsp;&nbsp; A tipografia é um elemento essencial na construção da identidade visual de uma interface. Ela influencia diretamente na legibilidade e na percepção da marca. Em um guia de estilos, a definição tipográfica deve incluir as famílias tipográficas utilizadas (ex: sans-serif ou serif), tamanhos, pesos (light, regular, bold), espaçamentos (entre letras e linhas) e hierarquia de títulos (H1, H2, H3 etc.) e parágrafos. <br>
 
@@ -637,10 +629,6 @@ Para alinhar os componentes de forma clara e responsiva, foi utilizada a estrutu
 &nbsp;&nbsp;&nbsp;&nbsp; É fundamental garantir contraste suficiente entre texto e fundo para atender critérios de acessibilidade. A padronização tipográfica no guia de estilos contribui para a coesão visual em todos os materiais da marca ou produto digital. <br>
 
 ### 3.3.3 Iconografia e imagens
-
-&nbsp;&nbsp;&nbsp;&nbsp; A iconografia no design de interfaces refere-se ao uso sistemático de ícones como elementos gráficos que representam ações, objetos ou ideias. Ícones são recursos visuais que auxiliam na comunicação rápida e intuitiva com o usuário, reduzindo a dependência de texto e melhorando a usabilidade. Para garantir clareza e consistência, os ícones devem seguir princípios de simplicidade, legibilidade, universalidade e coerência com a identidade visual da marca ou produto. <br>
-
-&nbsp;&nbsp;&nbsp;&nbsp; Ao definir um sistema de iconografia, é necessário padronizar estilos (traço, espessura, preenchimento), tamanhos, espaçamentos e significados. Esses elementos devem estar descritos no guia de estilos da interface, promovendo uma linguagem visual coesa entre diferentes telas e dispositivos. Ícones interativos devem apresentar feedback visual (como mudança de cor ao passar o cursor) para indicar funcionalidade. <br>
 
 &nbsp;&nbsp;&nbsp;&nbsp; A iconografia reúne todos os ícones utilizados na interface, padronizando seu estilo, tamanho, cor e aplicação. Os ícones devem ser facilmente reconhecíveis, reforçando ações e informações sem gerar ambiguidade. <br>
 
@@ -664,7 +652,6 @@ Para alinhar os componentes de forma clara e responsiva, foi utilizada a estrutu
 | Data inbox e integração | Centraliza dados recebidos e integrações com outros sistemas ou dispositivos.                  |
 
 <br>
-
 #### Icons Desktop
 
  Icone | Funcionalidade | 
@@ -1262,8 +1249,19 @@ Essa documentação apresenta todos os endpoints implementados até o momento, o
 const express = require('express');
 require('dotenv').config();
 
+
 const app = express();
 const path = require('path');
+const cookieParser = require('cookie-parser');
+
+const homeRoutes = require('./routes/homeRoutes');
+const authRoutes = require('./routes/authRoutes');
+const helpRoutes = require('./routes/helpRoutes');
+const loginRoutes = require('./routes/loginRoutes');
+const pathRoutes = require('./routes/pathRoutes');
+const aboutUsRoutes = require('./routes/aboutUs');
+const dashboardRoutes = require('./routes/dashboardRoutes');
+const moduleRoutes = require('./routes/modulesRoutes');
 const cookieParser = require('cookie-parser');
 
 const homeRoutes = require('./routes/homeRoutes');
@@ -1279,13 +1277,27 @@ const moduleRoutes = require('./routes/modulesRoutes');
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 app.use(cookieParser());
+app.use(cookieParser());
 
+app.use(express.urlencoded({ extended: true }));
+
+// Torna a pasta 'assets' pública
 app.use(express.urlencoded({ extended: true }));
 
 // Torna a pasta 'assets' pública
 app.use('/assets', express.static(path.join(__dirname, 'assets')));
 app.use(express.static('public')); // <-- Define a pasta public como estática
+app.use(express.static('public')); // <-- Define a pasta public como estática
 
+// Usa as rotas principais
+app.use('/', homeRoutes);
+app.use('/', authRoutes);
+app.use('/', helpRoutes);
+app.use('/', pathRoutes);
+app.use('/', loginRoutes);
+app.use('/', aboutUsRoutes);
+app.use('/', dashboardRoutes);
+app.use('/', moduleRoutes)
 // Usa as rotas principais
 app.use('/', homeRoutes);
 app.use('/', authRoutes);
@@ -1304,6 +1316,15 @@ app.listen(3000, () => {
 ```
 ### Rotas da Home (homeRoutes)
 * **User Story:** 1 e 2
+* **URL:** `/`
+});
+
+```
+
+### Rotas da Home (homeRoutes)
+
+#### Trilhas (`/`)
+
 * **URL:** `/`
 * **Método:** GET
 * **Descrição:** Pega todas as trilhas, bookmarks e ranking do banco de dados e mostra na página home.
@@ -1428,6 +1449,72 @@ app.listen(3000, () => {
 * **URL:** `/paths/:id`
 * **Método:** GET
 * **Descrição:** Rendezira todos os módulos da trilha selecionada.
+* **Descrição:** Pega todas as trilhas, bookmarks e ranking do banco de dados.
+* **Exemplo de resposta:**
+  ```
+  [
+    {
+    "id": 1,
+    "title": "Path to Certification",
+    "description": "This path leads to various certification modules."
+    }
+  ]
+
+  ```
+  
+* **URL:** `/bookmarks/delete/:id`
+* **Método:** POST
+* **Descrição:** Pega as informações de uma trilha específica pelo ID
+* **Header:** `Content-Type: text/html`
+* **Parâmetros de rota:** `id`: ID da trilha (número inteiro)
+* **Corpo da requisição:** Não se aplica
+* **Exemplo de resposta:** 
+  ```
+  [
+    {
+    "id": 2,
+    "title": "Path to Content Creation",
+    "description": "This path includes modules for content creation."
+    }
+  ]
+  ```
+
+* **URL:** `GET /paths/:id`
+* **Método:** GET
+* **Descrição:** Pega as informações de uma trilha específica pelo ID
+* **Header:** `Content-Type: text/html`
+* **Parâmetros de rota:** `id`: ID da trilha (número inteiro)
+* **Corpo da requisição:** Não se aplica
+* **Exemplo de resposta:** 
+  ```
+  [
+    {
+    "id": 2,
+    "title": "Path to Content Creation",
+    "description": "This path includes modules for content creation."
+    }
+  ]
+  ```
+---------------------
+
+
+#### Rotas para conteúdos dos módulos (`/module/:id/page/:page_id`)
+**Método:** GET
+
+### Headers de resposta
+
+| Header         | Value                              |
+| -------------- | ---------------------------------- |
+| X-Powered-By   | Express                            |
+| Content-Type   | text/html; charset=utf-8           |
+| Content-Length | 4265                               |
+| ETag           | WTToBe-JBfKHabc0R8fKVx6ewG7vsa.R\* |
+| Date           | Fri, 30 May 2025 19:15:24 GMT      |
+| Connection     | keep-alive                         |
+| Keep-Alive     | timeout=5                          |
+
+#### Response
+
 **Status:** `200 OK`  
 **Body:**  
 Página HTML renderizada contendo os dados da lição:
