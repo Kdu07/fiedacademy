@@ -1,10 +1,155 @@
 const usersModel = require("../models/usersModel");
 const contentModel = require("../models/modulesModel");
+const pathsModel = require("../models/pathsModel");
 
 const { getUserId } = require("../utils/jwtUtils");
 const { isAuthorized } = require("../utils/authUtils");
 
-exports.index = async (req, res) => {
+// MODULES
+
+exports.indexModules = async (req, res) => {
+  const token = req.cookies.token;
+  const auth = await isAuthorized(token, "Admin");
+
+  if (auth === false) {
+    return res.redirect("/");
+  }
+
+  const id = await getUserId(token);
+  const user = await usersModel.getRole(id);
+  const allModules = await contentModel.getAllModules();
+
+  const display = 'modules'
+
+  return res.render("contentDashboard", {
+    user,
+    allModules,
+    allContents: null,
+    display
+  });
+};
+
+
+exports.editModule = async (req, res) => {
+  const token = req.cookies.token;
+  const auth = await isAuthorized(token, "Admin");
+
+  if (auth === false) {
+    return res.redirect("/");
+  }
+
+  const id = await getUserId(token);
+  const user = await usersModel.getRole(id);
+  const moduleId = req.params.id;
+
+  const paths = await pathsModel.getAll();
+  const module = await contentModel.findModuleById(moduleId);
+
+  if (!module) {
+    return res.status(404).send("Module not found");
+  }
+
+  return res.render("editModule", {
+    user,
+    paths,
+    module
+  });
+};
+
+exports.deleteModule = async (req, res) => {
+  const token = req.cookies.token;
+  const auth = await isAuthorized(token, "Admin");
+
+  if (auth === false) {
+    return res.redirect("/");
+  }
+
+  const id = req.params.id;
+
+  // Delete the content by ID
+  await contentModel.deleteModuleById(id);
+
+  return res.redirect("/contentDashboard/modules");
+};
+
+exports.startModuleCreation = async (req, res) => {
+  const token = req.cookies.token;
+  const auth = await isAuthorized(token, "Admin");
+
+  if (auth === false) {
+    return res.redirect("/");
+  }
+
+  const id = await getUserId(token);
+  const user = await usersModel.getRole(id);
+
+  const paths = await pathsModel.getAll();
+
+  const module = {
+    title: "",
+    contentBody: "",
+    category: "",
+    module_id: "",
+    video_path: "",
+  };
+
+
+  if (!paths) {
+    return res.status(404).send("Paths not found");
+  }
+
+  return res.render("editModule", {
+    user,
+    paths,
+    module
+  });
+};
+
+exports.createModule = async (req, res) => {
+  const token = req.cookies.token;
+  const auth = await isAuthorized(token, "Admin");
+
+  if (auth === false) {
+    return res.redirect("/");
+  }
+  
+  const { id_path, title } = req.body;
+
+
+  let order = await contentModel.getModuleContentOrder(id_path);
+  order = order + 1;
+   await contentModel.createModule(
+    title,
+    id_path,
+    order
+  ); 
+
+  return res.redirect("/contentDashboard");
+};
+
+exports.updateModule = async (req, res) => {
+  const token = req.cookies.token;
+  const auth = await isAuthorized(token, "Admin");
+
+  if (auth === false) {
+    return res.redirect("/");
+  }
+
+  const id = req.params.id;
+  const { id_path, title } = req.body;
+
+  await contentModel.updateModuleById(
+    id,
+    title,
+    id_path
+  );
+
+  return res.redirect("/contentDashboard/modules");
+};
+
+// CONTENT
+
+exports.indexLessons = async (req, res) => {
   const token = req.cookies.token;
   const auth = await isAuthorized(token, "Admin");
 
@@ -16,9 +161,13 @@ exports.index = async (req, res) => {
   const user = await usersModel.getRole(id);
   const allContents = await contentModel.getAllContents();
 
+  const display = 'lessons'
+
   return res.render("contentDashboard", {
     user,
+    allModules: null,
     allContents,
+    display
   });
 };
 

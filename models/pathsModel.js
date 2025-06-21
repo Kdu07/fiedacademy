@@ -23,10 +23,10 @@ exports.getPathWithModules = async (pathId, userId) => {
   const pathData = pathResult.rows[0];
 
   // Busca os módulos da trilha
-  const sqlModule = `SELECT id, title, "order" 
+  const sqlModule = `SELECT id, title, module_order 
     FROM modules
     WHERE id_path = $1 
-    ORDER BY "order" ASC
+    ORDER BY module_order ASC
   `;
   const moduleResult = await db.query(sqlModule, [pathId]);
   const moduleData = moduleResult.rows;
