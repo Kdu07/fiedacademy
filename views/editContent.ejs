@@ -124,14 +124,13 @@
         <div class="tab-content hidden" id="content-editor">
           <div class="p-6">
             <h2 class="text-lg font-semibold text-gray-800 mb-4">Editor de Conteúdo</h2>
-            <input type="hidden" name="body" id="body-content">
+            <input type="hidden" name="contentBody" id="body-content">
             <!-- Quill Editor -->
             <div class="mb-4">
               <label for="editor-container" class="block text-sm font-medium text-gray-700 mb-1">Conteúdo</label>
               <div id="editor-container" class="h-64 mb-2 border border-gray-300 rounded-md">
                 <%- content && content.body ? content.body : '' %>
               </div>
-              <input type="hidden" name="body" id="body-content">
             </div>
           </div>
         </div>
