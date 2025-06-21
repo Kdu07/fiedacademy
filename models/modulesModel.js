@@ -15,7 +15,6 @@ module.exports = {
          LEFT JOIN 
           modules m ON c.module_id = m.id
          WHERE c.id = $1`, [moduleId]);
-    console.log(result.rows);
     return result.rows[0]; // Retorna o primeiro resultado encontrado
   },
 

@@ -84,15 +84,6 @@
         </div>
         <span class="ml-3">Dashboard</span>
       </a>
-      <a
-        class="flex items-center text-2xl md:text-lg p-3 rounded-lg hover:bg-gray-100 transition-all duration-200"
-        href="/create-user"
-      >
-        <div class="w-7 text-center">
-          <i class="fas fa-user-plus text-secondaryGreen"></i>
-        </div>
-        <span class="ml-3">Criar Usuário</span>
-      </a>
       <% if(user.id_role === 6) { %>
       <a
         class="flex items-center text-2xl md:text-lg p-3 rounded-lg hover:bg-gray-100 transition-all duration-200"
@@ -102,9 +93,18 @@
         <div class="w-7 text-center">
           <i class="fas fa-file-lines text-secondaryGreen"></i>
         </div>
-        <span class="ml-3">Biblioteca de Conteúdo</span>
+        <span class="ml-3">Gerir Conteúdo</span>
       </a>
       <% }}%>
+      <a
+        class="flex items-center text-2xl md:text-lg p-3 rounded-lg hover:bg-gray-100 transition-all duration-200"
+        href="/create-user"
+      >
+        <div class="w-7 text-center">
+          <i class="fas fa-user-plus text-secondaryGreen"></i>
+        </div>
+        <span class="ml-3">Criar Usuário</span>
+      </a>
       <div class="flex-grow"></div>
       <a
         class="flex items-center text-2xl md:text-lg p-3 mt-auto text-red-500 rounded-lg hover:bg-red-50 transition-all duration-200"

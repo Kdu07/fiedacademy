@@ -110,7 +110,7 @@ exports.getById = async (userId) => {
 exports.getRole = async (userId) => {
   try {
     const res = await db.query(
-      "SELECT id, id_role, name FROM users WHERE id = $1",
+      "SELECT id, id_role, name, profile_photo_path  FROM users WHERE id = $1",
       [userId]
     );
     return res.rows[0];
