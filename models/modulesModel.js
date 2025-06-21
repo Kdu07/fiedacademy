@@ -98,5 +98,22 @@ module.exports = {
       console.error("Error fetching all modules:", error);
       throw new Error("Erro ao buscar módulos");
     }
-  } 
+  },
+
+  async updateContentById(id, body, title, category, module_id, video_path) {
+    try {
+      const result = await db.query(
+        `UPDATE contents 
+         SET body = $1, title = $2, category = $3, module_id = $4, video_path = $5, last_update = NOW() 
+         WHERE id = $6 
+         RETURNING *`,
+        [body, title, category, module_id, video_path, id]
+      );
+      return result.rows[0]; // Retorna o conteúdo atualizado
+    } catch (error) {
+      console.error("Error updating content:", error);
+      throw new Error("Erro ao atualizar conteúdo");
+    }
+  }
 };
+

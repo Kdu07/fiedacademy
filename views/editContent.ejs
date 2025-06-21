@@ -48,7 +48,7 @@
       </div>
 
       <!-- Form Container -->
-      <form id="contentForm" class="bg-white shadow-md rounded-lg">
+      <form id="contentForm" class="bg-white shadow-md rounded-lg" action="/content/update/<%= content ? content.id : '' %>" method="POST">
         <!-- Tab Content -->
         <div class="tab-content" id="basic-info">
           <div class="p-6">
@@ -71,11 +71,12 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
               <!-- Category -->
               <div>
-                <label for="category" class="block text-sm font-medium text-gray-700 mb-1">Categoria</label>
+                <label for="category" class="block text-sm font-medium text-gray-700 mb-1">Categoria*</label>
                 <select 
                   id="category" 
                   name="category" 
                   class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  required
                 >
                   <option value="" disabled <%= !content || !content.category ? 'selected' : '' %>>Selecione uma categoria</option>
                   <option value="Primeiros Passos" <%= content && content.category === 'Primeiros Passos' ? 'selected' : '' %>>Primeiros Passos</option>
@@ -88,7 +89,7 @@
               </div>
                 <!-- Module -->
               <div>
-                <label for="module_id" class="block text-sm font-medium text-gray-700 mb-1">Módulo</label>
+                <label for="module_id" class="block text-sm font-medium text-gray-700 mb-1">Módulo*</label>
                 <select 
                   id="module_id" 
                   name="module_id" 
@@ -105,7 +106,7 @@
                         const isSelected = currentModuleId && parseInt(currentModuleId) === parseInt(module.id);
                   %>
                         <option value="<%= module.id %>" <%= isSelected ? 'selected' : '' %>>
-                          <%= module.title %> (ID: <%= module.id %>)
+                          <%= module.title %>
                         </option>
                   <% 
                       }); 
@@ -123,7 +124,7 @@
         <div class="tab-content hidden" id="content-editor">
           <div class="p-6">
             <h2 class="text-lg font-semibold text-gray-800 mb-4">Editor de Conteúdo</h2>
-            
+            <input type="hidden" name="body" id="body-content">
             <!-- Quill Editor -->
             <div class="mb-4">
               <label for="editor-container" class="block text-sm font-medium text-gray-700 mb-1">Conteúdo</label>
@@ -219,12 +220,7 @@
     <script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>    
     <script>
       document.addEventListener('DOMContentLoaded', function() {        // Set form action dynamically based on content
-        const contentForm = document.getElementById('contentForm');
-        if (contentForm) {
-          contentForm.action = "<%= content && content.id ? '/content/update/' + content.id : '/content/create' %>";
-          contentForm.method = 'POST';
-          contentForm.enctype = 'multipart/form-data';
-        }
+        
         // Initialize Quill editor
         const quill = new Quill('#editor-container', {
           theme: 'snow',
@@ -288,20 +284,7 @@
           });
         });
         
-        // Next/Previous tab buttons
-        document.querySelectorAll('.next-tab').forEach(button => {
-          button.addEventListener('click', function() {
-            const nextTabId = this.getAttribute('data-next');
-            showTab(nextTabId);
-          });
-        });
         
-        document.querySelectorAll('.prev-tab').forEach(button => {
-          button.addEventListener('click', function() {
-            const prevTabId = this.getAttribute('data-prev');
-            showTab(prevTabId);
-          });
-        });
           // YouTube video preview
         const videoInput = document.getElementById('video_path');
         const videoPreview = document.getElementById('video-preview');
@@ -347,27 +330,9 @@
           videoPreview.classList.add('hidden');
         });
         
-        // Delete confirmation modal
-        const deleteButton = document.getElementById('delete-button');
-        const deleteModal = document.getElementById('deleteModal');
-        const cancelDelete = document.getElementById('cancel-delete');
+
         
-        if (deleteButton) {
-          deleteButton.addEventListener('click', function() {
-            deleteModal.classList.remove('hidden');
-          });
-          
-          cancelDelete.addEventListener('click', function() {
-            deleteModal.classList.add('hidden');
-          });
-          
-          // Close modal when clicking outside
-          deleteModal.addEventListener('click', function(e) {
-            if (e.target === this) {
-              deleteModal.classList.add('hidden');
-            }
-          });
-        }          // Duplicate code removed - form action already set above
+
       });
     </script>
   </body>

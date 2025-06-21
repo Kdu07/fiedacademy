@@ -48,3 +48,20 @@ exports.editContent = async (req, res) => {
     modules
   });
 };
+
+exports.updateContent = async (req, res) => {
+  const token = req.cookies.token;
+  const auth = await isAuthorized(token, "Admin");
+
+  if (auth === false) {
+    return res.redirect("/");
+  }
+
+
+  const id = req.params.id;
+  const { body, title, category, module_id, video_path } = req.body;
+
+  await contentModel.updateContentById(id, body, title, category, module_id, video_path)
+  
+  return res.redirect("/contentDashboard");
+};
