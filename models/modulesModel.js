@@ -100,6 +100,20 @@ module.exports = {
     }
   },
 
+  async createContent(body, title, category, module_id, video_path, order) {
+    try {
+      const result = await db.query(
+        `INSERT INTO contents (body, title, category, module_id, video_path, last_update, content_order) 
+         VALUES ($1, $2, $3, $4, $5, NOW(), $6)`,
+        [body, title, category, module_id, video_path, order]
+      );
+      return result.rows[0]; // Retorna o conteúdo criado
+    } catch (error) {
+      console.error("Error creating content:", error);
+      throw new Error("Erro ao criar conteúdo");
+    }
+  },
+
   async updateContentById(id, body, title, category, module_id, video_path) {
     try {
       const result = await db.query(
@@ -113,6 +127,32 @@ module.exports = {
     } catch (error) {
       console.error("Error updating content:", error);
       throw new Error("Erro ao atualizar conteúdo");
+    }
+  },
+
+  async deleteContentById(id) {
+    try {
+      const result = await db.query(
+        "DELETE FROM contents WHERE id = $1 RETURNING *",
+        [id]
+      );
+      return;
+    } catch (error) {
+      console.error("Error deleting content:", error);
+      throw new Error("Erro ao deletar conteúdo");
+    }
+  },
+
+  async getContentOrder(moduleId) {
+    try {
+      const result = await db.query(
+        "SELECT MAX(content_order) AS max_order FROM contents WHERE module_id = $1",
+        [moduleId]
+      );
+      return result.rows[0].max_order || 0; // Retorna o maior número de ordem ou 0 se não houver conteúdos
+    } catch (error) {
+      console.error("Error fetching content order:", error);
+      throw new Error("Erro ao buscar ordem de conteúdo");
     }
   }
 };

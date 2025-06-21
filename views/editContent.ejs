@@ -48,7 +48,12 @@
       </div>
 
       <!-- Form Container -->
-      <form id="contentForm" class="bg-white shadow-md rounded-lg" action="/content/update/<%= content ? content.id : '' %>" method="POST">
+        <form 
+          id="contentForm" 
+          class="bg-white shadow-md rounded-lg" 
+          action="<%= content && content.id ? `/content/update/${content.id}` : '/content/create' %>" 
+          method="POST"
+        >        
         <!-- Tab Content -->
         <div class="tab-content" id="basic-info">
           <div class="p-6">
