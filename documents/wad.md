@@ -770,7 +770,7 @@ A tela de **progresso do gestor** da plataforma apresenta um cabeçalho verde co
 
 A interface do módulo apresenta uma barra superior com logo e menu, um menu lateral com lições e opções administrativas, e no centro a lição atual sobre “Remote View” com texto e vídeo. Há botões de interação (curtir, não curtir) e um botão “PRÓXIMO” para avançar. A paleta verde e branca reforça a identidade visual agrícola. O diferencial dessa tela para a do PTD está na possibilidade de edição de trilhas, exclusiva do Gestor.<br>
 
-[Link para acessar o protótipo completo das versões PTD e Gestor, amobos em mobile e desktop.](https://www.figma.com/design/bOsRfHBpYqRksHS4GiNW74/bayer-project?node-id=3664-2&t=75lexEkyPQQWuFiA-1)
+[Link para acessar o protótipo completo das versões PTD e Gestor, ambos em mobile e desktop.](https://www.figma.com/design/bOsRfHBpYqRksHS4GiNW74/bayer-project?node-id=3664-2&t=75lexEkyPQQWuFiA-1)
 
 ## 3.5. Modelagem do banco de dados 
 
@@ -1698,49 +1698,53 @@ _Descreva e ilustre aqui o desenvolvimento da última versão do sistema web, ex
 
 ## 5.1. Relatório de testes de integração de endpoints automatizados
 
-<sup>Figura 26: Teste de deleção de conteúdos fixados.</sup><br>
+<div align = "center">
+
+<sup>Figura 33: Teste de deleção de conteúdos fixados.</sup><br>
 
 <img src="../assets/assets_wad/test-path.png" width="300"><br>
 
 <sub>Fonte: Material produzido pelos autores (2025). </sub><br>
-Teste: GET /path/:id<br>
-Descrição: Teste da rota para renderizar a página de trilha.<br>
-Status: 200 OK<br>
-Resposta: HTML da trilha<br><br>
+</div>
+
+**Teste:** GET /path/:id<br>
+**Descrição:** Teste da rota para renderizar a página de trilha.<br>
+**Status:** 200 OK<br>
+**Resposta**: HTML da trilha<br><br>
 
 
-<sup>Figura 27: Teste de deleção de conteúdos fixados.</sup><br>
-
+<div align = "center">
+<sup>Figura 34: Teste de deleção de conteúdos fixados.</sup><br>
 <img src="../assets/assets_wad/test-home.png" width="300"><br>
-
 <sub>Fonte: Material produzido pelos autores (2025). </sub><br>
-Teste: GET /<br>
-Descrição: Teste da rota para renderizar a página de home<br>
-Status: 200 OK<br>
-Resposta: HTML da home<br><br>
+</div>
 
+**Teste:** GET /<br>
+**Descrição**: Teste da rota para renderizar a página de home<br>
+**Status**: 200 OK<br>
+**Resposta**: HTML da home<br><br>
 
-<sup>Figura 28: Teste de deleção de conteúdos fixados.</sup><br>
-
+<div align = "center">
+<sup>Figura 35: Teste de deleção de conteúdos fixados.</sup><br>
 <img src="../assets/assets_wad/test-delete-bookmark.png" width="300"><br>
-
 <sub>Fonte: Material produzido pelos autores (2025). </sub><br>
-Teste: POST /bookmarks/delete/:id<br>
-Descrição: Teste da rota para remover conteúdo fixado<br>
-Status: 200 OK<br>
-Requisição: Deletar linha da tabela bookmarks no banco de dados <br><br>
+</div>
 
+**Teste**: POST /bookmarks/delete/:id<br>
+**Descrição**: Teste da rota para remover conteúdo fixado<br>
+**Status**: 200 OK<br>
+**Requisição**: Deletar linha da tabela bookmarks no banco de dados <br>
 
-<sup>Figura 29: Teste de deleção de conteúdos fixados.</sup><br>
-
+<div align = "center">
+<sup>Figura 36: Teste de deleção de conteúdos fixados.</sup><br>
 <img src="../assets/assets_wad/test-delete-bookmark.png" width="300"><br>
-
 <sub>Fonte: Material produzido pelos autores (2025). </sub><br>
-Teste: POST /api/create-user<br>
-Descrição: Teste da rota para criar novo usuário<br>
-Status: 202 OK<br>
-Requisição: Adicionar linha de usuário na tabela users<br><br>
+</div>
 
+**Teste**: POST /api/create-user<br>
+**Descrição**: Teste da rota para criar novo usuário<br>
+**Status**: 202 OK<br>
+**Requisição**: Adicionar linha de usuário na tabela users<br><br>
 
 ## 5.2. Testes de usabilidade
 
