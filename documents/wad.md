@@ -2,8 +2,6 @@
 
 # WAD - Web Application Document - Módulo 2 - Inteli
 
-**_Os trechos em itálico servem apenas como guia para o preenchimento da seção. Por esse motivo, não devem fazer parte da documentação final_**
-
 ## Nome do Grupo
 
 #### Nomes dos integrantes do grupo
