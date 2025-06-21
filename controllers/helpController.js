@@ -1,12 +1,10 @@
 const Help = require("../models/helpModel");
 const usersModel = require("../models/usersModel");
 const subjectModel = require("../models/subjectModel");
-const modulesModel = require("../models/modulesModel");
 const feedbacksContentModel = require("../models/feedbacksContentModel");
 
 const { isAuthorized } = require("../utils/authUtils");
 const { getUserId } = require("../utils/jwtUtils");
-const { all } = require("../routes/helpRoutes");
 
 // Renderiza a página de ajuda com todos os artigos
 exports.index = async (req, res) => {
@@ -63,6 +61,8 @@ exports.getArticleById = async (req, res) => {
       return res.status(400).send("Categoria ou ID do conteúdo não fornecidos");
     }
 
+    const modulesModel = require("../models/modulesModel");
+    
     // First try to get the article from the specific ID
     const article = await modulesModel.findModule(id_content);
 
@@ -98,7 +98,6 @@ exports.getArticleById = async (req, res) => {
       article.negativeFeedback = negativeFeedback.length;
     }
 
-    
 
     res.render("subject", {
       user,

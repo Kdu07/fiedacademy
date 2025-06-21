@@ -1,12 +1,21 @@
 const db = require("../config/db");
+const { get } = require("../routes/helpRoutes");
+const { getAll } = require("./usersModel");
 
 // Exporta um objeto com métodos para acessar dados de módulos e conteúdos no banco de dados
 module.exports = {
   // Busca um módulo pelo seu ID
   async findModule(moduleId) {
-    const result = await db.query("SELECT * FROM contents WHERE id = $1", [
-      moduleId,
-    ]);
+    const result = await db.query(`
+       SELECT 
+          c.*,
+          m.title AS module_title
+         FROM 
+          contents c
+         LEFT JOIN 
+          modules m ON c.module_id = m.id
+         WHERE c.id = $1`, [moduleId]);
+    console.log(result.rows);
     return result.rows[0]; // Retorna o primeiro resultado encontrado
   },
 
@@ -54,4 +63,41 @@ module.exports = {
     );
     return result.rows; // Retorna um array com as páginas do módulo
   },
+
+  async getAllContents() {
+    try {
+      const result = await db.query(
+        `SELECT 
+          c.id, 
+          c.title, 
+          c.category, 
+          c.video_path, 
+          c.last_update, 
+          c.module_id,
+          m.title AS module_title
+         FROM 
+          contents c
+         LEFT JOIN 
+          modules m ON c.module_id = m.id
+         ORDER BY 
+          c.id`
+      );
+      return result.rows; // Retorna todos os módulos disponíveis
+    } catch (error) {
+      console.error("Error fetching all modules:", error);
+      throw new Error("Erro ao buscar módulos");
+    }
+  },
+
+  async getAllModules() {
+    try {
+      const result = await db.query(
+        "SELECT * FROM modules ORDER BY id"
+      );
+      return result.rows; // Retorna todos os módulos disponíveis
+    } catch (error) {
+      console.error("Error fetching all modules:", error);
+      throw new Error("Erro ao buscar módulos");
+    }
+  } 
 };
