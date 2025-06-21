@@ -36,7 +36,7 @@
 
 <br>
 
-# <a name="c1"></a>1. Introdução (sprints 1 a 5)
+# <a name="c1"></a>1. Introdução
 
 &nbsp;&nbsp;&nbsp;&nbsp; A divisão agrícola da Bayer AG <sup>[1](#c10)</sup>, consolida-se como líder global em soluções integradas para o agronegócio, com foco em sementes geneticamente modificadas, defensivos agrícolas e tecnologias digitais. Seu portfólio inclui o Climate FieldView <sup>[2](#c11)</sup>, plataforma digital que ajuda a priorizar o monitoramento, identificar problemas de forma rápida e tomar medidas para proteger sua produtividade por meio de imagens de satélite de fácil utilização e de alta qualidade. <br>
 
@@ -44,11 +44,10 @@
 
 &nbsp;&nbsp;&nbsp;&nbsp; Para solucionar esse desafio, foi desenvolvida uma plataforma web de capacitação técnica, que oferece trilhas de conhecimento em diferentes formatos aos PTDs antes de sua atuação em campo, acompanhando o progresso individual dos colaboradores, além de incorporar elementos de gamificação para engajamento. Os principais aspectos de criação de valor da solução estão na melhoria da experiência do produtor rural, na redução de custos operacionais com suporte, na padronização do atendimento e na possibilidade de monitorar e aprimorar continuamente a qualificação dos PTDs, alinhando o produto às expectativas e necessidades reais do parceiro de negócios. A solução proposta pelo nosso projeto visa não apenas corrigir gaps de conhecimento, como criar um ciclo virtuoso de engajamento, certificação e acompanhamento contínuo, alinhando a operação de campo às ambições de inovação da Bayer.<sup>[3](#c17)</sum> <br>
 
-# <a name="c2"></a>2. Visão Geral da Aplicação Web (sprint 1)
+# <a name="c2"></a>2. Visão Geral da Aplicação Web 
+## 2.1. Escopo do Projeto 
 
-## 2.1. Escopo do Projeto (sprints 1 e 4)
-
-### 2.1.1. Modelo de 5 Forças de Porter (sprint 1)
+### 2.1.1. Modelo de 5 Forças de Porter
 
 As forças de Porter analisam o nível de competitividade e atratividade de um setor por meio de cinco fatores: ameaça de novos entrantes, poder de barganha de fornecedores, poder de barganha de clientes, ameaça de produtos substitutos e rivalidade entre concorrentes. Desse modo a posição da Bayer no setor se dá da seguinte maneira: <br>
 
@@ -82,7 +81,8 @@ Pequenos produtores e mercados de nicho estão buscando alternativas sustentáve
 
 A disputa no setor é intensa, envolvendo grandes empresas como Syngenta, Corteva e BASF. A competição se baseia principalmente em inovação tecnológica, desenvolvimento de patentes e capacidade de oferecer soluções digitais avançadas, fator esse evidenciado na Imagen Agropecuaria <sup>[7](#c15)</sup>. Estratégias como fusões e aquisições são comuns para fortalecer posições de mercado e expandir a base tecnológica.<br>
 
-### 2.1.2. Análise SWOT da Instituição Parceira (sprint 1)
+### 2.1.2. Análise SWOT da Instituição Parceira 
+
 
 Ferramenta que analisa forças, fraquezas, oportunidades, ameaças.
 
@@ -98,7 +98,7 @@ A Bayer se destaca pela forte inovação tecnológica, marca global consolidada 
 
 </div>
 
-### 2.1.3. Solução (sprints 1 a 5)
+### 2.1.3. Solução 
 
 #### 1. Problema a ser resolvido:
 
@@ -124,7 +124,7 @@ Espera-se que os PTDs atuem com maior autonomia e eficiência, reduzindo o núme
 
 O sucesso da solução será avaliado a partir de feedbacks dos próprios PTDs, e também dos agricultores. Além de avaliações ao final de cada trilha do conhecimento, através de testes com questões, como forma de analisar a retenção de conteúdo.<br>
 
-### 2.1.4. Value Proposition Canvas (sprint 1):
+### 2.1.4. Value Proposition Canvas:
 
 O canva de proposta de valor é uma ferramenta para organizar os pontos principais de necessidades e expectativas do cliente e relacioná-los com o projeto que será entregue, garantindo que todos os pontos foram atendidos.
 
@@ -242,7 +242,7 @@ Os módulos de conteúdo são categorizados e disponíveis de forma plenejada as
 
 Os funcionários com acesso especial para gerenciar a plataforma conseguem adicionar e remover conteúdos a qualquer momento
 
-### 2.1.5. Matriz de Riscos do Projeto (sprint 1)
+### 2.1.5. Matriz de Riscos do Projeto
 
 &nbsp;&nbsp;&nbsp;&nbsp; A matriz de riscos é uma ferramenta visual e analítica fundamental para a gestão de projetos, permitindo a identificação, análise e avaliação dos riscos que podem impactar objetivos organizacionais e projetos. A matriz de riscos consiste em uma representação gráfica que cruza dois eixos principais: a probabilidade de ocorrência de um risco e o impacto que esse risco pode causar. Essa abordagem possibilita classificar os riscos em diferentes níveis de criticidade, facilitando a priorização das ações de mitigação e o direcionamento eficiente de recursos para os riscos mais relevantes <sup>[8](#c16)</sup>. Dessa forma, a matriz de riscos foi utilizada em nosso projeto para identificar potenciais situações adversas que podem vir a afetar o andamento do trabalho, como também ações que estão sendo utilizadas para diminuir essa probabilidade de ocorrência. <br>
 
@@ -288,7 +288,7 @@ Fonte: Material produzido pelos autores (2025)
 
 </div>
 
-## 2.2. Personas (sprint 1)
+## 2.2. Personas
 
 Personas são representações fictícias de usuários ideais. Elas ajudam a entender melhor o público-alvo do projeto, guiando decisões de design e funcionalidades para atender às necessidades, expectativas e dores dos usuários de forma mais eficaz. Dessa forma, foram construídas as seguintes personas para o projeto:<br>
 
@@ -308,8 +308,7 @@ Personas são representações fictícias de usuários ideais. Elas ajudam a ent
 
 </div>
 
-## 2.3. User Stories (sprints 1 a 5)
-
+## 2.3. User Stories
 User Stories são descrições simples das funcionalidades do sistema escritas do ponto de vista do usuário final. Elas ajudam a definir o que o sistema deve fazer, focando nas necessidades e objetivos do usuário. Dessa forma, foram feitas as seguintes User Stories para o projeto:<br>
 
 <div align = "center">
@@ -450,9 +449,9 @@ User Stories são descrições simples das funcionalidades do sistema escritas d
 
 </div>
 
-# <a name="c3"></a>3. Projeto da Aplicação Web (sprints 1 a 4)
+# <a name="c3"></a>3. Projeto da Aplicação Web 
 
-## 3.1. Arquitetura (sprints 3 e 4)
+## 3.1. Arquitetura 
 
 O sistema desenvolvido adota um **diagrama de arquitetura** para representar de forma visual os principais componentes da aplicação e o fluxo de dados entre eles, facilitando a compreensão de sua estrutura e responsabilidades.
 
@@ -503,7 +502,7 @@ A camada de cliente representa a interface que o usuário acessa diretamente. El
 #### Banco de Dados <br>
 O **Servidor de Banco de Dados** é o repositório central das informações manipuladas pela aplicação. Através dos modelos definidos no back-end, o sistema realiza operações de leitura e escrita nos dados, garantindo persistência e integridade das informações.<br>
 
-## 3.2. Wireframes (sprint 2)
+## 3.2. Wireframes 
 
 Wireframe é um rascunho visual que mostra a estrutura básica de uma interface, focando na organização dos elementos e na navegação, sem detalhar o design final.
 Para alinhar os componentes de forma clara e responsiva, foi utilizada a estrutura de grid abaixo:
@@ -580,7 +579,7 @@ Para alinhar os componentes de forma clara e responsiva, foi utilizada a estrutu
 
 </div>
 
-## 3.3. Guia de estilos (sprint 3)
+## 3.3. Guia de estilos
 
 &nbsp;&nbsp;&nbsp;&nbsp; No contexto do desenvolvimento de projetos acadêmicos orientados por metodologias ágeis, a adoção de um guia de estilos revela-se uma prática essencial para assegurar consistência, padronização e eficiência na construção de produtos digitais. O guia de estilos constitui-se como um documento que organiza e define diretrizes visuais e comunicacionais, abrangendo aspectos como tipografia, paleta de cores, iconografia, espaçamento, componentes de interface e tom de voz. Sua aplicação sistemática contribui para a coerência estética do produto e facilita a comunicação entre os integrantes da equipe. <br>
 
@@ -693,7 +692,7 @@ Ver mais|Avança, visualiza detalhes ou inicia uma ação/tarefa.|
 Curtir/Descurtir (like/dislike)|Avalia conteúdos, módulos ou funcionalidades com feedback positivo ou negativo.|
 <br>
 
-## 3.4 Protótipo de alta fidelidade (sprint 3)
+## 3.4 Protótipo de alta fidelidade
 
 &nbsp;&nbsp;&nbsp;&nbsp; Protótipos de alta fidelidade são representações visuais altamente detalhadas de um produto digital, como aplicativos, sites ou sistemas. Eles imitam com grande precisão a aparência final da interface e, muitas vezes, simulam também interações, transições e fluxos de navegação. Esses protótipos incluem cores, tipografias, imagens, ícones e elementos gráficos que corresponde a basicamente todo o front-end do projeto, onde trabalhamos para manter a identidade visual do parceiro. <br>
 
@@ -773,9 +772,9 @@ A interface do módulo apresenta uma barra superior com logo e menu, um menu lat
 
 [Link para acessar o protótipo completo das versões PTD e Gestor, amobos em mobile e desktop.](https://www.figma.com/design/bOsRfHBpYqRksHS4GiNW74/bayer-project?node-id=3664-2&t=75lexEkyPQQWuFiA-1)
 
-## 3.5. Modelagem do banco de dados (sprints 2 e 4)
+## 3.5. Modelagem do banco de dados 
 
-### 3.5.1. Modelo relacional (sprints 2 e 4)
+### 3.5.1. Modelo relacional 
 
 &nbsp;&nbsp;&nbsp;&nbsp; O banco de dados mostrado adere aos fundamentos da modelagem relacional, como explicado por Heuser[9], organizando a informação em tabelas que simbolizam entidades do campo educacional, tais como usuários, módulos, conteúdos, trilhas, certificados, avaliações e permissões. Cada tabela é formada por linhas (tuplas) e colunas (atributos), assegurando a integridade dos dados através de restrições como chaves primárias - que identificam cada registro de maneira exclusiva - e chaves estrangeiras, encarregadas de criar conexões entre as tabelas, como a conexão entre usuários e suas funções, conteúdos e módulos, ou certificados e trilhas. Esta metodologia possibilita a representação clara e organizada dos componentes do mundo real, simplificando a implementação, conservação e ampliação do sistema de informação. <br>
 
@@ -1170,19 +1169,9 @@ CREATE TABLE IF NOT EXISTS user_test_score (
 
 </div>
 
-### 3.5.2. Consultas SQL e lógica proposicional (sprint 2)
-
-<<<<<<< Updated upstream
+### 3.5.2. Consultas SQL e lógica proposicional 
 
 #### **Expressão SQL - 1:**
-
-=======
-
-> > > > > > > Stashed changes
-> > > > > > > _Template de SQL + lógica proposicional_
-> > > > > > > #1 | ---
-> > > > > > > --- | ---
-
 **Expressão SQL** | SELECT
 
 ```sql
@@ -1256,7 +1245,7 @@ WHERE email = 'ptd@exemplo.com' AND id_role = (
 
 Novamente, a consulta só será executada com êxito se ambas as proposições A e B forem simultaneamente verdadeiras, ou seja: se houver um usuário com o cargo PTD e com o email "ptd@exemplo.com".
 
-## 3.6. WebAPI e endpoints (sprints 3 e 4)
+## 3.6. WebAPI e endpoints
 
 Uma WebAPI (Interface de Programação de Aplicações Web) permite que o frontend (interface visual do usuário) e o backend (servidor e banco de dados) se comuniquem de forma estruturada e segura. Através de endpoints, que são os caminhos definidos no servidor, é possível requisitar, enviar ou modificar dados da aplicação.
 
@@ -1530,7 +1519,7 @@ Response
 **Status:** `200 OK`
 
 # <a name="c4"></a>4. Desenvolvimento da Aplicação Web
-## 4.1. Primeira versão da aplicação web (sprint 3)
+## 4.1. Primeira versão da aplicação web
 
 &nbsp;&nbsp;&nbsp;&nbsp;Inicialmente, na Sprint 1, foi feita a análise do mercado e o entendimento do negócio no qual a Bayer está inserida, visando explorar vulnerabilidades e oportunidades da empresa. Além disso, também foi realizado um aprofundamento no tema trazido pelo parceiro, identificando os riscos possíveis durante o desenvolvimento do projeto. <br>
 &nbsp;&nbsp;&nbsp;&nbsp;Na Sprint 2, foi iniciado o desenvolvimento do banco de dados, com as funcionalidades necessárias para o funcionamento do website. Essa etapa foi importante para um entendimento mais aprofundado de banco de dados e consultas SQL. Paralelamente, aprofundamo-nos no modelo MVC, necessário para a estruturação do código do projeto.<br>
@@ -1600,7 +1589,7 @@ Com o guia de estilos definido, para facilitar o desenvolvimento de cada funcion
 
 &nbsp;&nbsp;&nbsp;&nbsp; Essas foram as telas desenvolvidas até o momento, todas seguindo o padrão de estrutura MVC, com rotas já conectadas. No entanto, a conexão com o banco de dados ainda não está completa, visto que, nesta sprint, a equipe concentrou esforços no entendimento e aplicação da estrutura de código exigida, que envolve a divisão em diferentes funcionalidades — um processo que demandou tempo. Assim, como próximos passos, estão previstos a integração completa e funcional do banco de dados, bem como o aprimoramento e a criação de novas telas.<br>
 
-## 4.2. Segunda versão da aplicação web (sprint 4)
+## 4.2. Segunda versão da aplicação web
 
 
 &nbsp;&nbsp;&nbsp;&nbsp; Nas etapas anteriores do projeto, adotamos uma abordagem incremental para garantir uma base robusta e alinhada às demandas do público-alvo da Bayer. Na Sprint 1, concentramos esforços na análise de mercado e na compreensão aprofundada do contexto do negócio, mapeando oportunidades, vulnerabilidades e riscos que nortearam o desenvolvimento da solução. Na Sprint 2, avançamos para a estruturação do banco de dados e implementação das funcionalidades essenciais do site, além de consolidar o domínio sobre o padrão MVC, fundamental para a organização, manutenção e escalabilidade do código <br>
@@ -1699,7 +1688,7 @@ Com o guia de estilos definido, para facilitar o desenvolvimento de cada funcion
 
 &nbsp;&nbsp;&nbsp;&nbsp;  A estrutura das telas da plataforma FieldAcademy foi cuidadosamente planejada para proporcionar uma experiência completa, intuitiva e eficiente aos diferentes perfis de usuários do agronegócio. A tela de login garante segurança e acessibilidade no acesso à plataforma, enquanto a tela de dashboard — exclusiva para administradores — oferece uma visão estratégica do desempenho e progresso dos usuários, facilitando a gestão e o acompanhamento dos resultados. Já a tela de perfil permite que cada usuário visualize e gerencie suas informações, acompanhe seu desenvolvimento e tenha acesso rápido a conteúdos relevantes e personalizados. Por fim, a página principal de trilhas de aprendizagem organiza o conteúdo de forma clara, promovendo o engajamento e a evolução contínua dos profissionais. Juntas, essas telas atendem às necessidades práticas e estratégicas da AgroBayer, promovendo capacitação, inovação e eficiência para todos os envolvidos, desde os promotores técnicos até os gestores e administradores da plataforma. <br>
 
-## 4.3. Versão final da aplicação web (sprint 5)
+## 4.3. Versão final da aplicação web
 
 _Descreva e ilustre aqui o desenvolvimento da última versão do sistema web, explicando brevemente o que foi entregue em termos de código e sistema. Utilize prints de tela para ilustrar. Indique as eventuais dificuldades e próximos passos._
 
@@ -1707,7 +1696,7 @@ _Descreva e ilustre aqui o desenvolvimento da última versão do sistema web, ex
 
 # <a name="c5"></a>5. Testes
 
-## 5.1. Relatório de testes de integração de endpoints automatizados (sprint 4)
+## 5.1. Relatório de testes de integração de endpoints automatizados
 
 <sup>Figura 26: Teste de deleção de conteúdos fixados.</sup><br>
 
@@ -1753,11 +1742,11 @@ Status: 202 OK<br>
 Requisição: Adicionar linha de usuário na tabela users<br><br>
 
 
-## 5.2. Testes de usabilidade (sprint 5)
+## 5.2. Testes de usabilidade
 
 _Posicione aqui as tabelas com enunciados de tarefas, etapas e resultados de testes de usabilidade. Ou utilize um link para seu relatório de testes (mantenha o link sempre público para visualização)_
 
-# <a name="c6"></a>6. Estudo de Mercado e Plano de Marketing (sprint 4)
+# <a name="c6"></a>6. Estudo de Mercado e Plano de Marketing
 
 ## 6.1 Resumo Executivo
 
@@ -1872,7 +1861,7 @@ _Descreva as estratégias digitais planejadas, como SEO, redes sociais, marketin
 &nbsp;&nbsp;&nbsp;&nbsp; Manteremos os promotores informados sobre novidades através de e-mails (E-mail Marketing) e colaboraremos com influenciadores do setor para ampliar nosso alcance. Essa combinação de ações garantirá visibilidade e engajamento, consolidando a plataforma como a principal ferramenta de capacitação técnica para o time AgroBayer. <br>
 
 
-# <a name="c7"></a>7. Conclusões e trabalhos futuros (sprint 5)
+# <a name="c7"></a>7. Conclusões e trabalhos futuros 
 
 _Escreva de que formas a solução da aplicação web atingiu os objetivos descritos na seção 2 deste documento. Indique pontos fortes e pontos a melhorar de maneira geral._
 
@@ -1880,7 +1869,7 @@ _Relacione os pontos de melhorias evidenciados nos testes com planos de ações 
 
 _Relacione também quaisquer outras ideias que o grupo tenha para melhorias futuras_
 
-# <a name="c8"></a>8. Referências (sprints 1 a 5)
+# <a name="c8"></a>8. Referências
 
 <a name="c10">[1]</a> BAYER. Bayer Brasil. Disponível em: https://www.bayer.com.br/pt/​. Acesso: 25/04/2025.
 
