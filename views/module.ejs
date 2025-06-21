@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Importa o arquivo de estilos CSS -->
     <link href="/css/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/body.css">
     <!-- Título da página exibida na aba do navegador -->
     <title>Grupo 05</title>
   </head>
@@ -83,7 +84,7 @@
             <div
               class="flex justify-between items-center mb-4 pb-2 border-b border-gray-100"
             >
-              <h1 class="text-2xl font-bold text-gray-800">
+              <h1 class="text-3xl font-bold text-gray-800">
                 <%= moduleContent.title %>
               </h1>
               <!-- Bookmark button moved here -->
@@ -124,7 +125,7 @@
             </div>
             <% } %> 
             <div class="border-t border-gray-200 pt-4 mt-4">
-              <h1>Ultima atualização: <%= (moduleContent.last_update).toLocaleDateString('pt-BR') %></h1>
+              <p>Ultima atualização: <%= (moduleContent.last_update).toLocaleDateString('pt-BR') %></p>
             </div>
           </div>
         </div>

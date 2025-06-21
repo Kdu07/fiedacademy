@@ -1,7 +1,7 @@
 <header
   class="fixed top-0 left-0 w-full h-20 bg-mainGreen shadow-md z-50"
 >
-  <div class="flex items-center justify-between h-full max-w-7xl px-4">
+  <div class="flex items-center justify-between h-full px-4">
     <div class="flex items-center justify-start gap-4 h-full">
       <%- include('./menu.ejs') %>
       <a
@@ -38,6 +38,7 @@
             src="<%= user.profile_photo_path %>"
             class="w-full h-full object-cover"
             alt="Foto de perfil"
+            crossorigin="anonymous"
           />
           <% } else { %>
           <div class="w-full h-full bg-white flex items-center justify-center">

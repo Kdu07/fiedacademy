@@ -24,13 +24,10 @@
       </h1>
 
       <!-- Layout Principal do Dashboard -->
-      <div class="flex flex-col md:flex-row gap-6">
-        <!-- Barra Lateral Esquerda - Filtros e Estatísticas -->
+      <div class="flex flex-col md:flex-row gap-6">        <!-- Barra Lateral Esquerda - Filtros e Estatísticas -->
         <div class="w-full md:w-1/4">
           <!-- Estatísticas de Conteúdo -->
           <div class="bg-white rounded-lg shadow-md p-5 mb-6">
-
-
             <div class="space-y-4">
               <!-- Total de Módulos -->
               <div class="bg-blue-50 p-3 rounded-lg">
@@ -49,20 +46,114 @@
             </div>
           </div>
 
-          <!-- Botão para Adicionar Novo Conteúdo -->
-          <a
-            href="/content/new"
-            class="block w-full bg-green-500 hover:bg-green-600 text-white text-center font-semibold py-2 px-4 rounded-md transition duration-300 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 mb-6"
-          >
-            <i class="fas fa-plus mr-2"></i> Adicionar Novo Conteúdo
-          </a>
-        </div>
+          <!-- Filtros e Ordenação -->
+          <form class="bg-white rounded-lg shadow-md p-5 mb-6" action="/contentDashboard" method="GET">
+            <h3 class="text-lg font-semibold text-gray-800 mb-4">Filtros</h3>
+            
+            <!-- Seleção de Tipo de Conteúdo -->
+            <div class="mb-4">
+              <label class="block text-sm font-medium text-gray-700 mb-2">Exibir:</label>
+              <div class="flex bg-gray-100 rounded-lg p-1">
+                <button type="button" class="flex-1 py-2 px-3 text-sm font-medium rounded-md bg-secondaryGreen text-white focus:outline-none" data-view="lessons">
+                  Lições
+                </button>
+                <button type="button" class="flex-1 py-2 px-3 text-sm font-medium rounded-md text-gray-700 hover:bg-gray-200 focus:outline-none" data-view="modules">
+                  Módulos
+                </button>
+                <button type="button" class="flex-1 py-2 px-3 text-sm font-medium rounded-md text-gray-700 hover:bg-gray-200 focus:outline-none" data-view="paths">
+                  Trilhas
+                </button>
+              </div>
+              <input type="hidden" name="viewType" id="viewType" value="lessons">
+            </div>
+
+            <!-- Ordenação -->
+            <div class="mb-4">
+              <label class="block text-sm font-medium text-gray-700 mb-2">Ordenar por:</label>
+              <select class="w-full p-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" name="order">
+                <option value="recent" <%= typeof order !== 'undefined' && order === 'recent' ? 'selected' : '' %>>Mais recentes</option>
+                <option value="title_asc" <%= typeof order !== 'undefined' && order === 'title_asc' ? 'selected' : '' %>>Título (A-Z)</option>
+                <option value="title_desc" <%= typeof order !== 'undefined' && order === 'title_desc' ? 'selected' : '' %>>Título (Z-A)</option>
+                <option value="module" <%= typeof order !== 'undefined' && order === 'module' ? 'selected' : '' %>>Por módulo</option>
+              </select>
+            </div>
+            
+            <!-- Filtro por Módulos -->
+            <div class="mb-4">
+              <label class="block text-sm font-medium text-gray-700 mb-2">Filtrar por Módulo:</label>
+              <select class="w-full p-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" name="moduleFilter">
+                <option value="">Todos os módulos</option>
+                <% 
+                  // Create a Set of unique module IDs and titles
+                  let modules = new Set();
+                  if (allContents && allContents.length > 0) {
+                    allContents.forEach(content => {
+                      if (content.module_id && content.module_title) {
+                        modules.add(JSON.stringify({id: content.module_id, title: content.module_title}));
+                      }
+                    });
+                  }
+                  
+                  // Convert to array and sort by title
+                  let moduleArray = Array.from(modules).map(m => JSON.parse(m));
+                  moduleArray.sort((a, b) => a.title.localeCompare(b.title));
+                  
+                  moduleArray.forEach(module => {
+                %>
+                <option value="<%= module.id %>" <%= typeof moduleFilter !== 'undefined' && parseInt(moduleFilter) === module.id ? 'selected' : '' %>>
+                  <%= module.title %>
+                </option>
+                <% }); %>
+              </select>
+            </div>
+            
+            <!-- Filtro por Categoria -->
+            <div class="mb-4">
+              <label class="block text-sm font-medium text-gray-700 mb-2">Filtrar por Categoria:</label>
+              <div class="space-y-2 max-h-48 overflow-y-auto pr-2">
+                <% 
+                  // Create a Set of unique categories
+                  let categories = new Set();
+                  if (allContents && allContents.length > 0) {
+                    allContents.forEach(content => {
+                      if (content.category) {
+                        categories.add(content.category);
+                      }
+                    });
+                  }
+                  
+                  // Convert to array and sort
+                  let categoryArray = Array.from(categories).sort();
+                  
+                  categoryArray.forEach(category => {
+                %>
+                <div class="flex items-center">
+                  <input 
+                    type="checkbox" 
+                    id="category-<%= category.replace(/\s+/g, '-').toLowerCase() %>" 
+                    name="categories[]" 
+                    value="<%= category %>" 
+                    class="h-4 w-4 text-blue-600 rounded border-gray-300 focus:ring-blue-500"
+                    <%= typeof selectedCategories !== 'undefined' && selectedCategories.includes(category) ? 'checked' : '' %>
+                  >
+                  <label for="category-<%= category.replace(/\s+/g, '-').toLowerCase() %>" class="ml-2 block text-sm text-gray-700">
+                    <%= category %>
+                  </label>
+                </div>
+                <% }); %>
+              </div>
+            </div>
+
+            <!-- Botão para Aplicar Filtros -->
+            <button class="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-md transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2" type="submit">
+              Aplicar Filtros
+            </button>
+          </form>        </div>
 
         <!-- Área de Conteúdo à Direita - Pesquisa e Cartões de Conteúdo -->
-        <div class="w-full md:w-3/4">
-          <!-- Barra de Pesquisa -->
-          <div class="mb-6">
-            <div class="relative">
+        <div class="w-full md:w-3/4">          <!-- Barra de Pesquisa e Botão Adicionar -->
+          <div class="flex flex-col md:flex-row items-center justify-between gap-4 mb-6">
+            <div class="relative flex-grow w-full">
               <input
                 type="text"
                 id="contentSearchInput"
@@ -84,6 +175,14 @@
                 </svg>
               </div>
             </div>
+            
+            <!-- Botão para Adicionar Novo Conteúdo -->
+            <a
+              href="/content/new"
+              class="w-full md:w-auto whitespace-nowrap bg-green-500 hover:bg-green-600 text-white text-center font-semibold py-2 px-4 rounded-md transition duration-300 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 flex items-center justify-center"
+            >
+              <i class="fas fa-plus mr-2"></i> Adicionar Novo Conteúdo
+            </a>
           </div>
 
           <!-- Grade de Cartões de Conteúdo -->
@@ -242,10 +341,33 @@
     </div>
 
     <!-- Footer -->
-    <%- include('./partials/footer') %>
-
-    <!-- Scripts -->
+    <%- include('./partials/footer') %>    <!-- Scripts -->
     <script>
+      // Filtro por tipo de conteúdo (Lições, Módulos, Trilhas)
+      document.addEventListener("DOMContentLoaded", function() {
+        // Botões de tipo de conteúdo
+        const viewButtons = document.querySelectorAll('[data-view]');
+        const viewTypeInput = document.getElementById('viewType');
+        
+        // Adiciona evento de clique para cada botão
+        viewButtons.forEach(button => {
+          button.addEventListener('click', function() {
+            // Remove a classe ativa de todos os botões
+            viewButtons.forEach(btn => {
+              btn.classList.remove('bg-secondaryGreen', 'text-white');
+              btn.classList.add('text-gray-700', 'hover:bg-gray-200');
+            });
+            
+            // Adiciona a classe ativa ao botão clicado
+            this.classList.remove('text-gray-700', 'hover:bg-gray-200');
+            this.classList.add('bg-secondaryGreen', 'text-white');
+            
+            // Atualiza o input hidden com o valor do tipo selecionado
+            viewTypeInput.value = this.getAttribute('data-view');
+          });
+        });
+      });
+      
       // Pesquisa de conteúdo
       document.addEventListener("DOMContentLoaded", function () {
         const searchInput = document.getElementById("contentSearchInput");

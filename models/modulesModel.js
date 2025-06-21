@@ -79,7 +79,7 @@ module.exports = {
          LEFT JOIN 
           modules m ON c.module_id = m.id
          ORDER BY 
-          c.id`
+          c.last_update DESC`
       );
       return result.rows; // Retorna todos os módulos disponíveis
     } catch (error) {

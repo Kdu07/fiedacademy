@@ -12,6 +12,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
+    <link rel="stylesheet" href="/css/body.css" />
   </head>
   <body class="flex flex-col min-h-screen bg-gray-50">
     <!-- Header -->
@@ -105,7 +106,7 @@
             <div
               class="flex justify-between items-center mb-4 pb-2 border-b border-gray-100"
             >
-              <h1 class="text-2xl font-bold text-gray-800">
+              <h1 class="text-3xl font-bold text-gray-800">
                 <%= article ? article.title : 'Artigo' %>
               </h1>
             </div>
@@ -128,7 +129,10 @@
             </div>
             <% } %>
             <div class="border-t border-gray-200 pt-4 mt-4">
-              <h1>Ultima atualização: <%= (article.last_update).toLocaleDateString('pt-BR') %></h1>
+              <p>
+                Ultima atualização: <%=
+                (article.last_update).toLocaleDateString('pt-BR') %>
+              </p>
             </div>
 
             <!-- Article feedback section (moved from bottom) -->
