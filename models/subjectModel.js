@@ -67,6 +67,32 @@ exports.getAllArticles = async () => {
   return result.rows;
 };
 
+
+// Advanced full-text search implementation
+exports.searchArticle = async (query) => {
+  const result = await db.query(
+    `SELECT 
+      title, 
+      id, 
+      category, 
+      last_update, 
+      body,
+      ts_rank(to_tsvector('portuguese', title), plainto_tsquery('portuguese', $1)) +
+      ts_rank(to_tsvector('portuguese', body), plainto_tsquery('portuguese', $1)) as rank
+    FROM 
+      contents 
+    WHERE 
+      to_tsvector('portuguese', title) @@ plainto_tsquery('portuguese', $1) OR
+      to_tsvector('portuguese', body) @@ plainto_tsquery('portuguese', $1)
+    ORDER BY 
+      rank DESC,
+      category`,
+    [query]
+  );
+  
+  return result.rows;
+};
+
 exports.getFirstArticleFromEachCategory = async () => {
   const query = `
     SELECT

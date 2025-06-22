@@ -17,6 +17,7 @@ const profileRoutes = require('./routes/profileRoutes');
 const testRoutes = require('./routes/testRoutes');
 const landingRoutes = require('./routes/landingRoutes');
 const contentDashboardRoutes = require('./routes/contentDashboardRoutes');
+const searchRoutes = require('./routes/searchRoutes');
 
 // Configura EJS
 app.set('view engine', 'ejs');
@@ -42,6 +43,7 @@ app.use('/', profileRoutes)
 app.use('/', testRoutes)
 app.use('/', landingRoutes);
 app.use('/', contentDashboardRoutes)
+app.use('/', searchRoutes);
 
 //Usa as rotas de trilhas dinâmicas
 //app.use('/paths', pathsRoutes);
