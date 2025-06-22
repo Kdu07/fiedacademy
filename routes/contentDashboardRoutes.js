@@ -3,12 +3,14 @@ const router = express.Router();
 require('dotenv').config();
 
 const contentDashboardController = require('../controllers/contentDashboardController');
+const testController = require('../controllers/testController');
 
 router.get('/contentDashboard', (req, res) => {
   res.redirect('/contentDashboard/lessons');
 })
 
 // Rota de dashboard
+router.get('/contentDashboard/tests', contentDashboardController.indexTests);
 router.get('/contentDashboard/lessons', contentDashboardController.indexLessons);
 router.get('/contentDashboard/modules', contentDashboardController.indexModules);
 
@@ -27,6 +29,11 @@ router.get('/module/new', contentDashboardController.startModuleCreation);
 router.post('/module/create', contentDashboardController.createModule);
 router.post('/module/update/:id', contentDashboardController.updateModule);
 router.post('/module/delete/:id', contentDashboardController.deleteModule);
+
+// Prova
+router.get('/test/edit/:id', testController.editTest);
+
+router.post('/test/update/:id', testController.updateTest);
 
 module.exports = router;
 

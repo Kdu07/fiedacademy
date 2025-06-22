@@ -1,9 +1,34 @@
 const usersModel = require("../models/usersModel");
 const contentModel = require("../models/modulesModel");
 const pathsModel = require("../models/pathsModel");
+const testModel = require("../models/userTestModel");
 
 const { getUserId } = require("../utils/jwtUtils");
 const { isAuthorized } = require("../utils/authUtils");
+
+// TESTS
+exports.indexTests = async (req, res) => {
+  const token = req.cookies.token;
+  const auth = await isAuthorized(token, "Admin");
+
+  if (auth === false) {
+    return res.redirect("/");
+  }
+
+  const id = await getUserId(token);
+  const user = await usersModel.getRole(id);
+  const allTests = await testModel.getAllTests();
+
+  const display = "tests";
+
+  return res.render("contentDashboard", {
+    user,
+    allModules: null,
+    allContents: null,
+    allTests,
+    display,
+  });
+};
 
 // MODULES
 
@@ -19,16 +44,16 @@ exports.indexModules = async (req, res) => {
   const user = await usersModel.getRole(id);
   const allModules = await contentModel.getAllModules();
 
-  const display = 'modules'
+  const display = "modules";
 
   return res.render("contentDashboard", {
     user,
     allModules,
     allContents: null,
-    display
+    allTests: null,
+    display,
   });
 };
-
 
 exports.editModule = async (req, res) => {
   const token = req.cookies.token;
@@ -52,7 +77,7 @@ exports.editModule = async (req, res) => {
   return res.render("editModule", {
     user,
     paths,
-    module
+    module,
   });
 };
 
@@ -93,7 +118,6 @@ exports.startModuleCreation = async (req, res) => {
     video_path: "",
   };
 
-
   if (!paths) {
     return res.status(404).send("Paths not found");
   }
@@ -101,7 +125,7 @@ exports.startModuleCreation = async (req, res) => {
   return res.render("editModule", {
     user,
     paths,
-    module
+    module,
   });
 };
 
@@ -112,17 +136,16 @@ exports.createModule = async (req, res) => {
   if (auth === false) {
     return res.redirect("/");
   }
-  
-  const { id_path, title } = req.body;
 
+  const { id_path, title } = req.body;
 
   let order = await contentModel.getModuleContentOrder(id_path);
   order = order + 1;
-   await contentModel.createModule(
-    title,
-    id_path,
-    order
-  ); 
+  const module = await contentModel.createModule(title, id_path, order);
+
+  const testTitle = "Prova modulo " + title;
+
+  await testModel.createTest(testTitle, module.id);
 
   return res.redirect("/contentDashboard");
 };
@@ -138,11 +161,7 @@ exports.updateModule = async (req, res) => {
   const id = req.params.id;
   const { id_path, title } = req.body;
 
-  await contentModel.updateModuleById(
-    id,
-    title,
-    id_path
-  );
+  await contentModel.updateModuleById(id, title, id_path);
 
   return res.redirect("/contentDashboard/modules");
 };
@@ -161,13 +180,14 @@ exports.indexLessons = async (req, res) => {
   const user = await usersModel.getRole(id);
   const allContents = await contentModel.getAllContents();
 
-  const display = 'lessons'
+  const display = "lessons";
 
   return res.render("contentDashboard", {
     user,
     allModules: null,
     allContents,
-    display
+    allTests: null,
+    display,
   });
 };
 
@@ -233,7 +253,7 @@ exports.createContent = async (req, res) => {
   if (auth === false) {
     return res.redirect("/");
   }
-  
+
   const { contentBody, title, category, module_id, video_path } = req.body;
 
   // Convert YouTube URL to shorter format if needed
@@ -241,14 +261,14 @@ exports.createContent = async (req, res) => {
 
   let order = await contentModel.getContentOrder(module_id);
   order = order + 1;
-   await contentModel.createContent(
+  await contentModel.createContent(
     contentBody,
     title,
     category,
     module_id,
     formattedVideoPath,
     order
-  ); 
+  );
 
   return res.redirect("/contentDashboard");
 };

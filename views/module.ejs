@@ -17,7 +17,7 @@
       <div
         class="bg-secondaryGreen h-20 rounded-e-xl w-2/6 flex items-center mb-8 shadow-md"
       >
-        <h1 class="text-white ms-8 text-3xl font-bold"><%= module.title %></h1>
+        <p class="text-white ms-8 text-3xl font-bold"><%= module.title %></p>
       </div>
 
       <div class="flex flex-row justify-between mb-16">
@@ -84,9 +84,9 @@
             <div
               class="flex justify-between items-center mb-4 pb-2 border-b border-gray-100"
             >
-              <h1 class="text-3xl font-bold text-gray-800">
+              <p class="text-3xl font-bold text-gray-800">
                 <%= moduleContent.title %>
-              </h1>
+              </p>
               <!-- Bookmark button moved here -->
               <form action="/bookmarks/toggle" method="POST">
                 <input

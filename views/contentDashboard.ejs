@@ -36,9 +36,9 @@
                     <i class="fas fa-book text-blue-600"></i>
                   </div>
                   <div>
-                    <p class="text-sm text-gray-600"><%= allContents ? 'Total de Lições' : 'Total de Módulos' %></p>
+                    <p class="text-sm text-gray-600"><%= allTests ? 'Total de provas' : allContents ? 'Total de Lições' : 'Total de Módulos' %></p>
                     <p class="text-xl font-bold text-gray-800">
-                      <%= allContents ? allContents.length : allModules ? allModules.length : 0 %>
+                      <%= allTests ? allTests.length : allContents ? allContents.length : allModules ? allModules.length : 0 %>
                     </p>
                   </div>
                 </div>
@@ -58,6 +58,11 @@
                 data-view="modules" 
                 onclick="window.location.href='/contentDashboard/modules'">
                 Módulos
+              </button>              <button type="button" 
+                class="flex-1 py-2 px-3 text-sm font-medium rounded-md <%= display === 'tests' ? 'bg-secondaryGreen text-white' : 'text-gray-700 hover:bg-gray-200' %> focus:outline-none" 
+                data-view="tests" 
+                onclick="window.location.href='/contentDashboard/tests'">
+                Provas
               </button>
               </div>
               <input type="hidden" name="viewType" id="viewType" value="lessons">
@@ -73,7 +78,7 @@
               <input
                 type="text"
                 id="contentSearchInput"
-                placeholder="<%= allContents ? 'Pesquisar conteúdos...' : 'Pesquisar módulos...' %>"
+                placeholder="<%= allTests ? 'Pesquisar provas' : allContents ? 'Pesquisar conteúdos...' : 'Pesquisar módulos...' %>"
                 class="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               />
               <div class="absolute left-3 top-2.5 text-gray-400">
@@ -92,6 +97,7 @@
               </div>
             </div>
             
+            <% if(allContents || allModules) { %>
             <!-- Botão para Adicionar Novo Conteúdo -->
             <a
               href="<%= allContents ? '/content/new' : '/module/new' %>"
@@ -100,6 +106,7 @@
               >
               <i class="fas fa-plus mr-2"></i> <%= allContents ? 'Adicionar Nova Lição' : 'Adicionar Novo Módulo' %>
             </a>
+            <% } %>
           </div>          <!-- Grade de Cartões de Conteúdo -->
           <div
             id="contentCardsContainer"
@@ -207,16 +214,17 @@
                   </svg>
                   <p class="text-xl font-medium">Nenhum conteúdo encontrado</p>
                   <p class="mt-2">Comece a adicionar conteúdo ao sistema.</p>
+                
                   <a
                     href="<%= allContents ? '/content/new' : '/module/new' %>"
                     class="inline-block mt-4 px-4 py-2 bg-green-500 text-white font-medium rounded-md hover:bg-green-600 transition-colors"
                   >
                     <i class="fas fa-plus mr-2"></i> Adicionar Conteúdo
                   </a>
+                  
                 </div>
               <% } %>
-            
-            <% } else if (display === 'modules') { %>
+              <% } else if (display === 'modules') { %>
               <!-- Display Module Cards -->
               <% if (allModules && allModules.length > 0) { %>                <% allModules.forEach(module => { %>
                 <div 
@@ -277,6 +285,81 @@
                   >
                     <i class="fas fa-plus mr-2"></i> Adicionar Módulo
                   </a>
+                </div>
+              <% } %>
+            <% } else if (display === 'tests') { %>
+              <!-- Display Test Cards -->
+              <% if (allTests && allTests.length > 0) { %>
+                <% allTests.forEach(test => { %>
+                <div 
+                  class="test-card bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-all hover:border-blue-500 border border-transparent relative"
+                  data-title="<%= test.title ? test.title.toLowerCase() : '' %>"
+                >
+                  <!-- Fully clickable card -->
+                  <a href="/test/edit/<%= test.id_module %>" class="block p-4 h-full">
+                    <div class="flex items-center justify-between mb-3">
+                      <!-- Test icon and title -->
+                      <div class="flex items-center">
+                        <div class="bg-blue-100 p-2 rounded-md mr-3">
+                          <i class="fas fa-clipboard-check text-blue-600 text-lg"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-800 line-clamp-1">
+                          <%= test.title || `Prova #${test.id}` %>
+                        </h3>
+                      </div>
+                      
+                     
+                    </div>
+                    
+                    <div class="border-t border-gray-100 pt-3 mt-3">
+                      <div class="flex flex-col space-y-2">
+
+                        
+                        <!-- Module association -->
+                        <div class="flex justify-between">
+                          <span class="text-sm text-gray-500">
+                            <i class="fas fa-layer-group mr-1"></i>
+                            Módulo:
+                          </span>
+                          <span class="text-sm font-medium text-gray-700">
+                            <%= test.module_title || 'N/A' %>
+                          </span>
+                        </div>
+                        
+                        <!-- Time limit -->
+                        <div class="flex justify-between">
+                          <span class="text-sm text-gray-500">
+                            <i class="fas fa-clock mr-1"></i>
+                            Tempo:
+                          </span>
+                          <span class="text-sm font-medium text-gray-700">
+                            <%= test.estimated_time ? test.estimated_time : 'Ilimitado' %>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                  
+
+                </div>
+                <% }); %>
+              <% } else { %>
+                <div class="col-span-full py-12 text-center text-gray-500">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-16 w-16 mx-auto text-gray-400 mb-4"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                    />
+                  </svg>
+                  <p class="text-xl font-medium">Nenhuma prova encontrada</p>
                 </div>
               <% } %>
             <% } %>
@@ -423,9 +506,7 @@
 
         // Show the modal
         modal.classList.remove("hidden");
-      }
-
-      function confirmDeleteModule(moduleId) {
+      }      function confirmDeleteModule(moduleId) {
         const modal = document.getElementById("deleteModal");
         const form = document.getElementById("deleteForm");
         
@@ -436,6 +517,22 @@
         document.querySelector("#deleteModal h3").textContent = "Confirmar Exclusão de Módulo";
         document.querySelector("#deleteModal p").textContent = 
           "Tem certeza que deseja excluir este módulo? Esta ação não pode ser desfeita e também removerá todas as lições associadas.";
+        
+        // Show the modal
+        modal.classList.remove("hidden");
+      }
+      
+      function confirmDeleteTest(testId) {
+        const modal = document.getElementById("deleteModal");
+        const form = document.getElementById("deleteForm");
+        
+        // Set the form action with the test ID
+        form.action = `/test/delete/${testId}`;
+        
+        // Update modal text for tests
+        document.querySelector("#deleteModal h3").textContent = "Confirmar Exclusão de Prova";
+        document.querySelector("#deleteModal p").textContent = 
+          "Tem certeza que deseja excluir esta prova? Esta ação não pode ser desfeita e todas as questões associadas serão removidas.";
         
         // Show the modal
         modal.classList.remove("hidden");

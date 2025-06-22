@@ -83,7 +83,7 @@ module.exports = {
     try {
       const result = await db.query(
         `INSERT INTO modules (id_path, title, module_order) 
-        VALUES ($1, $2, $3)`,
+        VALUES ($1, $2, $3) RETURNING *`,
         [id_path, title, order]
       );
       return result.rows[0]; // Retorna o módulo criado
