@@ -143,9 +143,22 @@ exports.createModule = async (req, res) => {
   order = order + 1;
   const module = await contentModel.createModule(title, id_path, order);
 
-  const testTitle = "Prova modulo " + title;
+  const testTitle = "Prova " + title;
 
   await testModel.createTest(testTitle, module.id);
+
+  const formattedVideoPath = null;
+  const contentBody = "Conteúdo do módulo";
+  const category = null;
+
+  await contentModel.createContent(
+    contentBody,
+    title,
+    category,
+    module.id,
+    formattedVideoPath,
+    1
+  );
 
   return res.redirect("/contentDashboard");
 };
