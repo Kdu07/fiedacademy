@@ -17,6 +17,17 @@ exports.getUserModuleScores = async (userId) => {
     return result.rows;
 }
 
+exports.getAllTests = async () => {
+  const res = await db.query(`
+    SELECT t.id, t.id_module, t.title, t.estimated_time, m.title AS module_title
+    FROM 
+      tests t
+    LEFT JOIN 
+      modules m ON t.id_module = m.id
+    `);
+  return res.rows;
+}
+
 exports.getTestById = async (id) => {
   const res = await db.query('SELECT * FROM tests WHERE id = $1', [id]);
   return res.rows[0];
@@ -52,4 +63,23 @@ exports.finishTest = async (userId, testId, score) => {
 exports.getUserTests = async (userId) => {
   const res = await db.query('SELECT * FROM user_test_score WHERE id_user = $1', [userId]);
   return res.rows;
+}
+
+exports.createTest = async (title, id_module) => {
+  const sql = `
+    INSERT INTO tests (title, estimated_time, questions, description, id_module)
+    VALUES ($1, $2, $3, $4, $5)
+  `;
+  await db.query(sql, [title, '1 minuto', '[]', '', id_module]);
+  return;
+}
+
+exports.editTest = async (id, title, estimated_time, questions, description) => {
+  const sql = `
+    UPDATE tests 
+    SET title = $1, estimated_time = $2, questions = $3, description = $4
+    WHERE id = $5
+  `;
+  await db.query(sql, [title, estimated_time, questions, description, id]);
+  return;
 }

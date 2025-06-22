@@ -56,27 +56,27 @@ exports.getAllPTD = async (order) => {
     switch (order) {
       case "name_asc":
         query =
-          "SELECT id, name, region, email, profile_photo_path, score, last_login, id_role FROM users  ORDER BY name ASC";
+          "SELECT id, name, region, email, profile_photo_path, score, last_login, id_role FROM users WHERE id_role = 4  ORDER BY name ASC";
         break;
       case "name_desc":
         query =
-          "SELECT id, name, region, email, profile_photo_path, score, last_login, id_role FROM users  ORDER BY name DESC";
+          "SELECT id, name, region, email, profile_photo_path, score, last_login, id_role FROM users WHERE id_role = 4 ORDER BY name DESC";
         break;
       case "recent_login":
         query =
-          "SELECT id, name, region, email, profile_photo_path, score, last_login, id_role FROM users  ORDER BY last_login DESC NULLS LAST";
+          "SELECT id, name, region, email, profile_photo_path, score, last_login, id_role FROM users WHERE id_role = 4 ORDER BY last_login DESC NULLS LAST";
         break;
       case "region":
         query =
-          "SELECT id, name, region, email, profile_photo_path, score, last_login, id_role FROM users  ORDER BY region ASC";
+          "SELECT id, name, region, email, profile_photo_path, score, last_login, id_role FROM users WHERE id_role = 4 ORDER BY region ASC";
         break;
       case "score_low":
         query =
-          "SELECT id, name, region, email, profile_photo_path, score, last_login, id_role FROM users  ORDER BY score ASC";
+          "SELECT id, name, region, email, profile_photo_path, score, last_login, id_role FROM users WHERE id_role = 4 ORDER BY score ASC";
         break;
       default:
         query =
-          "SELECT id, name, region, email, profile_photo_path, score, last_login, id_role FROM users  ORDER BY score DESC";
+          "SELECT id, name, region, email, profile_photo_path, score, last_login, id_role FROM users WHERE id_role = 4 ORDER BY score DESC";
     }
 
     const res = await db.query(query);
@@ -110,7 +110,7 @@ exports.getById = async (userId) => {
 exports.getRole = async (userId) => {
   try {
     const res = await db.query(
-      "SELECT id, id_role, name FROM users WHERE id = $1",
+      "SELECT id, id_role, name, profile_photo_path  FROM users WHERE id = $1",
       [userId]
     );
     return res.rows[0];

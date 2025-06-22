@@ -18,7 +18,7 @@ exports.index = async (req, res) => {
   const pathId = req.params.id_path;
   const moduleId = req.params.id;
 
-  const module = await modulesModel.findModule(req.params.id); // Busca o módulo pelo ID fornecido na rota
+  const module = await modulesModel.findModuleById(req.params.id); // Busca o módulo pelo ID fornecido na rota
   const moduleContent = await modulesModel.findModuleContentByOrder(
     req.params.id_order,
     moduleId

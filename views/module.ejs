@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Importa o arquivo de estilos CSS -->
     <link href="/css/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/body.css">
     <!-- Título da página exibida na aba do navegador -->
     <title>Grupo 05</title>
   </head>
@@ -16,7 +17,7 @@
       <div
         class="bg-secondaryGreen h-20 rounded-e-xl w-2/6 flex items-center mb-8 shadow-md"
       >
-        <h1 class="text-white ms-8 text-3xl font-bold"><%= module.title %></h1>
+        <p class="text-white ms-8 text-3xl font-bold"><%= module.title %></p>
       </div>
 
       <div class="flex flex-row justify-between mb-16">
@@ -83,9 +84,9 @@
             <div
               class="flex justify-between items-center mb-4 pb-2 border-b border-gray-100"
             >
-              <h1 class="text-2xl font-bold text-gray-800">
+              <p class="text-3xl font-bold text-gray-800">
                 <%= moduleContent.title %>
-              </h1>
+              </p>
               <!-- Bookmark button moved here -->
               <form action="/bookmarks/toggle" method="POST">
                 <input
@@ -107,7 +108,7 @@
               </form>
             </div>
             <p class="text-gray-700 leading-relaxed mb-6">
-              <%= moduleContent.body %>
+              <%- moduleContent.body %>
             </p>
 
             <% if (moduleContent.video_path) { %>
@@ -122,14 +123,17 @@
                 allowfullscreen
               ></iframe>
             </div>
-            <% } %>
+            <% } %> 
+            <div class="border-t border-gray-200 pt-4 mt-4">
+              <p>Ultima atualização: <%= (moduleContent.last_update).toLocaleDateString('pt-BR') %></p>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- Action bar -->
       <div
-        class="bg-secondaryGreen mx-auto w-full p-4 sticky bottom-0 z-50 shadow-lg"
+        class="bg-secondaryGreen mx-auto w-full p-4 sticky bottom-0 z-20 shadow-lg"
       >
         <div class="flex items-center justify-between">
           <!-- Feedback buttons -->

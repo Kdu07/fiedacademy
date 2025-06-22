@@ -139,7 +139,7 @@
 
       <!-- Action bar -->
       <div
-        class="bg-secondaryGreen mx-auto w-full p-4 sticky bottom-0 z-50 shadow-lg"
+        class="bg-secondaryGreen mx-auto w-full p-4 sticky bottom-0 z-20 shadow-lg"
       >
         <div class="flex items-center justify-between">
           <!-- Question counter -->
@@ -228,6 +228,7 @@
       document.addEventListener("DOMContentLoaded", function () {
         const questions = document.querySelectorAll("#testForm > div");
         let currentIndex = 0;
+        let questionAmount = questions.length - 1;
 
         // Hide all questions except first one initially
         questions.forEach((q, index) => {
@@ -271,6 +272,10 @@
           document.getElementById("prevQuestion").disabled = currentIndex === 0;
           document.getElementById("prevQuestion").style.opacity =
             currentIndex === 0 ? "0.5" : "1";
+
+          document.getElementById("nextQuestion").disabled = currentIndex === questionAmount;
+          document.getElementById("nextQuestion").style.opacity =
+            currentIndex === questionAmount ? "0.25" : "1";
         }
       });
     </script>

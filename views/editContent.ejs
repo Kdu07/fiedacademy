@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title><%= content ? 'Editar' : 'Novo' %> Conteúdo | FieldAcademy</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <!-- Quill Editor CSS -->
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+  </head>
+  <body class="flex flex-col min-h-screen bg-gray-50">
+    <!-- Header -->
+    <%- include('./partials/header') %>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-8">
+      <!-- Header with Back Button -->
+      <div class="flex items-center mb-6">
+        <a href="/contentDashboard" class="mr-4 text-gray-600 hover:text-gray-900">
+          <i class="fas fa-arrow-left"></i>
+        </a>
+        <h1 class="text-2xl font-bold text-gray-800">
+          <%= content ? 'Editar Conteúdo' : 'Criar Novo Conteúdo' %>
+        </h1>
+      </div>
+
+      <!-- Tab Navigation -->
+      <div class="mb-6 border-b border-gray-200">
+        <ul class="flex flex-wrap -mb-px text-sm font-medium text-center">
+          <li class="mr-2">
+            <a href="#" class="tab-link active inline-block p-4 border-b-2 border-blue-600 rounded-t-lg" data-tab="basic-info">
+              Informações Básicas
+            </a>
+          </li>
+          <li class="mr-2">
+            <a href="#" class="tab-link inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:border-gray-300" data-tab="content-editor">
+              Editor de Conteúdo
+            </a>
+          </li>
+          <li class="mr-2">
+            <a href="#" class="tab-link inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:border-gray-300" data-tab="media-upload">
+              Mídia
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Form Container -->
+        <form 
+          id="contentForm" 
+          class="bg-white shadow-md rounded-lg" 
+          action="<%= content && content.id ? `/content/update/${content.id}` : '/content/create' %>" 
+          method="POST"
+        >        
+        <!-- Tab Content -->
+        <div class="tab-content" id="basic-info">
+          <div class="p-6">
+            <h2 class="text-lg font-semibold text-gray-800 mb-4">Informações Básicas</h2>
+            
+            <!-- Title -->
+            <div class="mb-4">
+              <label for="title" class="block text-sm font-medium text-gray-700 mb-1">Título*</label>
+              <input 
+                type="text" 
+                id="title" 
+                name="title" 
+                value="<%= content ? content.title : '' %>"
+                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                required
+              >
+            </div>
+            
+            <!-- Category and Module Selection in a Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+              <!-- Category -->
+              <div>
+                <label for="category" class="block text-sm font-medium text-gray-700 mb-1">Categoria*</label>
+                <select 
+                  id="category" 
+                  name="category" 
+                  class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  required
+                >
+                  <option value="" disabled <%= !content || !content.category ? 'selected' : '' %>>Selecione uma categoria</option>
+                  <option value="Primeiros Passos" <%= content && content.category === 'Primeiros Passos' ? 'selected' : '' %>>Primeiros Passos</option>
+                  <option value="Mapas e Dados" <%= content && content.category === 'Mapas e Dados' ? 'selected' : '' %>>Mapas e Dados</option>
+                  <option value="Boas Praticas" <%= content && content.category === 'Boas Praticas' ? 'selected' : '' %>>Boas Práticas</option>
+                  <option value="Data Inbox" <%= content && content.category === 'Data Inbox' ? 'selected' : '' %>>Data Inbox</option>
+                  <option value="Plantio" <%= content && content.category === 'Plantio' ? 'selected' : '' %>>Plantio</option>
+                  <option value="Colheita" <%= content && content.category === 'Colheita' ? 'selected' : '' %>>Colheita</option>
+                </select>
+              </div>
+                <!-- Module -->
+              <div>
+                <label for="module_id" class="block text-sm font-medium text-gray-700 mb-1">Módulo*</label>
+                <select 
+                  id="module_id" 
+                  name="module_id" 
+                  class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  required
+                >
+                  <option value="" <%= !content || !content.module_id ? 'selected' : '' %>>Selecione um módulo</option>
+                  <% 
+                    // Auto-select the current module if specified in query params
+                    const currentModuleId = typeof moduleId !== 'undefined' ? moduleId : (content && content.module_id ? content.module_id : null);
+                    
+                    if (typeof modules !== 'undefined' && modules && modules.length > 0) { 
+                      modules.forEach(function(module) { 
+                        const isSelected = currentModuleId && parseInt(currentModuleId) === parseInt(module.id);
+                  %>
+                        <option value="<%= module.id %>" <%= isSelected ? 'selected' : '' %>>
+                          <%= module.title %>
+                        </option>
+                  <% 
+                      }); 
+                    } 
+                  %>
+                </select>
+              </div>
+            </div>
+
+            
+          </div>
+        </div>
+
+        <!-- Content Editor Tab -->
+        <div class="tab-content hidden" id="content-editor">
+          <div class="p-6">
+            <h2 class="text-lg font-semibold text-gray-800 mb-4">Editor de Conteúdo</h2>
+            <input type="hidden" name="contentBody" id="body-content">
+            <!-- Quill Editor -->
+            <div class="mb-4">
+              <label for="editor-container" class="block text-sm font-medium text-gray-700 mb-1">Conteúdo</label>
+              <div id="editor-container" class="h-64 mb-2 border border-gray-300 rounded-md">
+                <%- content && content.body ? content.body : '' %>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Media Upload Tab -->
+        <div class="tab-content hidden" id="media-upload">
+          <div class="p-6">
+            <h2 class="text-lg font-semibold text-gray-800 mb-4">Mídia</h2>
+            
+            <!-- YouTube Video URL -->
+            <div class="mb-6">
+              <label for="video_path" class="block text-sm font-medium text-gray-700 mb-1">Link do Vídeo do YouTube</label>
+              <input 
+                type="url" 
+                id="video_path" 
+                name="video_path" 
+                value="<%= content && content.video_path ? content.video_path : '' %>"
+                placeholder="https://www.youtube.com/watch?v=..."
+                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              >
+              <p class="mt-1 text-sm text-gray-500">Cole um link do YouTube completo</p>
+                <!-- YouTube Preview -->
+              <div id="video-preview" class="mt-3 <%= content && content.video_path ? '' : 'hidden' %>">
+                <h3 class="text-sm font-medium text-gray-700 mb-2">Prévia do Vídeo:</h3>
+                <div class="relative w-full max-w-md h-72 bg-black rounded-lg overflow-hidden shadow-md">
+                  <% if (content && content.video_path) { 
+                    let videoId = '';
+                    let embedUrl = '';
+                    try {
+                      if (content.video_path.includes('youtube.com/watch?v=')) {
+                        videoId = content.video_path.split('v=')[1];
+                        const ampersandPosition = videoId ? videoId.indexOf('&') : -1;
+                        if (ampersandPosition !== -1) {
+                          videoId = videoId.substring(0, ampersandPosition);
+                        }
+                        embedUrl = `https://www.youtube.com/embed/${videoId}`;
+                      } else if (content.video_path.includes('youtu.be/')) {
+                        videoId = content.video_path.split('youtu.be/')[1];
+                        const questionMarkPosition = videoId ? videoId.indexOf('?') : -1;
+                        if (questionMarkPosition !== -1) {
+                          videoId = videoId.substring(0, questionMarkPosition);
+                        }
+                        embedUrl = `https://www.youtube.com/embed/${videoId}`;
+                      }
+                    } catch (err) {
+                      videoId = '';
+                      embedUrl = '';
+                    }
+                  %>
+                    <% if (videoId) { %>
+                      <iframe
+                        src="<%= embedUrl %>"
+                        class="w-full h-full rounded-lg"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen
+                        frameborder="0"
+                      ></iframe>
+                    <% } %>
+                  <% } %>
+                </div>
+              </div>
+            </div>
+
+          
+
+
+          </div>
+        </div>        <!-- Save Button -->
+        <div class="px-6 pb-6 flex justify-between">
+          <button 
+            type="submit" 
+            class="px-6 py-3 bg-secondaryGreen  text-white font-medium rounded-md shadow-md flex items-center justify-center"
+          >
+            <i class="fas fa-save mr-2"></i>
+            <%= content && content.id ? 'Salvar Alterações' : 'Publicar Conteúdo' %>
+          </button>
+        </div>
+      </form>
+    </div>
+      
+
+    <!-- Footer -->
+    <%- include('./partials/footer') %>
+    
+    <!-- Quill Editor JS -->
+    <script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>    
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {        // Set form action dynamically based on content
+        
+        // Initialize Quill editor
+        const quill = new Quill('#editor-container', {
+          theme: 'snow',
+          modules: {
+            toolbar: [
+              ['bold', 'italic', 'underline', 'strike'],
+              ['blockquote', 'code-block'],
+              [{ 'header': 1 }, { 'header': 2 }],
+              [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+              [{ 'script': 'sub'}, { 'script': 'super' }],
+              [{ 'indent': '-1'}, { 'indent': '+1' }],
+              [{ 'direction': 'rtl' }],
+              [{ 'size': ['small', false, 'large', 'huge'] }],
+              [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+              [{ 'color': [] }, { 'background': [] }],
+              [{ 'font': [] }],
+              [{ 'align': [] }],
+              ['clean'],
+              ['link', 'image']
+            ]
+          },
+          placeholder: 'Escreva o conteúdo aqui...',
+        });
+        
+        // Set form submit handler to update hidden input with editor content
+        document.getElementById('contentForm').addEventListener('submit', function() {
+          const editorContent = quill.root.innerHTML;
+          document.getElementById('body-content').value = editorContent;
+        });
+        
+        // Tab navigation
+        const tabLinks = document.querySelectorAll('.tab-link');
+        const tabContents = document.querySelectorAll('.tab-content');
+        
+        function showTab(tabId) {
+          // Hide all tabs
+          tabContents.forEach(tab => {
+            tab.classList.add('hidden');
+          });
+          
+          // Remove active class from all tab links
+          tabLinks.forEach(link => {
+            link.classList.remove('active', 'border-blue-600', 'text-blue-600');
+            link.classList.add('border-transparent', 'hover:border-gray-300');
+          });
+          
+          // Show the selected tab
+          document.getElementById(tabId).classList.remove('hidden');
+          
+          // Make the tab link active
+          document.querySelector(`[data-tab="${tabId}"]`).classList.add('active', 'border-blue-600', 'text-blue-600');
+          document.querySelector(`[data-tab="${tabId}"]`).classList.remove('border-transparent', 'hover:border-gray-300');
+        }
+        
+        // Add click event listeners to tab links
+        tabLinks.forEach(link => {
+          link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const tabId = this.getAttribute('data-tab');
+            showTab(tabId);
+          });
+        });
+        
+        
+          // YouTube video preview
+        const videoInput = document.getElementById('video_path');
+        const videoPreview = document.getElementById('video-preview');
+        
+        videoInput.addEventListener('change', function() {
+          const videoUrl = this.value.trim();
+          
+          if (videoUrl) {
+            let videoId = null;
+            let embedUrl = '';
+            
+            try {
+              if (videoUrl.includes('youtube.com/watch?v=')) {
+                videoId = videoUrl.split('v=')[1].split('&')[0];
+                embedUrl = `https://www.youtube.com/embed/${videoId}`;
+              } else if (videoUrl.includes('youtu.be/')) {
+                videoId = videoUrl.split('youtu.be/')[1].split('?')[0];
+                embedUrl = `https://www.youtube.com/embed/${videoId}`;
+              }
+              
+              if (videoId) {
+                videoPreview.innerHTML = `
+                  <h3 class="text-sm font-medium text-gray-700 mb-2">Prévia do Vídeo:</h3>
+                  <div class="relative w-full max-w-md h-72 bg-black rounded-lg overflow-hidden shadow-md">
+                    <iframe
+                      src="${embedUrl}"
+                      class="w-full h-full rounded-lg"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen
+                      frameborder="0"
+                    ></iframe>
+                  </div>
+                `;
+                videoPreview.classList.remove('hidden');
+                return;
+              }
+            } catch (err) {
+              console.error('Error parsing YouTube URL:', err);
+            }
+          }
+          
+          // If URL is invalid or empty
+          videoPreview.classList.add('hidden');
+        });
+        
+
+        
+
+      });
+    </script>
+  </body>
+</html>
