@@ -254,7 +254,8 @@
                 ></div>
               </div>
 
-              <% if (userProfile.id === user.id && trilha.progress_percentage === 100) { %>
+              <% if (userProfile.id === user.id && trilha.progress_percentage
+              === 100) { %>
               <a
                 href="/profile/<%= userProfile.id %>/path/<%= trilha.path_id %>/generateCertificate"
                 class="mt-2 md:mt-0 md:ml-4 p-2 bg-gray-100 hover:bg-gray-200 rounded-full transition-colors"
