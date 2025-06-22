@@ -39,7 +39,7 @@ Mais do que um ambiente de treinamento, o projeto busca transformar o processo d
 
 ## 📝 Link de demonstração
 
-_Coloque aqui o link para seu projeto publicado e link para vídeo de demonstração_
+https://www.youtube.com/watch?v=ktX-I1_U-2s
 
 ## 📁 Estrutura de pastas
 O projeto segue o padrão arquitetural **MVC (Model-View-Controller)**, que organiza o código em três camadas principais:
