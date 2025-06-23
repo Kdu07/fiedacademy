@@ -2,7 +2,7 @@
 const db = require("../config/db");
 
 exports.getAll = async () => {
-  const res = await db.query("SELECT * FROM paths");
+  const res = await db.query("SELECT * FROM paths ORDER BY id");
   return res.rows;
 };
 

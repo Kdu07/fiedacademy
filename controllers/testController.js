@@ -57,6 +57,10 @@ exports.handleSubmit = async (req, res) => {
 
   const test = await testModel.getTestById(testId);
 
+  if(test.questions === null || test.questions === undefined || test.questions === "[]") {
+    return res.status(400).send("Teste não encontrado ou sem perguntas.");
+  }
+
   test.questions = JSON.parse(test.questions);
 
   const answers = req.body;
@@ -83,7 +87,7 @@ exports.handleSubmit = async (req, res) => {
     }
   });
 
-  testModel.finishTest(userId, test.id, earnedPoints);
+  await testModel.finishTest(userId, test.id, earnedPoints);
 
   await usersModel.addScore(userId, earnedPoints);
 

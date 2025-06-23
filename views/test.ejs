@@ -11,15 +11,17 @@
 
     <div class="mt-16">
       <div
-        class="bg-secondaryGreen h-20 rounded-e-xl w-2/6 flex items-center mb-8 shadow-md"
+        class="bg-secondaryGreen h-20 rounded-e-xl w-full md:w-2/6 flex items-center mb-8 shadow-md"
       >
-        <h1 class="text-white ms-8 text-3xl font-bold"><%= test.title %></h1>
+        <h1 class="text-white ms-8 text-xl md:text-3xl font-bold">
+          <%= test.title %>
+        </h1>
       </div>
 
-      <div class="flex flex-row justify-between mb-16">
+      <div class="flex flex-col md:flex-row justify-between mb-16">
         <!-- Test info sidebar -->
         <div
-          class="bg-white mt-8 ms-8 w-3/12 rounded-xl flex flex-col p-6 shadow-md border border-gray-100"
+          class="bg-white mx-4 md:mt-8 md:ms-8 w-auto md:w-3/12 rounded-xl flex flex-col p-6 shadow-md border border-gray-100 mb-6 md:mb-0"
         >
           <h2
             class="text-secondaryGreen font-bold text-xl mb-4 text-center border-b border-gray-100 pb-2"
@@ -55,7 +57,7 @@
         </div>
 
         <!-- Test content -->
-        <div class="mt-8 me-8 w-7/12">
+        <div class="mx-4 md:mt-8 md:me-8 w-auto md:w-7/12">
           <form
             id="testForm"
             action="/test/<%= test.id %>/submit"
@@ -65,14 +67,14 @@
             <% if (test.questions && test.questions.length > 0) {
             test.questions.forEach((question, index) => { %>
 
-            <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="bg-white p-4 md:p-6 rounded-lg shadow-md">
               <div class="flex items-start mb-4">
                 <span
-                  class="bg-secondaryGreen text-white font-bold rounded-full w-8 h-8 flex items-center justify-center mr-3"
+                  class="bg-secondaryGreen text-white font-bold rounded-full w-8 h-8 flex items-center justify-center mr-3 flex-shrink-0"
                   ><%= index + 1 %></span
                 >
                 <div>
-                  <h3 class="text-xl font-bold text-gray-800">
+                  <h3 class="text-lg md:text-xl font-bold text-gray-800">
                     <%= question.text %>
                   </h3>
                   <p class="text-sm text-gray-500 mt-1">
@@ -86,7 +88,7 @@
                 </div>
               </div>
 
-              <div class="ml-11 space-y-3 mt-5">
+              <div class="ml-4 md:ml-11 space-y-3 mt-5">
                 <% if (question.type === 'multiple-choice' && question.options)
                 { question.options.forEach(option => { %>
                 <label
@@ -139,11 +141,13 @@
 
       <!-- Action bar -->
       <div
-        class="bg-secondaryGreen mx-auto w-full p-4 sticky bottom-0 z-20 shadow-lg"
+        class="bg-secondaryGreen mx-auto w-full p-3 md:p-4 sticky bottom-0 z-20 shadow-lg"
       >
-        <div class="flex items-center justify-between">
+        <div class="flex flex-col md:flex-row md:items-center justify-between">
           <!-- Question counter -->
-          <div class="text-white font-medium">
+          <div
+            class="text-white font-medium text-center md:text-left mb-2 md:mb-0"
+          >
             Questão <span id="currentQuestion">1</span> de
             <span id="totalQuestions"
               ><%= test.questions ? test.questions.length : 0 %></span
@@ -151,14 +155,16 @@
           </div>
 
           <!-- Navigation buttons -->
-          <div class="flex space-x-4">
+          <div
+            class="flex justify-center md:justify-end space-x-2 md:space-x-4"
+          >
             <button
               id="prevQuestion"
-              class="rounded-lg bg-white/20 hover:bg-white/30 transition-colors shadow-sm text-white p-3 px-8 md:px-12 font-medium inline-flex items-center"
+              class="rounded-lg bg-white/20 hover:bg-white/30 transition-colors shadow-sm text-white p-2 md:p-3 px-4 md:px-8 text-sm md:text-base font-medium inline-flex items-center"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5 mr-2"
+                class="h-4 w-4 md:h-5 md:w-5 mr-1 md:mr-2"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -175,12 +181,12 @@
 
             <button
               id="nextQuestion"
-              class="rounded-lg bg-white hover:bg-blue-200 transition-colors shadow-sm text-black p-3 px-8 md:px-12 font-medium inline-flex items-center"
+              class="rounded-lg bg-white hover:bg-blue-200 transition-colors shadow-sm text-black p-2 md:p-3 px-4 md:px-8 text-sm md:text-base font-medium inline-flex items-center"
             >
               PRÓXIMO
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5 ml-2"
+                class="h-4 w-4 md:h-5 md:w-5 ml-1 md:ml-2"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -198,13 +204,13 @@
               id="submitTest"
               type="submit"
               form="testForm"
-              class="rounded-lg bg-green-600 hover:bg-green-700 transition-colors shadow-sm text-white p-3 px-8 md:px-12 font-medium inline-flex items-center"
+              class="rounded-lg bg-green-600 hover:bg-green-700 transition-colors shadow-sm text-white p-2 md:p-3 px-4 md:px-8 text-sm md:text-base font-medium inline-flex items-center"
               onclick="return confirm('Você tem certeza que deseja enviar a avaliação?')"
             >
-              ENVIAR AVALIAÇÃO
+              ENVIAR
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5 ml-2"
+                class="h-4 w-4 md:h-5 md:w-5 ml-1 md:ml-2"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -238,18 +244,6 @@
         // Update counter
         updateQuestionCounter();
 
-        // Next button handler
-        document
-          .getElementById("nextQuestion")
-          .addEventListener("click", function () {
-            if (currentIndex < questions.length - 1) {
-              questions[currentIndex].style.display = "none";
-              currentIndex++;
-              questions[currentIndex].style.display = "block";
-              updateQuestionCounter();
-            } 
-          });
-
         // Previous button handler
         document
           .getElementById("prevQuestion")
@@ -259,6 +253,32 @@
               currentIndex--;
               questions[currentIndex].style.display = "block";
               updateQuestionCounter();
+              // Scroll to top of question on mobile
+              if (window.innerWidth < 768) {
+                questions[currentIndex].scrollIntoView({
+                  behavior: "smooth",
+                  block: "start",
+                });
+              }
+            }
+          });
+
+        // Next button handler - modified to add smooth scrolling on mobile
+        document
+          .getElementById("nextQuestion")
+          .addEventListener("click", function () {
+            if (currentIndex < questions.length - 1) {
+              questions[currentIndex].style.display = "none";
+              currentIndex++;
+              questions[currentIndex].style.display = "block";
+              updateQuestionCounter();
+              // Scroll to top of question on mobile
+              if (window.innerWidth < 768) {
+                questions[currentIndex].scrollIntoView({
+                  behavior: "smooth",
+                  block: "start",
+                });
+              }
             }
           });
 
@@ -273,7 +293,8 @@
           document.getElementById("prevQuestion").style.opacity =
             currentIndex === 0 ? "0.5" : "1";
 
-          document.getElementById("nextQuestion").disabled = currentIndex === questionAmount;
+          document.getElementById("nextQuestion").disabled =
+            currentIndex === questionAmount;
           document.getElementById("nextQuestion").style.opacity =
             currentIndex === questionAmount ? "0.25" : "1";
         }
