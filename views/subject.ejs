@@ -20,25 +20,52 @@
 
     <div class="mt-16">
       <div
-        class="bg-secondaryGreen h-20 rounded-e-xl w-2/6 flex items-center mb-8 shadow-md"
+        class="bg-secondaryGreen h-16 md:h-20 rounded-e-xl w-full md:w-2/6 flex items-center mb-4 md:mb-8 shadow-md"
       >
-        <p class="text-white ms-8 text-3xl font-bold">
+        <p class="text-white ms-4 md:ms-8 text-xl md:text-3xl font-bold">
           <%= article ? article.category : 'Ajuda' %>
         </p>
       </div>
 
-      <div class="flex flex-row justify-between mb-16 px-6">
+      <div
+        class="flex flex-col md:flex-row justify-between mb-8 md:mb-16 px-4 md:px-6"
+      >
+        <!-- Mobile Topic Selector -->
+        <div class="mb-4 md:hidden">
+          <button
+            id="mobileTopicToggle"
+            class="w-full bg-secondaryGreen text-white font-bold text-lg p-3 rounded-lg flex items-center justify-between shadow-md"
+          >
+            Tópicos de Ajuda
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+          </button>
+        </div>
+
         <!-- Sidebar Navigation - Redesigned -->
         <div
-          class="bg-white mt-8 ms-2 w-3/12 rounded-xl flex flex-col shadow-md border border-gray-100"
+          id="topicsSidebar"
+          class="hidden md:flex bg-white w-full md:mt-8 md:ms-2 md:w-3/12 rounded-xl flex-col shadow-md border border-gray-100 mb-4 md:mb-0"
         >
           <h2
-            class="bg-secondaryGreen text-white font-bold text-xl p-4 rounded-t-xl"
+            class="bg-secondaryGreen text-white font-bold text-lg md:text-xl p-4 rounded-t-xl"
           >
             Tópicos de Ajuda
           </h2>
           <div
-            class="p-4 overflow-y-auto max-h-[500px] scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100"
+            class="p-4 overflow-y-auto max-h-[300px] md:max-h-[500px] scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100"
           >
             <!-- Current topic -->
             <% if (typeof article !== 'undefined') { %>
@@ -72,10 +99,10 @@
             Object.keys(categoriesMap).forEach(function(category) { %>
             <div class="mt-4">
               <p
-                class="font-semibold text-gray-700 mb-2 text-base uppercase tracking-wider"
+                class="font-semibold text-gray-700 mb-2 text-sm md:text-base uppercase tracking-wider"
               >
                 <%= category %>
-            </p>
+              </p>
               <ul class="space-y-1 ml-2">
                 <% categoriesMap[category].forEach(function(article) { const
                 isCurrentArticle = typeof currentArticle !== 'undefined' &&
@@ -83,7 +110,7 @@
                 <li>
                   <a
                     href="/help/<%= article.category %>/content/<%= article.id %>"
-                    class="<%= isCurrentArticle ? 'text-secondaryGreen font-medium' : 'text-gray-600' %> hover:text-secondaryGreen block py-1"
+                    class="<%= isCurrentArticle ? 'text-secondaryGreen font-medium' : 'text-gray-600' %> hover:text-secondaryGreen block py-1 text-sm md:text-base"
                   >
                     <%= article.title %>
                   </a>
@@ -101,23 +128,27 @@
         </div>
 
         <!-- Article Content -->
-        <div class="mt-8 me-2 w-7/12 rounded-lg flex flex-col items-start">
-          <div class="w-full bg-white p-6 rounded-lg shadow-md">
+        <div
+          class="w-full md:mt-8 md:me-2 md:w-7/12 rounded-lg flex flex-col items-start"
+        >
+          <div class="w-full bg-white p-4 md:p-6 rounded-lg shadow-md">
             <div
-              class="flex justify-between items-center mb-4 pb-2 border-b border-gray-100"
+              class="flex justify-between items-center mb-3 md:mb-4 pb-2 border-b border-gray-100"
             >
-              <p class="text-3xl font-bold text-gray-800">
+              <p class="text-xl md:text-3xl font-bold text-gray-800">
                 <%= article ? article.title : 'Artigo' %>
               </p>
             </div>
 
-            <div class="prose max-w-none text-gray-700 leading-relaxed mb-6">
+            <div
+              class="prose max-w-none text-gray-700 leading-relaxed mb-4 md:mb-6 text-sm md:text-base"
+            >
               <%- article.body %>
             </div>
 
             <% if (article.video_path) { %>
             <div
-              class="h-96 w-full rounded-lg overflow-hidden mb-4 shadow-md border border-gray-100"
+              class="h-48 sm:h-64 md:h-96 w-full rounded-lg overflow-hidden mb-4 shadow-md border border-gray-100"
             >
               <iframe
                 src="<%= article.video_path.replace('youtu.be/', 'www.youtube.com/embed/').split('?')[0] %>"
@@ -128,20 +159,26 @@
               ></iframe>
             </div>
             <% } %>
-            <div class="border-t border-gray-200 pt-4 mt-4">
-              <p>
+            <div class="border-t border-gray-200 pt-3 md:pt-4 mt-3 md:mt-4">
+              <p class="text-sm md:text-base">
                 Ultima atualização: <%=
                 (article.last_update).toLocaleDateString('pt-BR') %>
               </p>
             </div>
 
             <!-- Article feedback section (moved from bottom) -->
-            <div class="border-t border-gray-200 pt-4 mt-4">
-              <p class="text-gray-700 font-medium mb-3">
+            <div class="border-t border-gray-200 pt-3 md:pt-4 mt-3 md:mt-4">
+              <p
+                class="text-gray-700 font-medium mb-2 md:mb-3 text-sm md:text-base"
+              >
                 Este artigo foi útil?
               </p>
-              <div class="flex items-center space-x-4">
-                <form action="/feedback/update" method="POST" class="inline">
+              <div class="flex items-center space-x-2 md:space-x-4 flex-wrap">
+                <form
+                  action="/feedback/update"
+                  method="POST"
+                  class="inline mb-2"
+                >
                   <input type="hidden" name="type" value="true" />
                   <input
                     type="hidden"
@@ -151,16 +188,24 @@
                   <input type="hidden" name="userId" value="<%= user.id %>" />
                   <button
                     type="submit"
-                    class="bg-secondaryGreen/70 hover:bg-secondaryGreen p-2 rounded-lg transition-colors flex items-center space-x-2 px-4"
+                    class="bg-secondaryGreen/70 hover:bg-secondaryGreen p-2 rounded-lg transition-colors flex items-center space-x-2 px-3 md:px-4"
                   >
-                    <img src="/icons/thumb_up.svg" alt="Like" class="h-5 w-5" />
-                    <span class="text-sm text-gray-700"
+                    <img
+                      src="/icons/thumb_up.svg"
+                      alt="Like"
+                      class="h-4 w-4 md:h-5 md:w-5"
+                    />
+                    <span class="text-xs md:text-sm text-gray-700"
                       >Sim (<%= article && article.positiveFeedback ?
                       article.positiveFeedback : 0 %>)</span
                     >
                   </button>
                 </form>
-                <form action="/feedback/update" method="POST" class="inline">
+                <form
+                  action="/feedback/update"
+                  method="POST"
+                  class="inline mb-2"
+                >
                   <input type="hidden" name="type" value="false" />
                   <input
                     type="hidden"
@@ -170,14 +215,14 @@
                   <input type="hidden" name="userId" value="<%= user.id %>" />
                   <button
                     type="submit"
-                    class="bg-red-500/70 hover:bg-red-500 p-2 rounded-lg transition-colors flex items-center space-x-2 px-4"
+                    class="bg-red-500/70 hover:bg-red-500 p-2 rounded-lg transition-colors flex items-center space-x-2 px-3 md:px-4"
                   >
                     <img
                       src="/icons/thumb_down.svg"
                       alt="Dislike"
-                      class="h-5 w-5"
+                      class="h-4 w-4 md:h-5 md:w-5"
                     />
-                    <span class="text-sm text-gray-700"
+                    <span class="text-xs md:text-sm text-gray-700"
                       >Não (<%= article && article.negativeFeedback ?
                       article.negativeFeedback : 0 %>)</span
                     >
@@ -192,5 +237,29 @@
 
     <!-- Footer -->
     <%- include('./partials/footer') %>
+
+    <script>
+      // Mobile topic toggle
+      document.addEventListener("DOMContentLoaded", function () {
+        const mobileTopicToggle = document.getElementById("mobileTopicToggle");
+        const topicsSidebar = document.getElementById("topicsSidebar");
+
+        if (mobileTopicToggle && topicsSidebar) {
+          mobileTopicToggle.addEventListener("click", function () {
+            topicsSidebar.classList.toggle("hidden");
+
+            // Change the arrow icon
+            const svg = this.querySelector("svg");
+            if (topicsSidebar.classList.contains("hidden")) {
+              svg.innerHTML =
+                '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />';
+            } else {
+              svg.innerHTML =
+                '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />';
+            }
+          });
+        }
+      });
+    </script>
   </body>
 </html>
