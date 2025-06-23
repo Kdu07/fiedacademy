@@ -25,6 +25,7 @@ exports.index = async (req, res) => {
   ); // Busca o conteúdo do módulo pela ordem da página e ID do módulo
   const modulePages = await modulesModel.findAllModuleContent(req.params.id); // Busca todas as páginas de conteúdo do módulo, ordenadas por número da página
 
+
   if (!module || !moduleContent) {
     return res.redirect("/home");
   }
