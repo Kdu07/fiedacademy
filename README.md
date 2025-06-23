@@ -39,7 +39,7 @@ Mais do que um ambiente de treinamento, o projeto busca transformar o processo d
 
 ## 📝 Link de demonstração
 
-_Coloque aqui o link para seu projeto publicado e link para vídeo de demonstração_
+https://www.youtube.com/watch?v=ktX-I1_U-2s
 
 ## 📁 Estrutura de pastas
 O projeto segue o padrão arquitetural **MVC (Model-View-Controller)**, que organiza o código em três camadas principais:
@@ -99,4 +99,5 @@ Aqui encontram-se todas as instruções necessárias para a instalação de todo
 
 ## 📋 Licença/License
 
-<a href="https://github.com/Inteli-College/2025-1B-T15-IN02-G05">FieldAcademy</a> © 2025 by <a href="https://github.com/Inteli-College/2025-1B-T15-IN02-G05">INTELI, Antonio Filisetti Yoshinaga Di Cillo, Carlos Eduardo Serrano Quaglia, Emanuelly Cantarelli Dias, João de Caprio Agmont, Luiz Felipe Paravatti Maciel Hinuy,  Maria Arielly Lima de Oliveira, Rafael Cabral da Silva.</a> is licensed under <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International</a><img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" style="max-width: 1em;max-height:1em;margin-left: .2em;">.
+
+<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"><p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://github.com/Intelihub/Template_M2/"><a href="https://github.com/Inteli-College/2025-1B-T15-IN02-G05">FieldAcademy</a> © 2025 by <a href="https://github.com/Inteli-College/2025-1B-T15-IN02-G05">INTELI, Antonio Filisetti Yoshinaga Di Cillo, Carlos Eduardo Serrano Quaglia, Emanuelly Cantarelli Dias, João de Caprio Agmont, Luiz Felipe Paravatti Maciel Hinuy,  Maria Arielly Lima de Oliveira, Rafael Cabral da Silva.</a> is licensed under <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International</a>.
