@@ -29,7 +29,7 @@
 
 ## 📝 Descrição
 
-O projeto tem como propósito desenvolver uma plataforma web de capacitação técnica voltada aos PTDs (Profissionais Técnicos de Desenvolvimento) da divisão agrícola da Bayer AG — empresa referência global em inovação no agronegócio e pioneira em soluções digitais como o Climate FieldView.
+O projeto tem como propósito desenvolver uma plataforma web de capacitação técnica voltada aos PTDs (Promotores Técnicos Digitais) da divisão agrícola da Bayer AG — empresa referência global em inovação no agronegócio e pioneira em soluções digitais como o Climate FieldView.
 
 Apesar dos avanços tecnológicos da empresa e dos investimentos constantes em pesquisa e desenvolvimento, desafios internos como o alto turnover (acima de 30% ao ano) e a ausência de um treinamento estruturado ainda comprometem a eficiência e a padronização da atuação desses profissionais no campo.
 
@@ -53,7 +53,7 @@ Para isso, a estrutura de pastas foi organizada da seguinte forma:
 - `assets/`: Contém imagens e outros arquivos estáticos.
 - `document/`: Armazena os documentos do projeto, como o modelo do banco de dados e a documentação WAD.
  - `config/`: Arquivos de configuração, como a conexão com o banco de dados.
-- `controllers/`, `models/`, `routes/`, `views/`: Pastas principais do padrão MVC.
+- `controllers/`, `models/`, `routes/` e `views/`: Pastas principais do padrão MVC.
 - `styles/` e `scripts/`: Arquivos CSS e JS públicos.
 - `README.md`: Documentação explicativa principal do projeto.
 
@@ -61,7 +61,11 @@ Para isso, a estrutura de pastas foi organizada da seguinte forma:
 
 Aqui encontram-se todas as instruções necessárias para a instalação de todos os programas, bibliotecas e ferramentas imprescindíveis para a configuração do ambiente de desenvolvimento.
 
-1. Baixar e instalar o node.js: [https://nodejs.org/pt-br/](https://nodejs.org/pt-br/) (versão 16.15.1 LTS)
+1. **Instalações necessárias:**<br>
+- [Node.js (versão recomendada: 16.15.1 LTS)](https://nodejs.org/pt-br/)
+- [Visual Studio Code (VSCode)](https://code.visualstudio.com/)
+- [Git](https://git-scm.com/) – para clonar o repositório
+
 
 2. Clone este repositório:
    ```bash
@@ -69,7 +73,9 @@ Aqui encontram-se todas as instruções necessárias para a instalação de todo
 
 2. Instale as dependências:
    ```bash
-   npm install
+    npm install
+    npm init -y
+    npm install express ejs
 
 3. Inicie o servidor:
     ```bash
@@ -82,9 +88,9 @@ Aqui encontram-se todas as instruções necessárias para a instalação de todo
 
 * 0.5.0 - XX/XX/2025
     * 
-* 0.4.0 - XX/XX/2025
+* 0.4.0 - 14/06/2025 - Entrega da segunda versão da plataforma web e testes jest. 
     * 
-* 0.3.0 - 30/05/2025 - Prototipação de alta fidelidade (MockUp) e Arquiteru de Software (MVC) 
+* 0.3.0 - 30/05/2025 - Prototipação de alta fidelidade (MockUp) e Arquiteru de Software (MVC).
     * 
 * 0.2.0 - 15/05/2025 - Prototipação de baixa fidelidade e construção do banco de dados.
     * 
@@ -92,10 +98,5 @@ Aqui encontram-se todas as instruções necessárias para a instalação de todo
     
 
 ## 📋 Licença/License
-```
-Alunos inteli (remover essa observação do readme.md após leitura e execução, junto com o link para o tutorial):
 
-1. Siga o tutorial para criação da licença: https://drive.google.com/file/d/1hXWLHUhjBkPVuGqeE2LZKozFntnJZzlx/view
-```
-
-<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"><p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://github.com/Intelihub/Template_M2/">MODELO GIT INTELI</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://www.yggbrasil.com.br/vr">Inteli, Nome do integrante 1, Nome do integrante 2, Nome do integrante 3, Nome do integrante 4, Nome do integrante 5, Nome do integrante 6, Nome do integrante 7</a> is licensed under <a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">Attribution 4.0 International</a>.</p>
+<a href="https://github.com/Inteli-College/2025-1B-T15-IN02-G05">FieldAcademy</a> © 2025 by <a href="https://github.com/Inteli-College/2025-1B-T15-IN02-G05">INTELI, Antonio Filisetti Yoshinaga Di Cillo, Carlos Eduardo Serrano Quaglia, Emanuelly Cantarelli Dias, João de Caprio Agmont, Luiz Felipe Paravatti Maciel Hinuy,  Maria Arielly Lima de Oliveira, Rafael Cabral da Silva.</a> is licensed under <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International</a><img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" style="max-width: 1em;max-height:1em;margin-left: .2em;">.
