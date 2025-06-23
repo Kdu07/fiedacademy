@@ -1946,7 +1946,6 @@ _Apresente os canais digitais utilizados para distribuir e entregar a aplicaçã
 _6.4 Promoção (até 200 palavras)_
 _Descreva as estratégias digitais planejadas, como SEO, redes sociais, marketing de conteúdo e campanhas pagas._
 
-
 &nbsp;&nbsp;&nbsp;&nbsp; Para divulgar nossa plataforma de capacitação aos promotores agro da AgroBayer, usaremos uma estratégia digital completa e integrada. O objetivo é garantir que todos conheçam a ferramenta e seus benefícios. Vamos otimizar nosso site e conteúdos (SEO) para que profissionais do agro nos encontrem facilmente em buscas online. Criaremos materiais úteis como artigos, vídeos e webinars (Marketing de Conteúdo) sobre o FieldView e boas práticas, posicionando a Bayer como referência em conhecimento. Estaremos ativos nas redes sociais (LinkedIn, Instagram, etc.), compartilhando conteúdos educativos, histórias de sucesso e interagindo com a comunidade agro. Usaremos anúncios pagos segmentados (Campanhas Pagas) para alcançar mais profissionais em momentos chave, como lançamentos de novos módulos. <br>
 
 &nbsp;&nbsp;&nbsp;&nbsp; Manteremos os promotores informados sobre novidades através de e-mails (E-mail Marketing) e colaboraremos com influenciadores do setor para ampliar nosso alcance. Essa combinação de ações garantirá visibilidade e engajamento, consolidando a plataforma como a principal ferramenta de capacitação técnica para o time AgroBayer. <br>
@@ -1954,11 +1953,12 @@ _Descreva as estratégias digitais planejadas, como SEO, redes sociais, marketin
 
 # <a name="c7"></a>7. Conclusões e trabalhos futuros 
 
-_Escreva de que formas a solução da aplicação web atingiu os objetivos descritos na seção 2 deste documento. Indique pontos fortes e pontos a melhorar de maneira geral._
+A aplicação web FieldAcademy atingiu de forma significativa os objetivos propostos, centralizando conteúdos, personalizando trilhas de aprendizado, facilitando o acompanhamento do progresso dos usuários e promovendo maior autonomia e eficiência para profissionais do agronegócio, especialmente em regiões com baixa conectividade. Entre os pontos fortes, destacam-se a interface intuitiva, o acesso offline, a gamificação e o suporte dedicado, que juntos aumentaram o engajamento e a padronização do atendimento técnico.
 
-_Relacione os pontos de melhorias evidenciados nos testes com planos de ações para serem implementadas. O grupo não precisa implementá-las, pode deixar registrado aqui o plano para ações futuras_
+Os principais pontos a melhorar incluem a performance em conexões muito instáveis, a ampliação da acessibilidade, a integração com sistemas externos e a personalização de notificações. Para cada um desses desafios, foram definidos planos de ação, como otimização de cache, desenvolvimento de APIs, implementação de recursos de acessibilidade e criação de um painel de preferências para notificações.
 
-_Relacione também quaisquer outras ideias que o grupo tenha para melhorias futuras_
+Como ideias para o futuro, o grupo sugere a criação de dashboards analíticos para gestores, aplicativos mobile nativos, uma comunidade de usuários para troca de experiências, uso de inteligência artificial para recomendações personalizadas e novas mecânicas de gamificação. Essas melhorias visam consolidar a FieldAcademy como referência em capacitação digital no agronegócio, ampliando seu impacto e valor competitivo.
+
 
 # <a name="c8"></a>8. Referências
 
