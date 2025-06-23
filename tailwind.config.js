@@ -6,14 +6,21 @@ module.exports = {
     'translate-x-0',
     'transition-transform',
     'duration-300',
+    'h1',
+    'h2',
+    'h3',
+    'h4',
+    'h5',
+    'h6',
   ],
   theme: {
     extend: {
       colors: {
-          mainGreen: "#66B512"
+          mainGreen: "#66B512",
+          secondaryGreen: "#4AC14D",
       },
       backgroundImage: {
-        'login-bg': "url('/images/login_fundo.png')",
+        'login-bg': "url('/images/login_fundo.jpg')",
       }
     }
   },

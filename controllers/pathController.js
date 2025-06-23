@@ -19,11 +19,11 @@ exports.index = async (req, res) => {
     res.status(500).send('Erro ao carregar a trilha');
   }
   */
-
-  const currentPath = req.params.id;
-  const paths = await pathModel.getPathWithModules(currentPath);
   const id = await getUserId(token);
+  const currentPath = req.params.id;
+  const paths = await pathModel.getPathWithModules(currentPath, id);
   const user = await usersModel.getById(id);
+
 
   res.render("path", { paths, currentPath, user });
 };

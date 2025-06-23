@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Search Results | FieldAcademy</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/main-layout.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+
+  <body class="bg-gray-50 text-gray-800">
+    <%- include('./partials/header') %>
+
+    <main class="container mx-auto px-4 py-8 mt-20">
+      <!-- Search Header -->
+      <div class="mb-6">
+        <h1 class="text-3xl font-bold text-mainGreen mb-2">Resultados da busca</h1>
+        <% if (typeof query !== 'undefined' && query) { %>
+        <p class="text-gray-600">
+          Demonstrando resultados para: <span class="font-medium"><%= query %></span>
+        </p>
+        <% } else { %>
+        <p class="text-gray-600">Browse all available articles</p>
+        <% } %>
+      </div>
+
+
+      <!-- Articles Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <% if (typeof articles !== 'undefined' && articles && articles.length) {
+        %> <% articles.forEach(function(article) { %>
+        <div
+          class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
+        >
+          <div class="p-5">
+            <div class="flex items-center justify-between mb-3">
+              <span
+                class="bg-mainGreen/10 text-mainGreen px-3 py-1 rounded-full text-sm font-medium"
+              >
+                <%= article.category %>
+              </span>
+              <span class="text-sm text-gray-500">
+                <%= new Date(article.last_update).toLocaleDateString() %>
+              </span>
+            </div>
+            <h3 class="text-xl font-bold mb-3 line-clamp-2">
+              <%= article.title %>
+            </h3>
+            <a
+              href="/help/<%= article.category %>/content/<%= article.id %>"
+              class="inline-block text-mainGreen font-semibold hover:underline mt-2"
+            >
+              Ler Artigo →
+            </a>
+          </div>
+        </div>
+        <% }); %> <% } else { %>
+        <div class="col-span-full text-center py-12">
+          <h2 class="text-2xl font-bold mb-2">Nenhum artigo encontrado</h2>
+          <p class="text-gray-500">
+            Não conseguimos encontrar nenhum artigo que corresponda aos seus critérios de pesquisa.
+          </p>
+        </div>
+        <% } %>
+      </div>
+    </main>
+
+    <%- include('./partials/footer') %>
+  </body>
+</html>

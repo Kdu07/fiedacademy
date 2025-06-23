@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "concurrently \"nodemon app.js\" \"postcss public/css/tailwind.css -o public/css/style.css --watch\"",
-    "init-db": "node src/runSQLScript.js",
+    "init-db": "node scripts/runSQLScript.js",
     "start": "node server.js"
   },
   "keywords": [],
@@ -24,6 +24,7 @@
     "express-session": "^1.18.1",
     "jsonwebtoken": "^9.0.2",
     "multer": "^2.0.1",
+    "pdfkit": "^0.17.1",
     "pg": "^8.16.0",
     "postcss": "^8.5.3",
     "postcss-cli": "^11.0.1"
