@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Ajuda | FieldAcademy</title>
     <link rel="stylesheet" href="/css/style.css" />
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="manifest" href="/manifest.json">
+    <script src="/js/service-worker.js"></script>
+    <script src="/js/loadServiceWorker.js"></script>  
   </head>
   <body class="flex flex-col min-h-screen bg-gray-50">
     <!-- Header -->
@@ -17,6 +19,15 @@
       >
         <h1 class="text-white text-3xl font-bold">Central de Ajuda</h1>
       </div>
+
+
+      <% if (error !== null && error.isOffline === true) { %>
+        <div class="container mx-auto px-4 mb-4 text-center">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700 p-3 rounded">
+            <p class="font-medium">Você está offline. Algumas funcionalidades podem estar limitadas.</p>
+          </div>
+        </div>
+      <% } %>
 
       <div class="container mx-auto px-4 py-4 max-w-5xl">
         <div class="bg-white rounded-xl shadow-md p-6 mb-6">
@@ -69,9 +80,15 @@
                   var category = article.category;
                   var id = article.id;
                   
+                  if(article.category) {
+                    category = article.category.trim();
+                  } else {
+                    category = 'Outros';
+                  }
+
                   // Get the image and description for this category or use defaults
                   var img = categoryInfo[category] ? categoryInfo[category].img : 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173';
-                  var desc = categoryInfo[category] ? categoryInfo[category].desc : 'Informações úteis sobre ' + category;
+                  var desc = categoryInfo[category] ? categoryInfo[category].desc : 'Outros artigos que podem ser úteis.';
                   
                   // Create URL-safe category
                   var categoryUrl = encodeURIComponent(category);

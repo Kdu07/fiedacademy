@@ -8,45 +8,60 @@ const { isAuthorized } = require("../utils/authUtils");
 const { generateCertificate } = require("../utils/generateCertificate");
 
 exports.index = async (req, res) => {
-  const token = req.cookies.token;
-  const auth = await isAuthorized(token, "PTD");
+  try {
+    const token = req.cookies.token;
+    const auth = await isAuthorized(token, "PTD");
 
-  if (auth === false) {
-    return res.redirect("/");
+    if (auth === false) {
+      return res.redirect("/");
+    }
+
+    const userId = await getUserId(token);
+
+    const user = await usersModel.getRole(userId);
+
+    const profileId = req.params.id;
+    const userProfile = await usersModel.getById(profileId);
+    const ranking = await usersModel.getUsersRanking();
+    const userRank = ranking.find((u) => u.id === parseInt(profileId)).rank; // Find the user's rank
+    const progress = await userContentModel.getUserPathsProgress(profileId);
+    let lastLesson = await userContentModel.getLastLesson(profileId);
+    const moduleScores = await userTestModel.getUserModuleScores(profileId);
+
+    const lastLogin = new Date(userProfile.last_login).toLocaleDateString(
+      "pt-BR"
+    );
+    progress.sort((a, b) => b.progress_percentage - a.progress_percentage);
+
+    if (!lastLesson) {
+      lastLesson = {
+        content_id: null,
+        title: "Nenhuma lição concluída",
+        completed_at: null,
+      };
+    }
+
+    res.render("profile", {
+      user,
+      userProfile,
+      userRank,
+      progress: progress || [],
+      moduleScores,
+      lastLogin,
+      lastLesson,
+    });
+  } catch (err) {
+    const isNetworkError =
+      err.code === "ECONNREFUSED" ||
+      err.code === "ENOTFOUND" ||
+      err.name === "NetworkError" ||
+      err.message.includes("network");
+
+    if (isNetworkError) {
+      return res.redirect("/help");
+    }
+    return res.status(500).json(err.message);
   }
-
-  const userId = await getUserId(token);
-  
-  const user = await usersModel.getRole(userId);
-  
-  const profileId = req.params.id
-  const userProfile = await usersModel.getById(profileId);
-  const ranking = await usersModel.getUsersRanking();
-  const userRank = (ranking.find(u => u.id === parseInt(profileId))).rank; // Find the user's rank
-  const progress = await userContentModel.getUserPathsProgress(profileId);
-  let lastLesson = await userContentModel.getLastLesson(profileId);
-  const moduleScores = await userTestModel.getUserModuleScores(profileId);
-
-  const lastLogin = new Date(userProfile.last_login).toLocaleDateString("pt-BR");
-  progress.sort((a, b) => b.progress_percentage - a.progress_percentage);
-
-  if(!lastLesson) {
-    lastLesson = {
-      content_id: null,
-      title: "Nenhuma lição concluída",
-      completed_at: null
-    };
-  }
-
-  res.render("profile", {
-    user,
-    userProfile,
-    userRank,
-    progress: progress || [],
-    moduleScores,
-    lastLogin,
-    lastLesson
-  });
 };
 
 exports.updatePicture = async (req, res) => {
@@ -56,7 +71,7 @@ exports.updatePicture = async (req, res) => {
   if (!userId || userId !== parseInt(req.params.id)) {
     return res.status(401).send("Unauthorized");
   }
-    const user = await usersModel.getById(userId);
+  const user = await usersModel.getById(userId);
   if (!req.file) {
     return res.status(400).send("No file uploaded.");
   }
@@ -116,9 +131,8 @@ exports.updatePicture = async (req, res) => {
   // 4. Save URL in DB using your model
   await usersModel.updateProfilePhoto(publicUrl, userId);
 
-  res.redirect("/profile/"+req.params.id);
+  res.redirect("/profile/" + req.params.id);
 };
-
 
 exports.getCertificate = async (req, res) => {
   const token = req.cookies.token;
@@ -131,15 +145,18 @@ exports.getCertificate = async (req, res) => {
 
   const path = await pathsModel.getById(req.params.path_id);
   const completionDate = new Date().toLocaleDateString("pt-BR");
-  const courseName = path.title
-  const outputPath = `./certificates/${user.name.replace(/\s+/g, '_')}_certificate.pdf`;
+  const courseName = path.title;
+  const outputPath = `./certificates/${user.name.replace(
+    /\s+/g,
+    "_"
+  )}_certificate.pdf`;
 
   try {
     await generateCertificate({
       userName: user.name,
       courseName,
       completionDate,
-      outputPath
+      outputPath,
     });
 
     res.download(outputPath, `${user.name}_certificate.pdf`, (err) => {
@@ -151,4 +168,4 @@ exports.getCertificate = async (req, res) => {
     console.error("Error generating certificate:", error);
     res.status(500).send("Error generating certificate");
   }
-}
+};
