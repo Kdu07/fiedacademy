@@ -4,9 +4,9 @@
 <a href= "https://www.inteli.edu.br/"><img src="/assets/assets_wad/inteli.png" alt="Inteli - Instituto de Tecnologia e Liderança" border="0"></a>
 </p>
 
-# Nome do projeto
+# FiedAcademy
 
-## Nome do grupo
+## Grupo 05
 
 ## :student: Integrantes: 
 - <a href="https://www.linkedin.com/in/antoniodicillo/">Antonio Di Cillo</a>
@@ -49,13 +49,38 @@ O projeto segue o padrão arquitetural **MVC (Model-View-Controller)**, que orga
 - **Controller**: Processa as requisições, interage com os Models e retorna as Views.
 
 Para isso, a estrutura de pastas foi organizada da seguinte forma:
-
-- `assets/`: Contém imagens e outros arquivos estáticos.
-- `document/`: Armazena os documentos do projeto, como o modelo do banco de dados e a documentação WAD.
- - `config/`: Arquivos de configuração, como a conexão com o banco de dados.
-- `controllers/`, `models/`, `routes/` e `views/`: Pastas principais do padrão MVC.
-- `styles/` e `scripts/`: Arquivos CSS e JS públicos.
-- `README.md`: Documentação explicativa principal do projeto.
+`2025-1B-T15-IN02-G05/`
+├── `assets/`           # Arquivos estáticos do projeto, como imagens, ícones e fontes.
+│
+├── `certificates/`     # Certificados digitais, geralmente usados para HTTPS ou autenticação.
+│
+├── `config/`           # Arquivos de configuração, como conexão com banco de dados e variáveis de ambiente.
+│
+├── `controllers/`      # Lógica de controle das requisições, onde ficam as funções que processam as rotas.
+│
+├── `data/`             # Dados estáticos, arquivos de seed ou arquivos de importação/exportação de dados.
+│
+├── `documents/`        # Pasta onde está localizado o WAD
+│
+├── `models/`           # Definição dos modelos de dados, representando as tabelas do banco e suas regras.
+│
+├── `public/ `          # Pasta pública acessível pelo navegador, normalmente para arquivos estáticos (css, js, imagens).
+│
+├── `routes/`           # Definição das rotas do sistema, conectando URLs aos controllers.
+│
+├── `scripts/`          # Scripts utilitários ou de automação, como scripts de build, deploy ou manutenção.
+│
+├── `utils/`            # Funções utilitárias e helpers reutilizáveis em várias partes do projeto.
+│
+├── `views/`            # Templates de visualização (ex: arquivos EJS, Pug, Handlebars) usados para renderizar páginas HTML.
+│
+├── `.gitignore`        # Arquivo que define quais arquivos/pastas devem ser ignorados pelo Git.
+├── `jest.config.js`    # Configuração do framework de testes Jest.
+├── `package-lock.json` # Arquivo de controle de versões exatas das dependências instaladas.
+├── `package.json`      # Arquivo principal de configuração do Node.js, lista dependências e scripts do projeto.
+├── `readme.md`         # Documentação principal do projeto, instruções de uso e informações gerais.
+├──` app.js`            # Arquivo principal que inicializa e configura o servidor da aplicação.
+└── `rest.http`         # Arquivo opcional para testar endpoints HTTP diretamente (usado por extensões do VS Code)
 
 ## 💻 Configuração para desenvolvimento e execução do código
 
@@ -65,7 +90,6 @@ Aqui encontram-se todas as instruções necessárias para a instalação de todo
 - [Node.js (versão recomendada: 16.15.1 LTS)](https://nodejs.org/pt-br/)
 - [Visual Studio Code (VSCode)](https://code.visualstudio.com/)
 - [Git](https://git-scm.com/) – para clonar o repositório
-
 
 2. Clone este repositório:
    ```bash
@@ -96,8 +120,6 @@ Aqui encontram-se todas as instruções necessárias para a instalação de todo
     * 
 * 0.1.0 - 30/04/2025 - Idealização inicial da plataforma, a partir do entendimento do negócio e do problema.*
     
-
 ## 📋 Licença/License
-
 
 <img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"><p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://github.com/Intelihub/Template_M2/"><a href="https://github.com/Inteli-College/2025-1B-T15-IN02-G05">FieldAcademy</a> © 2025 by <a href="https://github.com/Inteli-College/2025-1B-T15-IN02-G05">INTELI, Antonio Filisetti Yoshinaga Di Cillo, Carlos Eduardo Serrano Quaglia, Emanuelly Cantarelli Dias, João de Caprio Agmont, Luiz Felipe Paravatti Maciel Hinuy,  Maria Arielly Lima de Oliveira, Rafael Cabral da Silva.</a> is licensed under <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International</a>.
