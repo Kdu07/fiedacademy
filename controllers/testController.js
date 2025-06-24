@@ -6,37 +6,50 @@ const testModel = require("../models/userTestModel");
 const { parse } = require("dotenv");
 
 exports.index = async (req, res) => {
-  const token = req.cookies.token;
-  const auth = await isAuthorized(token, "PTD");
+  try {
+    const token = req.cookies.token;
+    const auth = await isAuthorized(token, "PTD");
 
-  if (auth === false) {
-    return res.redirect("/home");
-  }
-  const id = await getUserId(token);
-  const testId = req.params.id;
-  const test = await testModel.getTestByModuleId(testId);
-
-  const doneTest = await testModel.userDoneTest(id, test.id);
-
-  if (doneTest) {
-    // Se for admin n redireciona se já fez o teste
-    const userIsAdmin = await isAuthorized(token, "Admin");
-    if (!userIsAdmin) {
+    if (auth === false) {
       return res.redirect("/home");
     }
+    const id = await getUserId(token);
+    const testId = req.params.id;
+    const test = await testModel.getTestByModuleId(testId);
+
+    const doneTest = await testModel.userDoneTest(id, test.id);
+
+    if (doneTest) {
+      // Se for admin n redireciona se já fez o teste
+      const userIsAdmin = await isAuthorized(token, "Admin");
+      if (!userIsAdmin) {
+        return res.redirect("/home");
+      }
+    }
+
+    const user = await usersModel.getById(id);
+
+    let totalPoints = 0;
+
+    test.questions = JSON.parse(test.questions);
+    test.questions.forEach((question) => {
+      totalPoints += parseInt(question.points || 0);
+      delete question.correctAnswer;
+    });
+
+    res.render("test", { user, test, totalPoints });
+  } catch (err) {
+    const isNetworkError =
+      err.code === "ECONNREFUSED" ||
+      err.code === "ENOTFOUND" ||
+      err.name === "NetworkError" ||
+      err.message.includes("network");
+
+    if (isNetworkError) {
+      return res.redirect("/help");
+    }
+    return res.status(500).json(err.message);
   }
-
-  const user = await usersModel.getById(id);
-
-  let totalPoints = 0;
-
-  test.questions = JSON.parse(test.questions);
-  test.questions.forEach((question) => {
-    totalPoints += parseInt(question.points || 0);
-    delete question.correctAnswer;
-  });
-
-  res.render("test", { user, test, totalPoints });
 };
 
 exports.handleSubmit = async (req, res) => {
@@ -56,6 +69,14 @@ exports.handleSubmit = async (req, res) => {
   }
 
   const test = await testModel.getTestById(testId);
+
+  if (
+    test.questions === null ||
+    test.questions === undefined ||
+    test.questions === "[]"
+  ) {
+    return res.status(400).send("Teste não encontrado ou sem perguntas.");
+  }
 
   test.questions = JSON.parse(test.questions);
 
@@ -83,7 +104,7 @@ exports.handleSubmit = async (req, res) => {
     }
   });
 
-  testModel.finishTest(userId, test.id, earnedPoints);
+  await testModel.finishTest(userId, test.id, earnedPoints);
 
   await usersModel.addScore(userId, earnedPoints);
 
@@ -137,7 +158,13 @@ exports.updateTest = async (req, res) => {
   const testId = req.params.id;
   const { title, estimated_time, questions, description } = req.body;
 
-  await testModel.editTest(testId, title, estimated_time, questions, description);
+  await testModel.editTest(
+    testId,
+    title,
+    estimated_time,
+    questions,
+    description
+  );
 
-  return res.redirect('/contentDashboard/tests');
+  return res.redirect("/contentDashboard/tests");
 };

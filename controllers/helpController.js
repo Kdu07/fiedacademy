@@ -5,46 +5,142 @@ const feedbacksContentModel = require("../models/feedbacksContentModel");
 
 const { isAuthorized } = require("../utils/authUtils");
 const { getUserId } = require("../utils/jwtUtils");
+const { json } = require("body-parser");
 
-// Renderiza a página de ajuda com todos os artigos
+async function generateArticleCache(article, type) {
+  try {
+    // Caminho para o arquivo JSON
+    const fs = require("fs");
+    const path = require("path");
+
+    let jsonPath;
+    if (article.length > 1) {
+      jsonPath = path.join(
+        __dirname,
+        `../public/data/${type}_allArticles.json`
+      );
+    } else {
+      jsonPath = path.join(
+        __dirname,
+        `../public/data/${article.id}_article.json`
+      );
+    }
+
+    // Criar diretório se não existir
+    const dir = path.dirname(jsonPath);
+    if (!fs.existsSync(dir)) {
+      fs.mkdirSync(dir, { recursive: true });
+    }
+
+    // Salvar artigos em formato JSON
+    fs.writeFileSync(jsonPath, JSON.stringify(article));
+
+    return {
+      success: true,
+      message: "Cache de artigos gerado com sucesso",
+      count: article.length,
+    };
+  } catch (error) {
+    console.error("Erro ao gerar cache de artigos:", error);
+    return {
+      success: false,
+      message: "Erro ao gerar cache de artigos",
+      error: error.message,
+    };
+  }
+}
+
+async function getCachedArticle(id, type) {
+  // Tentar carregar do arquivo JSON na pasta public
+  try {
+    const fs = require("fs");
+    const path = require("path");
+    let jsonPath;
+    if (type === "help") {
+      jsonPath = path.join(__dirname, "../public/data/help_allArticles.json");
+    } else if (type === "subject") {
+      jsonPath = path.join(__dirname, `../public/data/${id}_article.json`);
+    } else if (type === "subject_all") {
+      jsonPath = path.join(
+        __dirname,
+        "../public/data/subject_allArticles.json"
+      );
+    }
+
+    // Verificar se o arquivo existe
+    if (fs.existsSync(jsonPath)) {
+      // Ler o arquivo e converter para objeto JavaScript
+      const rawData = fs.readFileSync(jsonPath, "utf8");
+      return JSON.parse(rawData);
+    } else {
+      return [];
+    }
+  } catch (cacheError) {
+    console.error("Erro ao carregar cache de artigos:", cacheError);
+    return [];
+  }
+}
+
 exports.index = async (req, res) => {
   const token = req.cookies.token;
-  const auth = await isAuthorized(token, "PTD");
-
-  if (auth === false) {
-    return res.redirect("/");
-  }
-
-  const userId = await getUserId(token);
-  const user = await usersModel.getRole(userId);
+  let user = null;
+  let allArticles = [];
 
   try {
-    const allArticles = await subjectModel.getFirstArticleFromEachCategory();
+    const auth = await isAuthorized(token, "PTD");
 
+    if (auth === false) {
+      return res.redirect("/");
+    }
+
+    const userId = await getUserId(token);
+    user = await usersModel.getRole(userId);
+
+    // Tente buscar os artigos
+    allArticles = await subjectModel.getFirstArticleFromEachCategory();
+
+    await generateArticleCache(allArticles, "help");
+
+    // Renderize a página com os dados obtidos
     res.render("help", {
       user,
       allArticles,
+      error: null,
     });
   } catch (err) {
-    res.status(500).send("Erro ao buscar artigos de ajuda " + err.message);
+    console.error("Erro na página de ajuda:", err);
+
+    const isNetworkError =
+      err.code === "ECONNREFUSED" ||
+      err.code === "ENOTFOUND" ||
+      err.name === "NetworkError" ||
+      err.message.includes("network");
+
+    // Dados de fallback para cenário offline
+    if (!allArticles || allArticles.length === 0) {
+      allArticles = await getCachedArticle(0, "help");
+    }
+
+    // Renderize a página com uma mensagem de erro apropriada
+    res.render("help", {
+      user: user || {},
+      allArticles,
+      error: {
+        message: isNetworkError
+          ? "Você parece estar offline. Alguns conteúdos podem não estar disponíveis."
+          : "Ocorreu um erro ao carregar os artigos de ajuda.",
+        isOffline: isNetworkError,
+      },
+    });
   }
 };
 
-// Cria um novo artigo de ajuda
-exports.create = async (req, res) => {
-  try {
-    const { title, description, icon } = req.body;
-    const newArticle = new Help({ title, description, icon });
-    await newArticle.save();
-    res.redirect("/help");
-  } catch (err) {
-    res.status(500).send("Erro ao criar artigo de ajuda");
-  }
-};
-
-// Busca um artigo específico por ID
+// Busca um artigo específico por ID com suporte a modo offline
 exports.getArticleById = async (req, res) => {
   const { category, id_content } = req.params;
+  let user = null;
+  let article = null;
+  let allArticles = [];
 
   try {
     const token = req.cookies.token;
@@ -55,30 +151,30 @@ exports.getArticleById = async (req, res) => {
     }
 
     const userId = await getUserId(token);
-    const user = await usersModel.getRole(userId);
+    user = await usersModel.getRole(userId);
 
     if (!category || !id_content) {
       return res.status(400).send("Categoria ou ID do conteúdo não fornecidos");
     }
 
     const modulesModel = require("../models/modulesModel");
-    
-    // First try to get the article from the specific ID
-    const article = await modulesModel.findModule(id_content);
+
+    // Buscar o artigo específico pelo ID
+    article = await modulesModel.findModule(id_content);
 
     if (!article) {
       return res.status(404).send("Artigo não encontrado");
     }
 
-    // Make sure category is set on the article object
+    // Garantir que a categoria esteja definida no objeto do artigo
     if (!article.category) {
       article.category = category;
     }
 
-    // Get all articles for the sidebar navigation
-    const allArticles = await subjectModel.getAllArticles();
+    // Buscar todos os artigos para a navegação lateral
+    allArticles = await subjectModel.getAllArticles();
 
-    // Logica dos feedbacks positivos e negativos
+    // Lógica dos feedbacks positivos e negativos
     const positiveFeedback = await feedbacksContentModel.getAllByModuleId(
       article.id,
       true
@@ -88,25 +184,56 @@ exports.getArticleById = async (req, res) => {
       false
     );
 
-    article.positiveFeedback = 0;
-    article.negativeFeedback = 0;
+    article.positiveFeedback = positiveFeedback?.length || 0;
+    article.negativeFeedback = negativeFeedback?.length || 0;
 
-    if (positiveFeedback.length > 0) {
-      article.positiveFeedback = positiveFeedback.length;
-    }
-    if (negativeFeedback.length > 0) {
-      article.negativeFeedback = negativeFeedback.length;
-    }
+    article.last_update = article.last_update.toLocaleDateString("pt-BR");
 
+    await generateArticleCache(article, "subject");
+    await generateArticleCache(allArticles, "subject");
 
     res.render("subject", {
       user,
       article,
       allArticles,
-      currentArticle: article, // For highlighting the current article in the sidebar
+      currentArticle: article,
+      error: null,
     });
   } catch (err) {
-    console.error("Error in getArticleByCategory:", err);
-    res.status(500).send("Erro ao buscar artigo: " + err.message);
+    console.error("Erro ao buscar artigo:", err);
+
+    // Verificar se é um erro de rede (possível cenário offline)
+    const isNetworkError =
+      err.code === "ECONNREFUSED" ||
+      err.code === "ENOTFOUND" ||
+      err.name === "NetworkError" ||
+      err.message.includes("network");
+
+    // Dados de fallback para cenário offline
+    if (!article) {
+      article = await getCachedArticle(id_content, "subject");
+    }
+    if (!allArticles || allArticles.length === 0) {
+      allArticles = await getCachedArticle(0, "subject_all");
+    }
+
+    // Tentar renderizar a página com os dados que conseguimos obter
+    res.render("subject", {
+      user: user || {},
+      article: article || {
+        title: "Conteúdo indisponível",
+        content: "Este conteúdo não está disponível no modo offline.",
+        category: category || "não-categorizado",
+        id: id_content,
+      },
+      allArticles: allArticles || [],
+      currentArticle: article,
+      error: {
+        message: isNetworkError
+          ? "Você está offline. Este conteúdo pode estar incompleto ou desatualizado."
+          : "Ocorreu um erro ao carregar o artigo solicitado.",
+        isOffline: isNetworkError,
+      },
+    });
   }
 };

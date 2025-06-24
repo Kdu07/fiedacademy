@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%= paths.title %> | FieldAcademy</title>
     <link href="/css/style.css" rel="stylesheet" />
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
   </head>
   <body class="bg-gray-50">
     <!-- Header -->
@@ -15,9 +15,7 @@
       <div
         class="bg-secondaryGreen h-20 w-full flex items-center justify-center mb-8 shadow-md"
       >
-        <h1 class="text-white ms-8 text-3xl font-bold">
-          <%= paths.title %>
-        </h1>
+        <h1 class="text-white ms-8 text-3xl font-bold"><%= paths.title %></h1>
       </div>
 
       <div class="container mx-auto px-4 py-4 max-w-5xl">
@@ -38,7 +36,7 @@
                 class="w-full h-4 bg-gray-100 rounded-full mb-6 overflow-hidden"
               >
                 <div
-                  class="h-full bg-secondaryGreen  rounded-full transition-all duration-500"
+                  class="h-full bg-secondaryGreen rounded-full transition-all duration-500"
                   style="width: <%= modulo.progress %>%"
                 ></div>
               </div>

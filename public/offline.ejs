@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+  <title>Offline | FieldAcademy</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      color: #333;
+      background-color: #f9fafb;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      min-height: 100vh;
+      align-items: center;
+      justify-content: center;
+    }
+    .container {
+      max-width: 500px;
+      padding: 2rem;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    h1 {
+      color: #4CAF50;
+      margin-bottom: 1rem;
+    }
+    p {
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Você está offline</h1>
+    <p>Esta página que você está tentando acessar não foi visitada anteriormente e não está disponível offline.</p>
+    <p>Conecte-se à internet para acessar novas páginas.</p>
+    <button onclick="window.location.reload()">Tentar novamente</button>
+  </div>
+</body>
+</html>

@@ -79,7 +79,7 @@ module.exports = {
     return result.rows; // Retorna um array com as páginas do módulo
   },
 
-  async createModule(title,id_path, order) {
+  async createModule(title, id_path, order) {
     try {
       const result = await db.query(
         `INSERT INTO modules (id_path, title, module_order) 
@@ -178,13 +178,62 @@ module.exports = {
     }
   },
 
-  async deleteModuleById(id) {
+  async deleteModule(moduleId) {
+    const client = await pool.connect();
+
     try {
-      const result = await db.query("DELETE FROM modules WHERE id = $1", [id]);
-      return;
+      await client.query("BEGIN");
+
+      // 1. Delete user content progress records
+      await client.query(
+        "DELETE FROM user_content_progress WHERE module_id = $1",
+        [moduleId]
+      );
+
+      // 2. Get all content IDs for this module to delete related data
+      const contentResult = await client.query(
+        "SELECT id FROM module_content WHERE module_id = $1",
+        [moduleId]
+      );
+
+      const contentIds = contentResult.rows.map((row) => row.id);
+
+      if (contentIds.length > 0) {
+        // 3. Delete feedback for these contents
+        await client.query(
+          "DELETE FROM content_feedback WHERE content_id = ANY($1::int[])",
+          [contentIds]
+        );
+
+        // 4. Delete bookmarks for these contents
+        await client.query(
+          "DELETE FROM user_bookmarks WHERE content_id = ANY($1::int[])",
+          [contentIds]
+        );
+
+        // 5. Delete user progress for these contents
+        await client.query(
+          "DELETE FROM user_content_completion WHERE content_id = ANY($1::int[])",
+          [contentIds]
+        );
+
+        // 6. Delete module contents
+        await client.query("DELETE FROM module_content WHERE module_id = $1", [
+          moduleId,
+        ]);
+      }
+
+      // 7. Finally delete the module
+      await client.query("DELETE FROM modules WHERE id = $1", [moduleId]);
+
+      await client.query("COMMIT");
+      return true;
     } catch (error) {
-      console.error("Error deleting content:", error);
-      throw new Error("Erro ao deletar conteúdo");
+      await client.query("ROLLBACK");
+      console.error("Error deleting module with dependencies:", error);
+      throw error;
+    } finally {
+      client.release();
     }
   },
 
@@ -201,7 +250,7 @@ module.exports = {
     }
   },
 
-   async getModuleContentOrder(id_path) {
+  async getModuleContentOrder(id_path) {
     try {
       const result = await db.query(
         "SELECT MAX(module_order) AS max_order FROM modules WHERE id_path = $1",
