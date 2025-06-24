@@ -174,7 +174,7 @@ exports.createModule = async (req, res) => {
   await testModel.createTest(testTitle, module.id);
 
   const formattedVideoPath = null;
-  const contentBody = "Conteúdo do módulo";
+  const contentBody = "";
   const category = null;
 
   await contentModel.createContent(
