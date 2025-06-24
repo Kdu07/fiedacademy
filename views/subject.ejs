@@ -27,6 +27,18 @@
         </p>
       </div>
 
+      <% if (error !== null && error.isOffline === true) { %>
+      <div class="container mx-auto px-4 mb-4 text-center">
+        <div
+          class="bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700 p-3 rounded"
+        >
+          <p class="font-medium">
+            Você está offline. Algumas funcionalidades podem estar limitadas.
+          </p>
+        </div>
+      </div>
+      <% } %>
+
       <div
         class="flex flex-col md:flex-row justify-between mb-8 md:mb-16 px-4 md:px-6"
       >
@@ -93,8 +105,7 @@
             </div>
             <% } %> <% const categoriesMap = {}; if (typeof allArticles !==
             'undefined' && Array.isArray(allArticles)) {
-            allArticles.forEach(function(article) { 
-            const categoryName =
+            allArticles.forEach(function(article) { const categoryName =
             (article.category && article.category.trim()) ? article.category :
             'Outros'; if (!categoriesMap[categoryName]) {
             categoriesMap[categoryName] = []; }
@@ -164,8 +175,7 @@
             <% } %>
             <div class="border-t border-gray-200 pt-3 md:pt-4 mt-3 md:mt-4">
               <p class="text-sm md:text-base">
-                Ultima atualização: <%=
-                article.last_update%>
+                Ultima atualização: <%= article.last_update%>
               </p>
             </div>
 

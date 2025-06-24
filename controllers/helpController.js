@@ -62,7 +62,7 @@ async function getCachedArticle(id, type) {
       jsonPath = path.join(__dirname, `../public/data/${id}_article.json`);
     } else if (type === "subject_all") {
       jsonPath = path.join(
-        __dirname,  
+        __dirname,
         "../public/data/subject_allArticles.json"
       );
     }
@@ -71,10 +71,8 @@ async function getCachedArticle(id, type) {
     if (fs.existsSync(jsonPath)) {
       // Ler o arquivo e converter para objeto JavaScript
       const rawData = fs.readFileSync(jsonPath, "utf8");
-      console.log("Artigos carregados do cache local:", JSON.parse(rawData).length);
       return JSON.parse(rawData);
     } else {
-      console.log("Arquivo de cache não encontrado:", jsonPath);
       return [];
     }
   } catch (cacheError) {
@@ -102,7 +100,6 @@ exports.index = async (req, res) => {
     allArticles = await subjectModel.getFirstArticleFromEachCategory();
 
     const cacheArticles = await generateArticleCache(allArticles, "help");
-    console.log(cacheArticles.message);
 
     // Renderize a página com os dados obtidos
     return res.render("help", {
@@ -115,14 +112,13 @@ exports.index = async (req, res) => {
 
     const isNetworkError =
       err.code === "ECONNREFUSED" ||
+      err.code === "ENOTFOUND" ||
       err.name === "NetworkError" ||
       err.message.includes("network");
-
 
     // Dados de fallback para cenário offline
     if (!allArticles || allArticles.length === 0) {
       allArticles = await getCachedArticle(0, "help");
-      console.log(allArticles)
     }
 
     // Renderize a página com uma mensagem de erro apropriada
@@ -191,15 +187,13 @@ exports.getArticleById = async (req, res) => {
     article.positiveFeedback = positiveFeedback?.length || 0;
     article.negativeFeedback = negativeFeedback?.length || 0;
 
-    article.last_update = article.last_update.toLocaleDateString('pt-BR') 
+    article.last_update = article.last_update.toLocaleDateString("pt-BR");
 
     const cacheArticles = await generateArticleCache(article, "subject");
-    console.log(cacheArticles.message);
     const allCachedArticles = await generateArticleCache(
       allArticles,
       "subject"
     );
-    console.log(allCachedArticles.message);
 
     return res.render("subject", {
       user,
@@ -214,16 +208,15 @@ exports.getArticleById = async (req, res) => {
     // Verificar se é um erro de rede (possível cenário offline)
     const isNetworkError =
       err.code === "ECONNREFUSED" ||
+      err.code === "ENOTFOUND" ||
       err.name === "NetworkError" ||
       err.message.includes("network");
-
 
     // Dados de fallback para cenário offline
     if (!article) {
       article = await getCachedArticle(id_content, "subject");
-      console.log(article)
     }
-    if(!allArticles || allArticles.length === 0) {
+    if (!allArticles || allArticles.length === 0) {
       allArticles = await getCachedArticle(0, "subject_all");
     }
 

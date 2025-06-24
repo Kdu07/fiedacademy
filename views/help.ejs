@@ -20,6 +20,15 @@
         <h1 class="text-white text-3xl font-bold">Central de Ajuda</h1>
       </div>
 
+
+      <% if (error !== null && error.isOffline === true) { %>
+        <div class="container mx-auto px-4 mb-4 text-center">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700 p-3 rounded">
+            <p class="font-medium">Você está offline. Algumas funcionalidades podem estar limitadas.</p>
+          </div>
+        </div>
+      <% } %>
+
       <div class="container mx-auto px-4 py-4 max-w-5xl">
         <div class="bg-white rounded-xl shadow-md p-6 mb-6">
           <div class="flex flex-col mb-6">
