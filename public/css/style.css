@@ -1009,9 +1009,6 @@ video {
 .cursor-pointer {
   cursor: pointer;
 }
-.resize {
-  resize: both;
-}
 .appearance-none {
   -webkit-appearance: none;
      -moz-appearance: none;
@@ -2221,14 +2218,6 @@ video {
 
   .md\:h-\[600px\] {
     height: 600px;
-  }
-
-  .md\:max-h-\[500px\] {
-    max-height: 500px;
-  }
-
-  .md\:max-h-\[700px\] {
-    max-height: 700px;
   }
 
   .md\:max-h-\[600px\] {
