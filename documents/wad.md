@@ -786,7 +786,7 @@ A interface do módulo apresenta uma barra superior com logo e menu, um menu lat
 
 ## 3.5. Modelagem do banco de dados 
 
-### 3.5.1. Modelo relacional 
+### 3.5.1. Modelo relacional
 
 &nbsp;&nbsp;&nbsp;&nbsp; O banco de dados mostrado adere aos fundamentos da modelagem relacional, como explicado por Heuser [[9](#c16)], organizando a informação em tabelas que simbolizam entidades do campo educacional, tais como usuários, módulos, conteúdos, trilhas, certificados, avaliações e permissões. Cada tabela é formada por linhas (tuplas) e colunas (atributos), assegurando a integridade dos dados através de restrições como chaves primárias - que identificam cada registro de maneira exclusiva - e chaves estrangeiras, encarregadas de criar conexões entre as tabelas, como a conexão entre usuários e suas funções, conteúdos e módulos, ou certificados e trilhas. Esta metodologia possibilita a representação clara e organizada dos componentes do mundo real, simplificando a implementação, conservação e ampliação do sistema de informação. <br>
 
@@ -1183,6 +1183,8 @@ CREATE TABLE IF NOT EXISTS user_test_score (
 
 ### 3.5.2. Consultas SQL e lógica proposicional 
 
+&nbsp;&nbsp;&nbsp;&nbsp; Para a construção desse projeto, as consultas SQL foram desenvolvidas com base nos princípios da lógica proposicional, a fim de garantir precisão e coerência na recuperação das informações armazenadas. A lógica proposicional foi utilizada para estruturar as condições lógicas por meio de operadores como AND, OR e NOT, os quais foram aplicados nas cláusulas WHERE das consultas.
+
 #### **Expressão SQL - 1:**
 **Expressão SQL** | SELECT
 
@@ -1290,9 +1292,6 @@ Essa documentação apresenta todos os endpoints implementados até o momento, o
 ```javascript
 const express = require('express');
 require('dotenv').config();
-
-
-
 const app = express();
 const path = require('path');
 const cookieParser = require('cookie-parser');
@@ -1490,10 +1489,9 @@ app.listen(3000, () => {
 **Request**
 - **Headers:**
   - `Cookie: token=<JWT>` <br>
-**Status:** `200 OK`
-
+- **Status:** `200 OK`
 - **Body:** não se aplica
-**Response**
+- **Response**
 * **Status:** 201 Created
 * **Body** (sucesso):
 ```
@@ -1844,6 +1842,7 @@ Com o guia de estilos definido, para facilitar o desenvolvimento de cada funcion
 # <a name="c5"></a>5. Testes
 
 ## 5.1. Relatório de testes de integração de endpoints automatizados
+&nbsp;&nbsp;&nbsp;&nbsp; Nesta seção, são apresentados os testes de integração realizados nos endpoints da aplicação. Endpoints são os pontos de entrada da API, responsáveis por receber e responder às requisições feitas pelos usuários ou por outros sistemas. Cada endpoint representa uma rota definida no backend que executa determinada funcionalidade, como criar, buscar, atualizar ou deletar dados [[27](#c31)].
 
 <div align = "center">
 
@@ -1900,7 +1899,6 @@ _Posicione aqui as tabelas com enunciados de tarefas, etapas e resultados de tes
 # <a name="c6"></a>6. Estudo de Mercado e Plano de Marketing
 
 ## 6.1 Resumo Executivo
-
 A última versão do FieldAcademy propõe uma aplicação web de capacitação inovadora, desenvolvida para auxiliar promotores e clientes da Bayer. Entre as principais oportunidades de mercado estão a necessidade de treinamento estruturado para novos colaboradores, a alta rotatividade de profissionais e a dificuldade de acesso a informações em campo, especialmente em regiões com baixa conectividade. O avanço da agricultura digital e a busca por maior produtividade e redução de custos operacionais reforçam o potencial da solução. Os objetivos estratégicos do projeto incluem a redução do turnover dos PTDs, o aumento da autonomia e eficiência dos profissionais em campo, a padronização do atendimento ao produtor rural e a diminuição dos chamados ao suporte técnico, que estava saturado com o tanto de vezes que eram acionados pelos promotores. Destaca-se também o esforço conjunto da equipe com especialistas em programação para implementar funcionalidades offline, essenciais para o contexto rural. Além disso, a plataforma busca alinhar a operação de campo com as estratégias de inovação da empresa, promovendo capacitação contínua, avaliações, certificações e melhoria do desempenho dos colaboradores. Entre os diferenciais competitivos, destacam-se as trilhas de conhecimento personalizadas e atualizáveis, a centralização das informações, a interface intuitiva, a busca rápida por palavras-chave, além da gamificação no design e mecanismos de feedback e avaliação dos conteúdos, também implementamos a aba de “help” uma das prioridades apontadas pelo parceiro. A gestão do progresso dos colaboradores permite maior controle e   acompanhamento por parte dos gestores, facilitando a atualização constante dos materiais. Assim, a aplicação contribui de forma significativa para a transformação digital do agronegócio, fortalecendo a competitividade, a sustentabilidade e a capacidade de inovação da Bayer e de seus parceiros.
 
 
@@ -1910,27 +1908,24 @@ A última versão do FieldAcademy propõe uma aplicação web de capacitação i
 O setor do agronegócio no Brasil representa grande parte do PIB e das exportações do país, além de ser um dos pilares econômicos. Nos últimos anos, o avanço da agricultura digital tem transformado o setor, impulsionando a adoção de tecnologias como agricultura de precisão, monitoramento por satélite, inteligência artificial e plataformas digitais de gestão agrícola. Essas inovações visam reduzir custos operacionais, aumentar a produtividade e promover a sustentabilidade ambiental. Empresas líderes, como a Bayer, investem fortemente em pesquisa, tanto que a Bayer registrou vendas totais de 46,6 bilhões de euros, com a divisão Crop Science, divisão que inclui a agricultura, defensivos e a seção de pesquisa, faturando 22,3 bilhões de euros, uma queda em relação a 2023. A Bayer também investe em desenvolvimento para oferecer soluções integradas que atendam às demandas de grandes produtores e cooperativas, que buscam eficiência e previsibilidade na produção. A digitalização do campo também enfrenta desafios, como a baixa conectividade em áreas rurais e a necessidade de capacitação técnica dos profissionais que atuam diretamente no campo, como os Promotores Técnicos Digitais (PTDs). Além disso, a crescente demanda por práticas sustentáveis e produtos orgânicos cria espaço para alternativas sustentáveis como biopesticidas, embora os produtos tradicionais ainda dominem o mercado pela escala e eficácia. Assim, o setor se caracteriza por alta competitividade, forte investimento em inovação tecnológica e um ambiente regulatório complexo, que juntos moldam as estratégias das empresas para manter a liderança e atender às necessidades do mercado[[23](#c27)].
 
 b) Tamanho e Crescimento do Mercado
-O agronegócio brasileiro é um dos maiores do mundo, respondendo por cerca de 25% do PIB nacional e mais de 40% das exportações totais do país. O mercado de tecnologias digitais para o agronegócio, que inclui agricultura de precisão, plataformas de gestão e capacitação digital, tem apresentado crescimento acelerado, impulsionado pela demanda por maior eficiência, sustentabilidade e inovação. Em 2024, o mercado global de agricultura digital foi estimado em aproximadamente 12 bilhões de dólares, com projeção de crescimento anual composto (CAGR) superior a 12% até 2030. No Brasil, esse crescimento é ainda mais expressivo, devido à importância do setor agrícola na economia e à crescente adoção de tecnologias digitais em propriedades rurais de todos os portes. A divisão Crop Science da Bayer, que engloba defensivos agrícolas, sementes e soluções digitais, faturou 22,3 bilhões de euros em 2024, demonstrando a relevância econômica do segmento. Além disso, o investimento em capacitação digital para profissionais do agronegócio, como os Promotores Técnicos Digitais (PTDs), cresce em paralelo, refletindo a necessidade de qualificação para operar tecnologias avançadas. O mercado de educação corporativa digital no agronegócio também acompanha essa tendência, com plataformas especializadas e soluções customizadas ganhando espaço. A expectativa é que a digitalização e a capacitação continuem a impulsionar a produtividade e a competitividade do setor, consolidando o agronegócio brasileiro como referência global em inovação [[24](#c28)].
+O agronegócio brasileiro é um dos maiores do mundo, respondendo por cerca de 25% do PIB nacional e mais de 40% das exportações totais do país [24](#c28). O mercado de tecnologias digitais para o agronegócio, que inclui agricultura de precisão, plataformas de gestão e capacitação digital, tem apresentado crescimento acelerado, impulsionado pela demanda por maior eficiência, sustentabilidade e inovação. Em 2024, o mercado global de agricultura digital foi estimado em aproximadamente 12 bilhões de dólares, com projeção de crescimento anual composto (CAGR) superior a 12% até 2030. No Brasil, esse crescimento é ainda mais expressivo, devido à importância do setor agrícola na economia e à crescente adoção de tecnologias digitais em propriedades rurais de todos os portes. A divisão Crop Science da Bayer, que engloba defensivos agrícolas, sementes e soluções digitais, faturou 22,3 bilhões de euros em 2024, demonstrando a relevância econômica do segmento. Além disso, o investimento em capacitação digital para profissionais do agronegócio, como os Promotores Técnicos Digitais (PTDs), cresce em paralelo, refletindo a necessidade de qualificação para operar tecnologias avançadas. O mercado de educação corporativa digital no agronegócio também acompanha essa tendência, com plataformas especializadas e soluções customizadas ganhando espaço. A expectativa é que a digitalização e a capacitação continuem a impulsionar a produtividade e a competitividade do setor, consolidando o agronegócio brasileiro como referência global em inovação [[25](#c29)].
 
  c) Tendências de Mercado<br>
-O agronegócio brasileiro está em plena metamorfose digital, impulsionada pelo  grande avanço tecnológico, novas dinâmicas de mercado que moldam o setor para 2025 e mudanças comportamentais. Um dos avanços tecnológicos que mais se destaca no cenário atual é a adoção crescente das inteligências artificiais (IAs), big data e internet das coisas (IoT), que possibilitam análises preditivas, monitoramento em tempo real e otimização das operações agrícolas. A conectividade rural, embora ainda limitada em muitas regiões, é fundamental para viabilizar essas inovações, com iniciativas como parcerias entre empresas e programas governamentais buscando ampliar o acesso à internet no campo. No mercado atual foi criada uma nova tendência mais conhecida como agricultura 5.0, conceito que integra tecnologias embarcadas em máquinas, drones, sensores avançados e biotecnologia, está revolucionando o campo ao promover maior precisão, sustentabilidade e eficiência. Drones equipados com câmeras multiespectrais e sensores permitem o monitoramento detalhado das  lavouras, enquanto a edição genética e o uso de bioinsumos contribuem para práticas agrícolas mais sustentáveis e produtivas. No aspecto comportamental, cresce a demanda por produtos agrícolas sustentáveis , rastreáveis e com menor impacto ambiental. Isso impulsiona o uso de tecnologias como blockchain para garantir transparência e autenticidade na cadeia produtiva, atendendo a consumidores cada vez mais conscientes e exigentes. É possível observar a expansão de plataformas digitais para compras e pagamentos online de insumos, facilitando a gestão financeira dos produtores.A tokenização de commodities usando blockchain é uma inovação que está mudando a forma como os produtos agrícolas são negociados, facilitando o acesso a novos mercados e oportunidades de investimento. Essas tendências reforçam a importância da capacitação digital dos profissionais do agronegócio, como os Promotores Técnicos Digitais, para garantir adaptação para o uso dessas tecnologias e práticas inovadoras, destacando a relevância de soluções especializadas como a FieldAcademy para o setor.
-
-Fontes: MundoCoop, BemAgro, Agro Summit, PwC Agtech Innovation (2025).
+O agronegócio brasileiro está em plena metamorfose digital [[26](#c30)], impulsionada pelo  grande avanço tecnológico, novas dinâmicas de mercado que moldam o setor para 2025 e mudanças comportamentais. Um dos avanços tecnológicos que mais se destaca no cenário atual é a adoção crescente das inteligências artificiais (IAs), big data e internet das coisas (IoT), que possibilitam análises preditivas, monitoramento em tempo real e otimização das operações agrícolas. A conectividade rural, embora ainda limitada em muitas regiões, é fundamental para viabilizar essas inovações, com iniciativas como parcerias entre empresas e programas governamentais buscando ampliar o acesso à internet no campo. No mercado atual foi criada uma nova tendência mais conhecida como agricultura 5.0, conceito que integra tecnologias embarcadas em máquinas, drones, sensores avançados e biotecnologia, está revolucionando o campo ao promover maior precisão, sustentabilidade e eficiência. Drones equipados com câmeras multiespectrais e sensores permitem o monitoramento detalhado das  lavouras, enquanto a edição genética e o uso de bioinsumos contribuem para práticas agrícolas mais sustentáveis e produtivas. No aspecto comportamental, cresce a demanda por produtos agrícolas sustentáveis , rastreáveis e com menor impacto ambiental. Isso impulsiona o uso de tecnologias como blockchain para garantir transparência e autenticidade na cadeia produtiva, atendendo a consumidores cada vez mais conscientes e exigentes. É possível observar a expansão de plataformas digitais para compras e pagamentos online de insumos, facilitando a gestão financeira dos produtores.A tokenização de commodities usando blockchain é uma inovação que está mudando a forma como os produtos agrícolas são negociados, facilitando o acesso a novos mercados e oportunidades de investimento. Essas tendências reforçam a importância da capacitação digital dos profissionais do agronegócio, como os Promotores Técnicos Digitais, para garantir adaptação para o uso dessas tecnologias e práticas inovadoras, destacando a relevância de soluções especializadas como a FieldAcademy para o setor.
 
 ## 6.3 Análise da Concorrência
-# Principais concorrentes
+### Principais concorrentes
 a) No mercado de capacitação digital para o agronegócio, obtemos tanto a concorrência indireta quanto a concorrência direta. Entre os concorrentes diretos, estão plataformas especializadas em treinamento e capacitação para o suporte técnico, como a AgriLearning e a AgTech Academy. Essas interfaces oferecem cursos online, trilhas de aprendizagem e certificações voltadas para o setor agrícola, com conteúdos atualizados sobre tecnologias, boas práticas e uso de ferramentas digitais. A AgriLearning se diferencia pelo foco em conteúdos multimídia e avaliações interativas, enquanto a AgTech Academy aposta em parcerias com grandes empresas do setor para garantir atualização constante dos materiais.
 Entre os concorrentes indiretos, destacam-se plataformas de educação corporativa de uso geral, como Udemy for Business, Coursera for Teams e LinkedIn Learning, que, embora não sejam focadas exclusivamente no agronegócio, oferecem cursos sobre inovação aplicável ao setor, tecnologia e gestão. Essas plataformas possuem grande variedade de recursos de gamificação, conteúdos, e ferramentas de acompanhamento de progresso, além de forte presença de mercado e reconhecimento de marca. Além disso, algumas empresas do agronegócio desenvolvem soluções internas de capacitação, como a Syngenta Digital e a Corteva Agriscience, que investem em plataformas de treinamento autônomas para equipes e parceiros. Essas iniciativas costumam ser altamente customizadas, mas nem sempre oferecem a flexibilidade e a atualização contínua de plataformas abertas. O FieldAcademy se posiciona como uma solução especializada, flexível e alinhada às necessidades específicas dos promotores técnicos digitais, buscando se diferenciar pela personalização, interface intuitiva e integração com as demandas do campo.
 
 
-# Vantagens Competitivas da Aplicação Web 
+### Vantagens Competitivas da Aplicação Web 
 b) A aplicação web apresenta vantagens competitivas claras em relação aos concorrentes do setor de capacitação digital para o agronegócio. O principal diferencial está na personalização das trilhas de conhecimento, que são adaptadas conforme as necessidades dos Promotores Técnicos Digitais (PTDs) e podem ser facilmente atualizadas pelos gestores e administradas pelos administradores da empresa, garantindo alinhamento contínuo com as demandas do campo e as inovações da empresa. A plataforma também se destaca pela possível funcionalidade de acesso offline, novidade no mercado, além de ser essencial para profissionais que atuam em regiões com baixa conectividade, permitindo que o aprendizado e a consulta de informações ocorram a qualquer momento, sem depender de internet.
 Outro ponto forte é a centralização de conteúdos em um único ambiente, facilitando o acesso rápido a materiais, manuais, vídeos e artigos, além de oferecer uma barra de busca eficiente por palavras-chave. A interface intuitiva foi projetada para maximizar a autonomia dos usuários, tornando a navegação simples e agradável. A presença de uma aba de “help” dedicada, desenvolvida a partir das prioridades do parceiro, garante suporte imediato para dúvidas recorrentes, reduzindo a dependência do suporte técnico tradicional.
 Além disso, a plataforma incorpora elementos de gamificação, como rankings, conquistas e certificados digitais, que aumentam o engajamento e motivam o usuário a obter mais conhecimento para subir no ranking ou ganhar uma recompensa, por exemplo. Os mecanismos de feedback e avaliação contínua dos conteúdos permitem melhorias constantes e maior aderência às necessidades dos PTDs. Por fim, a gestão do progresso dos colaboradores oferece aos gestores uma visão detalhada do desenvolvimento das equipes, facilitando a tomada de decisão e o direcionamento de treinamentos futuros.
 
  
 ## 6.4 Público-Alvo
-
 _a) Segmentação de Mercado (até 250 palavras)_
 &nbsp;&nbsp;&nbsp;&nbsp; Nossa plataforma de capacitação técnica da Agro Bayer é feita para quem está na linha de frente do agronegócio: os profissionais que ajudam o produtor rural a usar tecnologias como o Climate FieldView. Isso inclui principalmente os Promotores Técnicos Digitais (PTDs), técnicos agrícolas e engenheiros agrônomos, que levam inovação e eficiência para o campo. <br>
 
@@ -1946,7 +1941,6 @@ _b) Perfil do Público-Alvo
 
 &nbsp;&nbsp;&nbsp;&nbsp;  Suas necessidades práticas incluem acesso rápido a informações técnicas, mesmo offline, e uma plataforma fácil de usar, com busca eficiente. Eles precisam de conteúdo sempre atualizado sobre as plataformas digitais e o agronegócio. Para mantê-los engajados, a plataforma oferece feedback, desafios (gamificação) e trilhas de aprendizado personalizadas. Esses profissionais são a ponte entre a tecnologia e o campo, essenciais para a produtividade e sustentabilidade do agronegócio[12].<br>
 
-
 ## 6.5 Posicionamento
 
 _a) Proposta de Valor Única
@@ -1955,7 +1949,6 @@ _a) Proposta de Valor Única
 &nbsp;&nbsp;&nbsp;&nbsp; A plataforma permite busca inteligente por palavras-chave, recomendações automáticas de trilhas baseadas em necessidades individuais e acompanhamento do progresso, promovendo engajamento por meio de gamificação e feedbacks imediatos. Gestores podem atualizar conteúdos de forma ágil, garantindo que as informações estejam sempre alinhadas com as últimas inovações do agronegócio. O grande diferencial está na capacidade de transformar o processo de capacitação em um ciclo virtuoso de aprendizado, certificação e melhoria contínua, reduzindo custos operacionais, padronizando o atendimento e elevando a eficiência dos promotores. Organizamos o aprendizado em trilhas personalizadas, com módulos que vão do básico à atualização contínua, facilitando o desenvolvimento de cada profissional. O acesso é fácil e intuitivo, funcionando perfeitamente online e também offline – um diferencial crucial para quem atua em áreas rurais com conectividade limitada. Recursos como busca inteligente por palavras-chave, acompanhamento individual do progresso e elementos de gamificação mantêm a equipe engajada e motivada. <br>
 
 &nbsp;&nbsp;&nbsp;&nbsp; O grande benefício é transformar a capacitação em um processo eficiente que reduz custos operacionais, padroniza a qualidade do atendimento e eleva a autonomia e a eficiência dos promotores. Isso impacta diretamente na melhoria da experiência do produtor rural e fortalece a posição da AgroBayer como líder em inovação no agronegócio. Em essência, nossa plataforma unifica, personaliza e facilita o acesso ao conhecimento técnico, impulsionando a excelência no campo. Nossa plataforma de capacitação técnica para promotores agro da AgroBayer oferece um valor único ao resolver desafios reais do campo, como a rotatividade e a falta de conhecimento técnico centralizado. Diferente de treinamentos genéricos, reunimos todo o conteúdo essencial sobre o sistema FieldView em um só lugar, criando uma solução sob medida para a equipe Bayer. <br>
-
 
 _b) Estratégia de Diferenciação
 &nbsp;&nbsp;&nbsp;&nbsp;  A aplicação web de capacitação técnica para promotores agro da AgroBayer se diferencia da concorrência ao oferecer uma solução altamente personalizada, centrada nas reais dores e necessidades do campo, com foco em nivelamento do conhecimento, redução do turnover e suporte técnico eficiente. <br>
@@ -1969,26 +1962,19 @@ _b) Estratégia de Diferenciação
 
 ## 6.6 Estratégia de Marketing
 
-_a) Produto/Serviço (até 200 palavras)_
-_Descreva as funcionalidades, benefícios e diferenciais da aplicação_
-
+_a) Produto/Serviço
 &nbsp;&nbsp;&nbsp;&nbsp; Nossa plataforma web de capacitação técnica foi criada pensando em você, promotor agro da AgroBayer. Ela oferece uma experiência completa para aprimorar seu conhecimento e facilitar seu trabalho no campo. Explore trilhas de aprendizado organizadas, acompanhe seu progresso com avaliações e receba sugestões personalizadas. Encontre informações rapidamente com a busca por palavras-chave e acesse materiais essenciais mesmo offline, com conteúdo sempre atualizado pelos gestores. <br>
 
 &nbsp;&nbsp;&nbsp;&nbsp; Com a plataforma, você ganha mais autonomia e eficiência, reduz a necessidade de contatar o suporte e padroniza seu atendimento, melhorando a experiência do produtor rural. Mantenha-se engajado com gamificação e feedback, acompanhando seu desenvolvimento. Nosso diferencial é unificar todo o conhecimento sobre FieldView em um portal intuitivo e acessível, mesmo com baixa conectividade. O foco na personalização e atualização constante garante que a ferramenta atenda suas necessidades e acompanhe as inovações do agronegócio. <br>
 
 
 
-_6.2 Preço (até 200 palavras)_
-_Explique o modelo de precificação adotado e justifique com base nas análises anteriores._
-
+### 6.2 Preço
  &nbsp;&nbsp;&nbsp;&nbsp;  O modelo de precificação adotado para a plataforma de capacitação técnica da AgroBayer é o de assinatura corporativa, com valores ajustados conforme o número de usuários, o grau de personalização e as funcionalidades contratadas. Essa escolha se baseia na análise do mercado de plataformas de educação para o agronegócio, onde a assinatura mensal por usuário ou pacotes customizados são práticas comuns, partindo de valores em torno de R$ 79,90 mensais. O modelo de assinatura é especialmente adequado ao contexto dinâmico do agronegócio, pois permite atualização contínua dos conteúdos, flexibilidade de acesso para os profissionais – inclusive offline – e facilita a gestão centralizada dos acessos pela empresa. Além disso, proporciona previsibilidade de receita e incentiva o uso constante da plataforma, promovendo o engajamento dos usuários e facilitando o acompanhamento dos resultados da capacitação. Esse formato está alinhado com as tendências do setor, que valoriza soluções digitais flexíveis e escaláveis para formação e qualificação de equipes técnicas, respondendo à crescente demanda por mão de obra especializada e atualização tecnológica no campo.<br>
-
 
  &nbsp;&nbsp;&nbsp;&nbsp; Para a AgroBayer, facilita enormemente a gestão dos acessos e o acompanhamento do progresso da equipe. Adicionalmente, este formato proporciona previsibilidade de receita para nós, enquanto incentiva o uso contínuo e o engajamento dos usuários com a plataforma. Por fim, favorece a mensuração clara dos resultados da capacitação, permitindo avaliar o retorno sobre o investimento em termos de aquisição e retenção de conhecimento pela equipe, alinhando-se perfeitamente às melhores práticas de precificação no setor de educação corporativa, especialmente no contexto do agronegócio. <br>
 
-_6.3 Praça (Distribuição) (até 200 palavras)_
-_Apresente os canais digitais utilizados para distribuir e entregar a aplicação ao público._
-
+_6.3 Praça
 &nbsp;&nbsp;&nbsp;&nbsp; Levamos nossa plataforma de capacitação técnica diretamente até você, promotor agro da AgroBayer, usando principalmente canais digitais. O acesso principal é pela própria aplicação web, que funciona perfeitamente em computadores, tablets e celulares. Pensando na realidade do campo, incluímos a função de acesso offline, permitindo que você consulte materiais importantes mesmo sem internet. <br>
 
 &nbsp;&nbsp;&nbsp;&nbsp; Para garantir que todos conheçam e saibam usar a plataforma, utilizamos diversos meios de comunicação digital. Divulgamos através dos portais internos da Bayer, redes sociais como LinkedIn e Instagram, e-mail marketing e grupos de WhatsApp, que já são familiares para muitos. Além disso, promovemos webinars e eventos online para apresentar novidades e manter todos engajados. <br>
@@ -2069,7 +2055,13 @@ _Relacione também quaisquer outras ideias que o grupo tenha para melhorias futu
 
 <a name="c27">[23]</a> LUÍZ, Joseandro. A engenharia em Climate FieldView™: inovação no coração da agricultura digital. Climate FieldView (Bayer), 5 abr. 2018. Disponível em: https://blog.climatefieldview.com.br/inovacao-no-coracao-da-agricultura-digital. Acesso em: 15/06/2025.
 
-<a name="c28">[24]</a> PRICEWATERHOUSECOOPERS BRASIL (PwC). Agtech Innovation. [s.l.], s.d. Disponível em: https://www.pwc.com.br/pt/consultoria/agtech-innovation.html. Acesso em: 10/06/2025.
+<a name="c28">[24]</a> MUNDOCOOP. MundoCoop – O Portal de Notícias do Cooperativismo. [s.l.], 1999–2025. Disponível em: https://mundocoop.com.br/. Acesso em: 10/06/2025. 
+
+<a name="c29">[25]</a> PRICEWATERHOUSECOOPERS BRASIL (PwC). Agtech Innovation. [s.l.], s.d. Disponível em: https://www.pwc.com.br/pt/consultoria/agtech-innovation.html. Acesso em: 10/06/2025.
+
+<a name="c30">[26]</a> BEMAGRO. BemAgro – Soluções em Agricultura Inteligente. [s.l.], [s.d.]. Disponível em: https://www.bemagro.com/. Acesso em: 10/06/2025. 
+
+<a name="c31">[27]</a> IBM. (2024). O que é um endpoint de API? Disponível em: https://www.ibm.com/br-pt/think/topics/api-endpoint. Acesso em: 24 jun. 2025.
 
 INTELI. Adalove. Disponível em: https://adalove.inteli.edu.br/feed. Acesso em: 15/04/2025. <br>
 
