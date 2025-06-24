@@ -1,7 +1,15 @@
 const CACHE_NAME = "fieldacademy-v1";
 
 // Recursos para cache inicial
-const STATIC_ASSETS = ["/", "/help", "/css/style.css", "/images/logo.png"];
+const STATIC_ASSETS = [
+  "/",
+  "/help",
+  "/css/style.css",
+  "/images/logo.png",
+  "/js/subject.js",
+  "/css/body.css",
+  "/data/",
+];
 
 // Recurso para página de ajuda
 const HELP_ASSETS = [
@@ -57,7 +65,7 @@ self.addEventListener("fetch", (event) => {
   if (
     url.origin !== self.location.origin &&
     !url.hostname.includes("unsplash.com") &&
-    !url.hostname.includes("cdn.tailwindcss.com")
+    !url.hostname.includes("css.com")
   ) {
     return;
   }
@@ -117,5 +125,3 @@ self.addEventListener("fetch", (event) => {
     })
   );
 });
-
-
