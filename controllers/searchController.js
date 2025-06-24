@@ -21,14 +21,21 @@ exports.index = async (req, res) => {
     const userId = await getUserId(token);
     const user = await usersModel.getRole(userId);
 
-
     return res.render("search", {
       articles: searchArticles,
       user, // Assuming user is set in middleware
-      query
+      query,
     });
   } catch (err) {
-    console.error("Error no search controller:", err);
-    res.status(500).send("Erro ao carregar a página: " + err.message);
+    const isNetworkError =
+      err.code === "ECONNREFUSED" ||
+      err.code === "ENOTFOUND" ||
+      err.name === "NetworkError" ||
+      err.message.includes("network");
+
+    if (isNetworkError) {
+      return res.redirect("/help");
+    }
+    return res.status(500).json(err.message);
   }
 };

@@ -10,7 +10,5 @@ router.get('/help', helpController.index);
 // Página de detalhe de artigo de ajuda
 router.get('/help/:category/content/:id_content', helpController.getArticleById);
 
-// Rota para criar artigo de ajuda (POST)
-router.post('/help', helpController.create);
 
 module.exports = router;

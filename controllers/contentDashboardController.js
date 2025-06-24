@@ -8,51 +8,77 @@ const { isAuthorized } = require("../utils/authUtils");
 
 // TESTS
 exports.indexTests = async (req, res) => {
-  const token = req.cookies.token;
-  const auth = await isAuthorized(token, "Admin");
+  try {
+    const token = req.cookies.token;
+    const auth = await isAuthorized(token, "Admin");
 
-  if (auth === false) {
-    return res.redirect("/");
+    if (auth === false) {
+      return res.redirect("/");
+    }
+
+    const id = await getUserId(token);
+    const user = await usersModel.getRole(id);
+    const allTests = await testModel.getAllTests();
+
+    const display = "tests";
+
+    return res.render("contentDashboard", {
+      user,
+      allModules: null,
+      allContents: null,
+      allTests,
+      display,
+    });
+  } catch (err) {
+    const isNetworkError =
+      err.code === "ECONNREFUSED" ||
+      err.code === "ENOTFOUND" ||
+      err.name === "NetworkError" ||
+      err.message.includes("network");
+
+    if (isNetworkError) {
+      return res.redirect("/help");
+    }
+    return res.status(500).json(err.message);
   }
-
-  const id = await getUserId(token);
-  const user = await usersModel.getRole(id);
-  const allTests = await testModel.getAllTests();
-
-  const display = "tests";
-
-  return res.render("contentDashboard", {
-    user,
-    allModules: null,
-    allContents: null,
-    allTests,
-    display,
-  });
 };
 
 // MODULES
 
 exports.indexModules = async (req, res) => {
-  const token = req.cookies.token;
-  const auth = await isAuthorized(token, "Admin");
+  try {
+    const token = req.cookies.token;
+    const auth = await isAuthorized(token, "Admin");
 
-  if (auth === false) {
-    return res.redirect("/");
+    if (auth === false) {
+      return res.redirect("/");
+    }
+
+    const id = await getUserId(token);
+    const user = await usersModel.getRole(id);
+    const allModules = await contentModel.getAllModules();
+
+    const display = "modules";
+
+    return res.render("contentDashboard", {
+      user,
+      allModules,
+      allContents: null,
+      allTests: null,
+      display,
+    });
+  } catch (err) {
+    const isNetworkError =
+      err.code === "ECONNREFUSED" ||
+      err.code === "ENOTFOUND" ||
+      err.name === "NetworkError" ||
+      err.message.includes("network");
+
+    if (isNetworkError) {
+      return res.redirect("/help");
+    }
+    return res.status(500).json(err.message);
   }
-
-  const id = await getUserId(token);
-  const user = await usersModel.getRole(id);
-  const allModules = await contentModel.getAllModules();
-
-  const display = "modules";
-
-  return res.render("contentDashboard", {
-    user,
-    allModules,
-    allContents: null,
-    allTests: null,
-    display,
-  });
 };
 
 exports.editModule = async (req, res) => {
@@ -182,26 +208,39 @@ exports.updateModule = async (req, res) => {
 // CONTENT
 
 exports.indexLessons = async (req, res) => {
-  const token = req.cookies.token;
-  const auth = await isAuthorized(token, "Admin");
+  try {
+    const token = req.cookies.token;
+    const auth = await isAuthorized(token, "Admin");
 
-  if (auth === false) {
-    return res.redirect("/");
+    if (auth === false) {
+      return res.redirect("/");
+    }
+
+    const id = await getUserId(token);
+    const user = await usersModel.getRole(id);
+    const allContents = await contentModel.getAllContents();
+
+    const display = "lessons";
+
+    return res.render("contentDashboard", {
+      user,
+      allModules: null,
+      allContents,
+      allTests: null,
+      display,
+    });
+  } catch (err) {
+    const isNetworkError =
+      err.code === "ECONNREFUSED" ||
+      err.code === "ENOTFOUND" ||
+      err.name === "NetworkError" ||
+      err.message.includes("network");
+
+    if (isNetworkError) {
+      return res.redirect("/help");
+    }
+    return res.status(500).json(err.message);
   }
-
-  const id = await getUserId(token);
-  const user = await usersModel.getRole(id);
-  const allContents = await contentModel.getAllContents();
-
-  const display = "lessons";
-
-  return res.render("contentDashboard", {
-    user,
-    allModules: null,
-    allContents,
-    allTests: null,
-    display,
-  });
 };
 
 exports.editContent = async (req, res) => {
