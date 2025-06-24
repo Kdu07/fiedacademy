@@ -1,120 +1,115 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Ajuda | Bayer Agro</title>
-  <link rel="stylesheet" href="/css/style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    .linha-botoes {
-      display: flex;
-      justify-content: center;
-      gap: 32px;
-      margin-bottom: 32px;
-      width: 100%;
-      max-width: 900px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .botao-help {
-      flex: 1 1 0;
-      max-width: 220px;
-      min-width: 140px;
-      height: 180px;
-      background: #66B512;
-      border-radius: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: none;
-      box-shadow: none;
-      padding: 0;
-      transition: transform 0.2s;
-      cursor: pointer;
-      margin: 0;
-    }
-    .botao-help:hover {
-      transform: scale(1.05);
-      background: #5c8a25;
-    }
-    .botao-help img {
-      width: 70%;
-      height: 70%;
-      object-fit: contain;
-      margin: 0;
-      background: transparent;
-      border: none;
-      box-shadow: none;
-      padding: 0;
-      display: block;
-      filter: none;
-      outline: none;
-    }
-    @media (max-width: 900px) {
-      .linha-botoes {
-        gap: 16px;
-        max-width: 100%;
-      }
-      .botao-help {
-        max-width: 33vw;
-        height: 24vw;
-        min-width: 90px;
-      }
-    }
-    @media (max-width: 600px) {
-      .linha-botoes {
-        flex-direction: column;
-        gap: 12px;
-        margin-bottom: 10px;
-      }
-      .botao-help {
-        max-width: 100%;
-        width: 100%;
-        height: 80px;
-      }
-      .botao-help img {
-        width: 48px;
-        height: 48px;
-      }
-    }
-  </style>
-</head>
-<body class="bg-gray-50 min-h-screen flex flex-col justify-between">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ajuda | FieldAcademy</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="flex flex-col min-h-screen bg-gray-50">
+    <!-- Header -->
+    <%- include('./partials/header') %>
 
-  <!-- Header -->
-   <%- include('./partials/header') %>
-
-  <div class="flex flex-col items-center flex-grow mt-0">
-    <h1 class="mt-4 mb-4 text-3xl font-bold text-[#4B6B1A] w-full text-center" style="font-family: 'Montserrat', sans-serif;">Como podemos te ajudar hoje?</h1>
-    <div class="flex flex-col mb-0 pb-0 flex-grow w-full">
-      <div class="linha-botoes">
-        <a href="/help/1" class="botao-help">
-          <img src="/images/mapas.dados2.png" alt="Mapas e dados" />
-        </a>
-        <a href="/help/2" class="botao-help">
-          <img src="/images/boas.praticas.png" alt="Boas práticas" />
-        </a>
-        <a href="/help/3" class="botao-help">
-          <img src="/images/data.inbox.png" alt="Data inbox e integrações" />
-        </a>
+    <div class="mt-8">
+      <div
+        class="bg-secondaryGreen h-20 w-full flex items-center justify-center mb-8 shadow-md"
+      >
+        <h1 class="text-white text-3xl font-bold">Central de Ajuda</h1>
       </div>
-      <div class="linha-botoes">
-        <a href="/help/4" class="botao-help">
-          <img src="/images/Plantio.png" alt="Plantio" />
-        </a>
-        <a href="/help/5" class="botao-help">
-          <img src="/images/Colheita.png" alt="Colheita" />
-        </a>
-        <a href="/help/6" class="botao-help">
-          <img src="/images/Passos.png" alt="Primeiros passos" />
-        </a>
+
+      <div class="container mx-auto px-4 py-4 max-w-5xl">
+        <div class="bg-white rounded-xl shadow-md p-6 mb-6">
+          <div class="flex flex-col mb-6">
+            <h2
+              class="text-xl font-bold text-secondaryGreen mb-4 pb-2 border-b border-gray-100"
+            >
+              Como podemos te ajudar hoje?
+            </h2>
+            <p class="text-gray-600 mb-6">
+              Selecione uma das categorias abaixo para encontrar as informações
+              que você precisa.
+            </p>
+          </div>          <div
+            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-8"
+          >
+            <% if (typeof allArticles !== 'undefined' && Array.isArray(allArticles)) { %>
+              <% 
+                // Define images and descriptions for each category
+                var categoryInfo = {
+                  'Mapas e Dados': {
+                    img: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80',
+                    desc: 'Aprenda a utilizar os recursos de mapas e análise de dados da plataforma.'
+                  },
+                  'Boas Praticas': {
+                    img: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80',
+                    desc: 'Conheça as melhores práticas recomendadas para otimizar seus resultados.'
+                  },
+                  'Data Inbox': {
+                    img: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80',
+                    desc: 'Saiba como importar e exportar dados e integrar com outros sistemas.'
+                  },
+                  'Plantio': {
+                    img: 'https://images.unsplash.com/photo-1591154669695-5f2a8d20c089?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80',
+                    desc: 'Dicas e orientações sobre as melhores práticas de plantio.'
+                  },
+                  'Colheita': {
+                    img: 'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80',
+                    desc: 'Informações sobre colheita, armazenamento e processamento.'
+                  },
+                  'Primeiros Passos': {
+                    img: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80',
+                    desc: 'Guia introdutório para novos usuários da plataforma.'
+                  }
+                };
+                
+                // Loop through each article and create a card for it
+                for(var i = 0; i < allArticles.length; i++) {
+                  var article = allArticles[i];
+                  var category = article.category;
+                  var id = article.id;
+                  
+                  // Get the image and description for this category or use defaults
+                  var img = categoryInfo[category] ? categoryInfo[category].img : 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173';
+                  var desc = categoryInfo[category] ? categoryInfo[category].desc : 'Informações úteis sobre ' + category;
+                  
+                  // Create URL-safe category
+                  var categoryUrl = encodeURIComponent(category);
+              %>
+                <!-- <%= category %> -->
+                <a href="/help/<%= categoryUrl %>/content/<%= id %>" class="group">
+                  <div
+                    class="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 h-full flex flex-col"
+                  >
+                    <div class="flex justify-center">
+                      <img
+                        src="<%= img %>"
+                        alt="<%= category %>"
+                        class="h-32 w-full object-cover rounded-t-lg"
+                      />
+                    </div>
+                    <div class="p-5">
+                      <h3 class="font-semibold text-gray-800 mb-2">
+                        <%= category %>
+                      </h3>
+                      <p class="text-gray-500 text-xs mt-2">
+                        <%= desc %>
+                      </p>
+                    </div>
+                  </div>
+                </a>
+              <% } %>
+            <% } else { %>
+              <div class="col-span-3 text-center py-8 text-gray-500">
+                Nenhum artigo de ajuda disponível no momento.
+              </div>
+            <% } %>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-  
-  <!-- Footer -->
-  <%- include('./partials/footer') %>
 
-</body>
+    <!-- Footer -->
+    <%- include('./partials/footer') %>
+  </body>
 </html>

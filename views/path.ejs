@@ -1,36 +1,79 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title><%= paths.title %> | Trilha</title>
-  <link rel="stylesheet" href="/css/style.css" />
-</head>
-<body>
-  <%- include('./partials/header') %>
-  <div class="min-h-screen p-6 max-w-4xl mx-auto">
-    <h1 class="text-3xl font-bold text-green-800 mb-8">Trilha: <%= paths.title %></h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= paths.title %> | FieldAcademy</title>
+    <link href="/css/style.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-50">
+    <!-- Header -->
+    <%- include('./partials/header') %>
 
-  <% paths.modules
-   .sort((a, b) => a.order - b.order) // garante que os modulos vem na ordem
-   .forEach((modulo, index) => { %>
-  
-  <!-- Módulos -->
-  <div class="border rounded-xl p-5 mb-6 shadow-md">
-    <h2 class="text-xl font-semibold text-green-800 mb-2">Módulo <%= index + 1 %> - <%= modulo.title %></h2>
+    <div class="mt-8">
+      <div
+        class="bg-secondaryGreen h-20 w-full flex items-center justify-center mb-8 shadow-md"
+      >
+        <h1 class="text-white ms-8 text-3xl font-bold">
+          <%= paths.title %>
+        </h1>
+      </div>
 
-    <!-- Barra de progresso -->
-    <div class="w-full h-3 bg-gray-200 rounded-full mb-4">
-      <div class="h-full bg-cyan-400 rounded-full" style="width: <%= modulo.progress %>%;">
+      <div class="container mx-auto px-4 py-4 max-w-5xl">
+        <!-- Módulos -->
+        <div class="space-y-6">
+          <% paths.modules .sort((a, b) => a.order - b.order) .forEach((modulo,
+          index) => { %>
+          <!-- Módulo Card -->
+          <div class="bg-white rounded-xl shadow-md overflow-hidden">
+            <div class="border-b border-gray-100 px-6 py-4">
+              <h2 class="text-xl font-semibold text-black">
+                Módulo <%= index + 1 %> - <%= modulo.title %>
+              </h2>
+            </div>
+            <div class="px-6 py-4">
+              <!-- Barra de progresso -->
+              <div
+                class="w-full h-4 bg-gray-100 rounded-full mb-6 overflow-hidden"
+              >
+                <div
+                  class="h-full bg-secondaryGreen  rounded-full transition-all duration-500"
+                  style="width: <%= modulo.progress %>%"
+                ></div>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-sm text-gray-600 font-medium"
+                  ><%= modulo.progress %>% concluído</span
+                >
+                <!-- Botão de continuar -->
+                <a
+                  href="/path/<%= currentPath %>/module/<%= modulo.id %>/page/1"
+                  class="bg-secondaryGreen hover:bg-secondaryGreen/90 text-white px-6 py-2 rounded-lg shadow-sm transition-colors flex items-center gap-2"
+                >
+                  <%= modulo.progress > 0 ? "Continuar" : "Iniciar" %>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+          <% }) %>
+        </div>
       </div>
     </div>
-    <!-- Botão de continuar -->
-    <a href="/path/<%= currentPath %>/module/<%= modulo.id %>/page/1" class="bg-lime-200 hover:bg-lime-300 text-black px-4 py-2 rounded shadow flex items-center gap-2 w-fit">
-      <%= modulo.progresso > 0 ? "Continuar" : "Iniciar" %> <span>→</span>
-    </a>
-  </div>
-<% }) %>
 
-<%- include('./partials/footer') %>
-</body>
+    <!-- Footer -->
+    <%- include('./partials/footer') %>
+  </body>
 </html>
