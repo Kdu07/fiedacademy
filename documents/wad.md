@@ -42,14 +42,14 @@
 
 &nbsp;&nbsp;&nbsp;&nbsp; A empresa investe fortemente em pesquisa e desenvolvimento, posicionando-se na vanguarda da agricultura 4.0. No entanto, existem problemáticas que comprometem sua eficácia, o primeiro problema que a equipe de PTDs enfrenta é o turnover acima de 30% ao ano. O **Turnover**, é a alta rotatividade de funcionários, acarreta em diversos impactos negativos, como aumento de custos com recrutamento e seleção, além da perda de conhecimento e experiência acumulada. A segunda problemática é a falta de treinamento estruturado que possa guiar o processo de desenvolvimento de habilidades e conhecimentos, dos novos contratados. Gerando resultados ineficazes, falta de progresso, contratempos no desempenho e segurança. <br>
 
-&nbsp;&nbsp;&nbsp;&nbsp; Para solucionar esse desafio, foi desenvolvida uma plataforma web de capacitação técnica, que oferece trilhas de conhecimento em diferentes formatos aos PTDs antes de sua atuação em campo, acompanhando o progresso individual dos colaboradores, além de incorporar elementos de gamificação para engajamento. Os principais aspectos de criação de valor da solução estão na melhoria da experiência do produtor rural, na redução de custos operacionais com suporte, na padronização do atendimento e na possibilidade de monitorar e aprimorar continuamente a qualificação dos PTDs, alinhando o produto às expectativas e necessidades reais do parceiro de negócios. A solução proposta pelo nosso projeto visa não apenas corrigir gaps de conhecimento, como criar um ciclo virtuoso de engajamento, certificação e acompanhamento contínuo, alinhando a operação de campo às ambições de inovação da Bayer.<sup>[3](#c17)</sum> <br>
+&nbsp;&nbsp;&nbsp;&nbsp; Para solucionar esse desafio, foi desenvolvida uma plataforma web de capacitação técnica, que oferece trilhas de conhecimento em diferentes formatos aos PTDs antes de sua atuação em campo, acompanhando o progresso individual dos colaboradores, além de incorporar elementos de gamificação para engajamento. Os principais aspectos de criação de valor da solução estão na melhoria da experiência do produtor rural, na redução de custos operacionais com suporte, na padronização do atendimento e na possibilidade de monitorar e aprimorar continuamente a qualificação dos PTDs, alinhando o produto às expectativas e necessidades reais do parceiro de negócios. A solução proposta pelo nosso projeto visa não apenas corrigir gaps de conhecimento, como criar um ciclo virtuoso de engajamento, certificação e acompanhamento contínuo, alinhando a operação de campo às ambições de inovação da Bayer[[3](#c17)].<br>
 
 # <a name="c2"></a>2. Visão Geral da Aplicação Web 
 ## 2.1. Escopo do Projeto 
 
 ### 2.1.1. Modelo de 5 Forças de Porter
 
-As forças de Porter analisam o nível de competitividade e atratividade de um setor por meio de cinco fatores: ameaça de novos entrantes, poder de barganha de fornecedores, poder de barganha de clientes, ameaça de produtos substitutos e rivalidade entre concorrentes. Desse modo a posição da Bayer no setor se dá da seguinte maneira: <br>
+As forças de Porter[[13](#c17)] analisam o nível de competitividade e atratividade de um setor por meio de cinco fatores: ameaça de novos entrantes, poder de barganha de fornecedores, poder de barganha de clientes, ameaça de produtos substitutos e rivalidade entre concorrentes. Desse modo a posição da Bayer no setor se dá da maneira como apresentado na imagem abaixo:<br>
 
 <div align = "center">
 
@@ -63,7 +63,7 @@ As forças de Porter analisam o nível de competitividade e atratividade de um s
 
 #### Ameaça de novos entrantes: Média a baixa. <br>
 
-O setor exige grandes investimentos em P&D, infraestrutura e cumprimento de regulações rigorosas, o que cria barreiras significativas. A Bayer ainda possui forte credibilidade entre os produtores, dificultando a entrada de novas marcas. Baseado em dados da revista Exame <sup>[4](#c12)</sup>, startups AgTech estão conseguindo espaço com soluções tecnológicas específicas, como agricultura de precisão e monitoramento por IA. <br>
+O setor exige grandes investimentos em P&D, infraestrutura e cumprimento de regulações rigorosas, o que cria barreiras significativas. A Bayer ainda possui forte credibilidade entre os produtores, dificultando a entrada de novas marcas. Baseado em dados da revista Exame [[4](#c12)], startups AgTech estão conseguindo espaço com soluções tecnológicas específicas, como agricultura de precisão e monitoramento por IA. <br>
 
 #### Poder de barganha dos fornecedores: Baixo.<br>
 
@@ -71,22 +71,21 @@ A Bayer, sendo uma multinacional de grande porte, possui escala global que lhe c
 
 #### Poder de barganha dos clientes: Médio. <br>
 
-Produtores rurais e grandes cooperativas têm algum poder de negociação, principalmente em mercados onde a concorrência é intensa. Ainda assim, muitos clientes tradicionais mostram resistência inicial a novas tecnologias, como mostra a matéria da Distrito <sup>[5](#c13)</sup>. A Bayer busca mitigar isso oferecendo pacotes integrados e tecnologias patenteadas, dificultando a substituição por concorrentes. <br>
+Produtores rurais e grandes cooperativas têm algum poder de negociação, principalmente em mercados onde a concorrência é intensa. Ainda assim, muitos clientes tradicionais mostram resistência inicial a novas tecnologias, como mostra a matéria da Distrito [[5](#c13)]. A Bayer busca mitigar isso oferecendo pacotes integrados e tecnologias patenteadas, dificultando a substituição por concorrentes. <br>
 
 #### Ameaça de produtos substitutos: Média. <br>
 
-Pequenos produtores e mercados de nicho estão buscando alternativas sustentáveis, como biopesticidas e métodos orgânicos de cultivo evidenciado por Compre Rural <sup>[6](#c14)</sup>. Embora essas opções estejam crescendo, os produtos da Bayer ainda oferecem maior escala, eficácia e previsibilidade, fatores decisivos para grandes produtores.<br>
+Pequenos produtores e mercados de nicho estão buscando alternativas sustentáveis, como biopesticidas e métodos orgânicos de cultivo evidenciado por Compre Rural [[6](#c14)]. Embora essas opções estejam crescendo, os produtos da Bayer ainda oferecem maior escala, eficácia e previsibilidade, fatores decisivos para grandes produtores.<br>
 
 #### Rivalidade entre concorrentes: Alta. <br>
 
-A disputa no setor é intensa, envolvendo grandes empresas como Syngenta, Corteva e BASF. A competição se baseia principalmente em inovação tecnológica, desenvolvimento de patentes e capacidade de oferecer soluções digitais avançadas, fator esse evidenciado na Imagen Agropecuaria <sup>[7](#c15)</sup>. Estratégias como fusões e aquisições são comuns para fortalecer posições de mercado e expandir a base tecnológica.<br>
+A disputa no setor é intensa, envolvendo grandes empresas como Syngenta, Corteva e BASF. A competição se baseia principalmente em inovação tecnológica, desenvolvimento de patentes e capacidade de oferecer soluções digitais avançadas, fator esse evidenciado na Imagen Agropecuaria [[7](#c15)]. Estratégias como fusões e aquisições são comuns para fortalecer posições de mercado e expandir a base tecnológica.<br>
 
 ### 2.1.2. Análise SWOT da Instituição Parceira 
 
+A análise SWOT é um método de planejamento estratégico que engloba o estudo de cenários para a tomada de decisão. Sendo uma ferramenta crucial, ao proporcionar uma visão clara das forças e fraquezas internas, bem como das oportunidades e ameaças externas que impactam uma organização. [[14](#c18)].
 
-Ferramenta que analisa forças, fraquezas, oportunidades, ameaças.
-
-A Bayer se destaca pela forte inovação tecnológica, marca global consolidada e capacidade financeira, o que a posiciona entre os líderes do agronegócio mundial. Seu portfólio integrado reforça a competitividade frente a rivais como Syngenta, Corteva e BASF. No entanto, enfrenta desafios de altos custos e maior pressão regulatória, que podem ser explorados por concorrentes. O crescimento da agricultura digital e da demanda por sustentabilidade abre oportunidades para reforçar sua liderança. A empresa busca equilibrar produtividade e responsabilidade ambiental para se diferenciar num mercado cada vez mais competitivo e sensível às questões sociais. <br>
+A Bayer se destaca pela forte inovação tecnológica, marca global consolidada e capacidade financeira, o que a posiciona entre os líderes do agronegócio mundial. Seu portfólio integrado reforça a competitividade frente a rivais como Syngenta, Corteva e BASF. No entanto, enfrenta desafios de altos custos e maior pressão regulatória, que podem ser explorados por concorrentes. O crescimento da agricultura digital e da demanda por sustentabilidade abre oportunidades para reforçar sua liderança. A empresa busca equilibrar produtividade e responsabilidade ambiental para se diferenciar num mercado cada vez mais competitivo e sensível às questões sociais. Na figuara abaixo, encontra-se a matriz SWOT da empresa.<br>
 
 <div align = "center">
 
@@ -126,7 +125,7 @@ O sucesso da solução será avaliado a partir de feedbacks dos próprios PTDs, 
 
 ### 2.1.4. Value Proposition Canvas:
 
-O canva de proposta de valor é uma ferramenta para organizar os pontos principais de necessidades e expectativas do cliente e relacioná-los com o projeto que será entregue, garantindo que todos os pontos foram atendidos.
+O canva de proposta de valor é uma ferramenta para organizar os pontos principais de necessidades e expectativas do cliente e relacioná-los com o projeto que será entregue, garantindo que todos os pontos foram atendidos [[15](#c19)]. A figura abaixo mostra o canvas produzido para o projeto.
 
 <div align = "center">
 
@@ -244,7 +243,7 @@ Os funcionários com acesso especial para gerenciar a plataforma conseguem adici
 
 ### 2.1.5. Matriz de Riscos do Projeto
 
-&nbsp;&nbsp;&nbsp;&nbsp; A matriz de riscos é uma ferramenta visual e analítica fundamental para a gestão de projetos, permitindo a identificação, análise e avaliação dos riscos que podem impactar objetivos organizacionais e projetos. A matriz de riscos consiste em uma representação gráfica que cruza dois eixos principais: a probabilidade de ocorrência de um risco e o impacto que esse risco pode causar. Essa abordagem possibilita classificar os riscos em diferentes níveis de criticidade, facilitando a priorização das ações de mitigação e o direcionamento eficiente de recursos para os riscos mais relevantes <sup>[8](#c16)</sup>. Dessa forma, a matriz de riscos foi utilizada em nosso projeto para identificar potenciais situações adversas que podem vir a afetar o andamento do trabalho, como também ações que estão sendo utilizadas para diminuir essa probabilidade de ocorrência. <br>
+&nbsp;&nbsp;&nbsp;&nbsp; A matriz de riscos é uma ferramenta visual e analítica fundamental para a gestão de projetos, permitindo a identificação, análise e avaliação dos riscos que podem impactar objetivos organizacionais e projetos. A matriz de riscos consiste em uma representação gráfica que cruza dois eixos principais: a probabilidade de ocorrência de um risco e o impacto que esse risco pode causar. Essa abordagem possibilita classificar os riscos em diferentes níveis de criticidade, facilitando a priorização das ações de mitigação e o direcionamento eficiente de recursos para os riscos mais relevantes [[8](#c16)]. Dessa forma, a matriz de riscos abaixo foi utilizada em nosso projeto para identificar potenciais situações adversas que podem vir a afetar o andamento do trabalho, como também ações que estão sendo utilizadas para diminuir essa probabilidade de ocorrência. <br>
 
 <div align = "center">
 
@@ -271,7 +270,7 @@ Os funcionários com acesso especial para gerenciar a plataforma conseguem adici
 
 </div>
 
-&nbsp;&nbsp;&nbsp;&nbsp; Além disso, também foi feito o levantamento de potenciais oportunidades a serem conquistadas através da construção do projeto.<br>
+&nbsp;&nbsp;&nbsp;&nbsp; Além disso, como representado no quadro abaixo, foi feito o levantamento de potenciais oportunidades a serem conquistadas através da construção do projeto.<br>
 
 <div align = "center">
 
@@ -290,7 +289,7 @@ Fonte: Material produzido pelos autores (2025)
 
 ## 2.2. Personas
 
-Personas são representações fictícias de usuários ideais. Elas ajudam a entender melhor o público-alvo do projeto, guiando decisões de design e funcionalidades para atender às necessidades, expectativas e dores dos usuários de forma mais eficaz. Dessa forma, foram construídas as seguintes personas para o projeto:<br>
+Personas [[16](#c20)] são representações fictícias de usuários ideais. Elas ajudam a entender melhor o público-alvo do projeto, guiando decisões de design e funcionalidades para atender às necessidades, expectativas e dores dos usuários de forma mais eficaz. Dessa forma, foram construídas as seguintes personas para o projeto, representadas nas figuras 5 e 6:<br>
 
 <div align = "center">
 
@@ -309,7 +308,7 @@ Personas são representações fictícias de usuários ideais. Elas ajudam a ent
 </div>
 
 ## 2.3. User Stories
-User Stories são descrições simples das funcionalidades do sistema escritas do ponto de vista do usuário final. Elas ajudam a definir o que o sistema deve fazer, focando nas necessidades e objetivos do usuário. Dessa forma, foram feitas as seguintes User Stories para o projeto:<br>
+User Stories [[17](#c21)] são descrições simples das funcionalidades do sistema escritas do ponto de vista do usuário final. Elas ajudam a definir o que o sistema deve fazer, focando nas necessidades e objetivos do usuário. Dessa forma, foram feitas as seguintes User Stories para o projeto, representadas nos quadros 3 à 12:<br>
 
 <div align = "center">
 
@@ -2011,6 +2010,16 @@ _Relacione também quaisquer outras ideias que o grupo tenha para melhorias futu
 <a name="c16"> [11]</a> CLIMATE FIELDVIEW. Cursos - Universidade FieldView™. 2022. Disponível em: https://www.climatefieldview.com.br/universidadefv/cursos.
 
 <a name="c16"> [12]</a> IFRS. Manual do Profissional Técnico Agrícola. Bento Gonçalves: IFRS, 2019. Disponível em: https://ifrs.edu.br/bento/wp-content/uploads/sites/13/2019/11/Manual-profissional-tecnico-agricola-sintargs-1.pdf.
+
+<a name="c17">[13]</a> ROCK CONTENT. As 5 forças de Porter: o que são, como funcionam e como aplicar no seu negócio. Disponível em: https://rockcontent.com/br/blog/5-forcas-de-porter/. Acesso em: 24/04/2025.
+
+<a name="c18">[14]</a> DOURADO, Bruna. Análise SWOT ou FOFA: confira o passo a passo completo. RD Station, 21 ago. 2024. Disponível em: https://www.rdstation.com/blog/marketing/analise-swot/. Acesso em: 20/04/2025
+
+<a name="c19">[15]</a> SOMOSTERA. Canvas de proposta de valor: para que serve e como preencher. Blog SomosTera, s.d. Disponível em: https://blog.somostera.com/product-management/canvas-de-proposta-de-valor. Acesso em: 20/04/2025.
+
+<a name="c20">[16]</a> ATTRI. Persona e UX: qual a relação e por que são essenciais? Blog Attri, s.d. Disponível em: https://www.attri.com.br/blog/persona-e-ux-qual-a-relacao-e-por-que-sao-essenciais/. Acesso em: 24 jun. 2025.
+
+<a name="c21">[17]</a> ATLASSIAN. User stories [s.d.]. Disponível em: https://www.atlassian.com/agile/project-management/user-stories. Acesso em: 24 jun. 2025.
 
 INTELI. Adalove. Disponível em: https://adalove.inteli.edu.br/feed. Acesso em: 15/04/2025. <br>
 
