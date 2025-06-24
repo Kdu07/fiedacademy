@@ -99,10 +99,10 @@ exports.index = async (req, res) => {
     // Tente buscar os artigos
     allArticles = await subjectModel.getFirstArticleFromEachCategory();
 
-    const cacheArticles = await generateArticleCache(allArticles, "help");
+    await generateArticleCache(allArticles, "help");
 
     // Renderize a página com os dados obtidos
-    return res.render("help", {
+    res.render("help", {
       user,
       allArticles,
       error: null,
@@ -122,7 +122,7 @@ exports.index = async (req, res) => {
     }
 
     // Renderize a página com uma mensagem de erro apropriada
-    return res.render("help", {
+    res.render("help", {
       user: user || {},
       allArticles,
       error: {
@@ -189,13 +189,10 @@ exports.getArticleById = async (req, res) => {
 
     article.last_update = article.last_update.toLocaleDateString("pt-BR");
 
-    const cacheArticles = await generateArticleCache(article, "subject");
-    const allCachedArticles = await generateArticleCache(
-      allArticles,
-      "subject"
-    );
+    await generateArticleCache(article, "subject");
+    await generateArticleCache(allArticles, "subject");
 
-    return res.render("subject", {
+    res.render("subject", {
       user,
       article,
       allArticles,
@@ -221,7 +218,7 @@ exports.getArticleById = async (req, res) => {
     }
 
     // Tentar renderizar a página com os dados que conseguimos obter
-    return res.render("subject", {
+    res.render("subject", {
       user: user || {},
       article: article || {
         title: "Conteúdo indisponível",
