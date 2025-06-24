@@ -143,14 +143,14 @@ const generateCertificate = async (options) => {
       const dateText = `Completado em: ${completionDate}`;
       doc.fontSize(14).fillColor("#334155");
       const dateTextWidth = doc.widthOfString(dateText);
-      doc.text(dateText, centerX - dateTextWidth / 2, 510);
+      doc.text(dateText, centerX - dateTextWidth / 2, 500);
 
       // Manually center verification ID
       const certId = `FA-${Date.now().toString().substring(5)}`;
       const verificationText = `ID de Verificação: ${certId}`;
-      doc.fontSize(10).fillColor("#64748b");
+      doc.fontSize(8).fillColor("#64748b");
       const verificationTextWidth = doc.widthOfString(verificationText);
-      doc.text(verificationText, centerX - verificationTextWidth / 2, 535);
+      doc.text(verificationText, centerX - verificationTextWidth / 2, 525);
 
       // Finalize the PDF
       doc.end();
