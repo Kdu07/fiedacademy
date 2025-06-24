@@ -503,8 +503,8 @@ O **Servidor de Banco de Dados** é o repositório central das informações man
 
 ## 3.2. Wireframes 
 
-Wireframe é um rascunho visual que mostra a estrutura básica de uma interface, focando na organização dos elementos e na navegação, sem detalhar o design final.
-Para alinhar os componentes de forma clara e responsiva, foi utilizada a estrutura de grid abaixo:
+Wireframe [[18](#c22)] é um rascunho visual que mostra a estrutura básica de uma interface, focando na organização dos elementos e na navegação, sem detalhar o design final.
+Para alinhar os componentes de forma clara e responsiva, foi utilizada a seguinte estrutura de grid abaixo (figura 13):
 
 <div align = "center">
 
@@ -514,7 +514,9 @@ Para alinhar os componentes de forma clara e responsiva, foi utilizada a estrutu
 | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
 | <img src="../assets/assets_wad/wireframes/GRID.png"  width="200"> | <img src="../assets/assets_wad/wireframes/GRID2.png"  width="70"> |
 
-[Link dos wireframes](https://www.figma.com/design/bOsRfHBpYqRksHS4GiNW74/bayer-project?node-id=0-1&p=f&t=S55FkKepuUIl5D6k-11)
+[Link dos wireframes](https://www.figma.com/design/bOsRfHBpYqRksHS4GiNW74/bayer-project?node-id=0-1&p=f&t=S55FkKepuUIl5D6k-11) <br>
+
+As imagens e figuras abaixo representam os wireframes construídos para a aplicação Web.
 
 <sup>Fonte: Material produzido pelos autores (2025).</sup><br>
 
@@ -580,9 +582,9 @@ Para alinhar os componentes de forma clara e responsiva, foi utilizada a estrutu
 
 ## 3.3. Guia de estilos
 
-&nbsp;&nbsp;&nbsp;&nbsp; O Guia de Estilos serve como referência oficial para todos os envolvidos no projeto, garantindo consistência visual, clareza de comunicação e aplicação correta dos elementos da marca.  <br>
+&nbsp;&nbsp;&nbsp;&nbsp; O Guia de Estilos [[19](#c23)] serve como referência oficial para todos os envolvidos no projeto, garantindo consistência visual, clareza de comunicação e aplicação correta dos elementos da marca.<br>
 
-&nbsp;&nbsp;&nbsp;&nbsp; Em suma, o Guia de Estilos serve como referência oficial para todos os envolvidos no projeto, garantindo consistência visual, clareza de comunicação e aplicação correta dos elementos da marca. <br>
+&nbsp;&nbsp;&nbsp;&nbsp; Em suma, o Guia de Estilos serve como referência oficial para todos os envolvidos no projeto, garantindo consistência visual, clareza de comunicação e aplicação correta dos elementos da marca. A imagem abaixo retrata o guia de Grid que foi utilizado <br>
 
 <div align = "center">
 <sup>Figura 10: Grid </sup><br>
@@ -593,12 +595,16 @@ Para alinhar os componentes de forma clara e responsiva, foi utilizada a estrutu
 </div>
 
 ### 3.3.1 Cores
+A figura abaixo representa a paleta de cores utilizadas na aplicação Web.
 <div align = "center">
 <sup>Figura 11: Cores </sup><br>
 <img src="../assets/assets_wad/paletaCores.png"> 
 
 <sup>Fonte: Material produzido pelos autores (2025).</sup><br>
 </div>
+
+<div align = "center">
+<sup>Quadro 16: Cores </sup><br>
 
 Recomendação Aplicada| Nome da cor | Hex | Função | 
 --- | --- | --- | ---|
@@ -609,11 +615,16 @@ Cor de composição | Cinza | #D9D9D9 | undo de cards, divisores, bordas. | Fund
 Cor Texto primária| Texto escuro | #1F1C1C| Texto principal sobre fundos claros|
 Cor Texto secundário| Texto claro | #FFFFFF| Texto para fundos escuros ou botões coloridos fortes|
 
+<sup>Fonte: Material produzido pelos autores (2025).</sup><br>
+</div>
+
 &nbsp;&nbsp;&nbsp;&nbsp; A paleta de cores de um projeto consiste no conjunto de cores previamente selecionadas para representar visualmente a identidade do produto digital em todos os seus elementos gráficos e funcionais. Essa paleta inclui cores primárias, secundárias, de destaque e de fundo, que devem ser utilizadas de forma sistemática em interfaces, componentes, textos e elementos de navegação. Seu propósito é assegurar uniformidade visual, fortalecer a comunicação da marca e facilitar a percepção do usuário ao interagir com o sistema. <br>
 
 &nbsp;&nbsp;&nbsp;&nbsp; A adoção de uma paleta de cores bem estruturada e alinhada entre os designers e a equipe de desenvolvimento front-end é essencial para garantir coerência estética e funcionalidade técnica. Em ambientes colaborativos, especialmente no contexto de projetos acadêmicos baseados em metodologias ágeis, essa padronização contribui para a consistência visual entre protótipos e implementações, reduz retrabalho, otimiza a comunicação entre os membros da equipe e assegura a acessibilidade por meio de contrastes adequados. A padronização cromática ainda reforça a identidade do produto, tornando-o mais reconhecível e profissional perante os usuários. <br>
+
 ### 3.3.2 Tipografia
-&nbsp;&nbsp;&nbsp;&nbsp; A tipografia padroniza a leitura e reforça a identidade da marca. Especifique fontes, tamanhos, pesos, espaçamentos e exemplos de uso. Ela  define as fontes, tamanhos, pesos e estilos utilizados em todos os textos da interface. Ela estabelece uma hierarquia visual clara, facilita a leitura e reforça a identidade da marca. <br>
+
+&nbsp;&nbsp;&nbsp;&nbsp; A tipografia [[20](#c24)] padroniza a leitura e reforça a identidade da marca. Especifique fontes, tamanhos, pesos, espaçamentos e exemplos de uso. Ela  define as fontes, tamanhos, pesos e estilos utilizados em todos os textos da interface. Ela estabelece uma hierarquia visual clara, facilita a leitura e reforça a identidade da marca. <br>
 
 &nbsp;&nbsp;&nbsp;&nbsp; A tipografia é um elemento essencial na construção da identidade visual de uma interface. Ela influencia diretamente na legibilidade e na percepção da marca. Em um guia de estilos, a definição tipográfica deve incluir as famílias tipográficas utilizadas (ex: sans-serif ou serif), tamanhos, pesos (light, regular, bold), espaçamentos (entre letras e linhas) e hierarquia de títulos (H1, H2, H3 etc.) e parágrafos. <br>
 
@@ -641,6 +652,9 @@ Cor Texto secundário| Texto claro | #FFFFFF| Texto para fundos escuros ou botõ
 
 #### Icons Mobile
 
+<div align = "center">
+<sup>Quadro 17: Iconografia Mobile</sup><br>
+
 | Icone                   | Funcionalidade                                                                                 |
 | ----------------------- | ---------------------------------------------------------------------------------------------- |
 | Colheita                | Acessa informações e registros sobre colheitas realizadas, facilitando o controle de produção. |
@@ -650,8 +664,13 @@ Cor Texto secundário| Texto claro | #FFFFFF| Texto para fundos escuros ou botõ
 | Mapas e dados           | Mostra mapas interativos e dados georreferenciados para análise e tomada de decisão.           |
 | Data inbox e integração | Centraliza dados recebidos e integrações com outros sistemas ou dispositivos.                  |
 
-<br>
+<sup>Fonte: Material produzido pelos autores (2025).</sup><br>
+</div>
+
 #### Icons Desktop
+
+<div align = "center">
+<sup>Quadro 18: Iconografia Desktop </sup><br>
 
  Icone | Funcionalidade | 
  --- | ---|
@@ -667,7 +686,12 @@ Adicionar um módulo| 	Permite criar um novo módulo, etapa ou item dentro do si
 Minhas trilhas | 	Exibe os percursos, trilhas de aprendizagem ou fluxos personalizados do usuário.|
 Download | 	Realiza o download de arquivos, relatórios ou dados da plataforma.| 
 Lixeira | Acessa itens excluídos, permitindo restaurar ou excluir definitivamente conteúdos.|
-<br>
+
+<sup>Fonte: Material produzido pelos autores (2025).</sup><br>
+</div>
+
+<div align = "center">
+<sup>Quadro 19: Iconografia Geral</sup><br>
 
 Icone | Funcionalidade | 
 --- | ---|
@@ -676,11 +700,13 @@ Boas práticas (botão)|	Acesso rápido ao conteúdo de boas práticas, dicas e 
 Continuar|Avança, visualiza detalhes ou inicia uma ação/tarefa.|
 Ver mais|Avança, visualiza detalhes ou inicia uma ação/tarefa.|
 Curtir/Descurtir (like/dislike)|Avalia conteúdos, módulos ou funcionalidades com feedback positivo ou negativo.|
-<br>
+
+<sup>Fonte: Material produzido pelos autores (2025).</sup><br>
+</div>
 
 ## 3.4 Protótipo de alta fidelidade
 
-&nbsp;&nbsp;&nbsp;&nbsp; Protótipos de alta fidelidade são representações visuais altamente detalhadas de um produto digital, como aplicativos, sites ou sistemas. Eles imitam com grande precisão a aparência final da interface e, muitas vezes, simulam também interações, transições e fluxos de navegação. Esses protótipos incluem cores, tipografias, imagens, ícones e elementos gráficos que corresponde a basicamente todo o front-end do projeto, onde trabalhamos para manter a identidade visual do parceiro. <br>
+&nbsp;&nbsp;&nbsp;&nbsp; Protótipos de alta fidelidade [[21](#c25)] são representações visuais altamente detalhadas de um produto digital, como aplicativos, sites ou sistemas. Eles imitam com grande precisão a aparência final da interface e, muitas vezes, simulam também interações, transições e fluxos de navegação. Esses protótipos incluem cores, tipografias, imagens, ícones e elementos gráficos que corresponde a basicamente todo o front-end do projeto, onde trabalhamos para manter a identidade visual do parceiro. <br>
 
 &nbsp;&nbsp;&nbsp;&nbsp; Dessa forma, foi desenvolvida a prototipação de quatro versões do website FieldAcademy: duas versões são voltadas aos **PTDs** (Promotores Técnicos Digitais), sendo elas as versões desktop e mobile, e duas versões que desenvolvidas para o **Gestor**, tendo funcionalidades mais abrangentes como a de editar e adicionar novas trilhas e módulos.
 Logo abaixo estão diponíveis algumas telas da prototipação de alta fidelidade.
@@ -762,7 +788,7 @@ A interface do módulo apresenta uma barra superior com logo e menu, um menu lat
 
 ### 3.5.1. Modelo relacional 
 
-&nbsp;&nbsp;&nbsp;&nbsp; O banco de dados mostrado adere aos fundamentos da modelagem relacional, como explicado por Heuser[9], organizando a informação em tabelas que simbolizam entidades do campo educacional, tais como usuários, módulos, conteúdos, trilhas, certificados, avaliações e permissões. Cada tabela é formada por linhas (tuplas) e colunas (atributos), assegurando a integridade dos dados através de restrições como chaves primárias - que identificam cada registro de maneira exclusiva - e chaves estrangeiras, encarregadas de criar conexões entre as tabelas, como a conexão entre usuários e suas funções, conteúdos e módulos, ou certificados e trilhas. Esta metodologia possibilita a representação clara e organizada dos componentes do mundo real, simplificando a implementação, conservação e ampliação do sistema de informação. <br>
+&nbsp;&nbsp;&nbsp;&nbsp; O banco de dados mostrado adere aos fundamentos da modelagem relacional, como explicado por Heuser [[9](#c16)], organizando a informação em tabelas que simbolizam entidades do campo educacional, tais como usuários, módulos, conteúdos, trilhas, certificados, avaliações e permissões. Cada tabela é formada por linhas (tuplas) e colunas (atributos), assegurando a integridade dos dados através de restrições como chaves primárias - que identificam cada registro de maneira exclusiva - e chaves estrangeiras, encarregadas de criar conexões entre as tabelas, como a conexão entre usuários e suas funções, conteúdos e módulos, ou certificados e trilhas. Esta metodologia possibilita a representação clara e organizada dos componentes do mundo real, simplificando a implementação, conservação e ampliação do sistema de informação. <br>
 
 &nbsp;&nbsp;&nbsp;&nbsp; No contexto da aplicação, tabelas como Users, module, content, path e certificate organizam o fluxo de aprendizagem, enquanto tabelas auxiliares como feedbacks_modulo, score_test, bookmarks e emphasis ampliam as funcionalidades ao permitir avaliações, acompanhamento de progresso, personalização e destaque de conteúdos. A tabela role_permissions define os diferentes perfis de acesso e suas permissões, promovendo segurança e flexibilidade na gestão do sistema. Assim, o modelo relacional adotado oferece uma base sólida para o desenvolvimento de uma plataforma educacional, garantindo integridade, clareza e escalabilidade. <br>
 
@@ -1131,7 +1157,7 @@ CREATE TABLE IF NOT EXISTS user_test_score (
 
 <div align = "center">
 
-<sup>Quadro 16: Cardinalidades entre as tabelas do banco de dados.</sup><br>
+<sup>Quadro 20: Cardinalidades entre as tabelas do banco de dados.</sup><br>
 
 | Entidade A             | Entidade B                  | Cardinalidade | Explicação                                                                    |
 | ---------------------- | --------------------------- | ------------- | ----------------------------------------------------------------------------- |
@@ -1178,6 +1204,8 @@ WHERE rp.name_role = 'PTD'
 **Proposições lógicas** | $A$: O usuário é PTD (`name_role = 'PTD'`) <br> $B$: O ID do módulo é igual a 1 (`m.id = 1`) <br>
 **Expressão lógica proposicional** | $(A \land B)$
 **Tabela Verdade:**
+<div align = "center">
+<sup>Quadro 21: Tabela verdade da expressão SQL 1</sup><br>
 
 | $A$ | $B$ | $(A \land B)$ |
 | --- | --- | ------------- |
@@ -1185,6 +1213,9 @@ WHERE rp.name_role = 'PTD'
 | F   | V   | F             |
 | V   | F   | F             |
 | V   | V   | V             |
+
+<sup>Fonte: Material produzido pelos autores (2025).</sup><br>
+</div>
 
 Interpretando a tabela em conjunto com o código, é possível depreender que se o usuário não for um PTD, não será retornada nenhuma informação. Ademais, o código só retorna informações se as duas proposições forem verdadeiras, ou seja: se o usuário for um PTD e se houver um módulo de ID igual a 1, afinal, as consultas são restritivas.
 
@@ -1200,12 +1231,18 @@ WHERE id = 3 AND id_module = 3;
 **Expressão lógica proposicional** | $(A \land B)$
 **Tabela Verdade:**
 
+<div align = "center">
+<sup>Quadro 22: Tabela verdade da expressão SQL 2</sup><br>
+
 | $A$ | $B$ | $(A \land B)$ |
 | --- | --- | ------------- |
 | F   | F   | F             |
 | F   | V   | F             |
 | V   | F   | F             |
 | V   | V   | V             |
+
+<sup>Fonte: Material produzido pelos autores (2025).</sup><br>
+</div>
 
 Da mesma forma que a consulta anterior, esta consulta é restritiva. Assim, só haverá retorno de informações se as preposições A e B forem simultaneamente verdadeiras.
 
@@ -1222,6 +1259,9 @@ WHERE email = 'ptd@exemplo.com' AND id_role = (
 **Expressão lógica proposicional** | $(A \land B)$
 **Tabela Verdade:**
 
+<div align = "center">
+<sup>Quadro 23: Tabela verdade da expressão SQL 3</sup><br>
+
 | $A$ | $B$ | $(A \land B)$ |
 | --- | --- | ------------- |
 | F   | F   | F             |
@@ -1229,11 +1269,14 @@ WHERE email = 'ptd@exemplo.com' AND id_role = (
 | V   | F   | F             |
 | V   | V   | V             |
 
+<sup>Fonte: Material produzido pelos autores (2025).</sup><br>
+</div>
+
 Novamente, a consulta só será executada com êxito se ambas as proposições A e B forem simultaneamente verdadeiras, ou seja: se houver um usuário com o cargo PTD e com o email "ptd@exemplo.com".
 
 ## 3.6. WebAPI e endpoints
 
-Uma WebAPI (Interface de Programação de Aplicações Web) permite que o frontend (interface visual do usuário) e o backend (servidor e banco de dados) se comuniquem de forma estruturada e segura. Através de endpoints, que são os caminhos definidos no servidor, é possível requisitar, enviar ou modificar dados da aplicação.
+Uma WebAPI (Interface de Programação de Aplicações Web) [22](#c26) permite que o frontend (interface visual do usuário) e o backend (servidor e banco de dados) se comuniquem de forma estruturada e segura. Através de endpoints, que são os caminhos definidos no servidor, é possível requisitar, enviar ou modificar dados da aplicação.
 
 Um endpoint é uma URL que representa uma funcionalidade específica do sistema. Por exemplo, um endpoint pode ser usado para buscar todas as trilhas de aprendizagem ou salvar os conteúdos favoritos de um usuário. No projeto, utilizamos dois tipos principais de endpoints:
 
@@ -1519,6 +1562,8 @@ app.listen(3000, () => {
 **Método:** GET
 
 ### Headers de resposta
+<div align = "center">
+<sup>Quadro 24: Headers de resposta ao endpoint.</sup><br>
 
 | Header         | Value                              |
 | -------------- | ---------------------------------- |
@@ -1529,6 +1574,9 @@ app.listen(3000, () => {
 | Date           | Fri, 30 May 2025 19:15:24 GMT      |
 | Connection     | keep-alive                         |
 | Keep-Alive     | timeout=5                          |
+
+<sup>Fonte: Material produzido pelos autores (2025).</sup><br>
+</div>
 
 #### Response
 
@@ -1695,7 +1743,6 @@ Com o guia de estilos definido, para facilitar o desenvolvimento de cada funcion
 
 ## 4.2. Segunda versão da aplicação web
 
-
 &nbsp;&nbsp;&nbsp;&nbsp; Nas etapas anteriores do projeto, adotamos uma abordagem incremental para garantir uma base robusta e alinhada às demandas do público-alvo da Bayer. Na Sprint 1, concentramos esforços na análise de mercado e na compreensão aprofundada do contexto do negócio, mapeando oportunidades, vulnerabilidades e riscos que nortearam o desenvolvimento da solução. Na Sprint 2, avançamos para a estruturação do banco de dados e implementação das funcionalidades essenciais do site, além de consolidar o domínio sobre o padrão MVC, fundamental para a organização, manutenção e escalabilidade do código <br>
 
 &nbsp;&nbsp;&nbsp;&nbsp; Na Sprint 3, o trabalho concentrou-se na padronização visual e na experiência do usuário. Criamos um guia de estilos detalhado, definindo cores, tipografia, iconografia e imagens, o que garantiu consistência no design. Em seguida, desenvolvemos protótipos de alta fidelidade das principais telas, facilitando o alinhamento da equipe e a visualização do produto final. Com o protótipo validado, iniciamos o desenvolvimento em código, seguindo o padrão MVC, e entregamos as primeiras telas funcionais do sistema, estabelecendo as bases para as evoluções das próximas sprints. <br>
@@ -1794,10 +1841,6 @@ Com o guia de estilos definido, para facilitar o desenvolvimento de cada funcion
 
 ## 4.3. Versão final da aplicação web
 
-_Descreva e ilustre aqui o desenvolvimento da última versão do sistema web, explicando brevemente o que foi entregue em termos de código e sistema. Utilize prints de tela para ilustrar. Indique as eventuais dificuldades e próximos passos._
-
-
-
 # <a name="c5"></a>5. Testes
 
 ## 5.1. Relatório de testes de integração de endpoints automatizados
@@ -1864,16 +1907,15 @@ A última versão do FieldAcademy propõe uma aplicação web de capacitação i
 ## 6.2 Análise de Mercado
 
  a) Visão Geral do Setor 
-O setor do agronegócio no Brasil representa grande parte do PIB e das exportações do país, além de ser um dos pilares econômicos. Nos últimos anos, o avanço da agricultura digital tem transformado o setor, impulsionando a adoção de tecnologias como agricultura de precisão, monitoramento por satélite, inteligência artificial e plataformas digitais de gestão agrícola. Essas inovações visam reduzir custos operacionais, aumentar a produtividade e promover a sustentabilidade ambiental. Empresas líderes, como a Bayer, investem fortemente em pesquisa, tanto que a Bayer registrou vendas totais de 46,6 bilhões de euros, com a divisão Crop Science, divisão que inclui a agricultura, defensivos e a seção de pesquisa, faturando 22,3 bilhões de euros, uma queda em relação a 2023. A Bayer também investe em desenvolvimento para oferecer soluções integradas que atendam às demandas de grandes produtores e cooperativas, que buscam eficiência e previsibilidade na produção. A digitalização do campo também enfrenta desafios, como a baixa conectividade em áreas rurais e a necessidade de capacitação técnica dos profissionais que atuam diretamente no campo, como os Promotores Técnicos Digitais (PTDs). Além disso, a crescente demanda por práticas sustentáveis e produtos orgânicos cria espaço para alternativas sustentáveis como biopesticidas, embora os produtos tradicionais ainda dominem o mercado pela escala e eficácia. Assim, o setor se caracteriza por alta competitividade, forte investimento em inovação tecnológica e um ambiente regulatório complexo, que juntos moldam as estratégias das empresas para manter a liderança e atender às necessidades do mercado.
+O setor do agronegócio no Brasil representa grande parte do PIB e das exportações do país, além de ser um dos pilares econômicos. Nos últimos anos, o avanço da agricultura digital tem transformado o setor, impulsionando a adoção de tecnologias como agricultura de precisão, monitoramento por satélite, inteligência artificial e plataformas digitais de gestão agrícola. Essas inovações visam reduzir custos operacionais, aumentar a produtividade e promover a sustentabilidade ambiental. Empresas líderes, como a Bayer, investem fortemente em pesquisa, tanto que a Bayer registrou vendas totais de 46,6 bilhões de euros, com a divisão Crop Science, divisão que inclui a agricultura, defensivos e a seção de pesquisa, faturando 22,3 bilhões de euros, uma queda em relação a 2023. A Bayer também investe em desenvolvimento para oferecer soluções integradas que atendam às demandas de grandes produtores e cooperativas, que buscam eficiência e previsibilidade na produção. A digitalização do campo também enfrenta desafios, como a baixa conectividade em áreas rurais e a necessidade de capacitação técnica dos profissionais que atuam diretamente no campo, como os Promotores Técnicos Digitais (PTDs). Além disso, a crescente demanda por práticas sustentáveis e produtos orgânicos cria espaço para alternativas sustentáveis como biopesticidas, embora os produtos tradicionais ainda dominem o mercado pela escala e eficácia. Assim, o setor se caracteriza por alta competitividade, forte investimento em inovação tecnológica e um ambiente regulatório complexo, que juntos moldam as estratégias das empresas para manter a liderança e atender às necessidades do mercado[[23](#c27)].
 
-b) Tamanho e Crescimento do Mercado (até 250 palavras)_
-O agronegócio brasileiro é um dos maiores do mundo, respondendo por cerca de 25% do PIB nacional e mais de 40% das exportações totais do país. O mercado de tecnologias digitais para o agronegócio, que inclui agricultura de precisão, plataformas de gestão e capacitação digital, tem apresentado crescimento acelerado, impulsionado pela demanda por maior eficiência, sustentabilidade e inovação. Em 2024, o mercado global de agricultura digital foi estimado em aproximadamente 12 bilhões de dólares, com projeção de crescimento anual composto (CAGR) superior a 12% até 2030. No Brasil, esse crescimento é ainda mais expressivo, devido à importância do setor agrícola na economia e à crescente adoção de tecnologias digitais em propriedades rurais de todos os portes. A divisão Crop Science da Bayer, que engloba defensivos agrícolas, sementes e soluções digitais, faturou 22,3 bilhões de euros em 2024, demonstrando a relevância econômica do segmento. Além disso, o investimento em capacitação digital para profissionais do agronegócio, como os Promotores Técnicos Digitais (PTDs), cresce em paralelo, refletindo a necessidade de qualificação para operar tecnologias avançadas. O mercado de educação corporativa digital no agronegócio também acompanha essa tendência, com plataformas especializadas e soluções customizadas ganhando espaço. A expectativa é que a digitalização e a capacitação continuem a impulsionar a produtividade e a competitividade do setor, consolidando o agronegócio brasileiro como referência global em inovação.
+b) Tamanho e Crescimento do Mercado
+O agronegócio brasileiro é um dos maiores do mundo, respondendo por cerca de 25% do PIB nacional e mais de 40% das exportações totais do país. O mercado de tecnologias digitais para o agronegócio, que inclui agricultura de precisão, plataformas de gestão e capacitação digital, tem apresentado crescimento acelerado, impulsionado pela demanda por maior eficiência, sustentabilidade e inovação. Em 2024, o mercado global de agricultura digital foi estimado em aproximadamente 12 bilhões de dólares, com projeção de crescimento anual composto (CAGR) superior a 12% até 2030. No Brasil, esse crescimento é ainda mais expressivo, devido à importância do setor agrícola na economia e à crescente adoção de tecnologias digitais em propriedades rurais de todos os portes. A divisão Crop Science da Bayer, que engloba defensivos agrícolas, sementes e soluções digitais, faturou 22,3 bilhões de euros em 2024, demonstrando a relevância econômica do segmento. Além disso, o investimento em capacitação digital para profissionais do agronegócio, como os Promotores Técnicos Digitais (PTDs), cresce em paralelo, refletindo a necessidade de qualificação para operar tecnologias avançadas. O mercado de educação corporativa digital no agronegócio também acompanha essa tendência, com plataformas especializadas e soluções customizadas ganhando espaço. A expectativa é que a digitalização e a capacitação continuem a impulsionar a produtividade e a competitividade do setor, consolidando o agronegócio brasileiro como referência global em inovação [[24](#c28)].
 
- c) Tendências de Mercado (até 300 palavras)_
+ c) Tendências de Mercado<br>
 O agronegócio brasileiro está em plena metamorfose digital, impulsionada pelo  grande avanço tecnológico, novas dinâmicas de mercado que moldam o setor para 2025 e mudanças comportamentais. Um dos avanços tecnológicos que mais se destaca no cenário atual é a adoção crescente das inteligências artificiais (IAs), big data e internet das coisas (IoT), que possibilitam análises preditivas, monitoramento em tempo real e otimização das operações agrícolas. A conectividade rural, embora ainda limitada em muitas regiões, é fundamental para viabilizar essas inovações, com iniciativas como parcerias entre empresas e programas governamentais buscando ampliar o acesso à internet no campo. No mercado atual foi criada uma nova tendência mais conhecida como agricultura 5.0, conceito que integra tecnologias embarcadas em máquinas, drones, sensores avançados e biotecnologia, está revolucionando o campo ao promover maior precisão, sustentabilidade e eficiência. Drones equipados com câmeras multiespectrais e sensores permitem o monitoramento detalhado das  lavouras, enquanto a edição genética e o uso de bioinsumos contribuem para práticas agrícolas mais sustentáveis e produtivas. No aspecto comportamental, cresce a demanda por produtos agrícolas sustentáveis , rastreáveis e com menor impacto ambiental. Isso impulsiona o uso de tecnologias como blockchain para garantir transparência e autenticidade na cadeia produtiva, atendendo a consumidores cada vez mais conscientes e exigentes. É possível observar a expansão de plataformas digitais para compras e pagamentos online de insumos, facilitando a gestão financeira dos produtores.A tokenização de commodities usando blockchain é uma inovação que está mudando a forma como os produtos agrícolas são negociados, facilitando o acesso a novos mercados e oportunidades de investimento. Essas tendências reforçam a importância da capacitação digital dos profissionais do agronegócio, como os Promotores Técnicos Digitais, para garantir adaptação para o uso dessas tecnologias e práticas inovadoras, destacando a relevância de soluções especializadas como a FieldAcademy para o setor.
 
 Fontes: MundoCoop, BemAgro, Agro Summit, PwC Agtech Innovation (2025).
-
 
 ## 6.3 Análise da Concorrência
 # Principais concorrentes
@@ -1897,9 +1939,7 @@ _a) Segmentação de Mercado (até 250 palavras)_
 &nbsp;&nbsp;&nbsp;&nbsp; Ao definir esses grupos, levamos em conta onde eles atuam, o quanto já usam tecnologia e os desafios específicos que enfrentam no dia a dia, como o tipo de cultura ou o tamanho da propriedade. Isso nos ajuda a oferecer uma capacitação que realmente faz a diferença para esses profissionais tão importantes para o agronegócio brasileiro[10].<br>
 
 
-_b) Perfil do Público-Alvo (até 250 palavras)_
-_Caracterize o público-alvo com dados demográficos, psicográficos e comportamentais, incluindo necessidades específicas. Utilize fontes obrigatórias._
-
+_b) Perfil do Público-Alvo 
 &nbsp;&nbsp;&nbsp;&nbsp;  O público principal da nossa plataforma de capacitação AgroBayer são os profissionais que estão na linha de frente do agronegócio, como Promotores Técnicos Digitais (PTDs), técnicos agrícolas e engenheiros agrônomos. Eles são os responsáveis por levar tecnologias como o Climate FieldView aos produtores rurais. Em geral, são profissionais com formação na área agrária, entre 22 e 45 anos, atuando em todo o Brasil, especialmente nas grandes regiões produtoras. Embora a maioria seja homem, a presença feminina está crescendo.<br>
 
 &nbsp;&nbsp;&nbsp;&nbsp;  Esses profissionais valorizam resultados, inovação e agilidade para resolver problemas no campo. Estão sempre buscando se atualizar e demonstram grande interesse por ferramentas digitais que facilitem seu dia a dia e aumentem sua eficiência no atendimento ao produtor. Além disso, buscam reconhecimento, estabilidade e crescimento na carreira, mostrando grande disposição para aprender e adotar novas tecnologias que agreguem valor ao seu trabalho e ao negócio do produtor[11].<br>
@@ -1909,9 +1949,7 @@ _Caracterize o público-alvo com dados demográficos, psicográficos e comportam
 
 ## 6.5 Posicionamento
 
-_a) Proposta de Valor Única (até 250 palavras)_
-_Defina de maneira clara o que torna a sua aplicação única e valiosa para o mercado._
-
+_a) Proposta de Valor Única
 &nbsp;&nbsp;&nbsp;&nbsp; A proposta de valor única da aplicação é: Unificar, personalizar e facilitar o acesso ao conhecimento técnico dos promotores agro, promovendo excelência, autonomia e inovação no campo, com impacto direto na produtividade e na satisfação dos clientes AgroBayer. Assim, a AgroBayer potencializa a experiência do produtor rural e fortalece sua liderança em inovação e sustentabilidade no setor agro. <br>
 
 &nbsp;&nbsp;&nbsp;&nbsp; A plataforma permite busca inteligente por palavras-chave, recomendações automáticas de trilhas baseadas em necessidades individuais e acompanhamento do progresso, promovendo engajamento por meio de gamificação e feedbacks imediatos. Gestores podem atualizar conteúdos de forma ágil, garantindo que as informações estejam sempre alinhadas com as últimas inovações do agronegócio. O grande diferencial está na capacidade de transformar o processo de capacitação em um ciclo virtuoso de aprendizado, certificação e melhoria contínua, reduzindo custos operacionais, padronizando o atendimento e elevando a eficiência dos promotores. Organizamos o aprendizado em trilhas personalizadas, com módulos que vão do básico à atualização contínua, facilitando o desenvolvimento de cada profissional. O acesso é fácil e intuitivo, funcionando perfeitamente online e também offline – um diferencial crucial para quem atua em áreas rurais com conectividade limitada. Recursos como busca inteligente por palavras-chave, acompanhamento individual do progresso e elementos de gamificação mantêm a equipe engajada e motivada. <br>
@@ -1919,9 +1957,7 @@ _Defina de maneira clara o que torna a sua aplicação única e valiosa para o m
 &nbsp;&nbsp;&nbsp;&nbsp; O grande benefício é transformar a capacitação em um processo eficiente que reduz custos operacionais, padroniza a qualidade do atendimento e eleva a autonomia e a eficiência dos promotores. Isso impacta diretamente na melhoria da experiência do produtor rural e fortalece a posição da AgroBayer como líder em inovação no agronegócio. Em essência, nossa plataforma unifica, personaliza e facilita o acesso ao conhecimento técnico, impulsionando a excelência no campo. Nossa plataforma de capacitação técnica para promotores agro da AgroBayer oferece um valor único ao resolver desafios reais do campo, como a rotatividade e a falta de conhecimento técnico centralizado. Diferente de treinamentos genéricos, reunimos todo o conteúdo essencial sobre o sistema FieldView em um só lugar, criando uma solução sob medida para a equipe Bayer. <br>
 
 
-_b) Estratégia de Diferenciação (até 250 palavras)_
-_Explique como sua aplicação se destacará da concorrência, evidenciando a lógica por trás do posicionamento._
-
+_b) Estratégia de Diferenciação
 &nbsp;&nbsp;&nbsp;&nbsp;  A aplicação web de capacitação técnica para promotores agro da AgroBayer se diferencia da concorrência ao oferecer uma solução altamente personalizada, centrada nas reais dores e necessidades do campo, com foco em nivelamento do conhecimento, redução do turnover e suporte técnico eficiente. <br>
 
 &nbsp;&nbsp;&nbsp;&nbsp;  Enquanto plataformas tradicionais do agronegócio, como Senar, Embrapa e iniciativas privadas, oferecem cursos generalistas e conteúdos dispersos, nossa solução unifica todo o conhecimento necessário sobre o sistema FieldView em um único ambiente digital, acessível por desktop, mobile e offline, o que é fundamental para quem atua em regiões rurais com baixa conectividade. <br>
@@ -2021,8 +2057,20 @@ _Relacione também quaisquer outras ideias que o grupo tenha para melhorias futu
 
 <a name="c21">[17]</a> ATLASSIAN. User stories [s.d.]. Disponível em: https://www.atlassian.com/agile/project-management/user-stories. Acesso em: 24 jun. 2025.
 
+<a name="c22">[18]</a> MIRO. Ferramenta para criar wireframes online. Disponível em: https://miro.com/pt/wireframe/. Acesso em: 24 jun. 2025.
+
+<a name="c23">[19]</a> PM3. Style guide: o que é, benefícios e como criar um do zero. Equipe de Conteúdo PM3, 11 jan. 2024. Disponível em: https://pm3.com.br/blog/style-guide/. Acesso em: 20/05/2025.
+
+<a name="c24">[20]</a> GOVERNO DO BRASIL – Padrão Digital de Governo. Fundamentos – Tipografia. Versão 4 [s.d.]. Disponível em: https://next-ds.estaleiro.serpro.gov.br/fundamentos/tipografia. Acesso em: 24/05/2025.
+
+<a name="c25">[21]</a> INTERACTION DESIGN FOUNDATION. What Are High‑Fidelity Prototypes? [s.l.], s.d. Disponível em: https://www.interaction‑design.org/literature/topics/high‑fidelity‑prototypes. Acesso em: 20/05/2025. 
+
+<a name="c26">[22]</a> AMAZON WEB SERVICES (AWS). O que é uma API (interface de programação de aplicações)? [s.l.], s.d. Disponível em: https://aws.amazon.com/pt/what-is/api/. Acesso em: 15/05/2025.
+
+<a name="c27">[23]</a> LUÍZ, Joseandro. A engenharia em Climate FieldView™: inovação no coração da agricultura digital. Climate FieldView (Bayer), 5 abr. 2018. Disponível em: https://blog.climatefieldview.com.br/inovacao-no-coracao-da-agricultura-digital. Acesso em: 15/06/2025.
+
+<a name="c28">[24]</a> PRICEWATERHOUSECOOPERS BRASIL (PwC). Agtech Innovation. [s.l.], s.d. Disponível em: https://www.pwc.com.br/pt/consultoria/agtech-innovation.html. Acesso em: 10/06/2025.
+
 INTELI. Adalove. Disponível em: https://adalove.inteli.edu.br/feed. Acesso em: 15/04/2025. <br>
 
 # <a name="c9"></a>Anexos
-
-_Inclua aqui quaisquer complementos para seu projeto, como diagramas, imagens, tabelas etc. Organize em sub-tópicos utilizando headings menores (use ## ou ### para isso)_
