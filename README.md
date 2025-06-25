@@ -48,39 +48,27 @@ O projeto segue o padrão arquitetural **MVC (Model-View-Controller)**, que orga
 - **View**: Responsável pelas páginas que o usuário vê.
 - **Controller**: Processa as requisições, interage com os Models e retorna as Views.
 
-Para isso, a estrutura de pastas foi organizada da seguinte forma:
-`2025-1B-T15-IN02-G05/`
-├── `assets/`           # Arquivos estáticos do projeto, como imagens, ícones e fontes.
-│
-├── `certificates/`     # Certificados digitais, geralmente usados para HTTPS ou autenticação.
-│
-├── `config/`           # Arquivos de configuração, como conexão com banco de dados e variáveis de ambiente.
-│
-├── `controllers/`      # Lógica de controle das requisições, onde ficam as funções que processam as rotas.
-│
-├── `data/`             # Dados estáticos, arquivos de seed ou arquivos de importação/exportação de dados.
-│
-├── `documents/`        # Pasta onde está localizado o WAD
-│
-├── `models/`           # Definição dos modelos de dados, representando as tabelas do banco e suas regras.
-│
-├── `public/ `          # Pasta pública acessível pelo navegador, normalmente para arquivos estáticos (css, js, imagens).
-│
-├── `routes/`           # Definição das rotas do sistema, conectando URLs aos controllers.
-│
-├── `scripts/`          # Scripts utilitários ou de automação, como scripts de build, deploy ou manutenção.
-│
-├── `utils/`            # Funções utilitárias e helpers reutilizáveis em várias partes do projeto.
-│
-├── `views/`            # Templates de visualização (ex: arquivos EJS, Pug, Handlebars) usados para renderizar páginas HTML.
-│
-├── `.gitignore`        # Arquivo que define quais arquivos/pastas devem ser ignorados pelo Git.
-├── `jest.config.js`    # Configuração do framework de testes Jest.
-├── `package-lock.json` # Arquivo de controle de versões exatas das dependências instaladas.
-├── `package.json`      # Arquivo principal de configuração do Node.js, lista dependências e scripts do projeto.
-├── `readme.md`         # Documentação principal do projeto, instruções de uso e informações gerais.
-├──` app.js`            # Arquivo principal que inicializa e configura o servidor da aplicação.
-└── `rest.http`         # Arquivo opcional para testar endpoints HTTP diretamente (usado por extensões do VS Code)
+Para isso, a estrutura de pastas foi organizada da seguinte forma:<br>
+`2025-1B-T15-IN02-G05/` <br>
+├── `assets/`        # Arquivos estáticos do projeto, como imagens, ícones e fontes. <br>
+├── `certificates/`     # Certificados digitais, geralmente usados para HTTPS ou autenticação.<br>
+├── `config/`           # Arquivos de configuração, como conexão com banco de dados e variáveis de ambiente. <br>
+├── `controllers/`      # Lógica de controle das requisições, onde ficam as funções que processam as rotas.<br>
+├── `data/`            # Dados estáticos, arquivos de seed ou arquivos de importação/exportação de dados. <br>
+├── `documents/`        # Pasta onde está localizado o WAD <br>
+├── `models/`           # Definição dos modelos de dados, representando as tabelas do banco e suas regras. <br>
+├── `public/ `          # Pasta pública acessível pelo navegador, normalmente para arquivos estáticos (css, js, imagens). <br>
+├── `routes/`           # Definição das rotas do sistema, conectando URLs aos controllers. <br>
+├── `scripts/`          # Scripts utilitários ou de automação, como scripts de build, deploy ou manutenção. <br>
+├── `utils/`            # Funções utilitárias e helpers reutilizáveis em várias partes do projeto. <br>
+├── `views/`            # Templates de visualização (ex: arquivos EJS, Pug, Handlebars) usados para renderizar páginas HTML. <br>
+├── `.gitignore`        # Arquivo que define quais arquivos/pastas devem ser ignorados pelo Git. <br>
+├── `jest.config.js`    # Configuração do framework de testes Jest. <br>
+├── `package-lock.json` # Arquivo de controle de versões exatas das dependências instaladas. <br>
+├── `package.json`      # Arquivo principal de configuração do Node.js, lista dependências e scripts do projeto. <br>
+├── `readme.md`         # Documentação principal do projeto, instruções de uso e informações gerais. <br>
+├──` app.js`            # Arquivo principal que inicializa e configura o servidor da aplicação. <br>
+└── `rest.http`         # Arquivo opcional para testar endpoints HTTP diretamente (usado por extensões do VS Code) <br>
 
 ## 💻 Configuração para desenvolvimento e execução do código
 
