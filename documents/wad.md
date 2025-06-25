@@ -1850,7 +1850,7 @@ A tela de login da aplicação FieldAcademy foi projetada para garantir seguran�
 
 <sup>Figura 33: Tela de login.</sup><br>
 
-<img src="../assets/assets_wad/telaLogin.png" width="300"><br>
+<img src="![../assets/assets_wad/telaLogin.png](../assets/login1.jpeg)" width="300"><br>
 
 <sub>Fonte: Material produzido pelos autores (2025). </sub><br>
 
