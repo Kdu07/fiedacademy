@@ -1,16 +1,29 @@
-const { isAuthorized } = require("../utils/authUtils");
 const { getUserId } = require("../utils/jwtUtils");
 const usersModel = require("../models/usersModel");
 
 // Controlador da rota /
 exports.index = async (req, res) => {
   const token = req.cookies.token;
-  const auth = await isAuthorized(token, "Gestor");
+  let user;
+  
+  if (token) {
+    const id = await getUserId(token);
 
-  if (auth === false) {
-    return res.redirect("/");
+    user = await usersModel.getRole(id);
+    if (!user) {
+    user = {
+      id: null,
+      name: "Visitante",
+      email: "",
+    };
+  }} else {
+    user = {
+      id: null,
+      name: "Visitante",
+      email: "",
+    };
   }
-  const id = await getUserId(token);
-  const user = await usersModel.getById(id);
-  res.render('aboutus', {user}); 
+
+  
+  res.render("aboutus", { user });
 };

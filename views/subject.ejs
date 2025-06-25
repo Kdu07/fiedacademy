@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Ajuda: <%= article ? article.title : 'Artigo de Ajuda' %> | FieldAcademy
+    </title>
+    <link href="/css/style.css" rel="stylesheet" />
+    <link href="/css/body.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+  </head>
+  <body class="flex flex-col min-h-screen bg-gray-50">
+    <!-- Header -->
+    <%- include('./partials/header') %>
+
+    <script src="/js/offline-detector.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        if (!navigator.onLine) {
+          document.dispatchEvent(new CustomEvent("app-offline"));
+        }
+      });
+    </script>
+
+    <div class="mt-16">
+      <div
+        class="bg-secondaryGreen h-16 md:h-20 rounded-e-xl w-full md:w-2/6 flex items-center mb-4 md:mb-8 shadow-md"
+      >
+        <p class="text-white ms-4 md:ms-8 text-xl md:text-3xl font-bold">
+          <%= article ? article.category : 'Ajuda' %>
+        </p>
+      </div>
+
+      <div
+        class="flex flex-col md:flex-row justify-between mb-8 md:mb-16 px-4 md:px-6"
+      >
+        <!-- Mobile Topic Selector -->
+        <div class="mb-4 md:hidden">
+          <button
+            id="mobileTopicToggle"
+            class="w-full bg-secondaryGreen text-white font-bold text-lg p-3 rounded-lg flex items-center justify-between shadow-md"
+          >
+            Tópicos de Ajuda
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Sidebar Navigation - Redesigned -->
+        <div
+          id="topicsSidebar"
+          class="hidden md:flex bg-white w-full md:mt-8 md:ms-2 md:w-3/12 rounded-xl flex-col shadow-md border border-gray-100 mb-4 md:mb-0"
+        >
+          <h2
+            class="bg-secondaryGreen text-white font-bold text-lg md:text-xl p-4 rounded-t-xl"
+          >
+            Tópicos de Ajuda
+          </h2>
+          <div
+            class="p-4 overflow-y-auto max-h-[300px] md:max-h-[600px] scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100"
+          >
+            <!-- Current topic -->
+            <% if (typeof article !== 'undefined') { %>
+            <div class="mb-2 border-l-4 border-secondaryGreen pl-3 py-1">
+              <a
+                href="/help/<%= article.category %>/content/<%= article.id %>"
+                class="text-secondaryGreen font-medium hover:underline flex items-center"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-4 w-4 mr-2"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+                <%= article.title %>
+              </a>
+            </div>
+            <% } %> <% const categoriesMap = {}; if (typeof allArticles !==
+            'undefined' && Array.isArray(allArticles)) {
+            allArticles.forEach(function(article) { const categoryName =
+            (article.category && article.category.trim()) ? article.category :
+            'Outros'; if (!categoriesMap[categoryName]) {
+            categoriesMap[categoryName] = []; }
+            categoriesMap[categoryName].push(article); }); }
+            Object.keys(categoriesMap).forEach(function(category) { %>
+            <div class="mt-4">
+              <p
+                class="font-semibold text-gray-700 mb-2 text-sm md:text-base uppercase tracking-wider"
+              >
+                <%= category %>
+              </p>
+              <ul class="space-y-1 ml-2">
+                <% categoriesMap[category].forEach(function(article) { const
+                isCurrentArticle = typeof currentArticle !== 'undefined' &&
+                currentArticle && currentArticle.id === article.id; %>
+                <li>
+                  <a
+                    href="/help/<%= article.category %>/content/<%= article.id %>"
+                    class="<%= isCurrentArticle ? 'text-secondaryGreen font-medium' : 'text-gray-600' %> hover:text-secondaryGreen block py-1 text-sm md:text-base"
+                  >
+                    <%= article.title %>
+                  </a>
+                </li>
+                <% }); %>
+              </ul>
+            </div>
+            <% }); %> <% if (typeof allArticles === 'undefined' ||
+            !Array.isArray(allArticles) || allArticles.length === 0) { %>
+            <div class="mt-4 text-center text-gray-500">
+              Nenhum tópico de ajuda disponível.
+            </div>
+            <% } %>
+          </div>
+        </div>
+
+        <!-- Article Content -->
+        <div
+          class="w-full md:mt-8 md:me-2 md:w-7/12 rounded-lg flex flex-col items-start"
+        >
+          <div
+            id="article-container"
+            class="article-container w-full bg-white p-4 md:p-6 rounded-lg shadow-md"
+          >
+            <div
+              class="flex justify-between items-center mb-3 md:mb-4 pb-2 border-b border-gray-100"
+            >
+              <p class="text-xl md:text-3xl font-bold text-gray-800">
+                <%= article ? article.title : 'Artigo' %>
+              </p>
+            </div>
+
+            <div
+              class="prose max-w-none text-gray-700 leading-relaxed mb-4 md:mb-6 text-sm md:text-base"
+            >
+              <%- article.body %>
+            </div>
+
+            <% if (article.video_path) { %>
+            <div
+              class="h-48 sm:h-64 md:h-96 w-full rounded-lg overflow-hidden mb-4 shadow-md border border-gray-100"
+            >
+              <iframe
+                src="<%= article.video_path.replace('youtu.be/', 'www.youtube.com/embed/').split('?')[0] %>"
+                class="w-full h-full rounded-lg"
+                allow="autoplay"
+                frameborder="0"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <% } %>
+            <div class="border-t border-gray-200 pt-3 md:pt-4 mt-3 md:mt-4">
+              <p class="text-sm md:text-base">
+                Ultima atualização: <%= article.last_update%>
+              </p>
+            </div>
+
+            <!-- Article feedback section (moved from bottom) -->
+            <div class="border-t border-gray-200 pt-3 md:pt-4 mt-3 md:mt-4">
+              <p
+                class="text-gray-700 font-medium mb-2 md:mb-3 text-sm md:text-base"
+              >
+                Este artigo foi útil?
+              </p>
+              <div class="flex items-center space-x-2 md:space-x-4 flex-wrap">
+                <form
+                  action="/feedback/update"
+                  method="POST"
+                  class="inline mb-2"
+                >
+                  <input type="hidden" name="type" value="true" />
+                  <input
+                    type="hidden"
+                    name="contentId"
+                    value="<%= article ? article.id : 1 %>"
+                  />
+                  <input type="hidden" name="userId" value="<%= user.id %>" />
+                  <button
+                    type="submit"
+                    class="bg-secondaryGreen/70 hover:bg-secondaryGreen p-2 rounded-lg transition-colors flex items-center space-x-2 px-3 md:px-4"
+                  >
+                    <img
+                      src="/icons/thumb_up.svg"
+                      alt="Like"
+                      class="h-4 w-4 md:h-5 md:w-5"
+                    />
+                    <span class="text-xs md:text-sm text-gray-700"
+                      >Sim (<%= article && article.positiveFeedback ?
+                      article.positiveFeedback : 0 %>)</span
+                    >
+                  </button>
+                </form>
+                <form
+                  action="/feedback/update"
+                  method="POST"
+                  class="inline mb-2"
+                >
+                  <input type="hidden" name="type" value="false" />
+                  <input
+                    type="hidden"
+                    name="contentId"
+                    value="<%= article ? article.id : 1 %>"
+                  />
+                  <input type="hidden" name="userId" value="<%= user.id %>" />
+                  <button
+                    type="submit"
+                    class="bg-red-500/70 hover:bg-red-500 p-2 rounded-lg transition-colors flex items-center space-x-2 px-3 md:px-4"
+                  >
+                    <img
+                      src="/icons/thumb_down.svg"
+                      alt="Dislike"
+                      class="h-4 w-4 md:h-5 md:w-5"
+                    />
+                    <span class="text-xs md:text-sm text-gray-700"
+                      >Não (<%= article && article.negativeFeedback ?
+                      article.negativeFeedback : 0 %>)</span
+                    >
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <%- include('./partials/footer') %>
+
+    <script src="/js/subject.js"></script>
+  </body>
+</html>

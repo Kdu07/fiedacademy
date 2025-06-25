@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title><%= module && module.id ? 'Editar' : 'Novo' %> Módulo | FieldAcademy</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+  </head>
+  <body class="flex flex-col min-h-screen bg-gray-50">
+    <!-- Header -->
+    <%- include('./partials/header') %>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-8">
+      <!-- Back button and title -->
+      <div class="flex items-center mb-6">
+        <a href="/contentDashboard/modules" class="text-gray-600 hover:text-gray-900 mr-4">
+          <i class="fas fa-arrow-left"></i> 
+        </a>
+        <h1 class="text-2xl font-bold text-gray-800">
+          <%= module && module.id ? 'Editar Módulo' : 'Criar Novo Módulo' %>
+        </h1>
+      </div>
+
+      <!-- Module Edit Form -->
+      <div class="bg-white shadow-md rounded-lg overflow-hidden">
+        <!-- Form Container -->
+        <form 
+          action="<%= module && module.id ? '/module/update/' + module.id : '/module/create' %>" 
+          method="POST" 
+          class="p-6"
+        >
+          <!-- Module Title -->
+          <div class="mb-6">
+            <label for="title" class="block text-sm font-medium text-gray-700 mb-1">
+              Título do Módulo*
+            </label>
+            <input 
+              type="text" 
+              id="title" 
+              name="title" 
+              value="<%= module && module.title ? module.title : '' %>"
+              class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-secondaryGreen focus:border-transparent"
+              placeholder="Ex: Introdução ao Campo"
+              required
+            />
+          </div>
+
+          
+
+          <!-- Module Path Selection -->
+          <div class="mb-6">
+            <label for="id_path" class="block text-sm font-medium text-gray-700 mb-1">
+              Trilha*
+            </label>
+            <select 
+              id="id_path" 
+              name="id_path" 
+              class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-secondaryGreen focus:border-transparent"
+              required
+            >
+              <option value="" <%= !module || !module.id_path ? 'selected' : '' %> disabled>Selecione uma trilha</option>
+              <% if(paths && paths.length > 0) { %>
+                <% paths.forEach(path => { %>
+                  <option 
+                    value="<%= path.id %>" 
+                    <%= module && module.id_path && module.id_path == path.id ? 'selected' : '' %>
+                  >
+                    <%= path.title %>
+                  </option>
+                <% }); %>
+              <% } else { %>
+                <option value="" disabled>Nenhuma trilha disponível</option>
+              <% } %>
+            </select>
+          </div>
+
+         
+
+          <!-- Form Buttons -->
+          <div class="flex justify-end space-x-3 border-t pt-4 mt-6">
+            <a 
+              href="/contentDashboard/modules" 
+              class="px-4 py-2 border border-gray-300 text-gray-700 rounded-md hover:bg-gray-50 transition-colors"
+            >
+              Cancelar
+            </a>
+            <button 
+              type="submit" 
+              class="px-6 py-2 bg-secondaryGreen text-white rounded-md hover:bg-mainGreen transition-colors flex items-center"
+            >
+              <i class="fas fa-save mr-2"></i>
+              <%= module && module.id ? 'Atualizar Módulo' : 'Criar Módulo' %>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <%- include('./partials/footer') %>
+  </body>
+</html>

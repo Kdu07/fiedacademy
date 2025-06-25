@@ -1,22 +1,141 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Ajuda | Bayer Agro</title>
-   <link rel="stylesheet" href="/css/style.css" />
-</head>
-<body class="bg-gray-50 min-h-screen flex flex-col">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ajuda | FieldAcademy</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+    <script src="/js/loadServiceWorker.js"></script>  
+  </head>
+  <body class="flex flex-col min-h-screen bg-gray-50">
+    <!-- Header -->
+    <%- include('./partials/header') %>
 
-  <!-- Header -->
-   <%- include('./partials/header') %>
-
-  <!-- Main Content -->
-  <h1>help</h1>
-  
-  <!-- Footer -->
-  <%- include('./partials/footer') %>
+    <div class="mt-8">
+      <div
+        class="bg-secondaryGreen h-20 w-full flex items-center justify-center mb-8 shadow-md"
+      >
+        <h1 class="text-white text-3xl font-bold">Central de Ajuda</h1>
+      </div>
 
 
-</body>
+ <script src="/js/offline-detector.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        if (!navigator.onLine) {
+          document.dispatchEvent(new CustomEvent("app-offline"));
+        }
+      });
+    </script>
+
+      <% if (error !== null && error.isOffline === true) { %>
+        <div class="container mx-auto px-4 mb-4 text-center">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700 p-3 rounded">
+            <p class="font-medium">Você está offline. Algumas funcionalidades podem estar limitadas.</p>
+          </div>
+        </div>
+      <% } %>
+
+      <div class="container mx-auto px-4 py-4 max-w-5xl">
+        <div class="bg-white rounded-xl shadow-md p-6 mb-6">
+          <div class="flex flex-col mb-6">
+            <h2
+              class="text-xl font-bold text-secondaryGreen mb-4 pb-2 border-b border-gray-100"
+            >
+              Como podemos te ajudar hoje?
+            </h2>
+            <p class="text-gray-600 mb-6">
+              Selecione uma das categorias abaixo para encontrar as informações
+              que você precisa.
+            </p>
+          </div>          <div
+            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-8"
+          >
+            <% if (typeof allArticles !== 'undefined' && Array.isArray(allArticles)) { %>
+              <% 
+           
+                var categoryInfo = {
+                  'Mapas e Dados': {
+                    img: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80',
+                    desc: 'Aprenda a utilizar os recursos de mapas e análise de dados da plataforma.'
+                  },
+                  'Boas Praticas': {
+                    img: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80',
+                    desc: 'Conheça as melhores práticas recomendadas para otimizar seus resultados.'
+                  },
+                  'Data Inbox': {
+                    img: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80',
+                    desc: 'Saiba como importar e exportar dados e integrar com outros sistemas.'
+                  },
+                  'Plantio': {
+                    img: 'https://images.unsplash.com/photo-1591154669695-5f2a8d20c089?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80',
+                    desc: 'Dicas e orientações sobre as melhores práticas de plantio.'
+                  },
+                  'Colheita': {
+                    img: 'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80',
+                    desc: 'Informações sobre colheita, armazenamento e processamento.'
+                  },
+                  'Primeiros Passos': {
+                    img: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80',
+                    desc: 'Guia introdutório para novos usuários da plataforma.'
+                  }
+                };
+                
+                
+                for(var i = 0; i < allArticles.length; i++) {
+                  var article = allArticles[i];
+                  var category = article.category;
+                  var id = article.id;
+                  
+                  if(article.category) {
+                    category = article.category.trim();
+                  } else {
+                    category = 'Outros';
+                  }
+
+                 
+                  var img = categoryInfo[category] ? categoryInfo[category].img : 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173';
+                  var desc = categoryInfo[category] ? categoryInfo[category].desc : 'Outros artigos que podem ser úteis.';
+                  
+                  
+                  var categoryUrl = encodeURIComponent(category);
+              %>
+                <!-- <%= category %> -->
+                <a href="/help/<%= categoryUrl %>/content/<%= id %>" class="group">
+                  <div
+                    class="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 h-full flex flex-col"
+                  >
+                    <div class="flex justify-center">
+                      <img
+                        src="<%= img %>"
+                        alt="<%= category %>"
+                        class="h-32 w-full object-cover rounded-t-lg"
+                      />
+                    </div>
+                    <div class="p-5">
+                      <h3 class="font-semibold text-gray-800 mb-2">
+                        <%= category %>
+                      </h3>
+                      <p class="text-gray-500 text-xs mt-2">
+                        <%= desc %>
+                      </p>
+                    </div>
+                  </div>
+                </a>
+              <% } %>
+            <% } else { %>
+              <div class="col-span-3 text-center py-8 text-gray-500">
+                Nenhum artigo de ajuda disponível no momento.
+              </div>
+            <% } %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <%- include('./partials/footer') %>
+  </body>
 </html>

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Prova | FieldAcademy</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+  </head>
+  <body class="bg-gray-50">
+    <%- include('./partials/header') %>
+
+    <div class="mt-16">
+      <div
+        class="bg-secondaryGreen h-20 rounded-e-xl w-full md:w-2/6 flex items-center mb-8 shadow-md"
+      >
+        <h1 class="text-white ms-8 text-xl md:text-3xl font-bold">
+          <%= test.title %>
+        </h1>
+      </div>
+
+      <div class="flex flex-col md:flex-row justify-between mb-16">
+        <!-- Test info sidebar -->
+        <div
+          class="bg-white mx-4 md:mt-8 md:ms-8 w-auto md:w-3/12 rounded-xl flex flex-col p-6 shadow-md border border-gray-100 mb-6 md:mb-0"
+        >
+          <h2
+            class="text-secondaryGreen font-bold text-xl mb-4 text-center border-b border-gray-100 pb-2"
+          >
+            Informações da Prova
+          </h2>
+          <div class="w-full space-y-4">
+            <div class="flex flex-col">
+              <span class="font-medium"><%= test.description %></span>
+            </div>
+            <div class="flex flex-col">
+              <span class="text-gray-500 text-sm">Pontuação máxima:</span>
+              <span class="font-medium"><%= totalPoints %></span>
+            </div>
+            <div class="flex flex-col">
+              <span class="text-gray-500 text-sm">Módulo:</span>
+              <span class="font-medium"><%= test.module_name %></span>
+            </div>
+            <div class="flex flex-col">
+              <span class="text-gray-500 text-sm">Tempo estimado:</span>
+              <span class="font-medium"><%= test.estimated_time %></span>
+            </div>
+
+            <div class="mt-6 p-4 bg-blue-50 rounded-lg">
+              <h3 class="font-bold text-blue-800 mb-2">Dicas</h3>
+              <ul class="text-blue-700 text-sm space-y-2">
+                <li>• Leia as questões com atenção</li>
+                <li>• Revise suas respostas antes de enviar</li>
+                <li>• Você pode navegar entre as questões</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Test content -->
+        <div class="mx-4 md:mt-8 md:me-8 w-auto md:w-7/12">
+          <form
+            id="testForm"
+            action="/test/<%= test.id %>/submit"
+            method="POST"
+            class="space-y-8"
+          >
+            <% if (test.questions && test.questions.length > 0) {
+            test.questions.forEach((question, index) => { %>
+
+            <div class="bg-white p-4 md:p-6 rounded-lg shadow-md">
+              <div class="flex items-start mb-4">
+                <span
+                  class="bg-secondaryGreen text-white font-bold rounded-full w-8 h-8 flex items-center justify-center mr-3 flex-shrink-0"
+                  ><%= index + 1 %></span
+                >
+                <div>
+                  <h3 class="text-lg md:text-xl font-bold text-gray-800">
+                    <%= question.text %>
+                  </h3>
+                  <p class="text-sm text-gray-500 mt-1">
+                    <%= question.points %> pontos • <% if (question.type ===
+                    'multiple-choice') { %> Escolha uma opção <% } else if
+                    (question.type === 'true-false') { %> Verdadeiro ou Falso <%
+                    } else if (question.type === 'short-answer') { %> Resposta
+                    curta <% } else if (question.type === 'code') { %> Resposta
+                    de código <% } %>
+                  </p>
+                </div>
+              </div>
+
+              <div class="ml-4 md:ml-11 space-y-3 mt-5">
+                <% if (question.type === 'multiple-choice' && question.options)
+                { question.options.forEach(option => { %>
+                <label
+                  class="flex items-center p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition cursor-pointer"
+                >
+                  <input
+                    type="radio"
+                    name="<%= question.id %>"
+                    value="<%= option.id %>"
+                    class="mr-3 h-4 w-4 text-secondaryGreen focus:ring-secondaryGreen"
+                  />
+                  <span><%= option.text %></span>
+                </label>
+                <% })} else if (question.type === 'true-false') { %>
+                <label
+                  class="flex items-center p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition cursor-pointer"
+                >
+                  <input
+                    type="radio"
+                    name="<%= question.id %>"
+                    value="true"
+                    class="mr-3 h-4 w-4 text-secondaryGreen focus:ring-secondaryGreen"
+                  />
+                  <span>Verdadeiro</span>
+                </label>
+                <label
+                  class="flex items-center p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition cursor-pointer"
+                >
+                  <input
+                    type="radio"
+                    name="<%= question.id %>"
+                    value="false"
+                    class="mr-3 h-4 w-4 text-secondaryGreen focus:ring-secondaryGreen"
+                  />
+                  <span>Falso</span>
+                </label>
+                <% } %>
+              </div>
+            </div>
+            <% })} else { %>
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <p class="text-center text-gray-600">
+                Nenhuma questão encontrada para esta avaliação.
+              </p>
+            </div>
+            <% } %>
+          </form>
+        </div>
+      </div>
+
+      <!-- Action bar -->
+      <div
+        class="bg-secondaryGreen mx-auto w-full p-3 md:p-4 sticky bottom-0 z-20 shadow-lg"
+      >
+        <div class="flex flex-col md:flex-row md:items-center justify-between">
+          <!-- Question counter -->
+          <div
+            class="text-white font-medium text-center md:text-left mb-2 md:mb-0"
+          >
+            Questão <span id="currentQuestion">1</span> de
+            <span id="totalQuestions"
+              ><%= test.questions ? test.questions.length : 0 %></span
+            >
+          </div>
+
+          <!-- Navigation buttons -->
+          <div
+            class="flex justify-center md:justify-end space-x-2 md:space-x-4"
+          >
+            <button
+              id="prevQuestion"
+              class="rounded-lg bg-white/20 hover:bg-white/30 transition-colors shadow-sm text-white p-2 md:p-3 px-4 md:px-8 text-sm md:text-base font-medium inline-flex items-center"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-4 w-4 md:h-5 md:w-5 mr-1 md:mr-2"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 19l-7-7 7-7"
+                />
+              </svg>
+              ANTERIOR
+            </button>
+
+            <button
+              id="nextQuestion"
+              class="rounded-lg bg-white hover:bg-blue-200 transition-colors shadow-sm text-black p-2 md:p-3 px-4 md:px-8 text-sm md:text-base font-medium inline-flex items-center"
+            >
+              PRÓXIMO
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-4 w-4 md:h-5 md:w-5 ml-1 md:ml-2"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </button>
+
+            <button
+              id="submitTest"
+              type="submit"
+              form="testForm"
+              class="rounded-lg bg-green-600 hover:bg-green-700 transition-colors shadow-sm text-white p-2 md:p-3 px-4 md:px-8 text-sm md:text-base font-medium inline-flex items-center"
+              onclick="return confirm('Você tem certeza que deseja enviar a avaliação?')"
+            >
+              ENVIAR
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-4 w-4 md:h-5 md:w-5 ml-1 md:ml-2"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M5 13l4 4L19 7"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <%- include('./partials/footer') %>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const questions = document.querySelectorAll("#testForm > div");
+        let currentIndex = 0;
+        let questionAmount = questions.length - 1;
+
+        // Hide all questions except first one initially
+        questions.forEach((q, index) => {
+          if (index !== 0) q.style.display = "none";
+        });
+
+        // Update counter
+        updateQuestionCounter();
+
+        // Previous button handler
+        document
+          .getElementById("prevQuestion")
+          .addEventListener("click", function () {
+            if (currentIndex > 0) {
+              questions[currentIndex].style.display = "none";
+              currentIndex--;
+              questions[currentIndex].style.display = "block";
+              updateQuestionCounter();
+              // Scroll to top of question on mobile
+              if (window.innerWidth < 768) {
+                questions[currentIndex].scrollIntoView({
+                  behavior: "smooth",
+                  block: "start",
+                });
+              }
+            }
+          });
+
+        // Next button handler - modified to add smooth scrolling on mobile
+        document
+          .getElementById("nextQuestion")
+          .addEventListener("click", function () {
+            if (currentIndex < questions.length - 1) {
+              questions[currentIndex].style.display = "none";
+              currentIndex++;
+              questions[currentIndex].style.display = "block";
+              updateQuestionCounter();
+              // Scroll to top of question on mobile
+              if (window.innerWidth < 768) {
+                questions[currentIndex].scrollIntoView({
+                  behavior: "smooth",
+                  block: "start",
+                });
+              }
+            }
+          });
+
+        function updateQuestionCounter() {
+          document.getElementById("currentQuestion").textContent =
+            currentIndex + 1;
+          document.getElementById("totalQuestions").textContent =
+            questions.length;
+
+          // Update button states
+          document.getElementById("prevQuestion").disabled = currentIndex === 0;
+          document.getElementById("prevQuestion").style.opacity =
+            currentIndex === 0 ? "0.5" : "1";
+
+          document.getElementById("nextQuestion").disabled =
+            currentIndex === questionAmount;
+          document.getElementById("nextQuestion").style.opacity =
+            currentIndex === questionAmount ? "0.25" : "1";
+        }
+      });
+    </script>
+  </body>
+</html>

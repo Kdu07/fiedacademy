@@ -19,3 +19,31 @@ exports.getUserPathsProgress = async (userId) => {
     progress_percentage: Number(row.progress_percentage),
   }));
 };
+
+exports.getLastLesson = async (userId) => {
+  const sql = 
+    "SELECT ucp.*, c.title as title " +
+    "FROM user_content_progress ucp " +
+    "JOIN contents c ON ucp.content_id = c.id " +
+    "WHERE ucp.user_id = $1 " +
+    "ORDER BY ucp.completed_at DESC LIMIT 1";
+    
+  const res = await db.query(sql, [userId]);
+  return res.rows.length > 0 ? res.rows[0] : null;
+}
+
+exports.findByContentId = async (userId, contentId) => {
+  const sql = 
+    "SELECT * FROM user_content_progress " +
+    "WHERE user_id = $1 AND content_id = $2";
+
+  const res = await db.query(sql, [userId, contentId]);
+  return res.rows.length > 0 ? res.rows[0] : null;
+}
+
+exports.updateProgress = async (userId, contentId, path_id, module_id) => {
+  const sql = 
+    `INSERT INTO user_content_progress (user_id, content_id, completed_at, path_id, module_id) VALUES ($1, $2, $3, $4, $5) `
+  await db.query(sql, [userId, contentId, new Date(), path_id, module_id]);
+  return;
+}

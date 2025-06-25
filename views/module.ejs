@@ -5,99 +5,254 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Importa o arquivo de estilos CSS -->
     <link href="/css/style.css" rel="stylesheet" />
-    <!-- Título da página exibido na aba do navegador -->
-    <title>Grupo 05</title>
+    <link rel="stylesheet" href="/css/body.css" />
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+    <!-- Título da página exibida na aba do navegador -->
+    <title><% module.title %> | FieldAcademy</title>
   </head>
-  <body>
+  <body class="bg-gray-50">
     <!-- Cabeçalho  -->
     <%- include('./partials/header') %>
 
     <div class="mt-16">
-      <div class="bg-mainGreen h-20 rounded-e-xl w-3/6 flex items-center mb-8">
-        <h1 class="text-white ms-8 text-3xl font-bold"><%= module.title %></h1>
+      <div
+        class="bg-secondaryGreen h-16 md:h-20 rounded-e-xl w-full md:w-2/6 flex items-center mb-4 md:mb-8 shadow-md"
+      >
+        <p class="text-white ms-4 md:ms-8 text-xl md:text-3xl font-bold">
+          <%= module.title %>
+        </p>
       </div>
 
-      <div class="flex flex-row justify-between mb-12">
-        <!-- Botões para avançar lição -->
+      <div class="flex flex-col md:flex-row justify-between mb-8 md:mb-16">
+        <!-- Botões para avançar lição - Improved version -->
         <div
-          class="bg-mainGreen/25 mt-8 ms-8 w-3/12 rounded-lg flex justify-center h-1/2 p-4"
+          class="bg-white mx-4 md:mt-8 md:ms-8 w-auto md:w-3/12 rounded-xl flex flex-col p-4 md:p-6 shadow-md border border-gray-100 mb-4 md:mb-0"
         >
-          <div class="rounded-lg w-1/2 grid gap-6 justify-items-center">
-            <% modulePages.forEach(page => { %>
-
-            <div class="rounded-lg bg-mainGreen w-full">
-              <a
-                href="/path/<%= pathId %>/module/1/page/<%= page.content_order %>"
+          <h2
+            class="text-secondaryGreen font-bold text-lg md:text-xl mb-3 md:mb-4 text-center border-b border-gray-100 pb-2"
+          >
+            Lições
+          </h2>
+          <div class="w-full grid gap-2 md:gap-3">
+            <% modulePages.forEach(page => { const isCurrentPage =
+            page.content_order === moduleContent.content_order; %>
+            <a
+              href="/path/<%= pathId %>/module/<%= module.id %>/page/<%= page.content_order %>"
+              class="block w-full"
+            >
+              <div
+                class="rounded-lg <%= isCurrentPage ? 'bg-secondaryGreen' : 'bg-secondaryGreen/80 hover:bg-secondaryGreen' %> transition-all duration-200 shadow-sm <%= isCurrentPage ? 'ring-2 ring-offset-2 ring-secondaryGreen' : '' %>"
               >
-                <% if (page.content_order === moduleContent.content_order) { %>
-                <p class="text-white p-2 text-center font-semibold text-xl">
-                  Lição #<%= page.content_order %> (ATUAL) <% } else { %>
-                </p>
-
-                <p class="text-white p-2 text-center font-medium text-xl">
-                  Lição #<%= page.content_order %> <% } %>
-                </p></a
-              >
-            </div>
-
+                <div
+                  class="px-3 md:px-4 py-2 md:py-3 flex items-center justify-between"
+                >
+                  <div class="flex items-center">
+                    <div
+                      class="flex-shrink-0 <%= isCurrentPage ? 'bg-white text-secondaryGreen' : 'bg-white/30 text-white' %> w-6 md:w-8 h-6 md:h-8 rounded-full flex items-center justify-center font-bold mr-2 md:mr-3"
+                    >
+                      <%= page.content_order %>
+                    </div>
+                    <p class="text-white font-medium text-sm md:text-base">
+                      Lição <%= page.content_order %> <% if (isCurrentPage) { %>
+                      <% } %>
+                    </p>
+                  </div>
+                  <% if (page.done) { %>
+                  <div
+                    class="bg-white rounded-full p-1 w-5 h-5 md:w-6 md:h-6 flex items-center justify-center"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-3 w-3 md:h-4 md:w-4 text-secondaryGreen"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </div>
+                  <% } %>
+                </div>
+              </div>
+            </a>
             <% }) %>
           </div>
         </div>
         <!-- Conteúdo da lição -->
         <div
-          class="mt-8 me-8 w-7/12 rounded-lg flex flex-col items-start h-1/2"
+          class="mx-4 md:mt-8 md:me-8 w-auto md:w-7/12 rounded-lg flex flex-col items-start"
         >
-          <div class="w-full">
-            <h1 class="text-2xl font-bold"><%= moduleContent.title %></h1>
-            <p><%= moduleContent.body %></p>
+          <div class="w-full bg-white p-4 md:p-6 rounded-lg shadow-md">
+            <div
+              class="flex justify-between items-center mb-3 md:mb-4 pb-2 border-b border-gray-100"
+            >
+              <p class="text-xl md:text-3xl font-bold text-gray-800">
+                <%= moduleContent.title %>
+              </p>
+              <!-- Bookmark button moved here -->
+              <form action="/bookmarks/toggle" method="POST">
+                <input
+                  type="hidden"
+                  name="contentId"
+                  value="<%= moduleContent.id %>"
+                />
+                <% if(moduleContent.bookmarked) { %>
+                <input type="hidden" name="add" value="false" />
+                <button type="submit">
+                  <img
+                    src="/icons/star_full.svg"
+                    class="w-8 h-8 md:w-12 md:h-12"
+                    alt="Remove Bookmark"
+                  />
+                </button>
+                <% } else { %>
+                <input type="hidden" name="add" value="true" />
+                <button type="submit">
+                  <img
+                    src="/icons/star.svg"
+                    class="w-8 h-8 md:w-12 md:h-12"
+                    alt="Add Bookmark"
+                  />
+                </button>
+                <% } %>
+              </form>
+            </div>
+            <p class="text-gray-700 leading-relaxed mb-4 md:mb-6">
+              <%- moduleContent.body %>
+            </p>
 
-                <% if (moduleContent.video_path) { %>
-                <div class="h-60 w-full rounded-lg overflow-hidden mb-4">
-                  <iframe
-                    src="<%= moduleContent.video_path.replace('youtu.be/', 'www.youtube.com/embed/').split('?')[0] %>"
-                    class="w-full h-full rounded-lg"
-                    allow="autoplay"
-                    frameborder="0"
-                    allowfullscreen
-                  ></iframe>
-                </div>
+            <% if (moduleContent.video_path) { %>
+            <div
+              class="h-48 sm:h-64 md:h-96 w-full rounded-lg overflow-hidden mb-4 shadow-md border border-gray-100"
+            >
+              <iframe
+                src="<%= moduleContent.video_path.replace('youtu.be/', 'www.youtube.com/embed/').split('?')[0] %>"
+                class="w-full h-full rounded-lg"
+                allow="autoplay"
+                frameborder="0"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <% } %>
+            <div class="border-t border-gray-200 pt-3 md:pt-4 mt-3 md:mt-4">
+              <p class="text-sm md:text-base">
+                Ultima atualização: <%=
+                (moduleContent.last_update).toLocaleDateString('pt-BR') %>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
 
+      <!-- Action bar -->
+      <div
+        class="bg-secondaryGreen mx-auto w-full p-3 md:p-4 sticky bottom-0 z-20 shadow-lg"
+      >
+        <div
+          class="flex flex-col md:flex-row md:items-center justify-between space-y-2 md:space-y-0"
+        >
+          <!-- Feedback buttons -->
+          <div class="flex space-x-3 justify-center md:justify-start">
+            <form action="/feedback/update" method="POST" class="inline">
+              <input type="hidden" name="type" value="true" />
+              <input
+                type="hidden"
+                name="contentId"
+                value="<%= moduleContent.id %>"
+              />
+              <input type="hidden" name="userId" value="<%= user.id %>" />
+              <button
+                type="submit"
+                class="bg-white/10 hover:bg-white/20 p-2 rounded-full transition-colors flex items-center justify-center h-9 w-9 md:h-10 md:w-10 relative"
+              >
+                <img src="/icons/thumb_up.svg" alt="Like" />
+                <span
+                  class="absolute -top-2 -right-2 bg-green-500 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center"
+                  ><%=moduleContent.positiveFeedback %></span
+                >
+              </button>
+            </form>
+            <form action="/feedback/update" method="POST" class="inline">
+              <input type="hidden" name="type" value="false" />
+              <input
+                type="hidden"
+                name="contentId"
+                value="<%= moduleContent.id %>"
+              />
+              <input type="hidden" name="userId" value="<%= user.id %>" />
+              <button
+                type="submit"
+                class="bg-white/10 hover:bg-white/20 p-2 rounded-full transition-colors flex items-center justify-center h-9 w-9 md:h-10 md:w-10 relative"
+              >
+                <img src="/icons/thumb_down.svg" alt="Dislike" />
+                <span
+                  class="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center"
+                  ><%=moduleContent.negativeFeedback %></span
+                >
+              </button>
+            </form>
+          </div>
+
+          <!-- Navigation buttons -->
+          <div class="flex justify-center md:justify-end">
+            <% if ((moduleContent.content_order + 1) > modulePages.length) { %>
+            <button
+              class="rounded-lg bg-white hover:bg-blue-200 transition-colors shadow-sm"
+            >
+              <a
+                href="/test/module/<%= module.id %>"
+                class="text-black p-2 md:p-3 px-4 md:px-8 text-sm md:text-base font-medium inline-flex items-center"
+              >
+                PROVA
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-4 w-4 md:h-5 md:w-5 ml-1 md:ml-2"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </a>
+            </button>
+            <% } else { %>
+            <!-- Next button -->
+            <button
+              class="rounded-lg bg-white hover:bg-blue-200 transition-colors shadow-sm"
+            >
+              <a
+                href="/path/<%= pathId %>/module/<%= module.id %>/page/<%= moduleContent.content_order + 1 %>"
+                class="text-black p-2 md:p-3 px-4 md:px-8 text-sm md:text-base font-medium inline-flex items-center"
+              >
+                PRÓXIMO
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-4 w-4 md:h-5 md:w-5 ml-1 md:ml-2"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </a>
+            </button>
             <% } %>
           </div>
         </div>
       </div>
-      <div class="absolute end-0 bg-mainGreen w-2/6 p-3 rounded-s-lg">
-        <div class="flex flex-row">
-          <a href="/path/<%= pathId %>/module/1/page/1">
-            <img src="/icons/thumb_up.svg" class="ms-4" alt="" />
-          </a>
-          <a href="/path/<%= pathId %>/module/1/page/1">
-            <img src="/icons/thumb_down.svg" class="ms-4" alt="" />
-          </a>
-          <% if ((moduleContent.content_order + 1) > modulePages.length) { %>
-          <button class="rounded-lg bg-blue-400 ms-auto me-4">
-            <a href="/test" class="text-white p-3 ps-12 pe-12"
-              >HORA DA PROVA!</a
-            >
-          </button>
-          <% } else { %>
-          <button class="rounded-lg bg-blue-400 ms-auto me-4">
-            <a
-              href="/path/<%= pathId %>/module/1/page/<%= moduleContent.content_order + 1 %>"
-              class="text-white p-3 ps-12 pe-12"
-              >PRÓXIMO</a>
-          </button>
-         <!-- Favoritar -->
-          <form action="/bookmarks/add" method="POST">
-          <input type="hidden" name="contentId" value="<%= moduleContent.id %>" />
-          <button type="submit" class="rounded-lg bg-yellow-400 text-white p-3 px-6 hover:bg-yellow-500">
-          Favoritar
-          </button>
-        </form>
-       <% } %>
-        </div>
-      </div>
-      <div class="mb-40"></div>
     </div>
 
     <!-- Rodapé  -->

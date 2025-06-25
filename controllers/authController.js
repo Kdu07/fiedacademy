@@ -2,9 +2,10 @@ const { createUser, loginUser } = require("../models/usersModel");
 const JWT = require("jsonwebtoken");
 const JWT_SECRET = process.env.JWT_SECRET;
 
+const { isAuthorized } = require("../utils/authUtils");
+
 exports.create = async (req, res) => {
   const { email, password, name, region, role } = req.body;
-  console.log(req.body)
   if (!email || !password || !name || !region || !role) {
     return res.redirect(
       "/create-user?error=Todos%20os%20campos%20devem%20ser%20preenchidos"
@@ -35,7 +36,14 @@ exports.login = async (req, res) => {
   const token = JWT.sign({ id: user.id }, JWT_SECRET, { expiresIn: "7d" });
 
   res.cookie("token", token, { httpOnly: true, secure: true }); // Set cookie with user ID
-  return res.redirect("/");
+
+  const isGestor = await isAuthorized(token, "Gestor");
+
+  if(isGestor) {
+    return res.redirect("/dashboard");
+  }
+  
+  return res.redirect("/home");
 };
 
 exports.logout = async (req, res) => {
