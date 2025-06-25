@@ -7,7 +7,11 @@
     "/help/Primeiros Passos/content/25",
     "/help/Primeiros Passos/content/19",
     "/help/Primeiros Passos/content/17",
-    "/help/Colheita/content/29"
+    "/help/Colheita/content/29",
+    "/help/Boas Praticas/content/27",
+    "/help/Primeiros Passos/content/20",
+    "/help/Primeiros Passos/content/22",
+    "/help/Mapas e Dados/content/37"
   ],
   "assets": [
     "/css/style.css",
@@ -17,5 +21,5 @@
     "/js/offline-detector.js",
     "/offline.html"
   ],
-  "version": "v18"
+  "version": "v22"
 }

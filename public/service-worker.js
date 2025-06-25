@@ -7,7 +7,7 @@ let CACHE_CONFIG = {
     "/images/favicon.ico",
     "/js/loadServiceWorker.js",
     "/js/offline-detector.js",
-    "/offline.html"
+    "/offline.html",
   ],
   version: "v3",
 };
@@ -34,6 +34,10 @@ async function loadCacheConfig() {
   }
 }
 
+async function isOnline() {
+  return typeof navigator !== 'undefined' && navigator.onLine === true;
+}
+
 // Install event - pre-cache pages and assets
 self.addEventListener("install", (event) => {
   console.log("[Service Worker] Installing...");
@@ -49,6 +53,12 @@ self.addEventListener("install", (event) => {
   );
 
   async function cachePages() {
+    // Skip caching if offline
+    if (!isOnline()) {
+      console.log("[SW] Browser is offline, skipping pre-caching");
+      return Promise.resolve();
+    }
+
     const cache = await caches.open(CACHE_NAME);
 
     // First cache static assets
@@ -163,7 +173,7 @@ self.addEventListener("fetch", (event) => {
       fetch(event.request)
         .then((response) => {
           // Cache successful responses for next time
-          if (response.status === 200) {
+          if (response.status === 200 && isOnline()) {
             const clonedResponse = response.clone();
             caches
               .open(CACHE_NAME)
