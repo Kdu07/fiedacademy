@@ -1822,7 +1822,6 @@ Com o guia de estilos definido, para facilitar o desenvolvimento de cada funcion
 
 </div>
 
-
 &nbsp;&nbsp;&nbsp;&nbsp;  **Tela de Perfil**: A tela de perfil da plataforma FieldAcademy exibe de forma clara e organizada as principais informações do usuário, como nome, email, localização, data do último acesso, módulo mais recente concluído, média de desempenho e posição no ranking geral. Além disso, a interface apresenta o progresso individual em diferentes trilhas de aprendizagem, mostrando percentuais de conclusão e oferecendo a opção de baixar materiais relacionados a cada trilha. A barra de busca no topo facilita a localização de outros usuários ou conteúdos, tornando a navegação mais eficiente. Essas funcionalidades permitem ao usuário acompanhar seu desempenho, identificar facilmente módulos pendentes e acessar recursos relevantes para seu desenvolvimento dentro da plataforma, promovendo uma experiência do usuário(Figura 32). <br>
 
 <div align = "center">
@@ -2003,7 +2002,57 @@ A aplicação web FieldAcademy apresenta um painel de usuários intuitivo, que p
 
 ## 5.2. Testes de usabilidade
 
-_Posicione aqui as tabelas com enunciados de tarefas, etapas e resultados de testes de usabilidade. Ou utilize um link para seu relatório de testes (mantenha o link sempre público para visualização)_
+Os testes de usabilidade são fundamentais no processo de desenvolvimento de sistemas, pois permitem avaliar como usuários reais interagem com uma interface e identificar possíveis obstáculos que dificultam a navegação ou a realização de tarefas. Através desses testes, é possível coletar dados qualitativos e quantitativos sobre a experiência do usuário, contribuindo para a criação de produtos mais intuitivos e eficientes.<br>
+
+No contexto dos testes realizados no sistema de trilhas de onboarding para Promotores Técnicos Digitais, os participantes foram convidados a executar tarefas como acessar conteúdos, visualizar perfis, favoritar módulos, obter informações sobre usuários e criar novos cadastros. Os resultados apontaram que, de modo geral, os usuários conseguiram completar as tarefas propostas, embora algumas dificuldades tenham sido observadas, como a localização de botões específicos e a navegação em menus pouco intuitivos. Além disso, foram identificados pequenos bugs e inconsistências, como problemas na pesquisa de usuários e diferenças entre o ranking e o dashboard, que impactaram a experiência de uso.<br>
+
+Em conclusão, os testes de usabilidade revelam pontos fortes e oportunidades de melhoria em sistemas digitais, sendo essenciais para orientar ajustes que aprimorem a experiência do usuário. A análise dos resultados permite que equipes de desenvolvimento priorizem correções e implementem soluções mais alinhadas às necessidades dos usuários, promovendo maior satisfação e engajamento com a plataforma.<br>
+
+https://docs.google.com/spreadsheets/d/1VYUdAKp0DE_P0YspgSDdkwPbT5AG3ZVa_J8FvR557PM/edit?gid=1898951488#gid=1898951488 
+
+### Acessar um conteúdo
+
+| # | Nome           | Resultado da tarefa | Etapa 1                | Etapa 2                   | Etapa 3         | Etapa 4             |
+|---|----------------|--------------------|------------------------|---------------------------|-----------------|---------------------|
+| 1 | Lavina         | sucesso            | Fez o login com sucesso| Página de trilhas com sucesso | Página de módulo | Clicou com sucesso  |
+| 2 | Alex           | sucesso            | Fez o login com sucesso| Página de trilhas com sucesso | Página de módulo | Clicou com sucesso  |
+| 3 | Daniel         | sucesso            | Fez o login com sucesso| Página de trilhas com sucesso | Página de módulo | Clicou com sucesso  |
+| 4 | Rafael Gomes   | sucesso            | Fez o login com sucesso| Página de trilhas com sucesso | Página de módulo | Clicou com sucesso  |
+| 5 | Marcela        | sucesso            | busca de pesquisa      | acessou o side bar        | pagina de perfil | dashboard           |
+
+### Acessar o perfil
+
+| # | Nome           | Resultado da tarefa | Etapa 1          | Etapa 2              | Etapa 3                |
+|---|----------------|--------------------|------------------|----------------------|------------------------|
+| 1 | Lavina         | sucesso            | Acessou a home   | Acessou a página de perfil | Acessou a página de perfil |
+| 2 | Alex           | sucesso            | Acessou a home   | Acessou a página de perfil | Acessou a página de perfil |
+| 3 | Daniel         | sucesso            | Acessou a home   | Acessou a página de perfil | Acessou a página de perfil |
+| 4 | Rafael Gomes   | sucesso            | Acessou a home   | Acessou a página de perfil | Acessou a página de perfil |
+| 5 | Marcela        | sucesso            | Acessou a home   | Acessou a página de perfil | Acessou a página de perfil |
+
+### Favoritar conteúdo
+
+| # | Nome           | Resultado da tarefa             | Etapa 1      | Etapa 2                | Etapa 3         | Etapa 4                  |
+|---|----------------|--------------------------------|--------------|------------------------|-----------------|--------------------------|
+| 1 | Lavina         | sucesso                        | Fez o login  | Acessou a página de trilhas | Acessou a página de módulo | Clicou no botão com sucesso |
+| 2 | Alex           | conseguiu com dificuldade       | Fez o login  | Acessou a página de trilhas | Acessou a página de módulo | Dificuldade em achar o botão |
+| 3 | Daniel         | sucesso                        | Fez o login  | Acessou a página de trilhas | Acessou a página de módulo | Clicou no botão com sucesso |
+| 4 | Rafael Gomes   | sucesso                        | Fez o login  | Acessou a página de trilhas | Acessou a página de módulo | Clicou no botão com sucesso |
+| 5 | Marcela        | sucesso                        | Fez o login  | Acessou a página de trilhas | Acessou a página de módulo | Clicou no botão com sucesso |
+
+### Obter informações sobre os PTDs
+
+| # | Nome           | Resultado da tarefa             | Etapa 1                | Etapa 2                | Etapa 3                        | Etapa 4              |
+|---|----------------|--------------------------------|------------------------|------------------------|-------------------------------|----------------------|
+| 1 | Arthur Marques
+
+
+
+Acessar um conteúdo
+#	/persona	Resultado da tarefa	Etapa 1	Etapa 2	Etapa 3	Etapa 4
+1	Lavina		sucesso	Fez o login com sucesso	Página de trilhas com sucesso	Página de módulo	Clicou com sucesso
+2	Alex		sucesso	Fez o login com sucesso	Página de trilhas com sucesso	Página de módulo	Clicou com sucesso
+3	Daniel		sucesso	Fez o login com sucesso	Página de trilhas com sucesso	Página de módulo	Clicou com sucesso
 
 # <a name="c6"></a>6. Estudo de Mercado e Plano de Marketing
 
