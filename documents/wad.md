@@ -1749,7 +1749,7 @@ Com o guia de estilos definido, para facilitar o desenvolvimento de cada funcion
 
 &nbsp;&nbsp;&nbsp;&nbsp; Além das melhorias técnicas e de usabilidade, estruturamos um plano de marketing digital integrado para garantir ampla adesão e engajamento dos profissionais. As estratégias envolveram divulgação em portais internos, redes sociais, e-mail marketing, webinars e parcerias com instituições como o Senar, além de campanhas pagas e marketing de conteúdo voltado para boas práticas e inovações do setor. O objetivo foi comunicar com clareza os diferenciais da plataforma — centralização do conhecimento, personalização das trilhas e facilidade de acesso —, consolidando a solução como referência em capacitação técnica digital no agronegócio e fortalecendo a liderança da Bayer em inovação e sustentabilidade. <br>
 
-&nbsp;&nbsp;&nbsp;&nbsp;  **Tela de login**: A tela de login apresentada permite a autenticação de três tipos de usuários: o usuário comum (PTD), o gestor e o administrador. Cada um deles acessa a plataforma inserindo seu email e senha, com validação dos campos antes do envio das informações. Após a autenticação, o sistema direciona cada perfil para funcionalidades específicas: o usuário comum acessa apenas recursos básicos e informações pertinentes ao seu perfil; o gestor tem acesso a ferramentas de administração de equipes, relatórios e acompanhamento de desempenho; já o administrador possui permissões totais, podendo gerenciar todos os dados, usuários e configurações da aplicação web. A interface é intuitiva e responsiva, com campos claros e botão de ação destacado, garantindo acessibilidade e segurança para todos os perfis, além de reforçar a identidade institucional com a mensagem “Se é bayer, é bom” (Figura 26).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;  **Tela de Login**: A tela de login apresentada permite a autenticação de três tipos de usuários: o usuário comum (PTD), o gestor e o administrador. Cada um deles acessa a plataforma inserindo seu email e senha, com validação dos campos antes do envio das informações. Após a autenticação, o sistema direciona cada perfil para funcionalidades específicas: o usuário comum acessa apenas recursos básicos e informações pertinentes ao seu perfil; o gestor tem acesso a ferramentas de administração de equipes, relatórios e acompanhamento de desempenho; já o administrador possui permissões totais, podendo gerenciar todos os dados, usuários e configurações da aplicação web. A interface é intuitiva e responsiva, com campos claros e botão de ação destacado, garantindo acessibilidade e segurança para todos os perfis, além de reforçar a identidade institucional com a mensagem “Se é bayer, é bom” (Figura 26).<br>
 
 <div align = "center">
 
@@ -1838,6 +1838,115 @@ Com o guia de estilos definido, para facilitar o desenvolvimento de cada funcion
 &nbsp;&nbsp;&nbsp;&nbsp;  A estrutura das telas da plataforma FieldAcademy foi cuidadosamente planejada para proporcionar uma experiência completa, intuitiva e eficiente aos diferentes perfis de usuários do agronegócio. A tela de login garante segurança e acessibilidade no acesso à plataforma, enquanto a tela de dashboard — exclusiva para administradores — oferece uma visão estratégica do desempenho e progresso dos usuários, facilitando a gestão e o acompanhamento dos resultados. Já a tela de perfil permite que cada usuário visualize e gerencie suas informações, acompanhe seu desenvolvimento e tenha acesso rápido a conteúdos relevantes e personalizados. Por fim, a página principal de trilhas de aprendizagem organiza o conteúdo de forma clara, promovendo o engajamento e a evolução contínua dos profissionais. Juntas, essas telas atendem às necessidades práticas e estratégicas da AgroBayer, promovendo capacitação, inovação e eficiência para todos os envolvidos, desde os promotores técnicos até os gestores e administradores da plataforma. <br>
 
 ## 4.3. Versão final da aplicação web
+
+&nbsp;&nbsp;&nbsp;&nbsp; Durante o desenvolvimento da última versão do sistema web FieldAcademy, a equipe concentrou esforços na entrega de funcionalidades essenciais para a experiência dos usuários e na melhoria da estabilidade e usabilidade da plataforma. O código entregue contemplou a implementação completa das trilhas de conhecimento, com módulos organizados, barra de progresso visual, sistema de avaliações, painel de controle para gestores e suporte ao acesso offline. Além disso, foram aprimorados o sistema de busca, a categorização de conteúdos e a interface responsiva, garantindo navegação eficiente em diferentes dispositivos.<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;  **Tela de Login**:
+A tela de login da aplicação FieldAcademy foi projetada para garantir segurança, acessibilidade e usabilidade já no primeiro contato do usuário com a plataforma. O sistema de autenticação valida as credenciais em tempo real, permitindo apenas o acesso de usuários autorizados, enquanto o layout responsivo e os campos destacados facilitam o uso em qualquer dispositivo. Mensagens de feedback orientam rapidamente em caso de erro, tornando a experiência clara e intuitiva. A autenticação contempla três perfis — usuário comum (PTD), gestor e administrador — e direciona cada um automaticamente para áreas e funcionalidades específicas conforme suas permissões. Dessa forma, a tela reforça o compromisso do FieldAcademy com a proteção dos dados e a inclusão de todos os perfis de usuários(Figura 33).<br>
+
+**Tela de Login**: Onde o usuário faz seu cadastro na plataforma ou entra diretamente através de sua conta.
+
+<div align = "center">
+
+<sup>Figura 33: Tela de login.</sup><br>
+
+<img src="../assets/assets_wad/telaLogin.png" width="300"><br>
+
+<sub>Fonte: Material produzido pelos autores (2025). </sub><br>
+
+</div>
+
+&nbsp;&nbsp;&nbsp;&nbsp;  **Tela de Perfil**:
+A aplicação web Field Academy oferece um painel de perfil completo e intuitivo, permitindo ao usuário visualizar rapidamente suas principais informações, como nome, e-mail, localização e data do último acesso. Entre as funcionalidades de destaque estão o acompanhamento da última lição em andamento, a visualização da pontuação total acumulada e a posição atual no ranking entre todos os usuários, promovendo engajamento e senso de progresso. A interface apresenta uma navegação clara e organizada, com acesso facilitado à Central de Ajuda e busca eficiente de conteúdos, proporcionando uma experiência personalizada e dinâmica. Esses recursos tornam a plataforma não apenas uma ferramenta de capacitação, mas também um ambiente que valoriza o desenvolvimento individual e a competitividade saudável, alinhando-se às melhores práticas de aplicações web modernas ao centralizar informações relevantes e facilitar o acompanhamento do desempenho do usuário(Figura 34). <br>
+
+<div align = "center">
+
+<sup>Figura 34: Tela de Perfil</sup><br>
+
+<img src="![../assets/assets_wad/telaLogin.png](../assets/perfil.jpeg)" width="300"><br>
+
+<sub>Fonte: Material produzido pelos autores (2025). </sub><br>
+
+</div>
+
+&nbsp;&nbsp;&nbsp;&nbsp;  **Tela Sobre Nós*:
+A aplicação web FieldAcademy se destaca por oferecer uma experiência intuitiva e eficiente de capacitação técnica para Promotores Técnicos Digitais do agronegócio. Entre suas principais funcionalidades estão a centralização e atualização de conteúdos em um ambiente digital acessível, a personalização de trilhas de conhecimento de acordo com o perfil do usuário, a visualização clara do progresso nas lições e módulos, além de recursos de gamificação e avaliações para engajar e acompanhar o desenvolvimento dos participantes. A plataforma também proporciona suporte dedicado, busca rápida de conteúdos, acesso offline para regiões com baixa conectividade e uma interface responsiva, garantindo facilidade de uso tanto para gestores quanto para aprendizes. Essas funcionalidades promovem autonomia, padronização do atendimento e maior retenção de talentos, tornando a FieldAcademy uma solução completa para o desenvolvimento profissional no campo(Figura 33).<br>
+
+<div align = "center">
+<sup>Figura 34: Tela de Perfil</sup><br>
+<img src="assets/sobre_1.jpeg" width="300"><br>
+<sub>Fonte: Material produzido pelos autores (2025). </sub><br>
+</div>
+
+<div align = "center">
+<sup>Figura 35: Tela de Perfil</sup><br>
+<img src="![assets/sobre_1.jpeg](../assets/sobre_2.jpeg)" width="300"><br>
+<sub>Fonte: Material produzido pelos autores (2025). </sub><br>
+</div>
+
+<div align = "center">
+<sup>Figura 36: Tela de Perfil</sup><br>
+<img src="![assets/sobre_1.jpeg](../assets/sobre_3.jpeg)" width="300"><br>
+<sub>Fonte: Material produzido pelos autores (2025). </sub><br>
+</div>
+
+<div align = "center">
+<sup>Figura 37: Tela de Perfil</sup><br>
+<img src="![assets/sobre_1.jpeg](../assets/sobre_4.jpeg)" width="300"><br>
+<sub>Fonte: Material produzido pelos autores (2025). </sub><br>
+</div>
+
+<div align = "center">
+<sup>Figura 38: Tela de Perfil</sup><br>
+<img src="![assets/sobre_1.jpeg](../assets/sobre_5.jpeg)" width="300"><br>
+<sub>Fonte: Material produzido pelos autores (2025). </sub><br>
+</div>
+
+&nbsp;&nbsp;&nbsp;&nbsp;  **Tela de Gestão**:
+
+A aplicação web FieldAcademy oferece uma gestão de conteúdo eficiente e intuitiva, permitindo a criação, organização e atualização de lições, módulos e provas de forma centralizada. Entre as principais funcionalidades destacam-se o painel de controle com busca rápida de conteúdos, a visualização do progresso das lições, a categorização clara entre diferentes tipos de materiais e a possibilidade de adicionar novas lições facilmente. Os usuários podem acompanhar a última atualização de cada conteúdo, acessar materiais multimídia e utilizar filtros para navegar entre lições, módulos e avaliações. A interface amigável e responsiva facilita tanto o trabalho dos gestores de conteúdo quanto a experiência dos aprendizes, promovendo autonomia, engajamento e atualização contínua dos materiais disponibilizados na plataforma.<br>
+
+A aplicação web FieldAcademy oferece trilhas de aprendizado organizadas por níveis, sistema de ranking gamificado, acompanhamento detalhado do progresso, possibilidade de favoritar conteúdos e uma central de ajuda acessível. Sua interface é intuitiva e responsiva, promovendo navegação eficiente e aprendizado personalizado, o que incentiva o engajamento e facilita a evolução dos usuários na plataforma.<br>
+
+<div align = "center">
+<sup>Figura 39: Tela de Gestão módulo. </sup><br>
+<img src="![../assets/assets_wad/telaLogin.png](../assets/perfil.jpeg)" width="300"><br>
+<sub>Fonte: Material produzido pelos autores (2025). </sub><br>
+</div>
+
+<div align = "center">
+<sup>Figura 40: Tela de Gestão lições. </sup><br>
+<img src="![alt text](../assets/gestao_licoes_cont.jpeg)" width="300"><br>
+<sub>Fonte: Material produzido pelos autores (2025). </sub><br>
+</div>
+
+<div align = "center">
+<sup>Figura 41: Tela de Gestão lições. </sup><br>
+<img src="![alt text](../assets/gestão_prova.jpeg)" width="300"><br>
+<sub>Fonte: Material produzido pelos autores (2025). </sub><br>
+</div>
+
+&nbsp;&nbsp;&nbsp;&nbsp;  **Tela de Help*:
+A aplicação web destaca-se por oferecer uma experiência acessível, interativa e organizada para seus usuários, centralizando informações e recursos em um ambiente intuitivo e responsivo. Entre as principais funcionalidades está a Central de Ajuda, ilustrada na imagem acima1, que permite ao usuário navegar facilmente por categorias como importação de dados, análise de mapas e primeiros passos na plataforma. A interface clara facilita o acesso rápido a tutoriais, guias e suporte, promovendo autonomia e reduzindo a necessidade de auxílio técnico. Dessa forma, a aplicação garante usabilidade em diferentes dispositivos, atualização contínua de conteúdos e escalabilidade, adaptando-se às demandas de cada usuário e proporcionando uma jornada digital eficiente e personalizada. <br>
+
+<div align = "center">
+<sup>Figura 42: Tela de Help. </sup><br>
+<img src="assets/help1.jpeg" width="300"><br>
+<sub>Fonte: Material produzido pelos autores (2025). </sub><br>
+</div>
+
+&nbsp;&nbsp;&nbsp;&nbsp;  **Tela de Dashboard*:
+A aplicação web FieldAcademy apresenta um painel de usuários intuitivo, que permite a visualização e o gerenciamento detalhado de informações como nome, e-mail, região, pontuação média e data do último login de cada participante. Entre as principais funcionalidades destacam-se os filtros avançados, que possibilitam ordenar os usuários por nome, pontuação, login recente e região, além de aplicar múltiplos critérios de busca de forma rápida e eficiente. O dashboard centraliza indicadores relevantes, como a pontuação média dos usuários, e oferece uma interface de pesquisa dinâmica para localizar rapidamente qualquer participante. Essas ferramentas promovem uma gestão facilitada, maior transparência nos dados e uma experiência de navegação ágil, contribuindo para o acompanhamento do desempenho e o engajamento dos usuários na plataforma. <br>
+
+<div align = "center">
+<sup>Figura 42: Tela de Help. </sup><br>
+<img src="![alt text](../assets/dashboard_users.jpeg)" width="300"><br>
+<sub>Fonte: Material produzido pelos autores (2025). </sub><br>
+</div>
+
+&nbsp;&nbsp;&nbsp;&nbsp; Como próximos passos, o time pretende aprimorar ainda mais o carregamento offline e o armazenamento local de conteúdo, assegurando uma experiência mais suave, mesmo em locais com conexão limitada. Também está nos planos a expansão das funcionalidades de acessibilidade, que inclui a introdução de softwares de leitura de tela e navegação por teclado, para tornar a plataforma mais abrangente e atender a diferentes necessidades dos usuários. Ademais, o trabalho em integrações com APIs de sistemas de gestão do agronegócio facilitará uma melhor interação com plataformas já utilizadas, aumentando a eficácia da aplicação. O grupo começará também a criação de um aplicativo nativo para dispositivos móveis, com o objetivo de estender o alcance e facilitar o acesso em ambientes externos. Finalmente, serão criados painéis analíticos para gestores, que permitirão um acompanhamento minucioso do desempenho e do envolvimento, além de fóruns colaborativos para incentivar a troca de experiências entre os usuários. Essas iniciativas visam estabelecer a FieldAcademy como uma plataforma sólida, inclusiva e adaptada às exigências do setor, promovendo treinamento digital e inovação no campo.<br>
+
+
 
 # <a name="c5"></a>5. Testes
 
