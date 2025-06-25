@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="manifest" href="/manifest.json">
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
-    <script src="/js/service-worker.js"></script>
     <script src="/js/loadServiceWorker.js"></script>  
   </head>
   <body class="flex flex-col min-h-screen bg-gray-50">
@@ -21,6 +20,15 @@
         <h1 class="text-white text-3xl font-bold">Central de Ajuda</h1>
       </div>
 
+
+ <script src="/js/offline-detector.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        if (!navigator.onLine) {
+          document.dispatchEvent(new CustomEvent("app-offline"));
+        }
+      });
+    </script>
 
       <% if (error !== null && error.isOffline === true) { %>
         <div class="container mx-auto px-4 mb-4 text-center">
@@ -47,7 +55,7 @@
           >
             <% if (typeof allArticles !== 'undefined' && Array.isArray(allArticles)) { %>
               <% 
-                // Define images and descriptions for each category
+           
                 var categoryInfo = {
                   'Mapas e Dados': {
                     img: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80',
@@ -75,7 +83,7 @@
                   }
                 };
                 
-                // Loop through each article and create a card for it
+                
                 for(var i = 0; i < allArticles.length; i++) {
                   var article = allArticles[i];
                   var category = article.category;
@@ -87,11 +95,11 @@
                     category = 'Outros';
                   }
 
-                  // Get the image and description for this category or use defaults
+                 
                   var img = categoryInfo[category] ? categoryInfo[category].img : 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173';
                   var desc = categoryInfo[category] ? categoryInfo[category].desc : 'Outros artigos que podem ser úteis.';
                   
-                  // Create URL-safe category
+                  
                   var categoryUrl = encodeURIComponent(category);
               %>
                 <!-- <%= category %> -->

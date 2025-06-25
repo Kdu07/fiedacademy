@@ -7,6 +7,47 @@ const { isAuthorized } = require("../utils/authUtils");
 const { getUserId } = require("../utils/jwtUtils");
 const { json } = require("body-parser");
 
+async function addUrlToCache(url) {
+  try {
+    const fs = require('fs');
+    const path = require('path');
+    const cacheFilePath = path.join(__dirname, '../public/cache.json');
+    
+    // Read the current cache config
+    let cacheConfig = {};
+    if (fs.existsSync(cacheFilePath)) {
+      const rawData = fs.readFileSync(cacheFilePath, 'utf8');
+      cacheConfig = JSON.parse(rawData);
+    } else {
+      // Default structure if file doesn't exist
+      cacheConfig = {
+        "pages": [],
+        "assets": [],
+        "version": "v1"
+      };
+    }
+    
+    // Add URL if it doesn't exist already
+    if (!cacheConfig.pages.includes(url)) {
+      cacheConfig.pages.push(url);
+      
+      // Increment version to force cache update
+      const versionNum = parseInt(cacheConfig.version.substring(1)) || 1;
+      cacheConfig.version = `v${versionNum + 1}`;
+      
+      // Write back to file
+      fs.writeFileSync(cacheFilePath, JSON.stringify(cacheConfig, null, 2));
+      console.log(`Added ${url} to cache.json`);
+      return true;
+    }
+    
+    return false; // URL was already in the list
+  } catch (error) {
+    console.error('Error updating cache.json:', error);
+    return false;
+  }
+}
+
 async function generateArticleCache(article, type) {
   try {
     // Caminho para o arquivo JSON
@@ -34,6 +75,7 @@ async function generateArticleCache(article, type) {
 
     // Salvar artigos em formato JSON
     fs.writeFileSync(jsonPath, JSON.stringify(article));
+
 
     return {
       success: true,
@@ -110,11 +152,13 @@ exports.index = async (req, res) => {
   } catch (err) {
     console.error("Erro na página de ajuda:", err);
 
-    const isNetworkError =
+    const isNetworkError = 
       err.code === "ECONNREFUSED" ||
       err.code === "ENOTFOUND" ||
       err.name === "NetworkError" ||
-      err.message.includes("network");
+      err.message.includes("network") ||
+      err.message.includes("timeout") ||
+      err.message.includes("Database timeout");
 
     // Dados de fallback para cenário offline
     if (!allArticles || allArticles.length === 0) {
@@ -199,6 +243,8 @@ exports.getArticleById = async (req, res) => {
       currentArticle: article,
       error: null,
     });
+
+    await addUrlToCache(`/help/${category}/content/${id_content}`);
   } catch (err) {
     console.error("Erro ao buscar artigo:", err);
 
