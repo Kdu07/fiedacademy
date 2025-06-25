@@ -18,6 +18,15 @@
     <!-- Header -->
     <%- include('./partials/header') %>
 
+    <script src="/js/offline-detector.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        if (!navigator.onLine) {
+          document.dispatchEvent(new CustomEvent("app-offline"));
+        }
+      });
+    </script>
+
     <div class="mt-16">
       <div
         class="bg-secondaryGreen h-16 md:h-20 rounded-e-xl w-full md:w-2/6 flex items-center mb-4 md:mb-8 shadow-md"

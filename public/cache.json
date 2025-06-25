@@ -1,0 +1,21 @@
+{
+  "pages": [
+    "/",
+    "/help",
+    "/help/Primeiros Passos/content/26",
+    "/help/Data Inbox/content/30",
+    "/help/Primeiros Passos/content/25",
+    "/help/Primeiros Passos/content/19",
+    "/help/Primeiros Passos/content/17",
+    "/help/Colheita/content/29"
+  ],
+  "assets": [
+    "/css/style.css",
+    "/images/logo.png",
+    "/images/favicon.ico",
+    "/js/loadServiceWorker.js",
+    "/js/offline-detector.js",
+    "/offline.html"
+  ],
+  "version": "v18"
+}
